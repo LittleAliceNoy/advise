@@ -11,6 +11,7 @@ const chapters = [
   { id: "randomization", label: "Randomization" },
   { id: "treatment", label: "Treatment by stratum" },
   { id: "tapering", label: "Tapering and reactivation" },
+  { id: "tapering-cinematic", label: "Tapering (Cinematic Redesign)" },
   { id: "followup", label: "Follow-up" },
   { id: "outcomes", label: "Outcomes" },
   { id: "statistics", label: "Statistical analysis" },
@@ -22,7 +23,15 @@ const chapters = [
   { id: "discontinuation", label: "Corticosteroid discontinuation" },
   { id: "advancement", label: "Immunosuppression advancement" },
   { id: "ocular-results", label: "Visual and macular outcomes" },
+  { id: "safety-outcomes", label: "Safety outcomes" },
   { id: "discussion", label: "Discussion" },
+  { id: "discussion-safety", label: "Discussion 2" },
+  { id: "limitations-1", label: "Limitations 1" },
+  { id: "limitations-2", label: "Limitations 2" },
+  { id: "limitations-3", label: "Limitations 3" },
+  { id: "limitations-4", label: "Limitations 4" },
+  { id: "limitations-5", label: "Limitations 5" },
+  { id: "limitations-6", label: "Limitations 6" },
   { id: "conclusion", label: "Conclusion" },
 ];
 
@@ -336,6 +345,8 @@ export default function Home() {
   const efficacyTouchAdvancedAt = useRef(0);
   const discontinuationTouchStartY = useRef<number | null>(null);
   const discontinuationTouchAdvancedAt = useRef(0);
+  const taperTouchStartY = useRef<number | null>(null);
+  const taperTouchAdvancedAt = useRef(0);
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [selectedStratum, setSelectedStratum] = useState(0);
@@ -344,10 +355,88 @@ export default function Home() {
   const [qaFocus, setQaFocus] = useState(0);
   const [cohortCycle, setCohortCycle] = useState(0);
   const [treatmentPhase, setTreatmentPhase] = useState(0);
+  const [treatmentMetric, setTreatmentMetric] = useState(0);
+  const [steroidPct, setSteroidPct] = useState(82);
+
+  const treatmentMetrics = [
+    {
+      label: "OVERALL STEROIDS",
+      title: "ALL ORAL CORTICOSTEROIDS",
+      subtitle: "Participants receiving any oral prednisone or prednisolone",
+      baseTotal: "186 / 226",
+      basePct: 82,
+      initTotal: "221 / 223",
+      initPct: 99,
+      adaBase: { count: 92, total: 114, pct: 81 },
+      adaInit: { count: 113, total: 113, pct: 100, add: "+21" },
+      cidBase: { count: 94, total: 112, pct: 84 },
+      cidInit: { count: 108, total: 110, pct: 98, add: "+14" },
+      insight: "18% of participants were steroid-free at baseline. Following randomization, trial protocols mandated initiation of oral corticosteroids in 99% of active participants, establishing a high-exposure baseline prior to tapering."
+    },
+    {
+      label: "HIGH-DOSE STEROIDS (≥30mg)",
+      title: "HIGH-DOSE CORTICOSTEROIDS (≥30 mg/day)",
+      subtitle: "Participants receiving ≥30 mg/day prednisone at baseline vs trial initiation",
+      baseTotal: "86 / 226",
+      basePct: 38,
+      initTotal: "164 / 223",
+      initPct: 74,
+      adaBase: { count: 46, total: 114, pct: 40 },
+      adaInit: { count: 83, total: 113, pct: 73, add: "+37" },
+      cidBase: { count: 40, total: 112, pct: 36 },
+      cidInit: { count: 81, total: 110, pct: 74, add: "+41" },
+      insight: "High-dose corticosteroid usage (≥30 mg/day) increased from 38% at baseline to 74% post-randomization, reflecting protocol-mandated aggressive disease suppression across both treatment arms."
+    },
+    {
+      label: "ANTIMETABOLITE IMT",
+      title: "ANTIMETABOLITE THERAPY BREAKDOWN",
+      subtitle: "Baseline vs post-randomization antimetabolite use across arms",
+      baseTotal: "49 / 226",
+      basePct: 22,
+      initTotal: "87 / 223",
+      initPct: 39,
+      adaBase: { count: 24, total: 114, pct: 21 },
+      adaInit: { count: 2, total: 113, pct: 2, add: "-22" },
+      cidBase: { count: 25, total: 112, pct: 22 },
+      cidInit: { count: 85, total: 110, pct: 77, add: "+60" },
+      chips: [
+        { name: "MMF", count: 42 },
+        { name: "MTX", count: 44 },
+        { name: "AZA", count: 1 }
+      ],
+      insight: "Antimetabolite usage fell from 24 (21%) to 2 (2%) in the ADA arm as participants transitioned to Adalimumab biologic monotherapy, while surging from 25 (22%) to 85 (77%) in the CID arm."
+    }
+  ];
+
+  useEffect(() => {
+    const cur = treatmentMetrics[treatmentMetric];
+    const targetPct = treatmentPhase === 1 ? cur.initPct : cur.basePct;
+    
+    setSteroidPct((prev) => {
+      if (prev === targetPct) return prev;
+      return prev;
+    });
+
+    let current = steroidPct;
+    const step = targetPct > current ? 1 : -1;
+    if (targetPct === current) return;
+
+    const interval = setInterval(() => {
+      current += step;
+      setSteroidPct(current);
+      if ((step > 0 && current >= targetPct) || (step < 0 && current <= targetPct)) {
+        setSteroidPct(targetPct);
+        clearInterval(interval);
+      }
+    }, 16);
+
+    return () => clearInterval(interval);
+  }, [treatmentPhase, treatmentMetric]);
   const [efficacyFocus, setEfficacyFocus] = useState(0);
   const [efficacyStoryStage, setEfficacyStoryStage] = useState(5);
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
+  const [taperingStage, setTaperingStage] = useState(0);
 
   const goTo = (index: number) => {
     document.getElementById(chapters[index]?.id)?.scrollIntoView({ behavior: "smooth" });
@@ -397,6 +486,11 @@ export default function Home() {
     setEfficacyFocus(2);
   }, [active]);
 
+  useEffect(() => {
+    if (chapters[active]?.id !== "tapering-cinematic") return;
+    setTaperingStage(0);
+  }, [active]);
+
   const advanceEfficacyStory = () => {
     setEfficacyStoryStage((current) => {
       const next = Math.min(current + 1, 5);
@@ -429,6 +523,29 @@ export default function Home() {
   const onEfficacyClick = () => {
     if (Date.now() - efficacyTouchAdvancedAt.current < 500 || efficacyStoryStage >= 5) return;
     advanceEfficacyStory();
+  };
+
+  const advanceTaperingStory = () => {
+    setTaperingStage((current) => Math.min(current + 1, 7));
+  };
+
+  const onTaperTouchStart = (event: TouchEvent<HTMLElement>) => {
+    taperTouchStartY.current = event.touches[0]?.clientY ?? null;
+  };
+
+  const onTaperTouchEnd = (event: TouchEvent<HTMLElement>) => {
+    const startY = taperTouchStartY.current;
+    const endY = event.changedTouches[0]?.clientY;
+    taperTouchStartY.current = null;
+    if (startY === null || endY === undefined || startY - endY < 42 || taperingStage >= 7) return;
+    event.preventDefault();
+    taperTouchAdvancedAt.current = Date.now();
+    advanceTaperingStory();
+  };
+
+  const onTaperClick = () => {
+    if (Date.now() - taperTouchAdvancedAt.current < 500 || taperingStage >= 7) return;
+    advanceTaperingStory();
   };
 
   useEffect(() => {
@@ -781,6 +898,133 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          id="tapering-cinematic"
+          className={`scene tapering-cinematic-scene tapering-stage-${taperingStage}`}
+          onClick={onTaperClick}
+          onTouchStart={onTaperTouchStart}
+          onTouchEnd={onTaperTouchEnd}
+          aria-label="Methodology for corticosteroid tapering and reactivation. Click to advance through the progressive stages."
+        >
+          {/* Faint Orbital Geometry Background */}
+          <div className="tapering-cinematic-bg" aria-hidden="true">
+            <div className="bg-orbit orbit-1" />
+            <div className="bg-orbit orbit-2" />
+          </div>
+
+          <div className="scene-copy tapering-copy">
+            <p className="eyebrow"><span /> 08 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
+            <h2 className="tapering-hero-title">
+              <span className={`title-beat ${taperingStage === 0 ? "active" : ""}`}>Taper the steroid.</span>
+              <span className={`title-beat ${taperingStage === 1 ? "active" : ""}`}><em>Reactivation</em> holds taper.</span>
+              <span className={`title-beat ${taperingStage >= 2 && taperingStage <= 6 ? "active" : ""}`}>Escalate when needed.</span>
+              <span className={`title-beat ${taperingStage === 7 ? "active" : ""}`}>Rescue has boundaries.</span>
+            </h2>
+            <div className="tapering-hero-lede">
+              <p className={`lede-beat ${taperingStage === 0 ? "active" : ""}`}>Only while control holds.</p>
+              <p className={`lede-beat ${taperingStage === 1 ? "active" : ""}`}>A clinical signal interrupts the taper trajectory.</p>
+              <p className={`lede-beat ${taperingStage >= 2 && taperingStage <= 6 ? "active" : ""}`}>Active disease demands advancing immunosuppressive therapy.</p>
+              <p className={`lede-beat ${taperingStage === 7 ? "active" : ""}`}>Regional corticosteroid · macular edema · maximum 2 injections</p>
+            </div>
+          </div>
+
+          <div className="tapering-cinematic-stage">
+            {/* Beat 1 & 2: Trajectory */}
+            <div className="tapering-beat taper-trajectory-beat">
+              <article className="taper-protocol" style={{ margin: "0 auto", width: "100%", maxWidth: "800px" }}>
+                <header><span>PREDNISONE</span><strong>WEEKLY TAPER</strong></header>
+                <div className="taper-trajectory" aria-hidden="true"><i /><i /><i /><i /><i /><b /></div>
+                <div className="taper-checkpoints">
+                  <div><small>01</small><strong>REDUCE WEEKLY</strong><span>Declining decrements</span></div>
+                  <div><small>02</small><strong>7.5 MG/DAY GOAL</strong><span>Inactive uveitis checkpoint</span></div>
+                  <div><small>03</small><strong>HOLD</strong><span>2 visits · ≥28 days apart</span></div>
+                  <div><small>04</small><strong>RESUME TAPER</strong><span>After both visits</span></div>
+                </div>
+                <p className="reset-guidance"><b>PREDNISONE STEPPED DOWN WEEKLY TOWARD 7.5 MG/DAY.</b></p>
+              </article>
+
+              {/* Reactivation Event */}
+              <div className="reactivation-event">
+                <div className="radar-pulse">
+                    <i /><i /><i />
+                    <div className="radar-core" />
+                  </div>
+                  <div className="reactivation-label">
+                    <span>REACTIVATION</span>
+                  </div>
+                  <div className="reactivation-typography">
+                    <div className="big-type">≥2× <small>PREDNISONE</small></div>
+                    <div className="sub-type">HOLD 2–4 WEEKS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Beat 3: Escalation Sequence (Diagonal) */}
+            <div className="tapering-beat escalation-ladder-beat">
+              <div className="escalation-diagonal-sequence">
+                {/* A thin ascending red line connecting them */}
+                <div className="escalation-line" />
+                
+                <div className={`esc-node node-1 ${taperingStage >= 2 ? "visible" : ""} ${taperingStage === 2 ? "active" : "subdued"}`}>
+                  <small>01</small>
+                  <div className="esc-state">ADA ONLY</div>
+                  <div className="esc-action"><i>→</i> ADD CID</div>
+                </div>
+                <div className={`esc-node node-2 ${taperingStage >= 3 ? "visible" : ""} ${taperingStage === 3 ? "active" : "subdued"}`}>
+                  <small>02</small>
+                  <div className="esc-state">ADA + CID</div>
+                  <div className="esc-cond">CID BELOW MAX</div>
+                  <div className="esc-action"><i>→</i> ESCALATE CID</div>
+                </div>
+                <div className={`esc-node node-3 ${taperingStage >= 4 ? "visible" : ""} ${taperingStage === 4 ? "active" : "subdued"}`}>
+                  <small>03</small>
+                  <div className="esc-state">1 CID</div>
+                  <div className="esc-cond">BELOW MAX</div>
+                  <div className="esc-action"><i>→</i> ESCALATE TO MAX</div>
+                </div>
+                <div className={`esc-node node-4 ${taperingStage >= 5 ? "visible" : ""} ${taperingStage === 5 ? "active" : "subdued"}`}>
+                  <small>04</small>
+                  <div className="esc-state">1 CID</div>
+                  <div className="esc-cond">AT MAX</div>
+                  <div className="esc-action alert"><i>→</i> ADD ALTERNATE CLASS</div>
+                </div>
+                <div className={`esc-node node-5 ${taperingStage >= 6 ? "visible" : ""} ${taperingStage === 6 ? "active" : "subdued"}`}>
+                  <small>05</small>
+                  <div className="esc-state">2 CID</div>
+                  <div className="esc-cond">AT MAX</div>
+                  <div className="esc-action alert"><i>→</i> BEST MEDICAL JUDGMENT</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Beat 4: Regional Corticosteroid Timeline */}
+            <div className="tapering-beat regional-corticosteroid-beat">
+              <div className="rc-horizontal-timeline">
+                <div className="rc-line" />
+                
+                <div className="rc-phase rc-early">
+                  <div className="rc-pulse"><i/><i/></div>
+                  <div className="rc-label">MONTHS 0–2</div>
+                  <div className="rc-sub">Injection permitted</div>
+                </div>
+                
+                <div className="rc-phase rc-mid">
+                  <div className="rc-shield" />
+                  <div className="rc-label">MONTHS 2–6</div>
+                  <div className="rc-sub">PROTECTED OUTCOME WINDOW</div>
+                </div>
+
+                <div className="rc-phase rc-late">
+                  <div className="rc-pulse"><i/><i/></div>
+                  <div className="rc-label">MONTHS 6–8</div>
+                  <div className="rc-sub">Injection permitted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="followup" className="scene followup-scene">
           <div className="scene-copy followup-copy">
             <p className="eyebrow"><span /> 09 — METHODOLOGY / FOLLOW-UP</p>
@@ -1024,6 +1268,15 @@ export default function Home() {
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
+            <section className="flow-strata-summary" aria-label="Four randomization strata with treatment allocation">
+              <header><span>STRATA AT RANDOMIZATION</span><small>1 : 1 WITHIN EACH STRATUM</small></header>
+              <div className="flow-strata-columns">
+                <div className="flow-strata-arm ada-arm"><strong>ADA</strong><div className="flow-strata-stack" aria-label="ADA strata allocation"><i className="s-0l" style={{ height: "15.8%" }}><b>18</b></i><i className="s-0h" style={{ height: "63.2%" }}><b>72</b></i><i className="s-1l" style={{ height: "9.6%" }}><b>11</b></i><i className="s-1h" style={{ height: "11.4%" }}><b>13</b></i></div></div>
+                <div className="flow-strata-arm cid-arm"><strong>CID</strong><div className="flow-strata-stack" aria-label="CID strata allocation"><i className="s-0l" style={{ height: "15%" }}><b>17</b></i><i className="s-0h" style={{ height: "62.8%" }}><b>71</b></i><i className="s-1l" style={{ height: "9.7%" }}><b>11</b></i><i className="s-1h" style={{ height: "12.5%" }}><b>14</b></i></div></div>
+                <div className="flow-strata-categories"><span><b>0L</b> No IMT · &lt;30 <em>35 total</em></span><span><b>0H</b> No IMT · ≥30 <em>143 total</em></span><span><b>1L</b> 1 IMT · &lt;30 <em>22 total</em></span><span><b>1H</b> 1 IMT · ≥30 <em>27 total</em></span></div>
+              </div>
+              <footer><span>0 / 1 = immunosuppressive drugs</span><span>L / H = prednisone &lt;30 / ≥30 mg/day</span></footer>
+            </section>
           </div>
 
           <section className="consort-flow" aria-label="Participant screening, allocation, and follow-up flow diagram">
@@ -1157,43 +1410,280 @@ export default function Home() {
         </section>
 
         <section id="treatment-results" className="scene treatment-results-scene">
-          <div className="scene-copy treatment-results-copy">
-            <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
-            <h2>Therapy assigned.<br /><em>Treatment evolved.</em></h2>
-            <p className="lede">Most participants entered on corticosteroids. Randomization determined the new immunosuppressive strategy; follow-up determined how far treatment needed to advance.</p>
+          <div className="scene-header-row">
+            <div className="scene-copy treatment-results-copy">
+              <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
+              <h2>Therapy assigned. <em>Treatment evolved.</em></h2>
+            </div>
+            
+            <div className="surge-controller-header">
+              <span className="surge-stage-tag">
+                {treatmentPhase === 0 ? "STAGE 1 : BASELINE ENROLLMENT STATUS" : "STAGE 2 : RANDOMIZATION INITIATION SURGE"}
+              </span>
+              <button
+                className={`surge-trigger-btn ${treatmentPhase === 1 ? "active" : ""}`}
+                onClick={() => setTreatmentPhase(treatmentPhase === 0 ? 1 : 0)}
+              >
+                {treatmentPhase === 0 ? "TRIGGER TREATMENT SURGE ➔" : "↺ RESET TO BASELINE"}
+                <i className="surge-btn-glow" />
+              </button>
+            </div>
           </div>
 
-          <section className="table2-board" aria-label="Summary of Table 2 treatments at baseline and after randomization">
-            <div className="table2-matrix">
-              <header>
-                <span>TABLE 2 · TREATMENT PROFILE</span>
-                <div role="group" aria-label="Select treatment phase">
-                  {treatmentTables.map((phase, index) => <button key={phase.label} className={treatmentPhase === index ? "active" : ""} onClick={() => setTreatmentPhase(index)}>{phase.label}</button>)}
+          <section className="treatment-results-stage steroid-surge-stage all-in-one-surge" aria-label="Treatment evolution matrix from baseline to randomization initiation">
+            
+            {/* 3 Full-Width Matrix Cards */}
+            <div className="surge-matrix-grid">
+              
+              {/* Card 1: ALL CORTICOSTEROIDS */}
+              <div className="surge-matrix-card oral-steroid-card">
+                <header className="matrix-card-header">
+                  <span className="card-lbl">01 · ON ORAL STEROIDS</span>
+                  <div className="card-total-badge">
+                    <strong>{treatmentPhase === 0 ? "82%" : <>99% <i className="trend-up-inline">▲</i></>}</strong>
+                    <small>{treatmentPhase === 0 ? "186 / 226" : "221 / 223"}</small>
+                  </div>
+                </header>
+
+                <div className="matrix-card-tracks">
+                  {/* ADA */}
+                  <div className="matrix-arm-row">
+                    <div className="arm-row-meta">
+                      <span className="arm-tag ada">ADA ARM</span>
+                      <span className="arm-nums">
+                        {treatmentPhase === 0 ? <b>81%</b> : <><b>81%</b><i>→</i><strong>100%</strong></>}
+                      </span>
+                    </div>
+                    <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                      <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "92/114" : "113/113"}</span>
+                      <div className="surge-pill-base ada-base" style={{ width: "81%" } as React.CSSProperties}>
+                      </div>
+                      <div className="surge-pill-add ada-add" style={{ left: "81%", width: treatmentPhase === 1 ? "19%" : "0%" } as React.CSSProperties}>
+                        {treatmentPhase === 1 && <span className="surge-add-label">+21</span>}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CID */}
+                  <div className="matrix-arm-row">
+                    <div className="arm-row-meta">
+                      <span className="arm-tag cid">CID ARM</span>
+                      <span className="arm-nums">
+                        {treatmentPhase === 0 ? <b>84%</b> : <><b>84%</b><i>→</i><strong>98%</strong></>}
+                      </span>
+                    </div>
+                    <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                      <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "94/112" : "108/110"}</span>
+                      <div className="surge-pill-base cid-base" style={{ width: "84%" } as React.CSSProperties} />
+                      <div className="surge-pill-add cid-add" style={{ left: "84%", width: treatmentPhase === 1 ? "14%" : "0%" } as React.CSSProperties}>
+                        {treatmentPhase === 1 && <span className="surge-add-label">+14</span>}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </header>
-              <div key={treatmentPhase} className="table2-data" role="table">
-                <div className="table2-head" role="row"><span>VARIABLE · N (%)</span><b>TOTAL</b><b>ADA</b><b>CID</b></div>
-                {treatmentTables[treatmentPhase].rows.map((row) => (
-                  <div className="table2-row" role="row" key={row[0]}><span role="rowheader">{row[0]}</span><strong>{row[1]}</strong><strong>{row[2]}</strong><strong>{row[3]}</strong></div>
-                ))}
-                <footer><span>DRUG MIX</span>{treatmentTables[treatmentPhase].mix.map((drug) => <b key={drug}>{drug}</b>)}</footer>
+
+                <div className="nested-treatment-panel">
+                  <header className="nested-panel-header">
+                    <span>HIGH-DOSE SUBGROUP (prednisone ≥30 mg/day)</span>
+                    <strong>{treatmentPhase === 0 ? "38%" : <>74% <i className="trend-up-inline">▲</i></>}</strong>
+                    <small>{treatmentPhase === 0 ? "86 / 226" : "164 / 223"}</small>
+                  </header>
+                  <div className="matrix-card-tracks nested-tracks">
+                    <div className="matrix-arm-row">
+                      <div className="arm-row-meta">
+                        <span className="arm-tag ada">ADA ARM</span>
+                        <span className="arm-nums">{treatmentPhase === 0 ? <b>40%</b> : <><b>40%</b><i>→</i><strong>73%</strong></>}</span>
+                      </div>
+                      <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                        <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "46/114" : "83/113"}</span>
+                        <div className="surge-pill-base ada-base" style={{ width: "40%" }} />
+                        <div className="surge-pill-add ada-add" style={{ left: "40%", width: treatmentPhase === 1 ? "33%" : "0%" }}>{treatmentPhase === 1 && <span className="surge-add-label">+37</span>}</div>
+                      </div>
+                    </div>
+                    <div className="matrix-arm-row">
+                      <div className="arm-row-meta">
+                        <span className="arm-tag cid">CID ARM</span>
+                        <span className="arm-nums">{treatmentPhase === 0 ? <b>36%</b> : <><b>36%</b><i>→</i><strong>74%</strong></>}</span>
+                      </div>
+                      <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                        <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "40/112" : "81/110"}</span>
+                        <div className="surge-pill-base cid-base" style={{ width: "36%" }} />
+                        <div className="surge-pill-add cid-add" style={{ left: "36%", width: treatmentPhase === 1 ? "38%" : "0%" }}>{treatmentPhase === 1 && <span className="surge-add-label">+41</span>}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="prednisone-exposure-panel">
+                  <header>
+                    <strong className="prednisone-exposure-title">PREDNISONE EXPOSURE</strong>
+                    <div className="prednisone-exposure-meta">
+                      <span>TRIAL MEAN</span>
+                      <small>12-MONTH MEDIAN · BOTH ARMS</small>
+                    </div>
+                  </header>
+                  <div className="prednisone-exposure-grid">
+                    <div><b>ADA</b><strong>11.8 <small>mg/day</small></strong><span>4.31 g cumulative</span></div>
+                    <div><b>CID</b><strong>13.8 <small>mg/day</small></strong><span>5.04 g cumulative</span></div>
+                    <div className="prednisone-exposure-shared"><b>BOTH ARMS</b><strong>7.5 <small>mg/day</small></strong><span>median at month 12</span></div>
+                  </div>
+                  <footer>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</footer>
+                </div>
+                <div className="regional-injection-panel">
+                  <header>
+                    <strong>REGIONAL CORTICOSTEROID</strong>
+                  </header>
+                  <div className="regional-injection-grid">
+                    <div>
+                      <b>ADA</b>
+                      <strong>27 <small>INJECTIONS</small></strong>
+                      <span>19 eyes · 13 participants</span>
+                    </div>
+                    <div>
+                      <b>CID</b>
+                      <strong>25 <small>INJECTIONS</small></strong>
+                      <span>20 eyes · 13 participants</span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* Card 3: ALL IMMUNOSUPPRESSIVE THERAPY, with class breakdown */}
+              <div className="surge-matrix-card imt-detail-card">
+                <header className="matrix-card-header">
+                  <span className="card-lbl">03 · ALL IMMUNOSUPPRESSIVE THERAPY (IMT)</span>
+                  <div className="card-total-badge">
+                    <strong>{treatmentPhase === 0 ? "22%" : <>49% <i className="trend-up-inline">▲</i></>}</strong>
+                    <small>{treatmentPhase === 0 ? "49 / 226" : "110 / 223"}</small>
+                  </div>
+                </header>
+
+                <div className="matrix-card-tracks">
+                  {/* ADA */}
+                  <div className="matrix-arm-row">
+                    <div className="arm-row-meta">
+                      <span className="arm-tag ada">ADA ARM</span>
+                      <span className="arm-nums">
+                        {treatmentPhase === 0 ? <b>21%</b> : <><b>21%</b><i>→</i><strong>2%</strong><i className="trend-down">▼</i></>}
+                      </span>
+                    </div>
+                    <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                      <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "24/114" : "2/113"}</span>
+                      <div className="surge-pill-base ada-base" style={{ width: treatmentPhase === 1 ? "2%" : "21%" } as React.CSSProperties} />
+                      {treatmentPhase === 1 && (
+                        <div className="surge-pill-drop" style={{ left: "2%", width: "19%" } as React.CSSProperties}>
+                          <span className="surge-drop-label">−22</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* CID */}
+                  <div className="matrix-arm-row">
+                    <div className="arm-row-meta">
+                      <span className="arm-tag cid">CID ARM</span>
+                      <span className="arm-nums">
+                        {treatmentPhase === 0 ? <b>22%</b> : <><b>22%</b><i>→</i><strong>98%</strong><i className="trend-up-inline">▲</i></>}
+                      </span>
+                    </div>
+                    <div className={`surge-pill-container mini surge-phase-${treatmentPhase}`}>
+                      <span className="surge-bar-count surge-total-count">{treatmentPhase === 0 ? "25/112" : "108/110"}</span>
+                      <div className="surge-pill-base cid-base" style={{ width: "22%" } as React.CSSProperties} />
+                      <div className="surge-pill-add cid-add cid-antimetabolite-add" style={{ left: "22%", width: treatmentPhase === 1 ? "61%" : "0%" }}>{treatmentPhase === 1 && <span className="surge-add-label">+85</span>}</div>
+                      <div className="surge-pill-add cid-cni-add" style={{ left: "83%", width: treatmentPhase === 1 ? "16.5%" : "0%" }}>{treatmentPhase === 1 && <span className="surge-add-label">+23</span>}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="imt-bar-legend" aria-label="CID immunosuppressive therapy surge legend">
+                  <span><i className="legend-swatch legend-antimetabolite" />ANTIMETABOLITE</span>
+                  <span><i className="legend-swatch legend-cni" />CALCINEURIN INHIBITOR</span>
+                </div>
+
+                {/* IMT Class Breakdown Grid */}
+                <div className="imt-class-matrix">
+                  {/* Class 1: Antimetabolites */}
+                  <div className="imt-class-block">
+                    <div className="imt-class-head">
+                      <span>ANTIMETABOLITES</span>
+                      <strong className="class-shift">
+                        {treatmentPhase === 0 ? "49 / 226 (22%)" : <>87 / 223 (39%) <i className="trend-up-inline">▲</i></>}
+                      </strong>
+                    </div>
+                    <div className="imt-agents-grid">
+                      <div className="agent-pill">
+                        <b>MMF</b>
+                        <span>
+                          {treatmentPhase === 0 ? "24" : <>42 <i className="trend-up">▲</i></>}
+                        </span>
+                        <small>{treatmentPhase === 0 ? "11 ADA / 13 CID" : "1 ADA / 41 CID"}</small>
+                      </div>
+                      <div className="agent-pill">
+                        <b>MTX</b>
+                        <span>
+                          {treatmentPhase === 0 ? "23" : <>44 <i className="trend-up">▲</i></>}
+                        </span>
+                        <small>{treatmentPhase === 0 ? "12 ADA / 11 CID" : "1 ADA / 43 CID"}</small>
+                      </div>
+                      <div className="agent-pill">
+                        <b>AZA</b>
+                        <span>
+                          {treatmentPhase === 0 ? "2" : <>1 <i className="trend-down">▼</i></>}
+                        </span>
+                        <small>{treatmentPhase === 0 ? "1 ADA / 1 CID" : "0 ADA / 1 CID"}</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Class 2: Calcineurin Inhibitors (CNI) */}
+                  <div className="imt-class-block cni-block">
+                    <div className="imt-class-head">
+                      <span>CALCINEURIN INHIBITORS (CNI)</span>
+                      <strong className="class-shift">
+                        {treatmentPhase === 0 ? "0 / 226 (0%)" : <>23 / 223 (10%) <i className="trend-up-inline cni-arrow">▲</i></>}
+                      </strong>
+                    </div>
+                    <div className="imt-agents-grid">
+                      <div className="agent-pill cni">
+                        <b>Tacrolimus</b>
+                        <span>
+                          {treatmentPhase === 0 ? "0" : <>19 <i className="trend-up cni-arrow">▲</i></>}
+                        </span>
+                        <small>{treatmentPhase === 0 ? "Baseline: 0" : "0 ADA / 19 CID"}</small>
+                      </div>
+                      <div className="agent-pill cni">
+                        <b>Cyclosporine</b>
+                        <span>
+                          {treatmentPhase === 0 ? "0" : <>4 <i className="trend-up cni-arrow">▲</i></>}
+                        </span>
+                        <small>{treatmentPhase === 0 ? "Baseline: 0" : "0 ADA / 4 CID"}</small>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="imt-advancement-callout">
+                  <header><span>SECOND-AGENT ADDITION · DURING FOLLOW-UP</span></header>
+                  <div className="imt-advancement-values">
+                    <strong>41%</strong><span>ADA</span><b>vs</b><strong>29%</strong><span>CID</span>
+                  </div>
+                  <footer>HR 1.68 · 95% CI 0.98–2.86 · P = 0.06</footer>
+                </div>
+
+                <div className="imt-dose-escalation-callout">
+                  <header><span>CID · ANTIMETABOLITE DOSE ESCALATION</span><strong>56/85 <small>(66%)</small></strong></header>
+                  <div className="imt-dose-breakdown">
+                    <span><b>AZA</b> 1/1</span>
+                    <span><b>MTX</b> 32/43 <i>(74%)</i></span>
+                    <span><b>MMF</b> 25/41 <i>(61%)</i></span>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
-            <aside className="prednisone-exposure" aria-label="Prednisone exposure by treatment group">
-              <header><span>PREDNISONE EXPOSURE</span><small>MEAN DAILY DOSE · ENTIRE TRIAL</small></header>
-              <div className="exposure-row ada-exposure"><span>ADA</span><strong>11.8 <i>mg/day</i></strong><div><i /></div><small>95% CI 10.5–13.2</small></div>
-              <div className="exposure-row cid-exposure"><span>CID</span><strong>13.8 <i>mg/day</i></strong><div><i /></div><small>95% CI 12.3–15.4</small></div>
-              <div className="cumulative-dose"><article><span>ADA · 1 YEAR</span><strong>4.31 g</strong></article><article><span>CID · 1 YEAR</span><strong>5.04 g</strong></article></div>
-              <p>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</p>
-              <div className="month12-dose"><span>AT 12 MONTHS</span><strong>7.5 mg/day</strong><small>median in both groups still receiving prednisone</small></div>
-            </aside>
-
-            <footer className="treatment-followup">
-              <article><span>SECOND DRUG ADDED</span><strong><b>41%</b> ADA monotherapy <i>vs</i> <b>29%</b> CID monotherapy</strong><small>HR 1.68 · P = 0.06</small></article>
-              <article><span>CID DOSE ADVANCEMENT</span><strong><b>66%</b> escalated their antimetabolite</strong><small>56 / 85 participants · MTX 74% · MMF 61%</small></article>
-              <article><span>REGIONAL CORTICOSTEROID</span><strong><b>27</b> ADA injections <i>vs</i> <b>25</b> CID injections</strong><small>ADA: 19 eyes / 13 people · CID: 20 eyes / 13 people</small></article>
-            </footer>
           </section>
         </section>
 
@@ -1305,42 +1795,96 @@ export default function Home() {
         </section>
 
         <section id="advancement" className="scene advancement-scene">
-          <div className="scene-copy advancement-copy">
+
+          {/* ── Ambient glow layers ── */}
+          <div className="adv-glow adv-glow-left" aria-hidden="true" />
+          <div className="adv-glow adv-glow-right" aria-hidden="true" />
+
+          {/* ── Top header strip ── */}
+          <header className="adv-header">
             <p className="eyebrow"><span /> 19 — RESULTS / IMMUNOSUPPRESSION ADVANCEMENT</p>
-            <h2>Same starting point.<br /><em>Different next step.</em></h2>
-            <p className="lede">Among participants with no immunosuppressive drug at baseline, advancement occurred less often with ADA.</p>
+            <h2>ADA held steady.<br /><em>CID escalated.</em></h2>
+            <p className="adv-lede">Among participants with no immunosuppression at baseline — how often did each arm need to escalate treatment?</p>
+          </header>
+
+          {/* ── Context chip ── */}
+          <div className="adv-context" aria-label="Stratum: no immunosuppressive drug at baseline">
+            <i aria-hidden="true" />
+            <span>IMMUNOSUPPRESSION ADVANCEMENT</span>
+            <i aria-hidden="true" />
           </div>
 
-          <section className="advancement-stage" aria-label="Immunosuppression advancement among participants with no baseline immunosuppressive drug">
-            <header className="advancement-origin">
-              <span>NO IMMUNOSUPPRESSION AT BASELINE</span>
-              <strong>FIRST ADVANCEMENT AFTER RANDOMIZATION</strong>
-            </header>
+          {/* ── The main chart ── */}
+          <div className="adv-chart" role="img" aria-label="Bar chart: 37 advancements in ADA group vs 60 in CID group">
 
-            <div className="advancement-arms">
-              <article className="advancement-arm ada-advancement">
-                <header><span>ADA ARM</span><b>ADA ONLY</b></header>
-                <div className="advancement-route"><i /><span>IF ADVANCEMENT NEEDED</span><i /></div>
-                <strong>ADD A SECOND AGENT</strong>
-                <footer><b>37</b><span>participants with ≥1 advancement</span></footer>
-              </article>
-
-              <article className="advancement-arm cid-advancement">
-                <header><span>CID ARM</span><b>START ANTIMETABOLITE</b></header>
-                <div className="advancement-route"><i /><span>IF ADVANCEMENT NEEDED</span><i /></div>
-                <strong>ESCALATE THE DOSE</strong>
-                <footer><b>60</b><span>participants with ≥1 advancement</span></footer>
-              </article>
+            {/* ADA column */}
+            <div className="adv-col adv-col-ada">
+              <div className="adv-bar-wrap">
+                <div className="adv-bar-label-top">
+                  <span className="adv-bar-arm">ADA</span>
+                  <strong className="adv-bar-num">37</strong>
+                  <span className="adv-bar-unit">advancements</span>
+                </div>
+                <div className="adv-bar adv-bar-ada" style={{ "--bar-h": "61.7%" } as React.CSSProperties} aria-hidden="true">
+                  <div className="adv-bar-fill" />
+                  <div className="adv-bar-shine" aria-hidden="true" />
+                </div>
+              </div>
+              <div className="adv-bar-footer">
+                <span className="adv-bar-desc">first step: add 2nd agent</span>
+              </div>
             </div>
 
-            <aside className="advancement-effect">
-              <span>TIME TO ≥1 ADVANCEMENT</span>
-              <strong><small>HR</small> 0.38</strong>
-              <div><b>95% CI 0.25–0.57</b><em>P &lt; 0.001</em></div>
-              <p>The contrast may reflect both protocol-defined first steps and differential treatment efficacy.</p>
-            </aside>
-          </section>
+            {/* Center: HR badge */}
+            <div className="adv-center" aria-label="Hazard ratio 0.38, highly significant">
+              <div className="adv-hr-block">
+                <span className="adv-hr-label">HAZARD RATIO</span>
+                <div className="adv-hr-value">
+                  <small>HR</small>
+                  <strong>0.38</strong>
+                </div>
+                <div className="adv-hr-badge">
+                  <i aria-hidden="true" />
+                  <span>P &lt; 0.001</span>
+                </div>
+                <div className="adv-hr-ci">
+                  <span>95% CI</span>
+                  <strong>0.25 – 0.57</strong>
+                </div>
+                <p className="adv-hr-meaning">ADA arm had <em>38%</em> the rate of immunosuppression advancement</p>
+              </div>
+              {/* vertical rule */}
+              <div className="adv-center-line" aria-hidden="true" />
+            </div>
+
+            {/* CID column */}
+            <div className="adv-col adv-col-cid">
+              <div className="adv-bar-wrap">
+                <div className="adv-bar-label-top">
+                  <span className="adv-bar-arm">CID</span>
+                  <strong className="adv-bar-num">60</strong>
+                  <span className="adv-bar-unit">advancements</span>
+                </div>
+                <div className="adv-bar adv-bar-cid" style={{ "--bar-h": "100%" } as React.CSSProperties} aria-hidden="true">
+                  <div className="adv-bar-fill" />
+                  <div className="adv-bar-shine" aria-hidden="true" />
+                </div>
+              </div>
+              <div className="adv-bar-footer">
+                <span className="adv-bar-desc">first step: escalate dose</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ── Bottom annotation ── */}
+          <div className="adv-annotation">
+            <span className="adv-annotation-arrow adv-down">↓ FEWER = BETTER</span>
+            <span className="adv-annotation-note">Fewer advancements required = drug is controlling disease more effectively</span>
+          </div>
+
         </section>
+
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
@@ -1362,43 +1906,247 @@ export default function Home() {
             </article>
 
             <article className="edema-module">
-              <header><span>MACULAR EDEMA</span><small>ODDS VERSUS BASELINE · LOWER IS BETTER</small></header>
-              <div className="edema-months">
-                <section>
-                  <span>6 MONTHS</span>
-                  <div className="edema-orbits"><i style={{ "--edema": ".46" } as React.CSSProperties}><b>ADA</b><strong>0.46</strong></i><i style={{ "--edema": ".76" } as React.CSSProperties}><b>CID</b><strong>0.76</strong></i></div>
-                  <p>Ratio of ORs <b>0.60</b> · P = 0.027</p>
-                </section>
-                <section>
-                  <span>12 MONTHS</span>
-                  <div className="edema-orbits"><i style={{ "--edema": ".34" } as React.CSSProperties}><b>ADA</b><strong>0.34</strong></i><i style={{ "--edema": ".63" } as React.CSSProperties}><b>CID</b><strong>0.63</strong></i></div>
-                  <p>Ratio of ORs <b>0.55</b> · P = 0.028</p>
-                </section>
+              <header><span>MACULAR EDEMA RESOLUTION</span><small>ODDS OF EDEMA VS BASELINE · LOWER IS BETTER</small></header>
+              <div className="edema-comparison">
+                {/* 6 Months Column */}
+                <div className="edema-time-col">
+                  <span className="edema-time-title">6 MONTHS</span>
+                  <div className="edema-visual-group">
+                    <div className="edema-bar-container">
+                      <div className="edema-bar-track">
+                        <div className="edema-bar-fill edema-bar-ada" style={{ "--val": "46%" } as React.CSSProperties}>
+                          <span className="edema-bar-val">0.46</span>
+                        </div>
+                      </div>
+                      <span className="edema-bar-arm">ADA</span>
+                    </div>
+
+                    <div className="edema-bar-container">
+                      <div className="edema-bar-track">
+                        <div className="edema-bar-fill edema-bar-cid" style={{ "--val": "76%" } as React.CSSProperties}>
+                          <span className="edema-bar-val">0.76</span>
+                        </div>
+                      </div>
+                      <span className="edema-bar-arm">CID</span>
+                    </div>
+                  </div>
+                  <div className="edema-stats-badge">
+                    <span>RATIO OF ORs</span>
+                    <strong>0.60</strong>
+                    <small>P = 0.027</small>
+                  </div>
+                </div>
+
+                {/* 12 Months Column */}
+                <div className="edema-time-col">
+                  <span className="edema-time-title">12 MONTHS</span>
+                  <div className="edema-visual-group">
+                    <div className="edema-bar-container">
+                      <div className="edema-bar-track">
+                        <div className="edema-bar-fill edema-bar-ada" style={{ "--val": "34%" } as React.CSSProperties}>
+                          <span className="edema-bar-val">0.34</span>
+                        </div>
+                      </div>
+                      <span className="edema-bar-arm">ADA</span>
+                    </div>
+
+                    <div className="edema-bar-container">
+                      <div className="edema-bar-track">
+                        <div className="edema-bar-fill edema-bar-cid" style={{ "--val": "63%" } as React.CSSProperties}>
+                          <span className="edema-bar-val">0.63</span>
+                        </div>
+                      </div>
+                      <span className="edema-bar-arm">CID</span>
+                    </div>
+                  </div>
+                  <div className="edema-stats-badge">
+                    <span>RATIO OF ORs</span>
+                    <strong>0.55</strong>
+                    <small>P = 0.028</small>
+                  </div>
+                </div>
               </div>
-              <footer>Both groups improved further by month 12.</footer>
+              <footer className="edema-module-footer">Both groups improved further by month 12, with ADA sustaining a clear advantage.</footer>
             </article>
+          </section>
+        </section>
+
+        <section id="safety-outcomes" className="scene safety-outcomes-scene">
+          <div className="scene-copy safety-outcomes-copy">
+            <p className="eyebrow"><span /> 21 — RESULTS / SAFETY OUTCOMES</p>
+            <h2>Protect the vision.<br /><em>Watch the exceptions.</em></h2>
+            <p className="lede">Cataract surgery and moderate visual decline were more frequent with CID; severe decline was uncommon and not significantly different.</p>
+          </div>
+
+          <section className="safety-outcomes-stage" aria-label="Safety outcomes comparing adalimumab and conventional immunosuppression">
+            <div className="safety-outcomes-primary">
+              <header><span>BETWEEN-GROUP SAFETY SIGNALS</span><small>ADA vs CID · CUMULATIVE PROPORTION</small></header>
+              <div className="safety-metric-row safety-significant">
+                <div><b>CATARACT SURGERY</b><small>phakic eyes</small></div>
+                <div className="safety-bars"><span><i style={{ "--bar": "15%" } as React.CSSProperties}>2%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "85%" } as React.CSSProperties}>11%</i><em>CID</em></span></div>
+                <strong>P = 0.009</strong>
+              </div>
+              <div className="safety-metric-row safety-significant">
+                <div><b>≥15-LETTER BCVA LOSS</b><small>3-line decrease</small></div>
+                <div className="safety-bars"><span><i style={{ "--bar": "46%" } as React.CSSProperties}>6%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "100%" } as React.CSSProperties}>13%</i><em>CID</em></span></div>
+                <strong>P = 0.026</strong>
+              </div>
+              <div className="safety-metric-row">
+                <div><b>≥30-LETTER BCVA LOSS</b><small>6-line decrease</small></div>
+                <div className="safety-bars"><span><i style={{ "--bar": "43%" } as React.CSSProperties}>3%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "100%" } as React.CSSProperties}>7%</i><em>CID</em></span></div>
+                <strong>P = 0.43</strong>
+              </div>
+            </div>
+
+            <div className="safety-outcomes-secondary">
+              <article className="safety-reasons">
+                <header><span>6-LINE DECLINE · MOST COMMON REASONS</span><small>14 eyes had additional follow-up</small></header>
+                <div className="reason-grid">
+                  <div><strong>8</strong><span>CATARACT</span><small>2 ADA · 6 CID</small></div>
+                  <div><strong>4</strong><span>UVEITIS ACTIVITY</span></div>
+                  <div><strong>2</strong><span>VITREOUS HEMORRHAGE</span></div>
+                </div>
+              </article>
+              <article className="safety-recovery">
+                <header><span>FOLLOW-UP STATUS</span><small>among 14 eyes</small></header>
+                <div className="recovery-track"><i style={{ "--bar": "57%" } as React.CSSProperties} /><i style={{ "--bar": "14%" } as React.CSSProperties} /><i style={{ "--bar": "29%" } as React.CSSProperties} /></div>
+                <div className="recovery-legend"><span><b>8</b> regained baseline</span><span><b>2</b> within 10 letters</span><span><b>4</b> ≥3 lines below</span></div>
+              </article>
+            </div>
+            <footer className="safety-outcomes-footnote">Other ocular events occurred at similar rates in both treatment groups.</footer>
           </section>
         </section>
 
         <section id="discussion" className="scene discussion-scene">
           <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 21 — DISCUSSION</p>
+            <p className="eyebrow"><span /> 22 — DISCUSSION</p>
             <h2>Speed matters.<br /><em>So does nuance.</em></h2>
-            <p className="lede">Adalimumab reached steroid-sparing control faster. By 12 months, conventional therapy was catching up—suggesting a difference in rapidity, not necessarily ultimate efficacy.</p>
+            <p className="lede">Adalimumab reached corticosteroid-sparing control sooner, while both strategies achieved high success by 12 months.</p>
           </div>
           <div className="discussion-grid">
-            <article className="signal-card"><span>01 / VELOCITY</span><strong>Faster control</strong><p>Time to successful steroid sparing favored adalimumab: HR 1.39; P = 0.032.</p><i /></article>
-            <article className="signal-card"><span>02 / VISION</span><strong>Both preserved vision</strong><p>Good visual acuity was maintained in both groups with modest gains.</p><i /></article>
-            <article className="signal-card"><span>03 / SAFETY</span><strong>Generally well tolerated</strong><p>Infection and hospitalization rates did not differ significantly.</p><i /></article>
-            <article className="signal-card warning-card"><span>04 / LIMITS</span><strong>Interpret with care</strong><p>Unmasked treatment, heterogeneous conventional regimens, and differential loss to follow-up.</p><i /></article>
+            <article className="signal-card"><span>01 / CORTICOSTEROID SPARING</span><strong>Earlier with ADA</strong><p>At 6 months, successful sparing favored ADA (69% vs 54%; P = 0.029). By 12 months, both groups were high (86% vs 77%; P = 0.077), but ADA reached the outcome faster (HR 1.39; P = 0.032).</p><i /></article>
+            <article className="signal-card"><span>02 / DISCONTINUATION</span><strong>The gap emerged later</strong><p>Successful discontinuation was similar at 6 months (15% vs 11%; P = 0.30), then favored ADA at 12 months (55% vs 40%; P = 0.028).</p><i /></article>
+            <article className="signal-card warning-card"><span>03 / TREATMENT ADVANCEMENT</span><strong>Protocol shaped the pathway</strong><p>Without baseline immunosuppression, second-agent additions were more frequent with ADA (41% vs 29%). ADA had a fixed adult dose; CID escalated an antimetabolite before adding a second agent.</p><i /></article>
+            <article className="signal-card"><span>04 / INTERPRETATION</span><strong>Not simply “more drugs”</strong><p>Faster sparing and greater discontinuation were qualitatively similar in both baseline-immunosuppression strata. Advancement itself was more frequent with CID (60 vs 37; HR 0.38; P &lt; 0.001).</p><i /></article>
           </div>
-          <p className="discussion-footnote">Notable signals: treatment intolerance occurred only in the CID arm (8 participants); liver enzyme elevation was more frequent with CID (10% vs 2%).</p>
+          <p className="discussion-footnote">The treatment contrast reflects both therapeutic effect and how each regimen was advanced after relapse.</p>
+        </section>
+
+        <section id="discussion-safety" className="scene discussion-scene discussion-two-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 23 — DISCUSSION / VISUAL &amp; SAFETY</p>
+            <h2>Vision held.<br /><em>Risk had context.</em></h2>
+            <p className="lede">Both strategies maintained visual acuity. The safety differences track with cataract burden, steroid exposure, and baseline lens status.</p>
+          </div>
+          <div className="discussion-grid discussion-two-grid">
+            <article className="signal-card"><span>01 / VISUAL ACUITY</span><strong>Both groups held vision</strong><p>BCVA was maintained in both arms, although CID had more eyes with a loss of at least 3 lines.</p><i /></article>
+            <article className="signal-card warning-card"><span>02 / CATARACT</span><strong>Exposure may matter</strong><p>Cataract surgery was more frequent with CID (11% vs 2%). A greater baseline cataract burden in CID may also have contributed.</p><i /></article>
+            <article className="signal-card"><span>03 / STEROID CONTEXT</span><strong>A modest exposure gap</strong><p>Mean prednisone exposure was 11.8 mg/day with ADA versus 13.8 mg/day with CID (IRR 0.86; P = 0.061), a cumulative difference of 0.73 g.</p><i /></article>
+            <article className="signal-card"><span>04 / SYSTEMIC TOLERABILITY</span><strong>Infrequent events</strong><p>Systemic side effects were uncommon in both groups. Toxicity-related discontinuation occurred only with CID, including three cases of elevated liver enzymes.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">The safety signal is clinically plausible, but the exposure difference was modest and the groups were not identical at baseline.</p>
+        </section>
+
+        <section id="limitations-1" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 24 — LIMITATIONS / DESIGN</p>
+            <h2>Open-label by design.<br /><em>Consistency was engineered.</em></h2>
+            <p className="lede">Treatment administration made masking impossible, while disease activity required a disease-specific imaging pathway.</p>
+          </div>
+          <div className="limitation-visual visual-calibration" aria-hidden="true"><div className="visual-label">CONSISTENCY LAYER</div><div className="scan-orbit"><i /><i /><b>MTQAC</b></div><div className="visual-flow"><span>CLINICAL CENTER</span><em>→</em><span>READING CENTER</span><em>→</em><span>FEEDBACK</span></div></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / UNMASKED TREATMENT</span><strong>Staff and participants knew assignment</strong><p>Administration differed between ADA and CID, and among the conventional drugs, so the trial was unmasked.</p><i /></article>
+            <article className="signal-card"><span>02 / IMAGING PATHWAY</span><strong>Not one image set for everyone</strong><p>Ophthalmic imaging was selected according to the participant’s uveitic disease rather than a single universal panel.</p><i /></article>
+            <article className="signal-card"><span>03 / ACTIVITY ASSESSMENT</span><strong>Determined at each center</strong><p>Disease activity was assessed by the clinical center, introducing a potential source of interpretation variability.</p><i /></article>
+            <article className="signal-card"><span>04 / MITIGATION</span><strong>MTQAC added a consistency layer</strong><p>The Medical Therapy Quality Assurance Committee monitored imaging interpretation, activity determination, and protocol adherence, providing corrective feedback as needed.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">The MTQAC was designed to reduce—but cannot completely eliminate—the effects of an unmasked, center-assessed trial.</p>
+        </section>
+
+        <section id="limitations-2" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 25 — LIMITATIONS / INTERPRETATION</p>
+            <h2>Perception can shift.<br /><em>The signal held.</em></h2>
+            <p className="lede">Different routes of administration and prior treatment experience could influence how participants reported quality of life.</p>
+          </div>
+          <div className="limitation-visual visual-perception" aria-hidden="true"><div className="visual-label">POTENTIAL PERCEPTION EFFECT</div><div className="route-choice"><span><b>ADA</b><i>⌁</i><small>INJECTION</small></span><em>↔</em><span><b>CID</b><i>≡</i><small>ORAL AGENT</small></span></div><p><strong>22%</strong> entered after requiring a second CID agent</p></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / QUALITY OF LIFE</span><strong>Route may shape perception</strong><p>Unmasked pills versus subcutaneous injections could favor ADA through perceived efficacy—or favor oral agents through convenience. No clinically meaningful QOL difference was observed.</p><i /></article>
+            <article className="signal-card"><span>02 / PRIOR CID EXPERIENCE</span><strong>A second drug was not failure</strong><p>Twenty-two percent entered after needing a second conventional agent. Partial success on an antimetabolite may have been perceived as treatment failure, even when it was not ineffective.</p><i /></article>
+            <article className="signal-card"><span>03 / PROTOCOL GUARDRAILS</span><strong>Every step was specified</strong><p>Clinical examination, imaging interpretation, corticosteroid tapering, and immunosuppression advancement were defined in the protocol.</p><i /></article>
+            <article className="signal-card"><span>04 / CONSISTENCY CHECK</span><strong>Results held across strata</strong><p>MTQAC monitoring and qualitatively similar results in both baseline-immunosuppression strata suggest these potential biases did not drive the findings.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">Interpretation remains cautious: the trial was unmasked, but protocol detail and quality assurance helped contain bias.</p>
+        </section>
+
+        <section id="limitations-3" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 26 — LIMITATIONS / DOSE &amp; TIME</p>
+            <h2>Time to control.<br /><em>Not the final ceiling.</em></h2>
+            <p className="lede">The CID pathway allowed stepwise antimetabolite escalation, making early speed and long-term efficacy distinct questions.</p>
+          </div>
+          <div className="limitation-visual visual-timing" aria-hidden="true"><div className="visual-label">TIME IS PART OF THE COMPARISON</div><div className="stair-track"><i /><i /><i /><i /><b>6M</b><b>12M</b></div><div className="timing-copy"><span>STEPWISE CID ESCALATION</span><span>PRIMARY OUTCOME</span><span>FOLLOW-UP ENDS</span></div></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / DOSE ESCALATION</span><strong>A staged CID pathway</strong><p>Antimetabolites followed a two-step escalation approach, similar to common clinical practice, rather than starting immediately at the maximum dose.</p><i /></article>
+            <article className="signal-card"><span>02 / PRIMARY WINDOW</span><strong>Six months was the test</strong><p>The protocol allowed escalation while preserving enough follow-up to assess successful corticosteroid sparing by the six-month primary outcome.</p><i /></article>
+            <article className="signal-card"><span>03 / RAPIDITY VS EFFICACY</span><strong>CID was catching up</strong><p>ADA achieved sparing sooner, but the 12-month proportions were closer—suggesting a difference in rapidity rather than necessarily ultimate efficacy.</p><i /></article>
+            <article className="signal-card"><span>04 / FOLLOW-UP HORIZON</span><strong>The endpoint came early</strong><p>ADA had higher corticosteroid discontinuation at 12 months, but follow-up ended there, so later CID convergence could not be determined.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">The trial answers which strategy works sooner; it cannot fully answer whether longer follow-up would narrow the discontinuation gap.</p>
+        </section>
+
+        <section id="limitations-4" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 27 — LIMITATIONS / CID HETEROGENEITY</p>
+            <h2>One CID arm.<br /><em>Several pathways.</em></h2>
+            <p className="lede">Conventional immunosuppression reflected clinical practice, but its mix of agents introduces an important interpretive question.</p>
+          </div>
+          <div className="limitation-visual visual-agents" aria-hidden="true"><div className="visual-label">CID IS A TREATMENT FAMILY</div><div className="agent-core">CID</div><span className="agent-orbit agent-a">ANTIMETABOLITES</span><span className="agent-orbit agent-b">CNI <b>21%</b></span><span className="agent-orbit agent-c">CYCLOSPORINE <b>4%</b></span></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / MIXED AGENTS</span><strong>Clinical care is not one drug</strong><p>CID included multiple immunosuppressive agents; calcineurin inhibitors were used in 21% of participants, while most CID monotherapy used antimetabolites.</p><i /></article>
+            <article className="signal-card"><span>02 / EFFICACY UNCERTAINTY</span><strong>Agents may not be equivalent</strong><p>Prior evidence suggested similar efficacy among antimetabolites, but raised uncertainty about cyclosporine and tacrolimus relative to those agents.</p><i /></article>
+            <article className="signal-card"><span>03 / SMALL CYCLOSPORINE SIGNAL</span><strong>Limited exposure to cyclosporine</strong><p>Cyclosporine was the assigned treatment in only 4% of participants, limiting its ability to drive the overall comparison.</p><i /></article>
+            <article className="signal-card"><span>04 / BALANCED READ</span><strong>Little evidence of distortion</strong><p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata, suggesting CID heterogeneity did not unduly influence the trial.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">The CID arm was heterogeneous by design, yet the small cyclosporine contribution and consistent strata results reduce concern about major distortion.</p>
+        </section>
+
+        <section id="limitations-5" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 28 — LIMITATIONS / FOLLOW-UP</p>
+            <h2>Missing follow-up.<br /><em>Tested from every angle.</em></h2>
+            <p className="lede">Loss to follow-up was higher with CID, creating a potential source of bias that required careful interpretation.</p>
+          </div>
+          <div className="limitation-visual visual-followup" aria-hidden="true"><div className="visual-label">POTENTIAL ATTRITION BIAS</div><div className="followup-lanes"><span><b>ADA</b><i /><strong>1</strong><small>IMMEDIATE DROPOUT</small></span><span><b>CID</b><i /><strong>3</strong><small>IMMEDIATE DROPOUTS</small></span></div><p><b>8</b> treatment discontinuations — all CID</p></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / DIFFERENTIAL FOLLOW-UP</span><strong>More losses with CID</strong><p>Follow-up losses were numerically higher in the CID arm than in the ADA arm, which could bias an unmasked comparative trial.</p><i /></article>
+            <article className="signal-card"><span>02 / IMMEDIATE DROPOUT</span><strong>Assignment preference may matter</strong><p>Some participants may have wanted the newer treatment: three CID participants versus one ADA participant dropped out immediately after randomization.</p><i /></article>
+            <article className="signal-card"><span>03 / TOXICITY</span><strong>All treatment discontinuations were CID</strong><p>Drug toxicity may also have contributed: all eight participants who discontinued assigned treatment were in the CID group.</p><i /></article>
+            <article className="signal-card"><span>04 / ROBUSTNESS</span><strong>Findings were consistent</strong><p>Results remained consistent across multiple analyses built on different assumptions about missing data, making major distortion from dropout unlikely.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">Differential dropout remains a limitation, but sensitivity analyses did not suggest that it substantially changed the trial conclusions.</p>
+        </section>
+
+        <section id="limitations-6" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 29 — LIMITATIONS / IMMUNOGENICITY</p>
+            <h2>One unanswered<br /><em>antibody question.</em></h2>
+            <p className="lede">The study did not measure anti-adalimumab antibodies, leaving an important question about durability of response unresolved.</p>
+          </div>
+          <div className="limitation-visual visual-antibody" aria-hidden="true"><div className="visual-label">UNMEASURED IMMUNOGENICITY</div><div className="ada-molecule"><b>ADA</b><i /><i /><i /><i /></div><div className="antibody-note"><strong>78%</strong><span>NO BASELINE<br />IMMUNOSUPPRESSION</span></div><p>ANTIBODIES NOT MEASURED · NO SAMPLES BANKED</p></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / POST-TRIAL EVIDENCE</span><strong>Anti-adalimumab antibodies can matter</strong><p>Case series in uveitis have since described anti-adalimumab antibodies, which may lower circulating drug levels and contribute to loss of efficacy.</p><i /></article>
+            <article className="signal-card"><span>02 / MONOTHERAPY CONTEXT</span><strong>Most began without IMT</strong><p>At baseline, 78% of participants were not receiving immunosuppression. In the ADA arm, these participants received adalimumab alone.</p><i /></article>
+            <article className="signal-card"><span>03 / COMBINATION THERAPY</span><strong>A second agent may help</strong><p>Several case series suggest a lower occurrence of anti-adalimumab antibodies when a second immunosuppressive agent is used, but this remains unresolved.</p><i /></article>
+            <article className="signal-card"><span>04 / DATA GAP</span><strong>Not measured or banked</strong><p>ADVISE neither measured anti-adalimumab antibodies nor banked blood specimens for later testing. Additional data are needed before changing practice.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">Whether adalimumab monotherapy should be minimized to reduce immunogenicity is an important question for future uveitis studies.</p>
         </section>
 
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 22 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 30 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Release the steroid.</em></h2>
             <p className="lede">Both strategies were effective. Adalimumab delivered faster corticosteroid-sparing control at 6 months and enabled more patients to discontinue corticosteroids by 12 months.</p>
             <blockquote>For shared clinical decisions, the choice is no longer simply “does it work?”—but <b>how quickly, by which route, and at what trade-off?</b></blockquote>
