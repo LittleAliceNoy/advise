@@ -3965,12 +3965,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border-radius: 50%;
 }
 .txrd-ada-donut {
-  background: conic-gradient(#ff565b 0% 88%, #6b171b 88% 100%);
+  background: conic-gradient(#ff565b 0% 2%, rgba(255,255,255,0.09) 2% 100%);
   mask: radial-gradient(circle, transparent 55%, black 56%);
   -webkit-mask: radial-gradient(circle, transparent 55%, black 56%);
 }
 .txrd-cid-donut {
-  background: conic-gradient(#a77cff 0% 87%, #38295d 87% 100%);
+  background: conic-gradient(#a77cff 0% 79%, #38295d 79% 100%);
   mask: radial-gradient(circle, transparent 55%, black 56%);
   -webkit-mask: radial-gradient(circle, transparent 55%, black 56%);
 }
@@ -5036,4 +5036,676 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   .txr-dashboard-scene .txrd-outcome footer {
     font-size: clamp(.44rem, .48vw, .54rem);
   }
+}
+
+/* Page 17 — outcome and footer legibility.
+   Keep the sequence number visually attached to its heading and make the
+   evidence lines readable at presentation distance. */
+.txr-dashboard-scene .txrd-outcome-header {
+  gap: .22rem;
+  align-items: flex-start;
+}
+
+.txr-dashboard-scene .txrd-outcome-header > b {
+  flex: 0 0 auto;
+  margin-right: .08rem;
+}
+
+.txr-dashboard-scene .txrd-outcome footer {
+  font-size: clamp(.58rem, .62vw, .7rem);
+  line-height: 1.3;
+  letter-spacing: -.018em;
+}
+
+.txr-dashboard-scene .txrd-footer-card {
+  gap: .68rem;
+}
+
+.txr-dashboard-scene .txrd-footer-card > div strong {
+  font-size: clamp(.72rem, .76vw, .86rem);
+  line-height: 1.15;
+}
+
+.txr-dashboard-scene .txrd-footer-card > div span,
+.txr-dashboard-scene .txrd-footer-highlights li {
+  font-size: clamp(.6rem, .64vw, .72rem);
+  line-height: 1.34;
+}
+
+.txr-dashboard-scene .txrd-footer-highlights ul {
+  gap: .18rem;
+  margin-top: .28rem;
+}
+
+.txr-dashboard-scene .txrd-footer-card svg {
+  width: 29px;
+  height: 29px;
+}
+
+.txr-dashboard-scene .txrd-footer-stats strong {
+  font-size: clamp(1.18rem, 1.3vw, 1.48rem) !important;
+}
+
+/* Page 17 — Table 2 treatment labels and denominators. */
+.txr-dashboard-scene .txrd-pathway-info small span {
+  color: #858585;
+  white-space: nowrap;
+}
+
+.txr-dashboard-scene .txrd-legend {
+  padding-top: .2rem;
+}
+
+.txr-dashboard-scene .txrd-legend > strong {
+  color: #c8c8c8;
+  font-size: clamp(.46rem, .5vw, .57rem);
+  font-weight: 600;
+  letter-spacing: .045em;
+  line-height: 1.15;
+}
+
+.txr-dashboard-scene .txrd-footer-regional-only {
+  grid-template-columns: 1fr;
+}
+
+.txr-dashboard-scene .txrd-footer-regional-only .txrd-footer-card {
+  border-right: 0;
+  padding-right: 0;
+}
+
+/* Page 17 — give the treatment pathways enough internal breathing room. */
+.txr-dashboard-scene .txrd-grid-main {
+  flex-basis: 30vh;
+  height: 30vh;
+  margin-bottom: .9vh;
+}
+
+.txr-dashboard-scene .txrd-grid-outcomes {
+  flex-basis: 20.6vh;
+  height: 20.6vh;
+  margin-bottom: 1vh;
+}
+
+.txr-dashboard-scene .txrd-footer {
+  flex-basis: 10.8vh;
+  height: 10.8vh;
+  min-height: 10.8vh;
+}
+
+.txr-dashboard-scene .txrd-pathways .txrd-arms {
+  padding: .72rem .86rem;
+  gap: .62rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-card {
+  padding: .68rem .78rem;
+  gap: .4rem .75rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-info {
+  padding-bottom: .3rem;
+}
+
+/* Page 17 — keep each head-to-head comparison visually paired. */
+.txr-dashboard-scene .txrd-outcome-steroid .txrd-vs,
+.txr-dashboard-scene .txrd-outcome-second-agent .txrd-vs {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: center;
+  column-gap: clamp(.72rem, 1vw, 1.05rem);
+}
+
+.txr-dashboard-scene .txrd-outcome-steroid .txrd-vs i,
+.txr-dashboard-scene .txrd-outcome-second-agent .txrd-vs i {
+  margin: 0;
+}
+
+/* Page 17 — treatment pathways deliberately distinguish biologic assignment
+   from conventional-IMT composition. */
+.txr-dashboard-scene .txrd-pathways header span {
+  text-transform: uppercase;
+}
+
+.txr-dashboard-scene .txrd-pathways .txrd-arms {
+  gap: .58rem;
+}
+
+.txr-dashboard-scene .txrd-pathways .txrd-pathway-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .6rem .72rem;
+  gap: .36rem;
+  overflow: hidden;
+}
+
+.txr-dashboard-scene .txrd-pathway-kicker,
+.txr-dashboard-scene .txrd-pathway-hero {
+  display: flex;
+  align-items: center;
+}
+
+.txr-dashboard-scene .txrd-pathway-kicker {
+  justify-content: space-between;
+  color: #b7b7b7;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(.43rem, .47vw, .54rem);
+  letter-spacing: .085em;
+}
+
+.txr-dashboard-scene .txrd-pathway-kicker span:last-child {
+  color: #777;
+  font-size: .9em;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero {
+  min-height: 3.8rem;
+  gap: .58rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: .12rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy small,
+.txr-dashboard-scene .txrd-pathway-hero-copy span,
+.txr-dashboard-scene .txrd-pathway-secondary,
+.txr-dashboard-scene .txrd-pathway-composition {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy small {
+  color: #888;
+  font-size: clamp(.4rem, .44vw, .5rem);
+  letter-spacing: .07em;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy strong {
+  color: #f2f2f2;
+  font-size: clamp(.7rem, .8vw, .92rem);
+  letter-spacing: .035em;
+  line-height: 1.08;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy span {
+  color: #aaa;
+  font-size: clamp(.44rem, .48vw, .55rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-hero > b {
+  color: #fff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(1.38rem, 1.62vw, 1.86rem);
+  line-height: 1;
+}
+
+.txr-dashboard-scene .txrd-ada-orbit {
+  position: relative;
+  width: clamp(3rem, 3.55vw, 3.75rem);
+  height: clamp(3rem, 3.55vw, 3.75rem);
+  flex: 0 0 auto;
+  border: 2px solid #ff565b;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,86,91,.28) 0 13%, transparent 14%), radial-gradient(circle, rgba(255,86,91,.12), transparent 68%);
+  box-shadow: 0 0 1rem rgba(255, 55, 61, .24);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit::before,
+.txr-dashboard-scene .txrd-ada-orbit::after,
+.txr-dashboard-scene .txrd-ada-orbit i {
+  position: absolute;
+  content: "";
+  display: block;
+  border: 1px solid rgba(255,86,91,.55);
+  border-radius: 50%;
+}
+
+.txr-dashboard-scene .txrd-ada-orbit::before { inset: 16%; }
+.txr-dashboard-scene .txrd-ada-orbit::after { inset: 33%; background: #ff565b; box-shadow: 0 0 .6rem rgba(255,86,91,.65); }
+.txr-dashboard-scene .txrd-ada-orbit i:first-child { inset: -13%; border-color: rgba(255,86,91,.22); }
+.txr-dashboard-scene .txrd-ada-orbit i:last-child { inset: -25% 7%; border-color: rgba(255,86,91,.16); }
+
+.txr-dashboard-scene .txrd-pathway-cid .txrd-donut {
+  width: clamp(3rem, 3.55vw, 3.75rem);
+  height: clamp(3rem, 3.55vw, 3.75rem);
+  flex: 0 0 auto;
+}
+
+.txr-dashboard-scene .txrd-pathway-secondary {
+  padding-top: .32rem;
+  border-top: 1px solid rgba(255,86,91,.22);
+  color: #c2a0a2;
+  font-size: clamp(.42rem, .46vw, .53rem);
+  letter-spacing: .055em;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding-top: .3rem;
+  border-top: 1px solid rgba(167,124,255,.24);
+  color: #b7b7b7;
+  font-size: clamp(.42rem, .46vw, .53rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-composition > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: .38rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition small { color: #8d8d8d; }
+.txr-dashboard-scene .txrd-pathway-composition b { color: #fff; }
+
+/* Keep the strategy hierarchy visible within both pathway cards. */
+.txr-dashboard-scene .txrd-pathways .txrd-pathway-card {
+  justify-content: flex-start;
+  padding: .42rem .7rem;
+  gap: .18rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-kicker {
+  font-size: clamp(.38rem, .42vw, .48rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-hero {
+  min-height: 2.82rem;
+  gap: .46rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy { gap: .06rem; }
+.txr-dashboard-scene .txrd-pathway-hero-copy strong { font-size: clamp(.64rem, .73vw, .82rem); }
+.txr-dashboard-scene .txrd-pathway-hero > b { font-size: clamp(1.22rem, 1.43vw, 1.62rem); }
+
+.txr-dashboard-scene .txrd-ada-orbit,
+.txr-dashboard-scene .txrd-pathway-cid .txrd-donut {
+  width: clamp(2.7rem, 3.12vw, 3.3rem);
+  height: clamp(2.7rem, 3.12vw, 3.3rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-secondary,
+.txr-dashboard-scene .txrd-pathway-composition {
+  padding-top: .18rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition { gap: .08rem; }
+
+.txr-dashboard-scene .txrd-pathway-cid .txrd-cid-donut {
+  background: conic-gradient(#a77cff 0% 79%, #7459b8 79% 100%);
+}
+
+.txr-dashboard-scene .txrd-pathway-composition .txrd-swatch-darkpurple {
+  background: #7459b8;
+}
+
+/* Fit every pathway annotation inside the presentation-frame card height. */
+.txr-dashboard-scene .txrd-pathways .txrd-pathway-card {
+  padding: .22rem .62rem;
+  gap: .1rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-kicker {
+  font-size: clamp(.34rem, .38vw, .43rem);
+  line-height: 1;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero {
+  min-height: 2.34rem;
+  gap: .38rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy small {
+  font-size: clamp(.35rem, .39vw, .44rem);
+  line-height: 1.05;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy strong {
+  font-size: clamp(.58rem, .67vw, .76rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy span {
+  font-size: clamp(.38rem, .42vw, .48rem);
+  line-height: 1.05;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero > b {
+  font-size: clamp(1.08rem, 1.25vw, 1.42rem);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit,
+.txr-dashboard-scene .txrd-pathway-cid .txrd-donut {
+  width: clamp(2.28rem, 2.62vw, 2.76rem);
+  height: clamp(2.28rem, 2.62vw, 2.76rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-secondary,
+.txr-dashboard-scene .txrd-pathway-composition {
+  padding-top: .12rem;
+  font-size: clamp(.35rem, .39vw, .45rem);
+  line-height: 1.05;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition { gap: .05rem; }
+.txr-dashboard-scene .txrd-pathway-composition > div { column-gap: .25rem; }
+
+/* Page 17 — ADA orbital motif: quiet technical context, not a hero mark. */
+.txr-dashboard-scene .txrd-ada-orbit {
+  width: clamp(1.88rem, 2.18vw, 2.28rem);
+  height: clamp(1.88rem, 2.18vw, 2.28rem);
+  border-width: 1.25px;
+  border-color: rgba(255, 86, 91, .72);
+  background: radial-gradient(circle, rgba(255,86,91,.09), transparent 68%);
+  box-shadow: 0 0 .38rem rgba(255, 55, 61, .12);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit::before,
+.txr-dashboard-scene .txrd-ada-orbit::after,
+.txr-dashboard-scene .txrd-ada-orbit i {
+  border-width: 1px;
+}
+
+.txr-dashboard-scene .txrd-ada-orbit::before {
+  inset: 17%;
+  border-color: rgba(255,86,91,.25);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit::after {
+  inset: 42%;
+  border: 0;
+  background: rgba(255,86,91,.75);
+  box-shadow: 0 0 .22rem rgba(255,86,91,.22);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit i:first-child {
+  inset: -15%;
+  border-color: rgba(255,86,91,.13);
+}
+
+.txr-dashboard-scene .txrd-ada-orbit i:last-child {
+  inset: -24% 7%;
+  border-color: rgba(255,86,91,.09);
+}
+
+/* Page 17 — elevate the treatment choice, not its framing language. */
+.txr-dashboard-scene .txrd-pathways .txrd-pathway-card {
+  padding: .38rem .68rem;
+  gap: .16rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero {
+  min-height: 2.62rem;
+  gap: .48rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy { gap: .16rem; }
+
+.txr-dashboard-scene .txrd-pathway-hero-copy strong {
+  font-size: clamp(.78rem, .91vw, 1.03rem);
+  letter-spacing: .045em;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero-copy span {
+  font-size: clamp(.44rem, .49vw, .57rem);
+  line-height: 1.1;
+}
+
+.txr-dashboard-scene .txrd-pathway-hero > b {
+  font-size: clamp(1.34rem, 1.58vw, 1.84rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-secondary,
+.txr-dashboard-scene .txrd-pathway-composition {
+  padding-top: .2rem;
+  font-size: clamp(.39rem, .44vw, .5rem);
+  line-height: 1.14;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition { gap: .12rem; }
+
+/* Page 17 — outcomes read as metrics first, modules second. */
+.txr-dashboard-scene .txrd-grid-outcomes {
+  position: relative;
+}
+
+.txr-dashboard-scene .txrd-grid-outcomes::before {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 15.7%;
+  right: .6%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 65, 70, .62), rgba(255, 65, 70, .14) 30%, rgba(255, 65, 70, .04));
+}
+
+.txr-dashboard-scene .txrd-outcomes-title,
+.txr-dashboard-scene .txrd-outcome {
+  position: relative;
+  z-index: 1;
+}
+
+.txr-dashboard-scene .txrd-outcome {
+  border-color: rgba(255,255,255,.055);
+  background: rgba(255,255,255,.006);
+}
+
+/* Page 17 — four-step focus story: baseline, treatment strategy, outcomes,
+   then regional corticosteroid follow-up. */
+.txr-dashboard-scene .txrd-header,
+.txr-dashboard-scene .txrd-col,
+.txr-dashboard-scene .txrd-arrows,
+.txr-dashboard-scene .txrd-grid-outcomes,
+.txr-dashboard-scene .txrd-footer {
+  transition: opacity .42s ease, filter .42s ease;
+}
+
+.txr-stage-0 .txrd-header,
+.txr-stage-0 .txrd-col:not(.txrd-before),
+.txr-stage-0 .txrd-arrows,
+.txr-stage-0 .txrd-grid-outcomes,
+.txr-stage-0 .txrd-footer,
+.txr-stage-1 .txrd-header,
+.txr-stage-1 .txrd-col.txrd-before,
+.txr-stage-1 .txrd-grid-outcomes,
+.txr-stage-1 .txrd-footer,
+.txr-stage-2 .txrd-header,
+.txr-stage-2 .txrd-grid-main,
+.txr-stage-2 .txrd-footer,
+.txr-stage-3 .txrd-header,
+.txr-stage-3 .txrd-grid-main,
+.txr-stage-3 .txrd-grid-outcomes {
+  opacity: .14;
+  filter: saturate(.45);
+}
+
+.txr-stage-0 .txrd-col.txrd-before,
+.txr-stage-1 .txrd-col.txrd-after,
+.txr-stage-1 .txrd-col.txrd-pathways,
+.txr-stage-1 .txrd-arrows,
+.txr-stage-2 .txrd-grid-outcomes,
+.txr-stage-3 .txrd-footer {
+  opacity: 1;
+  filter: none;
+}
+
+/* Page 17 — keep both pathway motifs on the same visual baseline. */
+.txr-dashboard-scene .txrd-ada-orbit,
+.txr-dashboard-scene .txrd-pathway-cid .txrd-donut {
+  width: clamp(2.28rem, 2.62vw, 2.76rem);
+  height: clamp(2.28rem, 2.62vw, 2.76rem);
+  align-self: center;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition {
+  gap: .16rem;
+  padding-top: .22rem;
+  font-size: clamp(.5rem, .55vw, .63rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-composition > div {
+  display: flex;
+  align-items: center;
+  column-gap: .38rem;
+  white-space: nowrap;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition span {
+  flex: 1 1 auto;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition small,
+.txr-dashboard-scene .txrd-pathway-composition b {
+  flex: 0 0 auto;
+  font-size: 1em;
+}
+
+/* Remove the former Pathways Diverged connector rail. */
+.txr-dashboard-scene .txrd-grid-outcomes::before {
+  display: none;
+}
+
+/* Page 17 — ADA card alignment and concise CID composition. */
+.txr-dashboard-scene .txrd-pathway-ada > * {
+  transform: translateY(.26rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-ada .txrd-ada-orbit {
+  transform: translateX(-.48rem);
+}
+
+/* Page 17 — ensure each CID swatch remains attached to its label. */
+.txr-dashboard-scene .txrd-pathway-composition {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(.55rem, .8vw, .9rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-composition-item {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  min-width: 0;
+  align-items: center;
+  gap: .32rem;
+  white-space: nowrap;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition-item .txrd-swatch {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition-item span,
+.txr-dashboard-scene .txrd-pathway-composition-item b {
+  flex: 0 0 auto !important;
+  font-size: 1em;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition {
+  transform: translateY(.2rem);
+}
+
+/* Nudge the ADA pathway content into its visual center. */
+.txr-dashboard-scene .txrd-pathway-ada > * {
+  transform: translateY(.42rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-ada .txrd-ada-orbit {
+  transform: translateX(-.72rem);
+}
+
+.txr-dashboard-scene .txrd-pathway-secondary {
+  font-size: clamp(.48rem, .53vw, .62rem);
+  line-height: 1.15;
+}
+
+/* Page 17 — gently contain the outcome section label. */
+.txr-dashboard-scene .txrd-outcomes-title {
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, .012);
+  padding: .7rem .75rem;
+}
+
+/* Page 15 — keep the demographic card self-contained and position duration
+   between uveitis location and baseline vision. */
+.baseline-portrait-scene .demographic-signals {
+  grid-template-rows: 1.2rem auto minmax(0, 1fr) auto;
+}
+
+.baseline-portrait-scene .cohort-composition {
+  grid-template-rows: 1.2rem minmax(0, 1fr) auto auto;
+}
+
+.baseline-portrait-scene .cohort-composition .uveitis-duration-signal {
+  min-height: 2rem;
+  margin-top: .35rem;
+  padding: .35rem .15rem 0;
+}
+
+/* Keep the two conventional-IMT composition summaries on one shared line. */
+.txr-dashboard-scene .txrd-pathway-composition {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: .55rem;
+}
+
+.txr-dashboard-scene .txrd-pathway-composition > div {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+/* Page 17 — centered CID escalation summary with regimen-level detail. */
+.txr-dashboard-scene .txrd-outcome-escalation .txrd-escalation-viz {
+  justify-content: center;
+  gap: clamp(.68rem, .9vw, 1rem);
+}
+
+.txr-dashboard-scene .txrd-outcome-escalation .txrd-esc-stats {
+  align-items: center;
+}
+
+.txr-dashboard-scene .txrd-outcome-escalation .txrd-esc-stats small {
+  text-align: center;
+}
+
+.txr-dashboard-scene .txrd-escalation-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .38rem;
+  padding-top: .34rem;
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.txr-dashboard-scene .txrd-escalation-details div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: .08rem;
+}
+
+.txr-dashboard-scene .txrd-escalation-details span {
+  color: #9c79e8;
+  font-size: clamp(.4rem, .44vw, .5rem);
+  letter-spacing: .06em;
+}
+
+.txr-dashboard-scene .txrd-escalation-details strong {
+  color: #efebfb;
+  font-size: clamp(.48rem, .53vw, .61rem);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.txr-dashboard-scene .txrd-escalation-details i {
+  color: #a791d9;
+  font-style: normal;
 }

@@ -1520,7 +1520,6 @@ export default function Home() {
                 <ul><li><i />WHITE <b>72%</b></li><li><i />BLACK <b>18%</b></li><li><i />ASIAN <b>5%</b></li><li><i />OTHER <b>5%</b></li></ul>
               </div>
               <div className="ethnicity-signal"><strong>15%</strong><span>HISPANIC ETHNICITY</span></div>
-              <div className="uveitis-duration-signal"><span>DURATION OF UVEITIS (YRS)*</span><strong>0.9 <small>(0.3—3.9)</small></strong></div>
             </article>
 
             <article className="cohort-composition">
@@ -1533,6 +1532,7 @@ export default function Home() {
                 <div><i style={{ width: "22%" }}><b>22%</b></i><i style={{ width: "78%" }}><b>78%</b></i></div>
                 <footer><span>INTERMEDIATE · ANTERIOR + INTERMEDIATE</span><span>BIRDSHOT · CHOROIDITIS · VKH · RETINAL VASCULITIS</span></footer>
               </div>
+              <div className="uveitis-duration-signal"><span>DURATION OF UVEITIS (YRS)*</span><strong>0.9 <small>(0.3—3.9)</small></strong></div>
             </article>
 
             <article className="ocular-signal">
@@ -1835,7 +1835,7 @@ export default function Home() {
         <section
           id="treatment-results-redesign"
           className={`scene txr-dashboard-scene txr-stage-${treatmentStoryStage}`}
-          onClick={() => setTreatmentStoryStage((stage) => (stage >= 2 ? -1 : stage + 1))}
+          onClick={() => setTreatmentStoryStage((stage) => (stage >= 3 ? -1 : stage + 1))}
           aria-label="Treatment evolution dashboard from baseline through follow-up. Click to advance."
         >
           {/* HEADER AREA */}
@@ -1889,7 +1889,7 @@ export default function Home() {
                     <div className="txrd-bar txrd-ada-color"><i style={{ width: "81%" }} /></div>
                   </div>
                   <div className="txrd-stat">
-                    <small>ANY IMT</small>
+                    <small>CONVENTIONAL IMT</small>
                     <strong>21%</strong>
                     <span>24 / 114</span>
                     <div className="txrd-bar txrd-ada-color"><i style={{ width: "21%" }} /></div>
@@ -1907,7 +1907,7 @@ export default function Home() {
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "84%" }} /></div>
                   </div>
                   <div className="txrd-stat">
-                    <small>ANY IMT</small>
+                    <small>CONVENTIONAL IMT</small>
                     <strong>22%</strong>
                     <span>25 / 112</span>
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "22%" }} /></div>
@@ -1934,27 +1934,27 @@ export default function Home() {
                   <div className="txrd-stat">
                     <small>ORAL STEROIDS</small>
                     <strong>100%</strong>
-                    <span>114 / 114</span>
+                    <span>113 / 113</span>
                     <div className="txrd-bar txrd-ada-color"><i style={{ width: "100%" }} /></div>
                   </div>
                   <div className="txrd-stat">
-                    <small>ANY IMT</small>
-                    <strong>100%</strong>
-                    <span>114 / 114</span>
-                    <div className="txrd-bar txrd-ada-color"><i style={{ width: "100%" }} /></div>
+                    <small>CONVENTIONAL IMT</small>
+                    <strong>2%</strong>
+                    <span>2 / 113</span>
+                    <div className="txrd-bar txrd-ada-color"><i style={{ width: "2%" }} /></div>
                   </div>
                 </article>
                 <article className="txrd-arm-row no-label">
                   <div className="txrd-stat">
                     <small>ORAL STEROIDS</small>
                     <strong>98%</strong>
-                    <span>110 / 112</span>
+                    <span>108 / 110</span>
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "98%" }} /></div>
                   </div>
                   <div className="txrd-stat">
-                    <small>ANY IMT</small>
+                    <small>CONVENTIONAL IMT</small>
                     <strong>98%</strong>
-                    <span>110 / 112</span>
+                    <span>108 / 110</span>
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "98%" }} /></div>
                   </div>
                 </article>
@@ -1963,29 +1963,35 @@ export default function Home() {
 
             {/* COLUMN 3: TREATMENT PATHWAYS */}
             <section className="txrd-col txrd-pathways">
-              <header>TREATMENT PATHWAYS<br /><span>Post-randomization composition</span></header>
+              <header>TREATMENT PATHWAYS<br /><span>POST-RANDOMIZATION STRATEGY</span></header>
               <div className="txrd-arms">
-                <article className="txrd-pathway-card txrd-ada-border">
-                  <div className="txrd-pathway-info">
-                    <small>ADA + BACKGROUND IMT*</small>
-                    <strong>100%</strong>
+                <article className="txrd-pathway-card txrd-ada-border txrd-pathway-ada">
+                  <div className="txrd-pathway-hero">
+                    <div className="txrd-ada-orbit" aria-label="Adalimumab received by 114 of 114 participants">
+                      <i />
+                      <i />
+                    </div>
+                    <div className="txrd-pathway-hero-copy">
+                      <strong>ADALIMUMAB</strong>
+                      <span>114 / 114 received</span>
+                    </div>
+                    <b>100%</b>
                   </div>
-                  <div className="txrd-donut txrd-ada-donut" aria-label="88% Antimetabolite, 12% CNI"></div>
-                  <div className="txrd-legend">
-                    <div><i className="txrd-swatch txrd-swatch-red" /> Antimetabolite <span>(MMF/MTX/AZA)</span> <b>88%</b></div>
-                    <div><i className="txrd-swatch txrd-swatch-darkred" /> CNI <span>(Tacrolimus / Cyclosporine)</span> <b>12%</b></div>
-                  </div>
+                  <div className="txrd-pathway-secondary">CONVENTIONAL IMT · 2 / 113 (2%)</div>
                 </article>
-                <article className="txrd-pathway-card txrd-cid-border">
-                  <div className="txrd-pathway-info">
-                    <small>CONVENTIONAL IMT**</small>
-                    <strong>98%</strong>
-                  </div>
-                  <div className="txrd-donut txrd-cid-donut" aria-label="87% Antimetabolite, 13% CNI"></div>
-                  <div className="txrd-legend">
-                    <div><i className="txrd-swatch txrd-swatch-purple" /> Antimetabolite <span>(MMF/MTX/AZA)</span> <b>87%</b></div>
-                    <div><i className="txrd-swatch txrd-swatch-darkpurple" /> CNI <span>(Tacrolimus / Cyclosporine)</span> <b>13%</b></div>
-                  </div>
+                <article className="txrd-pathway-card txrd-cid-border txrd-pathway-cid">
+                  <div className="txrd-pathway-hero">
+                    <div className="txrd-donut txrd-cid-donut" aria-label="Among 108 initiated conventional IMT treatments: 85 antimetabolite, 23 CNI"></div>
+                    <div className="txrd-pathway-hero-copy">
+                      <strong>CONVENTIONAL IMT</strong>
+                      <span>108 / 110 initiated</span>
+                    </div>
+                    <b>98%</b>
+      </div>
+      <div className="txrd-pathway-composition">
+        <div className="txrd-pathway-composition-item"><i className="txrd-swatch txrd-swatch-purple" /><span>Antimetabolite:</span><b>85 (79%)</b></div>
+        <div className="txrd-pathway-composition-item"><i className="txrd-swatch txrd-swatch-darkpurple" /><span>CNI:</span><b>23 (21%)</b></div>
+      </div>
                 </article>
               </div>
             </section>
@@ -2008,7 +2014,7 @@ export default function Home() {
                 <i>VS</i>
                 <div className="txrd-cid-color"><small>CID ARM</small><strong>13.8</strong><span>mg/day</span></div>
               </div>
-              <footer>Δ -2.31 mg cumulative &nbsp;|&nbsp; IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73-1.01 &nbsp;|&nbsp; P = 0.061</footer>
+              <footer>IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73-1.01 &nbsp;|&nbsp; P = 0.061</footer>
             </section>
 
             <section className="txrd-outcome txrd-outcome-second-agent">
@@ -2041,11 +2047,16 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              <div className="txrd-escalation-details" aria-label="Dose escalation by conventional immunosuppressive medication">
+                <div><span>AZA</span><strong>1 / 1</strong></div>
+                <div><span>MTX</span><strong>32 / 43 <i>(74%)</i></strong></div>
+                <div><span>MMF</span><strong>25 / 41 <i>(61%)</i></strong></div>
+              </div>
             </section>
           </div>
 
           {/* FOOTER STRIP */}
-          <footer className="txrd-footer">
+          <footer className="txrd-footer txrd-footer-regional-only">
             <div className="txrd-footer-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
               <div>
@@ -2056,22 +2067,6 @@ export default function Home() {
                 <div className="txrd-ada-color"><strong>27</strong><span>Injections<br />(19 eyes · 13 participants)</span></div>
                 <div className="txrd-cid-color"><strong>25</strong><span>Injections<br />(20 eyes · 13 participants)</span></div>
               </div>
-            </div>
-            <div className="txrd-footer-card txrd-footer-highlights">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="txrd-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
-              <div>
-                <strong>PROTOCOL HIGHLIGHTS</strong>
-                <ul>
-                  <li>Treatment followed a prespecified escalation pathway</li>
-                  <li>Rescue corticosteroid permitted for macular edema</li>
-                  <li>Maximum 2 injections within defined windows</li>
-                </ul>
-              </div>
-            </div>
-      <div className="txrd-footnotes">
-        <small>* ADA arm: adalimumab + background immunosuppressive therapy.</small>
-        <small>** CID arm: conventional immunosuppressive therapy (no biologic).</small>
-              <small>Numerical differences only; the groups remained reasonably well balanced overall.</small>
             </div>
           </footer>
         </section>
