@@ -2798,13 +2798,13 @@ export default function Home() {
             <div className="adv-right-col">
               <div className="adv-arch-evidence-strip">
                 <div className="adv-arch-evidence-recall">
-                  <strong>COUNTEREVIDENCE</strong>
+                  <strong>SUPPORTIVE EVIDENCE</strong>
                   <span>Participant-reported outcomes at 6 months</span>
                 </div>
                 <div className="adv-arch-evidence-stat">
                   <b>EQ-5D INDEX OF 1</b>
-                  <span><em>OR 1.25</em> (0.67–2.31)</span>
-                  <small>P = 0.480 · No significant change</small>
+                  <span><em>OR 1.07</em> ADA vs <em>0.86</em> CID</span>
+                  <small>OR ratio 1.25 · P = 0.480</small>
                 </div>
                 <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
                   <b>NEI-VFQ-25 COMPOSITE</b>
@@ -2865,7 +2865,7 @@ export default function Home() {
                           <path d="M16 12a4 4 0 0 1-8 0"/>
                         </svg>
                       </div>
-                      <p className="card-details">22% had not achieved corticosteroid sparing on a single conventional agent, potentially creating a perception that conventional therapy had “failed.”</p>
+                      <p className="card-details">22% had not achieved steroid sparing—potentially perceived as conventional treatment “failure.”</p>
                     </div>
 
                     {/* Card 3: Route preference */}
