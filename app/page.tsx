@@ -15,7 +15,6 @@ const chapters = [
   { id: "followup", label: "Follow-up" },
   { id: "outcomes", label: "Outcomes overview" },
   { id: "secondary-outcomes-redesign", label: "Secondary outcomes (Redesign)" },
-  { id: "sample-size-redesign", label: "Sample size (Redesign)" },
   { id: "statistics-sample-only", label: "Statistics — sample size only" },
   { id: "statistics-redesign", label: "Statistical analysis framework (Redesign)" },
   { id: "quality-assurance", label: "Quality assurance" },
@@ -27,6 +26,8 @@ const chapters = [
   { id: "advancement", label: "Immunosuppression advancement" },
   { id: "ocular-results", label: "Visual and macular outcomes" },
   { id: "safety-outcomes", label: "Safety outcomes" },
+  { id: "systemic-safety-tolerability", label: "Safety and tolerability" },
+  { id: "quality-of-life-results", label: "Quality of life" },
   { id: "discussion", label: "Discussion" },
   { id: "discussion-safety", label: "Discussion 2" },
   { id: "limitations-1", label: "Limitations 1" },
@@ -38,6 +39,7 @@ const chapters = [
   { id: "conclusion", label: "Conclusion" },
   { id: "outcomes-original", label: "Outcomes (original combined)" },
   { id: "statistics", label: "Statistical analysis" },
+  { id: "sample-size-redesign", label: "Sample size (Redesign)" },
 ];
 
 const strata = [
@@ -443,6 +445,7 @@ export default function Home() {
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
   const [taperingStage, setTaperingStage] = useState(0);
+  const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
 
@@ -500,6 +503,11 @@ export default function Home() {
   }, [active]);
 
   useEffect(() => {
+    if (chapters[active]?.id !== "outcomes") return;
+    setOutcomesStoryStage(0);
+  }, [active]);
+
+  useEffect(() => {
     if (chapters[active]?.id !== "sample-size-redesign") return;
     setSampleSizeCycle((cycle) => cycle + 1);
   }, [active]);
@@ -550,6 +558,10 @@ export default function Home() {
 
   const advanceTaperingStory = () => {
     setTaperingStage((current) => Math.min(current + 1, 8));
+  };
+
+  const advanceOutcomesStory = () => {
+    setOutcomesStoryStage((current) => Math.min(current + 1, 3));
   };
 
   const onTaperTouchStart = (event: TouchEvent<HTMLElement>) => {
@@ -1237,7 +1249,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="outcomes" className="scene outcomes-scene">
+        <section
+          id="outcomes"
+          className={`scene outcomes-scene outcomes-story-${outcomesStoryStage}`}
+          onClick={advanceOutcomesStory}
+          aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis."
+        >
           <div className="scene-copy outcomes-copy">
             <p className="eyebrow"><span /> 10 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
@@ -1261,11 +1278,31 @@ export default function Home() {
             <header>SECONDARY OUTCOMES</header>
             <div>
               <article><i className="secondary-icon-ring" /><strong>STEROID SPARING</strong><span>By 1 year of follow-up</span></article>
-              <article><i className="secondary-icon-slash" /><strong>CORTICOSTEROID<br />DISCONTINUATION</strong><span>Inactive after prednisone discontinuation · 2 visits ≥28 days apart</span></article>
+              <article><i className="secondary-icon-slash" /><strong>CORTICOSTEROID<br />DISCONTINUATION</strong><span>Inactive after prednisone discontinuation<br />2 visits ≥28 days apart</span></article>
               <article><svg className="secondary-icon-svg secondary-icon-va" viewBox="0 0 76 104" aria-hidden="true"><rect x="3" y="3" width="70" height="98" rx="3" /><text x="38" y="30">E</text><text x="38" y="52">F P</text><text x="38" y="70">T O Z</text><text x="38" y="86">L P E D</text></svg><strong>BCVA</strong><span>Best-corrected visual acuity</span></article>
               <article><i className="secondary-icon-signal" /><strong>INFECTIONS</strong><span>Incidence</span></article>
               <article><svg className="secondary-icon-svg secondary-icon-eye-baseline" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 32C15 14 49 14 60 32 49 50 15 50 4 32Z" /><circle cx="32" cy="32" r="10" /><circle cx="32" cy="32" r="3" /></svg><strong>ADVERSE EVENTS</strong><span>Including serious adverse events</span></article>
               <article><svg className="secondary-icon-svg secondary-icon-people-baseline" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="14" r="8" /><path d="M18 54v-13c0-9 6-15 14-15s14 6 14 15v13M24 54V41m16 13V41" /></svg><strong>QUALITY OF LIFE</strong><span>Patient-reported</span></article>
+            </div>
+          </section>
+
+          <section className="inactive-uveitis-definition outcomes-inactive-popup" aria-label="Definition of inactive uveitis">
+            <header><span>INACTIVE UVEITIS</span><p>Clinical quiescence + applicable disease-specific imaging criteria</p></header>
+            <div className="inactive-definition-groups">
+              <section className="inactive-clinical">
+                <h3>CLINICAL QUIESCENCE</h3>
+                <article><i className="inactive-icon-cells" /><div><span>AC CELLS</span><strong>GRADE 0</strong><small>Anterior / intermediate / panuveitis</small></div></article>
+                <article><i className="inactive-icon-haze" /><div><span>VITREOUS HAZE</span><strong>GRADE 0</strong><small>Intermediate / posterior / panuveitis</small></div></article>
+              </section>
+              <section className="inactive-imaging">
+                <h3>DISEASE-SPECIFIC IMAGING CRITERIA</h3>
+                <div>
+                  <article><i className="imaging-icon-field" /><span>BIRDSHOT CHORIORETINITIS</span><strong>VISUAL FIELDS</strong><small>Stable or improved in reliable visual fields</small></article>
+                  <article><i className="imaging-icon-faf" /><span>CHORIORETINITIS</span><strong>FAF</strong><small>No uveitis lesion-related hyperautofluorescence</small></article>
+                  <article><i className="imaging-icon-oct" /><span>EARLY-STAGE VKH</span><strong>OCT</strong><small>No subretinal fluid</small></article>
+                  <article><i className="imaging-icon-ffa" /><span>RETINAL VASCULITIS</span><strong>FFA</strong><small>No increase in retinal nonperfusion, leakage, or vessel staining</small></article>
+                </div>
+              </section>
             </div>
           </section>
         </section>
@@ -1298,22 +1335,6 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
-          <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / SAMPLE SIZE</p>
-            <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
-          </div>
-
-          <section key={sampleSizeCycle} className="sample-size-argument" aria-label="Sample size calculation">
-            <span className="sample-size-micro-label">SAMPLE SIZE</span>
-            <div className="sample-size-rate sample-size-rate-ada"><span>ADA EXPECTED PRIMARY OUTCOME</span><strong>75%</strong></div>
-            <div className="sample-size-rate sample-size-rate-cid"><span>CID EXPECTED PRIMARY OUTCOME</span><strong>51%</strong></div>
-            <div className="sample-size-convergence" aria-hidden="true"><i /><i /><b>24 PERCENTAGE-POINT EXPECTED DIFFERENCE</b></div>
-            <div className="sample-size-hero"><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><strong>222</strong><span>PARTICIPANTS</span></div>
-            <div className="sample-size-assumptions" aria-label="Statistical assumptions"><span>α 0.0492 · TWO-SIDED</span><span>90% POWER</span><span>10% LOSS ALLOWANCE</span></div>
-          </section>
-        </section>
-
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
             <p className="eyebrow"><span /> 11 — METHODOLOGY / STATISTICS</p>
@@ -1332,9 +1353,10 @@ export default function Home() {
 
               <div className="calc-input calc-ada"><span>ADA EXPECTED</span><strong>75%</strong></div>
               <div className="calc-track calc-track-left"><b>75%</b></div>
+              <div className="calc-effect-size">24 PERCENTAGE-POINT DIFFERENCE</div>
               <div className="calc-core"><strong>222</strong><span>PARTICIPANTS</span></div>
               <div className="calc-track calc-track-right"><b>51%</b></div>
-              <div className="calc-input calc-cid"><span>CID EXPECTED</span><strong>51%</strong><small>75% × 55% + 25% × 40%</small></div>
+              <div className="calc-input calc-cid"><span>CID EXPECTED</span><strong>51%</strong></div>
 
               <div className="calc-note calc-interim"><strong>40%</strong><span>INTERIM INFORMATION · STOPPING α 0.008</span></div>
               <div className="calc-split"><b>111 <i>ADA</i></b><b>111 <i>CID</i></b></div>
@@ -2460,6 +2482,67 @@ export default function Home() {
           </section>
         </section>
 
+        <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
+          <div className="scene-copy safety-qol-copy">
+            <p className="eyebrow"><span /> 24 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
+            <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
+          </div>
+
+          <section className="safety-qol-top" aria-label="Safety signals and other Table 5 events">
+            <article className="safety-difference-panel">
+              <header><span>SAFETY SIGNALS THAT DIFFERED</span><small>ADA vs CID</small></header>
+              <div className="safety-difference-row significant"><span className="safety-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" /><circle cx="16" cy="16" r="5" /><path d="M16 4v24" opacity=".32" /></svg></span><div className="safety-difference-label"><b>CATARACT SURGERY</b><small>Phakic eyes</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "18%" } as React.CSSProperties}>2%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>11%</i></span></div><strong>P=0.009</strong></div>
+              <div className="safety-difference-row significant"><span className="safety-row-icon safety-row-icon-va"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="1.5" /><path d="M12 10h8M10 16h5m2 0h5M8 22h4m3 0h3m3 0h3" /></svg></span><div className="safety-difference-label"><b>≥15-LETTER BCVA LOSS</b><small>3-line decrease</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "46%" } as React.CSSProperties}>6%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>13%</i></span></div><strong>P=0.026</strong></div>
+              <div className="safety-difference-row"><span className="safety-row-icon safety-row-icon-va"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="1.5" /><path d="M12 10h8M10 16h5m2 0h5M8 22h4m3 0h3m3 0h3" /></svg></span><div className="safety-difference-label"><b>≥30-LETTER BCVA LOSS</b><small>6-line decrease</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "43%" } as React.CSSProperties}>3%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>7%</i></span></div><strong>P=0.43</strong></div>
+              <div className="safety-difference-row significant"><span className="safety-row-icon safety-row-icon-liver"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16c0-6 3-10 8-11 3-.6 5 1 7 3 2 1.7 4.8 2.5 7 2.5v6.2c-2.5.1-4.2 1.1-5.5 3.5-1.8 3.3-5.1 5.7-9.3 5.7C7.5 25.9 5 22.6 5 16Z" /><path d="M17.5 8.3c-.4 5.1-2.2 9.2-5.4 12.2" /></svg></span><div className="safety-difference-label"><b>ELEVATED LIVER ENZYMES</b><small>Any grade elevation</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "20%" } as React.CSSProperties}>2%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>10%</i></span></div><strong>P=0.014</strong></div>
+            </article>
+
+            <aside className="table-five-events" aria-label="Other ocular adverse events from Table 5">
+              <header><span>OTHER OCULAR EVENTS</span><small>CUMULATIVE % · ADA / CID · P</small></header>
+              <div className="table-five-columns">
+                <section>
+                  <p><span>IOP +10 mmHg</span><em>9% / 8% · P=0.73</em></p>
+                  <p><span>IOP ≥24 mmHg</span><em>11% / 13% · P=0.50</em></p>
+                  <p><span>IOP ≥30 mmHg</span><em>5% / 5% · P=0.93</em></p>
+                  <p><span>IOP medication</span><em>16% / 10% · P=0.85</em></p>
+                  <p><span>New glaucoma</span><em>1% / 11% · P=0.20</em></p>
+                  <p><span>Glaucoma surgery</span><em>1% / 3% · P=0.29</em></p>
+                </section>
+              </div>
+              <footer>None of these comparisons was statistically significant.</footer>
+            </aside>
+          </section>
+
+          <section className="safety-bottom-band">
+            <article className="safety-intolerance-panel">
+              <header><span>TREATMENT INTOLERANCE</span><small>Discontinued assigned therapy due to intolerance</small></header>
+              <div className="safety-intolerance-numbers"><div><strong>0</strong><span>ADA</span></div><i /><div><strong>8</strong><span>CID</span></div></div>
+              <p><b>CID discontinuations</b><br />MTX-based 6 · Mycophenolate 2</p>
+              <footer><b>After discontinuation:</b> 6 → another CID · 1 → ADA · 1 → stopped</footer>
+            </article>
+            <section className="serious-events-panel" aria-label="Serious events with no significant difference">
+              <header><span>SERIOUS SYSTEMIC EVENTS — NO SIGNIFICANT DIFFERENCE</span><small>Rates per person-year</small></header>
+              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 26 7v8c0 7-4 11-10 14C10 26 6 22 6 15V7Z" /><path d="M16 10v10m-5-5h10" /></svg></span><div><b>INFECTIONS REQUIRING ANTIBIOTICS</b><span><em>ADA</em> 0.40/PY <em className="cid">CID</em> 0.37/PY</span><small>IRR 1.10 · 95% CI 0.61–2.00 · P=.76</small></div></article>
+              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 28V7h18v21M12 7V3h8v4M4 28h24" /><path d="M13 12h6m-3-3v6M11 19h3m4 0h3m-10 4h3m4 0h3" /></svg></span><div><b>HOSPITALIZATIONS</b><span><em>ADA</em> 0.045/PY <em className="cid">CID</em> 0.115/PY</span><small>IRR 0.39 · 95% CI 0.12–1.26 · P=.12</small></div></article>
+              <article className="serious-other"><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4" /><circle cx="22" cy="12" r="3.5" /><path d="M4 27c0-6 2.5-9 7-9s7 3 7 9M17 20c1.2-1.8 2.9-2.7 5-2.7 4 0 6 3 6 8" /></svg></span><div><b>OTHER SERIOUS SYSTEMIC AEs</b><span>Rare and similar between groups.</span><small>No new demyelination events in either treatment group.</small></div></article>
+            </section>
+          </section>
+        </section>
+
+        <section id="quality-of-life-results" className="scene qol-results-scene">
+          <div className="scene-copy qol-results-copy">
+            <p className="eyebrow"><span /> 24 — RESULTS / QUALITY OF LIFE</p>
+            <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
+            <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
+          </div>
+          <section className="qol-results-system" aria-label="Quality of life results">
+            <article><span>01</span><b>EQ-5D</b><strong>Perfect index scores</strong><p>No significant change in the proportion of participants with a perfect score.</p><i /></article>
+            <article><span>02</span><b>NEI-VFQ-25</b><strong>Vision-related quality of life</strong><p>Both groups improved similarly, near the 4–6-point minimally clinically meaningful difference.</p><i /></article>
+            <article className="qol-sf36"><span>03</span><b>SF-36</b><strong>Physical + mental health</strong><div><p><em>PHYSICAL</em> ADA was essentially unchanged; CID declined slightly. The 6-month difference was not sustained at 12 months, and neither group had a clinically meaningful change.</p><p><em>MENTAL</em> No significant between-group difference at 6 or 12 months.</p></div><i /></article>
+          </section>
+        </section>
+
         <section id="discussion" className="scene discussion-scene">
           <div className="scene-copy discussion-copy">
             <p className="eyebrow"><span /> 22 — DISCUSSION</p>
@@ -2713,6 +2796,22 @@ export default function Home() {
               <span>Sensitivity analyses assessed missingness.</span>
               <span>Secondary-outcome P values were nominal.</span>
             </footer>
+          </section>
+        </section>
+
+        <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
+          <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / SAMPLE SIZE</p>
+            <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
+          </div>
+
+          <section key={sampleSizeCycle} className="sample-size-argument" aria-label="Sample size calculation">
+            <span className="sample-size-micro-label">SAMPLE SIZE</span>
+            <div className="sample-size-rate sample-size-rate-ada"><span>ADA EXPECTED PRIMARY OUTCOME</span><strong>75%</strong></div>
+            <div className="sample-size-rate sample-size-rate-cid"><span>CID EXPECTED PRIMARY OUTCOME</span><strong>51%</strong></div>
+            <div className="sample-size-convergence" aria-hidden="true"><i /><i /><b>24 PERCENTAGE-POINT EXPECTED DIFFERENCE</b></div>
+            <div className="sample-size-hero"><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><strong>222</strong><span>PARTICIPANTS</span></div>
+            <div className="sample-size-assumptions" aria-label="Statistical assumptions"><span>α 0.0492 · TWO-SIDED</span><span>90% POWER</span><span>10% LOSS ALLOWANCE</span></div>
           </section>
         </section>
       </main>
