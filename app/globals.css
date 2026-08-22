@@ -9602,89 +9602,94 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(0.35rem, 0.6vh, 0.65rem);
 }
 
-/* 1. Unmasked Assignment Block */
-.lim-unmasked-block {
+/* 1. Spectrum Block: Favor ADA ↔ Favor CID (3 inline boxes) */
+.lim-spectrum-block {
   width: 100%;
 }
 
-.lim-block-header {
-  font: 650 clamp(0.56rem, 0.68vw, 0.76rem) var(--font-geist-mono), monospace;
-  color: #fff;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: clamp(0.35rem, 0.6vh, 0.55rem);
-}
-
-.lim-assignment-row {
+.lim-spectrum-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(0.6rem, 1vw, 1rem);
+  font: 700 clamp(0.58rem, 0.68vw, 0.76rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.35rem, 0.55vh, 0.55rem);
+  padding: 0 0.2rem;
 }
 
-.lim-arm {
-  flex: 1;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.lim-spectrum-header .spec-label-ada {
+  color: #ff666b;
+}
+
+.lim-spectrum-header .spec-arrow {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: clamp(0.85rem, 1vw, 1.1rem);
+}
+
+.lim-spectrum-header .spec-label-cid {
+  color: #b58eff;
+}
+
+.lim-three-boxes-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: clamp(0.4rem, 0.6vw, 0.75rem);
+}
+
+.lim-inline-box {
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
   border-radius: 3px;
-  padding: clamp(0.45rem, 0.7vh, 0.65rem) clamp(0.6rem, 1vw, 0.9rem);
+  padding: clamp(0.45rem, 0.65vh, 0.65rem) clamp(0.5rem, 0.7vw, 0.75rem);
   display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  text-align: left;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
-.lim-arm.lim-arm-ada {
+.lim-inline-box.box-ada {
   border-color: rgba(255, 77, 82, 0.22);
   background: rgba(255, 77, 82, 0.025);
 }
 
-.lim-arm.lim-arm-cid {
+.lim-inline-box.box-cid {
   border-color: rgba(181, 142, 255, 0.22);
   background: rgba(181, 142, 255, 0.025);
 }
 
-.lim-arm-icon-badge {
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 3px;
+.lim-inline-box .box-badge-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.lim-arm-ada .lim-arm-icon-badge {
-  background: rgba(255, 45, 45, 0.12);
-  border: 1px solid rgba(255, 77, 82, 0.35);
-}
-
-.lim-arm-cid .lim-arm-icon-badge {
-  background: rgba(181, 142, 255, 0.12);
-  border: 1px solid rgba(181, 142, 255, 0.35);
-}
-
-.lim-arm-text strong {
-  display: block;
-  font: 700 clamp(0.85rem, 0.95vw, 1.05rem) var(--font-geist-mono), monospace;
-  color: #fff;
+  justify-content: space-between;
   margin-bottom: 0.1rem;
 }
 
-.lim-arm-text span {
-  display: block;
-  font-size: clamp(0.68rem, 0.76vw, 0.82rem);
-  color: #a09591;
-  line-height: 1.25;
+.lim-inline-box.box-ada .box-tag {
+  color: #ff666b;
+  font: 700 clamp(0.52rem, 0.6vw, 0.68rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.lim-arm-connector {
-  color: rgba(255, 255, 255, 0.35);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
-  line-height: 1;
-  flex-shrink: 0;
+.lim-inline-box.box-cid .box-tag {
+  color: #b58eff;
+  font: 700 clamp(0.52rem, 0.6vw, 0.68rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lim-inline-box h5 {
+  color: #f0ece8;
+  font: 600 clamp(0.68rem, 0.76vw, 0.86rem) var(--font-geist-mono), monospace;
+  margin: 0 0 0.1rem 0;
+  letter-spacing: 0.01em;
+}
+
+.lim-inline-box p {
+  color: #a09591;
+  font-size: clamp(0.66rem, 0.73vw, 0.8rem);
+  line-height: 1.35;
+  margin: 0;
 }
 
 /* Flow Connectors */
@@ -9700,39 +9705,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(0.75rem, 0.85vw, 0.95rem);
   line-height: 1;
-}
-
-/* 2. Where Bias Could Enter */
-.lim-vulnerability-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255, 77, 82, 0.05);
-  border: 1px solid rgba(255, 77, 82, 0.28);
-  border-radius: 3px;
-  padding: clamp(0.45rem, 0.65vh, 0.6rem) clamp(0.8rem, 1.2vw, 1.2rem);
-}
-
-.lim-vuln-label {
-  font: 700 clamp(0.58rem, 0.68vw, 0.76rem) var(--font-geist-mono), monospace;
-  color: #ff666b;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.lim-vuln-items {
-  display: flex;
-  align-items: center;
-  gap: clamp(0.4rem, 0.6vw, 0.75rem);
-  font-size: clamp(0.72rem, 0.8vw, 0.88rem);
-  color: #ded8d5;
-  font-weight: 500;
-}
-
-.lim-vuln-plus {
-  color: #ff666b;
-  font-weight: 700;
-  font-family: var(--font-geist-mono), monospace;
 }
 
 /* 3. Three Mitigation Layers */

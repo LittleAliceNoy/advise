@@ -2782,54 +2782,39 @@ export default function Home() {
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Different administration routes made masking impractical. The trial relied on prespecified criteria, protocolized decisions, and active quality oversight to constrain bias.</p>
 
-              <div className="adv-observations-block editorial-rules bias-directions-block">
-                <div className="observation-header-label">BIAS COULD CUT BOTH WAYS</div>
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-header-label">WHERE COULD BIAS ENTER?</div>
                 
-                {/* DIRECTION 1: COULD FAVOR ADA */}
-                <div className="bias-direction-group dir-ada">
-                  <div className="bias-dir-title">
-                    <span className="bias-dir-arrow" aria-hidden="true">→</span>
-                    <strong>COULD FAVOR ADA</strong>
-                  </div>
-                  
-                  <div className="bias-sub-item">
-                    <h5>Perceived potency</h5>
-                    <p>Parenteral therapy may be perceived as more effective.</p>
-                  </div>
-                  
-                  <div className="bias-sub-item">
-                    <h5>Prior “failure” perception</h5>
-                    <p>22% had not achieved successful corticosteroid sparing on a single conventional agent, potentially creating an impression that conventional therapy had already “failed.”</p>
-                  </div>
+                <div className="observation-item">
+                  <h4><span>01</span> — DISEASE-ACTIVITY ASSESSMENT</h4>
+                  <p>Observer expectation could influence clinical grading of inflammatory signs (cells, flare, vitreous haze) or imaging interpretation when treatment is known.</p>
+                </div>
+                
+                <div className="observation-item">
+                  <h4><span>02</span> — TREATMENT ROUTE &amp; DECISIONS</h4>
+                  <p>Knowledge of assignment and route differences could affect corticosteroid tapering pace, decision to advance therapy, or patient symptom reporting.</p>
                 </div>
 
-                {/* DIRECTION 2: COULD FAVOR CID */}
-                <div className="bias-direction-group dir-cid">
-                  <div className="bias-dir-title">
-                    <span className="bias-dir-arrow" aria-hidden="true">←</span>
-                    <strong>COULD FAVOR CID</strong>
-                  </div>
-                  
-                  <div className="bias-sub-item">
-                    <h5>Route preference</h5>
-                    <p>Participants may prefer the convenience of oral therapy over injections.</p>
-                  </div>
-                </div>
-
-                <p className="bias-synthesis-note">The direction—and magnitude—of any resulting bias is therefore uncertain.</p>
+                <p className="bias-synthesis-note">The direction—and magnitude—of any resulting bias remains inherently uncertain.</p>
               </div>
             </div>
 
             <div className="adv-right-col">
               <div className="limitations-analytical-panel">
                 
-                {/* 1. UNMASKED ASSIGNMENT */}
-                <div className="lim-unmasked-block">
-                  <div className="lim-block-header">UNMASKED ASSIGNMENT</div>
-                  <div className="lim-assignment-row">
-                    <div className="lim-arm lim-arm-ada">
-                      <div className="lim-arm-icon-badge" aria-hidden="true">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                {/* 1. THREE INLINE BOXES: FAVOR ADA ↔ FAVOR CID */}
+                <div className="lim-spectrum-block">
+                  <div className="lim-spectrum-header">
+                    <span className="spec-label-ada">FAVOR ADA</span>
+                    <span className="spec-arrow">↔</span>
+                    <span className="spec-label-cid">FAVOR CID</span>
+                  </div>
+                  
+                  <div className="lim-three-boxes-inline">
+                    <div className="lim-inline-box box-ada">
+                      <div className="box-badge-row">
+                        <span className="box-tag">→ FAVOR ADA</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m18 2 4 4"/>
                           <path d="m17 7 3-3"/>
                           <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
@@ -2838,23 +2823,28 @@ export default function Home() {
                           <path d="m14 4 6 6"/>
                         </svg>
                       </div>
-                      <div className="lim-arm-text">
-                        <strong>ADA</strong>
-                        <span>Subcutaneous injection</span>
-                      </div>
+                      <h5>Perceived potency</h5>
+                      <p>Parenteral therapy may be perceived as more effective.</p>
                     </div>
-                    <div className="lim-arm-connector" aria-hidden="true">↔</div>
-                    <div className="lim-arm lim-arm-cid">
-                      <div className="lim-arm-icon-badge" aria-hidden="true">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+
+                    <div className="lim-inline-box box-ada">
+                      <div className="box-badge-row">
+                        <span className="box-tag">→ FAVOR ADA</span>
+                      </div>
+                      <h5>Prior “failure” perception</h5>
+                      <p>22% prior single-agent experience may create impression conventional therapy failed.</p>
+                    </div>
+
+                    <div className="lim-inline-box box-cid">
+                      <div className="box-badge-row">
+                        <span className="box-tag">← FAVOR CID</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                           <path d="m8.5 8.5 7 7"/>
                         </svg>
                       </div>
-                      <div className="lim-arm-text">
-                        <strong>CID</strong>
-                        <span>Oral immunosuppressive therapy</span>
-                      </div>
+                      <h5>Route preference</h5>
+                      <p>Participants may prefer the convenience of oral therapy over injections.</p>
                     </div>
                   </div>
                 </div>
@@ -2863,21 +2853,7 @@ export default function Home() {
                   <span className="lim-flow-arrow">↓</span>
                 </div>
 
-                {/* 2. WHERE BIAS COULD ENTER */}
-                <div className="lim-vulnerability-block">
-                  <span className="lim-vuln-label">WHERE COULD BIAS ENTER?</span>
-                  <div className="lim-vuln-items">
-                    <span>Disease-activity assessment</span>
-                    <strong className="lim-vuln-plus">+</strong>
-                    <span>Treatment decisions</span>
-                  </div>
-                </div>
-
-                <div className="lim-flow-connector" aria-hidden="true">
-                  <span className="lim-flow-arrow">↓</span>
-                </div>
-
-                {/* 3. THREE MITIGATION LAYERS */}
+                {/* 2. THREE MITIGATION LAYERS */}
                 <div className="lim-safeguards-container">
                   <div className="lim-safeguard-layer">
                     <div className="safeguard-header">
@@ -2910,7 +2886,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* 4. INTEGRATED CONCLUSION BAND */}
+                {/* 3. INTEGRATED CONCLUSION BAND */}
                 <div className="lim-conclusion-band">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
                   <p>These safeguards reduce susceptibility to observer and treatment-decision bias, but cannot reproduce masking.</p>
