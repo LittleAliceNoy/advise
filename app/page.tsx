@@ -13,12 +13,14 @@ const chapters = [
   { id: "tapering", label: "Tapering and reactivation" },
   { id: "tapering-cinematic", label: "Tapering (Cinematic Redesign)" },
   { id: "followup", label: "Follow-up" },
-  { id: "outcomes", label: "Outcomes" },
-  { id: "statistics", label: "Statistical analysis" },
+  { id: "outcomes", label: "Outcomes overview" },
+  { id: "secondary-outcomes-redesign", label: "Secondary outcomes (Redesign)" },
+  { id: "sample-size-redesign", label: "Sample size (Redesign)" },
+  { id: "statistics-sample-only", label: "Statistics — sample size only" },
+  { id: "statistics-redesign", label: "Statistical analysis framework (Redesign)" },
   { id: "quality-assurance", label: "Quality assurance" },
   { id: "participant-flow", label: "Participant flow" },
   { id: "baseline-portrait", label: "Baseline cohort portrait" },
-  { id: "treatment-results", label: "Treatments received" },
   { id: "treatment-results-redesign", label: "Treatments received (Redesign)" },
   { id: "results", label: "Corticosteroid sparing" },
   { id: "discontinuation", label: "Corticosteroid discontinuation" },
@@ -34,6 +36,8 @@ const chapters = [
   { id: "limitations-5", label: "Limitations 5" },
   { id: "limitations-6", label: "Limitations 6" },
   { id: "conclusion", label: "Conclusion" },
+  { id: "outcomes-original", label: "Outcomes (original combined)" },
+  { id: "statistics", label: "Statistical analysis" },
 ];
 
 const strata = [
@@ -439,6 +443,8 @@ export default function Home() {
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
   const [taperingStage, setTaperingStage] = useState(0);
+  const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
+  const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
 
   const goTo = (index: number) => {
     document.getElementById(chapters[index]?.id)?.scrollIntoView({ behavior: "smooth" });
@@ -491,6 +497,21 @@ export default function Home() {
   useEffect(() => {
     if (chapters[active]?.id !== "tapering-cinematic") return;
     setTaperingStage(0);
+  }, [active]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "sample-size-redesign") return;
+    setSampleSizeCycle((cycle) => cycle + 1);
+  }, [active]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "statistics-sample-only") return;
+    setCalcCycle((cycle) => cycle + 1);
+  }, [active]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "statistics-redesign") return;
+    setStatisticsFrameworkStage(-1);
   }, [active]);
 
   const advanceEfficacyStory = () => {
@@ -1227,7 +1248,7 @@ export default function Home() {
             <div className="endpoint-message">
               <div className="endpoint-label"><span>PRIMARY OUTCOME</span></div>
               <h3>Successful corticosteroid sparing</h3>
-              <p>Success required all three signals—sustained together.</p>
+              <p>Assessed at 6 months. All three required for success.</p>
               <div className="endpoint-equation">
                 <div><b>01</b><span>INACTIVE<br />UVEITIS</span></div><i>+</i>
                 <div><b>02</b><span>PREDNISONE<br /><strong>≤7.5 MG/DAY</strong></span></div><i>+</i>
@@ -1236,37 +1257,64 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="secondary-spectrum" aria-label="Secondary outcomes">
-            <div className="spectrum-label"><span>SECONDARY OUTCOMES</span></div>
-            <div className="spectrum-track">
-              <div><i /><b>STEROID SPARING</b><span>By 1 year</span></div>
-              <div><i /><b>OFF STEROID</b><span>Inactive · 2 visits · ≥28 days</span></div>
-              <div><i /><b>BCVA</b><span>Visual function</span></div>
-              <div><i /><b>INFECTION</b><span>Incidence</span></div>
-              <div><i /><b>SAFETY</b><span>Adverse + serious events</span></div>
-              <div><i /><b>QOL</b><span>Patient-reported</span></div>
-            </div>
-          </section>
-
-          <section className="definition-band" aria-label="Disease-specific definition of inactive uveitis">
-            <div className="definition-heading">
-              <span>DEFINITION OF INACTIVE UVEITIS</span>
-              <span>DISEASE-SPECIFIC CRITERIA</span>
-            </div>
-            <div className="clinical-thresholds">
-              <div><span>AC CELLS</span><b>GRADE 0</b><small>Anterior / intermediate / panuveitis</small></div>
-              <div><span>VITREOUS HAZE</span><b>GRADE 0</b><small>Intermediate / posterior / panuveitis</small></div>
-            </div>
-            <div className="imaging-thresholds">
-              <div><span>BIRDSHOT</span><b>VISUAL FIELDS</b><small>Stable or improved</small></div>
-              <div><span>CHORIORETINITIS</span><b>FAF</b><small>No lesion-related hyper-AF</small></div>
-              <div><span>EARLY VKH</span><b>OCT</b><small>No subretinal fluid</small></div>
-              <div><span>RETINAL VASCULITIS</span><b>FFA</b><small>No increased non-perfusion, leakage, or staining</small></div>
+          <section className="secondary-outcomes-band outcomes-secondary-band" aria-label="Secondary outcomes">
+            <header>SECONDARY OUTCOMES</header>
+            <div>
+              <article><i className="secondary-icon-ring" /><strong>STEROID SPARING</strong><span>By 1 year of follow-up</span></article>
+              <article><i className="secondary-icon-slash" /><strong>CORTICOSTEROID<br />DISCONTINUATION</strong><span>Inactive after prednisone discontinuation · 2 visits ≥28 days apart</span></article>
+              <article><svg className="secondary-icon-svg secondary-icon-va" viewBox="0 0 76 104" aria-hidden="true"><rect x="3" y="3" width="70" height="98" rx="3" /><text x="38" y="30">E</text><text x="38" y="52">F P</text><text x="38" y="70">T O Z</text><text x="38" y="86">L P E D</text></svg><strong>BCVA</strong><span>Best-corrected visual acuity</span></article>
+              <article><i className="secondary-icon-signal" /><strong>INFECTIONS</strong><span>Incidence</span></article>
+              <article><svg className="secondary-icon-svg secondary-icon-eye-baseline" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 32C15 14 49 14 60 32 49 50 15 50 4 32Z" /><circle cx="32" cy="32" r="10" /><circle cx="32" cy="32" r="3" /></svg><strong>ADVERSE EVENTS</strong><span>Including serious adverse events</span></article>
+              <article><svg className="secondary-icon-svg secondary-icon-people-baseline" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="14" r="8" /><path d="M18 54v-13c0-9 6-15 14-15s14 6 14 15v13M24 54V41m16 13V41" /></svg><strong>QUALITY OF LIFE</strong><span>Patient-reported</span></article>
             </div>
           </section>
         </section>
 
-        <section id="statistics" className="scene statistics-scene">
+        <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
+          <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / OUTCOME DEFINITIONS</p>
+            <h2>Activity was measured precisely.</h2>
+          </div>
+
+          <section className="inactive-uveitis-definition" aria-label="Definition of inactive uveitis">
+            <header><span>INACTIVE UVEITIS</span><p>Clinical quiescence + applicable disease-specific imaging criteria</p></header>
+            <div className="inactive-definition-groups">
+              <section className="inactive-clinical">
+                <h3>CLINICAL QUIESCENCE</h3>
+                <article><i className="inactive-icon-cells" /><div><span>AC CELLS</span><strong>GRADE 0</strong><small>Anterior / intermediate / panuveitis</small></div></article>
+                <article><i className="inactive-icon-haze" /><div><span>VITREOUS HAZE</span><strong>GRADE 0</strong><small>Intermediate / posterior / panuveitis</small></div></article>
+              </section>
+
+              <section className="inactive-imaging">
+                <h3>DISEASE-SPECIFIC IMAGING CRITERIA</h3>
+                <div>
+                  <article><i className="imaging-icon-field" /><span>BIRDSHOT CHORIORETINITIS</span><strong>VISUAL FIELDS</strong><small>Stable or improved in reliable visual fields</small></article>
+                  <article><i className="imaging-icon-faf" /><span>CHORIORETINITIS</span><strong>FAF</strong><small>No uveitis lesion-related hyperautofluorescence</small></article>
+                  <article><i className="imaging-icon-oct" /><span>EARLY-STAGE VKH</span><strong>OCT</strong><small>No subretinal fluid</small></article>
+                  <article><i className="imaging-icon-ffa" /><span>RETINAL VASCULITIS</span><strong>FFA</strong><small>No increase in retinal nonperfusion, leakage, or vessel staining</small></article>
+                </div>
+              </section>
+            </div>
+          </section>
+        </section>
+
+        <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
+          <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / SAMPLE SIZE</p>
+            <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
+          </div>
+
+          <section key={sampleSizeCycle} className="sample-size-argument" aria-label="Sample size calculation">
+            <span className="sample-size-micro-label">SAMPLE SIZE</span>
+            <div className="sample-size-rate sample-size-rate-ada"><span>ADA EXPECTED PRIMARY OUTCOME</span><strong>75%</strong></div>
+            <div className="sample-size-rate sample-size-rate-cid"><span>CID EXPECTED PRIMARY OUTCOME</span><strong>51%</strong></div>
+            <div className="sample-size-convergence" aria-hidden="true"><i /><i /><b>24 PERCENTAGE-POINT EXPECTED DIFFERENCE</b></div>
+            <div className="sample-size-hero"><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><strong>222</strong><span>PARTICIPANTS</span></div>
+            <div className="sample-size-assumptions" aria-label="Statistical assumptions"><span>α 0.0492 · TWO-SIDED</span><span>90% POWER</span><span>10% LOSS ALLOWANCE</span></div>
+          </section>
+        </section>
+
+        <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
             <p className="eyebrow"><span /> 11 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
@@ -1277,16 +1325,14 @@ export default function Home() {
               <span>SAMPLE SIZE</span><small>PRIMARY OUTCOME · 6-MONTH CORTICOSTEROID SPARING</small>
               <button onClick={() => setCalcCycle((cycle) => cycle + 1)} aria-label="Replay sample-size calculation">↻</button>
             </header>
-            <div key={calcCycle} className="sample-calculation">
+            <div key={`sample-only-${calcCycle}`} className="sample-calculation">
               <div className="calc-parameter calc-alpha"><strong>α 0.0492</strong><span>TWO-SIDED</span></div>
               <div className="calc-parameter calc-power"><strong>90%</strong><span>POWER</span></div>
               <div className="calc-parameter calc-loss"><strong>10%</strong><span>LOSS ALLOWANCE</span></div>
 
               <div className="calc-input calc-ada"><span>ADA EXPECTED</span><strong>75%</strong></div>
               <div className="calc-track calc-track-left"><b>75%</b></div>
-              <div className="calc-core">
-                <strong>222</strong><span>PARTICIPANTS</span>
-              </div>
+              <div className="calc-core"><strong>222</strong><span>PARTICIPANTS</span></div>
               <div className="calc-track calc-track-right"><b>51%</b></div>
               <div className="calc-input calc-cid"><span>CID EXPECTED</span><strong>51%</strong><small>75% × 55% + 25% × 40%</small></div>
 
@@ -1295,47 +1341,54 @@ export default function Home() {
               <div className="calc-note calc-secondary"><strong>80%</strong><span>POWER FOR DISCONTINUATION · 1 Y</span></div>
             </div>
           </section>
+        </section>
 
-          <section className="analysis-map" aria-label="Statistical analysis strategy">
-                  <header><span>ANALYSIS</span><strong>AS RANDOMIZED</strong></header>
-            <div className="analysis-selector" role="tablist" aria-label="Select an analysis type">
-              {analysisMethods.map((method, index) => (
-                <button
-                  key={method.code}
-                  className={selectedAnalysis === index ? "active" : ""}
-                  onClick={() => setSelectedAnalysis(index)}
-                  role="tab"
-                  aria-selected={selectedAnalysis === index}
-                >
-                  <i />{method.code}
-                </button>
-              ))}
-            </div>
-            <div key={selectedAnalysis} className="analysis-display" role="tabpanel">
-              <i className="analysis-scan" aria-hidden="true" />
-              <div className="analysis-outcome">
-                <span>01 / OUTCOME</span><strong>{analysisMethods[selectedAnalysis].outcome}</strong>
-                {analysisMethods[selectedAnalysis].note && <small>{analysisMethods[selectedAnalysis].note}</small>}
-              </div>
-              <div><span>02 / MODEL</span><strong>{analysisMethods[selectedAnalysis].model}</strong></div>
-              <div className={analysisMethods[selectedAnalysis].details ? "analysis-specification" : ""}>
-                <span>03 / MODEL SPECIFICATION</span>
-                <strong>{analysisMethods[selectedAnalysis].reason}</strong>
-                {analysisMethods[selectedAnalysis].details && (
-                  <dl>
-                    {analysisMethods[selectedAnalysis].details.map(([type, included]) => (
-                      <div key={type}><dt>{type}</dt><dd>{included}</dd></div>
-                    ))}
-                  </dl>
-                )}
-                {analysisMethods[selectedAnalysis].specNote && <small className="analysis-spec-note">{analysisMethods[selectedAnalysis].specNote}</small>}
-              </div>
-            </div>
-            <footer>
-              <span>Sensitivity analyses assessed missingness.</span>
-              <span>Secondary-outcome P values were nominal.</span>
-            </footer>
+        <section
+          id="statistics-redesign"
+          className={`scene statistics-framework-scene statistics-framework-stage-${statisticsFrameworkStage}`}
+          onClick={() => setStatisticsFrameworkStage((stage) => (stage >= 3 ? -1 : stage + 1))}
+          aria-label="Statistical analysis framework. Click to focus each analysis family."
+        >
+          <div className="scene-copy statistics-framework-copy">
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <h2>Different questions.<br /><em>Different models.</em></h2>
+          </div>
+
+          <section className="analysis-framework" aria-label="Four statistical analysis families">
+            <article className="analysis-framework-column">
+              <header><b>01</b><span>PRIMARY OUTCOME</span></header>
+              <section><small>QUESTION</small><h3>Did assigned treatment achieve successful corticosteroid sparing more often?</h3></section>
+              <div className="analysis-visual analysis-visual-binary" aria-label="Schematic repeated binary participant-state motif"><i /><i /><i /><i /><i /><i /><i /><i /></div>
+              <section><small>MODEL</small><h4>GEE LOGISTIC<br />REGRESSION</h4></section>
+              <ul><li>Repeated measurements; unstructured covariance</li><li>Treatment + strata + visits 8/10/12; treatment × visit</li></ul>
+            </article>
+
+            <article className="analysis-framework-column">
+              <header><b>02</b><span>CONTINUOUS OUTCOMES</span></header>
+              <section><small>QUESTION</small><h3>Did visual acuity, quality of life, or retinal thickness change differently over time?</h3></section>
+              <svg className="analysis-visual analysis-visual-lines" viewBox="0 0 240 90" aria-label="Schematic longitudinal trajectories"><path d="M8 72 43 48 76 57 112 34 148 42 189 19 232 27" /><path d="M8 76 43 62 76 69 112 54 148 59 189 45 232 47" /><g><circle cx="43" cy="48" r="3" /><circle cx="112" cy="34" r="3" /><circle cx="189" cy="19" r="3" /><circle cx="43" cy="62" r="3" /><circle cx="112" cy="54" r="3" /><circle cx="189" cy="45" r="3" /></g></svg>
+              <section><small>MODEL</small><h4>MIXED-EFFECTS<br />MODEL</h4></section>
+              <ul><li>Linear: visual acuity / quality of life; log: retinal thickness</li><li>Unstructured correlation; person-level random intercept for eye outcomes</li></ul>
+            </article>
+
+            <article className="analysis-framework-column">
+              <header><b>03</b><span>TIME-TO-EVENT OUTCOMES</span></header>
+              <section><small>QUESTION</small><h3>Which assigned strategy reached corticosteroid outcomes or adverse events sooner?</h3></section>
+              <svg className="analysis-visual analysis-visual-km" viewBox="0 0 240 90" aria-label="Schematic Kaplan-Meier-style step curves"><path d="M8 12h24v10h27v11h29v14h33v11h38v10h68" /><path d="M8 12h22v17h25v14h28v18h31v12h39v7h79" /></svg>
+              <section><small>MODEL</small><h4>KAPLAN-MEIER + COX<br />PROPORTIONAL HAZARDS</h4></section>
+              <ul><li>Corticosteroid events (secondary analysis); adverse events (primary analysis)</li><li>Stratification interaction tests; frailty model for ocular adverse events</li></ul>
+            </article>
+
+            <article className="analysis-framework-column">
+              <header><b>04</b><span>CUMULATIVE / RECURRENT OUTCOMES</span></header>
+              <section><small>QUESTION</small><h3>How did accumulated prednisone exposure and recurrent systemic events differ?</h3></section>
+              <svg className="analysis-visual analysis-visual-accumulation" viewBox="0 0 240 90" aria-label="Schematic accumulated exposure trajectories"><path d="M8 80 43 72 78 60 113 47 148 36 190 20 232 9V80Z" /><path d="M8 80 43 77 78 70 113 61 148 52 190 43 232 33V80Z" /></svg>
+              <section><small>MODEL</small><h4>NEGATIVE BINOMIAL<br />REGRESSION</h4></section>
+              <ul><li>Cumulative prednisone exposure</li><li>Recurrent systemic events, including hospitalizations</li></ul>
+            </article>
           </section>
+
+          <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span>Stratification variables: initial prednisone dosage + baseline immunosuppression use</span><span>Sensitivity analyses assessed missingness</span><span>Secondary-outcome P values nominal</span></footer>
         </section>
 
         <section id="quality-assurance" className="scene qa-scene">
@@ -1554,7 +1607,7 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="treatment-results" className="scene treatment-results-scene">
+        {false && <section id="treatment-results" className="scene treatment-results-scene">
           <div className="scene-header-row">
             <div className="scene-copy treatment-results-copy">
               <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
@@ -1830,7 +1883,7 @@ export default function Home() {
             </div>
 
           </section>
-        </section>
+        </section>}
 
         <section
           id="treatment-results-redesign"
@@ -1841,7 +1894,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow txrd-eyebrow"><span /> 17 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 17 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -1914,6 +1967,9 @@ export default function Home() {
                   </div>
                 </article>
               </div>
+              <div className="txrd-high-dose-subgroup" aria-label="High-dose subgroup: 38 percent overall, 40 percent in the ADA arm and 36 percent in the CID arm">
+                38% high dose subgroup (ADA 40% : CID 36%)
+              </div>
             </section>
 
             {/* ARROWS */}
@@ -1958,6 +2014,9 @@ export default function Home() {
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "98%" }} /></div>
                   </div>
                 </article>
+              </div>
+              <div className="txrd-high-dose-subgroup" aria-label="High-dose subgroup: 74 percent overall, 73 percent in the ADA arm and 74 percent in the CID arm">
+                74% high dose subgroup (ADA 73% : CID 74%)
               </div>
             </section>
 
@@ -2537,6 +2596,124 @@ export default function Home() {
             <div className="citation">ADVISE Trial Research Group · Ophthalmology, Vol. 133, Issue 3 · NCT03828019</div>
             <button className="restart" onClick={() => goTo(0)}>↻ Restart story</button>
           </div>
+        </section>
+
+        <section id="outcomes-original" className="scene outcomes-original-scene">
+          <div className="scene-copy outcomes-copy">
+            <p className="eyebrow"><span /> 34 — METHODOLOGY / OUTCOMES</p>
+            <h2>Define success.<br /><em>Then measure it.</em></h2>
+          </div>
+
+          <section className="endpoint-stage" aria-label="Primary outcome by 6 months">
+            <div className="endpoint-time" aria-hidden="true"><strong>6</strong><span>MONTHS</span><i /></div>
+            <div className="endpoint-message">
+              <div className="endpoint-label"><span>PRIMARY OUTCOME</span></div>
+              <h3>Successful corticosteroid sparing</h3>
+              <p>Success required all three signals—sustained together.</p>
+              <div className="endpoint-equation">
+                <div><b>01</b><span>INACTIVE<br />UVEITIS</span></div><i>+</i>
+                <div><b>02</b><span>PREDNISONE<br /><strong>≤7.5 MG/DAY</strong></span></div><i>+</i>
+                <div><b>03</b><span>2 CONSECUTIVE VISITS<br /><strong>≥28 DAYS APART</strong></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section className="secondary-spectrum" aria-label="Secondary outcomes">
+            <div className="spectrum-label"><span>SECONDARY OUTCOMES</span></div>
+            <div className="spectrum-track">
+              <div><i /><b>STEROID SPARING</b><span>By 1 year</span></div>
+              <div><i /><b>OFF STEROID</b><span>Inactive · 2 visits · ≥28 days</span></div>
+              <div><i /><b>BCVA</b><span>Visual function</span></div>
+              <div><i /><b>INFECTION</b><span>Incidence</span></div>
+              <div><i /><b>SAFETY</b><span>Adverse + serious events</span></div>
+              <div><i /><b>QOL</b><span>Patient-reported</span></div>
+            </div>
+          </section>
+
+          <section className="definition-band" aria-label="Disease-specific definition of inactive uveitis">
+            <div className="definition-heading">
+              <span>DEFINITION OF INACTIVE UVEITIS</span>
+              <span>DISEASE-SPECIFIC CRITERIA</span>
+            </div>
+            <div className="clinical-thresholds">
+              <div><span>AC CELLS</span><b>GRADE 0</b><small>Anterior / intermediate / panuveitis</small></div>
+              <div><span>VITREOUS HAZE</span><b>GRADE 0</b><small>Intermediate / posterior / panuveitis</small></div>
+            </div>
+            <div className="imaging-thresholds">
+              <div><span>BIRDSHOT</span><b>VISUAL FIELDS</b><small>Stable or improved</small></div>
+              <div><span>CHORIORETINITIS</span><b>FAF</b><small>No lesion-related hyper-AF</small></div>
+              <div><span>EARLY VKH</span><b>OCT</b><small>No subretinal fluid</small></div>
+              <div><span>RETINAL VASCULITIS</span><b>FFA</b><small>No increased non-perfusion, leakage, or staining</small></div>
+            </div>
+          </section>
+        </section>
+
+        <section id="statistics" className="scene statistics-scene">
+          <div className="scene-copy statistics-copy">
+            <p className="eyebrow"><span /> 35 — METHODOLOGY / STATISTICS</p>
+            <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
+          </div>
+
+          <section className="sample-size-story" aria-label="Sample size calculation">
+            <header>
+              <span>SAMPLE SIZE</span><small>PRIMARY OUTCOME · 6-MONTH CORTICOSTEROID SPARING</small>
+              <button onClick={() => setCalcCycle((cycle) => cycle + 1)} aria-label="Replay sample-size calculation">↻</button>
+            </header>
+            <div key={calcCycle} className="sample-calculation">
+              <div className="calc-parameter calc-alpha"><strong>α 0.0492</strong><span>TWO-SIDED</span></div>
+              <div className="calc-parameter calc-power"><strong>90%</strong><span>POWER</span></div>
+              <div className="calc-parameter calc-loss"><strong>10%</strong><span>LOSS ALLOWANCE</span></div>
+              <div className="calc-input calc-ada"><span>ADA EXPECTED</span><strong>75%</strong></div>
+              <div className="calc-track calc-track-left"><b>75%</b></div>
+              <div className="calc-core"><strong>222</strong><span>PARTICIPANTS</span></div>
+              <div className="calc-track calc-track-right"><b>51%</b></div>
+              <div className="calc-input calc-cid"><span>CID EXPECTED</span><strong>51%</strong><small>75% × 55% + 25% × 40%</small></div>
+              <div className="calc-note calc-interim"><strong>40%</strong><span>INTERIM INFORMATION · STOPPING α 0.008</span></div>
+              <div className="calc-split"><b>111 <i>ADA</i></b><b>111 <i>CID</i></b></div>
+              <div className="calc-note calc-secondary"><strong>80%</strong><span>POWER FOR DISCONTINUATION · 1 Y</span></div>
+            </div>
+          </section>
+
+          <section className="analysis-map" aria-label="Statistical analysis strategy">
+            <header><span>ANALYSIS</span><strong>AS RANDOMIZED</strong></header>
+            <div className="analysis-selector" role="tablist" aria-label="Select an analysis type">
+              {analysisMethods.map((method, index) => (
+                <button
+                  key={method.code}
+                  className={selectedAnalysis === index ? "active" : ""}
+                  onClick={() => setSelectedAnalysis(index)}
+                  role="tab"
+                  aria-selected={selectedAnalysis === index}
+                >
+                  <i />{method.code}
+                </button>
+              ))}
+            </div>
+            <div key={selectedAnalysis} className="analysis-display" role="tabpanel">
+              <i className="analysis-scan" aria-hidden="true" />
+              <div className="analysis-outcome">
+                <span>01 / OUTCOME</span><strong>{analysisMethods[selectedAnalysis].outcome}</strong>
+                {analysisMethods[selectedAnalysis].note && <small>{analysisMethods[selectedAnalysis].note}</small>}
+              </div>
+              <div><span>02 / MODEL</span><strong>{analysisMethods[selectedAnalysis].model}</strong></div>
+              <div className={analysisMethods[selectedAnalysis].details ? "analysis-specification" : ""}>
+                <span>03 / MODEL SPECIFICATION</span>
+                <strong>{analysisMethods[selectedAnalysis].reason}</strong>
+                {analysisMethods[selectedAnalysis].details && (
+                  <dl>
+                    {analysisMethods[selectedAnalysis].details.map(([type, included]) => (
+                      <div key={type}><dt>{type}</dt><dd>{included}</dd></div>
+                    ))}
+                  </dl>
+                )}
+                {analysisMethods[selectedAnalysis].specNote && <small className="analysis-spec-note">{analysisMethods[selectedAnalysis].specNote}</small>}
+              </div>
+            </div>
+            <footer>
+              <span>Sensitivity analyses assessed missingness.</span>
+              <span>Secondary-outcome P values were nominal.</span>
+            </footer>
+          </section>
         </section>
       </main>
     </>

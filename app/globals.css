@@ -1631,7 +1631,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .diagnosis-suite>div b { color:#ff6b6b;font:600 clamp(.58rem,.65vw,.7rem) var(--font-geist-mono),monospace;letter-spacing:.025em;white-space:nowrap; }
 @keyframes followupSignal { 0%{left:2%;opacity:0} 4%{opacity:1} 96%{left:97%;opacity:1} 100%{left:97%;opacity:0} }
 
-.outcomes-scene { align-items:flex-start;padding-top:10.5vh; }
+.outcomes-scene,
+.outcomes-original-scene { align-items:flex-start;padding-top:10.5vh; }
 .outcomes-copy { width:45vw; }
 .outcomes-copy h2 { font-size:clamp(2.9rem,3.8vw,4.35rem); }
 .primary-outcome,.secondary-outcomes,.inactive-definition { position:absolute;z-index:4;min-width:0;background:linear-gradient(135deg,rgba(255,255,255,.032),rgba(10,10,11,.96) 58%,rgba(76,5,9,.1));border:1px solid rgba(255,255,255,.09);overflow:hidden; }
@@ -1731,6 +1732,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .sample-size-story>header button { margin-left:auto;border:0;padding:.22rem .1rem;color:#77726f;background:transparent;font:500 .36rem var(--font-geist-mono),monospace;letter-spacing:.055em;opacity:.58;cursor:pointer;transition:.2s ease; }
 .sample-size-story>header button:hover { color:#d7d2ce;opacity:1; }
 .sample-calculation { min-height:0;display:grid;grid-template-columns:1.1fr .75fr 1.35fr .75fr 1.1fr;grid-template-rows:.52fr 1.35fr .48fr;align-items:center;column-gap:.65rem;padding:.2rem 1rem .45rem;overflow:hidden; }
+
+/* Standalone archived Statistics page: the sample-size argument is its complete story. */
+.statistics-sample-only-scene .sample-size-story {
+  left: 12vw;
+  right: 12vw;
+  top: 29%;
+  height: 43%;
+  grid-template-rows: 2.55rem 1fr;
+  border-bottom: 0;
+}
+.statistics-sample-only-scene .sample-calculation { padding: .35rem 1.4rem .65rem; }
+.statistics-sample-only-scene .sample-calculation {
+  grid-template-rows: .48fr 1.15fr .72fr;
+  row-gap: clamp(.6rem, 1.25vh, 1rem);
+}
+.statistics-sample-only-scene .calc-split,
+.statistics-sample-only-scene .calc-note { align-self: end; }
 .calc-parameter { justify-self:center;display:flex;align-items:baseline;gap:.45rem;padding:.25rem .5rem;border-bottom:1px solid rgba(255,45,45,.36);opacity:0;animation:parameterOnline .65s ease 2.4s forwards; }
 .calc-parameter strong { color:#eee9e5;font:600 .68rem var(--font-geist-mono),monospace;white-space:nowrap; }
 .calc-parameter span { color:#9e9995;font:500 .4rem var(--font-geist-mono),monospace;letter-spacing:.06em;white-space:nowrap; }
@@ -3730,7 +3748,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0 0 .3rem 0;
 }
 
-.txrd-title-area p {
+.txrd-title-area p:not(.eyebrow) {
   font-size: clamp(0.55rem, 0.65vw, 0.75rem);
   color: #a0a0a0;
   line-height: 1.4;
@@ -4282,7 +4300,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-bottom: 0.8rem;
 }
 
-.txrd-title-area p {
+.txrd-title-area p:not(.eyebrow) {
   max-width: 48rem;
   font-size: clamp(0.83rem, 0.94vw, 1.08rem);
   line-height: 1.48;
@@ -4379,7 +4397,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-bottom: 0.55rem;
 }
 
-.txrd-title-area p {
+.txrd-title-area p:not(.eyebrow) {
   font-size: clamp(0.76rem, 0.83vw, 0.94rem);
   line-height: 1.38;
 }
@@ -4461,7 +4479,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-bottom: 0.58rem;
 }
 
-.txrd-title-area p {
+.txrd-title-area p:not(.eyebrow) {
   font-size: clamp(0.82rem, 0.9vw, 1.02rem);
   line-height: 1.42;
 }
@@ -4823,7 +4841,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-size: clamp(2.8rem, 3.25vw, 4.15rem);
 }
 
-.txr-dashboard-scene .txrd-title-area p {
+.txr-dashboard-scene .txrd-title-area p:not(.eyebrow) {
   font-size: clamp(.95rem, 1.02vw, 1.16rem);
   line-height: 1.42;
 }
@@ -4978,7 +4996,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     margin-bottom: .48rem;
   }
 
-  .txr-dashboard-scene .txrd-title-area p {
+  .txr-dashboard-scene .txrd-title-area p:not(.eyebrow) {
     font-size: clamp(.82rem, .9vw, 1rem);
     line-height: 1.34;
   }
@@ -5649,6 +5667,257 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   padding: .35rem .15rem 0;
 }
 
+/* Give the uveitis-location visual more breathing room before the lower panels. */
+.baseline-portrait-scene .cohort-portrait {
+  grid-template-rows: 1.15fr 1fr;
+}
+
+.baseline-portrait-scene .uveitis-duration-signal,
+.baseline-portrait-scene .ocular-signal {
+  transform: translateY(.2rem);
+}
+
+.baseline-portrait-scene .ocular-signal {
+  grid-template-rows: .85rem minmax(0, 1fr);
+}
+
+/* Balance the demographic card toward its lower ethnicity callout. */
+.baseline-portrait-scene .demographic-signals .race-visual ul {
+  transform: translateY(-.22rem);
+}
+
+.baseline-portrait-scene .demographic-signals .ethnicity-signal {
+  min-height: 3rem;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+}
+
+/* Page 17 — baseline high-dose subgroup annotation. */
+.txr-dashboard-scene .txrd-before .txrd-arms,
+.txr-dashboard-scene .txrd-after .txrd-arms {
+  padding-bottom: .3rem;
+}
+
+.txr-dashboard-scene .txrd-high-dose-subgroup {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .86rem .55rem;
+  font-family: var(--font-geist-mono), monospace;
+  color: #888;
+  font-size: clamp(.6rem, .66vw, .76rem);
+  font-weight: 500;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+
+/* Page 10 redesign — one endpoint, expressed as a single quiet story. */
+.primary-outcome-redesign-scene {
+  align-items: flex-start;
+  padding-top: 10.5vh;
+}
+
+.primary-outcome-redesign-scene::before {
+  background:
+    radial-gradient(circle at 50% 56%, rgba(255, 45, 45, .10), transparent 21%),
+    radial-gradient(circle at 24% 64%, rgba(105, 14, 18, .11), transparent 30%),
+    #050505;
+}
+
+.primary-outcome-redesign-copy { width: 48vw; }
+.primary-outcome-redesign-copy h2 { font-size: clamp(2.9rem, 3.8vw, 4.35rem); }
+
+.primary-outcome-story {
+  position: absolute;
+  z-index: 3;
+  left: 8vw;
+  right: 8vw;
+  top: 28%;
+  bottom: 8%;
+  min-height: 0;
+}
+
+.primary-outcome-heading {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  width: min(43rem, 62vw);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.primary-outcome-heading > span {
+  display: inline-block;
+  padding: .3rem .6rem;
+  color: #080808;
+  background: var(--red);
+  font: 700 clamp(.52rem, .58vw, .68rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .12em;
+}
+
+.primary-outcome-heading h3 {
+  margin: .72rem 0 0;
+  color: #f2eeea;
+  font-size: clamp(1.75rem, 2.25vw, 2.65rem);
+  font-weight: 480;
+  letter-spacing: -.045em;
+}
+
+.primary-outcome-heading p {
+  margin: .35rem 0 0;
+  color: #a7a19d;
+  font-size: clamp(.67rem, .74vw, .86rem);
+}
+
+.primary-outcome-orbit {
+  position: absolute;
+  z-index: 1;
+  top: 28%;
+  left: 50%;
+  display: flex;
+  width: clamp(7.4rem, 9vw, 10rem);
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 70, 74, .36);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 45, 45, .08), transparent 66%);
+}
+
+.primary-outcome-orbit::before,
+.primary-outcome-orbit::after,
+.primary-outcome-orbit i {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 50%;
+}
+
+.primary-outcome-orbit::before { inset: .72rem; }
+.primary-outcome-orbit::after { inset: 1.45rem; border-color: rgba(255, 66, 71, .22); }
+.primary-outcome-orbit i:nth-child(1) { inset: -.48rem .6rem; border-color: rgba(255, 66, 71, .15); transform: rotate(24deg); }
+.primary-outcome-orbit i:nth-child(2) { inset: .35rem -.7rem; border-color: rgba(255, 255, 255, .06); transform: rotate(-26deg); }
+.primary-outcome-orbit i:nth-child(3) { inset: 1.05rem -.18rem; border-color: rgba(255, 66, 71, .11); transform: rotate(45deg); }
+
+.primary-outcome-orbit strong {
+  position: relative;
+  color: #f3efeb;
+  font: 500 clamp(2rem, 2.65vw, 3rem)/.9 var(--font-geist-mono), monospace;
+}
+
+.primary-outcome-orbit span {
+  position: relative;
+  margin-top: .28rem;
+  color: #ff6569;
+  font: 600 clamp(.45rem, .5vw, .58rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .13em;
+}
+
+.primary-outcome-requirements {
+  position: absolute;
+  z-index: 2;
+  top: 62%;
+  left: 4%;
+  right: 4%;
+  display: grid;
+  grid-template-columns: 1fr .36fr 1fr .36fr 1fr;
+  align-items: center;
+}
+
+.primary-outcome-requirement {
+  min-width: 0;
+  padding: .65rem .7rem .2rem;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  text-align: center;
+  transition: opacity .35s ease, transform .35s ease, border-color .35s ease;
+}
+
+.primary-outcome-requirement b {
+  display: block;
+  margin-bottom: .42rem;
+  color: var(--red);
+  font: 500 clamp(.82rem, .95vw, 1.1rem)/1 var(--font-geist-mono), monospace;
+}
+
+.primary-outcome-requirement span {
+  display: block;
+  color: #efebe7;
+  font: 600 clamp(.64rem, .72vw, .84rem)/1.35 var(--font-geist-mono), monospace;
+  letter-spacing: .055em;
+}
+
+.primary-outcome-requirement strong {
+  display: block;
+  color: #ff666a;
+  font: inherit;
+}
+
+.primary-outcome-requirements > i {
+  height: 1px;
+  margin: 0 .3rem;
+  background: linear-gradient(90deg, rgba(255, 55, 60, .15), rgba(255, 55, 60, .62), rgba(255, 55, 60, .15));
+  transition: opacity .35s ease;
+}
+
+.primary-outcome-success {
+  position: absolute;
+  z-index: 2;
+  bottom: 1%;
+  left: 50%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: .62rem;
+  width: max-content;
+  transform: translateX(-50%);
+  color: #b5aeaa;
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: .11em;
+  transition: color .35s ease, text-shadow .35s ease, transform .35s ease;
+}
+
+.primary-outcome-success span { font-size: clamp(.65rem, .72vw, .84rem); }
+.primary-outcome-success b { color: #8c4a4e; font-size: clamp(1.1rem, 1.3vw, 1.5rem); font-weight: 400; }
+.primary-outcome-success strong { color: #f1ece8; font-size: clamp(1.05rem, 1.25vw, 1.45rem); font-weight: 600; }
+
+.primary-outcome-stage-1 .primary-outcome-requirement:not(:nth-of-type(1)),
+.primary-outcome-stage-2 .primary-outcome-requirement:not(:nth-of-type(2)),
+.primary-outcome-stage-3 .primary-outcome-requirement:not(:nth-of-type(3)) {
+  opacity: .25;
+}
+
+.primary-outcome-stage-1 .primary-outcome-requirement:nth-of-type(1),
+.primary-outcome-stage-2 .primary-outcome-requirement:nth-of-type(2),
+.primary-outcome-stage-3 .primary-outcome-requirement:nth-of-type(3) {
+  border-top-color: rgba(255, 55, 60, .82);
+  transform: translateY(-.18rem);
+}
+
+.primary-outcome-stage-1 .primary-outcome-requirements > i,
+.primary-outcome-stage-2 .primary-outcome-requirements > i,
+.primary-outcome-stage-3 .primary-outcome-requirements > i {
+  opacity: .18;
+}
+
+.primary-outcome-stage-4 .primary-outcome-success {
+  color: #ff7578;
+  transform: translateX(-50%) translateY(-.25rem);
+  text-shadow: 0 0 18px rgba(255, 45, 45, .32);
+}
+
+.primary-outcome-stage-4 .primary-outcome-success strong { color: #ff6166; }
+.primary-outcome-stage-4 .primary-outcome-requirement { border-top-color: rgba(255, 55, 60, .68); }
+
+/* The shared eyebrow dot must not shrink inside Page 17's narrow header grid. */
+.txr-dashboard-scene .txrd-title-area > .eyebrow > span {
+  flex: 0 0 .55rem;
+}
+
 /* Keep the two conventional-IMT composition summaries on one shared line. */
 .txr-dashboard-scene .txrd-pathway-composition {
   flex-direction: row;
@@ -5708,4 +5977,1857 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .txr-dashboard-scene .txrd-escalation-details i {
   color: #a791d9;
   font-style: normal;
+}
+
+/* Page 10 redesign — final endpoint-diagram compression and convergence. */
+.primary-outcome-redesign-scene .primary-outcome-orbit {
+  top: 18%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements {
+  top: 52%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::after {
+  left: 13%;
+  right: 13%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success {
+  bottom: 7%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success::before {
+  height: 4.75rem;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading > span {
+  font-size: clamp(.6rem, .67vw, .78rem);
+}
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-orbit {
+    top: 18%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirements {
+    top: 50%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-success {
+    bottom: 2%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-success::before {
+    height: 4.75rem;
+  }
+}
+
+/* Page 11 — compact clinical definition layout. */
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition {
+  top: 29%;
+  bottom: 8%;
+  border-top: 0;
+}
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header {
+  height: auto;
+  min-height: 4.15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .42rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span {
+  color: #f2ebe7;
+  font: 600 clamp(.92rem, 1.15vw, 1.35rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .095em;
+}
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > p {
+  margin: 0;
+  color: #bab0aa;
+  font: 500 clamp(.5rem, .62vw, .72rem)/1.25 var(--font-geist-sans), Arial, sans-serif;
+  letter-spacing: .015em;
+}
+.secondary-outcomes-redesign-scene .inactive-definition-groups {
+  position: static;
+  height: calc(100% - 4.15rem);
+  display: grid;
+  grid-template-columns: 35fr 65fr;
+  padding-top: clamp(1.1rem, 2.5vh, 2rem);
+}
+.secondary-outcomes-redesign-scene .inactive-definition-groups::before,
+.secondary-outcomes-redesign-scene .inactive-definition-groups::after,
+.secondary-outcomes-redesign-scene .inactive-clinical h3::after,
+.secondary-outcomes-redesign-scene .inactive-imaging h3::after { display: none; }
+.secondary-outcomes-redesign-scene .inactive-clinical,
+.secondary-outcomes-redesign-scene .inactive-imaging {
+  position: static;
+  min-height: 0;
+  padding-top: 0;
+}
+.secondary-outcomes-redesign-scene .inactive-clinical {
+  display: flex;
+  flex-direction: column;
+  padding-right: clamp(1.25rem, 2.3vw, 2.7rem);
+  border-right: 1px solid rgba(255, 92, 98, .26);
+}
+.secondary-outcomes-redesign-scene .inactive-imaging {
+  display: flex;
+  flex-direction: column;
+  padding-left: clamp(1.4rem, 2.7vw, 3.2rem);
+}
+.secondary-outcomes-redesign-scene .inactive-clinical h3,
+.secondary-outcomes-redesign-scene .inactive-imaging h3 {
+  margin: 0;
+  font-size: clamp(.68rem, .82vw, .96rem);
+  letter-spacing: .09em;
+}
+.secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top: clamp(1rem, 2.2vh, 1.7rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical article + article { margin-top: clamp(1.2rem, 3.1vh, 2.45rem); padding-bottom: 0; }
+.secondary-outcomes-redesign-scene .inactive-clinical article > i { width: clamp(2.25rem, 3vw, 3.4rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical span { font-size: clamp(.72rem, .9vw, 1.04rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical strong { font-size: clamp(.78rem, .98vw, 1.14rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical small { font-size: clamp(.53rem, .64vw, .74rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging > div {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.15rem, 2.2vw, 2.55rem) clamp(1.3rem, 2.7vw, 3.2rem);
+  padding-top: clamp(1rem, 2.1vh, 1.65rem);
+  border: 0;
+  background: transparent;
+}
+.secondary-outcomes-redesign-scene .inactive-imaging article {
+  align-self: start;
+  padding-left: clamp(1.9rem, 2.45vw, 2.85rem);
+}
+.secondary-outcomes-redesign-scene .inactive-imaging article > i { width: clamp(1.6rem, 2.05vw, 2.35rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging span { font-size: clamp(.54rem, .68vw, .79rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging strong { font-size: clamp(.65rem, .78vw, .91rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging small { font-size: clamp(.48rem, .58vw, .68rem); line-height: 1.32; }
+
+@media (max-width: 700px) {
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition { top: 30%; bottom: 5%; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { min-height: 3.3rem; gap: .3rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span { font-size: .72rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > p { font-size: .4rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups { height: calc(100% - 3.3rem); padding-top: .75rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical { padding-right: .75rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging { padding-left: .8rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical h3,
+  .secondary-outcomes-redesign-scene .inactive-imaging h3 { font-size: .48rem; letter-spacing: .04em; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top: .75rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article + article { margin-top: 1rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article > i { width: 1.45rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical span { font-size: .49rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical strong { font-size: .53rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical small { font-size: .39rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging > div { gap: .72rem .62rem; padding-top: .72rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging article { padding-left: 1.28rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging article > i { width: 1.06rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging span { font-size: .43rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging strong { font-size: .48rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging small { font-size: .39rem; }
+}
+
+/* Page 11 secondary outcomes — reuse Baseline Cohort clinical icon forms. */
+.secondary-outcomes-band article > .secondary-icon-svg {
+  display: block;
+  width: clamp(1.65rem, 2.15vw, 2.5rem);
+  height: clamp(1.65rem, 2.15vw, 2.5rem);
+  margin: 0 auto .55rem;
+  color: #ff6469;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.secondary-outcomes-band .secondary-icon-va { width: clamp(1.4rem, 1.8vw, 2.05rem); }
+.secondary-outcomes-band .secondary-icon-va text { fill: currentColor; stroke: none; font: 700 16px/1 Arial, sans-serif; text-anchor: middle; }
+
+@media (max-width: 700px) {
+  .secondary-outcomes-band article > .secondary-icon-svg {
+    width: 1.42rem;
+    height: 1.42rem;
+    margin-bottom: .43rem;
+  }
+
+  .secondary-outcomes-band .secondary-icon-va { width: 1.18rem; }
+}
+
+/* Page 10 redesign — left orbit and horizontal primary-endpoint criteria. */
+.primary-outcome-redesign-scene .primary-outcome-story {
+  top: 26%;
+  bottom: 8%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading {
+  top: 5%;
+  left: 42%;
+  width: 54%;
+  transform: none;
+  text-align: left;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading > span {
+  padding: .48rem .78rem;
+  border: 0;
+  color: #120708;
+  background: #ff4c50;
+  font-size: clamp(.68rem, .82vw, .96rem);
+  letter-spacing: .13em;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading h3 {
+  margin-top: .78rem;
+  font-size: clamp(1.8rem, 2.65vw, 3rem);
+  letter-spacing: -.045em;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading p {
+  margin-top: .45rem;
+  font-size: clamp(.66rem, .78vw, .9rem);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-orbit {
+  top: 29%;
+  left: 15%;
+  width: clamp(10.5rem, 13vw, 14.5rem);
+  transform: translateX(-50%);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-story::before { display: none; }
+
+.primary-outcome-redesign-scene .primary-outcome-requirements {
+  top: 47%;
+  left: 38%;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::before,
+.primary-outcome-redesign-scene .primary-outcome-requirements::after { display: none; }
+
+.primary-outcome-redesign-scene .primary-outcome-requirements > i { display: none; }
+
+.primary-outcome-redesign-scene .primary-outcome-requirement {
+  padding: 0 clamp(.4rem, 1vw, 1.1rem);
+  border: 0;
+  text-align: center;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement::before,
+.primary-outcome-redesign-scene .primary-outcome-requirement::after { display: none; }
+
+.primary-outcome-redesign-scene .primary-criterion-icon {
+  position: relative;
+  display: block;
+  width: clamp(2.65rem, 3.5vw, 4rem);
+  aspect-ratio: 1;
+  margin: 0 auto .65rem;
+  border: 1.5px solid #ff6267;
+  color: #ff6267;
+}
+
+.primary-outcome-redesign-scene .primary-criterion-icon::before,
+.primary-outcome-redesign-scene .primary-criterion-icon::after { position: absolute; content: ""; }
+
+.primary-outcome-redesign-scene .primary-criterion-eye {
+  border-radius: 55% / 70%;
+  transform: scaleX(1.18);
+}
+.primary-outcome-redesign-scene .primary-criterion-eye::before { inset: 28%; border: 1.5px solid currentColor; border-radius: 50%; }
+.primary-outcome-redesign-scene .primary-criterion-eye::after { left: -11%; top: -11%; width: 20%; height: 1.5px; background: currentColor; transform: rotate(42deg); }
+
+.primary-outcome-redesign-scene .primary-criterion-shield {
+  border-radius: 52% 52% 44% 44% / 38% 38% 63% 63%;
+}
+.primary-outcome-redesign-scene .primary-criterion-shield::before { left: 50%; top: 46%; width: 36%; height: 18%; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translate(-50%, -50%) rotate(-45deg); }
+
+.primary-outcome-redesign-scene .primary-criterion-calendar {
+  border-radius: .2rem;
+}
+.primary-outcome-redesign-scene .primary-criterion-calendar::before { left: 12%; right: 12%; top: 29%; border-top: 1.5px solid currentColor; box-shadow: 0 .78rem 0 -0.35rem currentColor, .78rem .78rem 0 -0.35rem currentColor; }
+.primary-outcome-redesign-scene .primary-criterion-calendar::after { left: 24%; right: 24%; top: -12%; height: 23%; border-left: 1.5px solid currentColor; border-right: 1.5px solid currentColor; }
+
+.primary-outcome-redesign-scene .primary-outcome-requirement b {
+  margin-bottom: .5rem;
+  font-size: clamp(.95rem, 1.25vw, 1.45rem);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement span {
+  font-size: clamp(.66rem, .85vw, 1rem);
+  line-height: 1.28;
+  letter-spacing: .055em;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success {
+  top: 82%;
+  bottom: auto;
+  left: 68%;
+  gap: .8rem;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success::before {
+  top: -1.7rem;
+  bottom: auto;
+  left: 50%;
+  width: min(26rem, 80%);
+  height: 1.05rem;
+  transform: translateX(-50%);
+  border-top: 1px solid rgba(255, 78, 83, .4);
+  border-left: 1px solid rgba(255, 78, 83, .4);
+  border-right: 1px solid rgba(255, 78, 83, .4);
+  background: none;
+}
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-story {
+    top: 42%;
+    bottom: 4%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-heading {
+    top: 0;
+    left: 38%;
+    width: 62%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-heading > span { padding: .42rem .64rem; font-size: .64rem; }
+  .primary-outcome-redesign-scene .primary-outcome-heading h3 { margin-top: .56rem; font-size: 1.3rem; line-height: 1.04; }
+  .primary-outcome-redesign-scene .primary-outcome-heading p { margin-top: .28rem; font-size: .5rem; }
+
+  .primary-outcome-redesign-scene .primary-outcome-orbit { top: 23%; left: 17%; width: 7.8rem; }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirements {
+    top: 47%;
+    left: 34%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirement { padding: 0 .15rem; }
+  .primary-outcome-redesign-scene .primary-criterion-icon { width: 1.8rem; margin-bottom: .38rem; }
+  .primary-outcome-redesign-scene .primary-outcome-requirement b { margin-bottom: .27rem; font-size: .66rem; }
+  .primary-outcome-redesign-scene .primary-outcome-requirement span { font-size: .45rem; line-height: 1.18; letter-spacing: .015em; }
+
+  .primary-outcome-redesign-scene .primary-outcome-success { top: 78%; left: 67%; gap: .35rem; }
+  .primary-outcome-redesign-scene .primary-outcome-success::before { top: -1.1rem; width: 90%; height: .7rem; }
+  .primary-outcome-redesign-scene .primary-outcome-success span { font-size: .48rem; }
+  .primary-outcome-redesign-scene .primary-outcome-success b { font-size: .85rem; }
+  .primary-outcome-redesign-scene .primary-outcome-success strong { font-size: .88rem; }
+}
+
+/* Page 10 redesign — connect the endpoint into one editorial definition. */
+.primary-outcome-redesign-scene .primary-outcome-story {
+  top: 32%;
+  bottom: 6%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading > span {
+  padding: 0 0 .22rem;
+  color: #ff6468;
+  border-bottom: 1px solid rgba(255, 64, 69, .62);
+  background: transparent;
+  font-size: clamp(.48rem, .54vw, .63rem);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-orbit {
+  top: 21%;
+  width: clamp(8.8rem, 10.6vw, 11.8rem);
+  border-color: rgba(255, 70, 74, .30);
+  background: radial-gradient(circle, rgba(255, 45, 45, .055), transparent 67%);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-orbit::before,
+.primary-outcome-redesign-scene .primary-outcome-orbit::after,
+.primary-outcome-redesign-scene .primary-outcome-orbit i {
+  border-width: 1px;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-story::before {
+  position: absolute;
+  z-index: 0;
+  top: 47%;
+  bottom: 43%;
+  left: 50%;
+  width: 1px;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 65, 70, .14), rgba(255, 65, 70, .48), rgba(255, 65, 70, .12));
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements {
+  top: 57%;
+  left: 5%;
+  right: 5%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::before {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 65, 70, .30) 12%, rgba(255, 65, 70, .48) 50%, rgba(255, 65, 70, .30) 88%, transparent);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::after {
+  position: absolute;
+  bottom: -1.45rem;
+  left: 19%;
+  right: 19%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 65, 70, .23) 12%, rgba(255, 65, 70, .38) 50%, rgba(255, 65, 70, .23) 88%, transparent);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement {
+  position: relative;
+  padding: .78rem .7rem .25rem;
+  border-top: 0;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement::before {
+  position: absolute;
+  top: -.16rem;
+  left: 50%;
+  width: .3rem;
+  height: .3rem;
+  content: "";
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 89, 93, .72);
+  border-radius: 50%;
+  background: #0a0809;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement::after {
+  position: absolute;
+  bottom: -1.45rem;
+  left: 50%;
+  width: 1px;
+  height: 1.45rem;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 65, 70, .22), rgba(255, 65, 70, .05));
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements > i {
+  margin: 0 .15rem;
+  opacity: 0;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success {
+  bottom: 2%;
+  gap: .78rem;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success::before {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: 2.7rem;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(255, 65, 70, .34), rgba(255, 65, 70, .08));
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success span {
+  color: #c8c0bc;
+  font-size: clamp(.82rem, .92vw, 1.05rem);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success b {
+  color: #bc6669;
+  font-size: clamp(1.35rem, 1.65vw, 1.85rem);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-success strong {
+  color: #ff686c;
+  font-size: clamp(1.42rem, 1.8vw, 2.1rem);
+  letter-spacing: .07em;
+  text-shadow: 0 0 13px rgba(255, 45, 45, .16);
+}
+
+.primary-outcome-redesign-scene.primary-outcome-stage-1 .primary-outcome-requirement:nth-of-type(1),
+.primary-outcome-redesign-scene.primary-outcome-stage-2 .primary-outcome-requirement:nth-of-type(2),
+.primary-outcome-redesign-scene.primary-outcome-stage-3 .primary-outcome-requirement:nth-of-type(3) {
+  border-top-color: transparent;
+}
+
+/* Page 10 redesign — approved composition micro-adjustments. */
+.primary-outcome-redesign-scene .primary-outcome-story {
+  top: calc(32% - 30px);
+  bottom: calc(6% + 30px);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading > span {
+  color: #ff7073;
+  font-size: clamp(.54rem, .61vw, .71rem);
+}
+
+/* Page 11 redesign — a single sample-size argument. */
+.sample-size-redesign-scene {
+  align-items: flex-start;
+  padding-top: 10.5vh;
+}
+
+.sample-size-redesign-scene::before {
+  background:
+    radial-gradient(circle at 24% 57%, rgba(255, 45, 45, .10), transparent 23%),
+    radial-gradient(circle at 76% 57%, rgba(126, 91, 255, .09), transparent 25%),
+    radial-gradient(circle at 50% 74%, rgba(255, 45, 45, .045), transparent 27%),
+    #050505;
+}
+
+.sample-size-redesign-copy { width: 48vw; }
+
+.sample-size-argument {
+  position: absolute;
+  z-index: 3;
+  left: 8vw;
+  right: 8vw;
+  top: 31%;
+  bottom: 8%;
+  min-height: 0;
+}
+
+.sample-size-micro-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0 0 .24rem;
+  transform: translateX(-50%);
+  border-bottom: 1px solid rgba(255, 65, 70, .58);
+  color: #ff6e72;
+  font: 600 clamp(.54rem, .61vw, .71rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .13em;
+  white-space: nowrap;
+}
+
+.sample-size-rate {
+  position: absolute;
+  top: 26%;
+  width: 29%;
+}
+
+.sample-size-rate span {
+  display: block;
+  color: #bbb4b0;
+  font: 500 clamp(.55rem, .62vw, .72rem)/1.35 var(--font-geist-mono), monospace;
+  letter-spacing: .075em;
+}
+
+.sample-size-rate strong {
+  display: block;
+  margin-top: .45rem;
+  font: 480 clamp(3.45rem, 5vw, 5.8rem)/.9 var(--font-geist-mono), monospace;
+  letter-spacing: -.075em;
+}
+
+.sample-size-rate-ada { left: 0; text-align: right; }
+.sample-size-rate-ada strong { color: #ff595e; }
+.sample-size-rate-cid { right: 0; text-align: left; }
+.sample-size-rate-cid strong { color: #ac87ff; }
+
+.sample-size-convergence {
+  position: absolute;
+  top: 40%;
+  left: 26%;
+  right: 26%;
+  height: 4.8rem;
+}
+
+.sample-size-convergence > i {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 1px;
+}
+
+.sample-size-convergence > i:first-child {
+  left: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 61, 66, .62));
+}
+
+.sample-size-convergence > i:nth-child(2) {
+  right: 0;
+  background: linear-gradient(90deg, rgba(172, 135, 255, .62), transparent);
+}
+
+.sample-size-convergence::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(236, 203, 204, .48), rgba(255, 69, 74, .18));
+}
+
+.sample-size-convergence b {
+  position: absolute;
+  top: .76rem;
+  left: 50%;
+  z-index: 1;
+  width: max-content;
+  transform: translateX(-50%);
+  color: #e8dfda;
+  font: 600 clamp(.57rem, .68vw, .79rem)/1.2 var(--font-geist-mono), monospace;
+  letter-spacing: .075em;
+  white-space: nowrap;
+}
+
+.sample-size-hero {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  display: flex;
+  width: clamp(10rem, 13vw, 14.5rem);
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 85, 89, .32);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 45, 45, .075), transparent 67%);
+}
+
+.sample-size-hero::before,
+.sample-size-hero::after,
+.sample-size-hero > i {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 50%;
+  content: "";
+}
+
+.sample-size-hero::before { inset: .75rem; border-color: rgba(255, 64, 69, .21); }
+.sample-size-hero::after { inset: 1.55rem; }
+.sample-size-hero > i:nth-child(1) { inset: -.55rem .75rem; border-color: rgba(255, 65, 70, .12); transform: rotate(25deg); }
+.sample-size-hero > i:nth-child(2) { inset: .45rem -.76rem; border-color: rgba(176, 144, 255, .11); transform: rotate(-27deg); }
+.sample-size-hero > i:nth-child(3) { inset: 1.1rem -.2rem; border-color: rgba(255, 255, 255, .055); transform: rotate(43deg); }
+
+.sample-size-hero strong {
+  position: relative;
+  color: #f5f0ec;
+  font: 480 clamp(3rem, 4.4vw, 5.1rem)/.85 var(--font-geist-mono), monospace;
+  letter-spacing: -.08em;
+}
+
+.sample-size-hero span {
+  position: relative;
+  margin-top: .45rem;
+  color: #ff6a6e;
+  font: 600 clamp(.52rem, .58vw, .68rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .15em;
+}
+
+.sample-size-assumptions {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.9rem, 2vw, 2.4rem);
+  width: max-content;
+  transform: translateX(-50%);
+  color: #c9c0bb;
+  font: 500 clamp(.55rem, .64vw, .75rem)/1.3 var(--font-geist-mono), monospace;
+  letter-spacing: .075em;
+  white-space: nowrap;
+}
+
+.sample-size-assumptions span + span {
+  padding-left: clamp(.9rem, 2vw, 2.4rem);
+  border-left: 1px solid rgba(255, 255, 255, .14);
+}
+
+/* Replay the sample-size argument whenever this scene is opened. */
+.sample-size-redesign-scene .sample-size-micro-label { animation: sampleSizeAppear .35s ease both; }
+.sample-size-redesign-scene .sample-size-rate { animation: sampleSizeRateIn .5s ease .2s both; }
+.sample-size-redesign-scene .sample-size-rate-cid { animation-name: sampleSizeRateInRight; }
+.sample-size-redesign-scene .sample-size-convergence { animation: sampleSizeAppear .4s ease .58s both; }
+.sample-size-redesign-scene .sample-size-hero { animation: sampleSizeHeroIn .6s cubic-bezier(.2,.8,.2,1) .82s both; }
+.sample-size-redesign-scene .sample-size-assumptions { animation: sampleSizeAppear .4s ease 1.15s both; }
+
+@keyframes sampleSizeAppear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sampleSizeRateIn {
+  from { opacity: 0; transform: translateX(-1.15rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sampleSizeRateInRight {
+  from { opacity: 0; transform: translateX(1.15rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sampleSizeHeroIn {
+  from { opacity: 0; transform: translateX(-50%) scale(.86); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::before {
+  left: 13%;
+  right: 13%;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements::after {
+  left: 22%;
+  right: 22%;
+}
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-story {
+    top: 41%;
+    bottom: 4%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-heading {
+    width: 80vw;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-heading h3 {
+    font-size: clamp(1.28rem, 4vw, 1.55rem);
+    line-height: 1.06;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-heading p {
+    font-size: .59rem;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-orbit {
+    top: 20%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirements {
+    top: 54%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirement {
+    padding: .58rem .3rem .2rem;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirement b {
+    margin-bottom: .28rem;
+    font-size: .72rem;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirement span {
+    font-size: .55rem;
+    line-height: 1.22;
+    letter-spacing: .025em;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-success {
+    bottom: -3%;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-story {
+    top: calc(41% - 30px);
+    bottom: calc(4% + 30px);
+  }
+
+  .sample-size-argument {
+    top: 42%;
+    bottom: 5%;
+  }
+
+  .sample-size-rate {
+    top: 17%;
+    width: 34%;
+  }
+
+  .sample-size-rate span {
+    font-size: .5rem;
+    letter-spacing: .04em;
+  }
+
+  .sample-size-rate strong {
+    font-size: clamp(2.7rem, 11vw, 3.45rem);
+  }
+
+  .sample-size-convergence {
+    top: 36%;
+    left: 20%;
+    right: 20%;
+    height: 3.75rem;
+  }
+
+  .sample-size-convergence b {
+    top: .62rem;
+    font-size: .52rem;
+    letter-spacing: .04em;
+  }
+
+  .sample-size-hero {
+    top: 49%;
+    width: 9.25rem;
+  }
+
+  .sample-size-assumptions {
+    gap: .55rem;
+    font-size: .47rem;
+    letter-spacing: .025em;
+  }
+
+  .sample-size-assumptions span + span {
+    padding-left: .55rem;
+  }
+}
+
+/* Secondary outcomes redesign — companion definition for the primary endpoint. */
+.secondary-outcomes-redesign-scene {
+  align-items: flex-start;
+  padding-top: 10.5vh;
+}
+
+.secondary-outcomes-redesign-scene::before {
+  background:
+    radial-gradient(circle at 23% 58%, rgba(255, 45, 45, .075), transparent 24%),
+    radial-gradient(circle at 76% 70%, rgba(126, 91, 255, .075), transparent 27%),
+    #050505;
+}
+
+.secondary-outcomes-redesign-copy { width: 62vw; }
+
+.secondary-outcomes-band {
+  position: absolute;
+  z-index: 3;
+  top: 32%;
+  left: 8vw;
+  right: 8vw;
+  height: 23%;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 1px solid rgba(255, 255, 255, .11);
+}
+
+.secondary-outcomes-band > header {
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  color: #ff666b;
+  font: 600 clamp(.58rem, .7vw, .8rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .12em;
+}
+
+.secondary-outcomes-band > div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: calc(100% - 2.25rem);
+}
+
+.secondary-outcomes-band article {
+  position: relative;
+  min-width: 0;
+  padding: .7rem clamp(.45rem, .85vw, 1rem) .5rem;
+  text-align: center;
+}
+
+.secondary-outcomes-band article + article { border-left: 1px solid rgba(255, 255, 255, .12); }
+
+.secondary-outcomes-band article > i {
+  position: relative;
+  display: block;
+  width: clamp(1.65rem, 2.15vw, 2.5rem);
+  aspect-ratio: 1;
+  margin: 0 auto .55rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: #ff6469;
+}
+
+.secondary-outcomes-band strong {
+  display: block;
+  color: #e8e2de;
+  font: 600 clamp(.55rem, .68vw, .78rem)/1.25 var(--font-geist-mono), monospace;
+  letter-spacing: .055em;
+}
+
+.secondary-outcomes-band span {
+  display: block;
+  margin-top: .36rem;
+  color: #a9a29e;
+  font-size: clamp(.48rem, .57vw, .66rem);
+  line-height: 1.35;
+}
+
+.secondary-icon-ring::before { position: absolute; inset: 25%; border: 1px solid #f1ebe7; border-radius: 50%; content: ""; }
+.secondary-icon-slash::before { position: absolute; left: 49%; top: -22%; width: 1px; height: 145%; background: #f1ebe7; content: ""; transform: rotate(43deg); }
+.secondary-icon-eye { border-radius: 55% / 70% !important; transform: scaleX(1.2); }
+.secondary-icon-eye::before { position: absolute; inset: 27%; border: 1px solid currentColor; border-radius: 50%; content: ""; }
+.secondary-icon-signal::before,.secondary-icon-signal::after { position: absolute; left: 50%; top: 50%; border: 1px solid currentColor; border-radius: 50%; content: ""; transform: translate(-50%, -50%); }
+.secondary-icon-signal::before { width: 39%; aspect-ratio: 1; }.secondary-icon-signal::after { width: 68%; aspect-ratio: 1; }
+.secondary-icon-shield { border-radius: 50% 50% 43% 43% / 39% 39% 60% 60% !important; }
+.secondary-icon-shield::before { position: absolute; left: 50%; top: 49%; width: 33%; height: 16%; border-left: 1px solid #f1ebe7; border-bottom: 1px solid #f1ebe7; content: ""; transform: translate(-50%, -50%) rotate(-45deg); }
+.secondary-icon-person { width: 1.25rem !important; border-radius: 50% !important; }
+.secondary-icon-person::before { position: absolute; left: 50%; top: 125%; width: 150%; height: 95%; border: 1px solid currentColor; border-bottom: 0; border-radius: 65% 65% 0 0; content: ""; transform: translateX(-50%); }
+
+.inactive-uveitis-definition {
+  position: absolute;
+  z-index: 3;
+  top: 59%;
+  left: 8vw;
+  right: 8vw;
+  bottom: 7%;
+  border-top: 1px solid rgba(255, 255, 255, .13);
+}
+
+.inactive-uveitis-definition > header {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  height: 2.65rem;
+  color: #ff666b;
+  font: 600 clamp(.62rem, .76vw, .9rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .1em;
+}
+
+.inactive-uveitis-definition > header b { color: #b9b1ad; font-weight: 500; }
+
+.inactive-definition-groups {
+  display: grid;
+  grid-template-columns: .9fr 2.1fr;
+  height: calc(100% - 2.65rem);
+}
+
+.inactive-definition-groups h3 {
+  margin: 0 0 clamp(.7rem, 1.3vw, 1.25rem);
+  font: 600 clamp(.57rem, .7vw, .82rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .09em;
+}
+
+.secondary-outcomes-redesign-scene .inactive-clinical {
+  display: block;
+  padding-right: clamp(1rem, 2vw, 2.4rem);
+  border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.inactive-clinical h3 { color: #ff656a; }
+
+.inactive-clinical article {
+  display: grid;
+  grid-template-columns: clamp(2.3rem, 3.35vw, 3.8rem) 1fr;
+  gap: .75rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.inactive-clinical article + article { margin-top: clamp(.9rem, 1.65vw, 1.65rem); }
+
+.inactive-clinical article > i {
+  position: relative;
+  width: clamp(2.2rem, 3.15vw, 3.6rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 91, 95, .68);
+  border-radius: 50%;
+}
+
+.inactive-icon-cells::before { position:absolute; inset:28%; border:1px dashed #ff676c; border-radius:50%; content:""; }
+.inactive-icon-cells::after { position:absolute; left:50%; top:50%; width:.28rem; aspect-ratio:1; border-radius:50%; background:#ff676c; content:""; transform:translate(-50%,-50%); box-shadow:-.68rem -.34rem 0 -0.02rem #ff676c,.63rem -.44rem 0 -0.02rem #ff676c,-.48rem .58rem 0 -0.02rem #ff676c,.6rem .48rem 0 -0.02rem #ff676c; }
+.inactive-icon-haze::before { position:absolute; inset:24%; border:1px solid rgba(255,103,108,.8); border-radius:50%; content:""; transform:scaleX(1.48); }.inactive-icon-haze::after { position:absolute; left:50%; top:50%; width:56%; height:1px; background:#ff676c; content:""; transform:translate(-50%,-50%) rotate(-35deg); }
+
+.inactive-clinical span,.inactive-clinical strong,.inactive-clinical small { display: block; }
+.inactive-clinical span { color: #e7e1dd; font: 600 clamp(.65rem, .82vw, .96rem)/1.2 var(--font-geist-mono), monospace; letter-spacing: .05em; }
+.inactive-clinical strong { margin-top: .16rem; color: #ff6167; font: 600 clamp(.68rem, .88vw, 1.03rem)/1.1 var(--font-geist-mono), monospace; letter-spacing: .075em; }
+.inactive-clinical small { margin-top: .28rem; color: #aaa29e; font-size: clamp(.48rem, .58vw, .68rem); line-height: 1.3; }
+
+.secondary-outcomes-redesign-scene .inactive-imaging { display: block; padding-left: clamp(1rem, 2.3vw, 2.7rem); }
+.inactive-imaging h3 { color: #b598ff; }
+.secondary-outcomes-redesign-scene .inactive-imaging > div { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(.85rem, 1.65vw, 1.9rem); padding: 0; border: 0; background: transparent; }
+.inactive-imaging article { position:relative; min-width:0; padding-left: clamp(2.15rem, 2.8vw, 3.25rem); }
+.inactive-imaging article > i { position:absolute; left:0; top:0; width:clamp(1.8rem,2.35vw,2.7rem); aspect-ratio:1; border:1px solid rgba(174,139,255,.72); border-radius:50%; }
+.inactive-imaging article > i::before,.inactive-imaging article > i::after { position:absolute; content:""; }
+.imaging-icon-field::before { inset:27%; border:1px dashed #b294ff; border-radius:50%; }.imaging-icon-field::after { left:50%; top:13%; width:1px; height:74%; background:#b294ff; transform:rotate(32deg); }
+.imaging-icon-faf::before { inset:26%; border:1px solid #b294ff; border-radius:50%; }.imaging-icon-faf::after { left:50%; top:50%; width:1px; height:75%; background:#b294ff; transform:translate(-50%,-50%) rotate(-34deg); }
+.imaging-icon-oct { border-radius:55% / 70% !important; }.imaging-icon-oct::before { inset:31%; border:1px solid #b294ff; border-radius:50%; }.imaging-icon-oct::after { left:17%; right:17%; bottom:24%; height:1px; background:#b294ff; }
+.imaging-icon-ffa::before { inset:27%; border:1px solid #b294ff; border-radius:50%; }.imaging-icon-ffa::after { left:50%; top:13%; width:1px; height:74%; background:#b294ff; transform:rotate(45deg); }
+
+.inactive-imaging span,.inactive-imaging strong,.inactive-imaging small { display:block; }
+.inactive-imaging span { color:#ddd4f5; font:600 clamp(.5rem,.63vw,.74rem)/1.22 var(--font-geist-mono),monospace; letter-spacing:.04em; }
+.inactive-imaging strong { margin-top:.28rem; color:#b294ff; font:600 clamp(.59rem,.72vw,.84rem)/1.15 var(--font-geist-mono),monospace; letter-spacing:.07em; }
+.inactive-imaging small { margin-top:.35rem; color:#aaa2b5; font-size:clamp(.45rem,.55vw,.64rem); line-height:1.38; }
+
+@media (max-width: 700px) {
+  .secondary-outcomes-redesign-copy { width: 80vw; }
+
+  .secondary-outcomes-band { top: 39%; height: 22%; }
+  .secondary-outcomes-band > header { height: 1.85rem; font-size: .6rem; }
+  .secondary-outcomes-band > div { height: calc(100% - 1.85rem); }
+  .secondary-outcomes-band article { padding: .48rem .18rem .25rem; }
+  .secondary-outcomes-band article > i { width: 1.42rem; margin-bottom: .43rem; }
+  .secondary-outcomes-band strong { font-size: .44rem; line-height: 1.16; letter-spacing: .015em; }
+  .secondary-outcomes-band span { margin-top: .26rem; font-size: .38rem; line-height: 1.26; }
+  .secondary-icon-person { width: 1rem !important; }
+
+  .inactive-uveitis-definition { top: 65%; bottom: 4%; }
+  .inactive-uveitis-definition > header { height: 2rem; gap: .42rem; font-size: .54rem; letter-spacing: .045em; }
+  .inactive-definition-groups { height: calc(100% - 2rem); grid-template-columns: .9fr 2.1fr; }
+  .inactive-definition-groups h3 { margin-bottom: .62rem; font-size: .48rem; letter-spacing: .035em; }
+  .inactive-clinical { padding-right: .55rem; }
+  .inactive-clinical article { grid-template-columns: 1.45rem 1fr; gap: .35rem; }
+  .inactive-clinical article + article { margin-top: .7rem; }
+  .inactive-clinical article > i { width: 1.4rem; }
+  .inactive-clinical span { font-size: .46rem; line-height: 1.1; letter-spacing: 0; }
+  .inactive-clinical strong { font-size: .49rem; letter-spacing: .025em; }
+  .inactive-clinical small { margin-top: .17rem; font-size: .37rem; line-height: 1.2; }
+
+  .inactive-imaging { padding-left: .65rem; }
+  .inactive-imaging > div { grid-template-columns: repeat(2, 1fr); gap: .72rem .68rem; }
+  .inactive-imaging article { padding-left: 1.4rem; }
+  .inactive-imaging article > i { width: 1.18rem; }
+  .inactive-imaging span { font-size: .43rem; line-height: 1.14; letter-spacing: 0; }
+  .inactive-imaging strong { margin-top: .2rem; font-size: .45rem; letter-spacing: .025em; }
+  .inactive-imaging small { margin-top: .22rem; font-size: .38rem; line-height: 1.2; }
+}
+
+/* Page 10 redesign — final cascade for the reference composition. */
+.primary-outcome-redesign-scene .primary-outcome-story { top: 26%; bottom: 8%; }
+.primary-outcome-redesign-scene .primary-outcome-heading { top: 5%; left: 42%; width: 54%; transform: none; text-align: left; }
+.primary-outcome-redesign-scene .primary-outcome-heading > span { padding: .48rem .78rem; border: 0; color: #120708; background: #ff4c50; font-size: clamp(.68rem, .82vw, .96rem); letter-spacing: .13em; }
+.primary-outcome-redesign-scene .primary-outcome-heading h3 { margin-top: .78rem; font-size: clamp(1.8rem, 2.65vw, 3rem); letter-spacing: -.045em; }
+.primary-outcome-redesign-scene .primary-outcome-heading p { margin-top: .45rem; font-size: clamp(.66rem, .78vw, .9rem); }
+.primary-outcome-redesign-scene .primary-outcome-orbit { top: 29%; left: 15%; width: clamp(10.5rem, 13vw, 14.5rem); transform: translateX(-50%); }
+.primary-outcome-redesign-scene .primary-outcome-requirements { top: 47%; left: 38%; right: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.primary-outcome-redesign-scene .primary-outcome-success { top: 82%; bottom: auto; left: 68%; }
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-story { top: 42%; bottom: 4%; }
+  .primary-outcome-redesign-scene .primary-outcome-heading { top: 0; left: 38%; width: 62%; }
+  .primary-outcome-redesign-scene .primary-outcome-heading > span { padding: .42rem .64rem; border: 0; color: #120708; background: #ff4c50; font-size: .64rem; }
+  .primary-outcome-redesign-scene .primary-outcome-heading h3 { margin-top: .56rem; font-size: 1.3rem; line-height: 1.04; }
+  .primary-outcome-redesign-scene .primary-outcome-heading p { margin-top: .28rem; font-size: .5rem; }
+  .primary-outcome-redesign-scene .primary-outcome-orbit { top: 23%; left: 17%; width: 7.8rem; }
+  .primary-outcome-redesign-scene .primary-outcome-requirements { top: 47%; left: 34%; right: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .primary-outcome-redesign-scene .primary-outcome-success { top: 78%; bottom: auto; left: 67%; }
+}
+
+/* Page 10 — stronger connected primary-endpoint criteria. */
+.primary-outcome-redesign-scene .primary-outcome-requirements {
+  grid-template-columns: minmax(0, 1fr) clamp(1.4rem, 3vw, 3.2rem) minmax(0, 1fr) clamp(1.4rem, 3vw, 3.2rem) minmax(0, 1fr);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements > i {
+  position: relative;
+  display: block;
+  height: 1px;
+  margin: clamp(2.3rem, 3.2vw, 3.45rem) 0 0;
+  opacity: 1;
+  background: linear-gradient(90deg, rgba(255, 74, 79, .12), rgba(255, 74, 79, .58), rgba(255, 74, 79, .12));
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirements > i::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "+";
+  transform: translate(-50%, -50%);
+  color: #b8aeaa;
+  background: #090707;
+  font: 600 clamp(1rem, 1.45vw, 1.65rem)/1 var(--font-geist-mono), monospace;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement {
+  min-height: clamp(9rem, 13vw, 12rem);
+  padding: 0 clamp(.5rem, 1.3vw, 1.5rem) .55rem;
+  border-left: 1px solid rgba(255, 76, 81, .6);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-requirement:first-child { border-left-color: rgba(255, 76, 81, .74); }
+.primary-outcome-redesign-scene .primary-outcome-requirement .primary-criterion-icon { margin-top: .25rem; }
+.primary-outcome-redesign-scene .primary-outcome-requirement b { color: #ff6065; }
+.primary-outcome-redesign-scene .primary-outcome-requirement span { font-size: clamp(.76rem, 1.02vw, 1.2rem); }
+.primary-outcome-redesign-scene .primary-outcome-requirement strong { color: #ff6065; }
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-requirements {
+    grid-template-columns: minmax(0, 1fr) 1.1rem minmax(0, 1fr) 1.1rem minmax(0, 1fr);
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirements > i {
+    display: block;
+    margin-top: 1.65rem;
+  }
+
+  .primary-outcome-redesign-scene .primary-outcome-requirements > i::after { font-size: .72rem; }
+  .primary-outcome-redesign-scene .primary-outcome-requirement { min-height: 7rem; padding: 0 .22rem .25rem; }
+  .primary-outcome-redesign-scene .primary-outcome-requirement span { font-size: .48rem; }
+}
+
+/* Page 11 — stronger typography and color hierarchy to match the outcomes page. */
+.secondary-outcomes-redesign-scene .secondary-outcomes-band {
+  border-top-color: rgba(255, 82, 87, .36);
+  border-bottom-color: rgba(255, 255, 255, .16);
+  background: linear-gradient(90deg, rgba(255, 45, 45, .05), transparent 48%, rgba(132, 94, 255, .035));
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band > header {
+  color: #ff6268;
+  font-size: clamp(.68rem, .82vw, .96rem);
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band article + article {
+  border-left-color: rgba(255, 255, 255, .17);
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band article > i,
+.secondary-outcomes-redesign-scene .secondary-outcomes-band article > .secondary-icon-svg {
+  color: #ff6369;
+  stroke: currentColor;
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band strong {
+  color: #f4eeea;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(.67rem, .86vw, 1rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: .025em;
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band span {
+  color: #c8bfba;
+  font-size: clamp(.52rem, .65vw, .76rem);
+  line-height: 1.32;
+}
+
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition {
+  border-top-color: rgba(255, 255, 255, .18);
+}
+
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header {
+  color: #ff6268;
+  font-size: clamp(.72rem, .9vw, 1.05rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header b { color: #dad1cc; }
+.secondary-outcomes-redesign-scene .inactive-definition-groups h3 { font-size: clamp(.68rem, .82vw, .96rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical { border-right-color: rgba(255, 86, 91, .3); }
+.secondary-outcomes-redesign-scene .inactive-clinical h3 { color: #ff6268; }
+.secondary-outcomes-redesign-scene .inactive-clinical span { color: #f2ebe7; font-size: clamp(.74rem, .94vw, 1.1rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical strong { color: #ff6268; font-size: clamp(.76rem, 1vw, 1.16rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical small { color: #c5bbb5; font-size: clamp(.53rem, .66vw, .76rem); }
+
+.secondary-outcomes-redesign-scene .inactive-imaging h3 { color: #bd9fff; }
+.secondary-outcomes-redesign-scene .inactive-imaging span { color: #eee6ff; font-size: clamp(.6rem, .76vw, .88rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging strong { color: #bd9fff; font-size: clamp(.68rem, .84vw, .98rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging small { color: #c5b9d7; font-size: clamp(.5rem, .62vw, .72rem); }
+
+@media (max-width: 700px) {
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band > header { font-size: .64rem; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band strong { font-size: .48rem; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band span { font-size: .4rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { font-size: .58rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups h3 { font-size: .52rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical span { font-size: .49rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical strong { font-size: .52rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical small { font-size: .39rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging span { font-size: .45rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging strong { font-size: .49rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging small { font-size: .4rem; }
+}
+
+/* Page 11 — final presentation-readability refinements. */
+.secondary-outcomes-redesign-scene .secondary-outcomes-band article > i,
+.secondary-outcomes-redesign-scene .secondary-outcomes-band article > .secondary-icon-svg {
+  width: clamp(2.15rem, 2.8vw, 3.25rem);
+  height: clamp(2.15rem, 2.8vw, 3.25rem);
+  margin-bottom: .68rem;
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band .secondary-icon-va {
+  width: clamp(1.8rem, 2.3vw, 2.65rem);
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band strong {
+  font-size: clamp(.76rem, .98vw, 1.15rem);
+}
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-band span {
+  font-size: clamp(.6rem, .74vw, .87rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header {
+  gap: 1rem;
+}
+
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header b {
+  display: inline-block;
+  padding: .25rem .55rem;
+  border: 1px solid rgba(189, 159, 255, .48);
+  color: #e5d9ff;
+  background: rgba(132, 94, 255, .07);
+  font-size: clamp(.58rem, .7vw, .82rem);
+  font-weight: 600;
+  letter-spacing: .065em;
+}
+
+.secondary-outcomes-redesign-scene .inactive-definition-groups h3 {
+  font-size: clamp(.74rem, .9vw, 1.05rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-clinical span {
+  font-size: clamp(.8rem, 1.02vw, 1.2rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-clinical strong {
+  font-size: clamp(.84rem, 1.1vw, 1.28rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-clinical small {
+  font-size: clamp(.61rem, .76vw, .88rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-imaging span {
+  font-size: clamp(.67rem, .84vw, .98rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-imaging strong {
+  font-size: clamp(.76rem, .94vw, 1.1rem);
+}
+
+.secondary-outcomes-redesign-scene .inactive-imaging small {
+  font-size: clamp(.6rem, .73vw, .84rem);
+  line-height: 1.34;
+}
+
+@media (max-width: 700px) {
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band article > i,
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band article > .secondary-icon-svg { width: 1.8rem; height: 1.8rem; margin-bottom: .48rem; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band .secondary-icon-va { width: 1.48rem; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band strong { font-size: .52rem; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-band span { font-size: .43rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { gap: .45rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header b { padding: .17rem .28rem; font-size: .42rem; letter-spacing: .025em; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups h3 { font-size: .55rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical span { font-size: .53rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical strong { font-size: .56rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical small { font-size: .43rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging span { font-size: .49rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging strong { font-size: .53rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging small { font-size: .43rem; }
+}
+
+/* Page 11 — complete overview first, then two restrained focus states. */
+.secondary-outcomes-redesign-scene .secondary-outcomes-band,
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition {
+  transition: opacity .42s ease, filter .42s ease;
+}
+
+.secondary-outcomes-stage-0 .inactive-uveitis-definition {
+  opacity: .14;
+  filter: saturate(.45);
+}
+
+.secondary-outcomes-stage-1 .secondary-outcomes-band {
+  opacity: .14;
+  filter: saturate(.45);
+}
+
+/* Page 10 — match the original outcomes-page primary treatment. */
+.primary-outcome-redesign-scene .primary-outcome-heading > span {
+  color: #090909;
+  background: var(--red);
+  box-shadow: 0 0 18px rgba(255, 45, 45, .18);
+  font-weight: 700;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-heading h3 {
+  color: #fff;
+  font-size: clamp(2.05rem, 3.05vw, 3.45rem);
+  font-weight: 560;
+  letter-spacing: -.052em;
+}
+
+.primary-outcome-redesign-scene .primary-outcome-orbit {
+  border-color: rgba(255, 45, 45, .65);
+  background: radial-gradient(circle, rgba(180, 11, 18, .4), rgba(62, 5, 9, .2) 47%, transparent 70%);
+  box-shadow: 0 0 40px rgba(255, 45, 45, .24), inset 0 0 26px rgba(255, 45, 45, .13);
+}
+
+.primary-outcome-redesign-scene .primary-outcome-orbit::before { border-color: rgba(255, 255, 255, .14); }
+.primary-outcome-redesign-scene .primary-outcome-orbit::after { border-color: rgba(255, 45, 45, .34); }
+.primary-outcome-redesign-scene .primary-outcome-orbit i:nth-child(1) { border-top-color: var(--red); animation: primary-outcome-orbit-spin 5s linear infinite; }
+.primary-outcome-redesign-scene .primary-outcome-orbit i:nth-child(2) { border-color: rgba(255, 45, 45, .2); }
+.primary-outcome-redesign-scene .primary-outcome-orbit strong { color: #fff; font-weight: 550; text-shadow: 0 0 18px rgba(255, 255, 255, .18); }
+.primary-outcome-redesign-scene .primary-outcome-orbit span { color: #ff6767; }
+
+@keyframes primary-outcome-orbit-spin {
+  from { transform: rotate(24deg); }
+  to { transform: rotate(384deg); }
+}
+
+@media (max-width: 700px) {
+  .primary-outcome-redesign-scene .primary-outcome-heading > span { background: var(--red); }
+  .primary-outcome-redesign-scene .primary-outcome-heading h3 { font-size: 1.48rem; font-weight: 560; }
+}
+
+/* Primary-only duplicate of the original outcomes composition. */
+.outcomes-primary-duplicate-scene .endpoint-stage-duplicate {
+  top: 27%;
+  height: 30%;
+}
+
+.endpoint-stage-duplicate .endpoint-equation-icons > div {
+  display: grid;
+  grid-template-columns: clamp(1.8rem, 2.5vw, 2.8rem) 1fr;
+  grid-template-rows: auto 1fr;
+  gap: .18rem .52rem;
+  min-height: clamp(4.1rem, 5.8vw, 5.4rem);
+  padding: .48rem .52rem;
+}
+
+.endpoint-stage-duplicate .endpoint-equation-icons > div > b {
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--red);
+  font-size: clamp(.55rem, .7vw, .8rem);
+}
+
+.endpoint-stage-duplicate .endpoint-equation-icons > div > span {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  font-size: clamp(.64rem, .8vw, .94rem);
+}
+
+.duplicate-criterion-icon {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: block;
+  width: clamp(1.7rem, 2.2vw, 2.5rem);
+  aspect-ratio: 1;
+  align-self: center;
+  border: 1.5px solid #ff6267;
+  color: #ff6267;
+}
+
+.duplicate-criterion-icon::before,.duplicate-criterion-icon::after { position:absolute; content:""; }
+.duplicate-criterion-eye { border-radius:55% / 70%; transform:scaleX(1.15); }
+.duplicate-criterion-eye::before { inset:28%; border:1.5px solid currentColor; border-radius:50%; }
+.duplicate-criterion-eye::after { left:-12%; top:-10%; width:20%; height:1.5px; background:currentColor; transform:rotate(42deg); }
+.duplicate-criterion-shield { border-radius:52% 52% 44% 44% / 38% 38% 63% 63%; }
+.duplicate-criterion-shield::before { left:50%; top:46%; width:36%; height:18%; border-left:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translate(-50%,-50%) rotate(-45deg); }
+.duplicate-criterion-calendar { border-radius:.18rem; }
+.duplicate-criterion-calendar::before { left:12%; right:12%; top:31%; border-top:1.5px solid currentColor; box-shadow:0 .72rem 0 -.34rem currentColor,.72rem .72rem 0 -.34rem currentColor; }
+.duplicate-criterion-calendar::after { left:24%; right:24%; top:-12%; height:23%; border-left:1.5px solid currentColor; border-right:1.5px solid currentColor; }
+
+@media (max-width: 700px) {
+  .outcomes-primary-duplicate-scene .endpoint-stage-duplicate {
+    top: 35%;
+    height: 27%;
+    grid-template-columns: 8rem 1fr;
+  }
+
+  .endpoint-stage-duplicate .endpoint-message { padding-left: .7rem; }
+  .endpoint-stage-duplicate .endpoint-message h3 { font-size: 1.18rem; }
+  .endpoint-stage-duplicate .endpoint-message > p { font-size: .53rem; }
+  .endpoint-stage-duplicate .endpoint-equation { gap: .28rem; }
+  .endpoint-stage-duplicate .endpoint-equation-icons > div { grid-template-columns: 1.35rem 1fr; gap: .12rem .28rem; min-height: 3.65rem; padding: .32rem .2rem; }
+  .endpoint-stage-duplicate .endpoint-equation-icons > div > b { font-size: .43rem; }
+  .endpoint-stage-duplicate .endpoint-equation-icons > div > span { font-size: .43rem; line-height: 1.2; }
+  .duplicate-criterion-icon { width: 1.25rem; }
+}
+
+/* Primary-only duplicate — larger text-led endpoint criteria. */
+.endpoint-stage-duplicate .endpoint-equation-strong {
+  gap: clamp(.5rem, .85vw, 1rem);
+}
+
+.endpoint-stage-duplicate .endpoint-equation-strong > div {
+  min-height: clamp(4.2rem, 5.5vw, 5.2rem);
+  padding: .62rem .65rem .55rem 2.65rem;
+  border-left-width: 2px;
+  background: linear-gradient(90deg, rgba(255, 45, 45, .07), transparent 76%);
+}
+
+.endpoint-stage-duplicate .endpoint-equation-strong > div > b {
+  left: .65rem;
+  top: .68rem;
+  color: #ff5e63;
+  font-size: clamp(.64rem, .84vw, .98rem);
+  font-weight: 600;
+}
+
+.endpoint-stage-duplicate .endpoint-equation-strong span {
+  color: #fff;
+  font-size: clamp(.76rem, .98vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.27;
+}
+
+.endpoint-stage-duplicate .endpoint-equation-strong > i {
+  color: #d3c8c3;
+  font-size: clamp(1.1rem, 1.45vw, 1.65rem);
+}
+
+@media (max-width: 700px) {
+  .endpoint-stage-duplicate .endpoint-equation-strong { gap: .32rem; }
+  .outcomes-primary-duplicate-scene .endpoint-stage-duplicate { grid-template-columns: 7.25rem 1fr; }
+  .endpoint-stage-duplicate .endpoint-equation-strong > div { min-height: 3.85rem; padding: .46rem .18rem .35rem 1.62rem; }
+  .endpoint-stage-duplicate .endpoint-equation-strong > div > b { left: .4rem; top: .48rem; font-size: .53rem; }
+  .endpoint-stage-duplicate .endpoint-equation-strong span { font-size: .57rem; line-height: 1.18; }
+  .endpoint-stage-duplicate .endpoint-equation-strong > i { font-size: .72rem; }
+}
+
+/* Primary-only duplicate — reveal the Page 11 secondary-outcomes band on click. */
+.outcomes-primary-duplicate-scene { cursor: pointer; }
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band,
+.outcomes-primary-duplicate-scene .primary-duplicate-reveal { transition: opacity .35s ease; }
+
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band {
+  top: 62%;
+  height: 22%;
+  opacity: 0;
+  pointer-events: none;
+  transform: none;
+}
+
+.outcomes-primary-duplicate-scene.primary-duplicate-expanded .primary-duplicate-secondary-band {
+  opacity: 1;
+}
+
+.primary-duplicate-reveal {
+  position: absolute;
+  z-index: 5;
+  right: 8vw;
+  bottom: 5.5%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #9d9691;
+  font: 600 .5rem/1 var(--font-geist-mono), monospace;
+  letter-spacing: .08em;
+}
+
+.outcomes-primary-duplicate-scene.primary-duplicate-expanded .primary-duplicate-reveal { color: #ff666b; }
+
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band {
+  border-top-color: rgba(164, 119, 255, .46);
+  border-bottom-color: rgba(255, 255, 255, .16);
+  background: linear-gradient(90deg, rgba(132, 94, 255, .07), transparent 48%, rgba(181, 133, 255, .06));
+}
+
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band > header { padding-left: .45rem; color: #b084ff; }
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band article > i,
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band article > .secondary-icon-svg {
+  width: clamp(2rem, 2.65vw, 3rem);
+  height: clamp(2rem, 2.65vw, 3rem);
+  margin-bottom: .58rem;
+  color: #ad7bff;
+  stroke: currentColor;
+}
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band .secondary-icon-va { width: clamp(1.7rem, 2.2vw, 2.55rem); }
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band strong { color: #f4eeea; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: clamp(.72rem, .94vw, 1.1rem); font-weight: 600; }
+.outcomes-primary-duplicate-scene .primary-duplicate-secondary-band span { color: #c8bfba; font-size: clamp(.56rem, .71vw, .84rem); }
+
+@media (max-width: 700px) {
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band { top: 65%; height: 19%; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band > header { height: 1.55rem; font-size: .5rem; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band > div { height: calc(100% - 1.55rem); }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band article { padding: .34rem .13rem .15rem; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band article > i,
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band article > .secondary-icon-svg { width: 1.45rem; height: 1.45rem; margin-bottom: .28rem; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band .secondary-icon-va { width: 1.18rem; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band strong { font-size: .46rem; line-height: 1.1; }
+  .outcomes-primary-duplicate-scene .primary-duplicate-secondary-band span { margin-top: .18rem; font-size: .37rem; line-height: 1.15; }
+  .primary-duplicate-reveal { bottom: 3%; right: 8vw; font-size: .39rem; }
+}
+
+/* Statistical analysis framework — four question-led model families. */
+.statistics-framework-scene {
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 16% 51%, rgba(255, 45, 45, .08), transparent 24%),
+    radial-gradient(circle at 84% 53%, rgba(132, 94, 255, .075), transparent 27%),
+    #050505;
+}
+
+.statistics-framework-copy { position: absolute; left: 8vw; top: 11.5%; width: 48vw; }
+.statistics-framework-copy h2 { font-size: clamp(2.45rem, 4vw, 4.2rem); line-height: .89; }
+
+.analysis-framework {
+  position: absolute;
+  z-index: 3;
+  top: 29%;
+  left: 8vw;
+  right: 8vw;
+  bottom: 12%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.analysis-framework-column {
+  position: relative;
+  display: grid;
+  grid-template-rows: 4rem 6rem 4.5rem 3.5rem minmax(0, 1fr);
+  align-content: start;
+  row-gap: clamp(.4rem, .75vh, .65rem);
+  min-width: 0;
+  padding: 1rem clamp(.7rem, 1.15vw, 1.45rem) .8rem;
+  transition: opacity .36s ease, filter .36s ease, background .36s ease;
+}
+
+.analysis-framework-column + .analysis-framework-column { border-left: 1px solid rgba(255, 255, 255, .12); }
+.analysis-framework-column::before { position: absolute; inset: 0 auto 0 0; width: 1px; background: transparent; content: ""; transition: background .36s ease, box-shadow .36s ease; }
+.analysis-framework-column header { display: flex; align-items: baseline; gap: .5rem; min-height: 1.35rem; color: #d8d1cc; font: 600 clamp(.5rem, .58vw, .68rem)/1 var(--font-geist-mono), monospace; letter-spacing: .07em; }
+.analysis-framework-column header b { color: #ff6268; font-size: clamp(.7rem, .85vw, 1rem); font-weight: 500; }
+.analysis-framework-column > section { min-width: 0; }
+.analysis-framework-column small { display: block; margin-bottom: .42rem; color: #9d9691; font: 500 clamp(.42rem, .49vw, .57rem)/1 var(--font-geist-mono), monospace; letter-spacing: .12em; }
+.analysis-framework-column > section:nth-of-type(2) small { color: #706b68; font-size: clamp(.38rem, .43vw, .5rem); letter-spacing: .09em; }
+.analysis-framework-column h3 { margin: 0; color: #f2ede9; font: 450 clamp(.96rem, 1.27vw, 1.5rem)/1.12 var(--font-geist-sans), Arial, sans-serif; letter-spacing: -.025em; }
+.analysis-framework-column h4 { margin: 0; color: #ff686d; font: 600 clamp(.82rem, 1.07vw, 1.26rem)/1.12 var(--font-geist-mono), monospace; letter-spacing: .025em; }
+.analysis-framework-column:nth-child(even) h3,
+.analysis-framework-column:nth-child(even) h4 { color: #bd91ff; }
+.analysis-framework-column ul { align-self: start; display: grid; gap: .31rem; margin: 0; padding: 0; color: #aaa39f; font: 450 clamp(.49rem, .59vw, .68rem)/1.32 var(--font-geist-sans), Arial, sans-serif; list-style: none; }
+.analysis-framework-column li { position: relative; padding-left: .62rem; }
+.analysis-framework-column li::before { position: absolute; left: 0; top: .36rem; width: .19rem; height: .19rem; border-radius: 50%; background: #ff6268; content: ""; }
+.analysis-framework-column:nth-child(even) li::before { background: #a879ff; }
+
+.analysis-visual { align-self: stretch; box-sizing: border-box; width: 100%; height: 100%; overflow: visible; }
+.analysis-visual-binary { display: flex; align-items: flex-end; justify-content: center; gap: clamp(.28rem, .48vw, .58rem); padding: 0 .2rem .3rem; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+.analysis-visual-binary i { position: relative; display: block; width: clamp(.37rem, .5vw, .58rem); height: clamp(1.2rem, 2.7vh, 1.8rem); border-radius: .4rem .4rem .1rem .1rem; background: rgba(255, 255, 255, .18); }
+.analysis-visual-binary i::before { position: absolute; top: -.48rem; left: 50%; width: .48rem; height: .48rem; border-radius: 50%; transform: translateX(-50%); background: inherit; content: ""; }
+.analysis-visual-binary i:nth-child(-n+4) { background: #ff595e; }
+.analysis-visual-lines { fill: none; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+.analysis-visual-lines path { fill: none; stroke: #ff5e63; stroke-width: 2; }
+.analysis-visual-lines path:nth-child(2) { stroke: #aa7bff; }
+.analysis-visual-lines g { fill: #aa7bff; }
+.analysis-visual-lines g circle:nth-child(-n+3) { fill: #ff5e63; }
+.analysis-visual-km { fill: none; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+.analysis-visual-km path { fill: none; stroke: #ff5d62; stroke-width: 2; }
+.analysis-visual-km path:nth-child(2) { stroke: #ad7fff; }
+.analysis-visual-accumulation { border-bottom: 1px solid rgba(255, 255, 255, .16); }
+.analysis-visual-accumulation path { fill: rgba(168, 122, 255, .42); }
+.analysis-visual-accumulation path:nth-child(2) { fill: rgba(255, 76, 81, .48); }
+
+.analysis-framework-footer { position: absolute; z-index: 3; left: 8vw; right: 8vw; bottom: 1.5%; display: grid; grid-template-columns: .6fr 1.75fr 1.2fr .9fr; gap: .65rem; padding-top: .28rem; border-top: 1px solid rgba(255, 255, 255, .035); color: rgba(222, 214, 209, .25); font: 500 clamp(.22rem, .2vw, .29rem)/1.16 var(--font-geist-mono), monospace; letter-spacing: .01em; }
+.analysis-framework-footer span { min-width: 0; text-align: center; }
+.analysis-framework-footer span:first-child { color: rgba(222, 214, 209, .31); }
+
+.statistics-framework-stage-0 .analysis-framework-column:not(:nth-child(1)),
+.statistics-framework-stage-1 .analysis-framework-column:not(:nth-child(2)),
+.statistics-framework-stage-2 .analysis-framework-column:not(:nth-child(3)),
+.statistics-framework-stage-3 .analysis-framework-column:not(:nth-child(4)) { opacity: .15; filter: saturate(.42); }
+.statistics-framework-stage-0 .analysis-framework-column:nth-child(1),
+.statistics-framework-stage-1 .analysis-framework-column:nth-child(2),
+.statistics-framework-stage-2 .analysis-framework-column:nth-child(3),
+.statistics-framework-stage-3 .analysis-framework-column:nth-child(4) { background: linear-gradient(180deg, rgba(255, 45, 45, .06), transparent 68%); }
+.statistics-framework-stage-1 .analysis-framework-column:nth-child(2),
+.statistics-framework-stage-3 .analysis-framework-column:nth-child(4) { background: linear-gradient(180deg, rgba(132, 94, 255, .08), transparent 68%); }
+.statistics-framework-stage-0 .analysis-framework-column:nth-child(1)::before,
+.statistics-framework-stage-1 .analysis-framework-column:nth-child(2)::before,
+.statistics-framework-stage-2 .analysis-framework-column:nth-child(3)::before,
+.statistics-framework-stage-3 .analysis-framework-column:nth-child(4)::before { background: #ff5c61; box-shadow: 0 0 10px rgba(255, 45, 45, .45); }
+.statistics-framework-stage-1 .analysis-framework-column:nth-child(2)::before,
+.statistics-framework-stage-3 .analysis-framework-column:nth-child(4)::before { background: #ae82ff; box-shadow: 0 0 10px rgba(132, 94, 255, .42); }
+
+@media (max-width: 700px) {
+  .statistics-framework-copy { top: 11%; width: 78vw; }
+  .statistics-framework-copy h2 { font-size: 1.72rem; }
+  .analysis-framework { top: 29%; bottom: 10%; }
+  .analysis-framework-column { grid-template-rows: 2.25rem 5.2rem 2.75rem auto minmax(0, 1fr); padding: .6rem .3rem .45rem; }
+  .analysis-framework-column header { gap: .16rem; font-size: .34rem; letter-spacing: .02em; }
+  .analysis-framework-column header b { font-size: .5rem; }
+  .analysis-framework-column small { margin-bottom: .25rem; font-size: .3rem; letter-spacing: .055em; }
+  .analysis-framework-column h3 { font-size: .54rem; line-height: 1.15; }
+  .analysis-framework-column h4 { font-size: .42rem; line-height: 1.13; }
+  .analysis-framework-column ul { gap: .2rem; margin-top: .3rem; font-size: .33rem; line-height: 1.2; }
+  .analysis-framework-column li { padding-left: .34rem; }
+  .analysis-framework-column li::before { top: .29rem; width: .12rem; height: .12rem; }
+  .analysis-visual { height: 2.75rem; }
+  .analysis-visual-binary { gap: .17rem; padding-bottom: .17rem; }
+  .analysis-visual-binary i { width: .22rem; height: .75rem; }
+  .analysis-visual-binary i::before { top: -.27rem; width: .27rem; height: .27rem; }
+  .analysis-framework-footer { bottom: 4.8%; gap: .24rem; padding-top: .36rem; font-size: .28rem; letter-spacing: .01em; }
+}
+
+/* Pages 10–11 — outcomes, then the definition that underpins inactivity. */
+.outcomes-scene .endpoint-stage { top: 26%; height: 30%; }
+.outcomes-scene .outcomes-secondary-band {
+  top: 62%;
+  height: 24%;
+  border-top-color: rgba(174, 139, 255, .38);
+  border-bottom-color: rgba(255, 255, 255, .12);
+  background: linear-gradient(90deg, rgba(132, 94, 255, .055), transparent 55%);
+}
+.outcomes-scene .outcomes-secondary-band > header { padding-left: .45rem; color: #b294ff; }
+.outcomes-scene .outcomes-secondary-band article + article { border-left-color: rgba(174, 139, 255, .16); }
+.outcomes-scene .outcomes-secondary-band article { padding-top: .45rem; }
+.outcomes-scene .outcomes-secondary-band article > i,
+.outcomes-scene .outcomes-secondary-band article > .secondary-icon-svg { width: clamp(1.75rem, 2.1vw, 2.45rem); height: clamp(1.75rem, 2.1vw, 2.45rem); margin-bottom: .46rem; color: #ad85ff; stroke: currentColor; }
+.outcomes-scene .outcomes-secondary-band .secondary-icon-va { width: clamp(1.45rem, 1.72vw, 2rem); }
+.outcomes-scene .outcomes-secondary-band strong { color: #ede7f5; font-size: clamp(.62rem, .76vw, .88rem); }
+.outcomes-scene .outcomes-secondary-band span { color: #bdb4cb; font-size: clamp(.52rem, .62vw, .72rem); }
+
+.secondary-outcomes-redesign-scene .secondary-outcomes-redesign-copy { width: 68vw; }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition { top: 35%; bottom: 8%; border-top-color: rgba(255, 255, 255, .18); }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { height: 4.9rem; flex-direction: column; align-items: center; justify-content: center; gap: .48rem; }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span { color: #f2ebe7; font-size: clamp(1rem, 1.38vw, 1.62rem); letter-spacing: .09em; }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header b { color: #e5d9ff; }
+.secondary-outcomes-redesign-scene .inactive-definition-groups { height: calc(100% - 4.9rem); grid-template-columns: .82fr 2.18fr; }
+
+/* Page 11 — the inactive-uveitis definition reads as one branching clinical map. */
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition {
+  top: 31%;
+  bottom: 5.5%;
+}
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { height: 5.8rem; }
+.secondary-outcomes-redesign-scene .inactive-definition-groups {
+  position: relative;
+  height: calc(100% - 5.8rem);
+  padding-top: clamp(1.4rem, 3.2vh, 2.45rem);
+}
+.secondary-outcomes-redesign-scene .inactive-definition-groups::before {
+  position: absolute;
+  top: .55rem;
+  left: 24%;
+  right: 11%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 86, 91, .54), rgba(255, 255, 255, .15) 37%, rgba(181, 145, 255, .58));
+  content: "";
+}
+.secondary-outcomes-redesign-scene .inactive-definition-groups::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: .6rem;
+  background: rgba(239, 231, 227, .35);
+  content: "";
+}
+.secondary-outcomes-redesign-scene .inactive-clinical,
+.secondary-outcomes-redesign-scene .inactive-imaging {
+  position: relative;
+  min-height: 0;
+  padding-top: clamp(.65rem, 1.5vh, 1.15rem);
+}
+.secondary-outcomes-redesign-scene .inactive-clinical {
+  display: flex;
+  flex-direction: column;
+  padding-right: clamp(1.25rem, 2.3vw, 2.9rem);
+}
+.secondary-outcomes-redesign-scene .inactive-clinical h3,
+.secondary-outcomes-redesign-scene .inactive-imaging h3 {
+  position: relative;
+  margin-bottom: 0;
+}
+.secondary-outcomes-redesign-scene .inactive-clinical h3::after,
+.secondary-outcomes-redesign-scene .inactive-imaging h3::after {
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  margin-top: .48rem;
+  background: currentColor;
+  content: "";
+  opacity: .55;
+}
+.secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top: clamp(1.35rem, 3.3vh, 2.8rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical article + article { margin-top: auto; padding-bottom: clamp(.65rem, 1.6vh, 1.45rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical article > i { width: clamp(2.5rem, 3.5vw, 4rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging {
+  display: flex;
+  flex-direction: column;
+  padding-left: clamp(1.35rem, 2.7vw, 3.25rem);
+}
+.secondary-outcomes-redesign-scene .inactive-imaging > div {
+  flex: 1;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.1rem, 2.6vw, 3rem);
+  padding-top: clamp(1.35rem, 3vh, 2.65rem);
+}
+.secondary-outcomes-redesign-scene .inactive-imaging article { align-self: start; }
+
+@media (max-width: 700px) {
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition { top: 33%; bottom: 4%; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { height: 4.25rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups { height: calc(100% - 4.25rem); padding-top: .85rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups::before { top: .36rem; left: 20%; right: 7%; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups::after { height: .38rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical,
+  .secondary-outcomes-redesign-scene .inactive-imaging { padding-top: .42rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical { padding-right: .7rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top: .8rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article + article { padding-bottom: .25rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article > i { width: 1.55rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging { padding-left: .78rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging > div { gap: .7rem; padding-top: .85rem; }
+}
+
+@media (max-width: 700px) {
+  /* Restored original combined outcomes page: keep its three-layer narrative legible in one scene. */
+  .outcomes-original-scene .outcomes-copy { width: 82vw; }
+  .outcomes-original-scene .outcomes-copy h2 { font-size: 1.7rem; }
+  .outcomes-original-scene .endpoint-stage { top: 28%; height: 29%; grid-template-columns: 6.25rem minmax(0, 1fr); }
+  .outcomes-original-scene .endpoint-time { width: 5.6rem; }
+  .outcomes-original-scene .endpoint-time strong { font-size: 2.2rem; }
+  .outcomes-original-scene .endpoint-message { padding: .38rem 0 .3rem .45rem; }
+  .outcomes-original-scene .endpoint-message h3 { margin-top: .24rem; font-size: 1rem; line-height: 1.05; }
+  .outcomes-original-scene .endpoint-message > p { margin: .12rem 0 .24rem; font-size: .4rem; line-height: 1.16; }
+  .outcomes-original-scene .endpoint-equation { gap: .12rem; }
+  .outcomes-original-scene .endpoint-equation > div { padding: .2rem .03rem .18rem .64rem; }
+  .outcomes-original-scene .endpoint-equation > div > b { left: .1rem; top: .22rem; font-size: .35rem; }
+  .outcomes-original-scene .endpoint-equation span { font-size: .36rem; line-height: 1.12; }
+  .outcomes-original-scene .endpoint-equation > i { font-size: .5rem; }
+  .outcomes-original-scene .secondary-spectrum { top: 60%; height: 14%; }
+  .outcomes-original-scene .spectrum-label { height: 1.25rem; font-size: .38rem; }
+  .outcomes-original-scene .spectrum-track { height: calc(100% - 1.25rem); }
+  .outcomes-original-scene .spectrum-track > div { padding: .24rem .12rem .08rem .42rem; }
+  .outcomes-original-scene .spectrum-track i { top: .33rem; left: .15rem; width: .12rem; }
+  .outcomes-original-scene .spectrum-track b { font-size: .32rem; line-height: 1.08; }
+  .outcomes-original-scene .spectrum-track span { margin-top: .12rem; font-size: .28rem; line-height: 1.12; }
+  .outcomes-original-scene .definition-band { top: 77%; bottom: 3%; grid-template-rows: 1.18rem 1fr; }
+  .outcomes-original-scene .definition-heading { font-size: .34rem; }
+  .outcomes-original-scene .definition-heading span { padding-left: .24rem; }
+  .outcomes-original-scene .clinical-thresholds > div,
+  .outcomes-original-scene .imaging-thresholds > div { padding: .22rem .2rem; }
+  .outcomes-original-scene .clinical-thresholds span,
+  .outcomes-original-scene .imaging-thresholds span { font-size: .28rem; line-height: 1.08; }
+  .outcomes-original-scene .clinical-thresholds b { margin: .1rem 0; font-size: .36rem; }
+  .outcomes-original-scene .imaging-thresholds b { margin: .1rem 0; font-size: .3rem; }
+  .outcomes-original-scene .clinical-thresholds small,
+  .outcomes-original-scene .imaging-thresholds small { font-size: .26rem; line-height: 1.08; }
+
+  .outcomes-scene .endpoint-stage { top: 31%; height: 28%; grid-template-columns: 6.5rem 1fr; }
+  .outcomes-scene .endpoint-time { width: 5.8rem; }
+  .outcomes-scene .endpoint-time strong { font-size: 2.35rem; }
+  .outcomes-scene .endpoint-message { padding: .38rem 0 .38rem .5rem; }
+  .outcomes-scene .endpoint-message h3 { margin-top: .3rem; font-size: 1.12rem; }
+  .outcomes-scene .endpoint-message > p { margin: .16rem 0 .34rem; font-size: .47rem; }
+  .outcomes-scene .endpoint-equation { gap: .14rem; }
+  .outcomes-scene .endpoint-equation > div { padding: .25rem .04rem .2rem .82rem; }
+  .outcomes-scene .endpoint-equation > div > b { left: .13rem; top: .28rem; font-size: .4rem; }
+  .outcomes-scene .endpoint-equation span { font-size: .5rem; line-height: 1.2; }
+  .outcomes-scene .outcomes-secondary-band { top: 65%; height: 21%; }
+  .outcomes-scene .outcomes-secondary-band article { padding: .32rem .12rem .15rem; }
+  .outcomes-scene .outcomes-secondary-band article > i,
+  .outcomes-scene .outcomes-secondary-band article > .secondary-icon-svg { width: 1.32rem; height: 1.32rem; margin-bottom: .29rem; }
+  .outcomes-scene .outcomes-secondary-band .secondary-icon-va { width: 1.08rem; }
+  .outcomes-scene .outcomes-secondary-band strong { font-size: .45rem; line-height: 1.1; }
+  .outcomes-scene .outcomes-secondary-band span { margin-top: .18rem; font-size: .37rem; line-height: 1.16; }
+  .secondary-outcomes-redesign-scene .secondary-outcomes-redesign-copy { width: 84vw; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition { top: 34%; bottom: 5%; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { height: 3.8rem; gap: .35rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span { font-size: .8rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups { height: calc(100% - 3.8rem); }
+  .secondary-outcomes-redesign-scene .inactive-clinical span { font-size: .62rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical strong { font-size: .65rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical small { font-size: .48rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging span { font-size: .56rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging strong { font-size: .6rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging small { font-size: .47rem; }
+}
+
+/* Page 11 final composition — compact two-column clinical definition. */
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition { top: 29%; bottom: 8%; border-top: 0; }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header {
+  height: auto; min-height: 4.15rem; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .42rem; border-bottom: 1px solid rgba(255,255,255,.13);
+}
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span { color:#f2ebe7; font:600 clamp(.92rem,1.15vw,1.35rem)/1 var(--font-geist-mono),monospace; letter-spacing:.095em; }
+.secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > p { margin:0; color:#bab0aa; font:500 clamp(.5rem,.62vw,.72rem)/1.25 var(--font-geist-sans),Arial,sans-serif; letter-spacing:.015em; }
+.secondary-outcomes-redesign-scene .inactive-definition-groups { position:static; height:calc(100% - 4.15rem); grid-template-columns:35fr 65fr; padding-top:clamp(1.1rem,2.5vh,2rem); }
+.secondary-outcomes-redesign-scene .inactive-definition-groups::before,
+.secondary-outcomes-redesign-scene .inactive-definition-groups::after,
+.secondary-outcomes-redesign-scene .inactive-clinical h3::after,
+.secondary-outcomes-redesign-scene .inactive-imaging h3::after { display:none; }
+.secondary-outcomes-redesign-scene .inactive-clinical,
+.secondary-outcomes-redesign-scene .inactive-imaging { position:static; min-height:0; padding-top:0; }
+.secondary-outcomes-redesign-scene .inactive-clinical { display:flex; flex-direction:column; padding-right:clamp(1.25rem,2.3vw,2.7rem); border-right:1px solid rgba(255,92,98,.26); }
+.secondary-outcomes-redesign-scene .inactive-imaging { display:flex; flex-direction:column; padding-left:clamp(1.4rem,2.7vw,3.2rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical h3,
+.secondary-outcomes-redesign-scene .inactive-imaging h3 { margin:0; font-size:clamp(.68rem,.82vw,.96rem); letter-spacing:.09em; }
+.secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top:clamp(1rem,2.2vh,1.7rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical article + article { margin-top:clamp(1.2rem,3.1vh,2.45rem); padding-bottom:0; }
+.secondary-outcomes-redesign-scene .inactive-clinical article > i { width:clamp(2.25rem,3vw,3.4rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical span { font-size:clamp(.72rem,.9vw,1.04rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical strong { font-size:clamp(.78rem,.98vw,1.14rem); }
+.secondary-outcomes-redesign-scene .inactive-clinical small { font-size:clamp(.53rem,.64vw,.74rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging > div { flex:1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); gap:clamp(1.15rem,2.2vw,2.55rem) clamp(1.3rem,2.7vw,3.2rem); padding-top:clamp(1rem,2.1vh,1.65rem); border:0; background:transparent; }
+.secondary-outcomes-redesign-scene .inactive-imaging article { align-self:start; padding-left:clamp(1.9rem,2.45vw,2.85rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging article > i { width:clamp(1.6rem,2.05vw,2.35rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging span { font-size:clamp(.54rem,.68vw,.79rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging strong { font-size:clamp(.65rem,.78vw,.91rem); }
+.secondary-outcomes-redesign-scene .inactive-imaging small { font-size:clamp(.48rem,.58vw,.68rem); line-height:1.32; }
+
+/* Keep the criteria as one compact information block, rather than stretching them into a tree. */
+.secondary-outcomes-redesign-scene .inactive-clinical { border-right: 0; }
+.secondary-outcomes-redesign-scene .inactive-imaging > div {
+  flex: 0 0 auto;
+  grid-template-rows: repeat(2, auto);
+  align-content: start;
+}
+
+@media (max-width:700px) {
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition { top:30%; bottom:5%; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header { min-height:3.3rem; gap:.3rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > span { font-size:.72rem; }
+  .secondary-outcomes-redesign-scene .inactive-uveitis-definition > header > p { font-size:.4rem; }
+  .secondary-outcomes-redesign-scene .inactive-definition-groups { height:calc(100% - 3.3rem); padding-top:.75rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical { padding-right:.75rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging { padding-left:.8rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical h3,
+  .secondary-outcomes-redesign-scene .inactive-imaging h3 { font-size:.48rem; letter-spacing:.04em; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article:first-of-type { margin-top:.75rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article + article { margin-top:1rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical article > i { width:1.45rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical span { font-size:.49rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical strong { font-size:.53rem; }
+  .secondary-outcomes-redesign-scene .inactive-clinical small { font-size:.39rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging > div { gap:.72rem .62rem; padding-top:.72rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging article { padding-left:1.28rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging article > i { width:1.06rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging span { font-size:.43rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging strong { font-size:.48rem; }
+  .secondary-outcomes-redesign-scene .inactive-imaging small { font-size:.39rem; }
+}
+
+/* Page 10 overview — close the primary/secondary relationship and use the full secondary band. */
+.outcomes-scene .endpoint-stage { top: 29%; height: 30%; }
+.outcomes-scene .outcomes-secondary-band { top: 61.5%; height: 27%; }
+.outcomes-scene .outcomes-secondary-band > header { height: 2.05rem; font-size: clamp(.65rem,.8vw,.92rem); }
+.outcomes-scene .outcomes-secondary-band > div { height: calc(100% - 2.05rem); }
+.outcomes-scene .outcomes-secondary-band article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(.7rem,1.2vh,1rem) clamp(.3rem,.7vw,.8rem) .45rem;
+}
+.outcomes-scene .outcomes-secondary-band article > i,
+.outcomes-scene .outcomes-secondary-band article > .secondary-icon-svg {
+  width: clamp(2.05rem,2.65vw,3.1rem);
+  height: clamp(2.05rem,2.65vw,3.1rem);
+  margin-bottom: clamp(.48rem,.8vh,.7rem);
+}
+.outcomes-scene .outcomes-secondary-band .secondary-icon-va { width: clamp(1.7rem,2.15vw,2.5rem); }
+.outcomes-scene .outcomes-secondary-band strong { font-size: clamp(.68rem,.84vw,.98rem); line-height:1.18; }
+.outcomes-scene .outcomes-secondary-band span { margin-top:.42rem; font-size:clamp(.56rem,.68vw,.79rem); line-height:1.26; }
+
+@media (max-width:700px) {
+  .outcomes-scene .endpoint-stage { top: 33%; height: 27%; }
+  .outcomes-scene .outcomes-secondary-band { top: 62.5%; height: 26%; }
+  .outcomes-scene .outcomes-secondary-band > header { height: 1.6rem; font-size:.52rem; }
+  .outcomes-scene .outcomes-secondary-band > div { height: calc(100% - 1.6rem); }
+  .outcomes-scene .outcomes-secondary-band article { padding: .38rem .12rem .18rem; }
+  .outcomes-scene .outcomes-secondary-band article > i,
+  .outcomes-scene .outcomes-secondary-band article > .secondary-icon-svg { width:1.62rem; height:1.62rem; margin-bottom:.34rem; }
+  .outcomes-scene .outcomes-secondary-band .secondary-icon-va { width:1.33rem; }
+  .outcomes-scene .outcomes-secondary-band strong { font-size:.48rem; }
+  .outcomes-scene .outcomes-secondary-band span { margin-top:.22rem; font-size:.4rem; }
 }
