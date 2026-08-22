@@ -2929,7 +2929,7 @@ export default function Home() {
                 {/* BOTTOM CONCLUSION */}
                 <div className="lim-conclusion-band">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
-                  <p>Prespecified criteria, protocolized decisions, and MTQAC oversight reduced opportunities for bias—but could not reproduce masking.</p>
+                  <p>These safeguards could reduce opportunities for bias—but could not reproduce masking.</p>
                 </div>
 
               </div>
