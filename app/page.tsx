@@ -448,6 +448,7 @@ export default function Home() {
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
+  const [showCataractWarning, setShowCataractWarning] = useState(false);
 
   const goTo = (index: number) => {
     document.getElementById(chapters[index]?.id)?.scrollIntoView({ behavior: "smooth" });
@@ -664,7 +665,7 @@ export default function Home() {
             <div className="cosmic-eye"><div className="iris"><i /></div></div>
           </div>
           <div className="scene-copy hero-copy">
-            <p className="eyebrow"><span /> A NEW CLINICAL SIGNAL</p>
+            <p className="eyebrow"><span /> 01 — A NEW CLINICAL SIGNAL</p>
             <h1>Seeing beyond<br />the <em>steroid horizon.</em></h1>
             <p className="lede hero-paper">
               <span>Adalimumab vs. Conventional Immunosuppression for Uveitis (ADVISE) Trial</span>
@@ -682,7 +683,7 @@ export default function Home() {
 
         <section id="basics" className="scene basics-scene">
           <div className="scene-copy">
-            <p className="eyebrow"><span /> 01 — BASIC KNOWLEDGE</p>
+            <p className="eyebrow"><span /> 02 — BASIC KNOWLEDGE</p>
             <h2>When inflammation<br />moves <em>inside the eye.</em></h2>
             <p className="lede">Uveitis is a family of 30+ inflammatory diseases. In intermediate, posterior, and panuveitis, inflammation can threaten the retina, choroid, and vision itself.</p>
             <div className="micro-facts">
@@ -709,7 +710,7 @@ export default function Home() {
             <div className="choice choice-cid"><div className="tablet-stack"><i /><i /><i /></div><span>CONVENTIONAL</span></div>
           </div>
           <div className="scene-copy centered-copy">
-            <p className="eyebrow"><span /> 02 — THE RESEARCH QUESTION</p>
+            <p className="eyebrow"><span /> 03 — THE RESEARCH QUESTION</p>
             <h2>Two proven paths.<br /><em>One missing comparison.</em></h2>
             <p className="lede">Adalimumab was known to delay relapse versus placebo. Conventional antimetabolites and calcineurin inhibitors were standard care. Their head-to-head effectiveness was unknown.</p>
             <div className="research-question">Which approach achieves steroid-sparing control sooner?</div>
@@ -718,7 +719,7 @@ export default function Home() {
 
         <section id="study-design" className="scene design-scene">
           <div className="scene-copy design-copy">
-            <p className="eyebrow"><span /> 03 — METHODOLOGY / STUDY DESIGN</p>
+            <p className="eyebrow"><span /> 04 — METHODOLOGY / STUDY DESIGN</p>
             <h2>Built across<br /><em>three continents.</em></h2>
             <p className="lede">The ADVISE Trial was a multicenter, randomized, unmasked, parallel-treatment comparative-effectiveness superiority trial comparing adalimumab with conventional immunosuppressive drugs for uveitis.</p>
             <div className="design-attributes" aria-label="Study design features">
@@ -953,7 +954,7 @@ export default function Home() {
               ========================================================= */}
           <div className="scene-copy tapering-copy">
             <p className="eyebrow">
-              <span /> 08 — METHODOLOGY / TAPERING &amp; REACTIVATION
+              <span /> 09 — METHODOLOGY / TAPERING &amp; REACTIVATION
             </p>
 
             <h2>
@@ -1205,7 +1206,7 @@ export default function Home() {
 
         <section id="followup" className="scene followup-scene">
           <div className="scene-copy followup-copy">
-            <p className="eyebrow"><span /> 09 — METHODOLOGY / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 10 — METHODOLOGY / FOLLOW-UP</p>
             <h2>A year in focus.<br /><em>Every visit counts.</em></h2>
             <p className="lede">Monthly through month 6, then every 2 months to the 1-year close-out.</p>
           </div>
@@ -1256,7 +1257,7 @@ export default function Home() {
           aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis."
         >
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 10 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -1309,7 +1310,7 @@ export default function Home() {
 
         <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
           <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / OUTCOME DEFINITIONS</p>
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / OUTCOME DEFINITIONS</p>
             <h2>Activity was measured precisely.</h2>
           </div>
 
@@ -1337,7 +1338,7 @@ export default function Home() {
 
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -1372,7 +1373,7 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family."
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models.</em></h2>
           </div>
 
@@ -1415,7 +1416,7 @@ export default function Home() {
 
         <section id="quality-assurance" className="scene qa-scene">
           <div className="scene-copy qa-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / QUALITY ASSURANCE</p>
+            <p className="eyebrow"><span /> 15 — METHODOLOGY / QUALITY ASSURANCE</p>
             <h2>One protocol.<br /><em>Consistent judgment.</em></h2>
             <p className="lede">Independent oversight aligned disease-activity assessment, treatment decisions, and retinal-image interpretation across every clinical center.</p>
             <div className="qa-experts"><strong>3</strong><span>independent uveitis experts<br />not managing trial participants</span></div>
@@ -1484,7 +1485,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 13 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -1560,7 +1561,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 15 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts.</em></h2>
             <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately.</p>
           </div>
@@ -1916,7 +1917,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 17 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -2161,7 +2162,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA.</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster.</p>
           </div>
@@ -2213,7 +2214,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 18 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later.</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids.</p>
           </div>
@@ -2267,7 +2268,7 @@ export default function Home() {
 
           {/* ── Top header strip ── */}
           <header className="adv-header">
-            <p className="eyebrow"><span /> 19 — RESULTS / IMMUNOSUPPRESSION ADVANCEMENT</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / IMMUNOSUPPRESSION ADVANCEMENT</p>
             <h2>ADA held steady.<br /><em>CID escalated.</em></h2>
             <p className="adv-lede">Among participants with no immunosuppression at baseline — how often did each arm need to escalate treatment?</p>
           </header>
@@ -2353,7 +2354,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 22 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded.</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution.</p>
           </div>
@@ -2438,7 +2439,7 @@ export default function Home() {
 
         <section id="safety-outcomes" className="scene safety-outcomes-scene">
           <div className="scene-copy safety-outcomes-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / SAFETY OUTCOMES</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / SAFETY OUTCOMES</p>
             <h2>Protect the vision.<br /><em>Watch the exceptions.</em></h2>
             <p className="lede">Cataract surgery and moderate visual decline were more frequent with CID; severe decline was uncommon and not significantly different.</p>
           </div>
@@ -2531,7 +2532,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 24 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 25 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -2541,253 +2542,10 @@ export default function Home() {
             <article className="qol-sf36"><span>03</span><b>SF-36</b><strong>Physical + mental health</strong><div><p><em>PHYSICAL</em> ADA was essentially unchanged; CID declined slightly. The 6-month difference was not sustained at 12 months, and neither group had a clinically meaningful change.</p><p><em>MENTAL</em> No significant between-group difference at 6 or 12 months.</p></div><i /></article>
           </section>
         </section>
-
-        <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
-          <div className="scene-copy primary-efficacy-copy">
-            <p className="eyebrow"><span /> 26 — DISCUSSION</p>
-            <h2>Earlier control.<br /><em>Similar destination.</em></h2>
-            <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
-          </div>
-
-          <section className="efficacy-comparisons" aria-label="Temporal efficacy comparisons">
-            <article className="efficacy-chart efficacy-sparing">
-              <header><span>SUCCESSFUL CORTICOSTEROID SPARING</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
-              <div className="efficacy-plot">
-                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid sparing was 69 percent versus 54 percent at 6 months and 86 percent versus 77 percent at 12 months.">
-                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
-                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
-                  <path className="plot-ada" d="M38 132 L300 56 L550 28" />
-                  <path className="plot-cid" d="M38 132 L300 73 L550 40" />
-                  <circle className="plot-ada-point" cx="300" cy="56" r="6" /><circle className="plot-cid-point" cx="300" cy="73" r="6" />
-                  <circle className="plot-ada-point" cx="550" cy="28" r="5" /><circle className="plot-cid-point" cx="550" cy="40" r="5" />
-                </svg>
-                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
-                <div className="timepoint timepoint-six emphasis"><b>6 MONTHS</b><span><em>ADA</em> 69%</span><span><i>CID</i> 54%</span><small>P=0.029</small></div>
-                <div className="timepoint timepoint-twelve"><b>12 MONTHS</b><span><em>ADA</em> 86%</span><span><i>CID</i> 77%</span><small>P=0.077</small></div>
-              </div>
-            </article>
-
-            <article className="efficacy-chart efficacy-discontinuation">
-              <header><span>SUCCESSFUL CORTICOSTEROID DISCONTINUATION</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
-              <div className="efficacy-plot">
-                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid discontinuation was 15 percent versus 11 percent at 6 months and 55 percent versus 40 percent at 12 months.">
-                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
-                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
-                  <path className="plot-ada" d="M38 132 L300 106 L550 61" />
-                  <path className="plot-cid" d="M38 132 L300 113 L550 82" />
-                  <circle className="plot-ada-point" cx="300" cy="106" r="5" /><circle className="plot-cid-point" cx="300" cy="113" r="5" />
-                  <circle className="plot-ada-point" cx="550" cy="61" r="6" /><circle className="plot-cid-point" cx="550" cy="82" r="6" />
-                </svg>
-                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
-                <div className="timepoint timepoint-six"><b>6 MONTHS</b><span><em>ADA</em> 15%</span><span><i>CID</i> 11%</span><small>P=0.30</small></div>
-                <div className="timepoint timepoint-twelve emphasis"><b>12 MONTHS</b><span><em>ADA</em> 55%</span><span><i>CID</i> 40%</span><small>P=0.028</small></div>
-              </div>
-            </article>
-          </section>
-
-          <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
-        </section>
-
-        <section id="discussion-safety" className="scene discussion-cataract-scene">
-          <div className="adv-two-col">
-            <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / CATARACT SIGNAL</p>
-              <h2>The cataract signal<br />is<br />plausible. <span className="red-text" style={{display: 'inline'}}>Not<br />definitive.</span></h2>
-              <p className="cataract-hook" style={{color: 'var(--red)', fontSize: 'clamp(0.85rem, 0.95vw, 1rem)', marginTop: '1rem', marginBottom: '0.8rem', fontWeight: 300}}>Could greater corticosteroid exposure with CID explain the ocular difference?</p>
-              <p className="lede" style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)'}}>Steroid exposure offers a biologically plausible explanation for the higher cataract-surgery rate with CID. But the exposure difference was modest, and more CID eyes already had cataract at baseline—so the trial cannot establish a simple causal relationship.</p>
-              
-              <div className="adv-arch-evidence-overall" style={{marginTop: '1.5rem'}}>
-                <h4 style={{fontSize: 'clamp(0.6rem, 0.75vw, 0.8rem)', color: '#fff', letterSpacing: '0.1em', marginBottom: '0.4rem', fontWeight: 600}}>
-                  <span style={{color: 'var(--red)'}}>01</span> — EXPOSURE DIFFERENCE WAS MODEST
-                </h4>
-                <p style={{fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)', color: '#a09591', margin: '0 0 1rem 0'}}>
-                  ADA had slightly lower corticosteroid use:<br/>
-                  <span style={{color: 'var(--red)'}}>IRR 0.86 · P = 0.061</span><br/>
-                  Cumulative dose difference ≈ 0.73 g<br/><br/>
-                  This supports plausibility, but the magnitude of exposure separation was limited.
-                </p>
-
-                <h4 style={{fontSize: 'clamp(0.6rem, 0.75vw, 0.8rem)', color: '#fff', letterSpacing: '0.1em', marginBottom: '0.4rem', fontWeight: 600}}>
-                  <span style={{color: 'var(--red)'}}>02</span> — BASELINE LENS STATUS WAS IMBALANCED
-                </h4>
-                <p style={{fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)', color: '#a09591', margin: 0}}>
-                  A numerically greater fraction of phakic CID eyes already had cataract at baseline (21% vs 14%).
-                </p>
-              </div>
-            </div>
-
-            <div className="adv-right-col">
-              <div className="adv-causal-panel">
-                
-                <div className="causal-recall-strip">
-                  <p className="causal-header">OBSERVED IN RESULTS</p>
-                  <div className="causal-recall-content">
-                    <div>
-                      Cataract surgery
-                      <span><strong className="red">2%</strong> vs <strong className="purple">11%</strong></span>
-                      <span style={{fontSize: '0.65rem', fontWeight: '400', letterSpacing: '0.1em'}}>P = 0.009</span>
-                    </div>
-                    <div>
-                      More ≥3-line BCVA loss<br/>was also observed with CID.
-                    </div>
-                  </div>
-                </div>
-
-                <p className="causal-header">INTERPRETING THE CATARACT SIGNAL</p>
-
-                <div className="causal-diagram">
-                  <div className="causal-node node-cid">CID</div>
-                  <div className="causal-arrow-down purple"></div>
-                  
-                  <div className="causal-node">
-                    Greater corticosteroid<br/>exposure
-                  </div>
-                  
-                  <div className="causal-arrow-down purple"></div>
-
-                  <div className="causal-split">
-                    <div className="causal-side-note note-left">
-                      <p className="note-title">MODEST EXPOSURE GAP</p>
-                      <p>IRR 0.86 · P = 0.061<br/>Δ cumulative dose<br/>≈ 0.73 g</p>
-                    </div>
-                    <div className="causal-main-path">
-                       <div className="dashed-arrow-down"></div>
-                    </div>
-                    <div className="causal-side-note note-right">
-                      <p className="note-title">BASELINE IMBALANCE</p>
-                      <p>CID had numerically more<br/>pre-existing cataract</p>
-                    </div>
-                  </div>
-                  
-                  <div className="causal-node node-signal">
-                    Higher cataract<br/>surgery signal
-                  </div>
-                  
-                  <div className="causal-arrow-down purple"></div>
-                  
-                  <div className="causal-node node-conclusion">
-                    <strong>PLAUSIBLE PATHWAY</strong>
-                    Cannot definitively isolate steroid<br/>toxicity from baseline imbalances.
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="limitations-1" className="scene discussion-limitations-scene">
-          <div className="adv-two-col">
-            <div className="adv-left-col">
-              <p className="eyebrow"><span /> 29 — DISCUSSION / LIMITATIONS</p>
-              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
-              <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
-              <p className="lede">Different treatment routes made masking impractical and created potential for expectation and observer bias. The trial therefore relied on protocol-defined decisions and active quality oversight to reduce this risk.</p>
-            </div>
-
-            <div className="adv-right-col">
-              <div className="limitations-pathway">
-                
-                <div className="lim-top-node">
-                  <p className="lim-top-header">UNMASKED ASSIGNMENT</p>
-                  <div className="lim-assignment-row">
-                     <div>ADA<br/>Subcutaneous injection</div>
-                     <span className="lim-arrows">↔</span>
-                     <div>CID<br/>Oral immunosuppressive therapy</div>
-                  </div>
-                </div>
-
-                <div className="causal-arrow-down"></div>
-                <p className="lim-muted-text">Potential expectation / observer bias</p>
-                <div className="causal-arrow-down"></div>
-
-                <div className="lim-bias-node">
-                  <p>WHERE BIAS COULD ENTER</p>
-                  <p>Disease-activity assessment<br/>+ Treatment decisions</p>
-                </div>
-
-                <div className="causal-arrow-down"></div>
-
-                <div className="safeguards-layout">
-                  <div className="safeguards-list">
-                     <div className="safeguard-item">
-                       <h4><span>01</span> — PRESPECIFIED ASSESSMENT</h4>
-                       <p>Disease-specific clinical examination and imaging criteria</p>
-                     </div>
-                     <div className="safeguard-item">
-                       <h4><span>02</span> — PROTOCOLIZED DECISIONS</h4>
-                       <p>Defined corticosteroid tapering and immunosuppression advancement</p>
-                     </div>
-                     <div className="safeguard-item" style={{border: '1px solid rgba(132, 94, 255, 0.2)'}}>
-                       <h4 style={{color: '#a88aff'}}><span>03</span> — MTQAC OVERSIGHT</h4>
-                       <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
-                       <div className="mtqac-functions">
-                          <div>Monitor imaging<br/>interpretation</div>
-                          <div>Verify activity<br/>determination</div>
-                          <div>Ensure protocol<br/>adherence</div>
-                          <div>Provide corrective<br/>feedback</div>
-                       </div>
-                     </div>
-                  </div>
-
-                  <div className="adv-mitigation-bracket">
-                     <div className="bracket-text">
-                        MITIGATION<br/><span>— NOT ELIMINATION</span>
-                     </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div className="adv-arch-takeaway" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem 2rem', display: 'flex', alignItems: 'center', gap: '2rem', marginTop: '2rem' }}>
-            <div className="adv-hr-badge" style={{marginBottom: '0', flexShrink: 0}}>
-              <i aria-hidden="true" />
-              <span style={{color: 'var(--red)'}}>KEY TAKEAWAY</span>
-            </div>
-            <p style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)', color: '#fff', fontWeight: 300, lineHeight: 1.5, margin: 0}}>
-               Protocol-defined decisions, MTQAC oversight, and consistent results across baseline-immunosuppression strata <span style={{color: 'var(--red)'}}>reduce—but cannot eliminate—</span>the concern for bias from unmasking.
-            </p>
-          </div>
-        </section>
-
-        <section id="limitations-2" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 25 — LIMITATIONS / INTERPRETATION</p>
-            <h2>Perception can shift.<br /><em>The signal held.</em></h2>
-            <p className="lede">Different routes of administration and prior treatment experience could influence how participants reported quality of life.</p>
-          </div>
-          <div className="limitation-visual visual-perception" aria-hidden="true"><div className="visual-label">POTENTIAL PERCEPTION EFFECT</div><div className="route-choice"><span><b>ADA</b><i>⌁</i><small>INJECTION</small></span><em>↔</em><span><b>CID</b><i>≡</i><small>ORAL AGENT</small></span></div><p><strong>22%</strong> entered after requiring a second CID agent</p></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / QUALITY OF LIFE</span><strong>Route may shape perception</strong><p>Unmasked pills versus subcutaneous injections could favor ADA through perceived efficacy—or favor oral agents through convenience. No clinically meaningful QOL difference was observed.</p><i /></article>
-            <article className="signal-card"><span>02 / PRIOR CID EXPERIENCE</span><strong>A second drug was not failure</strong><p>Twenty-two percent entered after needing a second conventional agent. Partial success on an antimetabolite may have been perceived as treatment failure, even when it was not ineffective.</p><i /></article>
-            <article className="signal-card"><span>03 / PROTOCOL GUARDRAILS</span><strong>Every step was specified</strong><p>Clinical examination, imaging interpretation, corticosteroid tapering, and immunosuppression advancement were defined in the protocol.</p><i /></article>
-            <article className="signal-card"><span>04 / CONSISTENCY CHECK</span><strong>Results held across strata</strong><p>MTQAC monitoring and qualitatively similar results in both baseline-immunosuppression strata suggest these potential biases did not drive the findings.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">Interpretation remains cautious: the trial was unmasked, but protocol detail and quality assurance helped contain bias.</p>
-        </section>
-
-        <section id="limitations-3" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 26 — LIMITATIONS / DOSE &amp; TIME</p>
-            <h2>Time to control.<br /><em>Not the final ceiling.</em></h2>
-            <p className="lede">The CID pathway allowed stepwise antimetabolite escalation, making early speed and long-term efficacy distinct questions.</p>
-          </div>
-          <div className="limitation-visual visual-timing" aria-hidden="true"><div className="visual-label">TIME IS PART OF THE COMPARISON</div><div className="stair-track"><i /><i /><i /><i /><b>6M</b><b>12M</b></div><div className="timing-copy"><span>STEPWISE CID ESCALATION</span><span>PRIMARY OUTCOME</span><span>FOLLOW-UP ENDS</span></div></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / DOSE ESCALATION</span><strong>A staged CID pathway</strong><p>Antimetabolites followed a two-step escalation approach, similar to common clinical practice, rather than starting immediately at the maximum dose.</p><i /></article>
-            <article className="signal-card"><span>02 / PRIMARY WINDOW</span><strong>Six months was the test</strong><p>The protocol allowed escalation while preserving enough follow-up to assess successful corticosteroid sparing by the six-month primary outcome.</p><i /></article>
-            <article className="signal-card"><span>03 / RAPIDITY VS EFFICACY</span><strong>CID was catching up</strong><p>ADA achieved sparing sooner, but the 12-month proportions were closer—suggesting a difference in rapidity rather than necessarily ultimate efficacy.</p><i /></article>
-            <article className="signal-card"><span>04 / FOLLOW-UP HORIZON</span><strong>The endpoint came early</strong><p>ADA had higher corticosteroid discontinuation at 12 months, but follow-up ended there, so later CID convergence could not be determined.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">The trial answers which strategy works sooner; it cannot fully answer whether longer follow-up would narrow the discontinuation gap.</p>
-        </section>
-
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -2885,9 +2643,249 @@ export default function Home() {
           </div>
         </section>
 
+
+        <section 
+          id="discussion-safety" 
+          className="scene discussion-cataract-scene"
+          onClick={() => setShowCataractWarning(prev => !prev)}
+          style={{ cursor: 'pointer' }}
+        >
+          <div className="adv-two-col">
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 27 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
+              <h2>More steroid exposure</h2>
+              <h2 className="red-text">Plausible. Not definitive.</h2>
+              
+              <p className="lede">Greater corticosteroid exposure with CID offers a biologically plausible explanation. Two observations, however, prevent simple causal attribution.</p>
+              
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-item">
+                  <h4><span>01</span> — EXPOSURE DIFFERENCE WAS MODEST</h4>
+                  <p>ADA had slightly lower corticosteroid use, but the magnitude of exposure separation between groups was limited.</p>
+                </div>
+                
+                <div className="observation-item">
+                  <h4><span>02</span> — BASELINE LENS STATUS WAS IMBALANCED</h4>
+                  <p>A numerically greater fraction of phakic CID eyes already had cataract at baseline.</p>
+                </div>
+
+                {showCataractWarning && (
+                  <div className="cataract-inline-red-box">
+                    <div className="inline-warning-badge-row">
+                      <span className="warning-badge-icon-custom" aria-hidden="true">!</span>
+                      <span className="warning-badge-text">CRITICAL INTERPRETATION CAVEAT</span>
+                    </div>
+                    <p className="inline-warning-p1">
+                      How much cataract explains the ≥3-line BCVA difference was not reported
+                    </p>
+                    <div className="inline-warning-divider" />
+                    <p className="inline-warning-p2">
+                      Cataract accounted for 8/18 (44%) of ≥6-line declines; other causes included uveitis activity and vitreous hemorrhage, and visual recovery after cataract surgery was variable
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="adv-right-col">
+              <div className="adv-causal-panel">
+                
+                <div className="adv-arch-evidence-strip cataract-signal-strip">
+                  <div className="adv-arch-evidence-recall">
+                    <strong>THE SIGNAL</strong>
+                    <span>Clinical observation from results</span>
+                  </div>
+                  <div className="adv-arch-evidence-stat">
+                    <b>MORE ≥3-LINE BCVA LOSS</b>
+                    <span><em>6%</em> ADA vs <em>13%</em> CID</span>
+                    <small style={{ color: '#ff666b', fontWeight: 600 }}>P = 0.026</small>
+                  </div>
+                  <div className="signal-divider-arrow" aria-hidden="true">
+                    <span>?</span>
+                  </div>
+                  <div className="adv-arch-evidence-stat">
+                    <b>CATARACT SURGERY</b>
+                    <span><em>2%</em> ADA vs <em>11%</em> CID</span>
+                    <small style={{ color: '#ff666b', fontWeight: 600 }}>P = 0.009</small>
+                  </div>
+                </div>
+
+                <div className="causal-diagram-wrapper">
+                  <p className="causal-header">INTERPRETING THE CATARACT SIGNAL</p>
+
+                  <div className="causal-diagram">
+                    <div className="causal-node node-cid">CID</div>
+
+                    <div className="causal-split">
+                      <div className="causal-side-note note-left">
+                        <span className="note-eyebrow-heading">GREATER STEROID EXPOSURE</span>
+                        <div className="side-note-icon-card" aria-hidden="true">
+                          <svg viewBox="0 0 44 40" className="icon-svg-steroid">
+                            <polygon points="10,24 7,19 10,14 16,14 19,19 16,24" fill="rgba(255,77,82,0.08)" stroke="#ff666b" strokeWidth="1.5" strokeLinejoin="round"/>
+                            <polygon points="16,24 19,19 16,14 22,14 25,19 22,24" fill="rgba(255,77,82,0.18)" stroke="#ff666b" strokeWidth="1.5" strokeLinejoin="round"/>
+                            <polygon points="22,14 25,19 22,24 28,24 31,19 28,14" fill="rgba(255,77,82,0.08)" stroke="#ff666b" strokeWidth="1.5" strokeLinejoin="round"/>
+                            <polygon points="28,14 31,19 36,16 35,10 28,10" fill="rgba(255,77,82,0.25)" stroke="#ff7175" strokeWidth="1.5" strokeLinejoin="round"/>
+                            <line x1="16" y1="14" x2="16" y2="8" stroke="#ff8e91" strokeWidth="1.6" strokeLinecap="round"/>
+                            <line x1="22" y1="14" x2="22" y2="8" stroke="#ff8e91" strokeWidth="1.6" strokeLinecap="round"/>
+                            <circle cx="16" cy="7.5" r="1.5" fill="#ff666b" />
+                            <circle cx="22" cy="7.5" r="1.5" fill="#ff666b" />
+                            <path d="M7 29h6M10 26v6" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round"/>
+                            <text x="17" y="32" fill="#ff8a8e" fontFamily="var(--font-geist-mono)" fontSize="6.5" fontWeight="700" letterSpacing="0.06em">DOSE</text>
+                          </svg>
+                        </div>
+                        <p className="note-title">MODEST EXPOSURE GAP</p>
+                        <p className="note-body">Δ cumulative dose ≈ 0.73 g<br/>IRR 0.86 · <span className="badge-p-non-sig">P = 0.061</span></p>
+                      </div>
+                      <div className="causal-main-path">
+                         <div className="dashed-arrow-down"></div>
+                      </div>
+                      <div className="causal-side-note note-right">
+                        <span className="note-eyebrow-heading">PRE-EXISTING LENS STATUS</span>
+                        <div className="side-note-icon-card" aria-hidden="true">
+                          <svg viewBox="0 0 44 40" className="icon-svg-eye">
+                            <path d="M4 20C11 9 33 9 40 20C33 31 11 31 4 20Z" fill="rgba(181,142,255,0.06)" stroke="#b58eff" strokeWidth="1.6" strokeLinejoin="round" />
+                            <circle cx="22" cy="20" r="8.5" fill="rgba(181,142,255,0.18)" stroke="#b58eff" strokeWidth="1.4" />
+                            <ellipse cx="22" cy="20" rx="4" ry="6.5" fill="rgba(181,142,255,0.35)" stroke="#d4beff" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
+                            <circle cx="22" cy="20" r="2" fill="#fff" opacity="0.95" />
+                            <line x1="22" y1="6" x2="22" y2="10" stroke="#d4beff" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+                            <line x1="22" y1="30" x2="22" y2="34" stroke="#d4beff" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+                            <text x="12" y="37" fill="#c4a8ff" fontFamily="var(--font-geist-mono)" fontSize="5.5" fontWeight="700" letterSpacing="0.06em">PHAKIC</text>
+                          </svg>
+                        </div>
+                        <p className="note-title">BASELINE IMBALANCE</p>
+                        <p className="note-body">Pre-existing cataract Δ4%<br/><span className="badge-stat-ada">36% ADA</span> vs <span className="badge-stat-cid">40% CID</span></p>
+                      </div>
+                    </div>
+                    
+                    <div className="causal-node node-surgery-evident">
+                      Higher cataract surgery with CID
+                    </div>
+                    
+                    <div className="causal-node node-conclusion">
+                      <strong>PLAUSIBLE CONTRIBUTOR <span className="red-highlight-text">≠ PROVEN CAUSE</span></strong>
+                      <p>Greater steroid exposure may have contributed to the cataract. Cohort studies in GCA suggest ~3-4% increase risk per 1 gm increase in cumulative oral dose over one year</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="limitations-1" className="scene discussion-limitations-scene">
+          <div className="adv-two-col">
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 28 — DISCUSSION / LIMITATIONS</p>
+              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
+              <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
+              <p className="lede">Different treatment routes made masking impractical and created potential for expectation and observer bias. The trial therefore relied on protocol-defined decisions and active quality oversight to reduce this risk.</p>
+            </div>
+
+            <div className="adv-right-col">
+              <div className="limitations-pathway">
+                
+                <div className="lim-top-node">
+                  <p className="lim-top-header">UNMASKED ASSIGNMENT</p>
+                  <div className="lim-assignment-row">
+                     <div>ADA<br/>Subcutaneous injection</div>
+                     <span className="lim-arrows">↔</span>
+                     <div>CID<br/>Oral immunosuppressive therapy</div>
+                  </div>
+                </div>
+
+                <div className="causal-arrow-down"></div>
+                <p className="lim-muted-text">Potential expectation / observer bias</p>
+                <div className="causal-arrow-down"></div>
+
+                <div className="lim-bias-node">
+                  <p>WHERE BIAS COULD ENTER</p>
+                  <p>Disease-activity assessment<br/>+ Treatment decisions</p>
+                </div>
+
+                <div className="causal-arrow-down"></div>
+
+                <div className="safeguards-layout">
+                  <div className="safeguards-list">
+                     <div className="safeguard-item">
+                       <h4><span>01</span> — PRESPECIFIED ASSESSMENT</h4>
+                       <p>Disease-specific clinical examination and imaging criteria</p>
+                     </div>
+                     <div className="safeguard-item">
+                       <h4><span>02</span> — PROTOCOLIZED DECISIONS</h4>
+                       <p>Defined corticosteroid tapering and immunosuppression advancement</p>
+                     </div>
+                     <div className="safeguard-item" style={{border: '1px solid rgba(132, 94, 255, 0.2)'}}>
+                       <h4 style={{color: '#a88aff'}}><span>03</span> — MTQAC OVERSIGHT</h4>
+                       <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
+                       <div className="mtqac-functions">
+                          <div>Monitor imaging<br/>interpretation</div>
+                          <div>Verify activity<br/>determination</div>
+                          <div>Ensure protocol<br/>adherence</div>
+                          <div>Provide corrective<br/>feedback</div>
+                       </div>
+                     </div>
+                  </div>
+
+                  <div className="adv-mitigation-bracket">
+                     <div className="bracket-text">
+                        MITIGATION<br/><span>— NOT ELIMINATION</span>
+                     </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="adv-arch-takeaway" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem 2rem', display: 'flex', alignItems: 'center', gap: '2rem', marginTop: '2rem' }}>
+            <div className="adv-hr-badge" style={{marginBottom: '0', flexShrink: 0}}>
+              <i aria-hidden="true" />
+              <span style={{color: 'var(--red)'}}>KEY TAKEAWAY</span>
+            </div>
+            <p style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)', color: '#fff', fontWeight: 300, lineHeight: 1.5, margin: 0}}>
+               Protocol-defined decisions, MTQAC oversight, and consistent results across baseline-immunosuppression strata <span style={{color: 'var(--red)'}}>reduce—but cannot eliminate—</span>the concern for bias from unmasking.
+            </p>
+          </div>
+        </section>
+
+        <section id="limitations-2" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 29 — LIMITATIONS / INTERPRETATION</p>
+            <h2>Perception can shift.<br /><em>The signal held.</em></h2>
+            <p className="lede">Different routes of administration and prior treatment experience could influence how participants reported quality of life.</p>
+          </div>
+          <div className="limitation-visual visual-perception" aria-hidden="true"><div className="visual-label">POTENTIAL PERCEPTION EFFECT</div><div className="route-choice"><span><b>ADA</b><i>⌁</i><small>INJECTION</small></span><em>↔</em><span><b>CID</b><i>≡</i><small>ORAL AGENT</small></span></div><p><strong>22%</strong> entered after requiring a second CID agent</p></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / QUALITY OF LIFE</span><strong>Route may shape perception</strong><p>Unmasked pills versus subcutaneous injections could favor ADA through perceived efficacy—or favor oral agents through convenience. No clinically meaningful QOL difference was observed.</p><i /></article>
+            <article className="signal-card"><span>02 / PRIOR CID EXPERIENCE</span><strong>A second drug was not failure</strong><p>Twenty-two percent entered after needing a second conventional agent. Partial success on an antimetabolite may have been perceived as treatment failure, even when it was not ineffective.</p><i /></article>
+            <article className="signal-card"><span>03 / PROTOCOL GUARDRAILS</span><strong>Every step was specified</strong><p>Clinical examination, imaging interpretation, corticosteroid tapering, and immunosuppression advancement were defined in the protocol.</p><i /></article>
+            <article className="signal-card"><span>04 / CONSISTENCY CHECK</span><strong>Results held across strata</strong><p>MTQAC monitoring and qualitatively similar results in both baseline-immunosuppression strata suggest these potential biases did not drive the findings.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">Interpretation remains cautious: the trial was unmasked, but protocol detail and quality assurance helped contain bias.</p>
+        </section>
+
+        <section id="limitations-3" className="scene discussion-scene limitations-scene">
+          <div className="scene-copy discussion-copy">
+            <p className="eyebrow"><span /> 30 — LIMITATIONS / DOSE &amp; TIME</p>
+            <h2>Time to control.<br /><em>Not the final ceiling.</em></h2>
+            <p className="lede">The CID pathway allowed stepwise antimetabolite escalation, making early speed and long-term efficacy distinct questions.</p>
+          </div>
+          <div className="limitation-visual visual-timing" aria-hidden="true"><div className="visual-label">TIME IS PART OF THE COMPARISON</div><div className="stair-track"><i /><i /><i /><i /><b>6M</b><b>12M</b></div><div className="timing-copy"><span>STEPWISE CID ESCALATION</span><span>PRIMARY OUTCOME</span><span>FOLLOW-UP ENDS</span></div></div>
+          <div className="discussion-grid limitations-grid">
+            <article className="signal-card warning-card"><span>01 / DOSE ESCALATION</span><strong>A staged CID pathway</strong><p>Antimetabolites followed a two-step escalation approach, similar to common clinical practice, rather than starting immediately at the maximum dose.</p><i /></article>
+            <article className="signal-card"><span>02 / PRIMARY WINDOW</span><strong>Six months was the test</strong><p>The protocol allowed escalation while preserving enough follow-up to assess successful corticosteroid sparing by the six-month primary outcome.</p><i /></article>
+            <article className="signal-card"><span>03 / RAPIDITY VS EFFICACY</span><strong>CID was catching up</strong><p>ADA achieved sparing sooner, but the 12-month proportions were closer—suggesting a difference in rapidity rather than necessarily ultimate efficacy.</p><i /></article>
+            <article className="signal-card"><span>04 / FOLLOW-UP HORIZON</span><strong>The endpoint came early</strong><p>ADA had higher corticosteroid discontinuation at 12 months, but follow-up ended there, so later CID convergence could not be determined.</p><i /></article>
+          </div>
+          <p className="discussion-footnote">The trial answers which strategy works sooner; it cannot fully answer whether longer follow-up would narrow the discontinuation gap.</p>
+        </section>
+
+
         <section id="limitations-5" className="scene discussion-scene limitations-scene">
           <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 28 — LIMITATIONS / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 31 — LIMITATIONS / FOLLOW-UP</p>
             <h2>Missing follow-up.<br /><em>Tested from every angle.</em></h2>
             <p className="lede">Loss to follow-up was higher with CID, creating a potential source of bias that required careful interpretation.</p>
           </div>
@@ -2903,7 +2901,7 @@ export default function Home() {
 
         <section id="limitations-6" className="scene discussion-scene limitations-scene">
           <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 29 — LIMITATIONS / IMMUNOGENICITY</p>
+            <p className="eyebrow"><span /> 32 — LIMITATIONS / IMMUNOGENICITY</p>
             <h2>One unanswered<br /><em>antibody question.</em></h2>
             <p className="lede">The study did not measure anti-adalimumab antibodies, leaving an important question about durability of response unresolved.</p>
           </div>
@@ -2917,10 +2915,55 @@ export default function Home() {
           <p className="discussion-footnote">Whether adalimumab monotherapy should be minimized to reduce immunogenicity is an important question for future uveitis studies.</p>
         </section>
 
+        <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
+          <div className="scene-copy primary-efficacy-copy">
+            <p className="eyebrow"><span /> 33 — DISCUSSION</p>
+            <h2>Earlier control.<br /><em>Similar destination.</em></h2>
+            <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
+          </div>
+
+          <section className="efficacy-comparisons" aria-label="Temporal efficacy comparisons">
+            <article className="efficacy-chart efficacy-sparing">
+              <header><span>SUCCESSFUL CORTICOSTEROID SPARING</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid sparing was 69 percent versus 54 percent at 6 months and 86 percent versus 77 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 56 L550 28" />
+                  <path className="plot-cid" d="M38 132 L300 73 L550 40" />
+                  <circle className="plot-ada-point" cx="300" cy="56" r="6" /><circle className="plot-cid-point" cx="300" cy="73" r="6" />
+                  <circle className="plot-ada-point" cx="550" cy="28" r="5" /><circle className="plot-cid-point" cx="550" cy="40" r="5" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six emphasis"><b>6 MONTHS</b><span><em>ADA</em> 69%</span><span><i>CID</i> 54%</span><small>P=0.029</small></div>
+                <div className="timepoint timepoint-twelve"><b>12 MONTHS</b><span><em>ADA</em> 86%</span><span><i>CID</i> 77%</span><small>P=0.077</small></div>
+              </div>
+            </article>
+
+            <article className="efficacy-chart efficacy-discontinuation">
+              <header><span>SUCCESSFUL CORTICOSTEROID DISCONTINUATION</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid discontinuation was 15 percent versus 11 percent at 6 months and 55 percent versus 40 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 106 L550 61" />
+                  <path className="plot-cid" d="M38 132 L300 113 L550 82" />
+                  <circle className="plot-ada-point" cx="300" cy="106" r="5" /><circle className="plot-cid-point" cx="300" cy="113" r="5" />
+                  <circle className="plot-ada-point" cx="550" cy="61" r="6" /><circle className="plot-cid-point" cx="550" cy="82" r="6" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six"><b>6 MONTHS</b><span><em>ADA</em> 15%</span><span><i>CID</i> 11%</span><small>P=0.30</small></div>
+                <div className="timepoint timepoint-twelve emphasis"><b>12 MONTHS</b><span><em>ADA</em> 55%</span><span><i>CID</i> 40%</span><small>P=0.028</small></div>
+              </div>
+            </article>
+          </section>
+
+          <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
+        </section>
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 30 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 34 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Release the steroid.</em></h2>
             <p className="lede">Both strategies were effective. Adalimumab delivered faster corticosteroid-sparing control at 6 months and enabled more patients to discontinue corticosteroids by 12 months.</p>
             <blockquote>For shared clinical decisions, the choice is no longer simply “does it work?”—but <b>how quickly, by which route, and at what trade-off?</b></blockquote>
@@ -2931,7 +2974,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 34 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 35 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -2981,7 +3024,7 @@ export default function Home() {
 
         <section id="statistics" className="scene statistics-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 35 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 36 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -3049,7 +3092,7 @@ export default function Home() {
 
         <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
           <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / SAMPLE SIZE</p>
+            <p className="eyebrow"><span /> 37 — METHODOLOGY / SAMPLE SIZE</p>
             <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
           </div>
 
