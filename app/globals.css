@@ -3788,16 +3788,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 
-.adv-left-col .eyebrow {
-  font-size: clamp(0.55rem, 0.65vw, 0.75rem);
-  color: #a09591;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
 .adv-left-col .red-text {
   color: var(--red);
   margin-top: 0.2rem;
@@ -8599,6 +8589,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .adv-left-col .eyebrow {
   white-space: nowrap;
 }
+
 .adv-left-col h2 {
   font-size: clamp(2.9rem, 3.8vw, 4.35rem);
   line-height: .96;
@@ -8684,33 +8675,29 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .adv-arch-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 3vw, 4rem);
+  gap: clamp(1rem, 2vw, 3rem);
   flex: 1;
 }
 
 .adv-arch-track-box {
   display: flex;
   flex-direction: column;
-  padding: clamp(1.5rem, 2vw, 2.5rem);
-  border-radius: 8px;
-  position: relative;
+  padding: clamp(1rem, 1.5vw, 2rem);
+  border-radius: 4px;
 }
 .adv-arch-track-ada-box {
-  border: 1px solid rgba(255,89,95,.2);
-  background: radial-gradient(120% 120% at 50% 0%, rgba(255,45,45,.05), transparent 70%);
-  box-shadow: inset 0 0 20px rgba(255,45,45,.02);
+  border: 1px solid rgba(255,89,95,.52);
+  background: linear-gradient(110deg,rgba(255,45,45,.105),rgba(255,45,45,.02) 64%,transparent);
 }
 .adv-arch-track-cid-box {
-  border: 1px solid rgba(184,153,250,.2);
-  background: radial-gradient(120% 120% at 50% 0%, rgba(132,94,255,.05), transparent 70%);
-  box-shadow: inset 0 0 20px rgba(132,94,255,.02);
+  border: 1px solid rgba(184,153,250,.36);
+  background: linear-gradient(115deg,rgba(132,94,255,.09),rgba(132,94,255,.03));
 }
 
 .adv-arch-track {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 0.25rem;
 }
 
 .adv-arch-header-ada, .adv-arch-header-cid {
@@ -8718,84 +8705,85 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   align-items: baseline;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
-.adv-arch-header-ada strong { color: #ff666b; font-family: var(--font-geist-mono), monospace; font-size: clamp(1.1rem, 1.4vw, 1.6rem); }
-.adv-arch-header-cid strong { color: #b58eff; font-family: var(--font-geist-mono), monospace; font-size: clamp(1.1rem, 1.4vw, 1.6rem); }
+.adv-arch-header-ada { grid-column: 1; grid-row: 1; }
+.adv-arch-header-cid { grid-column: 3; grid-row: 1; }
+
+.adv-arch-header-ada strong { color: #ff666b; font-family: var(--font-geist-mono), monospace; font-size: clamp(1.2rem, 1.5vw, 1.8rem); }
+.adv-arch-header-cid strong { color: #b58eff; font-family: var(--font-geist-mono), monospace; font-size: clamp(1.2rem, 1.5vw, 1.8rem); }
 .adv-arch-header-ada span, .adv-arch-header-cid span { color: #948b87; font-family: var(--font-geist-mono), monospace; font-size: clamp(0.5rem, 0.6vw, 0.7rem); letter-spacing: 0.05em; text-transform: uppercase; }
 
 .adv-arch-node {
   border: none;
-  padding: 1rem;
+  padding: clamp(0.8rem, 1vw, 1.2rem) clamp(1rem, 1.2vw, 1.5rem);
   background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
 }
 .adv-arch-node span, .adv-arch-node strong {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.7rem, 0.9vw, 1.1rem);
+  font-size: clamp(0.7rem, 0.95vw, 1.15rem);
   color: #fff;
   letter-spacing: 0.02em;
   line-height: 1.25;
 }
-.adv-arch-node span { font-weight: 500; }
-.adv-arch-node strong { font-weight: 600; }
-.adv-arch-node small {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: clamp(0.5rem, 0.6vw, 0.7rem);
-  color: #888;
-  margin-top: 0.3rem;
-  font-weight: 400;
-}
-
+.adv-arch-node span { font-weight: 600; }
+.adv-arch-node strong { font-weight: 700; }
 .adv-arch-node-relapse {
-  border-radius: 4px;
-  padding: 0.8rem 1rem;
+  border: none;
 }
 .adv-arch-track-ada-box .adv-arch-node-relapse {
-  background: rgba(255,45,45,.06);
+  background: linear-gradient(110deg,rgba(255,45,45,.15),rgba(255,45,45,.04) 64%,transparent);
+  border-left: 2px solid var(--red);
 }
 .adv-arch-track-cid-box .adv-arch-node-relapse {
-  background: rgba(132,94,255,.06);
+  background: linear-gradient(115deg,rgba(132,94,255,.12),rgba(132,94,255,.04));
+  border-left: 2px solid #a77cff;
 }
 .adv-arch-node-relapse strong {
   text-transform: uppercase;
-  font-size: clamp(0.65rem, 0.8vw, 0.9rem);
-  letter-spacing: 0.1em;
 }
 .adv-arch-track-ada-box .adv-arch-node-relapse strong {
-  color: rgba(255, 113, 117, 0.9);
+  color: #ff7175;
 }
 .adv-arch-track-cid-box .adv-arch-node-relapse strong {
-  color: rgba(181, 142, 255, 0.9);
+  color: #b58eff;
+}
+.adv-arch-node small {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(0.5rem, 0.6vw, 0.7rem);
+  color: #a09591;
+  margin-top: 0.3rem;
 }
 
 .adv-arch-hinge-node {
   border-color: rgba(255,255,255,0.25);
+  background: linear-gradient(90deg, rgba(255,255,255,0.08), transparent);
 }
+.adv-arch-ada-node { border-left: 2px solid var(--red); }
+.adv-arch-cid-node { border-left: 2px solid #a77cff; }
 
 .adv-arch-edge {
   text-align: center;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.2);
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  color: rgba(255,255,255,0.3);
   line-height: 1;
-  padding: 0.5rem 0;
-  font-family: var(--font-geist-sans), sans-serif;
-  font-weight: 300;
+  padding: 0.4rem 0;
+  font-family: var(--font-geist-mono), monospace;
+}
+.adv-arch-edge-long {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .adv-arch-end {
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 6px;
-  background: rgba(255,255,255,0.02);
-  margin-top: 0.5rem;
-}
-.adv-arch-end span {
-  font-weight: 600;
-  color: #fff;
+  border-color: rgba(255,255,255,0.25);
+  background: transparent;
 }
 
 .adv-arch-hinge-connector {
@@ -8883,6 +8871,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-family: var(--font-geist-mono), monospace;
   letter-spacing: .04em;
   line-height: 1.25;
+}
+.adv-arch-evidence-stat b {
+  font-size: clamp(0.45rem, 0.55vw, 0.65rem);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
 }
 .adv-arch-evidence-stat span {
   color: #fff;

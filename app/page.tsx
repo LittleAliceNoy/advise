@@ -2795,7 +2795,7 @@ export default function Home() {
               <p className="lede">Two observations argue against second-agent use driving ADA’s benefit.</p>
               
               <div className="adv-observations-block">
-                <p className="bridging-sentence">Benefit was consistent across strata; overall immunosuppression advancement was greater with CID.</p>
+
                 
                 <div className="observation-item">
                   <h4><span>01</span> — CONSISTENCY ACROSS STRATA</h4>
@@ -2813,17 +2813,17 @@ export default function Home() {
               <div className="adv-arch-evidence-strip">
                 <div className="adv-arch-evidence-recall">
                   <strong>COUNTEREVIDENCE</strong>
-                  <span>Among participants not receiving immunosuppression at baseline</span>
+                  <span>Among participants <strong>NOT RECEIVING</strong> immunosuppression at baseline</span>
                 </div>
                 <div className="adv-arch-evidence-stat">
                   <b>SECOND AGENT ADDED</b>
                   <span><em>41%</em> ADA vs <em>29%</em> CID</span>
-                  <small>P = .060</small>
+                  <small>P = 0.060</small>
                 </div>
                 <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
                   <b>IMMUNOSUPPRESSION ADVANCEMENT</b>
                   <span><em>37</em> ADA vs <em>60</em> CID</span>
-                  <small>P &lt; .001</small>
+                  <small style={{ color: '#ff666b', fontWeight: 600 }}>P &lt; 0.001</small>
                 </div>
               </div>
 
@@ -2847,7 +2847,7 @@ export default function Home() {
                       </div>
                       <div className="adv-arch-edge">↓</div>
                       <div className="adv-arch-node adv-arch-end">
-                        <span>⊕ Add second agent</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center' }}><svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '0.35rem' }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>Add second agent</span>
                       </div>
                     </div>
                   </div>
@@ -2875,7 +2875,7 @@ export default function Home() {
                       </div>
                       <div className="adv-arch-edge">↓</div>
                       <div className="adv-arch-node adv-arch-end">
-                        <span>⊕ Add second agent</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center' }}><svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '0.35rem' }}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>Add second agent</span>
                       </div>
                     </div>
                   </div>
