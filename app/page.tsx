@@ -2780,73 +2780,90 @@ export default function Home() {
               <p className="eyebrow"><span /> 28 — DISCUSSION / LIMITATIONS</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
-              <p className="lede">Different treatment routes made masking impractical and created potential for expectation and observer bias. The trial therefore relied on protocol-defined decisions and active quality oversight to reduce this risk.</p>
+              <p className="lede">Different treatment routes made masking impractical, creating potential for expectation and observer bias. The trial therefore relied on prespecified assessments, protocol-defined treatment decisions, and active quality oversight to reduce this risk.</p>
             </div>
 
             <div className="adv-right-col">
-              <div className="limitations-pathway">
+              <div className="limitations-analytical-panel">
                 
-                <div className="lim-top-node">
-                  <p className="lim-top-header">UNMASKED ASSIGNMENT</p>
+                {/* 1. UNMASKED ASSIGNMENT */}
+                <div className="lim-unmasked-block">
+                  <div className="lim-block-header">UNMASKED ASSIGNMENT</div>
                   <div className="lim-assignment-row">
-                     <div>ADA<br/>Subcutaneous injection</div>
-                     <span className="lim-arrows">↔</span>
-                     <div>CID<br/>Oral immunosuppressive therapy</div>
+                    <div className="lim-arm lim-arm-ada">
+                      <strong>ADA</strong>
+                      <span>Subcutaneous injection</span>
+                    </div>
+                    <div className="lim-arm-connector" aria-hidden="true">↔</div>
+                    <div className="lim-arm lim-arm-cid">
+                      <strong>CID</strong>
+                      <span>Oral immunosuppressive therapy</span>
+                    </div>
+                  </div>
+                  <div className="lim-bias-concern">
+                    <span className="lim-bias-concern-text">Potential expectation / observer bias</span>
                   </div>
                 </div>
 
-                <div className="causal-arrow-down"></div>
-                <p className="lim-muted-text">Potential expectation / observer bias</p>
-                <div className="causal-arrow-down"></div>
-
-                <div className="lim-bias-node">
-                  <p>WHERE BIAS COULD ENTER</p>
-                  <p>Disease-activity assessment<br/>+ Treatment decisions</p>
+                <div className="lim-flow-connector" aria-hidden="true">
+                  <span className="lim-flow-arrow">↓</span>
                 </div>
 
-                <div className="causal-arrow-down"></div>
+                {/* 2. WHERE BIAS COULD ENTER */}
+                <div className="lim-vulnerability-block">
+                  <span className="lim-vuln-label">WHERE COULD BIAS ENTER?</span>
+                  <div className="lim-vuln-items">
+                    <span>Disease-activity assessment</span>
+                    <strong className="lim-vuln-plus">+</strong>
+                    <span>Treatment decisions</span>
+                  </div>
+                </div>
 
-                <div className="safeguards-layout">
-                  <div className="safeguards-list">
-                     <div className="safeguard-item">
-                       <h4><span>01</span> — PRESPECIFIED ASSESSMENT</h4>
-                       <p>Disease-specific clinical examination and imaging criteria</p>
-                     </div>
-                     <div className="safeguard-item">
-                       <h4><span>02</span> — PROTOCOLIZED DECISIONS</h4>
-                       <p>Defined corticosteroid tapering and immunosuppression advancement</p>
-                     </div>
-                     <div className="safeguard-item" style={{border: '1px solid rgba(132, 94, 255, 0.2)'}}>
-                       <h4 style={{color: '#a88aff'}}><span>03</span> — MTQAC OVERSIGHT</h4>
-                       <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
-                       <div className="mtqac-functions">
-                          <div>Monitor imaging<br/>interpretation</div>
-                          <div>Verify activity<br/>determination</div>
-                          <div>Ensure protocol<br/>adherence</div>
-                          <div>Provide corrective<br/>feedback</div>
-                       </div>
-                     </div>
+                <div className="lim-flow-connector" aria-hidden="true">
+                  <span className="lim-flow-arrow">↓</span>
+                </div>
+
+                {/* 3. THREE MITIGATION LAYERS */}
+                <div className="lim-safeguards-container">
+                  <div className="lim-safeguard-layer">
+                    <div className="safeguard-header">
+                      <span className="safeguard-num">01</span>
+                      <span className="safeguard-title">PRESPECIFIED ASSESSMENT</span>
+                    </div>
+                    <p className="safeguard-desc">Disease-specific clinical examination and imaging criteria</p>
                   </div>
 
-                  <div className="adv-mitigation-bracket">
-                     <div className="bracket-text">
-                        MITIGATION<br/><span>— NOT ELIMINATION</span>
-                     </div>
+                  <div className="lim-safeguard-layer">
+                    <div className="safeguard-header">
+                      <span className="safeguard-num">02</span>
+                      <span className="safeguard-title">PROTOCOLIZED DECISIONS</span>
+                    </div>
+                    <p className="safeguard-desc">Defined corticosteroid tapering and immunosuppression advancement</p>
                   </div>
+
+                  <div className="lim-safeguard-layer layer-mtqac">
+                    <div className="safeguard-header">
+                      <span className="safeguard-num safeguard-num-violet">03</span>
+                      <span className="safeguard-title safeguard-title-violet">MTQAC OVERSIGHT</span>
+                    </div>
+                    <p className="safeguard-desc">Monitored imaging interpretation, activity determination, and protocol adherence</p>
+                    <div className="mtqac-functions-list">
+                      <div className="mtqac-fn-item">• Monitor imaging interpretation</div>
+                      <div className="mtqac-fn-item">• Verify activity determination</div>
+                      <div className="mtqac-fn-item">• Ensure protocol adherence</div>
+                      <div className="mtqac-fn-item">• Provide corrective feedback</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4. INTEGRATED CONCLUSION BAND */}
+                <div className="lim-conclusion-band">
+                  <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
+                  <p>These safeguards reduce susceptibility to observer and treatment-decision bias, but cannot reproduce masking.</p>
                 </div>
 
               </div>
             </div>
-          </div>
-
-          <div className="adv-arch-takeaway" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem 2rem', display: 'flex', alignItems: 'center', gap: '2rem', marginTop: '2rem' }}>
-            <div className="adv-hr-badge" style={{marginBottom: '0', flexShrink: 0}}>
-              <i aria-hidden="true" />
-              <span style={{color: 'var(--red)'}}>KEY TAKEAWAY</span>
-            </div>
-            <p style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)', color: '#fff', fontWeight: 300, lineHeight: 1.5, margin: 0}}>
-               Protocol-defined decisions, MTQAC oversight, and consistent results across baseline-immunosuppression strata <span style={{color: 'var(--red)'}}>reduce—but cannot eliminate—</span>the concern for bias from unmasking.
-            </p>
           </div>
         </section>
 
