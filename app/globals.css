@@ -9609,16 +9609,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .lim-bias-card .card-corner-badge {
-  font: 550 clamp(0.36rem, 0.42vw, 0.48rem) var(--font-geist-mono), monospace;
+  font: 500 clamp(0.44rem, 0.48vw, 0.52rem) var(--font-geist-mono), monospace;
+  font-size: 0.48rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 0.16rem;
-  padding: 0.06rem 0.22rem;
+  gap: 0.14rem;
+  padding: 0.04rem 0.2rem;
   border-radius: 2px;
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .lim-bias-card .card-corner-badge.badge-ada {
