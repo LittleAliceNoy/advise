@@ -2952,20 +2952,146 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="limitations-2" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 29 — LIMITATIONS / INTERPRETATION</p>
-            <h2>Perception can shift.<br /><em>The signal held.</em></h2>
-            <p className="lede">Different routes of administration and prior treatment experience could influence how participants reported quality of life.</p>
+        <section id="limitations-2" className="scene discussion-comparator-scene">
+          <div className="adv-two-col">
+            {/* LEFT COLUMN */}
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="comparator-hook">DID A HETEROGENEOUS CID ARM COMPLICATE THE COMPARISON?</p>
+              <h2>One comparator.<br /><span className="violet-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
+              <p className="lede">CID represented conventional immunosuppression as a treatment strategy rather than a single drug. That improves clinical relevance, but introduces heterogeneity in efficacy, tolerability, and treatment escalation.</p>
+
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-item">
+                  <h4><span className="violet-num">01</span> — CID WAS NOT A SINGLE THERAPY</h4>
+                  <p>Participants could receive different conventional immunosuppressive agents rather than one standardized comparator drug.</p>
+                </div>
+                
+                <div className="observation-item">
+                  <h4><span className="violet-num">02</span> — BUT MOST FOLLOWED A COMMON STRATEGY</h4>
+                  <p>Most CID treatment was antimetabolite-based, while calcineurin-inhibitor exposure represented a minority of treatment.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div className="adv-right-col">
+              <div className="comparator-analytical-panel">
+                
+                {/* SECTION 1: TREATMENT-MIX PATHWAY DIAGRAM */}
+                <div className="comp-tree-section">
+                  <div className="comp-section-rule-header">
+                    <span className="comp-section-title">CONVENTIONAL IMMUNOSUPPRESSIVE STRATEGY (N = 113)</span>
+                  </div>
+
+                  <div className="comp-pathway-diagram">
+                    {/* Root Node */}
+                    <div className="comp-root-node">
+                      <div className="comp-root-badge-row">
+                        <span className="comp-root-pill">COMPARATOR ARM</span>
+                      </div>
+                      <strong className="comp-root-title">CID — Conventional Immunosuppression</strong>
+                      <span className="comp-root-sub">Active strategy of antimetabolite or calcineurin-inhibitor regimens</span>
+                    </div>
+
+                    {/* Tree Connector Graphic */}
+                    <div className="comp-tree-branches-wrapper">
+                      <div className="comp-stem-vertical" />
+                      <div className="comp-branch-arms-line" />
+                      <div className="comp-stem-drops">
+                        <div className="comp-drop-left" />
+                        <div className="comp-drop-right" />
+                      </div>
+                    </div>
+
+                    {/* Two Strategy Branches */}
+                    <div className="comp-branches-row">
+                      
+                      {/* Left: Antimetabolites (79%) */}
+                      <div className="comp-branch-card card-antimetabolite">
+                        <div className="branch-card-header">
+                          <div className="branch-metric-col">
+                            <span className="branch-big-pct">79%</span>
+                          </div>
+                          <div className="branch-meta-col">
+                            <h5 className="branch-class-name">ANTIMETABOLITES</h5>
+                            <span className="branch-badge-dominant">DOMINANT STRATEGY</span>
+                          </div>
+                        </div>
+                        <div className="branch-drug-pills-row">
+                          <span>Methotrexate</span>
+                          <span>Mycophenolate</span>
+                          <span>Azathioprine</span>
+                        </div>
+                        <p className="branch-card-desc">Overwhelming majority of assigned monotherapy in trial</p>
+                      </div>
+
+                      {/* Right: Calcineurin Inhibitors (21%) */}
+                      <div className="comp-branch-card card-calcineurin">
+                        <div className="branch-card-header">
+                          <div className="branch-metric-col">
+                            <span className="branch-big-pct minority-pct">21%</span>
+                          </div>
+                          <div className="branch-meta-col">
+                            <h5 className="branch-class-name">CALCINEURIN INHIBITORS</h5>
+                            <span className="branch-badge-minority">MINORITY EXPOSURE</span>
+                          </div>
+                        </div>
+                        <div className="branch-cni-details">
+                          <div className="cni-detail-row">
+                            <span className="cni-drug-label">Tacrolimus:</span>
+                            <span className="cni-drug-stat">83% of CNIs (17% of CID)</span>
+                          </div>
+                          <div className="cni-detail-row csa-callout-row">
+                            <span className="cni-drug-label">Cyclosporine assigned:</span>
+                            <span className="csa-stat-highlight">4% (4 / 113)</span>
+                          </div>
+                        </div>
+                        <p className="branch-card-desc">Primarily added for 2nd-line or combination therapy</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                {/* SECTION 2: TENSION / TRADE-OFF PANEL */}
+                <div className="comp-tension-section">
+                  <div className="comp-tension-grid">
+                    {/* Real-World Strength */}
+                    <div className="comp-tension-card card-strength">
+                      <div className="tension-card-top">
+                        <span className="tension-dot strength-dot" />
+                        <span className="tension-card-heading">REAL-WORLD STRENGTH</span>
+                      </div>
+                      <p className="tension-card-body">Reflects how conventional immunosuppression is actually selected and adjusted in clinical practice.</p>
+                    </div>
+
+                    {/* Tension Indicator */}
+                    <div className="comp-tension-arrow-col" aria-hidden="true">
+                      <span className="tension-arrow-symbol">↕</span>
+                      <span className="tension-arrow-label">TENSION</span>
+                    </div>
+
+                    {/* Analytic Cost */}
+                    <div className="comp-tension-card card-cost">
+                      <div className="tension-card-top">
+                        <span className="tension-dot cost-dot" />
+                        <span className="tension-card-heading">ANALYTIC COST</span>
+                      </div>
+                      <p className="tension-card-body">Treatment effect represents comparison against a strategy, not against one uniform conventional drug.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SECTION 3: BOTTOM CONCLUSION TAKEAWAY */}
+                <div className="comp-conclusion-band">
+                  <strong>HETEROGENEITY <span className="violet-highlight-text">≠ INVALID COMPARATOR</span></strong>
+                  <p>CID heterogeneity limits drug-specific interpretation, but the trial fundamentally tested ADA against a conventional immunosuppressive treatment strategy.</p>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div className="limitation-visual visual-perception" aria-hidden="true"><div className="visual-label">POTENTIAL PERCEPTION EFFECT</div><div className="route-choice"><span><b>ADA</b><i>⌁</i><small>INJECTION</small></span><em>↔</em><span><b>CID</b><i>≡</i><small>ORAL AGENT</small></span></div><p><strong>22%</strong> entered after requiring a second CID agent</p></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / QUALITY OF LIFE</span><strong>Route may shape perception</strong><p>Unmasked pills versus subcutaneous injections could favor ADA through perceived efficacy—or favor oral agents through convenience. No clinically meaningful QOL difference was observed.</p><i /></article>
-            <article className="signal-card"><span>02 / PRIOR CID EXPERIENCE</span><strong>A second drug was not failure</strong><p>Twenty-two percent entered after needing a second conventional agent. Partial success on an antimetabolite may have been perceived as treatment failure, even when it was not ineffective.</p><i /></article>
-            <article className="signal-card"><span>03 / PROTOCOL GUARDRAILS</span><strong>Every step was specified</strong><p>Clinical examination, imaging interpretation, corticosteroid tapering, and immunosuppression advancement were defined in the protocol.</p><i /></article>
-            <article className="signal-card"><span>04 / CONSISTENCY CHECK</span><strong>Results held across strata</strong><p>MTQAC monitoring and qualitatively similar results in both baseline-immunosuppression strata suggest these potential biases did not drive the findings.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">Interpretation remains cautious: the trial was unmasked, but protocol detail and quality assurance helped contain bias.</p>
         </section>
 
         <section id="limitations-3" className="scene discussion-scene limitations-scene">
