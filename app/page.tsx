@@ -2792,7 +2792,7 @@ export default function Home() {
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
 
-              <p className="lede">Two observations argue against second-agent use driving ADA’s benefit.</p>
+              <p className="lede">Two observations argue against greater second-agent use explaining ADA’s benefit.</p>
               
               <div className="adv-observations-block">
 
