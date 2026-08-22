@@ -2796,6 +2796,23 @@ export default function Home() {
             </div>
 
             <div className="adv-right-col">
+              <div className="adv-arch-evidence-strip">
+                <div className="adv-arch-evidence-recall">
+                  <strong>COUNTEREVIDENCE</strong>
+                  <span>Participant-reported outcomes at 6 months</span>
+                </div>
+                <div className="adv-arch-evidence-stat">
+                  <b>EQ-5D INDEX OF 1</b>
+                  <span><em>OR 1.25</em> (0.67–2.31)</span>
+                  <small>P = 0.480 · No significant change</small>
+                </div>
+                <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
+                  <b>NEI-VFQ-25 COMPOSITE</b>
+                  <span><em>+6.8</em> ADA vs <em>+4.0</em> CID</span>
+                  <small>Δ 2.8 (−0.2–5.7) · P = 0.060</small>
+                </div>
+              </div>
+
               <div className="limitations-analytical-panel">
                 
                 {/* SECTION 1: POTENTIAL BIAS WAS NOT NECESSARILY UNIDIRECTIONAL */}
