@@ -2809,9 +2809,10 @@ export default function Home() {
                   <div className="lim-three-cards-row">
                     {/* Card 1: Perceived potency */}
                     <div className="lim-bias-card card-ada">
-                      <span className="card-top-title">Perceived potency</span>
+                      <span className="card-direction-tag tag-ada">→ FAVORS ADA</span>
+                      <h5 className="card-top-title">Perceived potency</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m18 2 4 4"/>
                           <path d="m17 7 3-3"/>
                           <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
@@ -2825,23 +2826,25 @@ export default function Home() {
 
                     {/* Card 2: Prior "failure" */}
                     <div className="lim-bias-card card-ada">
-                      <span className="card-top-title">Prior “failure” perception</span>
+                      <span className="card-direction-tag tag-ada">→ FAVORS ADA</span>
+                      <h5 className="card-top-title">Prior “failure” perception</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                           <circle cx="12" cy="12" r="9"/>
                           <path d="M12 8v4"/>
                           <path d="M12 16h.01"/>
                           <path d="M16 12a4 4 0 0 1-8 0"/>
                         </svg>
                       </div>
-                      <p className="card-details">22% prior single-agent experience may create conventional "failure" impression</p>
+                      <p className="card-details">22% prior single-agent experience creates conventional "failure" impression</p>
                     </div>
 
                     {/* Card 3: Route preference */}
                     <div className="lim-bias-card card-cid">
-                      <span className="card-top-title">Route preference</span>
+                      <span className="card-direction-tag tag-cid">← FAVORS CID</span>
+                      <h5 className="card-top-title">Route preference</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                           <path d="m8.5 8.5 7 7"/>
                         </svg>

@@ -9574,50 +9574,66 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .lim-three-cards-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(0.4rem, 0.6vw, 0.75rem);
+  gap: clamp(0.45rem, 0.7vw, 0.85rem);
 }
 
 .lim-bias-card {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
   border-radius: 3px;
-  padding: clamp(0.45rem, 0.65vh, 0.65rem) clamp(0.45rem, 0.65vw, 0.65rem);
+  padding: clamp(0.6rem, 1vh, 0.95rem) clamp(0.5rem, 0.75vw, 0.8rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.18rem, 0.3vh, 0.3rem);
+  gap: clamp(0.18rem, 0.3vh, 0.35rem);
 }
 
 .lim-bias-card.card-ada {
-  border-color: rgba(255, 77, 82, 0.22);
-  background: rgba(255, 77, 82, 0.02);
+  border-color: rgba(255, 77, 82, 0.25);
+  background: rgba(255, 77, 82, 0.025);
 }
 
 .lim-bias-card.card-cid {
-  border-color: rgba(181, 142, 255, 0.22);
-  background: rgba(181, 142, 255, 0.02);
+  border-color: rgba(181, 142, 255, 0.25);
+  background: rgba(181, 142, 255, 0.025);
+}
+
+.lim-bias-card .card-direction-tag {
+  font: 700 clamp(0.5rem, 0.58vw, 0.66rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.05rem;
+}
+
+.lim-bias-card .card-direction-tag.tag-ada {
+  color: #ff666b;
+}
+
+.lim-bias-card .card-direction-tag.tag-cid {
+  color: #b58eff;
 }
 
 .lim-bias-card .card-top-title {
-  font: 600 clamp(0.64rem, 0.72vw, 0.82rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.66rem, 0.75vw, 0.86rem) var(--font-geist-mono), monospace;
   color: #f0ece8;
   letter-spacing: 0.02em;
   line-height: 1.2;
+  margin: 0;
 }
 
 .lim-bias-card .card-big-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clamp(30px, 4vh, 38px);
-  margin: 0.05rem 0;
+  height: clamp(34px, 4.6vh, 44px);
+  margin: clamp(0.15rem, 0.25vh, 0.35rem) 0;
 }
 
 .lim-bias-card .card-details {
   color: #a09591;
-  font-size: clamp(0.64rem, 0.71vw, 0.78rem);
-  line-height: 1.35;
+  font-size: clamp(0.64rem, 0.72vw, 0.8rem);
+  line-height: 1.38;
   margin: 0;
 }
 
