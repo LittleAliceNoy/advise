@@ -2792,8 +2792,6 @@ export default function Home() {
                   <h4><span>02</span> — KNOWLEDGE OF TREATMENT</h4>
                   <p>Knowing treatment assignment could shape participant expectations and preferences, while physician expectations could influence treatment decisions.</p>
                 </div>
-
-                <p className="bias-synthesis-note">Potential bias was not necessarily unidirectional.</p>
               </div>
             </div>
 

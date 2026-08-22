@@ -9625,13 +9625,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .lim-bias-card .card-corner-badge.badge-ada {
   color: #ff666b;
   background: rgba(255, 77, 82, 0.12);
-  border: 1px solid rgba(255, 77, 82, 0.3);
+  border: none;
 }
 
 .lim-bias-card .card-corner-badge.badge-cid {
   color: #b58eff;
   background: rgba(181, 142, 255, 0.12);
-  border: 1px solid rgba(181, 142, 255, 0.3);
+  border: none;
 }
 
 .lim-bias-card .card-top-title {
