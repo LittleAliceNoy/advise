@@ -9490,6 +9490,56 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   max-width: 90%;
 }
 
+.discussion-limitations-scene .editorial-rules {
+  margin-top: clamp(0.8rem, 1.4vh, 1.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.discussion-limitations-scene .observation-header-label {
+  font: 700 clamp(0.58rem, 0.68vw, 0.76rem) var(--font-geist-mono), monospace;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.35rem, 0.6vh, 0.6rem);
+}
+
+.discussion-limitations-scene .editorial-rules .observation-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(0.4rem, 0.65vh, 0.6rem) 0;
+}
+
+.discussion-limitations-scene .editorial-rules .observation-item h4 {
+  color: #f0ece8;
+  font-size: clamp(0.66rem, 0.75vw, 0.86rem);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.18rem;
+}
+
+.discussion-limitations-scene .editorial-rules .observation-item h4 span {
+  color: var(--red);
+}
+
+.discussion-limitations-scene .editorial-rules .observation-item p {
+  color: #a09591;
+  font-size: clamp(0.74rem, 0.82vw, 0.92rem);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.discussion-limitations-scene .bias-synthesis-note {
+  font-size: clamp(0.72rem, 0.8vw, 0.88rem);
+  font-style: italic;
+  color: #d6ceca;
+  line-height: 1.45;
+  margin-top: clamp(0.35rem, 0.55vh, 0.6rem);
+  padding-top: clamp(0.35rem, 0.55vh, 0.6rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
 .discussion-limitations-scene .adv-right-col {
   display: flex;
   flex-direction: column;

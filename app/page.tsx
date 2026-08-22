@@ -2781,6 +2781,27 @@ export default function Home() {
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <p className="lede">Different treatment routes made masking impractical, creating potential for expectation and observer bias. The trial therefore relied on prespecified assessments, protocol-defined treatment decisions, and active quality oversight to reduce this risk.</p>
+
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-header-label">BIAS COULD CUT BOTH WAYS</div>
+                
+                <div className="observation-item">
+                  <h4><span>01</span> — COULD FAVOR ADA</h4>
+                  <p>Parenteral therapy may be perceived as more potent.</p>
+                </div>
+                
+                <div className="observation-item">
+                  <h4><span>02</span> — COULD FAVOR CID</h4>
+                  <p>Participants may prefer the easier administration of oral therapy.</p>
+                </div>
+
+                <div className="observation-item">
+                  <h4><span>03</span> — PRIOR “FAILURE” PERCEPTION</h4>
+                  <p>22% had not achieved successful corticosteroid sparing on a single conventional immunosuppressive agent, potentially creating a perception that conventional treatment had “failed” despite partial efficacy.</p>
+                </div>
+
+                <p className="bias-synthesis-note">The direction—and magnitude—of any resulting bias is therefore uncertain.</p>
+              </div>
             </div>
 
             <div className="adv-right-col">
@@ -2799,9 +2820,6 @@ export default function Home() {
                       <strong>CID</strong>
                       <span>Oral immunosuppressive therapy</span>
                     </div>
-                  </div>
-                  <div className="lim-bias-concern">
-                    <span className="lim-bias-concern-text">Potential expectation / observer bias</span>
                   </div>
                 </div>
 
