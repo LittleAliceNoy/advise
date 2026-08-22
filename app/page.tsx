@@ -2800,80 +2800,112 @@ export default function Home() {
             <div className="adv-right-col">
               <div className="limitations-analytical-panel">
                 
-                {/* SECTION A — DISEASE-ACTIVITY ASSESSMENT */}
-                <div className="lim-pathway-block">
-                  <div className="lim-pathway-hdr">
-                    <span className="pathway-tag">01 — DISEASE-ACTIVITY ASSESSMENT</span>
+                {/* SECTION 1: POTENTIAL BIAS WAS NOT NECESSARILY UNIDIRECTIONAL */}
+                <div className="lim-bias-unidirectional-section">
+                  <div className="lim-section-rule-header">
+                    <span className="lim-section-title">POTENTIAL BIAS WAS NOT NECESSARILY UNIDIRECTIONAL</span>
                   </div>
-                  
-                  <div className="lim-pathway-flow">
-                    <div className="lim-flow-node node-vuln">
-                      <span className="node-label">VULNERABILITY</span>
-                      <strong>Complex Activity Criteria</strong>
-                      <p>Potential inter-observer variability in signs &amp; imaging</p>
+
+                  <div className="lim-three-cards-row">
+                    {/* Card 1: Perceived potency */}
+                    <div className="lim-bias-card card-ada">
+                      <span className="card-top-title">Perceived potency</span>
+                      <div className="card-big-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m18 2 4 4"/>
+                          <path d="m17 7 3-3"/>
+                          <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
+                          <path d="m9 11 4 4"/>
+                          <path d="m5 19-3 3"/>
+                          <path d="m14 4 6 6"/>
+                        </svg>
+                      </div>
+                      <p className="card-details">Parenteral therapy perceived more effective</p>
                     </div>
 
-                    <div className="lim-flow-arrow-h" aria-hidden="true">→</div>
-
-                    <div className="lim-flow-node node-mitig">
-                      <span className="node-label">SAFEGUARDS</span>
-                      <div className="safeguard-pair">
-                        <div className="pair-item">
-                          <strong>PRESPECIFIED ASSESSMENT</strong>
-                          <span>Standardized clinical &amp; imaging criteria</span>
-                        </div>
-                        <div className="pair-plus">+</div>
-                        <div className="pair-item">
-                          <strong className="violet-text">MTQAC OVERSIGHT</strong>
-                          <span>Central image &amp; activity monitoring</span>
-                        </div>
+                    {/* Card 2: Prior "failure" */}
+                    <div className="lim-bias-card card-ada">
+                      <span className="card-top-title">Prior “failure” perception</span>
+                      <div className="card-big-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="9"/>
+                          <path d="M12 8v4"/>
+                          <path d="M12 16h.01"/>
+                          <path d="M16 12a4 4 0 0 1-8 0"/>
+                        </svg>
                       </div>
+                      <p className="card-details">22% prior single-agent experience may create conventional "failure" impression</p>
+                    </div>
+
+                    {/* Card 3: Route preference */}
+                    <div className="lim-bias-card card-cid">
+                      <span className="card-top-title">Route preference</span>
+                      <div className="card-big-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                          <path d="m8.5 8.5 7 7"/>
+                        </svg>
+                      </div>
+                      <p className="card-details">Participants may prefer the convenience of oral therapy over injections</p>
                     </div>
                   </div>
                 </div>
 
-                {/* SECTION B — KNOWLEDGE OF TREATMENT */}
-                <div className="lim-pathway-block">
-                  <div className="lim-pathway-hdr">
-                    <span className="pathway-tag">02 — KNOWLEDGE OF TREATMENT</span>
+                {/* SECTION 2: SAFEGUARDS (More vertical space, shield icons, thin lines) */}
+                <div className="lim-safeguards-section">
+                  <div className="lim-section-rule-header">
+                    <span className="lim-section-title">SAFEGUARDS</span>
                   </div>
 
-                  <div className="lim-expectations-row">
-                    <div className="lim-exp-card exp-ada">
-                      <span className="exp-direction">→ COULD FAVOR ADA</span>
-                      <div className="exp-content">
-                        <strong>Perceived potency</strong>
-                        <p>Parenteral therapy may be perceived as more effective.</p>
+                  <div className="lim-safeguards-lines-list">
+                    {/* Safeguard 01 */}
+                    <div className="lim-safeguard-line-item">
+                      <div className="shield-icon-col" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a88aff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                          <path d="m9 12 2 2 4-4"/>
+                        </svg>
                       </div>
-                      <div className="exp-content-sub">
-                        <strong>Prior “failure” perception</strong>
-                        <p>22% entered after 1 prior agent; may create conventional-treatment “failure” impression despite partial efficacy.</p>
+                      <div className="safeguard-text-col">
+                        <h4><span>01</span> — PRESPECIFIED ASSESSMENT</h4>
+                        <p>Disease-specific clinical examination and imaging criteria</p>
                       </div>
                     </div>
 
-                    <div className="lim-exp-card exp-cid">
-                      <span className="exp-direction">← COULD FAVOR CID</span>
-                      <div className="exp-content">
-                        <strong>Route preference</strong>
-                        <p>Participants may prefer the convenience of oral therapy over injections.</p>
+                    {/* Safeguard 02 */}
+                    <div className="lim-safeguard-line-item">
+                      <div className="shield-icon-col" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a88aff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                          <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                      </div>
+                      <div className="safeguard-text-col">
+                        <h4><span>02</span> — PROTOCOLIZED DECISIONS</h4>
+                        <p>Defined corticosteroid tapering and immunosuppression advancement</p>
+                      </div>
+                    </div>
+
+                    {/* Safeguard 03 */}
+                    <div className="lim-safeguard-line-item item-mtqac-oversight">
+                      <div className="shield-icon-col" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                          <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                      </div>
+                      <div className="safeguard-text-col">
+                        <h4 className="violet-heading"><span>03</span> — MTQAC OVERSIGHT</h4>
+                        <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
+                        <div className="mtqac-sub-grid">
+                          <div>• Monitor imaging interpretation</div>
+                          <div>• Verify activity determination</div>
+                          <div>• Ensure protocol adherence</div>
+                          <div>• Provide corrective feedback</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <div className="lim-physician-flow">
-                    <div className="phys-vuln">
-                      <span className="node-label">PHYSICIAN BIAS</span>
-                      <p>Knowing assignment could influence treatment decisions</p>
-                    </div>
-                    <div className="lim-flow-arrow-h" aria-hidden="true">→</div>
-                    <div className="phys-mitig">
-                      <span className="node-label">SAFEGUARD</span>
-                      <strong>PROTOCOLIZED DECISIONS</strong>
-                      <p>Defined corticosteroid tapering &amp; immunosuppression advancement</p>
-                    </div>
-                  </div>
-
-                  <p className="lim-uncertainty-line">Net direction and magnitude of any resulting bias remain uncertain.</p>
                 </div>
 
                 {/* BOTTOM CONCLUSION */}
