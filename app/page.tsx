@@ -2780,7 +2780,7 @@ export default function Home() {
               <p className="eyebrow"><span /> 28 — DISCUSSION / LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
-              <p className="lede">Different administration routes made masking impractical. The trial relied on prespecified criteria, protocolized decisions, and active quality oversight to constrain bias.</p>
+              <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
@@ -2811,7 +2811,7 @@ export default function Home() {
                     <div className="lim-bias-card card-ada">
                       <div className="card-top-bar">
                         <span className="card-corner-badge badge-ada">
-                          <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <svg width="6" height="6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                           </svg>
                           FAVORS ADA
@@ -2835,7 +2835,7 @@ export default function Home() {
                     <div className="lim-bias-card card-ada">
                       <div className="card-top-bar">
                         <span className="card-corner-badge badge-ada">
-                          <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <svg width="6" height="6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                           </svg>
                           FAVORS ADA
@@ -2857,7 +2857,7 @@ export default function Home() {
                     <div className="lim-bias-card card-cid">
                       <div className="card-top-bar">
                         <span className="card-corner-badge badge-cid">
-                          <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <svg width="6" height="6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                           </svg>
                           FAVOR CID
@@ -2920,13 +2920,7 @@ export default function Home() {
                       </div>
                       <div className="safeguard-text-col">
                         <h4 className="violet-heading"><span>03</span> — MTQAC OVERSIGHT</h4>
-                        <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
-                        <div className="mtqac-sub-grid">
-                          <div>• Monitor imaging interpretation</div>
-                          <div>• Verify activity determination</div>
-                          <div>• Ensure protocol adherence</div>
-                          <div>• Provide corrective feedback</div>
-                        </div>
+                        <p>Central monitoring of imaging interpretation, activity determination, and protocol adherence</p>
                       </div>
                     </div>
                   </div>
