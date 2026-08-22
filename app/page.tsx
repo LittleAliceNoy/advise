@@ -2782,22 +2782,38 @@ export default function Home() {
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Different administration routes made masking impractical. The trial relied on prespecified criteria, protocolized decisions, and active quality oversight to constrain bias.</p>
 
-              <div className="adv-observations-block editorial-rules">
+              <div className="adv-observations-block editorial-rules bias-directions-block">
                 <div className="observation-header-label">BIAS COULD CUT BOTH WAYS</div>
                 
-                <div className="observation-item">
-                  <h4><span>01</span> — COULD FAVOR ADA</h4>
-                  <p>Parenteral therapy may be perceived as more potent.</p>
-                </div>
-                
-                <div className="observation-item">
-                  <h4><span>02</span> — COULD FAVOR CID</h4>
-                  <p>Participants may prefer the easier administration of oral therapy.</p>
+                {/* DIRECTION 1: COULD FAVOR ADA */}
+                <div className="bias-direction-group dir-ada">
+                  <div className="bias-dir-title">
+                    <span className="bias-dir-arrow" aria-hidden="true">→</span>
+                    <strong>COULD FAVOR ADA</strong>
+                  </div>
+                  
+                  <div className="bias-sub-item">
+                    <h5>Perceived potency</h5>
+                    <p>Parenteral therapy may be perceived as more effective.</p>
+                  </div>
+                  
+                  <div className="bias-sub-item">
+                    <h5>Prior “failure” perception</h5>
+                    <p>22% had not achieved successful corticosteroid sparing on a single conventional agent, potentially creating an impression that conventional therapy had already “failed.”</p>
+                  </div>
                 </div>
 
-                <div className="observation-item">
-                  <h4><span>03</span> — PRIOR “FAILURE” PERCEPTION</h4>
-                  <p>22% had not achieved successful corticosteroid sparing on a single conventional immunosuppressive agent, potentially creating a perception that conventional treatment had “failed” despite partial efficacy.</p>
+                {/* DIRECTION 2: COULD FAVOR CID */}
+                <div className="bias-direction-group dir-cid">
+                  <div className="bias-dir-title">
+                    <span className="bias-dir-arrow" aria-hidden="true">←</span>
+                    <strong>COULD FAVOR CID</strong>
+                  </div>
+                  
+                  <div className="bias-sub-item">
+                    <h5>Route preference</h5>
+                    <p>Participants may prefer the convenience of oral therapy over injections.</p>
+                  </div>
                 </div>
 
                 <p className="bias-synthesis-note">The direction—and magnitude—of any resulting bias is therefore uncertain.</p>
