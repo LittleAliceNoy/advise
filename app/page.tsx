@@ -2588,35 +2588,168 @@ export default function Home() {
           <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
         </section>
 
-        <section id="discussion-safety" className="scene discussion-scene discussion-two-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 23 — DISCUSSION / VISUAL &amp; SAFETY</p>
-            <h2>Vision held.<br /><em>Risk had context.</em></h2>
-            <p className="lede">Both strategies maintained visual acuity. The safety differences track with cataract burden, steroid exposure, and baseline lens status.</p>
+        <section id="discussion-safety" className="scene discussion-cataract-scene">
+          <div className="adv-two-col">
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 28 — DISCUSSION / CATARACT SIGNAL</p>
+              <h2>The cataract signal<br />is<br />plausible. <span className="red-text" style={{display: 'inline'}}>Not<br />definitive.</span></h2>
+              <p className="cataract-hook" style={{color: 'var(--red)', fontSize: 'clamp(0.85rem, 0.95vw, 1rem)', marginTop: '1rem', marginBottom: '0.8rem', fontWeight: 300}}>Could greater corticosteroid exposure with CID explain the ocular difference?</p>
+              <p className="lede" style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)'}}>Steroid exposure offers a biologically plausible explanation for the higher cataract-surgery rate with CID. But the exposure difference was modest, and more CID eyes already had cataract at baseline—so the trial cannot establish a simple causal relationship.</p>
+              
+              <div className="adv-arch-evidence-overall" style={{marginTop: '1.5rem'}}>
+                <h4 style={{fontSize: 'clamp(0.6rem, 0.75vw, 0.8rem)', color: '#fff', letterSpacing: '0.1em', marginBottom: '0.4rem', fontWeight: 600}}>
+                  <span style={{color: 'var(--red)'}}>01</span> — EXPOSURE DIFFERENCE WAS MODEST
+                </h4>
+                <p style={{fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)', color: '#a09591', margin: '0 0 1rem 0'}}>
+                  ADA had slightly lower corticosteroid use:<br/>
+                  <span style={{color: 'var(--red)'}}>IRR 0.86 · P = 0.061</span><br/>
+                  Cumulative dose difference ≈ 0.73 g<br/><br/>
+                  This supports plausibility, but the magnitude of exposure separation was limited.
+                </p>
+
+                <h4 style={{fontSize: 'clamp(0.6rem, 0.75vw, 0.8rem)', color: '#fff', letterSpacing: '0.1em', marginBottom: '0.4rem', fontWeight: 600}}>
+                  <span style={{color: 'var(--red)'}}>02</span> — BASELINE LENS STATUS WAS IMBALANCED
+                </h4>
+                <p style={{fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)', color: '#a09591', margin: 0}}>
+                  A numerically greater fraction of phakic CID eyes already had cataract at baseline (21% vs 14%).
+                </p>
+              </div>
+            </div>
+
+            <div className="adv-right-col">
+              <div className="adv-causal-panel">
+                
+                <div className="causal-recall-strip">
+                  <p className="causal-header">OBSERVED IN RESULTS</p>
+                  <div className="causal-recall-content">
+                    <div>
+                      Cataract surgery
+                      <span><strong className="red">2%</strong> vs <strong className="purple">11%</strong></span>
+                      <span style={{fontSize: '0.65rem', fontWeight: '400', letterSpacing: '0.1em'}}>P = 0.009</span>
+                    </div>
+                    <div>
+                      More ≥3-line BCVA loss<br/>was also observed with CID.
+                    </div>
+                  </div>
+                </div>
+
+                <p className="causal-header">INTERPRETING THE CATARACT SIGNAL</p>
+
+                <div className="causal-diagram">
+                  <div className="causal-node node-cid">CID</div>
+                  <div className="causal-arrow-down purple"></div>
+                  
+                  <div className="causal-node">
+                    Greater corticosteroid<br/>exposure
+                  </div>
+                  
+                  <div className="causal-arrow-down purple"></div>
+
+                  <div className="causal-split">
+                    <div className="causal-side-note note-left">
+                      <p className="note-title">MODEST EXPOSURE GAP</p>
+                      <p>IRR 0.86 · P = 0.061<br/>Δ cumulative dose<br/>≈ 0.73 g</p>
+                    </div>
+                    <div className="causal-main-path">
+                       <div className="dashed-arrow-down"></div>
+                    </div>
+                    <div className="causal-side-note note-right">
+                      <p className="note-title">BASELINE IMBALANCE</p>
+                      <p>CID had numerically more<br/>pre-existing cataract</p>
+                    </div>
+                  </div>
+                  
+                  <div className="causal-node node-signal">
+                    Higher cataract<br/>surgery signal
+                  </div>
+                  
+                  <div className="causal-arrow-down purple"></div>
+                  
+                  <div className="causal-node node-conclusion">
+                    <strong>PLAUSIBLE PATHWAY</strong>
+                    Cannot definitively isolate steroid<br/>toxicity from baseline imbalances.
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div className="discussion-grid discussion-two-grid">
-            <article className="signal-card"><span>01 / VISUAL ACUITY</span><strong>Both groups held vision</strong><p>BCVA was maintained in both arms, although CID had more eyes with a loss of at least 3 lines.</p><i /></article>
-            <article className="signal-card warning-card"><span>02 / CATARACT</span><strong>Exposure may matter</strong><p>Cataract surgery was more frequent with CID (11% vs 2%). A greater baseline cataract burden in CID may also have contributed.</p><i /></article>
-            <article className="signal-card"><span>03 / STEROID CONTEXT</span><strong>A modest exposure gap</strong><p>Mean prednisone exposure was 11.8 mg/day with ADA versus 13.8 mg/day with CID (IRR 0.86; P = 0.061), a cumulative difference of 0.73 g.</p><i /></article>
-            <article className="signal-card"><span>04 / SYSTEMIC TOLERABILITY</span><strong>Infrequent events</strong><p>Systemic side effects were uncommon in both groups. Toxicity-related discontinuation occurred only with CID, including three cases of elevated liver enzymes.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">The safety signal is clinically plausible, but the exposure difference was modest and the groups were not identical at baseline.</p>
         </section>
 
-        <section id="limitations-1" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 24 — LIMITATIONS / DESIGN</p>
-            <h2>Open-label by design.<br /><em>Consistency was engineered.</em></h2>
-            <p className="lede">Treatment administration made masking impossible, while disease activity required a disease-specific imaging pathway.</p>
+        <section id="limitations-1" className="scene discussion-limitations-scene">
+          <div className="adv-two-col">
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 29 — DISCUSSION / LIMITATIONS</p>
+              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
+              <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
+              <p className="lede">Different treatment routes made masking impractical and created potential for expectation and observer bias. The trial therefore relied on protocol-defined decisions and active quality oversight to reduce this risk.</p>
+            </div>
+
+            <div className="adv-right-col">
+              <div className="limitations-pathway">
+                
+                <div className="lim-top-node">
+                  <p className="lim-top-header">UNMASKED ASSIGNMENT</p>
+                  <div className="lim-assignment-row">
+                     <div>ADA<br/>Subcutaneous injection</div>
+                     <span className="lim-arrows">↔</span>
+                     <div>CID<br/>Oral immunosuppressive therapy</div>
+                  </div>
+                </div>
+
+                <div className="causal-arrow-down"></div>
+                <p className="lim-muted-text">Potential expectation / observer bias</p>
+                <div className="causal-arrow-down"></div>
+
+                <div className="lim-bias-node">
+                  <p>WHERE BIAS COULD ENTER</p>
+                  <p>Disease-activity assessment<br/>+ Treatment decisions</p>
+                </div>
+
+                <div className="causal-arrow-down"></div>
+
+                <div className="safeguards-layout">
+                  <div className="safeguards-list">
+                     <div className="safeguard-item">
+                       <h4><span>01</span> — PRESPECIFIED ASSESSMENT</h4>
+                       <p>Disease-specific clinical examination and imaging criteria</p>
+                     </div>
+                     <div className="safeguard-item">
+                       <h4><span>02</span> — PROTOCOLIZED DECISIONS</h4>
+                       <p>Defined corticosteroid tapering and immunosuppression advancement</p>
+                     </div>
+                     <div className="safeguard-item" style={{border: '1px solid rgba(132, 94, 255, 0.2)'}}>
+                       <h4 style={{color: '#a88aff'}}><span>03</span> — MTQAC OVERSIGHT</h4>
+                       <p>Monitored imaging interpretation, activity determination, and protocol adherence</p>
+                       <div className="mtqac-functions">
+                          <div>Monitor imaging<br/>interpretation</div>
+                          <div>Verify activity<br/>determination</div>
+                          <div>Ensure protocol<br/>adherence</div>
+                          <div>Provide corrective<br/>feedback</div>
+                       </div>
+                     </div>
+                  </div>
+
+                  <div className="adv-mitigation-bracket">
+                     <div className="bracket-text">
+                        MITIGATION<br/><span>— NOT ELIMINATION</span>
+                     </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div className="limitation-visual visual-calibration" aria-hidden="true"><div className="visual-label">CONSISTENCY LAYER</div><div className="scan-orbit"><i /><i /><b>MTQAC</b></div><div className="visual-flow"><span>CLINICAL CENTER</span><em>→</em><span>READING CENTER</span><em>→</em><span>FEEDBACK</span></div></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / UNMASKED TREATMENT</span><strong>Staff and participants knew assignment</strong><p>Administration differed between ADA and CID, and among the conventional drugs, so the trial was unmasked.</p><i /></article>
-            <article className="signal-card"><span>02 / IMAGING PATHWAY</span><strong>Not one image set for everyone</strong><p>Ophthalmic imaging was selected according to the participant’s uveitic disease rather than a single universal panel.</p><i /></article>
-            <article className="signal-card"><span>03 / ACTIVITY ASSESSMENT</span><strong>Determined at each center</strong><p>Disease activity was assessed by the clinical center, introducing a potential source of interpretation variability.</p><i /></article>
-            <article className="signal-card"><span>04 / MITIGATION</span><strong>MTQAC added a consistency layer</strong><p>The Medical Therapy Quality Assurance Committee monitored imaging interpretation, activity determination, and protocol adherence, providing corrective feedback as needed.</p><i /></article>
+
+          <div className="adv-arch-takeaway" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem 2rem', display: 'flex', alignItems: 'center', gap: '2rem', marginTop: '2rem' }}>
+            <div className="adv-hr-badge" style={{marginBottom: '0', flexShrink: 0}}>
+              <i aria-hidden="true" />
+              <span style={{color: 'var(--red)'}}>KEY TAKEAWAY</span>
+            </div>
+            <p style={{fontSize: 'clamp(0.9rem, 1vw, 1.1rem)', color: '#fff', fontWeight: 300, lineHeight: 1.5, margin: 0}}>
+               Protocol-defined decisions, MTQAC oversight, and consistent results across baseline-immunosuppression strata <span style={{color: 'var(--red)'}}>reduce—but cannot eliminate—</span>the concern for bias from unmasking.
+            </p>
           </div>
-          <p className="discussion-footnote">The MTQAC was designed to reduce—but cannot completely eliminate—the effects of an unmasked, center-assessed trial.</p>
         </section>
 
         <section id="limitations-2" className="scene discussion-scene limitations-scene">
@@ -2651,20 +2784,105 @@ export default function Home() {
           <p className="discussion-footnote">The trial answers which strategy works sooner; it cannot fully answer whether longer follow-up would narrow the discontinuation gap.</p>
         </section>
 
-        <section id="limitations-4" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 27 — LIMITATIONS / CID HETEROGENEITY</p>
-            <h2>One CID arm.<br /><em>Several pathways.</em></h2>
-            <p className="lede">Conventional immunosuppression reflected clinical practice, but its mix of agents introduces an important interpretive question.</p>
+        <section id="limitations-4" className="scene discussion-advancement-scene">
+          <div className="adv-two-col">
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 27 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
+              <h2>More second agents</h2>
+              <h2 className="red-text">Unlikely influence its benefit.</h2>
+
+              <p className="lede">Two observations argue against second-agent use driving ADA’s benefit.</p>
+              
+              <div className="adv-observations-block">
+                <p className="bridging-sentence">Benefit was consistent across strata; overall immunosuppression advancement was greater with CID.</p>
+                
+                <div className="observation-item">
+                  <h4><span>01</span> — CONSISTENCY ACROSS STRATA</h4>
+                  <p>Corticosteroid-sparing and discontinuation benefits were qualitatively similar regardless of baseline immunosuppression.</p>
+                </div>
+                
+                <div className="observation-item">
+                  <h4><span>02</span> — OVERALL TREATMENT ADVANCEMENT</h4>
+                  <p>Despite more second-agent use with ADA in one stratum, overall immunosuppression advancement was greater with CID.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="adv-right-col">
+              <div className="adv-arch-evidence-strip">
+                <div className="adv-arch-evidence-recall">
+                  <strong>COUNTEREVIDENCE</strong>
+                  <span>Among participants not receiving immunosuppression at baseline</span>
+                </div>
+                <div className="adv-arch-evidence-stat">
+                  <b>SECOND AGENT ADDED</b>
+                  <span><em>41%</em> ADA vs <em>29%</em> CID</span>
+                  <small>P = .060</small>
+                </div>
+                <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
+                  <b>IMMUNOSUPPRESSION ADVANCEMENT</b>
+                  <span><em>37</em> ADA vs <em>60</em> CID</span>
+                  <small>P &lt; .001</small>
+                </div>
+              </div>
+
+              <div className="adv-arch-panel">
+                <header className="adv-arch-header">
+                  <span>PROTOCOL DIVERGES AFTER FIRST RELAPSE</span>
+                </header>
+                <div className="adv-arch-split">
+                  {/* ADA Track Box */}
+                  <div className="adv-arch-track-box adv-arch-track-ada-box">
+                    <div className="adv-arch-header-ada">
+                      <strong>ADA</strong>
+                    </div>
+                    <div className="adv-arch-track">
+                      <div className="adv-arch-node adv-arch-start">
+                        <span>Fixed adult dose</span><small>(FDA-approved regimen)</small>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node adv-arch-hinge-node adv-arch-ada-node adv-arch-node-relapse">
+                        <strong>Uveitis relapse</strong>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node adv-arch-end">
+                        <span>⊕ Add second agent</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CID Track Box */}
+                  <div className="adv-arch-track-box adv-arch-track-cid-box">
+                    <div className="adv-arch-header-cid">
+                      <strong>CID</strong>
+                    </div>
+                    <div className="adv-arch-track">
+                      <div className="adv-arch-node adv-arch-start">
+                        <span>Start antimetabolite</span><small>(at effective dose)</small>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node adv-arch-hinge-node adv-arch-cid-node adv-arch-node-relapse">
+                        <strong>Uveitis relapse</strong>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node">
+                        <span>Increase toward maximum dose</span>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node adv-arch-node-relapse">
+                        <strong>Uveitis relapse</strong>
+                      </div>
+                      <div className="adv-arch-edge">↓</div>
+                      <div className="adv-arch-node adv-arch-end">
+                        <span>⊕ Add second agent</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="limitation-visual visual-agents" aria-hidden="true"><div className="visual-label">CID IS A TREATMENT FAMILY</div><div className="agent-core">CID</div><span className="agent-orbit agent-a">ANTIMETABOLITES</span><span className="agent-orbit agent-b">CNI <b>21%</b></span><span className="agent-orbit agent-c">CYCLOSPORINE <b>4%</b></span></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / MIXED AGENTS</span><strong>Clinical care is not one drug</strong><p>CID included multiple immunosuppressive agents; calcineurin inhibitors were used in 21% of participants, while most CID monotherapy used antimetabolites.</p><i /></article>
-            <article className="signal-card"><span>02 / EFFICACY UNCERTAINTY</span><strong>Agents may not be equivalent</strong><p>Prior evidence suggested similar efficacy among antimetabolites, but raised uncertainty about cyclosporine and tacrolimus relative to those agents.</p><i /></article>
-            <article className="signal-card"><span>03 / SMALL CYCLOSPORINE SIGNAL</span><strong>Limited exposure to cyclosporine</strong><p>Cyclosporine was the assigned treatment in only 4% of participants, limiting its ability to drive the overall comparison.</p><i /></article>
-            <article className="signal-card"><span>04 / BALANCED READ</span><strong>Little evidence of distortion</strong><p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata, suggesting CID heterogeneity did not unduly influence the trial.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">The CID arm was heterogeneous by design, yet the small cyclosporine contribution and consistent strata results reduce concern about major distortion.</p>
         </section>
 
         <section id="limitations-5" className="scene discussion-scene limitations-scene">
