@@ -2778,9 +2778,9 @@ export default function Home() {
           <div className="adv-two-col">
             <div className="adv-left-col">
               <p className="eyebrow"><span /> 28 — DISCUSSION / LIMITATIONS</p>
-              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
-              <p className="lede">Different treatment routes made masking impractical, creating potential for expectation and observer bias. The trial therefore relied on prespecified assessments, protocol-defined treatment decisions, and active quality oversight to reduce this risk.</p>
+              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
+              <p className="lede">Different administration routes made masking impractical. The trial relied on prespecified criteria, protocolized decisions, and active quality oversight to constrain bias.</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-header-label">BIAS COULD CUT BOTH WAYS</div>
@@ -2812,13 +2812,33 @@ export default function Home() {
                   <div className="lim-block-header">UNMASKED ASSIGNMENT</div>
                   <div className="lim-assignment-row">
                     <div className="lim-arm lim-arm-ada">
-                      <strong>ADA</strong>
-                      <span>Subcutaneous injection</span>
+                      <div className="lim-arm-icon-badge" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m18 2 4 4"/>
+                          <path d="m17 7 3-3"/>
+                          <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
+                          <path d="m9 11 4 4"/>
+                          <path d="m5 19-3 3"/>
+                          <path d="m14 4 6 6"/>
+                        </svg>
+                      </div>
+                      <div className="lim-arm-text">
+                        <strong>ADA</strong>
+                        <span>Subcutaneous injection</span>
+                      </div>
                     </div>
                     <div className="lim-arm-connector" aria-hidden="true">↔</div>
                     <div className="lim-arm lim-arm-cid">
-                      <strong>CID</strong>
-                      <span>Oral immunosuppressive therapy</span>
+                      <div className="lim-arm-icon-badge" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                          <path d="m8.5 8.5 7 7"/>
+                        </svg>
+                      </div>
+                      <div className="lim-arm-text">
+                        <strong>CID</strong>
+                        <span>Oral immunosuppressive therapy</span>
+                      </div>
                     </div>
                   </div>
                 </div>
