@@ -9565,10 +9565,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-transform: uppercase;
 }
 
-/* SECTION 1: Unidirectional Bias Section (3 inline cards) */
+/* SECTION 1: Unidirectional Bias Section (3 inline cards with top-right corner badge) */
 .lim-bias-unidirectional-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: clamp(0.6rem, 1.2vh, 1.3rem);
 }
 
 .lim-three-cards-row {
@@ -9578,10 +9579,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .lim-bias-card {
+  position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
   border-radius: 3px;
-  padding: clamp(0.6rem, 1vh, 0.95rem) clamp(0.5rem, 0.75vw, 0.8rem);
+  padding: clamp(1.2rem, 1.7vh, 1.6rem) clamp(0.5rem, 0.75vw, 0.8rem) clamp(0.65rem, 1vh, 0.95rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9599,19 +9601,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: rgba(181, 142, 255, 0.025);
 }
 
-.lim-bias-card .card-direction-tag {
-  font: 700 clamp(0.5rem, 0.58vw, 0.66rem) var(--font-geist-mono), monospace;
-  letter-spacing: 0.05em;
+.lim-bias-card .card-corner-badge {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  font: 700 clamp(0.46rem, 0.54vw, 0.62rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 0.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  padding: 0.12rem 0.32rem;
+  border-radius: 2px;
+  line-height: 1;
 }
 
-.lim-bias-card .card-direction-tag.tag-ada {
+.lim-bias-card .card-corner-badge.badge-ada {
   color: #ff666b;
+  background: rgba(255, 77, 82, 0.12);
+  border: 1px solid rgba(255, 77, 82, 0.3);
 }
 
-.lim-bias-card .card-direction-tag.tag-cid {
+.lim-bias-card .card-corner-badge.badge-cid {
   color: #b58eff;
+  background: rgba(181, 142, 255, 0.12);
+  border: 1px solid rgba(181, 142, 255, 0.3);
 }
 
 .lim-bias-card .card-top-title {
@@ -9626,7 +9640,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clamp(34px, 4.6vh, 44px);
+  height: clamp(32px, 4.4vh, 42px);
   margin: clamp(0.15rem, 0.25vh, 0.35rem) 0;
 }
 
