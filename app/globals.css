@@ -7899,6 +7899,68 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   .secondary-outcomes-redesign-scene .inactive-imaging small { font-size:.39rem; }
 }
 
+/* Page 26 — discussion / primary efficacy interpretation. */
+.primary-efficacy-discussion {
+  align-items: flex-start;
+  padding-top: 11vh;
+  background: radial-gradient(circle at 61% 39%, rgba(255,59,64,.075), transparent 27%), radial-gradient(circle at 82% 59%, rgba(139,94,255,.055), transparent 28%), #050505;
+}
+.primary-efficacy-copy { width: 30vw; }
+.primary-efficacy-copy h2 { font-size: clamp(3.1rem,4.25vw,5rem); line-height: .91; letter-spacing: -.065em; }
+.primary-efficacy-copy h2 em { color:#ff3b40; }
+.primary-efficacy-copy .lede { max-width: 25rem; margin-top: 1.4rem; color:#bbb3af; font-size:clamp(.74rem,.88vw,1.03rem); line-height:1.5; }
+.efficacy-comparisons {
+  position: absolute;
+  z-index: 3;
+  left: 41vw;
+  right: 8vw;
+  top: 13%;
+  bottom: 20.5%;
+  display: grid;
+  grid-template-rows: minmax(0,1.16fr) minmax(0,.9fr);
+  gap: clamp(.8rem,1.35vh,1.2rem);
+}
+.efficacy-chart { position:relative; min-height:0; padding:clamp(.65rem,.9vw,.95rem) clamp(.8rem,1.05vw,1.15rem); border-top:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.09); }
+.efficacy-chart > header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-bottom:.52rem; }
+.efficacy-chart > header > span { color:#ff656a; font-family:var(--font-geist-mono),monospace; font-size:clamp(.64rem,.78vw,.92rem); font-weight:650; letter-spacing:.065em; }
+.efficacy-discontinuation > header > span { color:#b894ff; }
+.efficacy-chart > header small { display:flex; align-items:center; gap:.35rem; color:#aba3a0; font-family:var(--font-geist-mono),monospace; font-size:clamp(.43rem,.5vw,.59rem); }
+.efficacy-chart > header small i { display:inline-block; width:.65rem; height:1px; background:#ff5a61; box-shadow:0 0 7px rgba(255,59,64,.42); }
+.efficacy-chart > header small .cid-key { background:#a77aff; box-shadow:0 0 7px rgba(167,122,255,.38); margin-left:.35rem; }
+.efficacy-plot { position:relative; height:calc(100% - 2.2rem); min-height:0; }
+.efficacy-plot svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.plot-axis { fill:none; stroke:rgba(235,230,227,.36); stroke-width:1; vector-effect:non-scaling-stroke; }
+.plot-guide { fill:none; stroke:rgba(255,255,255,.16); stroke-width:1; stroke-dasharray:2 4; vector-effect:non-scaling-stroke; }
+.plot-ada,.plot-cid { fill:none; stroke-width:2.5; vector-effect:non-scaling-stroke; }
+.plot-ada { stroke:#ff5961; filter:drop-shadow(0 0 4px rgba(255,59,64,.3)); }
+.plot-cid { stroke:#a47bff; filter:drop-shadow(0 0 4px rgba(164,123,255,.25)); }
+.plot-ada-point { fill:#ff5961; stroke:#ffd2d4; stroke-width:1; vector-effect:non-scaling-stroke; }
+.plot-cid-point { fill:#a47bff; stroke:#e0d5ff; stroke-width:1; vector-effect:non-scaling-stroke; }
+.plot-zero,.plot-six-label,.plot-twelve-label { position:absolute; bottom:-.1rem; color:#88817e; font-family:var(--font-geist-mono),monospace; font-size:clamp(.34rem,.41vw,.48rem); letter-spacing:.06em; }
+.plot-zero { left:4.2%; bottom:22%; }
+.plot-six-label { left:45%; }
+.plot-twelve-label { right:0; }
+.timepoint { position:absolute; z-index:1; display:grid; grid-template-columns:auto auto; column-gap:.42rem; color:#cec7c3; font-family:var(--font-geist-mono),monospace; font-size:clamp(.52rem,.62vw,.72rem); line-height:1.35; }
+.timepoint b { grid-column:1 / -1; margin-bottom:.15rem; color:#d2cbc7; font-size:.88em; font-weight:650; letter-spacing:.07em; }
+.timepoint span { white-space:nowrap; }
+.timepoint em,.timepoint i { font-style:normal; font-weight:650; }
+.timepoint em { color:#ff7378; }
+.timepoint i { color:#b892ff; }
+.timepoint small { grid-column:1 / -1; margin-top:.14rem; color:#8f8884; font-size:.9em; }
+.timepoint.emphasis { padding:.32rem .42rem; border-left:1px solid rgba(255,59,64,.56); background:linear-gradient(90deg,rgba(255,59,64,.11),transparent); }
+.timepoint.emphasis small { color:#ff7479; font-weight:650; }
+.timepoint-six { left:41%; top:12%; }
+.timepoint-twelve { right:1%; top:0; }
+.efficacy-discontinuation .timepoint-six { top:34%; }
+.efficacy-discontinuation .timepoint-twelve { top:9%; }
+.efficacy-takeaway { position:absolute; z-index:3; left:8vw; right:8vw; bottom:5.5%; height:10.5%; display:grid; grid-template-columns:clamp(3rem,4vw,4.6rem) minmax(0,1fr); align-items:center; gap:clamp(.8rem,1.2vw,1.35rem); padding:clamp(.65rem,.95vw,1rem); border:1px solid rgba(255,255,255,.14); background:linear-gradient(90deg,rgba(255,59,64,.055),rgba(255,255,255,.018)); }
+.efficacy-takeaway > i { position:relative; width:clamp(2.35rem,3.1vw,3.55rem); aspect-ratio:1; border:1px solid rgba(255,88,94,.72); border-radius:50%; display:grid; place-items:center; }
+.efficacy-takeaway > i::before,.efficacy-takeaway > i::after { content:""; position:absolute; border-radius:50%; border:1px solid rgba(255,88,94,.35); inset:.38rem; }
+.efficacy-takeaway > i::after { inset:.82rem; }
+.efficacy-takeaway > i b { width:.38rem; aspect-ratio:1; background:#ff4d55; border-radius:50%; box-shadow:0 0 9px rgba(255,59,64,.5); }
+.efficacy-takeaway p { margin:0; max-width:78rem; color:#d6d0cd; font-size:clamp(.72rem,.9vw,1.04rem); line-height:1.45; }
+.efficacy-takeaway em,.efficacy-takeaway strong { color:#ff656a; font-style:normal; font-weight:650; }
+
 /* Page 10 overview — close the primary/secondary relationship and use the full secondary band. */
 .outcomes-scene .endpoint-stage { top: 29%; height: 30%; }
 .outcomes-scene .outcomes-secondary-band { top: 61.5%; height: 27%; }
@@ -8146,12 +8208,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: linear-gradient(135deg, rgba(132,94,255,.07), rgba(132,94,255,.018));
 }
 .table-five-events > header {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .75rem;
   padding-bottom: .65rem;
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 .table-five-events > header span {
-  display: block;
   color: #aaa0ae;
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(.52rem,.62vw,.72rem);
@@ -8159,8 +8223,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   letter-spacing: .07em;
 }
 .table-five-events > header small {
-  display: block;
-  margin-top: .32rem;
   color: #777176;
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(.39rem,.46vw,.54rem);
@@ -8181,24 +8243,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .table-five-columns p span {
   color: #bcb5b2;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(.51rem,.61vw,.71rem);
-  font-weight: 520;
+  font-size: clamp(.6rem,.72vw,.84rem);
+  font-weight: 540;
   line-height: 1.2;
 }
 .table-five-columns p em {
-  color: #a390bd;
+  display: flex;
+  align-items: baseline;
+  gap: .28rem;
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(.47rem,.56vw,.65rem);
-  font-weight: 550;
+  font-size: clamp(.58rem,.69vw,.8rem);
+  font-weight: 600;
   font-style: normal;
   white-space: nowrap;
 }
-.table-five-events > footer {
-  margin-top: .45rem;
-  color: #777176;
-  font-size: clamp(.4rem,.47vw,.55rem);
-  line-height: 1.3;
-}
+.table-five-columns p em b { color: #ff6b72; font-weight: 700; }
+.table-five-columns p em strong { color: #b58cff; font-weight: 700; }
+.table-five-columns p em i { color: #a49d99; font-style: normal; font-weight: 500; }
 .safety-bottom-band {
   position: absolute;
   z-index: 3;
@@ -8274,7 +8335,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Safety slide hierarchy — primary evidence and systemic-event counterweight. */
 .safety-difference-row.significant > strong { font-size:clamp(.62rem,.74vw,.86rem); font-weight:700; }
 .safety-difference-row.significant .safety-difference-bars i { font-size:clamp(.58rem,.7vw,.8rem); }
-.safety-difference-row:not(.significant) { opacity:.56; }
+.safety-difference-row:not(.significant) { opacity:1; }
+.safety-difference-row:not(.significant) > strong { color:#938c88; }
+.safety-difference-panel { border-color:rgba(255,89,95,.52); background:linear-gradient(110deg,rgba(255,45,45,.105),rgba(255,45,45,.02) 64%,transparent); box-shadow:inset 0 0 0 1px rgba(255,70,75,.065); }
 .safety-bottom-band .safety-intolerance-panel p { font-size:clamp(.56rem,.66vw,.76rem); line-height:1.42; }
 .safety-bottom-band .safety-intolerance-panel footer { font-size:clamp(.52rem,.61vw,.71rem); }
 .safety-bottom-band .serious-events-panel > header span { font-size:clamp(.76rem,.9vw,1.04rem); letter-spacing:.055em; }
@@ -8282,9 +8345,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .safety-bottom-band .serious-events-panel article,
 .safety-bottom-band .serious-events-panel article:nth-of-type(3) { grid-template-columns:2.15rem 1fr; gap:.65rem; }
 .safety-bottom-band .serious-row-icon { width:1.95rem; height:1.95rem; }
-.safety-bottom-band .serious-events-panel article b { font-size:clamp(.53rem,.63vw,.74rem); line-height:1.22; }
-.safety-bottom-band .serious-events-panel article span { font-size:clamp(.62rem,.74vw,.86rem); line-height:1.18; }
-.safety-bottom-band .serious-events-panel article small { font-size:clamp(.47rem,.56vw,.65rem); line-height:1.3; }
+.safety-bottom-band .serious-events-panel article b { font-size:clamp(.59rem,.7vw,.82rem); line-height:1.22; }
+.safety-bottom-band .serious-events-panel article span { font-size:clamp(.7rem,.83vw,.96rem); line-height:1.18; }
+.safety-bottom-band .serious-events-panel article small { font-size:clamp(.53rem,.63vw,.73rem); line-height:1.3; }
 .safety-bottom-band .serious-events-panel .serious-other span { font-size:clamp(.53rem,.63vw,.74rem); }
 
 /* Page 26 — quality of life, moved to a dedicated presentation page. */

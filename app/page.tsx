@@ -2494,23 +2494,22 @@ export default function Home() {
               <header><span>SAFETY SIGNALS THAT DIFFERED</span><small>ADA vs CID</small></header>
               <div className="safety-difference-row significant"><span className="safety-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" /><circle cx="16" cy="16" r="5" /><path d="M16 4v24" opacity=".32" /></svg></span><div className="safety-difference-label"><b>CATARACT SURGERY</b><small>Phakic eyes</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "18%" } as React.CSSProperties}>2%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>11%</i></span></div><strong>P=0.009</strong></div>
               <div className="safety-difference-row significant"><span className="safety-row-icon safety-row-icon-va"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="1.5" /><path d="M12 10h8M10 16h5m2 0h5M8 22h4m3 0h3m3 0h3" /></svg></span><div className="safety-difference-label"><b>≥15-LETTER BCVA LOSS</b><small>3-line decrease</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "46%" } as React.CSSProperties}>6%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>13%</i></span></div><strong>P=0.026</strong></div>
-              <div className="safety-difference-row"><span className="safety-row-icon safety-row-icon-va"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="1.5" /><path d="M12 10h8M10 16h5m2 0h5M8 22h4m3 0h3m3 0h3" /></svg></span><div className="safety-difference-label"><b>≥30-LETTER BCVA LOSS</b><small>6-line decrease</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "43%" } as React.CSSProperties}>3%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>7%</i></span></div><strong>P=0.43</strong></div>
+              <div className="safety-difference-row"><span className="safety-row-icon safety-row-icon-va"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="1.5" /><path d="M12 10h8M10 16h5m2 0h5M8 22h4m3 0h3m3 0h3" /></svg></span><div className="safety-difference-label"><b>≥30-LETTER BCVA LOSS</b><small>6-line decrease</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "43%" } as React.CSSProperties}>3%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>7%</i></span></div><strong>P=0.430</strong></div>
               <div className="safety-difference-row significant"><span className="safety-row-icon safety-row-icon-liver"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16c0-6 3-10 8-11 3-.6 5 1 7 3 2 1.7 4.8 2.5 7 2.5v6.2c-2.5.1-4.2 1.1-5.5 3.5-1.8 3.3-5.1 5.7-9.3 5.7C7.5 25.9 5 22.6 5 16Z" /><path d="M17.5 8.3c-.4 5.1-2.2 9.2-5.4 12.2" /></svg></span><div className="safety-difference-label"><b>ELEVATED LIVER ENZYMES</b><small>Any grade elevation</small></div><div className="safety-difference-bars"><span><em>ADA</em><i style={{ "--bar": "20%" } as React.CSSProperties}>2%</i></span><span><em>CID</em><i className="cid" style={{ "--bar": "100%" } as React.CSSProperties}>10%</i></span></div><strong>P=0.014</strong></div>
             </article>
 
             <aside className="table-five-events" aria-label="Other ocular adverse events from Table 5">
-              <header><span>OTHER OCULAR EVENTS</span><small>CUMULATIVE % · ADA / CID · P</small></header>
+              <header><span>OTHER OCULAR EVENTS</span><small>ADA / CID</small></header>
               <div className="table-five-columns">
                 <section>
-                  <p><span>IOP +10 mmHg</span><em>9% / 8% · P=0.73</em></p>
-                  <p><span>IOP ≥24 mmHg</span><em>11% / 13% · P=0.50</em></p>
-                  <p><span>IOP ≥30 mmHg</span><em>5% / 5% · P=0.93</em></p>
-                  <p><span>IOP medication</span><em>16% / 10% · P=0.85</em></p>
-                  <p><span>New glaucoma</span><em>1% / 11% · P=0.20</em></p>
-                  <p><span>Glaucoma surgery</span><em>1% / 3% · P=0.29</em></p>
+                  <p><span>IOP +10 mmHg</span><em><b>9%</b><i>/</i><strong>8%</strong><i>· P=0.730</i></em></p>
+                  <p><span>IOP ≥24 mmHg</span><em><b>11%</b><i>/</i><strong>13%</strong><i>· P=0.500</i></em></p>
+                  <p><span>IOP ≥30 mmHg</span><em><b>5%</b><i>/</i><strong>5%</strong><i>· P=0.930</i></em></p>
+                  <p><span>IOP medication</span><em><b>16%</b><i>/</i><strong>10%</strong><i>· P=0.850</i></em></p>
+                  <p><span>New glaucoma</span><em><b>1%</b><i>/</i><strong>11%</strong><i>· P=0.200</i></em></p>
+                  <p><span>Glaucoma surgery</span><em><b>1%</b><i>/</i><strong>3%</strong><i>· P=0.290</i></em></p>
                 </section>
               </div>
-              <footer>None of these comparisons was statistically significant.</footer>
             </aside>
           </section>
 
@@ -2523,8 +2522,8 @@ export default function Home() {
             </article>
             <section className="serious-events-panel" aria-label="Serious events with no significant difference">
               <header><span>SERIOUS SYSTEMIC EVENTS — NO SIGNIFICANT DIFFERENCE</span><small>Rates per person-year</small></header>
-              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 26 7v8c0 7-4 11-10 14C10 26 6 22 6 15V7Z" /><path d="M16 10v10m-5-5h10" /></svg></span><div><b>INFECTIONS REQUIRING ANTIBIOTICS</b><span><em>ADA</em> 0.40/PY <em className="cid">CID</em> 0.37/PY</span><small>IRR 1.10 · 95% CI 0.61–2.00 · P=.76</small></div></article>
-              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 28V7h18v21M12 7V3h8v4M4 28h24" /><path d="M13 12h6m-3-3v6M11 19h3m4 0h3m-10 4h3m4 0h3" /></svg></span><div><b>HOSPITALIZATIONS</b><span><em>ADA</em> 0.045/PY <em className="cid">CID</em> 0.115/PY</span><small>IRR 0.39 · 95% CI 0.12–1.26 · P=.12</small></div></article>
+              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 26 7v8c0 7-4 11-10 14C10 26 6 22 6 15V7Z" /><path d="M16 10v10m-5-5h10" /></svg></span><div><b>INFECTIONS REQUIRING ANTIBIOTICS</b><span><em>ADA</em> 0.40/PY <em className="cid">CID</em> 0.37/PY</span><small>IRR 1.10 · 95% CI 0.61–2.00 · P=0.760</small></div></article>
+              <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 28V7h18v21M12 7V3h8v4M4 28h24" /><path d="M13 12h6m-3-3v6M11 19h3m4 0h3m-10 4h3m4 0h3" /></svg></span><div><b>HOSPITALIZATIONS</b><span><em>ADA</em> 0.045/PY <em className="cid">CID</em> 0.115/PY</span><small>IRR 0.39 · 95% CI 0.12–1.26 · P=0.120</small></div></article>
               <article className="serious-other"><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4" /><circle cx="22" cy="12" r="3.5" /><path d="M4 27c0-6 2.5-9 7-9s7 3 7 9M17 20c1.2-1.8 2.9-2.7 5-2.7 4 0 6 3 6 8" /></svg></span><div><b>OTHER SERIOUS SYSTEMIC AEs</b><span>Rare and similar between groups.</span><small>No new demyelination events in either treatment group.</small></div></article>
             </section>
           </section>
@@ -2543,19 +2542,50 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="discussion" className="scene discussion-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 22 — DISCUSSION</p>
-            <h2>Speed matters.<br /><em>So does nuance.</em></h2>
-            <p className="lede">Adalimumab reached corticosteroid-sparing control sooner, while both strategies achieved high success by 12 months.</p>
+        <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
+          <div className="scene-copy primary-efficacy-copy">
+            <p className="eyebrow"><span /> 26 — DISCUSSION</p>
+            <h2>Earlier control.<br /><em>Similar destination.</em></h2>
+            <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
           </div>
-          <div className="discussion-grid">
-            <article className="signal-card"><span>01 / CORTICOSTEROID SPARING</span><strong>Earlier with ADA</strong><p>At 6 months, successful sparing favored ADA (69% vs 54%; P = 0.029). By 12 months, both groups were high (86% vs 77%; P = 0.077), but ADA reached the outcome faster (HR 1.39; P = 0.032).</p><i /></article>
-            <article className="signal-card"><span>02 / DISCONTINUATION</span><strong>The gap emerged later</strong><p>Successful discontinuation was similar at 6 months (15% vs 11%; P = 0.30), then favored ADA at 12 months (55% vs 40%; P = 0.028).</p><i /></article>
-            <article className="signal-card warning-card"><span>03 / TREATMENT ADVANCEMENT</span><strong>Protocol shaped the pathway</strong><p>Without baseline immunosuppression, second-agent additions were more frequent with ADA (41% vs 29%). ADA had a fixed adult dose; CID escalated an antimetabolite before adding a second agent.</p><i /></article>
-            <article className="signal-card"><span>04 / INTERPRETATION</span><strong>Not simply “more drugs”</strong><p>Faster sparing and greater discontinuation were qualitatively similar in both baseline-immunosuppression strata. Advancement itself was more frequent with CID (60 vs 37; HR 0.38; P &lt; 0.001).</p><i /></article>
-          </div>
-          <p className="discussion-footnote">The treatment contrast reflects both therapeutic effect and how each regimen was advanced after relapse.</p>
+
+          <section className="efficacy-comparisons" aria-label="Temporal efficacy comparisons">
+            <article className="efficacy-chart efficacy-sparing">
+              <header><span>SUCCESSFUL CORTICOSTEROID SPARING</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid sparing was 69 percent versus 54 percent at 6 months and 86 percent versus 77 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 56 L550 28" />
+                  <path className="plot-cid" d="M38 132 L300 73 L550 40" />
+                  <circle className="plot-ada-point" cx="300" cy="56" r="6" /><circle className="plot-cid-point" cx="300" cy="73" r="6" />
+                  <circle className="plot-ada-point" cx="550" cy="28" r="5" /><circle className="plot-cid-point" cx="550" cy="40" r="5" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six emphasis"><b>6 MONTHS</b><span><em>ADA</em> 69%</span><span><i>CID</i> 54%</span><small>P=0.029</small></div>
+                <div className="timepoint timepoint-twelve"><b>12 MONTHS</b><span><em>ADA</em> 86%</span><span><i>CID</i> 77%</span><small>P=0.077</small></div>
+              </div>
+            </article>
+
+            <article className="efficacy-chart efficacy-discontinuation">
+              <header><span>SUCCESSFUL CORTICOSTEROID DISCONTINUATION</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid discontinuation was 15 percent versus 11 percent at 6 months and 55 percent versus 40 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 106 L550 61" />
+                  <path className="plot-cid" d="M38 132 L300 113 L550 82" />
+                  <circle className="plot-ada-point" cx="300" cy="106" r="5" /><circle className="plot-cid-point" cx="300" cy="113" r="5" />
+                  <circle className="plot-ada-point" cx="550" cy="61" r="6" /><circle className="plot-cid-point" cx="550" cy="82" r="6" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six"><b>6 MONTHS</b><span><em>ADA</em> 15%</span><span><i>CID</i> 11%</span><small>P=0.30</small></div>
+                <div className="timepoint timepoint-twelve emphasis"><b>12 MONTHS</b><span><em>ADA</em> 55%</span><span><i>CID</i> 40%</span><small>P=0.028</small></div>
+              </div>
+            </article>
+          </section>
+
+          <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
         </section>
 
         <section id="discussion-safety" className="scene discussion-scene discussion-two-scene">
