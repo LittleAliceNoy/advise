@@ -2783,113 +2783,103 @@ export default function Home() {
               <p className="lede">Different administration routes made masking impractical. The trial relied on prespecified criteria, protocolized decisions, and active quality oversight to constrain bias.</p>
 
               <div className="adv-observations-block editorial-rules">
-                <div className="observation-header-label">WHERE COULD BIAS ENTER?</div>
-                
                 <div className="observation-item">
                   <h4><span>01</span> — DISEASE-ACTIVITY ASSESSMENT</h4>
-                  <p>Observer expectation could influence clinical grading of inflammatory signs (cells, flare, vitreous haze) or imaging interpretation when treatment is known.</p>
+                  <p>Complex disease-specific activity assessment created potential for inter-observer variability in clinical signs and imaging interpretation.</p>
                 </div>
                 
                 <div className="observation-item">
-                  <h4><span>02</span> — TREATMENT ROUTE &amp; DECISIONS</h4>
-                  <p>Knowledge of assignment and route differences could affect corticosteroid tapering pace, decision to advance therapy, or patient symptom reporting.</p>
+                  <h4><span>02</span> — KNOWLEDGE OF TREATMENT</h4>
+                  <p>Knowing treatment assignment could shape participant expectations and preferences, while physician expectations could influence treatment decisions.</p>
                 </div>
 
-                <p className="bias-synthesis-note">The direction—and magnitude—of any resulting bias remains inherently uncertain.</p>
+                <p className="bias-synthesis-note">Potential bias was not necessarily unidirectional.</p>
               </div>
             </div>
 
             <div className="adv-right-col">
               <div className="limitations-analytical-panel">
                 
-                {/* 1. THREE INLINE BOXES: FAVOR ADA ↔ FAVOR CID */}
-                <div className="lim-spectrum-block">
-                  <div className="lim-spectrum-header">
-                    <span className="spec-label-ada">FAVOR ADA</span>
-                    <span className="spec-arrow">↔</span>
-                    <span className="spec-label-cid">FAVOR CID</span>
+                {/* SECTION A — DISEASE-ACTIVITY ASSESSMENT */}
+                <div className="lim-pathway-block">
+                  <div className="lim-pathway-hdr">
+                    <span className="pathway-tag">01 — DISEASE-ACTIVITY ASSESSMENT</span>
                   </div>
                   
-                  <div className="lim-three-boxes-inline">
-                    <div className="lim-inline-box box-ada">
-                      <div className="box-badge-row">
-                        <span className="box-tag">→ FAVOR ADA</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="m18 2 4 4"/>
-                          <path d="m17 7 3-3"/>
-                          <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
-                          <path d="m9 11 4 4"/>
-                          <path d="m5 19-3 3"/>
-                          <path d="m14 4 6 6"/>
-                        </svg>
-                      </div>
-                      <h5>Perceived potency</h5>
-                      <p>Parenteral therapy may be perceived as more effective.</p>
+                  <div className="lim-pathway-flow">
+                    <div className="lim-flow-node node-vuln">
+                      <span className="node-label">VULNERABILITY</span>
+                      <strong>Complex Activity Criteria</strong>
+                      <p>Potential inter-observer variability in signs &amp; imaging</p>
                     </div>
 
-                    <div className="lim-inline-box box-ada">
-                      <div className="box-badge-row">
-                        <span className="box-tag">→ FAVOR ADA</span>
-                      </div>
-                      <h5>Prior “failure” perception</h5>
-                      <p>22% prior single-agent experience may create impression conventional therapy failed.</p>
-                    </div>
+                    <div className="lim-flow-arrow-h" aria-hidden="true">→</div>
 
-                    <div className="lim-inline-box box-cid">
-                      <div className="box-badge-row">
-                        <span className="box-tag">← FAVOR CID</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
-                          <path d="m8.5 8.5 7 7"/>
-                        </svg>
+                    <div className="lim-flow-node node-mitig">
+                      <span className="node-label">SAFEGUARDS</span>
+                      <div className="safeguard-pair">
+                        <div className="pair-item">
+                          <strong>PRESPECIFIED ASSESSMENT</strong>
+                          <span>Standardized clinical &amp; imaging criteria</span>
+                        </div>
+                        <div className="pair-plus">+</div>
+                        <div className="pair-item">
+                          <strong className="violet-text">MTQAC OVERSIGHT</strong>
+                          <span>Central image &amp; activity monitoring</span>
+                        </div>
                       </div>
-                      <h5>Route preference</h5>
-                      <p>Participants may prefer the convenience of oral therapy over injections.</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="lim-flow-connector" aria-hidden="true">
-                  <span className="lim-flow-arrow">↓</span>
+                {/* SECTION B — KNOWLEDGE OF TREATMENT */}
+                <div className="lim-pathway-block">
+                  <div className="lim-pathway-hdr">
+                    <span className="pathway-tag">02 — KNOWLEDGE OF TREATMENT</span>
+                  </div>
+
+                  <div className="lim-expectations-row">
+                    <div className="lim-exp-card exp-ada">
+                      <span className="exp-direction">→ COULD FAVOR ADA</span>
+                      <div className="exp-content">
+                        <strong>Perceived potency</strong>
+                        <p>Parenteral therapy may be perceived as more effective.</p>
+                      </div>
+                      <div className="exp-content-sub">
+                        <strong>Prior “failure” perception</strong>
+                        <p>22% entered after 1 prior agent; may create conventional-treatment “failure” impression despite partial efficacy.</p>
+                      </div>
+                    </div>
+
+                    <div className="lim-exp-card exp-cid">
+                      <span className="exp-direction">← COULD FAVOR CID</span>
+                      <div className="exp-content">
+                        <strong>Route preference</strong>
+                        <p>Participants may prefer the convenience of oral therapy over injections.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lim-physician-flow">
+                    <div className="phys-vuln">
+                      <span className="node-label">PHYSICIAN BIAS</span>
+                      <p>Knowing assignment could influence treatment decisions</p>
+                    </div>
+                    <div className="lim-flow-arrow-h" aria-hidden="true">→</div>
+                    <div className="phys-mitig">
+                      <span className="node-label">SAFEGUARD</span>
+                      <strong>PROTOCOLIZED DECISIONS</strong>
+                      <p>Defined corticosteroid tapering &amp; immunosuppression advancement</p>
+                    </div>
+                  </div>
+
+                  <p className="lim-uncertainty-line">Net direction and magnitude of any resulting bias remain uncertain.</p>
                 </div>
 
-                {/* 2. THREE MITIGATION LAYERS */}
-                <div className="lim-safeguards-container">
-                  <div className="lim-safeguard-layer">
-                    <div className="safeguard-header">
-                      <span className="safeguard-num">01</span>
-                      <span className="safeguard-title">PRESPECIFIED ASSESSMENT</span>
-                    </div>
-                    <p className="safeguard-desc">Disease-specific clinical examination and imaging criteria</p>
-                  </div>
-
-                  <div className="lim-safeguard-layer">
-                    <div className="safeguard-header">
-                      <span className="safeguard-num">02</span>
-                      <span className="safeguard-title">PROTOCOLIZED DECISIONS</span>
-                    </div>
-                    <p className="safeguard-desc">Defined corticosteroid tapering and immunosuppression advancement</p>
-                  </div>
-
-                  <div className="lim-safeguard-layer layer-mtqac">
-                    <div className="safeguard-header">
-                      <span className="safeguard-num safeguard-num-violet">03</span>
-                      <span className="safeguard-title safeguard-title-violet">MTQAC OVERSIGHT</span>
-                    </div>
-                    <p className="safeguard-desc">Monitored imaging interpretation, activity determination, and protocol adherence</p>
-                    <div className="mtqac-functions-list">
-                      <div className="mtqac-fn-item">• Monitor imaging interpretation</div>
-                      <div className="mtqac-fn-item">• Verify activity determination</div>
-                      <div className="mtqac-fn-item">• Ensure protocol adherence</div>
-                      <div className="mtqac-fn-item">• Provide corrective feedback</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 3. INTEGRATED CONCLUSION BAND */}
+                {/* BOTTOM CONCLUSION */}
                 <div className="lim-conclusion-band">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
-                  <p>These safeguards reduce susceptibility to observer and treatment-decision bias, but cannot reproduce masking.</p>
+                  <p>Prespecified criteria, protocolized decisions, and MTQAC oversight reduced opportunities for bias—but could not reproduce masking.</p>
                 </div>
 
               </div>
