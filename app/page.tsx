@@ -2785,12 +2785,12 @@ export default function Home() {
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
                   <h4><span>01</span> — DISEASE-ACTIVITY ASSESSMENT</h4>
-                  <p>Complex disease-specific activity assessment created potential for inter-observer variability in clinical signs and imaging interpretation.</p>
+                  <p>Complex disease-specific assessment creates room for inter-observer variability in clinical signs and imaging interpretation.</p>
                 </div>
                 
                 <div className="observation-item">
                   <h4><span>02</span> — KNOWLEDGE OF TREATMENT</h4>
-                  <p>Knowing treatment assignment could shape participant expectations and preferences, while physician expectations could influence treatment decisions.</p>
+                  <p>Knowing assignment could shape participant expectations and symptom reporting, while physician expectations could influence treatment decisions.</p>
                 </div>
               </div>
             </div>
@@ -2846,7 +2846,7 @@ export default function Home() {
                       <p className="card-details">Parenteral therapy perceived more effective</p>
                     </div>
 
-                    {/* Card 2: Prior "failure" */}
+                    {/* Card 2: Prior treatment perception */}
                     <div className="lim-bias-card card-ada">
                       <div className="card-top-bar">
                         <span className="card-corner-badge badge-ada">
@@ -2856,7 +2856,7 @@ export default function Home() {
                           FAVORS ADA
                         </span>
                       </div>
-                      <h5 className="card-top-title">Prior “failure”</h5>
+                      <h5 className="card-top-title">Prior treatment perception</h5>
                       <div className="card-big-icon" aria-hidden="true">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                           <circle cx="12" cy="12" r="9"/>
@@ -2865,7 +2865,7 @@ export default function Home() {
                           <path d="M16 12a4 4 0 0 1-8 0"/>
                         </svg>
                       </div>
-                      <p className="card-details">22% prior single-agent use perceived as conventional failure</p>
+                      <p className="card-details">22% had not achieved corticosteroid sparing on a single conventional agent, potentially creating a perception that conventional therapy had “failed.”</p>
                     </div>
 
                     {/* Card 3: Route preference */}
@@ -2944,7 +2944,7 @@ export default function Home() {
                 {/* BOTTOM CONCLUSION */}
                 <div className="lim-conclusion-band">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
-                  <p>These safeguards could reduce opportunities for bias—but could not reproduce masking.</p>
+                  <p>These safeguards constrain bias—but cannot eliminate the limitation of an unmasked design.</p>
                 </div>
 
               </div>
