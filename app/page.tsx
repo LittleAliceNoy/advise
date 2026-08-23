@@ -3888,7 +3888,7 @@ export default function Home() {
 
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
-                <svg viewBox="0 0 960 185" className="dominant-attrition-wide-svg">
+                <svg viewBox="0 0 960 178" className="dominant-attrition-wide-svg">
                   <defs>
                     <linearGradient id="adaTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
@@ -3900,12 +3900,21 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  {/* COLUMN HEADER ABOVE BOTH ROWS: IMMEDIATELY AFTER RANDOMIZATION */}
+                  {/* COLUMN HEADERS ABOVE BOTH ROWS */}
+                  {/* Left Header: IMMEDIATELY AFTER RANDOMIZATION */}
                   <g className="post-rand-header-group">
                     <text x="250" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       IMMEDIATELY AFTER RANDOMIZATION
                     </text>
                     <line x1="165" y1="23" x2="335" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                  </g>
+
+                  {/* Right Header: TREATMENT DISCONTINUATION */}
+                  <g className="discontinuation-header-group">
+                    <text x="665" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      TREATMENT DISCONTINUATION
+                    </text>
+                    <line x1="420" y1="23" x2="915" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                   </g>
 
                   {/* TRACK 1: ADALIMUMAB (RED) */}
@@ -3941,17 +3950,22 @@ export default function Home() {
                     </text>
                     {/* Baseline track line */}
                     <line x1="165" y1="114" x2="915" y2="114" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
-                    {/* Participant dot stream */}
+                    
+                    {/* Participant dot stream with 8 randomly dispersed faded discontinuation dots */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
-                      const isDropout = [2, 3, 4].includes(i);
+                      const isEarlyDropout = [2, 3, 4].includes(i);
+                      const isDiscontinued = [9, 11, 14, 16, 19, 21, 24, 27].includes(i);
                       return (
-                        <circle
-                          key={`cid-dot-${i}`}
-                          cx={cx}
-                          cy={114}
-                          r={3.4}
-                          fill={isDropout ? "rgba(181,142,255,0.25)" : "#b58eff"}
-                        />
+                        <g key={`cid-dot-group-${i}`}>
+                          <circle
+                            cx={cx}
+                            cy={114}
+                            r={3.4}
+                            fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.2)" : "#b58eff"}
+                            stroke={isDiscontinued ? "rgba(255,77,82,0.6)" : "none"}
+                            strokeWidth={isDiscontinued ? 1 : 0}
+                          />
+                        </g>
                       );
                     })}
 
@@ -3964,22 +3978,13 @@ export default function Home() {
                       3 CID drop out
                     </text>
 
-                    {/* OBSERVATION 2: Separate Aggregate Finding — Treatment Discontinuation (8 participants · all assigned to CID) */}
-                    <g transform="translate(535, 108)">
-                      {/* Anchor connector to CID track */}
-                      <line x1="10" y1="6" x2="10" y2="16" stroke="rgba(255,77,82,0.6)" strokeWidth="1.4" />
-                      <rect x="0" y="16" width="380" height="48" fill="#160608" stroke="rgba(255,77,82,0.45)" rx="3" />
-                      
-                      <text x="12" y="32" fill="#ffffff" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">
-                        TREATMENT DISCONTINUATION
+                    {/* OBSERVATION 2: Separate Aggregate Annotation for the 8 Discontinuations */}
+                    <g transform="translate(665, 140)">
+                      <text x="0" y="0" textAnchor="middle" fill="#ff8085" fontSize="8.6" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                        8 PARTICIPANTS · ALL ASSIGNED TO CID
                       </text>
-                      <text x="195" y="32" fill="#ff7175" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                        8 participants · all assigned to CID
-                      </text>
-
-                      {/* Small muted text with authors' proposed explanations */}
-                      <text x="12" y="52" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                        Possible explanations proposed by the authors: preference for the novel treatment · drug toxicity
+                      <text x="0" y="14" textAnchor="middle" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                        *Schematic distribution — exact chronological timing of discontinuations not established
                       </text>
                     </g>
                   </g>
