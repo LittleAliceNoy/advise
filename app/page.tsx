@@ -4317,7 +4317,8 @@ export default function Home() {
               <div className="immuno-editorial-footer">
                 <div className="immuno-finishing-statement">
                   <p className="finishing-text">
-                    <strong className="finishing-lead">ADVISE showed that monotherapy can be effective.</strong>{" "}
+                    <strong className="finishing-lead">ADVISE showed that monotherapy can be effective.</strong>
+                    <br />
                     <span className="finishing-body">
                       Whether adding a second immunosuppressive agent reduces immunogenicity—and whether that translates into better sustained clinical efficacy—
                     </span>
