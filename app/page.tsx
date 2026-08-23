@@ -3234,13 +3234,13 @@ export default function Home() {
                       <div className="cni-evidence-callouts-stack">
                         <div className="cni-evidence-callout callout-tacrolimus">
                           <p>
-                            <b>01 TACROLIMUS:</b> Prior evidence for tacrolimus was mixed.
+                            Prior evidence for tacrolimus was mixed.
                           </p>
                         </div>
 
                         <div className="cni-evidence-callout callout-csa">
                           <p>
-                            <b className="name-red">02 CYCLOSPORINE (4%):</b> Evidence suggested potentially lower efficacy than antimetabolites.
+                            Some evidence suggested potentially lower efficacy than antimetabolites.
                           </p>
                         </div>
                       </div>
