@@ -10422,21 +10422,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .harmonized-evidence-callout .evidence-badge-tag {
-  font: 700 clamp(0.42rem, 0.46vw, 0.56rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-mono), monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 0.04rem;
+  margin-bottom: 0.12rem;
 }
 
 .harmonized-evidence-callout .evidence-badge-tag.tag-red {
-  color: rgba(255, 125, 130, 0.9);
-  text-shadow: none;
+  color: #ff4d52;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.6);
 }
 
 .harmonized-evidence-callout .evidence-badge-tag.tag-violet {
-  color: rgba(195, 170, 255, 0.9);
-  text-shadow: none;
+  color: #b58eff;
+  text-shadow: 0 0 16px rgba(181, 142, 255, 0.6);
 }
 
 .evidence-badge-tag {
