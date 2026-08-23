@@ -4379,9 +4379,11 @@ export default function Home() {
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
             <p className="eyebrow"><span /> 34 — CONCLUSION</p>
-            <h2>Control the inflammation.<br /><em>Release the steroid.</em></h2>
-            <p className="lede">Both strategies were effective. Adalimumab delivered faster corticosteroid-sparing control at 6 months and enabled more patients to discontinue corticosteroids by 12 months.</p>
-            <blockquote>For shared clinical decisions, the choice is no longer simply “does it work?”—but <b>how quickly, by which route, and at what trade-off?</b></blockquote>
+            <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
+            <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. Adalimumab got there faster—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
+            <blockquote className="conclusion-caveat">
+              Whether that earlier advantage translates into greater long-term efficacy remains unresolved.
+            </blockquote>
             <div className="citation">ADVISE Trial Research Group · Ophthalmology, Vol. 133, Issue 3 · NCT03828019</div>
             <button className="restart" onClick={() => goTo(0)}>↻ Restart story</button>
           </div>
