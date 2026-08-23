@@ -2959,7 +2959,7 @@ export default function Home() {
               <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="comparator-hook">DID A HETEROGENEOUS CID ARM COMPLICATE THE COMPARISON?</p>
               <h2>One comparator.<br /><span className="violet-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
-              <p className="lede">CID represented conventional immunosuppression as a treatment strategy rather than a single drug. That improves clinical relevance, but introduces heterogeneity in efficacy, tolerability, and treatment escalation.</p>
+              <p className="lede">CID tested a conventional immunosuppressive strategy—not a single standardized drug. This improves clinical relevance, but limits drug-specific interpretation.</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
@@ -3085,8 +3085,8 @@ export default function Home() {
 
                 {/* SECTION 3: BOTTOM CONCLUSION TAKEAWAY */}
                 <div className="comp-conclusion-band">
-                  <strong>HETEROGENEITY <span className="violet-highlight-text">≠ INVALID COMPARATOR</span></strong>
-                  <p>CID heterogeneity limits drug-specific interpretation, but the trial fundamentally tested ADA against a conventional immunosuppressive treatment strategy.</p>
+                  <strong>A STRATEGY COMPARATOR, <span className="violet-highlight-text">NOT A DRUG COMPARATOR</span></strong>
+                  <p>The result estimates ADA versus conventional immunosuppression as a strategy—not versus any individual conventional agent.</p>
                 </div>
 
               </div>
