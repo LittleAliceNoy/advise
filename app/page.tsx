@@ -455,7 +455,7 @@ export default function Home() {
   const [branchStep, setBranchStep] = useState(0);
   const [inspected79, setInspected79] = useState(false);
   const [inspected21, setInspected21] = useState(false);
-  const [synthesisStep, setSynthesisStep] = useState<0 | 1 | 2>(0);
+  const [synthesisStep, setSynthesisStep] = useState<0 | 1 | 2 | 3>(0);
   const [concernRevealed, setConcernRevealed] = useState(false);
   const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
 
@@ -475,16 +475,19 @@ export default function Home() {
     setBranchStep(0);
 
     if (willHave79 && willHave21 && synthesisStep === 0) {
-      // Step 1: CNI card finishes fading out (350ms)
-      setTimeout(() => {
-        // Step 2: Right panel reveals information (upper donut + lower vertical detail cards)
+      // Step 1: CNI overlay card finishes fading out (350ms)
+      const t1 = setTimeout(() => {
+        // Step 2: Right panel reveals (upper donut + lower vertical cards, Cyclosporine already with red glow border)
         setSynthesisStep(1);
         
-        // Step 3: Then after the right panel is revealed, THE CONCERN slowly pops up on the left panel
-        setTimeout(() => {
+        // Step 3: Show full revealed panel for 1.1s, then fade the revealed panel and highlight only concern text and red cyclosporine box
+        const t2 = setTimeout(() => {
+          setSynthesisStep(2);
           setConcernRevealed(true);
-        }, 750);
+        }, 1100);
+        inspectTimerRef.current.push(t2);
       }, 350);
+      inspectTimerRef.current.push(t1);
     }
   };
 
@@ -3022,16 +3025,16 @@ export default function Home() {
               <div className={`left-synthesis-block ${concernRevealed ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
                 <div
                   className="left-statement-card"
-                  onClick={() => synthesisStep === 1 && setSynthesisStep(2)}
-                  style={{ cursor: synthesisStep === 1 ? 'pointer' : 'default' }}
+                  onClick={() => synthesisStep === 2 && setSynthesisStep(3)}
+                  style={{ cursor: synthesisStep === 2 ? 'pointer' : 'default' }}
                 >
                   <p className="statement-uppercase-text">
                     THESE DATA RAISE THE QUESTION OF THE IMPACT OF CALCINEURIN INHIBITORS ON THE OVERALL TRIAL RESULTS
                   </p>
                 </div>
 
-                {/* 01 & 02 Points (Revealed on second click: synthesisStep === 2) */}
-                <div className={`left-synthesis-points ${synthesisStep === 2 ? 'points-revealed' : 'points-hidden'}`}>
+                {/* 01 & 02 Points (Revealed on click: synthesisStep === 3) */}
+                <div className={`left-synthesis-points ${synthesisStep === 3 ? 'points-revealed' : 'points-hidden'}`}>
                   <div className="left-synthesis-col">
                     <span className="col-idx">01</span>
                     <div className="col-body">
@@ -3066,8 +3069,8 @@ export default function Home() {
                 {/* 2. REVEALED STATE: UPPER HALF DONUT + LOWER HALF DUAL DETAIL CARDS */}
                 {synthesisStep >= 1 && activeBranch === 'idle' ? (
                   <div
-                    className="synthesis-split-view"
-                    onClick={() => synthesisStep === 1 && setSynthesisStep(2)}
+                    className={`synthesis-split-view ${synthesisStep >= 2 ? 'synthesis-focus-dimmed' : ''}`}
+                    onClick={() => synthesisStep === 2 && setSynthesisStep(3)}
                     role="button"
                     tabIndex={0}
                   >
@@ -3198,7 +3201,7 @@ export default function Home() {
                       </div>
 
                       {/* Right Card: 21% Calcineurin Inhibitors */}
-                      <div className={`split-detail-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
+                      <div className={`split-detail-card card-cni ${synthesisStep >= 2 ? 'csa-highlighted' : ''}`}>
                         <div className="split-card-header">
                           <span className="split-card-title title-violet">
                             CALCINEURIN INHIBITORS (23 PT)
@@ -3221,7 +3224,7 @@ export default function Home() {
                             <span className="split-pill-count count-white">19 pt</span>
                           </div>
 
-                          <div className={`split-pill-row-item ${synthesisStep === 2 ? 'row-csa-focus' : ''}`}>
+                          <div className="split-pill-row-item row-csa-focus">
                             <div className="pill-icon-wrap wrap-red">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-30 20 20)">
