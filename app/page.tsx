@@ -473,12 +473,13 @@ export default function Home() {
   // 1: Baseline Parallel Participant Tracks
   // 2: 1 ADA vs 3 CID drop out after randomization
   // 3: 8 participants CID drop out
-  // 4: Final robustness & conclusion strip
-  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4>(1);
+  // 4: Authors' proposed reasons for CID attrition
+  // 5: Final robustness & conclusion strip
+  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4 | 5>(1);
 
   const advanceAttritionStep = (e?: React.MouseEvent) => {
     setAttritionStep((prev) => {
-      const next = Math.min(prev + 1, 4) as 1 | 2 | 3 | 4;
+      const next = Math.min(prev + 1, 5) as 1 | 2 | 3 | 4 | 5;
       return next;
     });
   };
@@ -4018,8 +4019,26 @@ export default function Home() {
                 </svg>
               </div>
 
-              {/* BOTTOM CONCLUSION STRIP (Step 4) */}
-              <div className={`attrition-editorial-takeaway ${attritionStep === 4 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
+              {/* Step >= 4: POSSIBLE EXPLANATIONS FOR GREATER CID ATTRITION */}
+              {attritionStep >= 4 && (
+                <div className="attrition-reasons-strip">
+                  <div className="attrition-reason-card">
+                    <div className="reason-number">01 — PREFERENCE FOR NOVEL BIOLOGIC</div>
+                    <p className="reason-text">
+                      Participants sought adalimumab and withdrew upon conventional assignment — evidenced by the immediate post-randomization dropouts (3 CID vs 1 ADA).
+                    </p>
+                  </div>
+                  <div className="attrition-reason-card">
+                    <div className="reason-number">02 — COMPARATOR TOXICITY &amp; TOLERABILITY</div>
+                    <p className="reason-text">
+                      Toxicity and tolerability of conventional immunosuppression likely contributed during follow-up — evidenced by all 8 assigned-treatment discontinuations occurring in CID.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* BOTTOM CONCLUSION STRIP (Step 5) */}
+              <div className={`attrition-editorial-takeaway ${attritionStep === 5 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
                 
                 {/* Horizontal Argument Strip: Differential Attrition -> Potential for bias -> Robustness resolution */}
                 <div className="attrition-argument-strip">
