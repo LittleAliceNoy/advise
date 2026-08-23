@@ -3067,7 +3067,7 @@ export default function Home() {
                       {/* Neutral Base Track */}
                       <circle cx="205" cy="185" r="114" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="52" />
 
-                      {/* 79% Antimetabolites Arc */}
+                      {/* 79% Antimetabolites Arc (Dominant, East -> South -> West -> North) */}
                       <g
                         className={`donut-clickable-segment seg-79 ${activeBranch === 'antimetabolites' ? 'seg-active' : ''}`}
                         onClick={() => inspectBranch('antimetabolites')}
@@ -3083,12 +3083,12 @@ export default function Home() {
                           strokeWidth="52"
                           strokeDasharray="564.14 152.14"
                           strokeDashoffset="0"
-                          transform="rotate(-120 205 185)"
+                          transform="rotate(-13.5 205 185)"
                           filter="url(#glow79)"
                         />
                       </g>
 
-                      {/* 21% Calcineurin Inhibitors Arc */}
+                      {/* 21% Calcineurin Inhibitors Arc (Top-Right: 12 o'clock to ~2:30 o'clock) */}
                       <g
                         className={`donut-clickable-segment seg-21 ${activeBranch === 'cni' ? 'seg-active' : ''}`}
                         onClick={() => inspectBranch('cni')}
@@ -3103,8 +3103,8 @@ export default function Home() {
                           stroke="url(#pie21Grad)"
                           strokeWidth="52"
                           strokeDasharray="152.14 564.14"
-                          strokeDashoffset="-564.14"
-                          transform="rotate(-120 205 185)"
+                          strokeDashoffset="0"
+                          transform="rotate(-90 205 185)"
                           filter="url(#glow21)"
                         />
                       </g>
@@ -3112,30 +3112,30 @@ export default function Home() {
                       {/* Center Dark Core */}
                       <circle cx="205" cy="185" r="86" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
-                      {/* Leader Line & Label: 21% Calcineurin Inhibitors (Top Right) */}
+                      {/* Leader Line & Label: 21% Calcineurin Inhibitors (Top Right Arc to Top Right Label) */}
                       <g
                         className={`svg-leader-group leader-cni ${activeBranch === 'cni' ? 'leader-active' : ''}`}
                         onClick={() => inspectBranch('cni')}
                         role="button"
                         tabIndex={0}
                       >
-                        <circle cx="146" cy="58" r="2.5" className="leader-anchor-dot dot-violet" />
-                        <path d="M 146 58 L 180 32 L 525 32" fill="none" className="leader-track-line line-violet" />
-                        <text x="186" y="24" className="svg-leader-label-name name-violet">CALCINEURIN INHIBITORS</text>
-                        <text x="522" y="24" textAnchor="end" className="svg-leader-label-val val-violet">21%</text>
+                        <circle cx="292" cy="75" r="2.5" className="leader-anchor-dot dot-violet" />
+                        <path d="M 292 75 L 330 45 L 525 45" fill="none" className="leader-track-line line-violet" />
+                        <text x="336" y="37" className="svg-leader-label-name name-violet">CALCINEURIN INHIBITORS</text>
+                        <text x="522" y="37" textAnchor="end" className="svg-leader-label-val val-violet">21%</text>
                       </g>
 
-                      {/* Leader Line & Label: 79% Antimetabolites (Bottom Right) */}
+                      {/* Leader Line & Label: 79% Antimetabolites (Lower Right Arc to Bottom Right Label) */}
                       <g
                         className={`svg-leader-group leader-antimetabolites ${activeBranch === 'antimetabolites' ? 'leader-active' : ''}`}
                         onClick={() => inspectBranch('antimetabolites')}
                         role="button"
                         tabIndex={0}
                       >
-                        <circle cx="332" cy="244" r="2.5" className="leader-anchor-dot dot-red" />
-                        <path d="M 332 244 L 366 270 L 525 270" fill="none" className="leader-track-line line-red" />
-                        <text x="372" y="262" className="svg-leader-label-name">ANTIMETABOLITES</text>
-                        <text x="522" y="262" textAnchor="end" className="svg-leader-label-val val-red">79%</text>
+                        <circle cx="324" cy="259" r="2.5" className="leader-anchor-dot dot-red" />
+                        <path d="M 324 259 L 360 285 L 525 285" fill="none" className="leader-track-line line-red" />
+                        <text x="366" y="277" className="svg-leader-label-name">ANTIMETABOLITES</text>
+                        <text x="522" y="277" textAnchor="end" className="svg-leader-label-val val-red">79%</text>
                       </g>
                     </svg>
                   </div>
