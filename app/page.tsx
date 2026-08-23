@@ -2520,7 +2520,14 @@ export default function Home() {
               <header><span>TREATMENT INTOLERANCE</span><small>Discontinued assigned therapy due to intolerance</small></header>
               <div className="safety-intolerance-numbers"><div><strong>0</strong><span>ADA</span></div><i /><div><strong>8</strong><span>CID</span></div></div>
               <p><b>CID discontinuations</b><br />MTX-based 6 · Mycophenolate 2</p>
-              <footer><b>After discontinuation:</b> 6 → another CID · 1 → ADA · 1 → stopped</footer>
+              <footer>
+                <b>After discontinuation:</b>
+                <div className="safety-discontinuation-list">
+                  <span>6 → another CID</span>
+                  <span>1 → ADA</span>
+                  <span>1 → stopped</span>
+                </div>
+              </footer>
             </article>
             <section className="serious-events-panel" aria-label="Serious events with no significant difference">
               <header><span>SERIOUS SYSTEMIC EVENTS — NO SIGNIFICANT DIFFERENCE</span><small>Rates per person-year</small></header>
