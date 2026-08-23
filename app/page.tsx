@@ -469,6 +469,13 @@ export default function Home() {
     });
   };
 
+  // Slide 31 Differential Loss to Follow-up State (0 = initial, 1 = robustness revealed)
+  const [attritionStep, setAttritionStep] = useState<0 | 1>(0);
+
+  const toggleAttritionStep = () => {
+    setAttritionStep((prev) => (prev === 0 ? 1 : 1));
+  };
+
   const clearInspectTimers = () => {
     inspectTimerRef.current.forEach((t) => clearTimeout(t));
     inspectTimerRef.current = [];
@@ -622,6 +629,11 @@ export default function Home() {
   useEffect(() => {
     if (chapters[active]?.id !== "limitations-3") return;
     setTemporalStep(1);
+  }, [active]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "limitations-5") return;
+    setAttritionStep(0);
   }, [active]);
 
   const advanceEfficacyStory = () => {
@@ -3916,20 +3928,152 @@ export default function Home() {
         </section>
 
 
-        <section id="limitations-5" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 31 — LIMITATIONS / FOLLOW-UP</p>
-            <h2>Missing follow-up.<br /><em>Tested from every angle.</em></h2>
-            <p className="lede">Loss to follow-up was higher with CID, creating a potential source of bias that required careful interpretation.</p>
+        <section
+          id="limitations-5"
+          className={`scene discussion-attrition-scene ${attritionStep === 1 ? 'attrition-revealed' : 'attrition-initial'}`}
+          onClick={toggleAttritionStep}
+        >
+          <div className="adv-two-col">
+            {/* LEFT COLUMN */}
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+              <p className="red-hook">COULD GREATER LOSS TO FOLLOW-UP IN THE CID ARM HAVE BIASED THE TREATMENT EFFECT?</p>
+              <h2>
+                More patients left CID.<br />
+                <span className="red-text" style={{ display: 'inline' }}>But the conclusion held.</span>
+              </h2>
+              <p className="lede">
+                Loss to follow-up was greater with CID, creating potential for attrition bias.
+              </p>
+
+              {/* Threat to Validity note */}
+              <div className="comp-investigation-statement" style={{ marginTop: 'auto' }}>
+                <div className="investigation-rule" />
+                <h4>THREAT TO VALIDITY</h4>
+                <p>
+                  Differential dropout could introduce bias if participant departures were related to treatment efficacy, drug tolerance, or assignment dissatisfaction.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN — CLEAN HORIZONTAL ARGUMENT VISUAL */}
+            <div className="adv-right-col attrition-column">
+              <div className="attrition-canvas-card">
+                
+                {/* 1. HORIZONTAL ARGUMENT SEQUENCE BAR */}
+                <div className="attrition-pipeline-bar">
+                  <div className="pipe-node active-red">
+                    <span className="pipe-num">01</span>
+                    <strong>GREATER CID ATTRITION</strong>
+                  </div>
+                  <span className="pipe-arrow">➔</span>
+                  <div className="pipe-node active-amber">
+                    <span className="pipe-num">02</span>
+                    <strong>POTENTIAL BIAS</strong>
+                  </div>
+                  <span className="pipe-arrow">➔</span>
+                  <div className={`pipe-node ${attritionStep === 1 ? 'active-violet' : 'pipe-dimmed'}`}>
+                    <span className="pipe-num">03</span>
+                    <strong>ROBUSTNESS CHECK</strong>
+                  </div>
+                  <span className="pipe-arrow">➔</span>
+                  <div className={`pipe-node ${attritionStep === 1 ? 'active-green' : 'pipe-dimmed'}`}>
+                    <span className="pipe-num">04</span>
+                    <strong>CONSISTENT RESULT</strong>
+                  </div>
+                </div>
+
+                {/* 2. UPPER OBSERVATIONS: IMBALANCE IN CID */}
+                <div className="attrition-imbalance-section">
+                  <div className="imbalance-cards-grid">
+                    
+                    {/* Card 1: 3 vs 1 Immediate Post-Randomization Dropouts */}
+                    <div className="imbalance-card card-dropouts">
+                      <div className="imbalance-stat-badge">
+                        <span className="stat-badge-cid">3 CID</span>
+                        <span className="stat-vs">vs</span>
+                        <span className="stat-badge-ada">1 ADA</span>
+                      </div>
+                      <div className="imbalance-hero-num">3 vs 1</div>
+                      <strong className="imbalance-title">IMMEDIATE POST-RANDOMIZATION DROPOUTS</strong>
+                      <p className="imbalance-sub">CID vs ADA</p>
+                    </div>
+
+                    {/* Card 2: 8 Discontinued Assigned Treatment */}
+                    <div className="imbalance-card card-discontinued">
+                      <div className="imbalance-stat-badge">
+                        <span className="stat-badge-red">ALL 8 IN CID</span>
+                      </div>
+                      <div className="imbalance-hero-num num-red">8</div>
+                      <strong className="imbalance-title">DISCONTINUED ASSIGNED TREATMENT</strong>
+                      <p className="imbalance-sub">All 8 participants were in CID</p>
+                    </div>
+
+                  </div>
+
+                  {/* Compact Annotation */}
+                  <div className="imbalance-annotation-strip">
+                    <span className="annotation-tag">POSSIBLE CONTRIBUTORS</span>
+                    <p>Treatment preference for novel biologic / Drug toxicity</p>
+                  </div>
+                </div>
+
+                {/* 3. METHODOLOGICAL RESPONSE / ROBUSTNESS CHECK */}
+                <div className={`attrition-robustness-section ${attritionStep === 1 ? 'is-revealed' : 'is-preview'}`}>
+                  <div className="robustness-transition-header">
+                    <span className="transition-tag">METHODOLOGICAL RESPONSE</span>
+                    <div className="transition-flow">
+                      <span>Different missing-data assumptions</span>
+                      <span className="flow-arrow">➔</span>
+                      <strong className="flow-strong">Consistent results</strong>
+                    </div>
+                  </div>
+
+                  <div className="robustness-methods-grid">
+                    <div className="methods-list">
+                      <div className="method-item">
+                        <span className="method-check">✓</span>
+                        <span className="method-name">Multiple Imputation (Prespecified Primary Model)</span>
+                        <span className="method-status">Consistent</span>
+                      </div>
+                      <div className="method-item">
+                        <span className="method-check">✓</span>
+                        <span className="method-name">Complete-Case Analysis (No Imputation)</span>
+                        <span className="method-status">Consistent</span>
+                      </div>
+                      <div className="method-item">
+                        <span className="method-check">✓</span>
+                        <span className="method-name">Worst-Case / Best-Case Sensitivity Bounds</span>
+                        <span className="method-status">Consistent</span>
+                      </div>
+                      <div className="method-item">
+                        <span className="method-check">✓</span>
+                        <span className="method-name">Tipping-Point Attrition Modeling</span>
+                        <span className="method-status">Consistent</span>
+                      </div>
+                    </div>
+
+                    <div className="robustness-badge-card">
+                      <div className="robust-check-icon">✓</div>
+                      <strong>RESULTS REMAINED CONSISTENT</strong>
+                      <p>The primary conclusion was stable across all missing-data assumptions.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4. STRONG BOTTOM CONCLUSION BAR */}
+                <div className={`attrition-conclusion-bar ${attritionStep === 1 ? 'conclusion-revealed' : 'conclusion-dimmed'}`}>
+                  <div className="conclusion-headline">
+                    <strong>ATTRITION WAS A CONCERN — <span className="red-highlight-text">BUT UNLIKELY TO EXPLAIN THE RESULT</span></strong>
+                  </div>
+                  <p className="conclusion-subtext">
+                    Results were consistent across analyses using different assumptions about missing data.
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div className="limitation-visual visual-followup" aria-hidden="true"><div className="visual-label">POTENTIAL ATTRITION BIAS</div><div className="followup-lanes"><span><b>ADA</b><i /><strong>1</strong><small>IMMEDIATE DROPOUT</small></span><span><b>CID</b><i /><strong>3</strong><small>IMMEDIATE DROPOUTS</small></span></div><p><b>8</b> treatment discontinuations — all CID</p></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / DIFFERENTIAL FOLLOW-UP</span><strong>More losses with CID</strong><p>Follow-up losses were numerically higher in the CID arm than in the ADA arm, which could bias an unmasked comparative trial.</p><i /></article>
-            <article className="signal-card"><span>02 / IMMEDIATE DROPOUT</span><strong>Assignment preference may matter</strong><p>Some participants may have wanted the newer treatment: three CID participants versus one ADA participant dropped out immediately after randomization.</p><i /></article>
-            <article className="signal-card"><span>03 / TOXICITY</span><strong>All treatment discontinuations were CID</strong><p>Drug toxicity may also have contributed: all eight participants who discontinued assigned treatment were in the CID group.</p><i /></article>
-            <article className="signal-card"><span>04 / ROBUSTNESS</span><strong>Findings were consistent</strong><p>Results remained consistent across multiple analyses built on different assumptions about missing data, making major distortion from dropout unlikely.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">Differential dropout remains a limitation, but sensitivity analyses did not suggest that it substantially changed the trial conclusions.</p>
         </section>
 
         <section id="limitations-6" className="scene discussion-scene limitations-scene">
