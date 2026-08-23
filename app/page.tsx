@@ -3003,8 +3003,8 @@ export default function Home() {
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
 
-              {/* Left Synthesis Block */}
-              <div className="left-synthesis-block">
+              {/* Left Synthesis Block (Revealed after both branches inspected) */}
+              <div className={`left-synthesis-block ${inspected79 && inspected21 ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
                 <div className="left-concern-card">
                   <span className="concern-badge">THE CONCERN</span>
                   <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>

@@ -9995,19 +9995,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cid-interactive-canvas.focus-antimetabolites {
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 .cid-interactive-canvas.focus-cni {
-  transform: scale(1.04);
-}
-
-.cid-interactive-canvas.focus-antimetabolites .cid-donut-stage,
-.cid-interactive-canvas.focus-cni .cid-donut-stage {
-  opacity: 0.16;
-  filter: blur(2px) grayscale(0.2);
-  pointer-events: none;
-  transition: opacity 0.5s ease, filter 0.5s ease;
+  transform: scale(1.02);
 }
 
 /* Donut Stage — Dominant Visual Object in Right Panel */
@@ -10019,7 +10011,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
 .cid-luminous-donut-svg {
@@ -10032,8 +10023,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .donut-clickable-segment {
   cursor: pointer;
   outline: none;
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition: filter 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
   transform-origin: 250px 185px;
+}
+
+.donut-clickable-segment circle {
+  transition: stroke-width 0.45s ease, opacity 0.45s ease, filter 0.45s ease, transform 0.45s ease;
 }
 
 .donut-clickable-segment:hover circle {
@@ -10048,11 +10043,51 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   filter: drop-shadow(0 0 24px rgba(181, 142, 255, 0.95));
 }
 
+/* Spatial Expansion Transformation for 79% Antimetabolites */
+.cid-interactive-canvas.focus-antimetabolites .seg-79 {
+  transform: scale(1.06);
+}
+
+.cid-interactive-canvas.focus-antimetabolites .seg-79 circle {
+  stroke-width: 64px;
+  opacity: 0.38;
+  filter: drop-shadow(0 0 35px rgba(255, 77, 82, 0.85)) drop-shadow(0 0 70px rgba(197, 40, 48, 0.5));
+}
+
+.cid-interactive-canvas.focus-antimetabolites .seg-21,
+.cid-interactive-canvas.focus-antimetabolites .label-cni,
+.cid-interactive-canvas.focus-antimetabolites .label-antimetabolites {
+  opacity: 0.04;
+  filter: blur(2px) grayscale(1);
+  pointer-events: none;
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+
+/* Spatial Expansion Transformation for 21% Calcineurin Inhibitors */
+.cid-interactive-canvas.focus-cni .seg-21 {
+  transform: scale(1.08);
+}
+
+.cid-interactive-canvas.focus-cni .seg-21 circle {
+  stroke-width: 64px;
+  opacity: 0.42;
+  filter: drop-shadow(0 0 35px rgba(181, 142, 255, 0.85)) drop-shadow(0 0 70px rgba(78, 44, 153, 0.55));
+}
+
+.cid-interactive-canvas.focus-cni .seg-79,
+.cid-interactive-canvas.focus-cni .label-antimetabolites,
+.cid-interactive-canvas.focus-cni .label-cni {
+  opacity: 0.04;
+  filter: blur(2px) grayscale(1);
+  pointer-events: none;
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+
 /* Prominent Arc Labels & Numbers */
 .arc-label-group {
   cursor: pointer;
   outline: none;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease, opacity 0.45s ease;
   user-select: none;
 }
 
@@ -10095,7 +10130,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   fill: #e0d8d5;
 }
 
-/* Inspection Overlays */
+/* Inspection Overlays — Non-modal transparent expansion */
 .inspect-focal-overlay {
   position: absolute;
   inset: 0;
@@ -10104,37 +10139,39 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(0.92);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 10;
+  cursor: pointer;
 }
 
 .inspect-focal-overlay.is-active {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
   pointer-events: auto;
 }
 
 .focal-card {
-  width: 95%;
-  max-width: 480px;
-  background: rgba(10, 10, 14, 0.94);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 77, 82, 0.4);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 77, 82, 0.12);
-  border-radius: 4px;
-  padding: clamp(0.7rem, 1vh, 1rem);
+  width: 100%;
+  max-width: 440px;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  padding: 0.4rem 0.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.45rem;
+  cursor: pointer;
 }
 
 .focal-card.focal-borderless {
-  background: rgba(8, 8, 12, 0.84);
-  backdrop-filter: blur(18px);
-  border: none;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.88);
-  padding: clamp(0.85rem, 1.2vh, 1.25rem) clamp(0.95rem, 1.3vw, 1.45rem);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.4rem 0.6rem;
 }
 
 .focal-title-row {
@@ -10400,6 +10437,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   flex-direction: column;
   gap: clamp(0.45rem, 0.7vh, 0.75rem);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.65s cubic-bezier(0.22, 1, 0.36, 1), margin-top 0.65s ease;
+}
+
+.left-synthesis-block.synthesis-hidden {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(16px);
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 0;
+}
+
+.left-synthesis-block.synthesis-revealed {
+  opacity: 1;
+  max-height: 400px;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .left-concern-card {
