@@ -3188,8 +3188,11 @@ export default function Home() {
                         </div>
 
                         {/* Evidence Badge */}
-                        <div className="antimetabolites-evidence-callout split-callout">
-                          <p>PRIOR EVIDENCE: BROADLY COMPARABLE EFFICACY</p>
+                        <div className="harmonized-evidence-callout callout-antimetabolites">
+                          <span className="evidence-badge-tag tag-red">PRIOR EVIDENCE</span>
+                          <ul className="harmonized-evidence-list">
+                            <li>Broadly comparable efficacy across antimetabolites</li>
+                          </ul>
                         </div>
                       </div>
 
@@ -3231,9 +3234,10 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Callout in single violet badge with 2 bullets */}
-                        <div className="cni-evidence-callout callout-tacrolimus split-callout cni-unified-badge">
-                          <ul className="cni-bullet-list">
+                        {/* Evidence Callout */}
+                        <div className="harmonized-evidence-callout callout-cni">
+                          <span className="evidence-badge-tag tag-violet">PRIOR EVIDENCE</span>
+                          <ul className="harmonized-evidence-list">
                             <li><b>Tacrolimus:</b> mixed evidence</li>
                             <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
                           </ul>
@@ -3395,11 +3399,12 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Badge Callout in steroid-reset style */}
-                        <div className="antimetabolites-evidence-callout">
-                          <p>
-                            PRIOR EVIDENCE: BROADLY COMPARABLE EFFICACY
-                          </p>
+                        {/* Evidence Callout */}
+                        <div className="harmonized-evidence-callout callout-antimetabolites">
+                          <span className="evidence-badge-tag tag-red">PRIOR EVIDENCE</span>
+                          <ul className="harmonized-evidence-list">
+                            <li>Broadly comparable efficacy across antimetabolites</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -3448,9 +3453,10 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Callout in single unified violet badge with 2 bullets */}
-                        <div className="cni-evidence-callout callout-tacrolimus cni-unified-badge">
-                          <ul className="cni-bullet-list">
+                        {/* Evidence Callout */}
+                        <div className="harmonized-evidence-callout callout-cni">
+                          <span className="evidence-badge-tag tag-violet">PRIOR EVIDENCE</span>
+                          <ul className="harmonized-evidence-list">
                             <li><b>Tacrolimus:</b> mixed evidence</li>
                             <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
                           </ul>
