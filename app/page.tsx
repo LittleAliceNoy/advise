@@ -499,6 +499,24 @@ export default function Home() {
     }
   };
 
+  const handleLimitations2Click = (e?: React.MouseEvent) => {
+    if (synthesisStep === 0) {
+      if (activeBranch === 'idle') {
+        inspectBranch('antimetabolites');
+      } else if (activeBranch === 'antimetabolites') {
+        inspectBranch('cni');
+      } else if (activeBranch === 'cni') {
+        closeInspection();
+      }
+    } else if (synthesisStep === 1) {
+      clearInspectTimers();
+      setSynthesisStep(2);
+      setConcernRevealed(true);
+    } else if (synthesisStep === 2) {
+      setSynthesisStep(3);
+    }
+  };
+
   useEffect(() => {
     return () => clearInspectTimers();
   }, []);
@@ -3008,6 +3026,7 @@ export default function Home() {
         <section
           id="limitations-2"
           className={`scene discussion-comparator-scene branch-state-${activeBranch} ${inspected79 && inspected21 ? 'both-inspected' : ''}`}
+          onClick={handleLimitations2Click}
         >
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
@@ -3272,7 +3291,10 @@ export default function Home() {
                         {/* 79% Antimetabolites Arc (Dominant, East -> South -> West -> North) */}
                         <g
                           className={`donut-clickable-segment seg-79 ${activeBranch === 'antimetabolites' ? 'seg-active' : ''}`}
-                          onClick={() => inspectBranch('antimetabolites')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            inspectBranch('antimetabolites');
+                          }}
                           role="button"
                           tabIndex={0}
                         >
@@ -3293,7 +3315,10 @@ export default function Home() {
                         {/* 21% Calcineurin Inhibitors Arc (Top-Right: 12 o'clock to ~2:30 o'clock) */}
                         <g
                           className={`donut-clickable-segment seg-21 ${activeBranch === 'cni' ? 'seg-active' : ''}`}
-                          onClick={() => inspectBranch('cni')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            inspectBranch('cni');
+                          }}
                           role="button"
                           tabIndex={0}
                         >
@@ -3317,7 +3342,10 @@ export default function Home() {
                         {/* Prominent Label: 21% Calcineurin Inhibitors (Top-Right) */}
                         <g
                           className={`arc-label-group label-cni ${activeBranch === 'cni' ? 'label-active' : ''}`}
-                          onClick={() => inspectBranch('cni')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            inspectBranch('cni');
+                          }}
                           role="button"
                           tabIndex={0}
                         >
@@ -3328,7 +3356,10 @@ export default function Home() {
                         {/* Prominent Label: 79% Antimetabolites (Left-Lower Side) */}
                         <g
                           className={`arc-label-group label-antimetabolites ${activeBranch === 'antimetabolites' ? 'label-active' : ''}`}
-                          onClick={() => inspectBranch('antimetabolites')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            inspectBranch('antimetabolites');
+                          }}
                           role="button"
                           tabIndex={0}
                         >
@@ -3338,15 +3369,24 @@ export default function Home() {
                       </svg>
                     </div>
 
-                    {/* 3. PROGRESSIVE INSPECTION OVERLAYS (CLICK TO RETURN) */}
+                    {/* 3. PROGRESSIVE INSPECTION OVERLAYS (CLICK TO ADVANCE) */}
                     {/* Antimetabolites Inspection Overlay (Borderless, Pill Icons, Bold Red Title) */}
                     <div
                       className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}
-                      onClick={closeInspection}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        inspectBranch('cni');
+                      }}
                       role="button"
                       tabIndex={0}
                     >
-                      <div className="focal-card focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
+                      <div
+                        className="focal-card focal-borderless"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          inspectBranch('cni');
+                        }}
+                      >
                         <div className="focal-title-row">
                           <span className="focal-badge-hero red-hero">ANTIMETABOLITES (87 pt)</span>
                         </div>
@@ -3406,11 +3446,20 @@ export default function Home() {
                     {/* Calcineurin Inhibitors Inspection Overlay (Mirrored Refinement) */}
                     <div
                       className={`inspect-focal-overlay overlay-cni ${activeBranch === 'cni' ? 'is-active' : ''}`}
-                      onClick={closeInspection}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        closeInspection();
+                      }}
                       role="button"
                       tabIndex={0}
                     >
-                      <div className="focal-card card-cni focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
+                      <div
+                        className="focal-card card-cni focal-borderless"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          closeInspection();
+                        }}
+                      >
                         <div className="focal-title-row">
                           <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS (23 pt)</span>
                         </div>
