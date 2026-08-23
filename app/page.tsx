@@ -469,14 +469,11 @@ export default function Home() {
     });
   };
 
-  // Slide 31 Differential Loss to Follow-up State (States 1 to 4)
-  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4>(1);
+  // Slide 31 Differential Loss to Follow-up State (1 = initial observations, 2 = robustness resolved)
+  const [attritionStep, setAttritionStep] = useState<1 | 2>(1);
 
   const advanceAttritionStep = (e?: React.MouseEvent) => {
-    setAttritionStep((prev) => {
-      const next = (Math.min(prev + 1, 4)) as 1 | 2 | 3 | 4;
-      return next;
-    });
+    setAttritionStep((prev) => (prev === 1 ? 2 : 2));
   };
 
   const clearInspectTimers = () => {
@@ -3866,7 +3863,7 @@ export default function Home() {
           onClick={advanceAttritionStep}
         >
           <div className="attrition-wide-container">
-            {/* TOP EDITORIAL HEADER — Full width header */}
+            {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
                 <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
@@ -3880,198 +3877,118 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CENTER FULL-WIDTH PARTICIPANT FLOW CANVAS */}
+            {/* CENTER FULL-WIDTH DIFFERENTIAL ATTRITION CANVAS */}
             <div className="attrition-full-canvas">
               <div className="attrition-canvas-top-bar">
-                <span className="canvas-caption-label">PARALLEL PARTICIPANT RETENTION &amp; ATTRITION DYNAMICS</span>
+                <span className="canvas-caption-label">DIFFERENTIAL ATTRITION BY TREATMENT ARM</span>
+                <span className="canvas-advance-hint">
+                  {attritionStep === 1 ? "CLICK / ↓ TO REVEAL RESOLUTION" : "ROBUSTNESS CONFIRMED"}
+                </span>
               </div>
 
-              {/* DOMINANT WIDE PARTICIPANT FLOW SVG */}
+              {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
-                <svg viewBox="0 0 960 255" className="dominant-attrition-wide-svg">
+                <svg viewBox="0 0 960 185" className="dominant-attrition-wide-svg">
                   <defs>
-                    <linearGradient id="adaTrackGradWide" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="adaTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
                       <stop offset="100%" stopColor="#ff7175" stopOpacity="0.95" />
                     </linearGradient>
-                    <linearGradient id="cidTrackGradWide" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="cidTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#8f67ff" stopOpacity="0.75" />
                       <stop offset="100%" stopColor="#b58eff" stopOpacity="0.95" />
                     </linearGradient>
                   </defs>
 
-                  {/* Vertical Time Milestone Guides */}
-                  <line x1="175" y1="20" x2="175" y2="155" stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
-                  <text x="175" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                    M0 RANDOMIZATION
-                  </text>
-
-                  <line x1="540" y1="20" x2="540" y2="155" stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
-                  <text x="540" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)">
-                    MONTH 6 PRIMARY
-                  </text>
-
-                  <line x1="905" y1="20" x2="905" y2="155" stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
-                  <text x="905" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                    MONTH 12 END
-                  </text>
-
-                  {/* TRACK 1: ADA (RED) */}
-                  <g className="ada-track-wide">
-                    <text x="25" y="48" fill="#ff7175" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                  {/* TRACK 1: ADALIMUMAB (RED) */}
+                  <g className="ada-track-clean">
+                    <text x="25" y="44" fill="#ff7175" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       ADALIMUMAB
                     </text>
-                    {/* Baseline track line */}
-                    <line x1="175" y1="45" x2="905" y2="45" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
-                    {/* Participant nodes stream */}
-                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
-                      <circle
-                        key={`ada-dot-${i}`}
-                        cx={cx}
-                        cy={45}
-                        r={3.4}
-                        fill={attritionStep >= 2 && i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
-                      />
-                    ))}
-
-                    {/* Step >= 2: 1 ADA early dropout */}
-                    {attritionStep >= 2 && (
-                      <g className="ada-dropout-annotation">
-                        <path d="M 229,45 Q 235,64 252,66" fill="none" stroke="rgba(255,77,82,0.5)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="252" cy="66" r="3.2" fill="#140607" stroke="#ff4d52" strokeWidth="1.4" />
-                        <text x="262" y="69.5" fill="#a09591" fontSize="8" fontFamily="var(--font-geist-mono)">
-                          1 ADA dropout
-                        </text>
-                      </g>
-                    )}
+                    {/* Clean continuous treatment track */}
+                    <line x1="165" y1="40" x2="915" y2="40" stroke="url(#adaTrackGradClean)" strokeWidth="3.2" strokeLinecap="round" />
+                    
+                    {/* Near the beginning: 1 ADA dropout */}
+                    <path d="M 215,40 Q 222,58 240,60" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="240" cy="60" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                    <text x="250" y="63.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                      1 ADA dropout
+                    </text>
                   </g>
 
-                  {/* TRACK 2: CID (PURPLE) */}
-                  <g className="cid-track-wide">
-                    <text x="25" y="112" fill="#b58eff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                  {/* TRACK 2: CID (COMPARATOR) (PURPLE) */}
+                  <g className="cid-track-clean">
+                    <text x="25" y="104" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       CID (COMPARATOR)
                     </text>
-                    {/* Baseline track line */}
-                    <line x1="175" y1="109" x2="905" y2="109" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
-                    {/* Participant nodes stream */}
-                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
-                      const isPostRand = [2, 3, 4].includes(i);
-                      const isDiscontinuation = [8, 10, 12, 14, 17, 19, 21, 24].includes(i);
-                      const isDimmed = (attritionStep >= 2 && isPostRand) || (attritionStep >= 3 && isDiscontinuation);
-                      return (
-                        <circle
-                          key={`cid-dot-${i}`}
-                          cx={cx}
-                          cy={109}
-                          r={3.4}
-                          fill={isDimmed ? "rgba(181,142,255,0.25)" : "#b58eff"}
-                        />
-                      );
-                    })}
+                    {/* Clean continuous treatment track */}
+                    <line x1="165" y1="100" x2="915" y2="100" stroke="url(#cidTrackGradClean)" strokeWidth="3.2" strokeLinecap="round" />
 
-                    {/* Step >= 2: 3 CID Dropouts after Randomization */}
-                    {attritionStep >= 2 && (
-                      <g className="cid-dropout-annotation">
-                        <path d="M 229,109 Q 235,130 252,133" fill="none" stroke="rgba(181,142,255,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="252" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
-                        <circle cx="261" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
-                        <circle cx="270" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
+                    {/* OBSERVATION 1: Near the beginning — Immediately after randomization (3 CID vs 1 ADA) */}
+                    <path d="M 215,100 Q 222,122 240,124" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="240" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="250" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="260" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
 
-                        <g transform="translate(282, 121)">
-                          <rect x="0" y="0" width="222" height="23" fill="#110a1c" stroke="rgba(181,142,255,0.4)" rx="2" />
-                          <text x="8" y="10" fill="#f5f0eb" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                            IMMEDIATELY AFTER RANDOMIZATION
-                          </text>
-                          <text x="8" y="19" fill="#d8c9ff" fontSize="7.6" fontFamily="var(--font-geist-mono)">
-                            3 CID vs 1 ADA dropped out
-                          </text>
-                        </g>
-                      </g>
-                    )}
-
-                    {/* Step >= 3: 8 Participants Assigned-Treatment Discontinuation */}
-                    {attritionStep >= 3 && (
-                      <g className="cid-discontinued-annotation">
-                        {/* 8 branching connector lines */}
-                        {[391, 445, 499, 553, 634, 688, 742, 823].map((cx, idx) => (
-                          <g key={`disc-line-${idx}`}>
-                            <line x1={cx} y1="109" x2={cx} y2="128" stroke="rgba(255,77,82,0.4)" strokeDasharray="2 2" strokeWidth="1" />
-                            <circle cx={cx} cy="128" r="2.8" fill="#140607" stroke="#ff4d52" strokeWidth="1.2" />
-                          </g>
-                        ))}
-
-                        <g transform="translate(525, 134)">
-                          <rect x="0" y="0" width="265" height="23" fill="#180608" stroke="rgba(255,77,82,0.5)" rx="2" />
-                          <text x="8" y="10" fill="#f5f0eb" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                            ASSIGNED-TREATMENT DISCONTINUATION
-                          </text>
-                          <text x="8" y="19" fill="#ff8085" fontSize="7.6" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                            8 participants · ALL CID
-                          </text>
-                        </g>
-
-                        {/* Possible contributors note */}
-                        <text x="657" y="167" textAnchor="middle" fill="#8c827e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                          Possible contributors: Preference for the novel treatment · Drug toxicity
-                        </text>
-                      </g>
-                    )}
-                  </g>
-
-                  {/* Step 4: VISUAL PIVOT & ROBUSTNESS CONVERGENCE */}
-                  {attritionStep === 4 && (
-                    <g className="pivot-wide-section">
-                      {/* Thin horizontal dividing rule */}
-                      <line x1="25" y1="180" x2="935" y2="180" stroke="rgba(255,255,255,0.14)" strokeWidth="1" />
-
-                      {/* Left: THE CONCERN */}
-                      <g transform="translate(25, 194)">
-                        <text x="0" y="12" fill="#ff7175" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                          THE CONCERN
-                        </text>
-                        <text x="0" y="26" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
-                          Differential attrition could bias the treatment comparison.
-                        </text>
-                      </g>
-
-                      {/* Middle: THE CHECK */}
-                      <g transform="translate(360, 194)">
-                        <text x="0" y="12" fill="#ffffff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                          THE CHECK
-                        </text>
-                        <text x="0" y="26" fill="#f5f0eb" fontSize="8.2" fontFamily="var(--font-geist-mono)">
-                          Different assumptions about missing data → same overall interpretation
-                        </text>
-                      </g>
-
-                      {/* Right: CONVERGING ANALYTICAL PATHS ONTO CONSISTENT RESULTS */}
-                      <g transform="translate(680, 188)">
-                        <path d="M 0,10 C 40,12 70,26 95,27" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
-                        <path d="M 0,20 C 40,22 70,26 95,27" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" />
-                        <path d="M 0,34 C 40,32 70,28 95,27" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" />
-                        <path d="M 0,44 C 40,42 70,28 95,27" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
-
-                        <circle cx="95" cy="27" r="5" fill="#ffffff" />
-                        <circle cx="95" cy="27" r="9" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
-                        <text x="112" y="30.5" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                          CONSISTENT RESULTS
-                        </text>
-                      </g>
+                    <g transform="translate(274, 112)">
+                      <rect x="0" y="0" width="220" height="24" fill="#110a1c" stroke="rgba(181,142,255,0.45)" rx="2" />
+                      <text x="8" y="10.5" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                        IMMEDIATELY AFTER RANDOMIZATION
+                      </text>
+                      <text x="8" y="19.5" fill="#d8c9ff" fontSize="7.8" fontFamily="var(--font-geist-mono)">
+                        3 CID vs 1 ADA dropped out
+                      </text>
                     </g>
-                  )}
+
+                    {/* OBSERVATION 2: Separate Aggregate Finding — Treatment Discontinuation (8 participants · all assigned to CID) */}
+                    <g transform="translate(535, 96)">
+                      {/* Anchor connector to CID track */}
+                      <line x1="10" y1="4" x2="10" y2="16" stroke="rgba(255,77,82,0.6)" strokeWidth="1.4" />
+                      <rect x="0" y="16" width="380" height="48" fill="#160608" stroke="rgba(255,77,82,0.45)" rx="3" />
+                      
+                      <text x="12" y="32" fill="#ffffff" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">
+                        TREATMENT DISCONTINUATION
+                      </text>
+                      <text x="195" y="32" fill="#ff7175" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                        8 participants · all assigned to CID
+                      </text>
+
+                      {/* Small muted text with authors' proposed explanations */}
+                      <text x="12" y="52" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                        Possible explanations proposed by the authors: preference for the novel treatment · drug toxicity
+                      </text>
+                    </g>
+                  </g>
                 </svg>
               </div>
 
-              {/* BOTTOM EDITORIAL TAKEAWAY STRIP (State 4) */}
-              <div className={`attrition-editorial-takeaway ${attritionStep === 4 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
+              {/* BOTTOM CONCLUSION STRIP */}
+              <div className={`attrition-editorial-takeaway ${attritionStep >= 2 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
+                
+                {/* Horizontal Argument Strip: Differential Attrition -> Potential for bias -> Robustness resolution */}
+                <div className="attrition-argument-strip">
+                  <div className="argument-concern-tag">
+                    <span>DIFFERENTIAL ATTRITION</span>
+                    <span className="arg-arrow">➔</span>
+                    <span>POTENTIAL FOR BIAS</span>
+                  </div>
+                  <div className="argument-resolution-tag">
+                    <span className="arg-arrow-strong">➔</span>
+                    <strong>BUT RESULTS REMAINED CONSISTENT ACROSS MISSING-DATA ANALYSES</strong>
+                  </div>
+                </div>
+
+                {/* Supporting line */}
+                <p className="takeaway-supporting-line">
+                  Analyses using different assumptions about missing data produced consistent results.
+                </p>
+
+                {/* Final emphatic conclusion */}
                 <div className="takeaway-hook">
                   <strong>
-                    ATTRITION WAS A CONCERN. <span className="red-highlight-text">UNLIKELY TO EXPLAIN THE RESULT.</span>
+                    ATTRITION WAS A CONCERN — <span className="red-highlight-text">BUT UNLIKELY TO HAVE SUBSTANTIALLY INFLUENCED THE RESULT</span>
                   </strong>
                 </div>
-                <p className="takeaway-sub">
-                  Results were consistent across analyses using different assumptions about missing data.
-                </p>
               </div>
 
             </div>
