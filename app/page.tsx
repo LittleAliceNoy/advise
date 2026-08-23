@@ -4065,19 +4065,18 @@ export default function Home() {
                     <svg className="robustness-merge-svg" viewBox="0 0 1000 70" preserveAspectRatio="none" fill="none">
                       <defs>
                         <linearGradient id="robustMergeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0">
-                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.5)" />
-                          <stop offset="65%" stopColor="rgba(255, 77, 82, 0.85)" />
+                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.45)" />
+                          <stop offset="45%" stopColor="rgba(255, 77, 82, 0.75)" />
                           <stop offset="100%" stopColor="#ff4d52" />
                         </linearGradient>
                       </defs>
-                      {/* Top line curving down from Analysis 01 */}
-                      <path d="M 0,11 L 820,11 C 900,11 940,31 975,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-                      {/* Center straight line from Analysis 02 directly to arrow head */}
-                      <line x1="0" y1="31" x2="975" y2="31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-                      {/* Bottom line curving up from Analysis 03 */}
-                      <path d="M 0,51 L 820,51 C 900,51 940,31 975,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-                      {/* Merged arrow pointer */}
-                      <line x1="975" y1="31" x2="993" y2="31" stroke="#ff4d52" strokeWidth="2.2" vectorEffect="non-scaling-stroke" />
+                      {/* Top line curving down around center */}
+                      <path d="M 0,11 L 380,11 C 440,11 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+                      {/* Long center line: starts at Analysis 02 and extends all the way through the center to the arrow head */}
+                      <line x1="0" y1="31" x2="993" y2="31" stroke="url(#robustMergeGrad)" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
+                      {/* Bottom line curving up around center */}
+                      <path d="M 0,51 L 380,51 C 440,51 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+                      {/* Merged arrow head */}
                       <polygon points="988,25 1000,31 988,37" fill="#ff4d52" />
                     </svg>
                   </div>
