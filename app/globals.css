@@ -9541,25 +9541,27 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .discussion-limitations-scene .adv-arch-evidence-strip {
   display: grid;
-  grid-template-columns: minmax(auto, 11rem) 1fr 1fr;
+  grid-template-columns: max-content 1fr 1fr;
   align-items: center;
   margin: 0 0 clamp(0.6rem, 1vh, 1rem) 0;
   padding: clamp(0.6rem, 0.9vh, 0.95rem) clamp(0.8rem, 1.1vw, 1.4rem);
-  gap: clamp(1.2rem, 2vw, 2.6rem);
+  gap: clamp(1rem, 1.6vw, 2.2rem);
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall {
-  max-width: 11.5rem;
-  padding-right: clamp(1rem, 1.4vw, 1.8rem);
+  max-width: none;
+  padding-right: clamp(0.8rem, 1.2vw, 1.5rem);
   border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall strong {
   font: 600 clamp(.7rem, .8vw, .95rem) var(--font-geist-mono), monospace;
   letter-spacing: .08em;
+  white-space: nowrap;
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall span {
+  max-width: 12.5rem;
   font-size: clamp(.64rem, .72vw, .84rem);
   line-height: 1.35;
   margin-top: 0.25rem;
