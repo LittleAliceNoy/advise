@@ -4210,7 +4210,7 @@ export default function Home() {
               <div className="immuno-row-tier purple-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge purple-num">02</span>
-                  <span className="panel-kicker purple-kicker">CASE SERIES ALSO SUGGEST</span>
+                  <span className="panel-kicker purple-kicker">WHAT DOES IT SUGGEST</span>
                 </div>
                 <div className="purple-content-flex">
                   <div className="purple-shield-icon">
@@ -4220,11 +4220,11 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="purple-text-col">
-                    <p className="purple-statement">
-                      <strong>Concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation.</strong>
+                    <p className="purple-qualifier-top">
+                      Rate of occurrence still unresolved.
                     </p>
-                    <p className="purple-qualifier">
-                      Observational evidence only · frequency and clinical importance remain uncertain.
+                    <p className="purple-statement">
+                      <strong>BUT concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation.</strong>
                     </p>
                   </div>
                 </div>

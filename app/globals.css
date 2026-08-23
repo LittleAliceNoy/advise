@@ -11777,6 +11777,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: 0.08rem;
 }
 
+.purple-qualifier-top {
+  font-size: clamp(0.6rem, 0.68vw, 0.8rem);
+  color: #a09591;
+  margin: 0 0 0.08rem;
+  font-style: italic;
+}
+
 .purple-statement {
   font-size: clamp(0.72rem, 0.82vw, 0.94rem);
   color: #ffffff;
@@ -11789,13 +11796,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-}
-
-.purple-qualifier {
-  font-size: clamp(0.58rem, 0.66vw, 0.76rem);
-  color: #a09591;
-  margin: 0;
-  font-style: italic;
 }
 
 /* 03 Limitation Tier */
