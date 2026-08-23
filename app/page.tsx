@@ -873,7 +873,7 @@ export default function Home() {
                 <div className="mtqac-top-block">
                   <div className="ethics-seal" aria-hidden="true"><i /></div>
                   <div className="ethics-copy">
-                    <span>QUALITY ASSURANCE · Medical Therapy Quality Assurance Committee (MTQAC)</span>
+                    <span>QUALITY ASSURANCE · MEDICAL THERAPY QUALITY ASSURANCE COMMITTEE (MTQAC)</span>
                     <p>Independent uveitis experts provided centralized review throughout the trial.</p>
                   </div>
                 </div>
