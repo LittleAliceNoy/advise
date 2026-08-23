@@ -4164,9 +4164,9 @@ export default function Home() {
                 
                 <div className="hero-dominant-center">
                   <div className="hero-title-with-icon">
-                    {/* Enlarged Glowing Red Scientific Y-Antibody Icon */}
+                    {/* Glowing Red Scientific Y-Antibody Icon */}
                     <div className="hero-antibody-visual">
-                      <svg width="96" height="96" viewBox="0 0 100 100" fill="none" className="hero-antibody-svg">
+                      <svg width="76" height="76" viewBox="0 0 100 100" fill="none" className="hero-antibody-svg">
                         <defs>
                           <radialGradient id="antibodyHaloLarge" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.35" />
@@ -4188,7 +4188,7 @@ export default function Home() {
                     </div>
 
                     <div className="hero-headline-col">
-                      <h3 className="hero-dominant-title">ANTI-ADALIMUMAB<br />ANTIBODIES</h3>
+                      <h3 className="hero-dominant-title">ANTI-ADALIMUMAB ANTIBODIES</h3>
                       <p className="hero-support-text">
                         Reported in patients with uveitis treated with adalimumab.
                       </p>
@@ -4210,7 +4210,7 @@ export default function Home() {
               <div className="immuno-row-tier purple-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge purple-num">02</span>
-                  <span className="panel-kicker purple-kicker">WHAT DOES IT SUGGEST</span>
+                  <span className="panel-kicker purple-kicker">WHAT LATER CASE SERIES SUGGEST</span>
                 </div>
                 <div className="purple-content-flex">
                   <div className="purple-shield-icon">
@@ -4221,7 +4221,7 @@ export default function Home() {
                   </div>
                   <div className="purple-text-col">
                     <p className="purple-qualifier-top">
-                      Rate of occurrence still unresolved.
+                      Frequency in uveitis remains uncertain.
                     </p>
                     <p className="purple-statement">
                       <strong>BUT concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation.</strong>
@@ -4321,7 +4321,7 @@ export default function Home() {
                 <div className="footer-text-col">
                   <div className="footer-question-row">
                     <span className="footer-kicker">UNRESOLVED</span>
-                    <h4 className="footer-question-red">SHOULD ADALIMUMAB ROUTINELY BE USED ALONE?</h4>
+                    <h4 className="footer-question-red">SHOULD ADALIMUMAB BE USED ALONE?</h4>
                   </div>
                   <p className="footer-body">
                     <strong>ADVISE showed that monotherapy can be effective.</strong>{" "}

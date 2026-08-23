@@ -11686,7 +11686,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1.4rem, 2.8vw, 3.6rem);
+  gap: clamp(1rem, 2vw, 2.4rem);
   width: 100%;
 }
 
@@ -11708,11 +11708,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .hero-dominant-title {
-  font: 800 clamp(2.3rem, 3.5vw, 4.2rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(2.4rem, 3.8vw, 4.8rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
   margin: 0;
   line-height: 0.95;
+  white-space: nowrap;
 }
 
 .hero-support-text {
