@@ -3891,6 +3891,22 @@ export default function Home() {
                 <span className="canvas-caption-label">DIFFERENTIAL ATTRITION BY TREATMENT ARM</span>
               </div>
 
+              {/* Step >= 4: POSSIBLE EXPLANATIONS FOR GREATER CID ATTRITION (ABOVE PARALLEL TRACKS) */}
+              <div className={`adv-observations-block editorial-rules side-by-side ${attritionStep >= 4 ? 'reasons-revealed' : 'reasons-hidden'}`}>
+                <div className="observation-item">
+                  <h4><span>01</span> — POSSIBLE TREATMENT PREFERENCE</h4>
+                  <p>
+                    Participants may have preferred the novel biologic, potentially contributing to the early imbalance in dropout (3 CID vs 1 ADA).
+                  </p>
+                </div>
+                <div className="observation-item">
+                  <h4><span>02</span> — POSSIBLE DRUG TOLERABILITY</h4>
+                  <p>
+                    Toxicity may also have contributed; all 8 participants who discontinued assigned treatment were in the CID arm.
+                  </p>
+                </div>
+              </div>
+
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
                 <svg viewBox="0 0 960 178" className="dominant-attrition-wide-svg">
@@ -4018,24 +4034,6 @@ export default function Home() {
                   </g>
                 </svg>
               </div>
-
-              {/* Step >= 4: POSSIBLE EXPLANATIONS FOR GREATER CID ATTRITION */}
-              {attritionStep >= 4 && (
-                <div className="adv-observations-block editorial-rules side-by-side">
-                  <div className="observation-item">
-                    <h4><span>01</span> — POSSIBLE TREATMENT PREFERENCE</h4>
-                    <p>
-                      Participants may have preferred the novel biologic, potentially contributing to the early imbalance in dropout (3 CID vs 1 ADA).
-                    </p>
-                  </div>
-                  <div className="observation-item">
-                    <h4><span>02</span> — POSSIBLE DRUG TOLERABILITY</h4>
-                    <p>
-                      Toxicity may also have contributed; all 8 participants who discontinued assigned treatment were in the CID arm.
-                    </p>
-                  </div>
-                </div>
-              )}
 
               {/* BOTTOM CONCLUSION STRIP (Step 5) */}
               <div className={`attrition-editorial-takeaway ${attritionStep === 5 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
