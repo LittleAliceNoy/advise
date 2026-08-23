@@ -10226,7 +10226,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .pill-icon-wrap.wrap-yellow {
-  filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.45));
+  filter: drop-shadow(0 0 6px rgba(245, 230, 168, 0.35));
 }
 
 .pill-icon-wrap.wrap-red {
@@ -10248,8 +10248,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .pill-drug-count.count-yellow {
-  color: #fef08a;
-  text-shadow: 0 0 8px rgba(254, 240, 138, 0.4);
+  color: #f5e6a8;
+  text-shadow: 0 0 6px rgba(245, 230, 168, 0.3);
 }
 
 .pill-drug-count.count-red {

@@ -3148,13 +3148,13 @@ export default function Home() {
 
                       {/* 3 Pills Row with Distinct Pill Icons (Borderless) */}
                       <div className="focal-pills-row">
-                        {/* Pill 1: MTX (Pastel Yellow Round Scored Tablet) 44 pt */}
+                        {/* Pill 1: MTX (Subtle Pastel Champagne/Yellow Round Scored Tablet) 44 pt */}
                         <div className={`pill-drug-col ${branchStep >= 2 ? 'pill-show' : ''}`}>
                           <div className="pill-icon-wrap wrap-yellow">
                             <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
-                              <circle cx="20" cy="20" r="14" fill="rgba(254, 240, 138, 0.22)" stroke="#fef08a" strokeWidth="2" />
-                              <line x1="20" y1="7" x2="20" y2="33" stroke="#fef08a" strokeWidth="1.8" strokeDasharray="3 2" />
-                              <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(254, 240, 138, 0.35)" strokeWidth="1" />
+                              <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
+                              <line x1="20" y1="7" x2="20" y2="33" stroke="#f5e6a8" strokeWidth="1.6" strokeDasharray="3 2" />
+                              <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(245, 230, 168, 0.28)" strokeWidth="1" />
                             </svg>
                           </div>
                           <strong className="pill-drug-name">MTX</strong>
@@ -3175,13 +3175,12 @@ export default function Home() {
                           <span className="pill-drug-count count-red">42 pt</span>
                         </div>
 
-                        {/* Pill 3: AZATHIOPRINE (White Round Tablet) 1 pt */}
+                        {/* Pill 3: AZATHIOPRINE (Clean White Round Tablet - No Center Line) 1 pt */}
                         <div className={`pill-drug-col ${branchStep >= 4 ? 'pill-show' : ''}`}>
                           <div className="pill-icon-wrap wrap-white">
                             <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
-                              <circle cx="20" cy="20" r="13" fill="rgba(255, 255, 255, 0.18)" stroke="#ffffff" strokeWidth="2" />
-                              <circle cx="20" cy="20" r="9" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
-                              <line x1="20" y1="8" x2="20" y2="32" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.5" />
+                              <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
+                              <circle cx="20" cy="20" r="9.5" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
                             </svg>
                           </div>
                           <strong className="pill-drug-name">AZATHIOPRINE</strong>
