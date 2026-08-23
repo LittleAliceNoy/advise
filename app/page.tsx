@@ -3054,59 +3054,178 @@ export default function Home() {
                   <span className="cid-total-n">N = 110</span>
                 </div>
 
-                {/* 2. MAIN INTERACTIVE DONUT OR DUAL LANDSCAPE CANVAS */}
+                {/* 2. REVEALED STATE: UPPER HALF DONUT + LOWER HALF DUAL DETAIL CARDS */}
                 {synthesisStep >= 1 && activeBranch === 'idle' ? (
                   <div
-                    className="synthesis-dual-breakdown-stage"
+                    className="synthesis-split-view"
                     onClick={() => synthesisStep === 1 && setSynthesisStep(2)}
                     role="button"
                     tabIndex={0}
                   >
-                    {/* Dual Landscape Grid showing complete breakdown of both groups side-by-side */}
-                    <div className="synthesis-dual-grid">
-                      {/* Left Block: 79% Antimetabolites */}
-                      <div className="dual-branch-card card-antimetabolites">
-                        <div className="dual-card-header">
-                          <strong className="dual-card-title num-red">79% ANTIMETABOLITES</strong>
-                          <span className="dual-card-n">87 pt</span>
+                    {/* Upper Half: Compact Glowing SVG Donut Chart */}
+                    <div className="synthesis-upper-donut">
+                      <svg viewBox="0 0 520 220" className="cid-luminous-donut-svg split-donut-svg">
+                        <defs>
+                          <linearGradient id="splitPie79Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#401416" />
+                            <stop offset="50%" stopColor="#c52830" />
+                            <stop offset="100%" stopColor="#ff4d52" />
+                          </linearGradient>
+                          <linearGradient id="splitPie21Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#4e2c99" />
+                            <stop offset="50%" stopColor="#8d64f7" />
+                            <stop offset="100%" stopColor="#b58eff" />
+                          </linearGradient>
+                          <filter id="splitGlow79" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                          </filter>
+                          <filter id="splitGlow21" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                          </filter>
+                        </defs>
+
+                        {/* Neutral Base Track */}
+                        <circle cx="260" cy="110" r="78" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="36" />
+
+                        {/* 79% Antimetabolites Arc */}
+                        <circle
+                          cx="260"
+                          cy="110"
+                          r="78"
+                          fill="none"
+                          stroke="url(#splitPie79Grad)"
+                          strokeWidth="36"
+                          strokeDasharray="385.79 104.16"
+                          strokeDashoffset="0"
+                          transform="rotate(-13.5 260 110)"
+                          filter="url(#splitGlow79)"
+                        />
+
+                        {/* 21% Calcineurin Inhibitors Arc */}
+                        <circle
+                          cx="260"
+                          cy="110"
+                          r="78"
+                          fill="none"
+                          stroke="url(#splitPie21Grad)"
+                          strokeWidth="36"
+                          strokeDasharray="104.16 385.79"
+                          strokeDashoffset="0"
+                          transform="rotate(-90 260 110)"
+                          filter="url(#splitGlow21)"
+                        />
+
+                        {/* Center Dark Core */}
+                        <circle cx="260" cy="110" r="58" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+
+                        {/* 21% Calcineurin Inhibitors Label (Top-Right) */}
+                        <text x="340" y="44" className="hero-arc-number num-violet" style={{ fontSize: '22px' }}>21%</text>
+                        <text x="340" y="58" className="hero-arc-sublabel sub-violet" style={{ fontSize: '8px' }}>CALCINEURIN INHIBITORS</text>
+
+                        {/* 79% Antimetabolites Label (Left-Lower) */}
+                        <text x="90" y="180" className="hero-arc-number num-red" style={{ fontSize: '22px' }}>79%</text>
+                        <text x="90" y="194" className="hero-arc-sublabel sub-red" style={{ fontSize: '8px' }}>ANTIMETABOLITES</text>
+                      </svg>
+                    </div>
+
+                    {/* Lower Half: Dual Detail Cards with pill icons and badges */}
+                    <div className="synthesis-lower-cards-grid">
+                      {/* Left Card: 79% Antimetabolites */}
+                      <div className="split-detail-card card-antimetabolites">
+                        <div className="split-card-header">
+                          <span className="focal-badge-hero red-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
+                            ANTIMETABOLITES · 79% (87 pt)
+                          </span>
                         </div>
-                        <div className="dual-pills-row">
-                          <div className="dual-pill-item">
-                            <span className="dual-pill-label">MTX</span>
-                            <span className="dual-pill-val count-yellow">44 pt</span>
+
+                        {/* 3 Pills Row with Icons */}
+                        <div className="focal-pills-row split-pills-row">
+                          <div className="pill-drug-col">
+                            <div className="pill-icon-wrap wrap-yellow">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                                <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
+                                <line x1="20" y1="7" x2="20" y2="33" stroke="#f5e6a8" strokeWidth="1.6" strokeDasharray="3 2" />
+                                <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(245, 230, 168, 0.28)" strokeWidth="1" />
+                              </svg>
+                            </div>
+                            <strong className="pill-drug-name">MTX</strong>
+                            <span className="pill-drug-count count-yellow">44 pt</span>
                           </div>
-                          <div className="dual-pill-item">
-                            <span className="dual-pill-label">MYCOPHENOLATE</span>
-                            <span className="dual-pill-val count-red">42 pt</span>
+
+                          <div className="pill-drug-col">
+                            <div className="pill-icon-wrap wrap-red">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                                <g transform="rotate(-30 20 20)">
+                                  <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
+                                  <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                                </g>
+                              </svg>
+                            </div>
+                            <strong className="pill-drug-name">MYCOPHENOLATE</strong>
+                            <span className="pill-drug-count count-red">42 pt</span>
                           </div>
-                          <div className="dual-pill-item">
-                            <span className="dual-pill-label">AZATHIOPRINE</span>
-                            <span className="dual-pill-val count-white">1 pt</span>
+
+                          <div className="pill-drug-col">
+                            <div className="pill-icon-wrap wrap-white">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                                <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
+                                <circle cx="20" cy="20" r="9.5" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
+                              </svg>
+                            </div>
+                            <strong className="pill-drug-name">AZATHIOPRINE</strong>
+                            <span className="pill-drug-count count-white">1 pt</span>
                           </div>
                         </div>
-                        <div className="antimetabolites-evidence-callout mini-evidence-callout">
+
+                        {/* Evidence Badge */}
+                        <div className="antimetabolites-evidence-callout split-callout">
                           <p>PRIOR EVIDENCE: BROADLY COMPARABLE EFFICACY</p>
                         </div>
                       </div>
 
-                      {/* Right Block: 21% Calcineurin Inhibitors */}
-                      <div className={`dual-branch-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
-                        <div className="dual-card-header">
-                          <strong className="dual-card-title num-violet">21% CALCINEURIN INHIBITORS</strong>
-                          <span className="dual-card-n">23 pt</span>
+                      {/* Right Card: 21% Calcineurin Inhibitors */}
+                      <div className={`split-detail-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
+                        <div className="split-card-header">
+                          <span className="focal-badge-hero violet-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
+                            CALCINEURIN INHIBITORS · 21% (23 pt)
+                          </span>
                         </div>
-                        <div className="dual-pills-row dual-pills-cni">
-                          <div className="dual-pill-item">
-                            <span className="dual-pill-label">TACROLIMUS</span>
-                            <span className="dual-pill-val count-violet">19 pt</span>
+
+                        {/* 2 Pills Row with Icons */}
+                        <div className="focal-pills-row cni-pills-row split-pills-row">
+                          <div className="pill-drug-col">
+                            <div className="pill-icon-wrap wrap-violet">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                                <g transform="rotate(-45 20 20)">
+                                  <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#b58eff" strokeWidth="2" />
+                                  <line x1="12" y1="20" x2="28" y2="20" stroke="#b58eff" strokeWidth="1.8" />
+                                  <path d="M 12 20 L 28 20 L 28 26 A 8 8 0 0 1 12 26 Z" fill="rgba(181, 142, 255, 0.38)" />
+                                </g>
+                              </svg>
+                            </div>
+                            <strong className="pill-drug-name">TACROLIMUS</strong>
+                            <span className="pill-drug-count count-violet">19 pt</span>
                           </div>
-                          <div className={`dual-pill-item ${synthesisStep === 2 ? 'pill-csa-focus' : ''}`}>
-                            <span className="dual-pill-label name-red">CYCLOSPORINE</span>
-                            <span className="dual-pill-val count-red">4 pt <small className="only-4-pct">(4%)</small></span>
+
+                          <div className={`pill-drug-col ${synthesisStep === 2 ? 'pill-csa-focus' : ''}`}>
+                            <div className="pill-icon-wrap wrap-red">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                                <g transform="rotate(-30 20 20)">
+                                  <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
+                                  <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                                </g>
+                              </svg>
+                            </div>
+                            <strong className="pill-drug-name name-red">CYCLOSPORINE</strong>
+                            <span className="pill-drug-count count-red">4 pt <small className="only-4-pct">(4%)</small></span>
                           </div>
                         </div>
-                        <div className="cni-evidence-callout callout-tacrolimus mini-callout cni-unified-badge">
-                          <ul className="cni-bullet-list mini-bullet-list">
+
+                        {/* Evidence Callout in single violet badge with 2 bullets */}
+                        <div className="cni-evidence-callout callout-tacrolimus split-callout cni-unified-badge">
+                          <ul className="cni-bullet-list">
                             <li><b>Tacrolimus:</b> mixed evidence</li>
                             <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
                           </ul>
