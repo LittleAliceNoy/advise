@@ -4280,30 +4280,32 @@ export default function Home() {
 
                   {/* Section 2: Unmeasured & Unbanked */}
                   <div className="lim-sub-block lim-block-right">
-                    <div className="lim-untested-items">
-                      <div className="lim-untested-row">
-                        <div className="lim-row-icon">
-                          <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                    <div className="lim-sub2-cards-grid">
+                      {/* Card 2A: Anti-ADA Antibodies Not Measured */}
+                      <div className="lim-sub2-card">
+                        <div className="lim-icon-wrap-large">
+                          <svg width="36" height="36" viewBox="0 0 28 28" fill="none">
                             <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
                             <path d="M 10.5 6.5 H 17.5 M 11.8 6.5 V 16.5 C 11.8 18.2 12.8 19.5 14 19.5 C 15.2 19.5 16.2 18.2 16.2 16.5 V 6.5" stroke="#ff4d52" strokeWidth="1.4" strokeLinecap="round" />
                             <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
                           </svg>
                         </div>
-                        <div className="lim-row-text">
-                          Anti-adalimumab antibodies <span className="red-bold">NOT MEASURED</span>
+                        <div className="lim-sub2-card-text">
+                          Anti-adalimumab antibodies<br /><span className="red-bold">NOT MEASURED</span>
                         </div>
                       </div>
 
-                      <div className="lim-untested-row">
-                        <div className="lim-row-icon">
-                          <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                      {/* Card 2B: Blood Specimens Not Banked */}
+                      <div className="lim-sub2-card">
+                        <div className="lim-icon-wrap-large">
+                          <svg width="36" height="36" viewBox="0 0 28 28" fill="none">
                             <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
                             <path d="M 14 6 C 14 6 9.5 12.5 9.5 16 C 9.5 18.5 11.5 20.5 14 20.5 C 16.5 20.5 18.5 18.5 18.5 16 C 18.5 12.5 14 6 14 6 Z" stroke="#ff4d52" strokeWidth="1.4" strokeLinejoin="round" />
                             <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
                           </svg>
                         </div>
-                        <div className="lim-row-text">
-                          <span className="red-bold">NO BANKED</span> blood specimens for later testing
+                        <div className="lim-sub2-card-text">
+                          Blood specimens<br /><span className="red-bold">NOT BANKED</span>
                         </div>
                       </div>
                     </div>
