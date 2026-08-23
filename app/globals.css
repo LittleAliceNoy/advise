@@ -11618,6 +11618,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   flex: 1;
   width: 100%;
+  gap: clamp(0.35rem, 0.65vh, 0.75rem);
   justify-content: space-between;
 }
 
@@ -11627,7 +11628,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(0.45rem, 0.8vh, 0.8rem) 0;
+  padding: clamp(0.35rem, 0.6vh, 0.65rem) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -11635,7 +11636,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin-bottom: clamp(0.15rem, 0.3vh, 0.35rem);
+  margin-bottom: clamp(0.12rem, 0.25vh, 0.25rem);
 }
 
 .panel-num-badge {
@@ -11669,11 +11670,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* 01 Hero Tier — Dominant Center, Clean Thin Lines */
 .immuno-row-tier.hero-tier {
-  flex: 1.6;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(0.3rem, 0.6vh, 0.65rem) 0 clamp(0.5rem, 0.9vh, 0.95rem);
+  padding: clamp(0.2rem, 0.35vh, 0.45rem) 0 clamp(0.25rem, 0.45vh, 0.55rem);
 }
 
 .hero-dominant-center {
@@ -11681,9 +11680,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.4rem, 0.8vh, 0.85rem);
+  gap: clamp(0.2rem, 0.4vh, 0.45rem);
   width: 100%;
-  margin: auto 0;
+  margin: 0.1rem 0 0.05rem;
 }
 
 .hero-title-with-icon {
@@ -11708,7 +11707,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .hero-headline-col {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .hero-dominant-title {
@@ -11722,7 +11721,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .hero-support-text {
   font-size: clamp(0.8rem, 0.94vw, 1.08rem);
   color: #d0c7c3;
-  margin: 0.15rem 0 0;
+  margin: 0.1rem 0 0;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -11734,7 +11733,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   gap: clamp(0.5rem, 1vw, 1.2rem);
   width: 100%;
-  padding-top: clamp(0.3rem, 0.55vh, 0.55rem);
+  padding-top: clamp(0.15rem, 0.25vh, 0.3rem);
   margin-top: 0;
 }
 
@@ -11761,7 +11760,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* 02 Purple Tier */
 .immuno-row-tier.purple-tier {
-  padding: clamp(0.35rem, 0.6vh, 0.6rem) 0;
+  padding: clamp(0.3rem, 0.5vh, 0.55rem) 0;
 }
 
 .purple-content-flex {
