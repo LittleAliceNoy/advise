@@ -25,7 +25,6 @@ const chapters = [
   { id: "discontinuation", label: "Corticosteroid discontinuation" },
   { id: "advancement", label: "Immunosuppression advancement" },
   { id: "ocular-results", label: "Visual and macular outcomes" },
-  { id: "safety-outcomes", label: "Safety outcomes" },
   { id: "systemic-safety-tolerability", label: "Safety and tolerability" },
   { id: "quality-of-life-results", label: "Quality of life" },
   { id: "discussion", label: "Discussion" },
@@ -2558,55 +2557,9 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="safety-outcomes" className="scene safety-outcomes-scene">
-          <div className="scene-copy safety-outcomes-copy">
-            <p className="eyebrow"><span /> 23 — RESULTS / SAFETY OUTCOMES</p>
-            <h2>Protect the vision.<br /><em>Watch the exceptions.</em></h2>
-            <p className="lede">Cataract surgery and moderate visual decline were more frequent with CID; severe decline was uncommon and not significantly different.</p>
-          </div>
-
-          <section className="safety-outcomes-stage" aria-label="Safety outcomes comparing adalimumab and conventional immunosuppression">
-            <div className="safety-outcomes-primary">
-              <header><span>BETWEEN-GROUP SAFETY SIGNALS</span><small>ADA vs CID · CUMULATIVE PROPORTION</small></header>
-              <div className="safety-metric-row safety-significant">
-                <div><b>CATARACT SURGERY</b><small>phakic eyes</small></div>
-                <div className="safety-bars"><span><i style={{ "--bar": "15%" } as React.CSSProperties}>2%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "85%" } as React.CSSProperties}>11%</i><em>CID</em></span></div>
-                <strong>P = 0.009</strong>
-              </div>
-              <div className="safety-metric-row safety-significant">
-                <div><b>≥15-LETTER BCVA LOSS</b><small>3-line decrease</small></div>
-                <div className="safety-bars"><span><i style={{ "--bar": "46%" } as React.CSSProperties}>6%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "100%" } as React.CSSProperties}>13%</i><em>CID</em></span></div>
-                <strong>P = 0.026</strong>
-              </div>
-              <div className="safety-metric-row">
-                <div><b>≥30-LETTER BCVA LOSS</b><small>6-line decrease</small></div>
-                <div className="safety-bars"><span><i style={{ "--bar": "43%" } as React.CSSProperties}>3%</i><em>ADA</em></span><span><i className="cid-fill" style={{ "--bar": "100%" } as React.CSSProperties}>7%</i><em>CID</em></span></div>
-                <strong>P = 0.43</strong>
-              </div>
-            </div>
-
-            <div className="safety-outcomes-secondary">
-              <article className="safety-reasons">
-                <header><span>6-LINE DECLINE · MOST COMMON REASONS</span><small>14 eyes had additional follow-up</small></header>
-                <div className="reason-grid">
-                  <div><strong>8</strong><span>CATARACT</span><small>2 ADA · 6 CID</small></div>
-                  <div><strong>4</strong><span>UVEITIS ACTIVITY</span></div>
-                  <div><strong>2</strong><span>VITREOUS HEMORRHAGE</span></div>
-                </div>
-              </article>
-              <article className="safety-recovery">
-                <header><span>FOLLOW-UP STATUS</span><small>among 14 eyes</small></header>
-                <div className="recovery-track"><i style={{ "--bar": "57%" } as React.CSSProperties} /><i style={{ "--bar": "14%" } as React.CSSProperties} /><i style={{ "--bar": "29%" } as React.CSSProperties} /></div>
-                <div className="recovery-legend"><span><b>8</b> regained baseline</span><span><b>2</b> within 10 letters</span><span><b>4</b> ≥3 lines below</span></div>
-              </article>
-            </div>
-            <footer className="safety-outcomes-footnote">Other ocular events occurred at similar rates in both treatment groups.</footer>
-          </section>
-        </section>
-
         <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 24 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
           </div>
@@ -2653,7 +2606,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 25 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 24 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -2666,7 +2619,7 @@ export default function Home() {
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 25 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -2773,7 +2726,7 @@ export default function Home() {
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / CATARACT SIGNAL</p>
               <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive.</h2>
@@ -2898,7 +2851,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / MASKING LIMITATIONS</p>
+              <p className="eyebrow"><span /> 27 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
@@ -3081,7 +3034,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 28 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
@@ -3577,7 +3530,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 30 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="eyebrow"><span /> 29 — DISCUSSION / TEMPORAL TRAJECTORY</p>
               <p className="red-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
@@ -3874,7 +3827,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 30 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -4143,7 +4096,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 32 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 31 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -4332,7 +4285,7 @@ export default function Home() {
 
         <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
           <div className="scene-copy primary-efficacy-copy">
-            <p className="eyebrow"><span /> 33 — DISCUSSION</p>
+            <p className="eyebrow"><span /> 32 — DISCUSSION</p>
             <h2>Earlier control.<br /><em>Similar destination.</em></h2>
             <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
           </div>
@@ -4378,7 +4331,7 @@ export default function Home() {
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 34 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 33 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
@@ -4391,7 +4344,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 35 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 34 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -4441,7 +4394,7 @@ export default function Home() {
 
         <section id="statistics" className="scene statistics-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 36 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 35 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -4509,7 +4462,7 @@ export default function Home() {
 
         <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
           <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
-            <p className="eyebrow"><span /> 37 — METHODOLOGY / SAMPLE SIZE</p>
+            <p className="eyebrow"><span /> 36 — METHODOLOGY / SAMPLE SIZE</p>
             <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
           </div>
 
