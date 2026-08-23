@@ -4153,99 +4153,94 @@ export default function Home() {
               </div>
             </div>
 
-            {/* MAIN CONTAINER / 4 STRUCTURED PANELS */}
+            {/* MAIN CONTAINER / 3 STRUCTURED PANELS + EDITORIAL FOOTER */}
             <div className="immuno-stack-canvas">
-              {/* 01 MAIN HERO — DOMINANT AREA */}
+              {/* 01 MAIN HERO — DOMINANT AREA (~2-2.5x larger, icon beside, thin pathway below) */}
               <div className="immuno-panel hero-panel">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge">01</span>
-                  <span className="panel-kicker red-kicker">AFTER ADVISE: CASE SERIES REPORT</span>
+                  <span className="panel-kicker red-kicker">AFTER ADVISE · CASE SERIES [47–51]</span>
                 </div>
-                <div className="hero-content-flex">
-                  {/* Glowing Red Scientific Y-Antibody Icon */}
-                  <div className="hero-antibody-visual">
-                    <svg width="76" height="76" viewBox="0 0 76 76" fill="none" className="hero-antibody-svg">
-                      <defs>
-                        <radialGradient id="antibodyHalo" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.28" />
-                          <stop offset="100%" stopColor="#ff4d52" stopOpacity="0" />
-                        </radialGradient>
-                      </defs>
-                      <circle cx="38" cy="38" r="36" fill="url(#antibodyHalo)" />
-                      {/* Heavy chain stem (Fc) */}
-                      <line x1="38" y1="36" x2="38" y2="64" stroke="#ff4d52" strokeWidth="5" strokeLinecap="round" />
-                      {/* Heavy chain left arm */}
-                      <line x1="38" y1="36" x2="16" y2="14" stroke="#ff4d52" strokeWidth="5" strokeLinecap="round" />
-                      {/* Heavy chain right arm */}
-                      <line x1="38" y1="36" x2="60" y2="14" stroke="#ff4d52" strokeWidth="5" strokeLinecap="round" />
-                      {/* Light chain left parallel segment */}
-                      <line x1="23" y1="28" x2="10" y2="15" stroke="#ff7175" strokeWidth="3.2" strokeLinecap="round" />
-                      {/* Light chain right parallel segment */}
-                      <line x1="53" y1="28" x2="66" y2="15" stroke="#ff7175" strokeWidth="3.2" strokeLinecap="round" />
-                    </svg>
+                
+                <div className="hero-dominant-center">
+                  <div className="hero-title-with-icon">
+                    {/* Enlarged Glowing Red Scientific Y-Antibody Icon */}
+                    <div className="hero-antibody-visual">
+                      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" className="hero-antibody-svg">
+                        <defs>
+                          <radialGradient id="antibodyHaloLarge" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.32" />
+                            <stop offset="100%" stopColor="#ff4d52" stopOpacity="0" />
+                          </radialGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#antibodyHaloLarge)" />
+                        {/* Heavy chain stem (Fc) */}
+                        <line x1="50" y1="48" x2="50" y2="85" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                        {/* Heavy chain left arm */}
+                        <line x1="50" y1="48" x2="20" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                        {/* Heavy chain right arm */}
+                        <line x1="50" y1="48" x2="80" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                        {/* Light chain left parallel segment */}
+                        <line x1="29" y1="36" x2="13" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
+                        {/* Light chain right parallel segment */}
+                        <line x1="71" y1="36" x2="87" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
+                      </svg>
+                    </div>
+
+                    <div className="hero-headline-col">
+                      <h3 className="hero-dominant-title">ANTI-ADALIMUMAB<br />ANTIBODIES</h3>
+                      <p className="hero-support-text">
+                        Reported in patients with uveitis treated with adalimumab.
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Hero Text & Causal Sequence */}
-                  <div className="hero-text-col">
-                    <h3 className="hero-dominant-title">ANTI-ADALIMUMAB ANTIBODIES</h3>
-                    <p className="hero-support-text">
-                      have been reported in patients with uveitis receiving adalimumab.
-                    </p>
-
-                    {/* Causal Sequence Sub-flow */}
-                    <div className="hero-causal-flow">
-                      <div className="causal-badge">
-                        <span className="causal-title">↓ ADALIMUMAB LEVELS</span>
-                      </div>
-                      <div className="causal-arrow">
-                        <svg width="22" height="12" viewBox="0 0 22 12" fill="none">
-                          <line x1="0" y1="6" x2="16" y2="6" stroke="#ff4d52" strokeWidth="1.3" />
-                          <polygon points="14,3 20,6 14,9" fill="#ff4d52" />
-                        </svg>
-                      </div>
-                      <div className="causal-badge">
-                        <span className="causal-title">POSSIBLE LOSS OF EFFICACY</span>
-                      </div>
-                    </div>
+                  {/* Causal Sequence: Clean Thin Pathway Underneath */}
+                  <div className="hero-thin-pathway">
+                    <span className="pathway-step pathway-step-red">ANTI-ADALIMUMAB ANTIBODIES</span>
+                    <span className="pathway-arrow">──➔</span>
+                    <span className="pathway-step pathway-step-red">↓ ADALIMUMAB LEVELS</span>
+                    <span className="pathway-arrow">──➔</span>
+                    <span className="pathway-step pathway-step-white">POSSIBLE LOSS OF EFFICACY</span>
                   </div>
                 </div>
               </div>
 
-              {/* 02 SECONDARY EVIDENCE — PURPLE PANEL */}
-              <div className="immuno-panel purple-panel">
+              {/* 02 SECONDARY EVIDENCE — COMPACT PURPLE PANEL (~25% sleeker) */}
+              <div className="immuno-panel purple-panel compact-panel">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge purple-num">02</span>
                   <span className="panel-kicker purple-kicker">CASE SERIES ALSO SUGGEST</span>
                 </div>
                 <div className="purple-content-flex">
                   <div className="purple-shield-icon">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                      <path d="M 17 3 L 29 8 V 17 C 29 24 23 29 17 31 C 11 29 5 24 5 17 V 8 Z" stroke="#b58eff" strokeWidth="1.6" fill="rgba(181, 142, 255, 0.08)" />
-                      <path d="M 12 17 L 15.5 20.5 L 22 14" stroke="#b58eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <path d="M 13 2.5 L 22 6.5 V 13 C 22 18.5 17.5 22.5 13 24 C 8.5 22.5 4 18.5 4 13 V 6.5 Z" stroke="#b58eff" strokeWidth="1.5" fill="rgba(181, 142, 255, 0.08)" />
+                      <path d="M 9 13 L 12 16 L 17 10.5" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="purple-text-col">
                     <p className="purple-statement">
-                      <strong>Concomitant immunosuppression</strong> <span className="purple-highlight">may reduce</span> <strong>anti-adalimumab antibody formation.</strong>
+                      <strong>Concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation.</strong>
                     </p>
                     <p className="purple-qualifier">
-                      Evidence remains observational; frequency and clinical importance are uncertain.
+                      Observational evidence only · frequency and clinical importance remain uncertain.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* 03 ADVISE BLIND SPOT — COMPACT HORIZONTAL STRIP */}
-              <div className="immuno-panel limitation-panel">
+              {/* 03 ADVISE BLIND SPOT — COMPACT HORIZONTAL STRIP (~25% sleeker) */}
+              <div className="immuno-panel limitation-panel compact-panel">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge">03</span>
-                  <span className="panel-kicker red-kicker">ADVISE TRIAL: IMPORTANT LIMITATION</span>
+                  <span className="panel-kicker red-kicker">WHAT ADVISE COULD NOT ANSWER</span>
                 </div>
-                <div className="limitation-4step-flow">
+                <div className="limitation-4step-flow compact-flow">
                   {/* Step 1 */}
                   <div className="lim-step">
                     <div className="lim-stat">78%</div>
-                    <div className="lim-desc">were not receiving immunosuppression at baseline.</div>
+                    <div className="lim-desc">not receiving immunosuppression at baseline</div>
                   </div>
 
                   <div className="lim-arrow">→</div>
@@ -4253,17 +4248,17 @@ export default function Home() {
                   {/* Step 2 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <circle cx="15" cy="8.5" r="3.4" stroke="#ff4d52" strokeWidth="1.3" />
-                        <path d="M 8.5 21.5 C 8.5 17.5 11.8 15.8 15 15.8 C 18.2 15.8 21.5 17.5 21.5 21.5" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
-                        <circle cx="6.5" cy="11" r="2.3" stroke="rgba(255,77,82,0.5)" strokeWidth="1.1" />
-                        <path d="M 2 21.5 C 2 18.8 4.2 17.8 6.5 17.8" stroke="rgba(255,77,82,0.5)" strokeWidth="1.1" strokeLinecap="round" />
-                        <circle cx="23.5" cy="11" r="2.3" stroke="rgba(255,77,82,0.5)" strokeWidth="1.1" />
-                        <path d="M 28 21.5 C 28 18.8 25.8 17.8 23.5 17.8" stroke="rgba(255,77,82,0.5)" strokeWidth="1.1" strokeLinecap="round" />
+                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="8" r="3.2" stroke="#ff4d52" strokeWidth="1.3" />
+                        <path d="M 8 20 C 8 16.2 11 14.8 14 14.8 C 17 14.8 20 16.2 20 20" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
+                        <circle cx="6" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
+                        <path d="M 2 20 C 2 17.5 4 16.5 6 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
+                        <circle cx="22" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
+                        <path d="M 26 20 C 26 17.5 24 16.5 22 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
                       </svg>
                     </div>
                     <div className="lim-desc">
-                      Within the ADA arm, these participants received <span className="red-bold">ADALIMUMAB ALONE.</span>
+                      Within the ADA arm: <span className="red-bold">ADALIMUMAB ALONE</span>
                     </div>
                   </div>
 
@@ -4272,14 +4267,14 @@ export default function Home() {
                   {/* Step 3 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <circle cx="15" cy="15" r="13" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
-                        <path d="M 11.5 6.5 H 18.5 M 12.8 6.5 V 17.5 C 12.8 19.5 13.8 21 15 21 C 16.2 21 17.2 19.5 17.2 17.5 V 6.5" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
-                        <line x1="6.5" y1="6.5" x2="23.5" y2="23.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
+                        <path d="M 10.5 6.5 H 17.5 M 11.8 6.5 V 16.5 C 11.8 18.2 12.8 19.5 14 19.5 C 15.2 19.5 16.2 18.2 16.2 16.5 V 6.5" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
+                        <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </div>
                     <div className="lim-desc">
-                      Anti-adalimumab antibodies were <span className="red-bold">NOT MEASURED.</span>
+                      Anti-adalimumab antibodies <span className="red-bold">NOT MEASURED</span>
                     </div>
                   </div>
 
@@ -4288,31 +4283,32 @@ export default function Home() {
                   {/* Step 4 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <circle cx="15" cy="15" r="13" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
-                        <path d="M 15 6.5 C 15 6.5 9.5 13.5 9.5 17.8 C 9.5 20.8 12 23.2 15 23.2 C 18 23.2 20.5 20.8 20.5 17.8 C 20.5 13.5 15 6.5 15 6.5 Z" stroke="#ff4d52" strokeWidth="1.3" strokeLinejoin="round" />
-                        <line x1="6.5" y1="6.5" x2="23.5" y2="23.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
+                        <path d="M 14 6 C 14 6 9.5 12.5 9.5 16 C 9.5 18.5 11.5 20.5 14 20.5 C 16.5 20.5 18.5 18.5 18.5 16 C 18.5 12.5 14 6 14 6 Z" stroke="#ff4d52" strokeWidth="1.2" strokeLinejoin="round" />
+                        <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </div>
                     <div className="lim-desc">
-                      Blood specimens were <span className="red-bold">NOT BANKED</span> for later testing.
+                      Blood specimens <span className="red-bold">NOT BANKED</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* 04 BOTTOM TAKEAWAY */}
-              <div className="immuno-panel takeaway-panel">
-                <div className="takeaway-q-circle">
+              {/* 04 BOTTOM TAKEAWAY — SIMPLE BORDERLESS EDITORIAL FOOTER */}
+              <div className="immuno-editorial-footer">
+                <div className="footer-q-circle">
                   <span>?</span>
                 </div>
-                <div className="takeaway-text-col">
-                  <h4 className="takeaway-question-red">SHOULD ADALIMUMAB BE USED ALONE?</h4>
-                  <p className="takeaway-body-lead">
-                    <strong>ADVISE showed that it can work as monotherapy.</strong>
-                  </p>
-                  <p className="takeaway-body-core">
-                    But whether adding a second immunosuppressive agent reduces immunogenicity—and improves durability of response—<span className="red-text">remains unresolved.</span>
+                <div className="footer-text-col">
+                  <div className="footer-question-row">
+                    <span className="footer-kicker">UNRESOLVED</span>
+                    <h4 className="footer-question-red">SHOULD ADALIMUMAB ROUTINELY BE USED ALONE?</h4>
+                  </div>
+                  <p className="footer-body">
+                    <strong>ADVISE showed that monotherapy can be effective.</strong>{" "}
+                    Whether adding a second immunosuppressive agent reduces immunogenicity—and whether that translates into better sustained clinical efficacy—<span className="red-text">remains unknown.</span>
                   </p>
                 </div>
               </div>
