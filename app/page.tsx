@@ -870,9 +870,12 @@ export default function Home() {
               </div>
 
               <div className="ethics-mtqac-block">
-                <div className="mtqac-header">
-                  <span className="mtqac-title">QUALITY ASSURANCE · MTQAC</span>
-                  <p className="mtqac-intro">3 independent uveitis experts provided centralized review throughout the trial.</p>
+                <div className="mtqac-top-block">
+                  <div className="ethics-seal" aria-hidden="true"><i /></div>
+                  <div className="ethics-copy">
+                    <span>QUALITY ASSURANCE · MTQAC</span>
+                    <p>3 independent uveitis experts provided centralized review throughout the trial.</p>
+                  </div>
                 </div>
 
                 <div className="mtqac-workflow">
@@ -902,11 +905,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <ul className="mtqac-duties-list">
-                  <li>Reviewed the first 2 participants at each center</li>
-                  <li>Reviewed protocol-discrepant assessments or treatment decisions flagged by the Coordinating Center</li>
-                  <li>Reconciled clinical-center vs reading-center discrepancies and provided corrective feedback as needed</li>
-                </ul>
+                <p className="mtqac-duty-summary">Reviewed early cases, protocol discrepancies, and center–reading discrepancies <i>→</i> corrective feedback as needed.</p>
               </div>
             </div>
           </div>
