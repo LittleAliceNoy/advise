@@ -11778,17 +11778,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .purple-qualifier-top {
-  font-size: clamp(0.6rem, 0.68vw, 0.8rem);
-  color: #a09591;
-  margin: 0 0 0.08rem;
-  font-style: italic;
+  font: 600 clamp(0.7rem, 0.8vw, 0.94rem) var(--font-geist-mono), monospace;
+  color: #ded7d3;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.15rem;
 }
 
 .purple-statement {
-  font-size: clamp(0.72rem, 0.82vw, 0.94rem);
+  font-size: clamp(0.74rem, 0.84vw, 0.98rem);
   color: #ffffff;
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .purple-highlight {
