@@ -3002,6 +3002,32 @@ export default function Home() {
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
+
+              {/* Left Synthesis Block */}
+              <div className="left-synthesis-block">
+                <div className="left-concern-card">
+                  <span className="concern-badge">THE CONCERN</span>
+                  <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
+                </div>
+
+                <div className="left-synthesis-points">
+                  <div className="left-synthesis-col">
+                    <span className="col-idx">01</span>
+                    <div className="col-body">
+                      <strong>LIMITED EXPOSURE</strong>
+                      <p>Cyclosporine represented only 4% of total CID.</p>
+                    </div>
+                  </div>
+
+                  <div className="left-synthesis-col">
+                    <span className="col-idx">02</span>
+                    <div className="col-body">
+                      <strong>CONSISTENT RESULTS</strong>
+                      <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* RIGHT COLUMN - Fixed viewport with interactive glowing pie and animated focal canvas */}
@@ -3240,43 +3266,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                </div>
-
-                {/* 4. BOTTOM SYNTHESIS (REVEALED AFTER BOTH BRANCHES INSPECTED) */}
-                <div className={`comparator-synthesis-wrapper ${inspected79 && inspected21 ? 'synthesis-revealed' : ''} ${activeBranch !== 'idle' ? 'synthesis-hidden' : ''}`}>
-                  <div className="synthesis-card-inner">
-                    <div className="synthesis-concern-line">
-                      <span className="concern-badge">THE CONCERN</span>
-                      <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
-                    </div>
-
-                    <div className="synthesis-two-points">
-                      <div className="synthesis-col">
-                        <span className="col-idx">01</span>
-                        <div className="col-body">
-                          <strong>LIMITED EXPOSURE</strong>
-                          <p>Cyclosporine represented only 4% of total CID.</p>
-                        </div>
-                      </div>
-
-                      <div className="synthesis-col">
-                        <span className="col-idx">02</span>
-                        <div className="col-body">
-                          <strong>CONSISTENT RESULTS</strong>
-                          <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="synthesis-bottom-conclusion">
-                      <div className="conclusion-hook">
-                        <strong>UNLIKELY TO EXPLAIN <span className="red-highlight-text">ADA’S ADVANTAGE</span></strong>
-                      </div>
-                      <p className="conclusion-support">
-                        Comparator heterogeneity may introduce efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially driving the treatment effect.
-                      </p>
-                    </div>
-                  </div>
                 </div>
 
               </div>
