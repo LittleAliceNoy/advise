@@ -2265,8 +2265,8 @@ export default function Home() {
                 <path d="m8.5 8.5 7 7"/>
               </svg>
               <div>
-                <strong>STEROID BURDEN</strong>
-                <span>12-month mean prednisone dose</span>
+                <strong>SYSTEMIC STEROID BURDEN</strong>
+                <span>12-month mean daily prednisone dose</span>
               </div>
               <div className="txrd-footer-stats">
                 <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
