@@ -10345,7 +10345,69 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-shadow: 0 0 12px rgba(255, 45, 45, 0.3);
 }
 
-/* Harmonized Evidence Callouts for both Antimetabolites & CNI */
+/* Separate Reveal Overlay Evidence Callouts (with solid border bar and outline) */
+.focal-evidence-callout {
+  position: relative;
+  padding: 0.45rem 0.85rem 0.45rem 1rem;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+  margin-top: 0.35rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.focal-evidence-callout.callout-antimetabolites {
+  background: linear-gradient(90deg, rgba(117, 7, 13, 0.42), rgba(66, 5, 9, 0.14));
+  border: 1px solid rgba(255, 77, 82, 0.2);
+  border-left: none;
+}
+
+.focal-evidence-callout.callout-antimetabolites::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.22rem;
+  background: var(--red);
+  box-shadow: 0 0 12px rgba(255, 45, 45, 0.4);
+}
+
+.focal-evidence-callout.callout-cni {
+  background: linear-gradient(90deg, rgba(78, 44, 153, 0.42), rgba(40, 20, 80, 0.14));
+  border: 1px solid rgba(181, 142, 255, 0.2);
+  border-left: none;
+}
+
+.focal-evidence-callout.callout-cni::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.22rem;
+  background: #b58eff;
+  box-shadow: 0 0 12px rgba(181, 142, 255, 0.4);
+}
+
+.focal-evidence-callout .evidence-badge-tag {
+  font: 800 clamp(0.56rem, 0.65vw, 0.76rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+}
+
+.focal-evidence-callout .harmonized-evidence-list li {
+  font-size: clamp(0.58rem, 0.66vw, 0.8rem);
+  line-height: 1.38;
+}
+
+.focal-evidence-callout .harmonized-evidence-list li b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Final Reveal Page Evidence Callouts (Clean, borderless, transparent) */
 .harmonized-evidence-callout {
   position: relative;
   padding: 0.15rem 0 0 0;

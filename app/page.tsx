@@ -3400,8 +3400,8 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Callout */}
-                        <div className="harmonized-evidence-callout callout-antimetabolites">
+                        {/* Evidence Callout in separate reveal overlay */}
+                        <div className="focal-evidence-callout callout-antimetabolites">
                           <span className="evidence-badge-tag tag-red">PRIOR EVIDENCE</span>
                           <ul className="harmonized-evidence-list">
                             <li>Broadly comparable efficacy across antimetabolites</li>
@@ -3454,12 +3454,12 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Callout */}
-                        <div className="harmonized-evidence-callout callout-cni">
+                        {/* Evidence Callout in separate reveal overlay */}
+                        <div className="focal-evidence-callout callout-cni">
                           <span className="evidence-badge-tag tag-violet">PRIOR EVIDENCE</span>
                           <ul className="harmonized-evidence-list">
-                            <li>Tacrolimus: mixed evidence</li>
-                            <li>Cyclosporine: Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
+                            <li><b>Tacrolimus:</b> mixed evidence</li>
+                            <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
                           </ul>
                         </div>
                       </div>
