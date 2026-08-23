@@ -11818,7 +11818,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .lim-block-left {
-  flex: 1.35;
+  flex: 1.4;
 }
 
 .lim-block-right {
@@ -11828,53 +11828,59 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .lim-sub1-steps-flex {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 0.9vw, 1rem);
+  gap: clamp(0.6rem, 1.2vw, 1.4rem);
   width: 100%;
 }
 
-.lim-sub1-step {
+.lim-sub1-step-col {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(0.4rem, 0.65vw, 0.75rem);
+  text-align: center;
+  gap: 0.15rem;
   flex: 1 1 0;
 }
 
-.lim-stat-badge {
-  font: 800 clamp(1.8rem, 2.5vw, 2.8rem) var(--font-geist-mono), monospace;
+.lim-stat-badge-large {
+  font: 800 clamp(2.2rem, 3.2vw, 3.8rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
-  line-height: 1;
-  flex: 0 0 auto;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
 }
 
-.lim-icon-wrap {
+.lim-icon-wrap-large {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
+  height: clamp(34px, 4.4vh, 44px);
 }
 
-.lim-sub1-step-text {
-  font-size: clamp(0.63rem, 0.71vw, 0.85rem);
+.lim-sub1-col-text {
+  font-size: clamp(0.62rem, 0.7vw, 0.84rem);
   color: #d0c7c3;
   line-height: 1.25;
+  text-align: center;
+  max-width: 190px;
 }
 
-.lim-sub1-step-text .red-bold {
+.lim-sub1-col-text .red-bold {
   color: #ff7175;
   font-weight: 700;
 }
 
 .lim-sub1-arrow {
-  font-size: clamp(0.85rem, 1vw, 1.2rem);
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
   color: rgba(255, 77, 82, 0.45);
   flex: 0 0 auto;
+  align-self: center;
 }
 
 .lim-implication-callout {
-  font-size: clamp(0.65rem, 0.73vw, 0.88rem);
+  font-size: clamp(0.64rem, 0.72vw, 0.86rem);
   color: #ff7175;
-  margin: 0.15rem 0 0;
+  margin: 0.2rem 0 0;
   line-height: 1.25;
+  text-align: left;
 }
 
 .lim-sub-divider {
