@@ -35,7 +35,7 @@ const chapters = [
   { id: "limitations-3", label: "Limitations 3" },
   { id: "limitations-4", label: "Limitations 4" },
   { id: "limitations-5", label: "Limitations 5" },
-  { id: "limitations-6", label: "Limitations 6" },
+  { id: "limitations-6", label: "Immunogenicity" },
   { id: "conclusion", label: "Conclusion" },
   { id: "outcomes-original", label: "Outcomes (original combined)" },
   { id: "statistics", label: "Statistical analysis" },
@@ -4138,20 +4138,172 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="limitations-6" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 32 — LIMITATIONS / IMMUNOGENICITY</p>
-            <h2>One unanswered<br /><em>antibody question.</em></h2>
-            <p className="lede">The study did not measure anti-adalimumab antibodies, leaving an important question about durability of response unresolved.</p>
+        <section id="limitations-6" className="scene discussion-scene discussion-immunogenicity-scene">
+          <div className="immuno-wide-container">
+            {/* TOP EDITORIAL HEADER */}
+            <div className="immuno-wide-header">
+              <div className="immuno-header-left">
+                <p className="eyebrow"><span /> 32 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="red-hook">SHOULD ADALIMUMAB BE USED ALONE?</p>
+                <h2>
+                  ADA worked as monotherapy.{" "}
+                  <span className="red-text" style={{ display: "inline" }}>
+                    But immunogenicity was never measured.
+                  </span>
+                </h2>
+              </div>
+            </div>
+
+            {/* MAIN VISUAL — ONE HORIZONTAL LOGIC CHAIN */}
+            <div className="immuno-full-canvas">
+              <div className="immuno-canvas-top-bar">
+                <span className="canvas-caption-label">HYPOTHESIZED IMMUNOGENICITY CASCADE · UNMEASURED IN TRIAL</span>
+              </div>
+
+              <div className="immuno-chain-wrap">
+                {/* Node 1: 78% */}
+                <div className="immuno-node node-baseline">
+                  <div className="node-metric-large">78%</div>
+                  <div className="node-label-group">
+                    <span className="node-sub">No immunosuppressive agent at baseline</span>
+                  </div>
+                </div>
+
+                {/* Arrow 1 */}
+                <div className="immuno-chain-arrow">
+                  <svg viewBox="0 0 50 14" fill="none" className="chain-arrow-svg">
+                    <line x1="2" y1="7" x2="42" y2="7" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.2" strokeDasharray="3 2" />
+                    <polygon points="40,4 47,7 40,10" fill="rgba(255, 255, 255, 0.45)" />
+                  </svg>
+                </div>
+
+                {/* Node 2: Assigned to ADA ALONE */}
+                <div className="immuno-node node-assigned">
+                  <div className="node-icon-wrap">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <circle cx="13" cy="7.5" r="3.2" stroke="#ff7175" strokeWidth="1.3" />
+                      <path d="M 7.5 19 C 7.5 15.2 10.2 13.8 13 13.8 C 15.8 13.8 18.5 15.2 18.5 19" stroke="#ff7175" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="6" cy="9.5" r="2.2" stroke="rgba(255, 113, 117, 0.45)" strokeWidth="1" />
+                      <path d="M 2 19 C 2 16.5 4 15.5 6.2 15.5" stroke="rgba(255, 113, 117, 0.45)" strokeWidth="1" strokeLinecap="round" />
+                      <circle cx="20" cy="9.5" r="2.2" stroke="rgba(255, 113, 117, 0.45)" strokeWidth="1" />
+                      <path d="M 24 19 C 24 16.5 22 15.5 19.8 15.5" stroke="rgba(255, 113, 117, 0.45)" strokeWidth="1" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="node-label-group">
+                    <span className="node-title red-accent-text">ADA ALONE</span>
+                    <span className="node-sub">within the adalimumab arm</span>
+                  </div>
+                </div>
+
+                {/* Arrow 2 */}
+                <div className="immuno-chain-arrow">
+                  <svg viewBox="0 0 50 14" fill="none" className="chain-arrow-svg">
+                    <line x1="2" y1="7" x2="42" y2="7" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.2" strokeDasharray="3 2" />
+                    <polygon points="40,4 47,7 40,10" fill="#ff4d52" />
+                  </svg>
+                </div>
+
+                {/* Node 3: DOMINANT FOCAL POINT (?) */}
+                <div className="immuno-node node-focal-question">
+                  <div className="focal-question-badge">
+                    <span className="focal-q-mark">?</span>
+                  </div>
+                  <div className="node-label-group">
+                    <span className="node-title focal-title">ANTI-ADALIMUMAB ANTIBODIES</span>
+                    <span className="node-sub focal-sub">Not measured</span>
+                  </div>
+                </div>
+
+                {/* Arrow 3 */}
+                <div className="immuno-chain-arrow">
+                  <svg viewBox="0 0 50 14" fill="none" className="chain-arrow-svg">
+                    <line x1="2" y1="7" x2="42" y2="7" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.2" strokeDasharray="3 2" />
+                    <polygon points="40,4 47,7 40,10" fill="rgba(255, 255, 255, 0.45)" />
+                  </svg>
+                </div>
+
+                {/* Node 4: ↓ ADA LEVEL */}
+                <div className="immuno-node node-level">
+                  <div className="node-icon-wrap">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <path d="M 13 3 L 21.5 6.8 V 13.5 C 21.5 18.5 17.8 22.2 13 23.5 C 8.2 22.2 4.5 18.5 4.5 13.5 V 6.8 Z" stroke="#a09591" strokeWidth="1.2" />
+                      <line x1="13" y1="8.5" x2="13" y2="17" stroke="#d0c7c3" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M 9.8 14.2 L 13 17.4 L 16.2 14.2" stroke="#d0c7c3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="node-label-group">
+                    <span className="node-title">↓ ADA LEVEL</span>
+                    <span className="node-sub">Potential for reduced adalimumab levels</span>
+                  </div>
+                </div>
+
+                {/* Arrow 4 */}
+                <div className="immuno-chain-arrow">
+                  <svg viewBox="0 0 50 14" fill="none" className="chain-arrow-svg">
+                    <line x1="2" y1="7" x2="42" y2="7" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.2" strokeDasharray="3 2" />
+                    <polygon points="40,4 47,7 40,10" fill="rgba(255, 255, 255, 0.45)" />
+                  </svg>
+                </div>
+
+                {/* Node 5: POSSIBLE LOSS OF EFFICACY */}
+                <div className="immuno-node node-efficacy">
+                  <div className="node-icon-wrap">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                      <path d="M 3 13 C 6 7.5 9.5 4.5 13 4.5 C 16.5 4.5 20 7.5 23 13 C 20 18.5 16.5 21.5 13 21.5 C 9.5 21.5 6 18.5 3 13 Z" stroke="#a09591" strokeWidth="1.2" />
+                      <circle cx="13" cy="13" r="3.2" stroke="#a09591" strokeWidth="1.1" />
+                      <line x1="5" y1="5" x2="21" y2="21" stroke="#ff7175" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="node-label-group">
+                    <span className="node-title">POSSIBLE LOSS OF EFFICACY</span>
+                    <span className="node-sub">Durability of response uncertain</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* LOWER SECTION — TWO QUIET EVIDENCE BLOCKS */}
+              <div className="immuno-evidence-grid">
+                {/* Left Block: Purple Accent */}
+                <div className="immuno-evidence-card purple-card">
+                  <div className="evidence-card-header">
+                    <span className="evidence-kicker purple-kicker">WHAT LATER CASE SERIES SUGGEST</span>
+                  </div>
+                  <p className="evidence-statement">
+                    Concomitant immunosuppression may reduce anti-adalimumab antibody formation.
+                  </p>
+                  <p className="evidence-subtext">
+                    The frequency and clinical importance in uveitis remain uncertain.
+                  </p>
+                  <span className="evidence-citation-tag">Evidence from case series only.[47–51]</span>
+                </div>
+
+                {/* Right Block: Red Accent */}
+                <div className="immuno-evidence-card red-card">
+                  <div className="evidence-card-header">
+                    <span className="evidence-kicker red-kicker">WHAT ADVISE COULD NOT TEST</span>
+                  </div>
+                  <p className="evidence-statement">
+                    Anti-adalimumab antibodies were not measured.
+                  </p>
+                  <p className="evidence-subtext">
+                    Blood specimens were not banked for later analysis.
+                  </p>
+                  <span className="evidence-citation-tag">ADVISE trial limitation</span>
+                </div>
+              </div>
+
+              {/* BOTTOM TAKEAWAY */}
+              <div className="immuno-bottom-takeaway">
+                <div className="takeaway-badge">
+                  <span className="takeaway-kicker">UNRESOLVED</span>
+                </div>
+                <p className="takeaway-statement">
+                  Whether concomitant immunosuppression should be used to limit ADA immunogenicity remains unknown.
+                </p>
+              </div>
+            </div>
+
           </div>
-          <div className="limitation-visual visual-antibody" aria-hidden="true"><div className="visual-label">UNMEASURED IMMUNOGENICITY</div><div className="ada-molecule"><b>ADA</b><i /><i /><i /><i /></div><div className="antibody-note"><strong>78%</strong><span>NO BASELINE<br />IMMUNOSUPPRESSION</span></div><p>ANTIBODIES NOT MEASURED · NO SAMPLES BANKED</p></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / POST-TRIAL EVIDENCE</span><strong>Anti-adalimumab antibodies can matter</strong><p>Case series in uveitis have since described anti-adalimumab antibodies, which may lower circulating drug levels and contribute to loss of efficacy.</p><i /></article>
-            <article className="signal-card"><span>02 / MONOTHERAPY CONTEXT</span><strong>Most began without IMT</strong><p>At baseline, 78% of participants were not receiving immunosuppression. In the ADA arm, these participants received adalimumab alone.</p><i /></article>
-            <article className="signal-card"><span>03 / COMBINATION THERAPY</span><strong>A second agent may help</strong><p>Several case series suggest a lower occurrence of anti-adalimumab antibodies when a second immunosuppressive agent is used, but this remains unresolved.</p><i /></article>
-            <article className="signal-card"><span>04 / DATA GAP</span><strong>Not measured or banked</strong><p>ADVISE neither measured anti-adalimumab antibodies nor banked blood specimens for later testing. Additional data are needed before changing practice.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">Whether adalimumab monotherapy should be minimized to reduce immunogenicity is an important question for future uveitis studies.</p>
         </section>
 
         <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
