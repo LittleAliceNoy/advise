@@ -3905,13 +3905,23 @@ export default function Home() {
                     <text x="25" y="44" fill="#ff7175" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       ADALIMUMAB
                     </text>
-                    {/* Clean continuous treatment track */}
-                    <line x1="165" y1="40" x2="915" y2="40" stroke="url(#adaTrackGradClean)" strokeWidth="3.2" strokeLinecap="round" />
+                    {/* Baseline track line */}
+                    <line x1="165" y1="40" x2="915" y2="40" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
+                    {/* Participant dot stream */}
+                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
+                      <circle
+                        key={`ada-dot-${i}`}
+                        cx={cx}
+                        cy={40}
+                        r={3.4}
+                        fill={i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
+                      />
+                    ))}
                     
                     {/* Near the beginning: 1 ADA dropout */}
-                    <path d="M 215,40 Q 222,58 240,60" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="240" cy="60" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
-                    <text x="250" y="63.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                    <path d="M 229,40 Q 235,58 248,60" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="248" cy="60" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                    <text x="258" y="63.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                       1 ADA dropout
                     </text>
                   </g>
@@ -3921,16 +3931,29 @@ export default function Home() {
                     <text x="25" y="104" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       CID (COMPARATOR)
                     </text>
-                    {/* Clean continuous treatment track */}
-                    <line x1="165" y1="100" x2="915" y2="100" stroke="url(#cidTrackGradClean)" strokeWidth="3.2" strokeLinecap="round" />
+                    {/* Baseline track line */}
+                    <line x1="165" y1="100" x2="915" y2="100" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
+                    {/* Participant dot stream */}
+                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
+                      const isDropout = [2, 3, 4].includes(i);
+                      return (
+                        <circle
+                          key={`cid-dot-${i}`}
+                          cx={cx}
+                          cy={100}
+                          r={3.4}
+                          fill={isDropout ? "rgba(181,142,255,0.25)" : "#b58eff"}
+                        />
+                      );
+                    })}
 
                     {/* OBSERVATION 1: Near the beginning — Immediately after randomization (3 CID vs 1 ADA) */}
-                    <path d="M 215,100 Q 222,122 240,124" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="240" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="250" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="260" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <path d="M 229,100 Q 235,122 248,124" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="248" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="257" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="266" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
 
-                    <g transform="translate(274, 112)">
+                    <g transform="translate(278, 112)">
                       <rect x="0" y="0" width="220" height="24" fill="#110a1c" stroke="rgba(181,142,255,0.45)" rx="2" />
                       <text x="8" y="10.5" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
                         IMMEDIATELY AFTER RANDOMIZATION
