@@ -10025,7 +10025,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   cursor: pointer;
   outline: none;
   transition: filter 0.3s ease, transform 0.3s ease;
-  transform-origin: 200px 185px;
+  transform-origin: 250px 185px;
 }
 
 .donut-clickable-segment:hover circle {
