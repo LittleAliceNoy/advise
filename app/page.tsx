@@ -3142,7 +3142,6 @@ export default function Home() {
                     <div className="focal-card">
                       <div className="focal-title-row">
                         <span className="focal-badge">ANTIMETABOLITES · 79%</span>
-                        <span className="focal-hold-timer">AUTO-RETURNING TO PIE</span>
                       </div>
 
                       <div className="focal-drugs-list">
@@ -3171,7 +3170,6 @@ export default function Home() {
                     <div className="focal-card card-cni">
                       <div className="focal-title-row">
                         <span className="focal-badge badge-violet">CALCINEURIN INHIBITORS · 21%</span>
-                        <span className="focal-hold-timer">AUTO-RETURNING TO PIE</span>
                       </div>
 
                       <div className="cni-evidence-grid">
