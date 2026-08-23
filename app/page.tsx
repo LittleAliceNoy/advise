@@ -3002,12 +3002,6 @@ export default function Home() {
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
-
-              <div className="comp-investigation-statement">
-                <div className="investigation-rule" />
-                <h4>THE QUESTION IS NOT HETEROGENEITY ALONE.</h4>
-                <p>Prior evidence suggested broadly similar efficacy among antimetabolites, but possibly lower efficacy with cyclosporine; evidence for tacrolimus was mixed.</p>
-              </div>
             </div>
 
             {/* RIGHT COLUMN - Fixed viewport with interactive glowing pie and animated focal canvas */}
