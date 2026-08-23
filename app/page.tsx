@@ -455,7 +455,6 @@ export default function Home() {
   const [branchStep, setBranchStep] = useState(0);
   const [inspected79, setInspected79] = useState(false);
   const [inspected21, setInspected21] = useState(false);
-  const isInspectingRef = useRef(false);
   const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
 
   const clearInspectTimers = () => {
@@ -463,39 +462,34 @@ export default function Home() {
     inspectTimerRef.current = [];
   };
 
-  const inspectBranch = (branch: 'antimetabolites' | 'cni') => {
-    if (isInspectingRef.current) return;
+  const closeInspection = () => {
+    if (activeBranch === 'antimetabolites') {
+      setInspected79(true);
+    } else if (activeBranch === 'cni') {
+      setInspected21(true);
+    }
     clearInspectTimers();
-    isInspectingRef.current = true;
+    setActiveBranch('idle');
+    setBranchStep(0);
+  };
+
+  const inspectBranch = (branch: 'antimetabolites' | 'cni') => {
+    clearInspectTimers();
     setActiveBranch(branch);
     setBranchStep(1);
 
     if (branch === 'antimetabolites') {
-      const t1 = setTimeout(() => setBranchStep(2), 250);
-      const t2 = setTimeout(() => setBranchStep(3), 450);
-      const t3 = setTimeout(() => setBranchStep(4), 650);
-      const t4 = setTimeout(() => setBranchStep(5), 900);
-      const t5 = setTimeout(() => {
-        setActiveBranch('idle');
-        setBranchStep(0);
-        setInspected79(true);
-        setTimeout(() => {
-          isInspectingRef.current = false;
-        }, 650);
-      }, 3800);
-      inspectTimerRef.current = [t1, t2, t3, t4, t5];
+      setInspected79(true);
+      const t1 = setTimeout(() => setBranchStep(2), 150);
+      const t2 = setTimeout(() => setBranchStep(3), 300);
+      const t3 = setTimeout(() => setBranchStep(4), 450);
+      const t4 = setTimeout(() => setBranchStep(5), 650);
+      inspectTimerRef.current = [t1, t2, t3, t4];
     } else {
-      const t1 = setTimeout(() => setBranchStep(2), 300);
-      const t2 = setTimeout(() => setBranchStep(3), 650);
-      const t3 = setTimeout(() => {
-        setActiveBranch('idle');
-        setBranchStep(0);
-        setInspected21(true);
-        setTimeout(() => {
-          isInspectingRef.current = false;
-        }, 650);
-      }, 3700);
-      inspectTimerRef.current = [t1, t2, t3];
+      setInspected21(true);
+      const t1 = setTimeout(() => setBranchStep(2), 200);
+      const t2 = setTimeout(() => setBranchStep(3), 450);
+      inspectTimerRef.current = [t1, t2];
     }
   };
 
@@ -3136,12 +3130,20 @@ export default function Home() {
                     </svg>
                   </div>
 
-                  {/* 3. PROGRESSIVE INSPECTION OVERLAYS */}
+                  {/* 3. PROGRESSIVE INSPECTION OVERLAYS (CLICK TO RETURN) */}
                   {/* Antimetabolites Inspection Overlay */}
-                  <div className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}>
-                    <div className="focal-card">
+                  <div
+                    className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}
+                    onClick={closeInspection}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <div className="focal-card" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
                         <span className="focal-badge">ANTIMETABOLITES · 79%</span>
+                        <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
+                          <span>✕</span>
+                        </button>
                       </div>
 
                       <div className="focal-drugs-list">
@@ -3166,10 +3168,18 @@ export default function Home() {
                   </div>
 
                   {/* Calcineurin Inhibitors Inspection Overlay */}
-                  <div className={`inspect-focal-overlay overlay-cni ${activeBranch === 'cni' ? 'is-active' : ''}`}>
-                    <div className="focal-card card-cni">
+                  <div
+                    className={`inspect-focal-overlay overlay-cni ${activeBranch === 'cni' ? 'is-active' : ''}`}
+                    onClick={closeInspection}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <div className="focal-card card-cni" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
                         <span className="focal-badge badge-violet">CALCINEURIN INHIBITORS · 21%</span>
+                        <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
+                          <span>✕</span>
+                        </button>
                       </div>
 
                       <div className="cni-evidence-grid">
