@@ -3085,7 +3085,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .flow-strata-arm>strong { color:#eee9e5; font:700 clamp(.54rem,.65vw,.78rem) ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.1em; }
 .flow-strata-arm.ada-arm>strong { color:#ff8085; }
 .flow-strata-arm.cid-arm>strong { color:#bfa6ff; }
-.flow-strata-stack { width:100%; flex:1; min-height:clamp(13rem,22vh,19rem); display:flex; flex-direction:column; overflow:hidden; border-radius:4px; background:rgba(255,255,255,.06); box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 4px 16px rgba(0,0,0,.45); }
+.flow-strata-stack { width:100%; flex:1; min-height:clamp(13rem,22vh,19rem); display:flex; flex-direction:column; overflow:hidden; border-radius:0; background:rgba(255,255,255,.06); box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 4px 16px rgba(0,0,0,.45); }
 .flow-strata-stack i { position:relative; display:flex; align-items:center; justify-content:center; min-height:.9rem; border-bottom:1px solid rgba(5,5,5,.5); font-style:normal; }
 .flow-strata-stack i:last-child { border-bottom:0; }
 .flow-strata-stack i b { color:#fff; font:750 clamp(.58rem,.7vw,.86rem) ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; text-shadow:0 1px 3px rgba(0,0,0,.85); }
