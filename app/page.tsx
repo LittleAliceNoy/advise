@@ -3116,40 +3116,27 @@ export default function Home() {
                       <text x="230" y="191" textAnchor="middle" fill="#8c827e" fontSize="7.8" fontFamily="var(--font-geist-mono)" letterSpacing="0.06em">2 STRATEGIES</text>
                     </svg>
 
-                    {/* Segment Callout Card 79% (Left / Bottom) */}
+                    {/* Clean Minimal Floating Labels (No Square Cards) */}
                     <div
-                      className={`pie-callout-panel callout-left-79 ${activeBranch === 'antimetabolites' ? 'panel-focused' : ''} ${inspected79 ? 'panel-done' : ''}`}
+                      className={`pie-floating-label label-antimetabolites ${activeBranch === 'antimetabolites' ? 'label-active' : ''}`}
                       onClick={() => inspectBranch('antimetabolites')}
+                      role="button"
+                      tabIndex={0}
                     >
-                      <div className="callout-header-row">
-                        <span className="callout-hero-pct">79%</span>
-                        <div className="callout-text-stack">
-                          <strong>ANTIMETABOLITES</strong>
-                          <small>dominant strategy · 87 pts</small>
-                        </div>
-                      </div>
-                      <button className="callout-inspect-action" tabIndex={-1}>
-                        <span className="pulse-dot dot-red" />
-                        <span>CLICK TO INSPECT</span>
-                      </button>
+                      <span className="pulse-dot dot-red" />
+                      <span className="label-name">ANTIMETABOLITES</span>
+                      <span className="label-val val-red">79%</span>
                     </div>
 
-                    {/* Segment Callout Card 21% (Top / Right) */}
                     <div
-                      className={`pie-callout-panel callout-right-21 ${activeBranch === 'cni' ? 'panel-focused' : ''} ${inspected21 ? 'panel-done' : ''}`}
+                      className={`pie-floating-label label-cni ${activeBranch === 'cni' ? 'label-active' : ''}`}
                       onClick={() => inspectBranch('cni')}
+                      role="button"
+                      tabIndex={0}
                     >
-                      <div className="callout-header-row">
-                        <span className="callout-hero-pct pct-violet">21%</span>
-                        <div className="callout-text-stack">
-                          <strong className="title-violet">CALCINEURIN INHIBITORS</strong>
-                          <small className="sub-violet">minority exposure · 23 pts</small>
-                        </div>
-                      </div>
-                      <button className="callout-inspect-action action-violet" tabIndex={-1}>
-                        <span className="pulse-dot dot-violet" />
-                        <span>CLICK TO INSPECT</span>
-                      </button>
+                      <span className="pulse-dot dot-violet" />
+                      <span className="label-name name-violet">CALCINEURIN INHIBITORS</span>
+                      <span className="label-val val-violet">21%</span>
                     </div>
                   </div>
 

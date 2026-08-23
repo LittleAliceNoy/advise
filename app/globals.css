@@ -10040,126 +10040,73 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   filter: drop-shadow(0 0 16px rgba(181, 142, 255, 0.85));
 }
 
-/* Pie Callout Panels */
-.pie-callout-panel {
+/* Minimal Floating Labels (No Square Cards) */
+.pie-floating-label {
   position: absolute;
-  background: rgba(14, 14, 18, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 3px;
-  padding: clamp(0.4rem, 0.65vh, 0.65rem) clamp(0.55rem, 0.8vw, 0.85rem);
-  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  transition: all 0.35s ease;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
   z-index: 6;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  user-select: none;
 }
 
-.pie-callout-panel:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+.pie-floating-label:hover {
+  transform: scale(1.04);
 }
 
-.callout-left-79 {
-  left: 2%;
-  bottom: 8%;
-  border-left: 3px solid #ff4d52;
+.label-antimetabolites {
+  left: 3%;
+  bottom: 12%;
 }
 
-.callout-left-79:hover {
-  border-left-color: #ff7175;
-  box-shadow: 0 0 25px rgba(255, 77, 82, 0.25);
+.label-cni {
+  right: 3%;
+  top: 10%;
 }
 
-.callout-right-21 {
-  right: 2%;
-  top: 6%;
-  border-right: 3px solid #b58eff;
-}
-
-.callout-right-21:hover {
-  border-right-color: #c7adff;
-  box-shadow: 0 0 25px rgba(181, 142, 255, 0.25);
-}
-
-.callout-header-row {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.callout-hero-pct {
-  font: 800 clamp(1.4rem, 1.8vw, 2.2rem) var(--font-geist-mono), monospace;
+.pie-floating-label .label-name {
+  font: 700 clamp(0.68rem, 0.76vw, 0.88rem) var(--font-geist-mono), monospace;
   color: #fff;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.callout-hero-pct.pct-violet {
-  color: #b58eff;
-}
-
-.callout-text-stack {
-  display: flex;
-  flex-direction: column;
-}
-
-.callout-text-stack strong {
-  font: 700 clamp(0.6rem, 0.68vw, 0.8rem) var(--font-geist-mono), monospace;
-  color: #fff;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.callout-text-stack .title-violet {
-  color: #fff;
-}
-
-.callout-text-stack small {
-  font: 550 clamp(0.44rem, 0.5vw, 0.6rem) var(--font-geist-mono), monospace;
-  color: #a09591;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
-.callout-text-stack .sub-violet {
-  color: #c7adff;
+.pie-floating-label:hover .label-name {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.callout-inspect-action {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eee;
-  font: 600 clamp(0.44rem, 0.5vw, 0.6rem) var(--font-geist-mono), monospace;
-  letter-spacing: 0.06em;
-  padding: 0.18rem 0.45rem;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  cursor: pointer;
+.pie-floating-label .label-val {
+  font: 800 clamp(1.05rem, 1.3vw, 1.55rem) var(--font-geist-mono), monospace;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
-.callout-inspect-action.action-violet {
-  background: rgba(181, 142, 255, 0.08);
-  border-color: rgba(181, 142, 255, 0.25);
-  color: #d8c9ff;
+.pie-floating-label .val-red {
+  color: #ff4d52;
+  text-shadow: 0 0 12px rgba(255, 77, 82, 0.5);
+}
+
+.pie-floating-label .val-violet {
+  color: #b58eff;
+  text-shadow: 0 0 12px rgba(181, 142, 255, 0.5);
 }
 
 .pulse-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--red);
-  box-shadow: 0 0 6px var(--red);
+  box-shadow: 0 0 8px var(--red);
   animation: pulseDot 2s infinite;
 }
 
 .pulse-dot.dot-violet {
   background: #b58eff;
-  box-shadow: 0 0 6px #b58eff;
+  box-shadow: 0 0 8px #b58eff;
 }
 
 @keyframes pulseDot {
