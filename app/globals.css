@@ -9633,26 +9633,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .lim-bias-unidirectional-section {
   display: flex;
   flex-direction: column;
-  margin-bottom: clamp(0.7rem, 1.3vh, 1.4rem);
+  flex: 1.45;
+  margin-bottom: clamp(0.4rem, 0.8vh, 0.8rem);
+  justify-content: flex-start;
 }
 
 .lim-three-cards-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(0.5rem, 0.8vw, 0.95rem);
+  gap: clamp(0.6rem, 0.9vw, 1.1rem);
+  flex: 1;
 }
 
 .lim-bias-card {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
-  border-radius: 3px;
-  padding: clamp(0.55rem, 0.9vh, 0.8rem) clamp(0.55rem, 0.75vw, 0.85rem) clamp(0.7rem, 1.1vh, 1rem);
+  border-radius: 4px;
+  padding: clamp(0.75rem, 1.3vh, 1.25rem) clamp(0.65rem, 0.9vw, 1rem) clamp(0.85rem, 1.4vh, 1.35rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-between;
-  min-height: clamp(135px, 17vh, 165px);
+  height: 100%;
+  box-sizing: border-box;
+  min-height: clamp(170px, 22vh, 225px);
 }
 
 .lim-bias-card.card-ada {
@@ -9669,21 +9674,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.15rem;
 }
 
 .lim-bias-card .card-corner-badge {
-  font: 500 clamp(0.44rem, 0.48vw, 0.52rem) var(--font-geist-mono), monospace;
-  font-size: 0.48rem;
+  font: 500 clamp(0.46rem, 0.5vw, 0.56rem) var(--font-geist-mono), monospace;
+  font-size: 0.5rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 0.14rem;
-  padding: 0.04rem 0.2rem;
+  gap: 0.18rem;
+  padding: 0.06rem 0.28rem;
   border-radius: 2px;
   line-height: 1;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .lim-bias-card .card-corner-badge.badge-ada {
@@ -9699,32 +9704,32 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .lim-bias-card .card-top-title {
-  font: 600 clamp(0.6rem, 0.68vw, 0.76rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.68rem, 0.78vw, 0.92rem) var(--font-geist-mono), monospace;
   color: #fff;
   letter-spacing: 0.02em;
   line-height: 1.25;
-  margin: 0;
+  margin: 0 0 0.15rem;
 }
 
 .lim-bias-card .card-big-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clamp(26px, 3.5vh, 34px);
-  margin: clamp(0.12rem, 0.25vh, 0.3rem) 0;
+  height: clamp(32px, 4.2vh, 42px);
+  margin: clamp(0.2rem, 0.4vh, 0.45rem) 0;
 }
 
 .lim-bias-card .card-details {
   color: #a09591;
-  font-size: clamp(0.6rem, 0.66vw, 0.74rem);
-  line-height: 1.35;
+  font-size: clamp(0.64rem, 0.72vw, 0.82rem);
+  line-height: 1.4;
   margin: 0;
   max-width: 95%;
 }
 
-/* SECTION 2: Safeguards (Occupies more vertical space, shield icons, thin lines) */
+/* SECTION 2: Safeguards (Occupies balanced vertical space, shield icons, thin lines) */
 .lim-safeguards-section {
-  flex: 1.25;
+  flex: 0.95;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9741,7 +9746,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: flex-start;
   gap: clamp(0.6rem, 0.8vw, 0.95rem);
-  padding: clamp(0.35rem, 0.55vh, 0.6rem) 0;
+  padding: clamp(0.25rem, 0.4vh, 0.45rem) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
