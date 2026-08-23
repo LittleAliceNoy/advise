@@ -4045,31 +4045,38 @@ export default function Home() {
                 </div>
 
                 <div className="robustness-strip-body">
-                  {/* Left: 3 Thin Parallel Analysis Lines */}
-                  <div className="robustness-parallel-lines">
-                    <div className="robustness-analysis-row">
-                      <span className="analysis-label">
+                  {/* Left: 3 Analysis rows + Merging Arrow */}
+                  <div className="robustness-merge-group">
+                    <div className="robustness-analysis-labels">
+                      <div className="robustness-analysis-item">
                         <strong>ANALYSIS 01</strong> — Alternative missing-data assumption
-                      </span>
-                      <span className="analysis-rule" />
-                      <span className="analysis-endpoint">CONSISTENT</span>
-                    </div>
-
-                    <div className="robustness-analysis-row">
-                      <span className="analysis-label">
+                      </div>
+                      <div className="robustness-analysis-item">
                         <strong>ANALYSIS 02</strong> — Alternative missing-data assumption
-                      </span>
-                      <span className="analysis-rule" />
-                      <span className="analysis-endpoint">CONSISTENT</span>
+                      </div>
+                      <div className="robustness-analysis-item">
+                        <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
+                      </div>
                     </div>
 
-                    <div className="robustness-analysis-row">
-                      <span className="analysis-label">
-                        <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
-                      </span>
-                      <span className="analysis-rule" />
-                      <span className="analysis-endpoint">CONSISTENT</span>
-                    </div>
+                    <svg className="robustness-merge-svg" viewBox="0 0 160 54" fill="none">
+                      <defs>
+                        <linearGradient id="robustMergeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
+                          <stop offset="65%" stopColor="rgba(255,77,82,0.55)" />
+                          <stop offset="100%" stopColor="#ff4d52" />
+                        </linearGradient>
+                      </defs>
+                      {/* Top line curving down to middle */}
+                      <path d="M 0,9 L 70,9 C 105,9 115,27 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      {/* Center straight line */}
+                      <path d="M 0,27 L 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      {/* Bottom line curving up to middle */}
+                      <path d="M 0,45 L 70,45 C 105,45 115,27 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      {/* Merged arrow pointer */}
+                      <line x1="135" y1="27" x2="148" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                      <polygon points="146,23 154,27 146,31" fill="#ff4d52" />
+                    </svg>
                   </div>
 
                   {/* Far Right: Restrained Conclusion Block */}
