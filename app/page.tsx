@@ -872,7 +872,7 @@ export default function Home() {
               <div className="ethics-mtqac-block">
                 <div className="mtqac-header">
                   <span className="mtqac-title">QUALITY ASSURANCE · MTQAC</span>
-                  <p className="mtqac-intro">3 independent uveitis experts not involved in participant management provided centralized clinical quality assurance.</p>
+                  <p className="mtqac-intro">3 independent uveitis experts provided centralized review throughout the trial.</p>
                 </div>
 
                 <div className="mtqac-workflow">
