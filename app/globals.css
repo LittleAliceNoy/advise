@@ -11419,12 +11419,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .robustness-analysis-footnote {
-  font-size: clamp(0.48rem, 0.54vw, 0.64rem);
+  font-size: clamp(0.5rem, 0.56vw, 0.68rem);
   color: #736b67;
   font-family: var(--font-geist-mono), monospace;
   font-style: italic;
-  margin-top: 0.1rem;
-  white-space: nowrap;
+  margin-top: clamp(0.2rem, 0.35vh, 0.4rem);
+  padding-left: 0.1rem;
 }
 
 .robustness-merge-svg {

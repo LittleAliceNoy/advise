@@ -4045,7 +4045,7 @@ export default function Home() {
                 </div>
 
                 <div className="robustness-strip-body">
-                  {/* Left: 3 Analysis rows + Merging Arrow + Ellipsis & Footnote */}
+                  {/* Left: 3 Analysis rows + Merging Arrow + Ellipsis */}
                   <div className="robustness-merge-group">
                     <div className="robustness-analysis-labels">
                       <div className="robustness-analysis-item">
@@ -4058,30 +4058,27 @@ export default function Home() {
                         <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
                       </div>
                       <div className="robustness-analysis-ellipsis">
-                        <span>.</span><span>.</span><span>.</span>
-                      </div>
-                      <div className="robustness-analysis-footnote">
-                        *Exact number and specific analysis techniques not specified by the authors.
+                        . . .
                       </div>
                     </div>
 
-                    <svg className="robustness-merge-svg" viewBox="0 0 1000 54" preserveAspectRatio="none" fill="none">
+                    <svg className="robustness-merge-svg" viewBox="0 0 1000 70" preserveAspectRatio="none" fill="none">
                       <defs>
                         <linearGradient id="robustMergeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
-                          <stop offset="70%" stopColor="rgba(255,77,82,0.55)" />
+                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.4)" />
+                          <stop offset="60%" stopColor="rgba(255, 77, 82, 0.75)" />
                           <stop offset="100%" stopColor="#ff4d52" />
                         </linearGradient>
                       </defs>
-                      {/* Top line curving down to middle */}
-                      <path d="M 0,9 L 880,9 C 930,9 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
-                      {/* Center straight line from Analysis 02 to arrow head */}
-                      <path d="M 0,27 L 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
-                      {/* Bottom line curving up to middle */}
-                      <path d="M 0,45 L 880,45 C 930,45 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
+                      {/* Top line curving down from Analysis 01 */}
+                      <path d="M 0,11 L 820,11 C 900,11 940,31 975,31" stroke="url(#robustMergeGrad)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+                      {/* Center straight line from Analysis 02 directly to arrow head */}
+                      <path d="M 0,31 L 975,31" stroke="url(#robustMergeGrad)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+                      {/* Bottom line curving up from Analysis 03 */}
+                      <path d="M 0,51 L 820,51 C 900,51 940,31 975,31" stroke="url(#robustMergeGrad)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
                       {/* Merged arrow pointer */}
-                      <line x1="975" y1="27" x2="993" y2="27" stroke="#ff4d52" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
-                      <polygon points="988,21 1000,27 988,33" fill="#ff4d52" />
+                      <line x1="975" y1="31" x2="993" y2="31" stroke="#ff4d52" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                      <polygon points="988,25 1000,31 988,37" fill="#ff4d52" />
                     </svg>
                   </div>
 
@@ -4092,6 +4089,11 @@ export default function Home() {
                       across different missing-data assumptions
                     </p>
                   </div>
+                </div>
+
+                {/* Footnote moved outside the analysis box */}
+                <div className="robustness-analysis-footnote">
+                  *Exact number and specific analysis techniques not specified by the authors.
                 </div>
               </div>
 
