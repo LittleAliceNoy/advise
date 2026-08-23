@@ -3884,7 +3884,6 @@ export default function Home() {
             <div className="attrition-full-canvas">
               <div className="attrition-canvas-top-bar">
                 <span className="canvas-caption-label">PARALLEL PARTICIPANT RETENTION &amp; ATTRITION DYNAMICS</span>
-                <span className="canvas-time-legend">M0 RANDOMIZATION ➔ M6 PRIMARY OUTCOME ➔ M12 TRIAL END</span>
               </div>
 
               {/* DOMINANT WIDE PARTICIPANT FLOW SVG */}

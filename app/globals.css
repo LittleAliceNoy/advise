@@ -11229,13 +11229,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-transform: uppercase;
 }
 
-.canvas-time-legend {
-  font: 700 clamp(0.46rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
-  color: #a09591;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 /* SVG Wrap */
 .attrition-svg-wide-wrap {
   width: 100%;
