@@ -450,9 +450,58 @@ export default function Home() {
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
   const [showCataractWarning, setShowCataractWarning] = useState(false);
 
-  const [comparatorZoomStage, setComparatorZoomStage] = useState(0);
-  const compTouchStartY = useRef<number | null>(null);
-  const compTouchAdvancedAt = useRef(0);
+  // Slide 29 Interactive CID Donut & Inspection States
+  const [activeBranch, setActiveBranch] = useState<'idle' | 'antimetabolites' | 'cni'>('idle');
+  const [branchStep, setBranchStep] = useState(0);
+  const [inspected79, setInspected79] = useState(false);
+  const [inspected21, setInspected21] = useState(false);
+  const isInspectingRef = useRef(false);
+  const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
+
+  const clearInspectTimers = () => {
+    inspectTimerRef.current.forEach((t) => clearTimeout(t));
+    inspectTimerRef.current = [];
+  };
+
+  const inspectBranch = (branch: 'antimetabolites' | 'cni') => {
+    if (isInspectingRef.current) return;
+    clearInspectTimers();
+    isInspectingRef.current = true;
+    setActiveBranch(branch);
+    setBranchStep(1);
+
+    if (branch === 'antimetabolites') {
+      const t1 = setTimeout(() => setBranchStep(2), 250);
+      const t2 = setTimeout(() => setBranchStep(3), 450);
+      const t3 = setTimeout(() => setBranchStep(4), 650);
+      const t4 = setTimeout(() => setBranchStep(5), 900);
+      const t5 = setTimeout(() => {
+        setActiveBranch('idle');
+        setBranchStep(0);
+        setInspected79(true);
+        setTimeout(() => {
+          isInspectingRef.current = false;
+        }, 650);
+      }, 3800);
+      inspectTimerRef.current = [t1, t2, t3, t4, t5];
+    } else {
+      const t1 = setTimeout(() => setBranchStep(2), 300);
+      const t2 = setTimeout(() => setBranchStep(3), 650);
+      const t3 = setTimeout(() => {
+        setActiveBranch('idle');
+        setBranchStep(0);
+        setInspected21(true);
+        setTimeout(() => {
+          isInspectingRef.current = false;
+        }, 650);
+      }, 3700);
+      inspectTimerRef.current = [t1, t2, t3];
+    }
+  };
+
+  useEffect(() => {
+    return () => clearInspectTimers();
+  }, []);
 
   const goTo = (index: number) => {
     document.getElementById(chapters[index]?.id)?.scrollIntoView({ behavior: "smooth" });
@@ -480,20 +529,10 @@ export default function Home() {
 
     const onKey = (event: KeyboardEvent) => {
       if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(event.key)) {
-        if (chapters[active]?.id === "limitations-2" && comparatorZoomStage < 3) {
-          event.preventDefault();
-          setComparatorZoomStage((s) => s + 1);
-          return;
-        }
         event.preventDefault();
         goTo(Math.min(active + 1, chapters.length - 1));
       }
       if (["ArrowUp", "ArrowLeft", "PageUp"].includes(event.key)) {
-        if (chapters[active]?.id === "limitations-2" && comparatorZoomStage > 0) {
-          event.preventDefault();
-          setComparatorZoomStage((s) => s - 1);
-          return;
-        }
         event.preventDefault();
         goTo(Math.max(active - 1, 0));
       }
@@ -504,44 +543,7 @@ export default function Home() {
       deck.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", onKey);
     };
-  }, [active, comparatorZoomStage]);
-
-  useEffect(() => {
-    if (chapters[active]?.id !== "limitations-2") {
-      setComparatorZoomStage(0);
-    }
   }, [active]);
-
-  const advanceComparatorStory = () => {
-    setComparatorZoomStage((current) => (current < 3 ? current + 1 : 0));
-  };
-
-  const onCompTouchStart = (event: TouchEvent<HTMLElement>) => {
-    compTouchStartY.current = event.touches[0]?.clientY ?? null;
-  };
-
-  const onCompTouchEnd = (event: TouchEvent<HTMLElement>) => {
-    const startY = compTouchStartY.current;
-    const endY = event.changedTouches[0]?.clientY;
-    compTouchStartY.current = null;
-    if (startY === null || endY === undefined) return;
-    const diff = startY - endY;
-    if (Math.abs(diff) < 42) return;
-    if (diff > 0 && comparatorZoomStage < 3) {
-      event.preventDefault();
-      compTouchAdvancedAt.current = Date.now();
-      setComparatorZoomStage((s) => Math.min(s + 1, 3));
-    } else if (diff < 0 && comparatorZoomStage > 0) {
-      event.preventDefault();
-      compTouchAdvancedAt.current = Date.now();
-      setComparatorZoomStage((s) => Math.max(s - 1, 0));
-    }
-  };
-
-  const onCompClick = () => {
-    if (Date.now() - compTouchAdvancedAt.current < 500) return;
-    advanceComparatorStory();
-  };
 
   useEffect(() => {
     if (chapters[active]?.id !== "results") return;
@@ -3005,10 +3007,7 @@ export default function Home() {
 
         <section
           id="limitations-2"
-          className={`scene discussion-comparator-scene comp-stage-${comparatorZoomStage}`}
-          onClick={onCompClick}
-          onTouchStart={onCompTouchStart}
-          onTouchEnd={onCompTouchEnd}
+          className={`scene discussion-comparator-scene branch-state-${activeBranch} ${inspected79 && inspected21 ? 'both-inspected' : ''}`}
         >
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
@@ -3025,143 +3024,242 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN - Fixed-size camera frame with internal animated canvas */}
+            {/* RIGHT COLUMN - Fixed viewport with interactive glowing pie and animated focal canvas */}
             <div className="adv-right-col comp-anatomy-column">
               <div className="comp-viewport-frame">
-                <div className="comp-anatomy-canvas">
+                
+                {/* 1. TOP TITLE BAR */}
+                <div className="cid-pie-header-bar">
+                  <div className="pie-header-left">
+                    <span className="cid-pill">CID</span>
+                    <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                  </div>
+                  <span className="cid-total-n">N = 113</span>
+                </div>
+
+                {/* 2. MAIN INTERACTIVE DONUT & CAMERA CANVAS */}
+                <div className={`cid-interactive-canvas focus-${activeBranch}`}>
                   
-                  {/* 1. ROOT STRATEGY STRIP */}
-                  <div className="anatomy-root-bar">
-                    <div className="anatomy-root-tag">
-                      <span className="cid-pill">CID</span>
-                      <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                  {/* Glowing SVG Donut Chart */}
+                  <div className="cid-donut-stage">
+                    <svg viewBox="0 0 460 330" className="cid-luminous-donut-svg">
+                      <defs>
+                        <linearGradient id="pie79Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#401416" />
+                          <stop offset="50%" stopColor="#c52830" />
+                          <stop offset="100%" stopColor="#ff4d52" />
+                        </linearGradient>
+                        <linearGradient id="pie21Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#4e2c99" />
+                          <stop offset="50%" stopColor="#8d64f7" />
+                          <stop offset="100%" stopColor="#b58eff" />
+                        </linearGradient>
+                        <filter id="glow79" x="-20%" y="-20%" width="140%" height="140%">
+                          <feGaussianBlur stdDeviation="4" result="blur" />
+                          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow21" x="-20%" y="-20%" width="140%" height="140%">
+                          <feGaussianBlur stdDeviation="4" result="blur" />
+                          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                      </defs>
+
+                      {/* Neutral Track */}
+                      <circle cx="230" cy="165" r="95" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="46" />
+
+                      {/* 79% Antimetabolites Arc */}
+                      <g
+                        className={`donut-clickable-segment seg-79 ${activeBranch === 'antimetabolites' ? 'seg-active' : ''}`}
+                        onClick={() => inspectBranch('antimetabolites')}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <circle
+                          cx="230"
+                          cy="165"
+                          r="95"
+                          fill="none"
+                          stroke="url(#pie79Grad)"
+                          strokeWidth="46"
+                          strokeDasharray="466.5 130.4"
+                          strokeDashoffset="0"
+                          transform="rotate(-120 230 165)"
+                          filter="url(#glow79)"
+                        />
+                      </g>
+
+                      {/* 21% Calcineurin Inhibitors Arc */}
+                      <g
+                        className={`donut-clickable-segment seg-21 ${activeBranch === 'cni' ? 'seg-active' : ''}`}
+                        onClick={() => inspectBranch('cni')}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <circle
+                          cx="230"
+                          cy="165"
+                          r="95"
+                          fill="none"
+                          stroke="url(#pie21Grad)"
+                          strokeWidth="46"
+                          strokeDasharray="120.35 476.55"
+                          strokeDashoffset="-471.55"
+                          transform="rotate(-120 230 165)"
+                          filter="url(#glow21)"
+                        />
+                      </g>
+
+                      {/* Center Dark Core */}
+                      <circle cx="230" cy="165" r="68" fill="#08080b" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
+                      <text x="230" y="152" textAnchor="middle" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.08em">CID COMPARATOR</text>
+                      <text x="230" y="174" textAnchor="middle" fill="#ffffff" fontSize="17" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">N = 113</text>
+                      <text x="230" y="191" textAnchor="middle" fill="#8c827e" fontSize="7.8" fontFamily="var(--font-geist-mono)" letterSpacing="0.06em">2 STRATEGIES</text>
+                    </svg>
+
+                    {/* Segment Callout Card 79% (Left / Bottom) */}
+                    <div
+                      className={`pie-callout-panel callout-left-79 ${activeBranch === 'antimetabolites' ? 'panel-focused' : ''} ${inspected79 ? 'panel-done' : ''}`}
+                      onClick={() => inspectBranch('antimetabolites')}
+                    >
+                      <div className="callout-header-row">
+                        <span className="callout-hero-pct">79%</span>
+                        <div className="callout-text-stack">
+                          <strong>ANTIMETABOLITES</strong>
+                          <small>dominant strategy · 87 pts</small>
+                        </div>
+                      </div>
+                      <button className="callout-inspect-action" tabIndex={-1}>
+                        <span className="pulse-dot dot-red" />
+                        <span>CLICK TO INSPECT</span>
+                      </button>
                     </div>
-                    <div className="anatomy-root-count">N = 113</div>
+
+                    {/* Segment Callout Card 21% (Top / Right) */}
+                    <div
+                      className={`pie-callout-panel callout-right-21 ${activeBranch === 'cni' ? 'panel-focused' : ''} ${inspected21 ? 'panel-done' : ''}`}
+                      onClick={() => inspectBranch('cni')}
+                    >
+                      <div className="callout-header-row">
+                        <span className="callout-hero-pct pct-violet">21%</span>
+                        <div className="callout-text-stack">
+                          <strong className="title-violet">CALCINEURIN INHIBITORS</strong>
+                          <small className="sub-violet">minority exposure · 23 pts</small>
+                        </div>
+                      </div>
+                      <button className="callout-inspect-action action-violet" tabIndex={-1}>
+                        <span className="pulse-dot dot-violet" />
+                        <span>CLICK TO INSPECT</span>
+                      </button>
+                    </div>
                   </div>
 
-                  {/* 2. PROPORTIONAL BRANCHING TREE */}
-                  <div className="anatomy-proportional-branches">
-                    
-                    {/* Left / Major: 79% Antimetabolites */}
-                    <div className="branch-pane pane-dominant">
-                      <div className="branch-headline-row">
-                        <span className="branch-massive-pct">79%</span>
-                        <div className="branch-label-stack">
-                          <h5>ANTIMETABOLITES</h5>
-                          <span className="sub-badge-dominant">DOMINANT STRATEGY · 87 PTS</span>
+                  {/* 3. PROGRESSIVE INSPECTION OVERLAYS */}
+                  {/* Antimetabolites Inspection Overlay */}
+                  <div className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}>
+                    <div className="focal-card">
+                      <div className="focal-title-row">
+                        <span className="focal-badge">ANTIMETABOLITES · 79%</span>
+                        <span className="focal-hold-timer">AUTO-RETURNING TO PIE</span>
+                      </div>
+
+                      <div className="focal-drugs-list">
+                        <div className={`drug-chip ${branchStep >= 2 ? 'chip-show' : ''}`}>
+                          <strong>MTX</strong>
+                          <span>44</span>
+                        </div>
+                        <div className={`drug-chip ${branchStep >= 3 ? 'chip-show' : ''}`}>
+                          <strong>MYCOPHENOLATE</strong>
+                          <span>42</span>
+                        </div>
+                        <div className={`drug-chip ${branchStep >= 4 ? 'chip-show' : ''}`}>
+                          <strong>AZATHIOPRINE</strong>
+                          <span>1</span>
                         </div>
                       </div>
 
-                      <div className="branch-proportions-fill">
-                        <div className="branch-pills-bar">
-                          <span>Methotrexate <em>(44)</em></span>
-                          <span>Mycophenolate <em>(42)</em></span>
-                          <span>Azathioprine <em>(1)</em></span>
-                        </div>
-                        <p className="branch-sub-note">Prior evidence indicated broadly comparable efficacy across antimetabolite agents.</p>
-                      </div>
-
-                      <div className="branch-stat-footer">
-                        <small>DOMINANT CID COMPARATOR ARM</small>
+                      <div className={`focal-statement-box ${branchStep >= 5 ? 'statement-show' : ''}`}>
+                        <p>Prior evidence indicated broadly comparable efficacy across antimetabolite agents.</p>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Right / Minor: 21% Calcineurin Inhibitors */}
-                    <div className="branch-pane pane-minority">
-                      <div className="branch-headline-row">
-                        <span className="branch-massive-pct minority-pct">21%</span>
-                        <div className="branch-label-stack">
-                          <h5>CALCINEURIN INHIBITORS</h5>
-                          <span className="sub-badge-minority">MINORITY EXPOSURE · 23 PTS</span>
-                        </div>
+                  {/* Calcineurin Inhibitors Inspection Overlay */}
+                  <div className={`inspect-focal-overlay overlay-cni ${activeBranch === 'cni' ? 'is-active' : ''}`}>
+                    <div className="focal-card card-cni">
+                      <div className="focal-title-row">
+                        <span className="focal-badge badge-violet">CALCINEURIN INHIBITORS · 21%</span>
+                        <span className="focal-hold-timer">AUTO-RETURNING TO PIE</span>
                       </div>
 
-                      {/* State 1 high-level question cue */}
-                      <div className="state1-question-cue">
-                        <p>CID was heterogeneous — does this 21% minority exposure matter?</p>
-                      </div>
-
-                      {/* SUB-BREAKDOWN */}
-                      <div className="zoom-subdivision-box">
-                        
-                        {/* Tacrolimus Tier (Revealed in State 2) */}
-                        <div className="zoom-tier tacrolimus-tier">
-                          <div className="tac-header-line">
-                            <span className="zoom-drug-title">TACROLIMUS</span>
-                            <span className="zoom-drug-share">19 / 23 (83% of CNIs)</span>
+                      <div className="cni-evidence-grid">
+                        {/* 01 Tacrolimus */}
+                        <div className={`cni-evidence-card ${branchStep >= 2 ? 'cni-show' : ''}`}>
+                          <div className="cni-card-header">
+                            <span className="cni-index">01</span>
+                            <strong>TACROLIMUS</strong>
+                            <span className="cni-sub">19 pts (83% of CNIs)</span>
                           </div>
-                          <p className="tac-evidence-note">Prior evidence for tacrolimus was mixed; evidence for cyclosporine suggested potentially lower efficacy than antimetabolites.</p>
+                          <p className="cni-desc">Prior evidence for tacrolimus was mixed.</p>
                         </div>
 
-                        {/* State 2 intermediate question */}
-                        <div className="state2-intermediate-hook">
-                          <strong>COULD THE WEAKER COMPONENT HAVE DISADVANTAGED CID?</strong>
-                        </div>
+                        {/* 02 Cyclosporine */}
+                        <div className={`cni-evidence-card card-csa-alert ${branchStep >= 3 ? 'cni-show' : ''}`}>
+                          <div className="cni-card-header">
+                            <span className="cni-index idx-red">02</span>
+                            <strong className="name-red">CYCLOSPORINE</strong>
+                            <span className="cni-sub sub-red">4 pts</span>
+                          </div>
+                          <p className="cni-desc desc-red">Evidence suggested potentially lower efficacy than antimetabolites.</p>
 
-                        {/* Cyclosporine Tier (Hero in State 3) */}
-                        <div className="zoom-tier cyclosporine-tier">
-                          <div className="csa-inner-card">
-                            <div className="csa-text-col">
-                              <span className="csa-name">CYCLOSPORINE</span>
-                              <span className="csa-sub-n">Only 4 patients assigned</span>
-                            </div>
-                            <div className="csa-pct-badge">
-                              <span className="csa-red-num">4%</span>
-                              <span className="csa-red-sub">OF TOTAL CID</span>
-                            </div>
+                          <div className="csa-prominent-callout">
+                            <span className="csa-prom-tag">CYCLOSPORINE</span>
+                            <span className="csa-prom-num">4%</span>
+                            <span className="csa-prom-sub">OF TOTAL CID</span>
                           </div>
                         </div>
-
                       </div>
-
-                      {/* THE CONCERN ANNOTATION (State 3) */}
-                      <div className="concern-callout-bracket">
-                        <div className="concern-tag-row">
-                          <span className="concern-dot" />
-                          <strong className="concern-label">THE CONCERN</strong>
-                        </div>
-                        <p className="concern-flow-text">
-                          Potentially lower efficacy <span className="concern-arrow">→</span> weaker CID comparator <span className="concern-arrow">→</span> exaggerated ADA advantage?
-                        </p>
-                      </div>
-
                     </div>
-                  </div>
-
-                  {/* 3. CONVERGING COUNTEREVIDENCE ANCHORS (State 4) */}
-                  <div className="anatomy-convergence-row">
-                    <div className="evidence-anchor-item">
-                      <div className="anchor-num-head">
-                        <span className="anchor-index">01</span>
-                        <span className="anchor-metric">ONLY 4%</span>
-                      </div>
-                      <p className="anchor-desc">Cyclosporine was assigned to only 4% of participants.</p>
-                    </div>
-
-                    <div className="convergence-divider-line" aria-hidden="true">
-                      <span className="convergence-arrow">↓</span>
-                    </div>
-
-                    <div className="evidence-anchor-item">
-                      <div className="anchor-num-head">
-                        <span className="anchor-index">02</span>
-                        <span className="anchor-metric">CONSISTENT ACROSS STRATA</span>
-                      </div>
-                      <p className="anchor-desc">Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
-                    </div>
-                  </div>
-
-                  {/* 4. FINAL RESOLUTION TAKEAWAY (State 4) */}
-                  <div className="anatomy-conclusion-anchor">
-                    <div className="conclusion-hook-line">
-                      <strong>UNLIKELY TO EXPLAIN <span className="red-highlight-text">ADA’S ADVANTAGE</span></strong>
-                    </div>
-                    <p className="conclusion-sub-text">
-                      Comparator heterogeneity may introduce some efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA's advantage.
-                    </p>
                   </div>
 
                 </div>
+
+                {/* 4. BOTTOM SYNTHESIS (REVEALED AFTER BOTH BRANCHES INSPECTED) */}
+                <div className={`comparator-synthesis-wrapper ${inspected79 && inspected21 ? 'synthesis-revealed' : ''} ${activeBranch !== 'idle' ? 'synthesis-hidden' : ''}`}>
+                  <div className="synthesis-card-inner">
+                    <div className="synthesis-concern-line">
+                      <span className="concern-badge">THE CONCERN</span>
+                      <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
+                    </div>
+
+                    <div className="synthesis-two-points">
+                      <div className="synthesis-col">
+                        <span className="col-idx">01</span>
+                        <div className="col-body">
+                          <strong>LIMITED EXPOSURE</strong>
+                          <p>Cyclosporine represented only 4% of total CID.</p>
+                        </div>
+                      </div>
+
+                      <div className="synthesis-col">
+                        <span className="col-idx">02</span>
+                        <div className="col-body">
+                          <strong>CONSISTENT RESULTS</strong>
+                          <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="synthesis-bottom-conclusion">
+                      <div className="conclusion-hook">
+                        <strong>UNLIKELY TO EXPLAIN <span className="red-highlight-text">ADA’S ADVANTAGE</span></strong>
+                      </div>
+                      <p className="conclusion-support">
+                        Comparator heterogeneity may introduce efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially driving the treatment effect.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
