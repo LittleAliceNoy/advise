@@ -2957,132 +2957,122 @@ export default function Home() {
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
               <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
-              <p className="red-hook">COULD CALCINEURIN-INHIBITOR USE HAVE DISADVANTAGED CID?</p>
+              <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
-              <p className="lede">CID represented a treatment strategy rather than a single drug. This raises an important question: could inclusion of potentially less-effective calcineurin inhibitors have made CID appear less effective?</p>
+              <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
 
-              <div className="adv-observations-block editorial-rules">
-                <div className="observation-item">
-                  <h4><span className="red-num">01</span> — WHY THE CONCERN IS PLAUSIBLE</h4>
-                  <p>Prior evidence suggested broadly similar efficacy among the three antimetabolites, but possibly lower efficacy with cyclosporine. Evidence for tacrolimus was mixed.</p>
-                </div>
-                
-                <div className="observation-item">
-                  <h4><span className="red-num">02</span> — WHY IT PROBABLY DID NOT DRIVE THE RESULT</h4>
-                  <p>CID was overwhelmingly antimetabolite-based, cyclosporine was assigned to only 4% of participants, and results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
-                </div>
+              <div className="comp-investigation-statement">
+                <div className="investigation-rule" />
+                <h4>THE QUESTION IS NOT HETEROGENEITY ALONE.</h4>
+                <p>Prior evidence suggested broadly similar efficacy among antimetabolites, but possibly lower efficacy with cyclosporine; evidence for tacrolimus was mixed.</p>
               </div>
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="adv-right-col">
-              <div className="comparator-analytical-panel">
+            <div className="adv-right-col comp-anatomy-column">
+              <div className="comp-anatomy-canvas">
                 
-                {/* SECTION 1: TREATMENT-MIX PATHWAY DIAGRAM */}
-                <div className="comp-tree-section">
-                  <div className="comp-section-rule-header">
-                    <span className="comp-section-title">WHAT DID “CID” ACTUALLY CONTAIN?</span>
+                {/* 1. ROOT STRATEGY STRIP */}
+                <div className="anatomy-root-bar">
+                  <div className="anatomy-root-tag">
+                    <span className="cid-pill">CID</span>
+                    <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                  </div>
+                  <div className="anatomy-root-count">N = 113</div>
+                </div>
+
+                {/* 2. PROPORTIONAL BRANCHING TREE */}
+                <div className="anatomy-proportional-branches">
+                  
+                  {/* Left / Major: 79% Antimetabolites */}
+                  <div className="branch-pane pane-dominant">
+                    <div className="branch-headline-row">
+                      <span className="branch-massive-pct">79%</span>
+                      <div className="branch-label-stack">
+                        <h5>ANTIMETABOLITES</h5>
+                        <span className="sub-badge-dominant">DOMINANT STRATEGY</span>
+                      </div>
+                    </div>
+                    <div className="branch-pills-bar">
+                      <span>Methotrexate</span>
+                      <span>Mycophenolate</span>
+                      <span>Azathioprine</span>
+                    </div>
+                    <p className="branch-sub-note">Prior evidence suggested broadly similar efficacy.</p>
                   </div>
 
-                  <div className="comp-pathway-diagram">
-                    {/* Root Node */}
-                    <div className="comp-root-node">
-                      <strong className="comp-root-title">CID — CONVENTIONAL IMMUNOSUPPRESSION</strong>
-                      <span className="comp-root-sub">N = 113</span>
-                    </div>
-
-                    {/* Tree Connector Graphic */}
-                    <div className="comp-tree-branches-wrapper">
-                      <div className="comp-stem-vertical" />
-                      <div className="comp-branch-arms-line" />
-                      <div className="comp-stem-drops">
-                        <div className="comp-drop-left" />
-                        <div className="comp-drop-right" />
+                  {/* Right / Minor: 21% Calcineurin Inhibitors with ZOOM */}
+                  <div className="branch-pane pane-minority">
+                    <div className="branch-headline-row">
+                      <span className="branch-massive-pct minority-pct">21%</span>
+                      <div className="branch-label-stack">
+                        <h5>CALCINEURIN INHIBITORS</h5>
+                        <span className="sub-badge-minority">MINORITY EXPOSURE</span>
                       </div>
                     </div>
 
-                    {/* Two Strategy Branches */}
-                    <div className="comp-branches-row">
-                      
-                      {/* Left: Antimetabolites (79%) */}
-                      <div className="comp-branch-card card-antimetabolite">
-                        <div className="branch-card-header">
-                          <div className="branch-metric-col">
-                            <span className="branch-big-pct">79%</span>
-                          </div>
-                          <div className="branch-meta-col">
-                            <h5 className="branch-class-name">ANTIMETABOLITES</h5>
-                            <span className="branch-badge-dominant">DOMINANT STRATEGY</span>
-                          </div>
-                        </div>
-                        <div className="branch-drug-pills-row">
-                          <span>Methotrexate</span>
-                          <span>Mycophenolate</span>
-                          <span>Azathioprine</span>
-                        </div>
-                        <p className="branch-card-annotation">Prior evidence: broadly similar efficacy</p>
+                    {/* ZOOM SUB-BREAKDOWN */}
+                    <div className="zoom-subdivision-box">
+                      <div className="zoom-tier tacrolimus-tier">
+                        <span className="zoom-drug-title">TACROLIMUS</span>
+                        <span className="zoom-drug-share">Most CNI exposure (83% of CNIs)</span>
                       </div>
-
-                      {/* Right: Calcineurin Inhibitors (21%) */}
-                      <div className="comp-branch-card card-calcineurin">
-                        <div className="branch-card-header">
-                          <div className="branch-metric-col">
-                            <span className="branch-big-pct minority-pct">21%</span>
-                          </div>
-                          <div className="branch-meta-col">
-                            <h5 className="branch-class-name">CALCINEURIN INHIBITORS</h5>
-                            <span className="branch-badge-minority">MINORITY EXPOSURE</span>
+                      <div className="zoom-tier cyclosporine-tier">
+                        <div className="csa-inner-card">
+                          <span className="csa-name">CYCLOSPORINE</span>
+                          <div className="csa-pct-badge">
+                            <span className="csa-red-num">4%</span>
+                            <span className="csa-red-sub">OF TOTAL CID</span>
                           </div>
                         </div>
-                        <div className="branch-cni-details">
-                          <div className="cni-detail-row">
-                            <span className="cni-drug-label">TACROLIMUS</span>
-                            <span className="cni-drug-stat">Most CNI exposure (83% of CNIs)</span>
-                          </div>
-                          <div className="cni-detail-row csa-callout-box">
-                            <span className="cni-drug-label csa-label">CYCLOSPORINE</span>
-                            <span className="csa-stat-highlight">ONLY 4% OF TOTAL CID</span>
-                          </div>
-                        </div>
-                        <p className="branch-card-annotation">Limited exposure · Not all CNI was cyclosporine</p>
                       </div>
-
                     </div>
+
+                    {/* THE CONCERN ANNOTATION */}
+                    <div className="concern-callout-bracket">
+                      <div className="concern-tag-row">
+                        <span className="concern-dot" />
+                        <strong className="concern-label">THE CONCERN</strong>
+                      </div>
+                      <p className="concern-flow-text">
+                        Possibly lower efficacy <span className="concern-arrow">→</span> could disadvantage CID <span className="concern-arrow">→</span> could exaggerate ADA benefit?
+                      </p>
+                    </div>
+
                   </div>
                 </div>
 
-                {/* SECTION 2: EVIDENCE RESOLUTION PANEL */}
-                <div className="comp-tension-section">
-                  <div className="comp-tension-grid">
-                    {/* Potential Concern */}
-                    <div className="comp-tension-card card-concern">
-                      <div className="tension-card-top">
-                        <span className="tension-dot concern-dot" />
-                        <span className="tension-card-heading">POTENTIAL CONCERN</span>
-                      </div>
-                      <p className="tension-card-body">Cyclosporine may be less effective than antimetabolites.</p>
+                {/* 3. CONVERGING COUNTEREVIDENCE ANCHORS */}
+                <div className="anatomy-convergence-row">
+                  <div className="evidence-anchor-item">
+                    <div className="anchor-num-head">
+                      <span className="anchor-index">01</span>
+                      <span className="anchor-metric">ONLY 4%</span>
                     </div>
+                    <p className="anchor-desc">Cyclosporine assigned to only 4% of participants.</p>
+                  </div>
 
-                    {/* Divider */}
-                    <div className="comp-tension-arrow-col" aria-hidden="true">
-                      <span className="tension-arrow-symbol">→</span>
-                    </div>
+                  <div className="convergence-divider-line" aria-hidden="true">
+                    <span className="convergence-arrow">↓</span>
+                  </div>
 
-                    {/* Counterevidence */}
-                    <div className="comp-tension-card card-counterevidence">
-                      <div className="tension-card-top">
-                        <span className="tension-dot counterevidence-dot" />
-                        <span className="tension-card-heading">COUNTEREVIDENCE</span>
-                      </div>
-                      <p className="tension-card-body">Cyclosporine represented only 4% of CID, and treatment effects were qualitatively similar across immunosuppression strata.</p>
+                  <div className="evidence-anchor-item">
+                    <div className="anchor-num-head">
+                      <span className="anchor-index">02</span>
+                      <span className="anchor-metric">CONSISTENT</span>
                     </div>
+                    <p className="anchor-desc">Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
                   </div>
                 </div>
 
-                {/* SECTION 3: BOTTOM CONCLUSION TAKEAWAY */}
-                <div className="comp-conclusion-band">
-                  <strong>UNLIKELY TO DRIVE <span className="red-highlight-text">THE TREATMENT EFFECT</span></strong>
-                  <p>CNI heterogeneity could introduce efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA’s advantage.</p>
+                {/* 4. FINAL RESOLUTION TAKEAWAY */}
+                <div className="anatomy-conclusion-anchor">
+                  <div className="conclusion-hook-line">
+                    <strong>UNLIKELY TO DRIVE <span className="red-highlight-text">THE TREATMENT EFFECT</span></strong>
+                  </div>
+                  <p className="conclusion-sub-text">
+                    Comparator heterogeneity may introduce some efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA's advantage.
+                  </p>
                 </div>
 
               </div>
