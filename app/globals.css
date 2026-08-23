@@ -10159,7 +10159,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   max-width: 450px;
   background: rgba(10, 10, 15, 0.92);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 77, 82, 0.15);
   border-radius: 4px;
   padding: clamp(0.75rem, 1.1vh, 1.1rem) clamp(0.85rem, 1.2vw, 1.3rem);
@@ -10176,7 +10176,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .focal-card.focal-borderless {
   background: rgba(10, 10, 15, 0.92);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 77, 82, 0.15);
 }
 
@@ -10368,7 +10368,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cni-evidence-callout.callout-tacrolimus {
-  background: linear-gradient(90deg, rgba(78, 44, 153, 0.35), rgba(40, 20, 80, 0.12));
+  background: linear-gradient(90deg, rgba(78, 44, 153, 0.38), rgba(40, 20, 80, 0.14));
 }
 
 .cni-evidence-callout.callout-tacrolimus::before {
@@ -10405,13 +10405,52 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0;
 }
 
-.cni-evidence-callout p b {
+.cni-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.cni-bullet-list li {
+  position: relative;
+  padding-left: 0.95rem;
+  color: #e6e2de;
+  font: 500 clamp(0.64rem, 0.72vw, 0.84rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+
+.cni-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.1rem;
+  top: -0.05rem;
   color: #b58eff;
+  font-size: 1.1em;
+}
+
+.cni-bullet-list li b {
+  color: #fff;
   font-weight: 700;
 }
 
-.cni-evidence-callout p b.name-red {
-  color: #ff6363;
+.cni-bullet-list.mini-bullet-list {
+  gap: 0.25rem;
+}
+
+.cni-bullet-list.mini-bullet-list li {
+  font-size: clamp(0.55rem, 0.62vw, 0.74rem);
+  line-height: 1.3;
+}
+
+.highlight-lower-red {
+  color: #ff4d52;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(255, 77, 82, 0.5);
 }
 
 .csa-prom-num {

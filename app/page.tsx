@@ -3021,19 +3021,6 @@ export default function Home() {
                   <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
                 </div>
 
-                {/* Interactive Prompt / Trigger for 01 & 02 */}
-                {synthesisStep === 1 && (
-                  <div
-                    className="synthesis-reveal-trigger"
-                    onClick={() => setSynthesisStep(2)}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <span>CLICK TO REVEAL KEY FINDINGS</span>
-                    <span className="trigger-arrow">↓</span>
-                  </div>
-                )}
-
                 {/* 01 & 02 Points (Revealed on second click: synthesisStep === 2) */}
                 <div className={`left-synthesis-points ${synthesisStep === 2 ? 'points-revealed' : 'points-hidden'}`}>
                   <div className="left-synthesis-col">
@@ -3118,13 +3105,11 @@ export default function Home() {
                             <span className="dual-pill-val count-red">4 pt <small className="only-4-pct">(4%)</small></span>
                           </div>
                         </div>
-                        <div className="cni-evidence-callouts-stack mini-evidence-stack">
-                          <div className="cni-evidence-callout callout-tacrolimus mini-callout">
-                            <p>Evidence mixed</p>
-                          </div>
-                          <div className="cni-evidence-callout callout-csa mini-callout">
-                            <p>Potentially lower efficacy</p>
-                          </div>
+                        <div className="cni-evidence-callout callout-tacrolimus mini-callout cni-unified-badge">
+                          <ul className="cni-bullet-list mini-bullet-list">
+                            <li><b>Tacrolimus:</b> mixed evidence</li>
+                            <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -3336,19 +3321,12 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Evidence Callouts in steroid-reset style */}
-                        <div className="cni-evidence-callouts-stack">
-                          <div className="cni-evidence-callout callout-tacrolimus">
-                            <p>
-                              Evidence mixed
-                            </p>
-                          </div>
-
-                          <div className="cni-evidence-callout callout-csa">
-                            <p>
-                              Potentially lower efficacy
-                            </p>
-                          </div>
+                        {/* Evidence Callout in single unified violet badge with 2 bullets */}
+                        <div className="cni-evidence-callout callout-tacrolimus cni-unified-badge">
+                          <ul className="cni-bullet-list">
+                            <li><b>Tacrolimus:</b> mixed evidence</li>
+                            <li><b>Cyclosporine:</b> Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
