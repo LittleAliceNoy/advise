@@ -3962,22 +3962,22 @@ export default function Home() {
                 
                 {/* 1. HORIZONTAL ARGUMENT SEQUENCE BAR */}
                 <div className="attrition-pipeline-bar">
-                  <div className="pipe-node active-red">
+                  <div className="pipe-node active-cid">
                     <span className="pipe-num">01</span>
                     <strong>GREATER CID ATTRITION</strong>
                   </div>
                   <span className="pipe-arrow">➔</span>
-                  <div className="pipe-node active-amber">
+                  <div className="pipe-node active-red">
                     <span className="pipe-num">02</span>
                     <strong>POTENTIAL BIAS</strong>
                   </div>
                   <span className="pipe-arrow">➔</span>
-                  <div className={`pipe-node ${attritionStep === 1 ? 'active-violet' : 'pipe-dimmed'}`}>
+                  <div className={`pipe-node ${attritionStep === 1 ? 'active-white' : 'pipe-dimmed'}`}>
                     <span className="pipe-num">03</span>
                     <strong>ROBUSTNESS CHECK</strong>
                   </div>
                   <span className="pipe-arrow">➔</span>
-                  <div className={`pipe-node ${attritionStep === 1 ? 'active-green' : 'pipe-dimmed'}`}>
+                  <div className={`pipe-node ${attritionStep === 1 ? 'active-white' : 'pipe-dimmed'}`}>
                     <span className="pipe-num">04</span>
                     <strong>CONSISTENT RESULT</strong>
                   </div>
