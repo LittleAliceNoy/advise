@@ -11956,29 +11956,27 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 700;
 }
 
-/* 04 Bottom Editorial Footer — Strong Finishing Statement */
+/* 04 Bottom Editorial Footer — Strong Finishing Statement (Borderless, Center Aligned) */
 .immuno-editorial-footer {
   padding-top: clamp(0.6rem, 1.2vh, 1.2rem);
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 .immuno-finishing-statement {
   width: 100%;
-  background: linear-gradient(90deg, rgba(255, 77, 82, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 77, 82, 0.24);
-  border-left: 3.5px solid #ff4d52;
-  border-radius: 4px;
-  padding: clamp(0.65rem, 1.1vh, 1rem) clamp(0.9rem, 1.6vw, 1.8rem);
-  box-sizing: border-box;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 1160px;
+  text-align: center;
 }
 
 .finishing-text {
-  font-size: clamp(0.78rem, 0.94vw, 1.12rem);
-  line-height: 1.45;
-  margin: 0;
+  font-size: clamp(0.82rem, 0.98vw, 1.16rem);
+  line-height: 1.48;
+  margin: 0 auto;
   color: #ded7d3;
+  text-align: center;
 }
 
 .finishing-lead {
