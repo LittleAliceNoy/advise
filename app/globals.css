@@ -9540,14 +9540,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .discussion-limitations-scene .adv-arch-evidence-strip {
-  margin: 0 0 clamp(0.5rem, 0.8vh, 0.8rem) 0;
-  padding: clamp(0.45rem, 0.65vw, 0.65rem) clamp(0.6rem, 0.9vw, 1rem);
-  gap: clamp(0.6rem, 1vw, 1.4rem);
+  display: grid;
+  grid-template-columns: minmax(auto, 11rem) 1fr 1fr;
+  align-items: center;
+  margin: 0 0 clamp(0.6rem, 1vh, 1rem) 0;
+  padding: clamp(0.6rem, 0.9vh, 0.95rem) clamp(0.8rem, 1.1vw, 1.4rem);
+  gap: clamp(1.2rem, 2vw, 2.6rem);
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall {
   max-width: 11.5rem;
-  padding-right: clamp(0.5rem, 0.8vw, 1rem);
+  padding-right: clamp(1rem, 1.4vw, 1.8rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall strong {
@@ -9556,9 +9560,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .discussion-limitations-scene .adv-arch-evidence-recall span {
-  font-size: clamp(.66rem, .74vw, .86rem);
+  font-size: clamp(.64rem, .72vw, .84rem);
   line-height: 1.35;
   margin-top: 0.25rem;
+}
+
+.discussion-limitations-scene .adv-arch-evidence-stat {
+  padding: 0 clamp(0.2rem, 0.4vw, 0.6rem);
+}
+
+.discussion-limitations-scene .adv-arch-evidence-stat b {
+  margin-bottom: 0.15rem;
+}
+
+.discussion-limitations-scene .adv-arch-evidence-stat span {
+  margin-top: 0.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.discussion-limitations-scene .adv-arch-evidence-stat small {
+  margin-top: 0.2rem;
+}
+
+.discussion-limitations-scene .adv-arch-evidence-overall {
+  padding-left: clamp(1rem, 1.5vw, 2rem);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .discussion-limitations-scene .stat-val-red,
