@@ -11408,6 +11408,25 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 700;
 }
 
+.robustness-analysis-ellipsis {
+  display: flex;
+  gap: 0.25rem;
+  padding-left: 0.1rem;
+  color: #736b67;
+  font-size: clamp(0.7rem, 0.8vw, 0.95rem);
+  line-height: 0.7;
+  letter-spacing: 0.08em;
+}
+
+.robustness-analysis-footnote {
+  font-size: clamp(0.48rem, 0.54vw, 0.64rem);
+  color: #736b67;
+  font-family: var(--font-geist-mono), monospace;
+  font-style: italic;
+  margin-top: 0.1rem;
+  white-space: nowrap;
+}
+
 .robustness-merge-svg {
   flex: 1 1 auto;
   height: 52px;

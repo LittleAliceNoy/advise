@@ -4045,7 +4045,7 @@ export default function Home() {
                 </div>
 
                 <div className="robustness-strip-body">
-                  {/* Left: 3 Analysis rows + Merging Arrow */}
+                  {/* Left: 3 Analysis rows + Merging Arrow + Ellipsis & Footnote */}
                   <div className="robustness-merge-group">
                     <div className="robustness-analysis-labels">
                       <div className="robustness-analysis-item">
@@ -4056,6 +4056,12 @@ export default function Home() {
                       </div>
                       <div className="robustness-analysis-item">
                         <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
+                      </div>
+                      <div className="robustness-analysis-ellipsis">
+                        <span>.</span><span>.</span><span>.</span>
+                      </div>
+                      <div className="robustness-analysis-footnote">
+                        *Exact number and specific analysis techniques not specified by the authors.
                       </div>
                     </div>
 
@@ -4069,7 +4075,7 @@ export default function Home() {
                       </defs>
                       {/* Top line curving down to middle */}
                       <path d="M 0,9 L 880,9 C 930,9 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
-                      {/* Center straight line */}
+                      {/* Center straight line from Analysis 02 to arrow head */}
                       <path d="M 0,27 L 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Bottom line curving up to middle */}
                       <path d="M 0,45 L 880,45 C 930,45 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
