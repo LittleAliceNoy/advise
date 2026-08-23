@@ -11239,8 +11239,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 0;
   padding-bottom: clamp(0.35rem, 0.6vh, 0.6rem);
-  margin-top: clamp(-0.35rem, -0.5vh, -0.2rem);
-  margin-bottom: clamp(0.85rem, 1.5vh, 1.5rem);
+  margin-top: clamp(-0.15rem, -0.22vh, -0.08rem);
+  margin-bottom: clamp(0.75rem, 1.3vh, 1.35rem);
   min-height: clamp(50px, 6.2vh, 64px);
   flex: 0 0 auto;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
