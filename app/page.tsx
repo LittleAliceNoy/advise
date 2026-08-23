@@ -4023,15 +4023,15 @@ export default function Home() {
               {attritionStep >= 4 && (
                 <div className="attrition-reasons-strip">
                   <div className="attrition-reason-card">
-                    <div className="reason-number">01 — PREFERENCE FOR NOVEL BIOLOGIC</div>
+                    <div className="reason-number">01 — POSSIBLE TREATMENT PREFERENCE</div>
                     <p className="reason-text">
-                      Participants sought adalimumab and withdrew upon conventional assignment — evidenced by the immediate post-randomization dropouts (3 CID vs 1 ADA).
+                      Participants may have preferred the novel biologic, potentially contributing to the early imbalance in dropout (3 CID vs 1 ADA).
                     </p>
                   </div>
                   <div className="attrition-reason-card">
-                    <div className="reason-number">02 — COMPARATOR TOXICITY &amp; TOLERABILITY</div>
+                    <div className="reason-number">02 — POSSIBLE DRUG TOLERABILITY</div>
                     <p className="reason-text">
-                      Toxicity and tolerability of conventional immunosuppression likely contributed during follow-up — evidenced by all 8 assigned-treatment discontinuations occurring in CID.
+                      Toxicity may also have contributed; all 8 participants who discontinued assigned treatment were in the CID arm.
                     </p>
                   </div>
                 </div>
