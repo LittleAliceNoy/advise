@@ -3152,28 +3152,28 @@ export default function Home() {
                         {/* Vertically Aligned Pills */}
                         <div className="split-pills-vertical-list">
                           <div className="split-pill-row-item">
-                            <div className="pill-icon-wrap wrap-yellow">
+                            <div className="pill-icon-wrap wrap-white">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
-                                <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
-                                <line x1="20" y1="7" x2="20" y2="33" stroke="#f5e6a8" strokeWidth="1.6" strokeDasharray="3 2" />
-                                <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(245, 230, 168, 0.28)" strokeWidth="1" />
+                                <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.12)" stroke="#ffffff" strokeWidth="1.8" />
+                                <line x1="20" y1="7" x2="20" y2="33" stroke="#ffffff" strokeWidth="1.6" strokeDasharray="3 2" />
+                                <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" />
                               </svg>
                             </div>
                             <span className="split-pill-name">MTX</span>
-                            <span className="split-pill-count count-yellow">44 pt</span>
+                            <span className="split-pill-count count-white">44 pt</span>
                           </div>
 
                           <div className="split-pill-row-item">
-                            <div className="pill-icon-wrap wrap-red">
+                            <div className="pill-icon-wrap wrap-white">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-30 20 20)">
-                                  <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
-                                  <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                                  <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
+                                  <line x1="20" y1="13" x2="20" y2="27" stroke="#ffffff" strokeWidth="1.8" />
                                 </g>
                               </svg>
                             </div>
                             <span className="split-pill-name">MYCOPHENOLATE</span>
-                            <span className="split-pill-count count-red">42 pt</span>
+                            <span className="split-pill-count count-white">42 pt</span>
                           </div>
 
                           <div className="split-pill-row-item">
@@ -3208,17 +3208,17 @@ export default function Home() {
                         {/* Vertically Aligned Pills */}
                         <div className="split-pills-vertical-list">
                           <div className="split-pill-row-item">
-                            <div className="pill-icon-wrap wrap-violet">
+                            <div className="pill-icon-wrap wrap-white">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-45 20 20)">
-                                  <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#b58eff" strokeWidth="2" />
-                                  <line x1="12" y1="20" x2="28" y2="20" stroke="#b58eff" strokeWidth="1.8" />
-                                  <path d="M 12 20 L 28 20 L 28 26 A 8 8 0 0 1 12 26 Z" fill="rgba(181, 142, 255, 0.38)" />
+                                  <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#ffffff" strokeWidth="2" />
+                                  <line x1="12" y1="20" x2="28" y2="20" stroke="#ffffff" strokeWidth="1.8" />
+                                  <path d="M 12 20 L 28 20 L 28 26 A 8 8 0 0 1 12 26 Z" fill="rgba(255, 255, 255, 0.28)" />
                                 </g>
                               </svg>
                             </div>
                             <span className="split-pill-name">TACROLIMUS</span>
-                            <span className="split-pill-count count-violet">19 pt</span>
+                            <span className="split-pill-count count-white">19 pt</span>
                           </div>
 
                           <div className={`split-pill-row-item ${synthesisStep === 2 ? 'row-csa-focus' : ''}`}>
@@ -3231,7 +3231,7 @@ export default function Home() {
                               </svg>
                             </div>
                             <span className="split-pill-name name-red">CYCLOSPORINE</span>
-                            <span className="split-pill-count count-red">4 pt <small className="only-4-pct">(4%)</small></span>
+                            <span className="split-pill-count count-red">4 pt</span>
                           </div>
                         </div>
 
