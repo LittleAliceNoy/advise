@@ -4240,36 +4240,38 @@ export default function Home() {
                 <div className="limitation-two-subsections">
                   {/* Section 1: Monotherapy population & potential benefit */}
                   <div className="lim-sub-block lim-block-left">
-                    <div className="lim-sub1-steps-flex">
-                      <div className="lim-sub1-step-col">
-                        <div className="lim-stat-badge-large">78%</div>
-                        <div className="lim-sub1-col-text">
-                          were not on immunosuppression at baseline
+                    <div className="lim-sub1-card">
+                      <div className="lim-sub1-steps-flex">
+                        <div className="lim-sub1-step-col">
+                          <div className="lim-stat-badge-large">78%</div>
+                          <div className="lim-sub1-col-text">
+                            were not on immunosuppression at baseline
+                          </div>
+                        </div>
+
+                        <div className="lim-sub1-arrow" aria-hidden="true">→</div>
+
+                        <div className="lim-sub1-step-col">
+                          <div className="lim-icon-wrap-large">
+                            <svg width="36" height="36" viewBox="0 0 28 28" fill="none">
+                              <circle cx="14" cy="8" r="3.4" stroke="#ff4d52" strokeWidth="1.6" />
+                              <path d="M 7.5 21 C 7.5 16.5 10.5 15 14 15 C 17.5 15 20.5 16.5 20.5 21" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                              <circle cx="5.5" cy="10.5" r="2.4" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" />
+                              <path d="M 1.5 21 C 1.5 18 3.5 17 5.5 17" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                              <circle cx="22.5" cy="10.5" r="2.4" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" />
+                              <path d="M 26.5 21 C 26.5 18 24.5 17 22.5 17" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                            </svg>
+                          </div>
+                          <div className="lim-sub1-col-text">
+                            Within ADA arm:<br />received <span className="red-bold">ADA alone</span>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="lim-sub1-arrow" aria-hidden="true">→</div>
-
-                      <div className="lim-sub1-step-col">
-                        <div className="lim-icon-wrap-large">
-                          <svg width="36" height="36" viewBox="0 0 28 28" fill="none">
-                            <circle cx="14" cy="8" r="3.4" stroke="#ff4d52" strokeWidth="1.6" />
-                            <path d="M 7.5 21 C 7.5 16.5 10.5 15 14 15 C 17.5 15 20.5 16.5 20.5 21" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                            <circle cx="5.5" cy="10.5" r="2.4" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" />
-                            <path d="M 1.5 21 C 1.5 18 3.5 17 5.5 17" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" strokeLinecap="round" />
-                            <circle cx="22.5" cy="10.5" r="2.4" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" />
-                            <path d="M 26.5 21 C 26.5 18 24.5 17 22.5 17" stroke="rgba(255,77,82,0.6)" strokeWidth="1.3" strokeLinecap="round" />
-                          </svg>
-                        </div>
-                        <div className="lim-sub1-col-text">
-                          Within ADA arm:<br />received <span className="red-bold">ADA alone</span>
-                        </div>
+                      <div className="lim-card-bottom-question">
+                        They may benefit from a second immunosuppressive drug?
                       </div>
                     </div>
-
-                    <p className="lim-implication-callout">
-                      ➔ <span className="red-bold">So they may benefit from a second immunosuppressive drug.</span>
-                    </p>
                   </div>
 
                   <div className="lim-sub-divider" aria-hidden="true">
