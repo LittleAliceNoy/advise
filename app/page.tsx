@@ -4059,23 +4059,23 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <svg className="robustness-merge-svg" viewBox="0 0 160 54" fill="none">
+                    <svg className="robustness-merge-svg" viewBox="0 0 1000 54" preserveAspectRatio="none" fill="none">
                       <defs>
                         <linearGradient id="robustMergeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                           <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
-                          <stop offset="65%" stopColor="rgba(255,77,82,0.55)" />
+                          <stop offset="70%" stopColor="rgba(255,77,82,0.55)" />
                           <stop offset="100%" stopColor="#ff4d52" />
                         </linearGradient>
                       </defs>
                       {/* Top line curving down to middle */}
-                      <path d="M 0,9 L 70,9 C 105,9 115,27 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      <path d="M 0,9 L 880,9 C 930,9 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Center straight line */}
-                      <path d="M 0,27 L 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      <path d="M 0,27 L 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Bottom line curving up to middle */}
-                      <path d="M 0,45 L 70,45 C 105,45 115,27 135,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" />
+                      <path d="M 0,45 L 880,45 C 930,45 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Merged arrow pointer */}
-                      <line x1="135" y1="27" x2="148" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
-                      <polygon points="146,23 154,27 146,31" fill="#ff4d52" />
+                      <line x1="975" y1="27" x2="993" y2="27" stroke="#ff4d52" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
+                      <polygon points="988,21 1000,27 988,33" fill="#ff4d52" />
                     </svg>
                   </div>
 

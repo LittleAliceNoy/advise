@@ -11411,8 +11411,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .robustness-merge-svg {
   flex: 1 1 auto;
   height: 52px;
-  min-width: 80px;
-  max-width: 180px;
+  min-width: 100px;
+  width: 100%;
   overflow: visible;
 }
 
