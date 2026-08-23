@@ -3017,10 +3017,9 @@ export default function Home() {
                 {/* 1. TOP TITLE BAR */}
                 <div className="cid-pie-header-bar">
                   <div className="pie-header-left">
-                    <span className="cid-pill">CID</span>
                     <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
                   </div>
-                  <span className="cid-total-n">N = 113</span>
+                  <span className="cid-total-n">N = 110</span>
                 </div>
 
                 {/* 2. MAIN INTERACTIVE DONUT & CAMERA CANVAS */}
