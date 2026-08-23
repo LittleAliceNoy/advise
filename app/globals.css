@@ -5276,14 +5276,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(.72rem, 1.05vw, 1.2rem);
-  flex: 0 0 16vh;
-  min-height: 16vh;
-  height: 16vh;
+  flex: 0 0 16.5vh;
+  min-height: 16.5vh;
+  height: 16.5vh;
   box-sizing: border-box;
   background: transparent;
   border: none;
   padding: 0;
-  margin-top: .4vh;
+  margin-top: 0;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-footer-outcome {
@@ -5292,7 +5292,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.015);
-  padding: .65rem .85rem;
+  padding: .5rem .85rem .45rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5303,24 +5303,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .txr-dashboard-scene .txrd-footer .txrd-outcome-header {
   display: flex;
   align-items: center;
-  gap: .55rem;
-  margin-bottom: .2rem;
+  gap: .5rem;
+  margin-bottom: .1rem;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-outcome-header svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-outcome-header strong {
-  font-size: clamp(.58rem, .62vw, .7rem);
+  font-size: clamp(.55rem, .58vw, .66rem);
   font-family: var(--font-geist-mono), monospace;
   color: #eee;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-outcome-header span {
-  font-size: clamp(.48rem, .51vw, .58rem);
+  font-size: clamp(.44rem, .47vw, .54rem);
   font-family: var(--font-geist-mono), monospace;
   color: #888;
 }
@@ -5331,7 +5331,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center !important;
   align-items: center !important;
   column-gap: clamp(.8rem, 1.4vw, 2rem) !important;
-  margin: .15rem 0 !important;
+  margin: .05rem 0 !important;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-vs > div {
@@ -5342,14 +5342,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-vs strong {
-  font-size: clamp(1.45rem, 1.65vw, 1.95rem) !important;
+  font-size: clamp(1.3rem, 1.45vw, 1.7rem) !important;
   line-height: 1 !important;
-  margin: .1rem 0 !important;
+  margin: .05rem 0 !important;
   font-family: var(--font-geist-mono), monospace !important;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-vs i {
-  font-size: clamp(.55rem, .58vw, .66rem) !important;
+  font-size: clamp(.52rem, .55vw, .62rem) !important;
   color: #555 !important;
   font-style: normal !important;
   font-family: var(--font-geist-mono), monospace !important;
@@ -5358,39 +5358,33 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .txr-dashboard-scene .txrd-footer .txrd-vs small,
 .txr-dashboard-scene .txrd-footer .txrd-vs span {
-  font-size: clamp(.46rem, .5vw, .56rem) !important;
+  font-size: clamp(.42rem, .45vw, .52rem) !important;
   font-family: var(--font-geist-mono), monospace !important;
   color: #a8a29e !important;
 }
 
 .txr-dashboard-scene .txrd-footer .txrd-outcome footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  padding-top: .32rem !important;
-  margin-top: .2rem !important;
+  padding-top: .22rem !important;
+  margin-top: .15rem !important;
   font-family: var(--font-geist-mono), monospace !important;
-  font-size: clamp(.44rem, .48vw, .55rem) !important;
+  font-size: clamp(.42rem, .45vw, .52rem) !important;
   color: #bfb9b4 !important;
   text-align: center !important;
   white-space: nowrap !important;
 }
 
-/* Page 17 — give the treatment pathways enough internal breathing room. */
+/* Page 17/18 — give the treatment pathways enough internal breathing room. */
 .txr-dashboard-scene .txrd-grid-main {
-  flex-basis: 30vh;
-  height: 30vh;
-  margin-bottom: .9vh;
+  flex-basis: 27vh;
+  height: 27vh;
+  margin-bottom: .65vh;
 }
 
 .txr-dashboard-scene .txrd-grid-outcomes {
-  flex-basis: 20.6vh;
-  height: 20.6vh;
-  margin-bottom: 1vh;
-}
-
-.txr-dashboard-scene .txrd-footer {
-  flex-basis: 10.8vh;
-  height: 10.8vh;
-  min-height: 10.8vh;
+  flex-basis: 17vh;
+  height: 17vh;
+  margin-bottom: .65vh;
 }
 
 .txr-dashboard-scene .txrd-pathways .txrd-arms {
