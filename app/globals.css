@@ -10345,63 +10345,36 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-shadow: 0 0 12px rgba(255, 45, 45, 0.3);
 }
 
-/* Harmonized Evidence Callouts for both Antimetabolites & CNI — Subtle & Compact */
+/* Harmonized Evidence Callouts for both Antimetabolites & CNI */
 .harmonized-evidence-callout {
   position: relative;
-  padding: 0.28rem 0.55rem 0.28rem 0.65rem;
-  border-radius: 0 3px 3px 0;
+  padding: 0.15rem 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
   text-align: left;
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
+  background: transparent;
+  border: none;
   box-shadow: none;
 }
 
-.harmonized-evidence-callout.callout-antimetabolites {
-  background: linear-gradient(90deg, rgba(255, 77, 82, 0.1), rgba(255, 77, 82, 0.02));
-  border: 1px solid rgba(255, 77, 82, 0.12);
-  border-left: none;
-}
-
-.harmonized-evidence-callout.callout-antimetabolites::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(255, 77, 82, 0.65);
-}
-
-.harmonized-evidence-callout.callout-cni {
-  background: linear-gradient(90deg, rgba(181, 142, 255, 0.1), rgba(181, 142, 255, 0.02));
-  border: 1px solid rgba(181, 142, 255, 0.12);
-  border-left: none;
-}
-
-.harmonized-evidence-callout.callout-cni::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(181, 142, 255, 0.65);
-}
-
 .evidence-badge-tag {
-  font: 700 clamp(0.44rem, 0.48vw, 0.58rem) var(--font-geist-mono), monospace;
-  letter-spacing: 0.06em;
+  font: 800 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.05rem;
 }
 
 .evidence-badge-tag.tag-red {
-  color: rgba(255, 130, 135, 0.9);
+  color: #ff4d52;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.5);
 }
 
 .evidence-badge-tag.tag-violet {
-  color: rgba(200, 175, 255, 0.9);
+  color: #b58eff;
+  text-shadow: 0 0 16px rgba(181, 142, 255, 0.5);
 }
 
 .harmonized-evidence-list {

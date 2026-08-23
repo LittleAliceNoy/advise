@@ -3145,7 +3145,7 @@ export default function Home() {
                       <div className="split-detail-card card-antimetabolites">
                         <div className="split-card-header">
                           <span className="focal-badge-hero red-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
-                            ANTIMETABOLITES · 79% (87 pt)
+                            ANTIMETABOLITES
                           </span>
                         </div>
 
@@ -3201,7 +3201,7 @@ export default function Home() {
                       <div className={`split-detail-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
                         <div className="split-card-header">
                           <span className="focal-badge-hero violet-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
-                            CALCINEURIN INHIBITORS · 21% (23 pt)
+                            CALCINEURIN INHIBITORS
                           </span>
                         </div>
 
@@ -3355,7 +3355,7 @@ export default function Home() {
                     >
                       <div className="focal-card focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                         <div className="focal-title-row">
-                          <span className="focal-badge-hero red-hero">ANTIMETABOLITES · 79% (87 pt)</span>
+                          <span className="focal-badge-hero red-hero">ANTIMETABOLITES</span>
                         </div>
 
                         {/* 3 Pills Row with Distinct Pill Icons */}
@@ -3419,7 +3419,7 @@ export default function Home() {
                     >
                       <div className="focal-card card-cni focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                         <div className="focal-title-row">
-                          <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS · 21% (23 pt)</span>
+                          <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS</span>
                         </div>
 
                         {/* 2 Pills Row with Distinct Pill Icons */}
