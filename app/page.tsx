@@ -3186,7 +3186,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Calcineurin Inhibitors Inspection Overlay */}
+                  {/* Calcineurin Inhibitors Inspection Overlay (Mirrored Refinement) */}
                   <div
                     className={`inspect-focal-overlay overlay-cni ${activeBranch === 'cni' ? 'is-active' : ''}`}
                     onClick={closeInspection}
@@ -3198,31 +3198,50 @@ export default function Home() {
                         <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS · 21% (23 pt)</span>
                       </div>
 
-                      <div className="cni-evidence-grid">
-                        {/* 01 Tacrolimus */}
-                        <div className="cni-evidence-card cni-show">
-                          <div className="cni-card-header">
-                            <span className="cni-index">01</span>
-                            <strong>TACROLIMUS</strong>
-                            <span className="cni-sub">19 pts (83% of CNIs)</span>
+                      {/* 2 Pills Row with Distinct Pill Icons (Borderless, Shown At Once) */}
+                      <div className="focal-pills-row cni-pills-row">
+                        {/* Pill 1: TACROLIMUS (Violet Oblong Capsule) 19 pt */}
+                        <div className="pill-drug-col pill-show">
+                          <div className="pill-icon-wrap wrap-violet">
+                            <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
+                              <g transform="rotate(-45 20 20)">
+                                <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#b58eff" strokeWidth="2" />
+                                <line x1="12" y1="20" x2="28" y2="20" stroke="#b58eff" strokeWidth="1.8" />
+                                <path d="M 12 20 L 28 20 L 28 26 A 8 8 0 0 1 12 26 Z" fill="rgba(181, 142, 255, 0.38)" />
+                              </g>
+                            </svg>
                           </div>
-                          <p className="cni-desc">Prior evidence for tacrolimus was mixed.</p>
+                          <strong className="pill-drug-name">TACROLIMUS</strong>
+                          <span className="pill-drug-count count-violet">19 pt <small>(83% of CNIs)</small></span>
                         </div>
 
-                        {/* 02 Cyclosporine */}
-                        <div className="cni-evidence-card card-csa-alert cni-show">
-                          <div className="cni-card-header">
-                            <span className="cni-index idx-red">02</span>
-                            <strong className="name-red">CYCLOSPORINE</strong>
-                            <span className="cni-sub sub-red">4 pts</span>
+                        {/* Pill 2: CYCLOSPORINE (Red Lozenge Caplet) 4 pt */}
+                        <div className="pill-drug-col pill-show">
+                          <div className="pill-icon-wrap wrap-red">
+                            <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
+                              <g transform="rotate(-30 20 20)">
+                                <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
+                                <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                              </g>
+                            </svg>
                           </div>
-                          <p className="cni-desc desc-red">Evidence suggested potentially lower efficacy than antimetabolites.</p>
+                          <strong className="pill-drug-name name-red">CYCLOSPORINE</strong>
+                          <span className="pill-drug-count count-red">4 pt <small>(4% of CID)</small></span>
+                        </div>
+                      </div>
 
-                          <div className="csa-prominent-callout">
-                            <span className="csa-prom-tag">CYCLOSPORINE</span>
-                            <span className="csa-prom-num">4%</span>
-                            <span className="csa-prom-sub">OF TOTAL CID</span>
-                          </div>
+                      {/* Evidence Callouts in steroid-reset style */}
+                      <div className="cni-evidence-callouts-stack">
+                        <div className="cni-evidence-callout callout-tacrolimus">
+                          <p>
+                            <b>01 TACROLIMUS:</b> Prior evidence for tacrolimus was mixed.
+                          </p>
+                        </div>
+
+                        <div className="cni-evidence-callout callout-csa">
+                          <p>
+                            <b className="name-red">02 CYCLOSPORINE (4%):</b> Evidence suggested potentially lower efficacy than antimetabolites.
+                          </p>
                         </div>
                       </div>
                     </div>
