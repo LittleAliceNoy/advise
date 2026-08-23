@@ -3033,22 +3033,16 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* 01 & 02 Points (Revealed on click: synthesisStep === 3) */}
-                <div className={`left-synthesis-points ${synthesisStep === 3 ? 'points-revealed' : 'points-hidden'}`}>
-                  <div className="left-synthesis-col">
-                    <span className="col-idx">01</span>
-                    <div className="col-body">
-                      <strong>LIMITED EXPOSURE</strong>
-                      <p>Cyclosporine represented only 4% of total CID.</p>
-                    </div>
+                {/* 01 & 02 Points (Revealed on click: synthesisStep === 3) — Matching Slide 28 Observation Layout */}
+                <div className={`adv-observations-block editorial-rules left-synthesis-points ${synthesisStep === 3 ? 'points-revealed' : 'points-hidden'}`}>
+                  <div className="observation-item">
+                    <h4><span>01</span> — LIMITED EXPOSURE</h4>
+                    <p>Cyclosporine represented only 4% of total CID.</p>
                   </div>
-
-                  <div className="left-synthesis-col">
-                    <span className="col-idx">02</span>
-                    <div className="col-body">
-                      <strong>CONSISTENT RESULTS</strong>
-                      <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
-                    </div>
+                  
+                  <div className="observation-item">
+                    <h4><span>02</span> — CONSISTENT RESULTS</h4>
+                    <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
                   </div>
                 </div>
               </div>

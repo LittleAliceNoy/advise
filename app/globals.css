@@ -10522,7 +10522,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: #ff4d52;
   text-shadow: 0 0 15px rgba(255, 77, 82, 0.7);
 }
-
 .csa-prom-sub {
   font: 600 clamp(0.46rem, 0.52vw, 0.62rem) var(--font-geist-mono), monospace;
   color: #ff8085;
@@ -10585,54 +10584,54 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0;
 }
 
+/* Left Synthesis Points (Slide 28 Observation Layout) */
 .left-synthesis-points {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.5rem, 0.8vw, 1rem);
-  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.55s ease;
+  margin-top: clamp(0.5rem, 0.9vh, 0.9rem);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), max-height 0.6s ease;
 }
 
 .left-synthesis-points.points-hidden {
   opacity: 0;
   max-height: 0;
-  transform: translateY(12px);
+  transform: translateY(14px);
   overflow: hidden;
   pointer-events: none;
+  margin-top: 0;
 }
 
 .left-synthesis-points.points-revealed {
   opacity: 1;
-  max-height: 300px;
+  max-height: 500px;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.left-synthesis-col {
-  display: flex;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 3px;
-  padding: 0.45rem 0.6rem;
+.left-synthesis-points .observation-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(0.6rem, 1vh, 0.9rem) 0;
 }
 
-.left-synthesis-col .col-idx {
-  font: 700 clamp(0.6rem, 0.68vw, 0.8rem) var(--font-geist-mono), monospace;
+.left-synthesis-points .observation-item:last-child {
+  padding-bottom: 0;
+}
+
+.left-synthesis-points .observation-item h4 {
+  color: #f0ece8;
+  font-size: clamp(0.62rem, 0.72vw, 0.86rem);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.left-synthesis-points .observation-item h4 span {
   color: var(--red);
 }
 
-.left-synthesis-col .col-body strong {
-  font: 700 clamp(0.56rem, 0.64vw, 0.76rem) var(--font-geist-mono), monospace;
-  color: #fff;
-  display: block;
-  margin-bottom: 0.15rem;
-  letter-spacing: 0.03em;
-}
-
-.left-synthesis-col .col-body p {
-  font-size: clamp(0.56rem, 0.63vw, 0.74rem);
+.left-synthesis-points .observation-item p {
   color: #a09591;
-  line-height: 1.35;
+  font-size: clamp(0.68rem, 0.78vw, 0.9rem);
+  line-height: 1.5;
   margin: 0;
 }
 
