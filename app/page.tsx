@@ -4045,40 +4045,78 @@ export default function Home() {
                 </div>
 
                 <div className="robustness-strip-body">
-                  {/* Left: 3 Analysis rows + Merging Arrow + Ellipsis */}
-                  <div className="robustness-merge-group">
-                    <div className="robustness-analysis-labels">
-                      <div className="robustness-analysis-item">
-                        <strong>ANALYSIS 01</strong> — Alternative missing-data assumption
-                      </div>
-                      <div className="robustness-analysis-item">
-                        <strong>ANALYSIS 02</strong> — Alternative missing-data assumption
-                      </div>
-                      <div className="robustness-analysis-item">
-                        <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
-                      </div>
-                      <div className="robustness-analysis-ellipsis">
-                        . . .
-                      </div>
+                  {/* Left: SAME TRIAL DATA card */}
+                  <div className="robustness-trial-data-card">
+                    <div className="matrix-icon-wrap">
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="matrix-data-svg">
+                        <rect x="1.5" y="1.5" width="25" height="25" rx="3" stroke="rgba(255,255,255,0.22)" strokeWidth="1" strokeDasharray="2 2" />
+                        <line x1="10" y1="1.5" x2="10" y2="26.5" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                        <line x1="18" y1="1.5" x2="18" y2="26.5" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                        <line x1="1.5" y1="10" x2="26.5" y2="10" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                        <line x1="1.5" y1="18" x2="26.5" y2="18" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                        {/* Matrix cells */}
+                        <rect x="4" y="4" width="3.5" height="3.5" rx="0.5" fill="#ff4d52" fillOpacity="0.8" />
+                        <rect x="12" y="4" width="3.5" height="3.5" rx="0.5" fill="rgba(255,255,255,0.35)" />
+                        <rect x="20" y="4" width="3.5" height="3.5" rx="0.5" fill="#ff4d52" fillOpacity="0.6" />
+                        <rect x="4" y="12" width="3.5" height="3.5" rx="0.5" fill="rgba(255,255,255,0.35)" />
+                        <rect x="12" y="12" width="3.5" height="3.5" rx="0.5" fill="#ff4d52" fillOpacity="0.9" />
+                        <rect x="20" y="12" width="3.5" height="3.5" rx="0.5" fill="rgba(255,255,255,0.25)" />
+                        <rect x="4" y="20" width="3.5" height="3.5" rx="0.5" fill="#ff4d52" fillOpacity="0.7" />
+                        <rect x="12" y="20" width="3.5" height="3.5" rx="0.5" fill="rgba(255,255,255,0.25)" />
+                        <rect x="20" y="20" width="3.5" height="3.5" rx="0.5" fill="rgba(255,255,255,0.5)" />
+                      </svg>
                     </div>
+                    <div className="trial-data-text">
+                      <span>SAME</span>
+                      <span>TRIAL DATA</span>
+                    </div>
+                  </div>
 
-                    <svg className="robustness-merge-svg" viewBox="0 0 1000 70" preserveAspectRatio="none" fill="none">
-                      <defs>
-                        <linearGradient id="robustMergeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0">
-                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.45)" />
-                          <stop offset="45%" stopColor="rgba(255, 77, 82, 0.75)" />
-                          <stop offset="100%" stopColor="#ff4d52" />
-                        </linearGradient>
-                      </defs>
-                      {/* Top line curving down around center */}
-                      <path d="M 0,11 L 380,11 C 440,11 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-                      {/* Long center line: starts at Analysis 02 and extends all the way through the center to the arrow head */}
-                      <line x1="0" y1="31" x2="993" y2="31" stroke="url(#robustMergeGrad)" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
-                      {/* Bottom line curving up around center */}
-                      <path d="M 0,51 L 380,51 C 440,51 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-                      {/* Merged arrow head */}
-                      <polygon points="988,25 1000,31 988,37" fill="#ff4d52" />
+                  {/* Flow Arrow from Trial Data */}
+                  <div className="robustness-flow-arrow">
+                    <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+                      <line x1="2" y1="6" x2="18" y2="6" stroke="rgba(255,255,255,0.3)" strokeWidth="1.4" />
+                      <path d="M 14,2.5 L 18.5,6 L 14,9.5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                     </svg>
+                  </div>
+
+                  {/* Middle: Heading + 3 Analysis rows + Merging Arrow + Ellipsis */}
+                  <div className="robustness-multi-analysis-block">
+                    <span className="robustness-assumptions-heading">DIFFERENT ASSUMPTIONS ABOUT MISSING DATA</span>
+                    <div className="robustness-merge-group">
+                      <div className="robustness-analysis-labels">
+                        <div className="robustness-analysis-item">
+                          <strong>ANALYSIS 01</strong> — Alternative missing-data assumption
+                        </div>
+                        <div className="robustness-analysis-item">
+                          <strong>ANALYSIS 02</strong> — Alternative missing-data assumption
+                        </div>
+                        <div className="robustness-analysis-item">
+                          <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
+                        </div>
+                        <div className="robustness-analysis-ellipsis">
+                          . . .
+                        </div>
+                      </div>
+
+                      <svg className="robustness-merge-svg" viewBox="0 0 1000 70" preserveAspectRatio="none" fill="none">
+                        <defs>
+                          <linearGradient id="robustMergeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0">
+                            <stop offset="0%" stopColor="rgba(255, 77, 82, 0.45)" />
+                            <stop offset="45%" stopColor="rgba(255, 77, 82, 0.75)" />
+                            <stop offset="100%" stopColor="#ff4d52" />
+                          </linearGradient>
+                        </defs>
+                        {/* Top line curving down around center */}
+                        <path d="M 0,11 L 380,11 C 440,11 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+                        {/* Long center line: starts at Analysis 02 and extends all the way through the center to the arrow head */}
+                        <line x1="0" y1="31" x2="993" y2="31" stroke="url(#robustMergeGrad)" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
+                        {/* Bottom line curving up around center */}
+                        <path d="M 0,51 L 380,51 C 440,51 475,31 510,31" stroke="url(#robustMergeGrad)" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+                        {/* Merged arrow head */}
+                        <polygon points="988,25 1000,31 988,37" fill="#ff4d52" />
+                      </svg>
+                    </div>
                   </div>
 
                   {/* Far Right: Concise Conclusion Block */}
