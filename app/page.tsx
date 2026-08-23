@@ -1599,7 +1599,6 @@ export default function Home() {
                   } as React.CSSProperties} />;
                 })}
               </div>
-              <div className="flow-exclusion-caption"><span>111 excluded from the cohort</span><small>Medication · medical condition · preference · inactive uveitis · other</small></div>
               <div className="flow-arm-labels"><strong>114 <i>ADA</i></strong><strong>113 <i>CID</i></strong></div>
             </div>
           )}
