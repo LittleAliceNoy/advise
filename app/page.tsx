@@ -3900,39 +3900,47 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
+                  {/* COLUMN HEADER ABOVE BOTH ROWS: IMMEDIATELY AFTER RANDOMIZATION */}
+                  <g className="post-rand-header-group">
+                    <text x="250" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      IMMEDIATELY AFTER RANDOMIZATION
+                    </text>
+                    <line x1="165" y1="23" x2="335" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                  </g>
+
                   {/* TRACK 1: ADALIMUMAB (RED) */}
                   <g className="ada-track-clean">
-                    <text x="25" y="44" fill="#ff7175" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    <text x="25" y="52" fill="#ff7175" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       ADALIMUMAB
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="40" x2="915" y2="40" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="48" x2="915" y2="48" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
                     {/* Participant dot stream */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
                       <circle
                         key={`ada-dot-${i}`}
                         cx={cx}
-                        cy={40}
+                        cy={48}
                         r={3.4}
                         fill={i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
                       />
                     ))}
                     
                     {/* Near the beginning: 1 ADA dropout */}
-                    <path d="M 229,40 Q 235,58 248,60" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="248" cy="60" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
-                    <text x="258" y="63.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                    <path d="M 229,48 Q 235,66 248,68" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="248" cy="68" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                    <text x="258" y="71.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                       1 ADA dropout
                     </text>
                   </g>
 
-                  {/* TRACK 2: CID (COMPARATOR) (PURPLE) */}
+                  {/* TRACK 2: CID (PURPLE) */}
                   <g className="cid-track-clean">
-                    <text x="25" y="104" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                      CID (COMPARATOR)
+                    <text x="25" y="118" fill="#b58eff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      CID
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="100" x2="915" y2="100" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="114" x2="915" y2="114" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
                     {/* Participant dot stream */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
                       const isDropout = [2, 3, 4].includes(i);
@@ -3940,33 +3948,26 @@ export default function Home() {
                         <circle
                           key={`cid-dot-${i}`}
                           cx={cx}
-                          cy={100}
+                          cy={114}
                           r={3.4}
                           fill={isDropout ? "rgba(181,142,255,0.25)" : "#b58eff"}
                         />
                       );
                     })}
 
-                    {/* OBSERVATION 1: Near the beginning — Immediately after randomization (3 CID vs 1 ADA) */}
-                    <path d="M 229,100 Q 235,122 248,124" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="248" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="257" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="266" cy="124" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-
-                    <g transform="translate(278, 112)">
-                      <rect x="0" y="0" width="220" height="24" fill="#110a1c" stroke="rgba(181,142,255,0.45)" rx="2" />
-                      <text x="8" y="10.5" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                        IMMEDIATELY AFTER RANDOMIZATION
-                      </text>
-                      <text x="8" y="19.5" fill="#d8c9ff" fontSize="7.8" fontFamily="var(--font-geist-mono)">
-                        3 CID vs 1 ADA dropped out
-                      </text>
-                    </g>
+                    {/* OBSERVATION 1: Near the beginning — 3 CID drop out */}
+                    <path d="M 229,114 Q 235,134 248,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    <circle cx="248" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="257" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <circle cx="266" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                    <text x="278" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                      3 CID drop out
+                    </text>
 
                     {/* OBSERVATION 2: Separate Aggregate Finding — Treatment Discontinuation (8 participants · all assigned to CID) */}
-                    <g transform="translate(535, 96)">
+                    <g transform="translate(535, 108)">
                       {/* Anchor connector to CID track */}
-                      <line x1="10" y1="4" x2="10" y2="16" stroke="rgba(255,77,82,0.6)" strokeWidth="1.4" />
+                      <line x1="10" y1="6" x2="10" y2="16" stroke="rgba(255,77,82,0.6)" strokeWidth="1.4" />
                       <rect x="0" y="16" width="380" height="48" fill="#160608" stroke="rgba(255,77,82,0.45)" rx="3" />
                       
                       <text x="12" y="32" fill="#ffffff" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">
