@@ -9542,6 +9542,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .discussion-limitations-scene .adv-arch-evidence-strip {
   margin: 0 0 clamp(0.5rem, 0.8vh, 0.8rem) 0;
   padding: clamp(0.45rem, 0.65vw, 0.65rem) clamp(0.6rem, 0.9vw, 1rem);
+  gap: clamp(0.6rem, 1vw, 1.4rem);
+}
+
+.discussion-limitations-scene .adv-arch-evidence-recall {
+  max-width: 11.5rem;
+  padding-right: clamp(0.5rem, 0.8vw, 1rem);
+}
+
+.discussion-limitations-scene .adv-arch-evidence-recall strong {
+  font-size: clamp(0.64rem, 0.72vw, 0.84rem);
+}
+
+.discussion-limitations-scene .adv-arch-evidence-recall span {
+  max-width: 11rem;
+  font-size: clamp(0.62rem, 0.68vw, 0.8rem);
+  line-height: 1.3;
+  margin-top: 0.2rem;
 }
 
 .limitations-analytical-panel {
