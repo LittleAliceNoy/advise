@@ -11608,228 +11608,298 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: var(--red);
 }
 
-/* Canvas Wrap */
-.immuno-full-canvas {
-  background: rgba(14, 14, 18, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: clamp(0.8rem, 1.4vh, 1.5rem) clamp(1rem, 1.8vw, 1.8rem);
+/* Stack Canvas */
+.immuno-stack-canvas {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.8rem, 1.4vh, 1.4rem);
-  flex: 1 1 auto;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.immuno-canvas-top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding-bottom: clamp(0.2rem, 0.4vh, 0.35rem);
-  flex: 0 0 auto;
-}
-
-/* Horizontal Logic Chain */
-.immuno-chain-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(0.3rem, 0.6vw, 0.8rem);
+  gap: clamp(0.45rem, 0.8vh, 0.8rem);
+  flex: 1;
   width: 100%;
-  padding: clamp(0.4rem, 0.8vh, 0.8rem) 0;
-  box-sizing: border-box;
+  justify-content: space-between;
 }
 
-.immuno-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: clamp(0.25rem, 0.45vh, 0.45rem);
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.node-metric-large {
-  font: 800 clamp(1.8rem, 2.6vw, 3.2rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.node-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: clamp(34px, 4.5vh, 44px);
-}
-
-.node-label-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-}
-
-.node-title {
-  font: 700 clamp(0.56rem, 0.65vw, 0.78rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.node-sub {
-  font-size: clamp(0.56rem, 0.64vw, 0.76rem);
-  color: #a09591;
-  line-height: 1.3;
-  max-width: 180px;
-}
-
-.red-accent-text {
-  color: #ff7175;
-}
-
-/* Focal Question Mark (?) */
-.focal-question-badge {
-  width: clamp(44px, 5.5vh, 58px);
-  height: clamp(44px, 5.5vh, 58px);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 77, 82, 0.22) 0%, rgba(255, 77, 82, 0.05) 70%, transparent 100%);
-  border: 2px solid #ff4d52;
-  box-shadow: 0 0 24px rgba(255, 77, 82, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.1rem;
-}
-
-.focal-q-mark {
-  font: 800 clamp(1.4rem, 1.8vw, 2.2rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  line-height: 1;
-}
-
-.focal-title {
-  color: #ffffff;
-}
-
-.focal-sub {
-  color: #ff7175;
-  font-weight: 600;
-  font-family: var(--font-geist-mono), monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.immuno-chain-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 clamp(28px, 3.5vw, 55px);
-  opacity: 0.75;
-}
-
-.chain-arrow-svg {
-  width: 100%;
-  height: 14px;
-}
-
-/* Lower Section — Two Evidence Blocks */
-.immuno-evidence-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.9rem, 1.6vw, 1.8rem);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.immuno-evidence-card {
-  background: rgba(255, 255, 255, 0.02);
+.immuno-panel {
+  background: rgba(12, 12, 16, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  padding: clamp(0.55rem, 0.9vh, 0.95rem) clamp(0.8rem, 1.3vw, 1.3rem);
+  padding: clamp(0.55rem, 0.95vh, 0.95rem) clamp(0.9rem, 1.4vw, 1.4rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.2rem, 0.35vh, 0.35rem);
+  gap: clamp(0.25rem, 0.45vh, 0.45rem);
   position: relative;
   box-sizing: border-box;
 }
 
-.immuno-evidence-card.purple-card {
-  border-left: 3px solid #b58eff;
+.panel-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.immuno-evidence-card.red-card {
-  border-left: 3px solid #ff4d52;
+.panel-num-badge {
+  font: 700 clamp(0.54rem, 0.62vw, 0.72rem) var(--font-geist-mono), monospace;
+  color: #ff7175;
+  border: 1px solid rgba(255, 77, 82, 0.4);
+  border-radius: 2px;
+  padding: 0.05rem 0.35rem;
+  background: rgba(255, 77, 82, 0.08);
 }
 
-.evidence-kicker {
-  font: 700 clamp(0.48rem, 0.54vw, 0.66rem) var(--font-geist-mono), monospace;
+.panel-num-badge.purple-num {
+  color: #b58eff;
+  border-color: rgba(181, 142, 255, 0.4);
+  background: rgba(181, 142, 255, 0.08);
+}
+
+.panel-kicker {
+  font: 700 clamp(0.52rem, 0.6vw, 0.72rem) var(--font-geist-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.purple-kicker {
-  color: #b58eff;
 }
 
 .red-kicker {
   color: #ff7175;
 }
 
-.evidence-statement {
-  font-size: clamp(0.68rem, 0.76vw, 0.88rem);
-  color: #ffffff;
-  font-weight: 500;
-  line-height: 1.35;
-  margin: 0;
+.purple-kicker {
+  color: #b58eff;
 }
 
-.evidence-subtext {
-  font-size: clamp(0.6rem, 0.68vw, 0.78rem);
-  color: #a09591;
-  line-height: 1.35;
-  margin: 0;
+/* 01 Hero Panel */
+.immuno-panel.hero-panel {
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  background: linear-gradient(135deg, rgba(255, 77, 82, 0.06) 0%, rgba(14, 10, 12, 0.75) 100%);
+  padding: clamp(0.7rem, 1.2vh, 1.2rem) clamp(1rem, 1.6vw, 1.6rem);
 }
 
-.evidence-citation-tag {
-  font: 400 clamp(0.48rem, 0.52vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #736b67;
-  font-style: italic;
-  margin-top: 0.15rem;
-}
-
-/* Bottom Takeaway */
-.immuno-bottom-takeaway {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: clamp(0.5rem, 0.8vh, 0.85rem);
+.hero-content-flex {
   display: flex;
   align-items: center;
-  gap: clamp(0.8rem, 1.2vw, 1.5rem);
+  gap: clamp(1.4rem, 2.5vw, 3.2rem);
   width: 100%;
-  box-sizing: border-box;
 }
 
-.takeaway-badge {
-  font: 700 clamp(0.52rem, 0.58vw, 0.72rem) var(--font-geist-mono), monospace;
-  color: #ff7175;
-  background: rgba(255, 77, 82, 0.08);
-  border: 1px solid rgba(255, 77, 82, 0.3);
-  padding: 0.2rem 0.55rem;
-  border-radius: 3px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
+.hero-antibody-visual {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.takeaway-statement {
-  font-size: clamp(0.72rem, 0.82vw, 0.94rem);
+.hero-antibody-svg {
+  filter: drop-shadow(0 0 16px rgba(255, 77, 82, 0.35));
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.hero-dominant-title {
+  font: 800 clamp(1.7rem, 2.6vw, 3rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  font-weight: 500;
-  line-height: 1.4;
+  letter-spacing: -0.02em;
   margin: 0;
+  line-height: 1;
+}
+
+.hero-support-text {
+  font-size: clamp(0.76rem, 0.88vw, 1rem);
+  color: #d0c7c3;
+  margin: 0.15rem 0 0.45rem;
+  font-weight: 400;
+}
+
+.hero-causal-flow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 0.8vw, 1rem);
+}
+
+.causal-badge {
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  background: rgba(255, 77, 82, 0.06);
+  padding: clamp(0.25rem, 0.4vh, 0.4rem) clamp(0.6rem, 0.9vw, 1rem);
+  border-radius: 4px;
+}
+
+.causal-title {
+  font: 700 clamp(0.58rem, 0.68vw, 0.82rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.causal-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 02 Purple Panel */
+.immuno-panel.purple-panel {
+  border: 1px solid rgba(181, 142, 255, 0.28);
+  background: linear-gradient(135deg, rgba(181, 142, 255, 0.04) 0%, rgba(14, 10, 20, 0.7) 100%);
+}
+
+.purple-content-flex {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 1.8vw, 2.2rem);
+  width: 100%;
+}
+
+.purple-shield-icon {
+  flex: 0 0 auto;
+}
+
+.purple-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.purple-statement {
+  font-size: clamp(0.78rem, 0.9vw, 1.05rem);
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.purple-highlight {
+  color: #b58eff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.purple-qualifier {
+  font-size: clamp(0.62rem, 0.72vw, 0.84rem);
+  color: #a09591;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 03 Limitation Panel */
+.immuno-panel.limitation-panel {
+  border: 1px solid rgba(255, 77, 82, 0.25);
+  background: rgba(14, 12, 15, 0.65);
+}
+
+.limitation-4step-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.4rem, 0.8vw, 1.2rem);
+  width: 100%;
+  padding: clamp(0.15rem, 0.3vh, 0.4rem) 0;
+}
+
+.lim-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.lim-stat {
+  font: 800 clamp(1.6rem, 2.2vw, 2.6rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  line-height: 1;
+}
+
+.lim-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(28px, 3.8vh, 36px);
+}
+
+.lim-desc {
+  font-size: clamp(0.58rem, 0.66vw, 0.78rem);
+  color: #a09591;
+  line-height: 1.3;
+  max-width: 210px;
+}
+
+.lim-desc .red-bold {
+  color: #ff7175;
+  font-weight: 700;
+}
+
+.lim-arrow {
+  font-size: clamp(1rem, 1.4vw, 1.6rem);
+  color: rgba(255, 77, 82, 0.5);
+  flex: 0 0 auto;
+}
+
+/* 04 Takeaway Panel */
+.immuno-panel.takeaway-panel {
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  background: rgba(18, 10, 12, 0.55);
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(1rem, 1.8vw, 2.2rem);
+  padding: clamp(0.6rem, 1vh, 1rem) clamp(1rem, 1.6vw, 1.6rem);
+}
+
+.takeaway-q-circle {
+  width: clamp(44px, 5.5vh, 56px);
+  height: clamp(44px, 5.5vh, 56px);
+  border-radius: 50%;
+  border: 2px solid #ff4d52;
+  background: radial-gradient(circle, rgba(255, 77, 82, 0.22) 0%, transparent 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  box-shadow: 0 0 20px rgba(255, 77, 82, 0.3);
+}
+
+.takeaway-q-circle span {
+  font: 800 clamp(1.4rem, 1.9vw, 2.2rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  line-height: 1;
+}
+
+.takeaway-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.takeaway-question-red {
+  font: 700 clamp(0.68rem, 0.78vw, 0.92rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.takeaway-body-lead {
+  font-size: clamp(0.72rem, 0.82vw, 0.96rem);
+  color: #ffffff;
+  margin: 0;
+  font-weight: 600;
+}
+
+.takeaway-body-core {
+  font-size: clamp(0.68rem, 0.78vw, 0.92rem);
+  color: #d0c7c3;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Footer Cite */
+.immuno-footer-cite {
+  font: 400 clamp(0.55rem, 0.62vw, 0.72rem) var(--font-geist-mono), monospace;
+  color: #736b67;
+  font-style: italic;
+  margin-top: 0.05rem;
 }
 
