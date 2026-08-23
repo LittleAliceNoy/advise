@@ -3054,18 +3054,18 @@ export default function Home() {
                           <stop offset="50%" stopColor="#8d64f7" />
                           <stop offset="100%" stopColor="#b58eff" />
                         </linearGradient>
-                        <filter id="glow79" x="-25%" y="-25%" width="150%" height="150%">
-                          <feGaussianBlur stdDeviation="5" result="blur" />
+                        <filter id="glow79" x="-30%" y="-30%" width="160%" height="160%">
+                          <feGaussianBlur stdDeviation="6" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
-                        <filter id="glow21" x="-25%" y="-25%" width="150%" height="150%">
-                          <feGaussianBlur stdDeviation="5" result="blur" />
+                        <filter id="glow21" x="-30%" y="-30%" width="160%" height="160%">
+                          <feGaussianBlur stdDeviation="6" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
                       </defs>
 
                       {/* Neutral Base Track */}
-                      <circle cx="205" cy="185" r="114" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="52" />
+                      <circle cx="200" cy="185" r="126" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="58" />
 
                       {/* 79% Antimetabolites Arc (Dominant, East -> South -> West -> North) */}
                       <g
@@ -3075,15 +3075,15 @@ export default function Home() {
                         tabIndex={0}
                       >
                         <circle
-                          cx="205"
+                          cx="200"
                           cy="185"
-                          r="114"
+                          r="126"
                           fill="none"
                           stroke="url(#pie79Grad)"
-                          strokeWidth="52"
-                          strokeDasharray="564.14 152.14"
+                          strokeWidth="58"
+                          strokeDasharray="623.53 168.15"
                           strokeDashoffset="0"
-                          transform="rotate(-13.5 205 185)"
+                          transform="rotate(-13.5 200 185)"
                           filter="url(#glow79)"
                         />
                       </g>
@@ -3096,46 +3096,42 @@ export default function Home() {
                         tabIndex={0}
                       >
                         <circle
-                          cx="205"
+                          cx="200"
                           cy="185"
-                          r="114"
+                          r="126"
                           fill="none"
                           stroke="url(#pie21Grad)"
-                          strokeWidth="52"
-                          strokeDasharray="152.14 564.14"
+                          strokeWidth="58"
+                          strokeDasharray="168.15 623.53"
                           strokeDashoffset="0"
-                          transform="rotate(-90 205 185)"
+                          transform="rotate(-90 200 185)"
                           filter="url(#glow21)"
                         />
                       </g>
 
                       {/* Center Dark Core */}
-                      <circle cx="205" cy="185" r="86" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                      <circle cx="200" cy="185" r="95" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
-                      {/* Leader Line & Label: 21% Calcineurin Inhibitors (Top Right Arc to Top Right Label) */}
+                      {/* Prominent Label: 21% Calcineurin Inhibitors (Top-Right Arc) */}
                       <g
-                        className={`svg-leader-group leader-cni ${activeBranch === 'cni' ? 'leader-active' : ''}`}
+                        className={`arc-label-group label-cni ${activeBranch === 'cni' ? 'label-active' : ''}`}
                         onClick={() => inspectBranch('cni')}
                         role="button"
                         tabIndex={0}
                       >
-                        <circle cx="292" cy="75" r="2.5" className="leader-anchor-dot dot-violet" />
-                        <path d="M 292 75 L 330 45 L 525 45" fill="none" className="leader-track-line line-violet" />
-                        <text x="336" y="37" className="svg-leader-label-name name-violet">CALCINEURIN INHIBITORS</text>
-                        <text x="522" y="37" textAnchor="end" className="svg-leader-label-val val-violet">21%</text>
+                        <text x="312" y="66" className="hero-arc-number num-violet">21%</text>
+                        <text x="312" y="82" className="hero-arc-sublabel sub-violet">CALCINEURIN INHIBITORS</text>
                       </g>
 
-                      {/* Leader Line & Label: 79% Antimetabolites (Lower Right Arc to Bottom Right Label) */}
+                      {/* Prominent Label: 79% Antimetabolites (Lower-Right Arc) */}
                       <g
-                        className={`svg-leader-group leader-antimetabolites ${activeBranch === 'antimetabolites' ? 'leader-active' : ''}`}
+                        className={`arc-label-group label-antimetabolites ${activeBranch === 'antimetabolites' ? 'label-active' : ''}`}
                         onClick={() => inspectBranch('antimetabolites')}
                         role="button"
                         tabIndex={0}
                       >
-                        <circle cx="324" cy="259" r="2.5" className="leader-anchor-dot dot-red" />
-                        <path d="M 324 259 L 360 285 L 525 285" fill="none" className="leader-track-line line-red" />
-                        <text x="366" y="277" className="svg-leader-label-name">ANTIMETABOLITES</text>
-                        <text x="522" y="277" textAnchor="end" className="svg-leader-label-val val-red">79%</text>
+                        <text x="348" y="244" className="hero-arc-number num-red">79%</text>
+                        <text x="348" y="260" className="hero-arc-sublabel sub-red">ANTIMETABOLITES</text>
                       </g>
                     </svg>
                   </div>

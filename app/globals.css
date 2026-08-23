@@ -10007,7 +10007,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 360px;
+  max-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10017,7 +10017,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .cid-luminous-donut-svg {
   width: 100%;
   height: 100%;
-  max-height: 350px;
+  max-height: 370px;
   overflow: visible;
 }
 
@@ -10025,96 +10025,66 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   cursor: pointer;
   outline: none;
   transition: filter 0.3s ease, transform 0.3s ease;
-  transform-origin: 205px 185px;
+  transform-origin: 200px 185px;
 }
 
 .donut-clickable-segment:hover circle {
-  stroke-width: 56px;
+  stroke-width: 62px;
 }
 
 .donut-clickable-segment.seg-79:hover {
-  filter: drop-shadow(0 0 20px rgba(255, 77, 82, 0.95));
+  filter: drop-shadow(0 0 24px rgba(255, 77, 82, 0.95));
 }
 
 .donut-clickable-segment.seg-21:hover {
-  filter: drop-shadow(0 0 20px rgba(181, 142, 255, 0.95));
+  filter: drop-shadow(0 0 24px rgba(181, 142, 255, 0.95));
 }
 
-/* SVG Leader Lines & Labels */
-.svg-leader-group {
+/* Prominent Arc Labels & Numbers */
+.arc-label-group {
   cursor: pointer;
   outline: none;
-  transition: opacity 0.25s ease, filter 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
   user-select: none;
 }
 
-.svg-leader-group:hover {
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+.arc-label-group:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 }
 
-.leader-track-line {
-  transition: stroke 0.25s ease, stroke-width 0.25s ease;
-}
-
-.leader-track-line.line-violet {
-  stroke: rgba(181, 142, 255, 0.4);
-  stroke-width: 1;
-}
-
-.svg-leader-group.leader-cni:hover .leader-track-line.line-violet {
-  stroke: rgba(181, 142, 255, 0.85);
-  stroke-width: 1.5;
-}
-
-.leader-track-line.line-red {
-  stroke: rgba(255, 77, 82, 0.4);
-  stroke-width: 1;
-}
-
-.svg-leader-group.leader-antimetabolites:hover .leader-track-line.line-red {
-  stroke: rgba(255, 77, 82, 0.85);
-  stroke-width: 1.5;
-}
-
-.leader-anchor-dot.dot-violet {
-  fill: #b58eff;
-  filter: drop-shadow(0 0 4px #b58eff);
-}
-
-.leader-anchor-dot.dot-red {
-  fill: #ff4d52;
-  filter: drop-shadow(0 0 4px #ff4d52);
-}
-
-.svg-leader-label-name {
+.hero-arc-number {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.hero-arc-number.num-violet {
+  fill: #b58eff;
+  filter: drop-shadow(0 0 14px rgba(181, 142, 255, 0.75));
+}
+
+.hero-arc-number.num-red {
+  fill: #ff4d52;
+  filter: drop-shadow(0 0 14px rgba(255, 77, 82, 0.75));
+}
+
+.hero-arc-sublabel {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9.5px;
   font-weight: 700;
-  fill: #ffffff;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: fill 0.2s ease;
 }
 
-.svg-leader-label-name.name-violet {
-  fill: #ddd;
+.hero-arc-sublabel.sub-violet {
+  fill: #c7adff;
 }
 
-.svg-leader-label-val {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.svg-leader-label-val.val-violet {
-  fill: #b58eff;
-  filter: drop-shadow(0 0 6px rgba(181, 142, 255, 0.6));
-}
-
-.svg-leader-label-val.val-red {
-  fill: #ff4d52;
-  filter: drop-shadow(0 0 6px rgba(255, 77, 82, 0.6));
+.hero-arc-sublabel.sub-red {
+  fill: #e0d8d5;
 }
 
 /* Inspection Overlays */
