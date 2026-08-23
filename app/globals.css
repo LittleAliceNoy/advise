@@ -5274,9 +5274,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .txr-dashboard-scene .txrd-footer {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1.18fr 1fr;
   gap: clamp(1.2rem, 2vw, 2.8rem);
-  padding: .65rem 1.3rem;
+  padding: .6rem 1.3rem;
   align-items: center;
 }
 
@@ -5291,6 +5291,70 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .txr-dashboard-scene .txrd-footer-card:first-child {
   border-right: 1px solid rgba(255, 255, 255, .1);
   padding-right: clamp(1rem, 1.6vw, 2.2rem);
+}
+
+.txr-dashboard-scene .txrd-footer-info {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+}
+
+.txr-dashboard-scene .txrd-footer-info strong {
+  font-size: clamp(.65rem, .7vw, .8rem);
+  line-height: 1.15;
+  color: #eee;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.txr-dashboard-scene .txrd-footer-info span {
+  font-size: clamp(.46rem, .5vw, .58rem);
+  color: #888;
+  font-family: var(--font-geist-mono), monospace;
+  margin-top: .15rem;
+}
+
+.txr-dashboard-scene .txrd-footer-data-col {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+.txr-dashboard-scene .txrd-footer-stats {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: clamp(.8rem, 1.2vw, 1.6rem) !important;
+  margin-left: auto;
+}
+
+.txr-dashboard-scene .txrd-footer-stats > div {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: .35rem !important;
+}
+
+.txr-dashboard-scene .txrd-footer-stats strong {
+  font-size: clamp(1.15rem, 1.3vw, 1.48rem) !important;
+  line-height: 1;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.txr-dashboard-scene .txrd-footer-stats span {
+  font-size: clamp(.44rem, .48vw, .55rem);
+  line-height: 1.15;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.txr-dashboard-scene .txrd-footer-bottom-stat {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(.46rem, .5vw, .58rem);
+  color: #bfb9b4;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .txrd-footer-subtext {

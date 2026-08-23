@@ -2259,29 +2259,31 @@ export default function Home() {
 
           {/* FOOTER STRIP */}
           <footer className="txrd-footer">
-            <div className="txrd-footer-card">
+            <div className="txrd-footer-card txrd-footer-steroid-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                 <path d="m8.5 8.5 7 7"/>
               </svg>
-              <div>
+              <div className="txrd-footer-info">
                 <strong>STEROID BURDEN</strong>
-                <span>12-mo mean prednisone dose</span>
+                <span>12-month mean prednisone dose</span>
               </div>
-              <div className="txrd-footer-stats">
-                <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
-                <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
-              </div>
-              <div className="txrd-footer-subtext">
-                <small>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</small>
+              <div className="txrd-footer-data-col">
+                <div className="txrd-footer-stats">
+                  <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
+                  <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
+                </div>
+                <div className="txrd-footer-bottom-stat">
+                  IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061
+                </div>
               </div>
             </div>
 
-            <div className="txrd-footer-card">
+            <div className="txrd-footer-card txrd-footer-regional-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
               </svg>
-              <div>
+              <div className="txrd-footer-info">
                 <strong>REGIONAL CORTICOSTEROID</strong>
                 <span>During follow-up</span>
               </div>
