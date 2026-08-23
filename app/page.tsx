@@ -3018,7 +3018,8 @@ export default function Home() {
                   style={{ cursor: synthesisStep === 1 ? 'pointer' : 'default' }}
                 >
                   <span className="concern-badge">THE CONCERN</span>
-                  <p>Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
+                  <p className="concern-main-q">Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
+                  <p className="concern-subtext">These data raise the question of the impact of calcineurin inhibitors on the overall results of the trial.</p>
                 </div>
 
                 {/* 01 & 02 Points (Revealed on second click: synthesisStep === 2) */}
