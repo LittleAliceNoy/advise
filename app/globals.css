@@ -9834,40 +9834,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 /* ==========================================================================
-   SLIDE 29: DISCUSSION / COMPARATOR HETEROGENEITY (DYNAMIC ZOOM SEQUENCE)
+   SLIDE 29: DISCUSSION / COMPARATOR HETEROGENEITY (RIGHT PANEL VIEWPORT ZOOM)
    ========================================================================== */
 .discussion-comparator-scene {
   min-height: 100svh;
-  padding: 10vh 6vw 5vh;
+  padding: 11vh 6vw 6vh;
   background: radial-gradient(circle at 65% 50%, rgba(255, 45, 45, 0.025), transparent 40%),
               radial-gradient(circle at 85% 60%, rgba(132, 94, 255, 0.02), transparent 40%), #050505;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
-}
-
-/* Dynamic Camera Viewport & Rig */
-.discussion-comparator-scene .comp-camera-viewport {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex: 1;
-  align-items: stretch;
-  justify-content: center;
-}
-
-.discussion-comparator-scene .comp-camera-rig {
-  width: 100%;
-  height: 100%;
-  transform-origin: 50% 50%;
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-  display: flex;
-  flex-direction: column;
 }
 
 .discussion-comparator-scene .adv-two-col {
@@ -9876,15 +9853,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(2rem, 3.5vw, 4.5rem);
   width: 100%;
   flex: 1;
-  min-height: calc(100svh - 15vh);
+  min-height: calc(100svh - 17vh);
   align-items: stretch;
 }
 
+/* LEFT COLUMN — COMPLETELY FIXED AT ALL TIMES */
 .discussion-comparator-scene .adv-left-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: opacity 0.7s ease, filter 0.7s ease, transform 0.7s ease;
 }
 
 .discussion-comparator-scene .red-hook {
@@ -9892,13 +9869,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-size: clamp(0.58rem, 0.7vw, 0.8rem);
   font-weight: 600;
   letter-spacing: 0.06em;
-  margin-top: 1.4rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
   text-transform: uppercase;
 }
 
 .discussion-comparator-scene h2 {
-  font-size: clamp(2.5rem, 3.2vw, 3.8rem);
+  font-size: clamp(2.6rem, 3.4vw, 4rem);
   line-height: 0.98;
   letter-spacing: -0.05em;
   margin-bottom: 0.2rem;
@@ -9910,15 +9887,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .discussion-comparator-scene .lede {
-  font-size: clamp(.85rem, .96vw, 1.08rem);
+  font-size: clamp(.85rem, .98vw, 1.1rem);
   line-height: 1.55;
   color: #a09591;
-  margin: 1.1rem 0 0.9rem;
+  margin: 1.2rem 0 1rem;
   max-width: 92%;
 }
 
 .comp-investigation-statement {
-  margin-top: clamp(1rem, 1.8vh, 1.8rem);
+  margin-top: clamp(1.2rem, 2.2vh, 2.2rem);
   display: flex;
   flex-direction: column;
 }
@@ -9926,7 +9903,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .comp-investigation-statement .investigation-rule {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   width: 100%;
-  margin-bottom: clamp(0.5rem, 0.8vh, 0.8rem);
+  margin-bottom: clamp(0.6rem, 1vh, 0.9rem);
 }
 
 .comp-investigation-statement h4 {
@@ -9945,21 +9922,38 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   max-width: 95%;
 }
 
-/* --- Right Column: Anatomy of CID Canvas --- */
+/* RIGHT COLUMN — FIXED-SIZE VIEWPORT CAMERA FRAME */
 .comp-anatomy-column {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   flex: 1;
+  position: relative;
+}
+
+.comp-viewport-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .comp-anatomy-canvas {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   flex: 1;
   justify-content: space-between;
-  gap: clamp(0.5rem, 0.8vh, 0.9rem);
+  gap: clamp(0.6rem, 1vh, 1rem);
+  transform-origin: 50% 50%;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 /* 1. Root Strategy Bar */
@@ -9968,7 +9962,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  padding-bottom: clamp(0.3rem, 0.45vh, 0.45rem);
+  padding-bottom: clamp(0.35rem, 0.55vh, 0.55rem);
 }
 
 .anatomy-root-tag {
@@ -10014,7 +10008,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.7s ease;
+  transition: opacity 0.5s ease, filter 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
 }
 
 .branch-pane.pane-dominant {
@@ -10099,7 +10093,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   line-height: 1.35;
 }
 
-/* Zoom Subdivision Box */
+/* Subdivision Box & Drug Tiers */
 .zoom-subdivision-box {
   display: flex;
   flex-direction: column;
@@ -10108,7 +10102,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: clamp(0.35rem, 0.55vh, 0.55rem);
   border-radius: 2px;
-  transition: all 0.7s ease;
 }
 
 .zoom-tier.tacrolimus-tier {
@@ -10119,6 +10112,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-size: clamp(0.56rem, 0.62vw, 0.72rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding-bottom: 0.25rem;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .zoom-drug-title {
@@ -10130,6 +10124,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: #ccc;
 }
 
+.zoom-tier.cyclosporine-tier {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .csa-inner-card {
   display: flex;
   justify-content: space-between;
@@ -10138,7 +10136,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 77, 82, 0.4);
   padding: clamp(0.2rem, 0.35vh, 0.35rem) 0.45rem;
   border-radius: 2px;
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
 }
 
 .csa-name {
@@ -10155,6 +10153,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .csa-red-num {
   font: 700 clamp(0.85rem, 1vw, 1.15rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
+  transition: font-size 0.5s ease, text-shadow 0.5s ease;
 }
 
 .csa-red-sub {
@@ -10168,7 +10167,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border-left: 2px solid #ff4d52;
   padding-left: 0.5rem;
   margin-top: 0.1rem;
-  transition: all 0.7s ease;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s ease, padding 0.5s ease;
 }
 
 .concern-tag-row {
@@ -10215,7 +10214,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   padding: clamp(0.55rem, 0.8vh, 0.85rem) clamp(0.7rem, 1vw, 1.1rem);
-  transition: all 0.7s ease;
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 .evidence-anchor-item {
@@ -10259,7 +10258,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: clamp(0.45rem, 0.7vh, 0.7rem);
   text-align: center;
-  transition: all 0.7s ease;
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-top-color 0.5s ease, background 0.5s ease;
 }
 
 .conclusion-hook-line strong {
@@ -10269,7 +10268,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.2rem;
-  transition: all 0.7s ease;
+  transition: text-shadow 0.5s ease;
 }
 
 .conclusion-hook-line strong .red-highlight-text {
@@ -10286,76 +10285,179 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 /* ==========================================================================
-   DYNAMIC ZOOM CAMERA TRANSFORMATIONS & FOCAL STATES
+   PROGRESSIVE RIGHT-PANEL VIEWPORT STATES (0, 1, 2, 3)
    ========================================================================== */
 
-/* Stage 0: Full View */
-.discussion-comparator-scene.comp-zoom-stage-0 .comp-camera-rig {
+/* ── STEP 1: FULL CID MAP (State 0) ── */
+.comp-stage-0 .comp-anatomy-canvas {
   transform: scale(1) translate(0, 0);
+  transform-origin: 50% 50%;
+}
+.comp-stage-0 .pane-dominant {
+  opacity: 1;
+  filter: none;
+}
+.comp-stage-0 .pane-minority {
+  opacity: 1;
+  filter: none;
+}
+.comp-stage-0 .zoom-tier.tacrolimus-tier {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.comp-stage-0 .zoom-tier.cyclosporine-tier {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.comp-stage-0 .concern-callout-bracket {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.comp-stage-0 .anatomy-convergence-row {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.comp-stage-0 .anatomy-conclusion-anchor {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
 }
 
-/* Stage 1: Zoom into CID comparator composition */
-.discussion-comparator-scene.comp-zoom-stage-1 .comp-camera-rig {
-  transform: scale(1.35) translate(-14vw, -2vh);
+/* ── STEP 2: FOCUS ON CNI (State 1) ── */
+.comp-stage-1 .comp-anatomy-canvas {
+  transform: scale(1.36);
+  transform-origin: 82% 26%;
 }
-.discussion-comparator-scene.comp-zoom-stage-1 .adv-left-col {
-  opacity: 0.22;
+.comp-stage-1 .pane-dominant {
+  opacity: 0.26;
   filter: blur(1.5px);
 }
-.discussion-comparator-scene.comp-zoom-stage-1 .pane-dominant {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.04);
+.comp-stage-1 .pane-minority {
+  border-color: rgba(255, 77, 82, 0.48);
+  box-shadow: 0 0 35px rgba(255, 77, 82, 0.08);
 }
-.discussion-comparator-scene.comp-zoom-stage-1 .pane-minority {
-  border-color: rgba(255, 77, 82, 0.45);
-  box-shadow: 0 0 40px rgba(255, 77, 82, 0.08);
+.comp-stage-1 .zoom-tier.tacrolimus-tier {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.comp-stage-1 .zoom-tier.cyclosporine-tier {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.comp-stage-1 .concern-callout-bracket {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.comp-stage-1 .anatomy-convergence-row {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.comp-stage-1 .anatomy-conclusion-anchor {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
 }
 
-/* Stage 2: Deep Zoom into Cyclosporine 4% */
-.discussion-comparator-scene.comp-zoom-stage-2 .comp-camera-rig {
-  transform: scale(1.9) translate(-21vw, -6vh);
+/* ── STEP 3: ZOOM INTO CYCLOSPORINE (State 2) ── */
+.comp-stage-2 .comp-anatomy-canvas {
+  transform: scale(1.82);
+  transform-origin: 82% 44%;
 }
-.discussion-comparator-scene.comp-zoom-stage-2 .adv-left-col {
+.comp-stage-2 .pane-dominant {
   opacity: 0.12;
-  filter: blur(3px);
+  filter: blur(2.5px);
 }
-.discussion-comparator-scene.comp-zoom-stage-2 .pane-dominant {
-  opacity: 0.2;
-  filter: blur(1.5px);
+.comp-stage-2 .pane-minority {
+  border-color: rgba(255, 77, 82, 0.85);
+  box-shadow: 0 0 50px rgba(255, 77, 82, 0.16);
+  background: rgba(255, 77, 82, 0.035);
 }
-.discussion-comparator-scene.comp-zoom-stage-2 .pane-minority {
-  border-color: rgba(255, 77, 82, 0.8);
-  box-shadow: 0 0 60px rgba(255, 77, 82, 0.18);
-  background: rgba(255, 77, 82, 0.045);
+.comp-stage-2 .zoom-tier.tacrolimus-tier {
+  opacity: 0.55;
+  transform: translateY(0);
 }
-.discussion-comparator-scene.comp-zoom-stage-2 .csa-inner-card {
-  border-color: rgba(255, 77, 82, 0.9);
-  box-shadow: 0 0 30px rgba(255, 77, 82, 0.45);
-  background: rgba(255, 77, 82, 0.2);
+.comp-stage-2 .zoom-tier.cyclosporine-tier {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
-.discussion-comparator-scene.comp-zoom-stage-2 .concern-callout-bracket {
+.comp-stage-2 .csa-inner-card {
+  border-color: rgba(255, 77, 82, 0.95);
+  box-shadow: 0 0 35px rgba(255, 77, 82, 0.5);
+  background: rgba(255, 77, 82, 0.22);
+}
+.comp-stage-2 .csa-red-num {
+  font-size: clamp(1.05rem, 1.25vw, 1.5rem);
+  text-shadow: 0 0 15px rgba(255, 77, 82, 0.6);
+}
+.comp-stage-2 .concern-callout-bracket {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
   border-left-width: 3px;
   background: rgba(255, 77, 82, 0.08);
-  padding: 0.4rem 0.6rem;
+  padding: 0.35rem 0.55rem;
   border-radius: 0 3px 3px 0;
 }
+.comp-stage-2 .anatomy-convergence-row {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.comp-stage-2 .anatomy-conclusion-anchor {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
 
-/* Stage 3: Pull back to Conclusion */
-.discussion-comparator-scene.comp-zoom-stage-3 .comp-camera-rig {
-  transform: scale(1.08) translate(0, -2vh);
+/* ── STEP 4: RESOLUTION / PULL BACK (State 3) ── */
+.comp-stage-3 .comp-anatomy-canvas {
+  transform: scale(1) translate(0, 0);
+  transform-origin: 50% 50%;
 }
-.discussion-comparator-scene.comp-zoom-stage-3 .adv-left-col {
-  opacity: 0.55;
+.comp-stage-3 .pane-dominant {
+  opacity: 1;
+  filter: none;
 }
-.discussion-comparator-scene.comp-zoom-stage-3 .anatomy-convergence-row {
-  border-color: rgba(255, 255, 255, 0.32);
-  box-shadow: 0 0 35px rgba(255, 255, 255, 0.06);
+.comp-stage-3 .pane-minority {
+  opacity: 1;
+  filter: none;
 }
-.discussion-comparator-scene.comp-zoom-stage-3 .anatomy-conclusion-anchor {
+.comp-stage-3 .zoom-tier.tacrolimus-tier {
+  opacity: 1;
+  transform: translateY(0);
+}
+.comp-stage-3 .zoom-tier.cyclosporine-tier {
+  opacity: 1;
+  transform: translateY(0);
+}
+.comp-stage-3 .concern-callout-bracket {
+  opacity: 1;
+  transform: translateY(0);
+}
+.comp-stage-3 .anatomy-convergence-row {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+.comp-stage-3 .anatomy-conclusion-anchor {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
   border-top-color: rgba(255, 77, 82, 0.6);
   background: radial-gradient(circle at 50% 0%, rgba(255, 77, 82, 0.09), transparent 70%);
   padding-bottom: 0.35rem;
 }
-.discussion-comparator-scene.comp-zoom-stage-3 .conclusion-hook-line strong {
+.comp-stage-3 .conclusion-hook-line strong {
   text-shadow: 0 0 25px rgba(255, 77, 82, 0.45);
 }

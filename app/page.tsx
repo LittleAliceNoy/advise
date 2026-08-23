@@ -3005,31 +3005,30 @@ export default function Home() {
 
         <section
           id="limitations-2"
-          className={`scene discussion-comparator-scene comp-zoom-stage-${comparatorZoomStage}`}
+          className={`scene discussion-comparator-scene comp-stage-${comparatorZoomStage}`}
           onClick={onCompClick}
           onTouchStart={onCompTouchStart}
           onTouchEnd={onCompTouchEnd}
         >
-          <div className="comp-camera-viewport">
-            <div className="comp-camera-rig">
-              <div className="adv-two-col">
-                {/* LEFT COLUMN */}
-                <div className="adv-left-col">
-                  <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
-                  <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
-                  <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
-                  <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
+          <div className="adv-two-col">
+            {/* LEFT COLUMN - Completely fixed editorial setup */}
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
+              <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
+              <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
 
-                  <div className="comp-investigation-statement">
-                    <div className="investigation-rule" />
-                    <h4>THE QUESTION IS NOT HETEROGENEITY ALONE.</h4>
-                    <p>Prior evidence suggested broadly similar efficacy among antimetabolites, but possibly lower efficacy with cyclosporine; evidence for tacrolimus was mixed.</p>
-                  </div>
-                </div>
+              <div className="comp-investigation-statement">
+                <div className="investigation-rule" />
+                <h4>THE QUESTION IS NOT HETEROGENEITY ALONE.</h4>
+                <p>Prior evidence suggested broadly similar efficacy among antimetabolites, but possibly lower efficacy with cyclosporine; evidence for tacrolimus was mixed.</p>
+              </div>
+            </div>
 
-                {/* RIGHT COLUMN */}
-                <div className="adv-right-col comp-anatomy-column">
-                  <div className="comp-anatomy-canvas">
+            {/* RIGHT COLUMN - Fixed-size camera frame with internal animated canvas */}
+            <div className="adv-right-col comp-anatomy-column">
+              <div className="comp-viewport-frame">
+                <div className="comp-anatomy-canvas">
                     
                     {/* 1. ROOT STRATEGY STRIP */}
                     <div className="anatomy-root-bar">
@@ -3138,7 +3137,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         <section id="limitations-3" className="scene discussion-scene limitations-scene">
