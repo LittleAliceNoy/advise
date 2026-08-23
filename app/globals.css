@@ -10239,14 +10239,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   text-align: center;
   gap: 0.25rem;
-  opacity: 0;
-  transform: translateY(8px);
+  opacity: 1;
+  transform: none;
+  visibility: visible;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.pill-drug-col.pill-show {
-  opacity: 1;
-  transform: translateY(0);
+.pill-drug-col.pill-show,
+.split-pills-row .pill-drug-col {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }
 
 .pill-icon-wrap {

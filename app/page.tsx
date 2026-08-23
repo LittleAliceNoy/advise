@@ -3143,9 +3143,9 @@ export default function Home() {
 
                         {/* 3 Pills Row with Icons */}
                         <div className="focal-pills-row split-pills-row">
-                          <div className="pill-drug-col">
+                          <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-yellow">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
                                 <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
                                 <line x1="20" y1="7" x2="20" y2="33" stroke="#f5e6a8" strokeWidth="1.6" strokeDasharray="3 2" />
                                 <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(245, 230, 168, 0.28)" strokeWidth="1" />
@@ -3155,9 +3155,9 @@ export default function Home() {
                             <span className="pill-drug-count count-yellow">44 pt</span>
                           </div>
 
-                          <div className="pill-drug-col">
+                          <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-red">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
                                 <g transform="rotate(-30 20 20)">
                                   <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
                                   <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
@@ -3168,9 +3168,9 @@ export default function Home() {
                             <span className="pill-drug-count count-red">42 pt</span>
                           </div>
 
-                          <div className="pill-drug-col">
+                          <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-white">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
                                 <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
                                 <circle cx="20" cy="20" r="9.5" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
                               </svg>
@@ -3196,9 +3196,9 @@ export default function Home() {
 
                         {/* 2 Pills Row with Icons */}
                         <div className="focal-pills-row cni-pills-row split-pills-row">
-                          <div className="pill-drug-col">
+                          <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-violet">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
                                 <g transform="rotate(-45 20 20)">
                                   <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#b58eff" strokeWidth="2" />
                                   <line x1="12" y1="20" x2="28" y2="20" stroke="#b58eff" strokeWidth="1.8" />
@@ -3210,9 +3210,9 @@ export default function Home() {
                             <span className="pill-drug-count count-violet">19 pt</span>
                           </div>
 
-                          <div className={`pill-drug-col ${synthesisStep === 2 ? 'pill-csa-focus' : ''}`}>
+                          <div className={`pill-drug-col pill-show ${synthesisStep === 2 ? 'pill-csa-focus' : ''}`}>
                             <div className="pill-icon-wrap wrap-red">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="28" height="28">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
                                 <g transform="rotate(-30 20 20)">
                                   <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
                                   <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
