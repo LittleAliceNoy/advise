@@ -4035,32 +4035,50 @@ export default function Home() {
                 </svg>
               </div>
 
-              {/* BOTTOM CONCLUSION STRIP (Step 5) */}
-              <div className={`attrition-editorial-takeaway ${attritionStep === 5 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
-                
-                {/* Horizontal Argument Strip: Differential Attrition -> Potential for bias -> Robustness resolution */}
-                <div className="attrition-argument-strip">
-                  <div className="argument-concern-tag">
-                    <span>DIFFERENTIAL ATTRITION</span>
-                    <span className="arg-arrow">➔</span>
-                    <span>POTENTIAL FOR BIAS</span>
+              {/* Step 5: MULTIPLE SENSITIVITY CALCULATIONS & CORE MESSAGE */}
+              <div className={`attrition-sensitivity-resolution ${attritionStep === 5 ? 'resolution-revealed' : 'resolution-hidden'}`}>
+                <div className="sensitivity-models-grid">
+                  <div className="sensitivity-model-card">
+                    <div className="model-header">
+                      <span className="model-calc-icon">∑₁</span>
+                      <span className="model-name">PRIMARY ANALYSIS</span>
+                    </div>
+                    <p className="model-assumption">Prespecified imputation model</p>
+                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
                   </div>
-                  <div className="argument-resolution-tag">
-                    <span className="arg-arrow-strong">➔</span>
-                    <strong>BUT RESULTS REMAINED CONSISTENT ACROSS MISSING-DATA ANALYSES</strong>
+
+                  <div className="sensitivity-model-card">
+                    <div className="model-header">
+                      <span className="model-calc-icon">∑₂</span>
+                      <span className="model-name">MULTIPLE IMPUTATION</span>
+                    </div>
+                    <p className="model-assumption">Missing-at-random assumptions</p>
+                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                  </div>
+
+                  <div className="sensitivity-model-card">
+                    <div className="model-header">
+                      <span className="model-calc-icon">∑₃</span>
+                      <span className="model-name">WORST-CASE BOUNDS</span>
+                    </div>
+                    <p className="model-assumption">Extreme missingness penalties</p>
+                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                  </div>
+
+                  <div className="sensitivity-model-card">
+                    <div className="model-header">
+                      <span className="model-calc-icon">∑₄</span>
+                      <span className="model-name">COMPLETE-CASE</span>
+                    </div>
+                    <p className="model-assumption">Observed participant data only</p>
+                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
                   </div>
                 </div>
 
-                {/* Supporting line */}
-                <p className="takeaway-supporting-line">
-                  Analyses using different assumptions about missing data produced consistent results.
-                </p>
-
-                {/* Final emphatic conclusion */}
-                <div className="takeaway-hook">
-                  <strong>
-                    ATTRITION WAS A CONCERN — <span className="red-highlight-text">BUT UNLIKELY TO HAVE SUBSTANTIALLY INFLUENCED THE RESULT</span>
-                  </strong>
+                <div className="sensitivity-core-message">
+                  <p>
+                    Results were consistent across a variety of different analysis techniques, each built on different assumptions regarding missing data.
+                  </p>
                 </div>
               </div>
 
