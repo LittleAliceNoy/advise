@@ -2955,7 +2955,7 @@ export default function Home() {
                       </div>
                       <h5 className="card-top-title">Perceived potency</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ff666b" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m18 2 4 4"/>
                           <path d="m17 7 3-3"/>
                           <path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/>
@@ -2979,7 +2979,7 @@ export default function Home() {
                       </div>
                       <h5 className="card-top-title">Prior treatment perception</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ff8085" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                           <circle cx="12" cy="12" r="9"/>
                           <path d="M12 8v4"/>
                           <path d="M12 16h.01"/>
@@ -3001,7 +3001,7 @@ export default function Home() {
                       </div>
                       <h5 className="card-top-title">Route preference</h5>
                       <div className="card-big-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                           <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                           <path d="m8.5 8.5 7 7"/>
                         </svg>
