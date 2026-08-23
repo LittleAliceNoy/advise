@@ -4380,7 +4380,7 @@ export default function Home() {
           <div className="scene-copy conclusion-copy">
             <p className="eyebrow"><span /> 34 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
-            <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. Adalimumab got there faster—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
+            <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong>Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
               Whether that earlier advantage translates into greater long-term efficacy remains unresolved.
             </blockquote>
