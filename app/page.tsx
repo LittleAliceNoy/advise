@@ -4011,7 +4011,7 @@ export default function Home() {
                           8 CID discontinued assigned treatment
                         </text>
                         <text x="574" y="151" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                          *Schematic representation · Non-chronological aggregate count
+                          Aggregate count; timing not shown.
                         </text>
                       </g>
                     )}
