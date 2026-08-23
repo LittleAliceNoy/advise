@@ -2205,23 +2205,10 @@ export default function Home() {
               <strong>PATHWAYS DIVERGED</strong>
               <span>Key outcomes<br />during follow-up</span>
             </div>
-            
-            <section className="txrd-outcome txrd-outcome-steroid">
-              <div className="txrd-outcome-header">
-                <b>01</b>
-                <div><strong>STEROID BURDEN</strong><span>12-month mean prednisone dose</span></div>
-              </div>
-              <div className="txrd-vs">
-                <div className="txrd-ada-color"><small>ADA ARM</small><strong>11.8</strong><span>mg/day</span></div>
-                <i>VS</i>
-                <div className="txrd-cid-color"><small>CID ARM</small><strong>13.8</strong><span>mg/day</span></div>
-              </div>
-              <footer>IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73-1.01 &nbsp;|&nbsp; P = 0.061</footer>
-            </section>
 
             <section className="txrd-outcome txrd-outcome-second-agent">
               <div className="txrd-outcome-header">
-                <b>02</b>
+                <b>01</b>
                 <div><strong>SECOND-AGENT ADDITION</strong><span>During follow-up</span></div>
               </div>
               <div className="txrd-vs">
@@ -2229,12 +2216,12 @@ export default function Home() {
                 <i>VS</i>
                 <div className="txrd-cid-color"><small>CID ARM</small><strong>29%</strong><span>N = 62</span></div>
               </div>
-              <footer>HR 1.68 &nbsp;|&nbsp; 95% CI 0.92-2.86 &nbsp;|&nbsp; P = 0.06</footer>
+              <footer>HR 1.68 &nbsp;|&nbsp; 95% CI 0.92–2.86 &nbsp;|&nbsp; P = 0.060</footer>
             </section>
 
             <section className="txrd-outcome txrd-outcome-escalation">
               <div className="txrd-outcome-header">
-                <b>03</b>
+                <b>02</b>
                 <div><strong>CID DOSE ESCALATION</strong><span>Among eligible CID participants</span></div>
               </div>
               <div className="txrd-escalation-viz">
@@ -2255,12 +2242,45 @@ export default function Home() {
                 <div><span>MMF</span><strong>25 / 41 <i>(61%)</i></strong></div>
               </div>
             </section>
+
+            <section className="txrd-outcome txrd-outcome-advancement">
+              <div className="txrd-outcome-header">
+                <b>03</b>
+                <div><strong>IMMUNOSUPPRESSION ADVANCEMENT</strong><span>In the no immunosuppression strata</span></div>
+              </div>
+              <div className="txrd-vs">
+                <div className="txrd-ada-color"><small>ADA ARM</small><strong>37</strong><span>events</span></div>
+                <i>VS</i>
+                <div className="txrd-cid-color"><small>CID ARM</small><strong>60</strong><span>events</span></div>
+              </div>
+              <footer>HR 0.38 &nbsp;|&nbsp; 95% CI 0.25–0.57 &nbsp;|&nbsp; P &lt; .001</footer>
+            </section>
           </div>
 
           {/* FOOTER STRIP */}
-          <footer className="txrd-footer txrd-footer-regional-only">
+          <footer className="txrd-footer">
             <div className="txrd-footer-card">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                <path d="m8.5 8.5 7 7"/>
+              </svg>
+              <div>
+                <strong>STEROID BURDEN</strong>
+                <span>12-mo mean prednisone dose</span>
+              </div>
+              <div className="txrd-footer-stats">
+                <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
+                <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
+              </div>
+              <div className="txrd-footer-subtext">
+                <small>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</small>
+              </div>
+            </div>
+
+            <div className="txrd-footer-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
+              </svg>
               <div>
                 <strong>REGIONAL CORTICOSTEROID</strong>
                 <span>During follow-up</span>
