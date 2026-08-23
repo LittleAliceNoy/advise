@@ -3317,7 +3317,7 @@ export default function Home() {
                     
                     {/* Glowing SVG Donut Chart (Enlarged Dominant Visual Object) */}
                     <div className="cid-donut-stage">
-                      <svg viewBox="0 0 520 370" className="cid-luminous-donut-svg">
+                      <svg viewBox="0 0 600 400" className="cid-luminous-donut-svg">
                         <defs>
                           <linearGradient id="pie79Grad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#401416" />
@@ -3340,7 +3340,7 @@ export default function Home() {
                         </defs>
 
                         {/* Neutral Base Track */}
-                        <circle cx="250" cy="185" r="126" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="58" />
+                        <circle cx="300" cy="200" r="118" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="48" />
 
                         {/* 79% Antimetabolites Arc (Dominant, East -> South -> West -> North) */}
                         <g
@@ -3353,15 +3353,15 @@ export default function Home() {
                           tabIndex={0}
                         >
                           <circle
-                            cx="250"
-                            cy="185"
-                            r="126"
+                            cx="300"
+                            cy="200"
+                            r="118"
                             fill="none"
                             stroke="url(#pie79Grad)"
-                            strokeWidth="58"
-                            strokeDasharray="623.53 168.15"
+                            strokeWidth="48"
+                            strokeDasharray="585.72 155.70"
                             strokeDashoffset="0"
-                            transform="rotate(-13.5 250 185)"
+                            transform="rotate(-13.5 300 200)"
                             filter="url(#glow79)"
                           />
                         </g>
@@ -3377,23 +3377,23 @@ export default function Home() {
                           tabIndex={0}
                         >
                           <circle
-                            cx="250"
-                            cy="185"
-                            r="126"
+                            cx="300"
+                            cy="200"
+                            r="118"
                             fill="none"
                             stroke="url(#pie21Grad)"
-                            strokeWidth="58"
-                            strokeDasharray="168.15 623.53"
+                            strokeWidth="48"
+                            strokeDasharray="155.70 585.72"
                             strokeDashoffset="0"
-                            transform="rotate(-90 250 185)"
+                            transform="rotate(-90 300 200)"
                             filter="url(#glow21)"
                           />
                         </g>
 
                         {/* Center Dark Core */}
-                        <circle cx="250" cy="185" r="95" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                        <circle cx="300" cy="200" r="88" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
-                        {/* Prominent Label: 21% Calcineurin Inhibitors (Top-Right) */}
+                        {/* Prominent Label: 21% Calcineurin Inhibitors (Top-Right, Clear of Donut) */}
                         <g
                           className={`arc-label-group label-cni ${activeBranch === 'cni' ? 'label-active' : ''}`}
                           onClick={(e) => {
@@ -3403,11 +3403,11 @@ export default function Home() {
                           role="button"
                           tabIndex={0}
                         >
-                          <text x="355" y="66" className="hero-arc-number num-violet">21%</text>
-                          <text x="355" y="82" className="hero-arc-sublabel sub-violet">CALCINEURIN INHIBITORS</text>
+                          <text x="430" y="80" className="hero-arc-number num-violet">21%</text>
+                          <text x="430" y="98" className="hero-arc-sublabel sub-violet">CALCINEURIN INHIBITORS</text>
                         </g>
 
-                        {/* Prominent Label: 79% Antimetabolites (Left-Lower Side) */}
+                        {/* Prominent Label: 79% Antimetabolites (Left-Lower Side, Clear of Donut) */}
                         <g
                           className={`arc-label-group label-antimetabolites ${activeBranch === 'antimetabolites' ? 'label-active' : ''}`}
                           onClick={(e) => {
@@ -3417,8 +3417,8 @@ export default function Home() {
                           role="button"
                           tabIndex={0}
                         >
-                          <text x="45" y="302" className="hero-arc-number num-red">79%</text>
-                          <text x="45" y="318" className="hero-arc-sublabel sub-red">ANTIMETABOLITES</text>
+                          <text x="40" y="315" className="hero-arc-number num-red">79%</text>
+                          <text x="40" y="333" className="hero-arc-sublabel sub-red">ANTIMETABOLITES</text>
                         </g>
                       </svg>
                     </div>
