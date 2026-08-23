@@ -1574,6 +1574,7 @@ export default function Home() {
         <section id="participant-flow" className="scene participant-flow-scene">
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
+              <p className="eyebrow flow-intro-eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
               <div className="flow-intro-title flow-assessed-title"><span>ASSESSED FOR ELIGIBILITY</span><strong>338</strong></div>
               <div className="flow-intro-title flow-excluded-title"><span>EXCLUDED</span><strong>111</strong></div>
               <div className="flow-intro-title flow-randomized-title"><span>RANDOMIZED</span><strong>227</strong></div>
