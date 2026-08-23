@@ -4161,11 +4161,12 @@ export default function Home() {
               </div>
 
               <div className="immuno-chain-wrap">
-                {/* Node 1: 78% */}
+                {/* Node 1: 78% No immunosuppression at baseline */}
                 <div className="immuno-node node-baseline">
                   <div className="node-metric-large">78%</div>
                   <div className="node-label-group">
-                    <span className="node-sub">No immunosuppressive agent at baseline</span>
+                    <span className="node-title">NO IMMUNOSUPPRESSION</span>
+                    <span className="node-sub">at baseline (entire trial)</span>
                   </div>
                 </div>
 
@@ -4191,7 +4192,7 @@ export default function Home() {
                   </div>
                   <div className="node-label-group">
                     <span className="node-title red-accent-text">ADA ALONE</span>
-                    <span className="node-sub">within the adalimumab arm</span>
+                    <span className="node-sub">Within ADA arm: ADA alone</span>
                   </div>
                 </div>
 
@@ -4256,7 +4257,6 @@ export default function Home() {
                   </div>
                   <div className="node-label-group">
                     <span className="node-title">POSSIBLE LOSS OF EFFICACY</span>
-                    <span className="node-sub">Durability of response uncertain</span>
                   </div>
                 </div>
               </div>
@@ -4298,7 +4298,7 @@ export default function Home() {
                   <span className="takeaway-kicker">UNRESOLVED</span>
                 </div>
                 <p className="takeaway-statement">
-                  Whether concomitant immunosuppression should be used to limit ADA immunogenicity remains unknown.
+                  Whether adding a second immunosuppressive agent reduces ADA immunogenicity—and whether this improves clinical efficacy—remains unknown.
                 </p>
               </div>
             </div>
