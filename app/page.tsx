@@ -4045,15 +4045,21 @@ export default function Home() {
                 </div>
 
                 <div className="robustness-strip-body">
-                  {/* Left: Single label + 3 thin merging lines */}
+                  {/* Left: 3 Analysis rows + Merging Arrow */}
                   <div className="robustness-merge-group">
                     <div className="robustness-analysis-labels">
-                      <span className="robustness-assumptions-label">
-                        DIFFERENT MISSING-DATA ASSUMPTIONS
-                      </span>
+                      <div className="robustness-analysis-item">
+                        <strong>ANALYSIS 01</strong> — Alternative missing-data assumption
+                      </div>
+                      <div className="robustness-analysis-item">
+                        <strong>ANALYSIS 02</strong> — Alternative missing-data assumption
+                      </div>
+                      <div className="robustness-analysis-item">
+                        <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
+                      </div>
                     </div>
 
-                    <svg className="robustness-merge-svg" viewBox="0 0 1000 48" preserveAspectRatio="none" fill="none">
+                    <svg className="robustness-merge-svg" viewBox="0 0 1000 54" preserveAspectRatio="none" fill="none">
                       <defs>
                         <linearGradient id="robustMergeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                           <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
@@ -4062,14 +4068,14 @@ export default function Home() {
                         </linearGradient>
                       </defs>
                       {/* Top line curving down to middle */}
-                      <path d="M 0,8 L 880,8 C 930,8 950,24 975,24" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
+                      <path d="M 0,9 L 880,9 C 930,9 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Center straight line */}
-                      <path d="M 0,24 L 975,24" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
+                      <path d="M 0,27 L 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Bottom line curving up to middle */}
-                      <path d="M 0,40 L 880,40 C 930,40 950,24 975,24" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
+                      <path d="M 0,45 L 880,45 C 930,45 950,27 975,27" stroke="url(#robustMergeGrad)" strokeWidth="1.2" vectorEffect="non-scaling-stroke" />
                       {/* Merged arrow pointer */}
-                      <line x1="975" y1="24" x2="993" y2="24" stroke="#ff4d52" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
-                      <polygon points="988,18 1000,24 988,30" fill="#ff4d52" />
+                      <line x1="975" y1="27" x2="993" y2="27" stroke="#ff4d52" strokeWidth="1.8" vectorEffect="non-scaling-stroke" />
+                      <polygon points="988,21 1000,27 988,33" fill="#ff4d52" />
                     </svg>
                   </div>
 
