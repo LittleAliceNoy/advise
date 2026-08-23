@@ -5274,98 +5274,104 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .txr-dashboard-scene .txrd-footer {
   display: grid;
-  grid-template-columns: 1.18fr 1fr;
-  gap: clamp(1.2rem, 2vw, 2.8rem);
-  padding: .6rem 1.3rem;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(.72rem, 1.05vw, 1.2rem);
+  flex: 0 0 16vh;
+  min-height: 16vh;
+  height: 16vh;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: .4vh;
 }
 
-.txr-dashboard-scene .txrd-footer-card {
-  display: flex;
-  align-items: center;
-  gap: clamp(.65rem, 1vw, 1.2rem);
-  border-right: none;
-  padding-right: 0;
-}
-
-.txr-dashboard-scene .txrd-footer-card:first-child {
-  border-right: 1px solid rgba(255, 255, 255, .1);
-  padding-right: clamp(1rem, 1.6vw, 2.2rem);
-}
-
-.txr-dashboard-scene .txrd-footer-info {
+.txr-dashboard-scene .txrd-footer .txrd-footer-outcome {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.015);
+  padding: .65rem .85rem;
   display: flex;
   flex-direction: column;
-  min-width: max-content;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.txr-dashboard-scene .txrd-footer-info strong {
-  font-size: clamp(.65rem, .7vw, .8rem);
-  line-height: 1.15;
+.txr-dashboard-scene .txrd-footer .txrd-outcome-header {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: .2rem;
+}
+
+.txr-dashboard-scene .txrd-footer .txrd-outcome-header svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.txr-dashboard-scene .txrd-footer .txrd-outcome-header strong {
+  font-size: clamp(.58rem, .62vw, .7rem);
+  font-family: var(--font-geist-mono), monospace;
   color: #eee;
-  font-family: var(--font-geist-mono), monospace;
 }
 
-.txr-dashboard-scene .txrd-footer-info span {
-  font-size: clamp(.46rem, .5vw, .58rem);
+.txr-dashboard-scene .txrd-footer .txrd-outcome-header span {
+  font-size: clamp(.48rem, .51vw, .58rem);
+  font-family: var(--font-geist-mono), monospace;
   color: #888;
-  font-family: var(--font-geist-mono), monospace;
-  margin-top: .15rem;
 }
 
-.txr-dashboard-scene .txrd-footer-data-col {
-  display: flex;
-  flex-direction: column;
-  gap: .2rem;
-  margin-left: auto;
-  align-items: flex-end;
-}
-
-.txr-dashboard-scene .txrd-footer-stats {
-  display: flex !important;
-  flex-direction: row !important;
+.txr-dashboard-scene .txrd-footer .txrd-vs {
+  display: grid !important;
+  grid-template-columns: max-content max-content max-content !important;
+  justify-content: center !important;
   align-items: center !important;
-  gap: clamp(.8rem, 1.2vw, 1.6rem) !important;
-  margin-left: auto;
+  column-gap: clamp(.8rem, 1.4vw, 2rem) !important;
+  margin: .15rem 0 !important;
 }
 
-.txr-dashboard-scene .txrd-footer-stats > div {
+.txr-dashboard-scene .txrd-footer .txrd-vs > div {
   display: flex !important;
-  flex-direction: row !important;
-  align-items: baseline !important;
-  gap: .35rem !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
-.txr-dashboard-scene .txrd-footer-stats strong {
-  font-size: clamp(1.15rem, 1.3vw, 1.48rem) !important;
-  line-height: 1;
-  font-family: var(--font-geist-mono), monospace;
+.txr-dashboard-scene .txrd-footer .txrd-vs strong {
+  font-size: clamp(1.45rem, 1.65vw, 1.95rem) !important;
+  line-height: 1 !important;
+  margin: .1rem 0 !important;
+  font-family: var(--font-geist-mono), monospace !important;
 }
 
-.txr-dashboard-scene .txrd-footer-stats span {
-  font-size: clamp(.44rem, .48vw, .55rem);
-  line-height: 1.15;
-  font-family: var(--font-geist-mono), monospace;
+.txr-dashboard-scene .txrd-footer .txrd-vs i {
+  font-size: clamp(.55rem, .58vw, .66rem) !important;
+  color: #555 !important;
+  font-style: normal !important;
+  font-family: var(--font-geist-mono), monospace !important;
+  margin: 0 !important;
 }
 
-.txr-dashboard-scene .txrd-footer-bottom-stat {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(.46rem, .5vw, .58rem);
-  color: #bfb9b4;
-  letter-spacing: .02em;
-  white-space: nowrap;
-  text-align: right;
+.txr-dashboard-scene .txrd-footer .txrd-vs small,
+.txr-dashboard-scene .txrd-footer .txrd-vs span {
+  font-size: clamp(.46rem, .5vw, .56rem) !important;
+  font-family: var(--font-geist-mono), monospace !important;
+  color: #a8a29e !important;
 }
 
-.txrd-footer-subtext {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(.46rem, .5vw, .6rem);
-  color: #a8a29e;
-  border-left: 1px solid rgba(255, 255, 255, .1);
-  padding-left: .85rem;
-  margin-left: auto;
-  line-height: 1.35;
-  white-space: nowrap;
+.txr-dashboard-scene .txrd-footer .txrd-outcome footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-top: .32rem !important;
+  margin-top: .2rem !important;
+  font-family: var(--font-geist-mono), monospace !important;
+  font-size: clamp(.44rem, .48vw, .55rem) !important;
+  color: #bfb9b4 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
 }
 
 /* Page 17 — give the treatment pathways enough internal breathing room. */
