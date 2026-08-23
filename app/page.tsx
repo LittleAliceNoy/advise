@@ -4240,17 +4240,36 @@ export default function Home() {
                 <div className="limitation-two-subsections">
                   {/* Section 1: Monotherapy population & potential benefit */}
                   <div className="lim-sub-block lim-block-left">
-                    <div className="lim-block-content-flex">
-                      <div className="lim-stat-badge">78%</div>
-                      <div className="lim-block-text">
-                        <p className="lim-lead-text">
-                          <strong>78% of participants</strong> were not on immunosuppressive agents at baseline. Within the adalimumab group, these participants were assigned to receive treatment with <strong>adalimumab alone</strong>.
-                        </p>
-                        <p className="lim-implication-text">
-                          ➔ <span className="red-bold">So they may benefit from a second immunosuppressive drug.</span>
-                        </p>
+                    <div className="lim-sub1-steps-flex">
+                      <div className="lim-sub1-step">
+                        <div className="lim-stat-badge">78%</div>
+                        <div className="lim-sub1-step-text">
+                          were not on immunosuppression at baseline
+                        </div>
+                      </div>
+
+                      <div className="lim-sub1-arrow" aria-hidden="true">→</div>
+
+                      <div className="lim-sub1-step">
+                        <div className="lim-icon-wrap">
+                          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="8" r="3.2" stroke="#ff4d52" strokeWidth="1.3" />
+                            <path d="M 8 20 C 8 16.2 11 14.8 14 14.8 C 17 14.8 20 16.2 20 20" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
+                            <circle cx="6" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
+                            <path d="M 2 20 C 2 17.5 4 16.5 6 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
+                            <circle cx="22" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
+                            <path d="M 26 20 C 26 17.5 24 16.5 22 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
+                          </svg>
+                        </div>
+                        <div className="lim-sub1-step-text">
+                          Within ADA arm: received <span className="red-bold">ADA alone</span>
+                        </div>
                       </div>
                     </div>
+
+                    <p className="lim-implication-callout">
+                      ➔ <span className="red-bold">So they may benefit from a second immunosuppressive drug.</span>
+                    </p>
                   </div>
 
                   <div className="lim-sub-divider" aria-hidden="true">
