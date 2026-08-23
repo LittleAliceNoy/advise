@@ -3909,7 +3909,7 @@ export default function Home() {
 
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
-                <svg viewBox="0 0 960 178" className="dominant-attrition-wide-svg">
+                <svg viewBox="0 0 960 190" className="dominant-attrition-wide-svg">
                   <defs>
                     <linearGradient id="adaTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
@@ -3922,39 +3922,39 @@ export default function Home() {
                   </defs>
 
                   {/* COLUMN HEADERS ABOVE BOTH ROWS */}
-                  {/* Left Header: IMMEDIATELY AFTER RANDOMIZATION */}
+                  {/* Left Header: IMMEDIATELY AFTER RANDOMIZATION (Left-aligned with line) */}
                   {attritionStep >= 2 && (
                     <g className="post-rand-header-group">
-                      <text x="250" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      <text x="165" y="18" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                         IMMEDIATELY AFTER RANDOMIZATION
                       </text>
-                      <line x1="165" y1="23" x2="335" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                      <line x1="165" y1="25" x2="340" y2="25" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                     </g>
                   )}
 
-                  {/* Right Header: TREATMENT DISCONTINUATION */}
+                  {/* Right Header: TREATMENT DISCONTINUATION (Left-aligned with line) */}
                   {attritionStep >= 3 && (
                     <g className="discontinuation-header-group">
-                      <text x="665" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      <text x="420" y="18" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                         TREATMENT DISCONTINUATION
                       </text>
-                      <line x1="420" y1="23" x2="915" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                      <line x1="420" y1="25" x2="915" y2="25" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                     </g>
                   )}
 
-                  {/* TRACK 1: ADALIMUMAB (RED) */}
+                  {/* TRACK 1: ADALIMUMAB (RED) - SHIFTED DOWN */}
                   <g className="ada-track-clean">
-                    <text x="25" y="52" fill="#ff7175" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    <text x="25" y="62" fill="#ff7175" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       ADALIMUMAB
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="48" x2="915" y2="48" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="58" x2="915" y2="58" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
                     {/* Participant dot stream */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
                       <circle
                         key={`ada-dot-${i}`}
                         cx={cx}
-                        cy={48}
+                        cy={58}
                         r={3.4}
                         fill={attritionStep >= 2 && i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
                       />
@@ -3963,22 +3963,22 @@ export default function Home() {
                     {/* Step >= 2: 1 ADA dropout */}
                     {attritionStep >= 2 && (
                       <g className="ada-dropout-annotation">
-                        <path d="M 229,48 Q 235,66 248,68" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="248" cy="68" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
-                        <text x="258" y="71.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <path d="M 229,58 Q 235,76 248,78" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="78" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                        <text x="258" y="81.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           1 ADA dropout
                         </text>
                       </g>
                     )}
                   </g>
 
-                  {/* TRACK 2: CID (PURPLE) */}
+                  {/* TRACK 2: CID (PURPLE) - SHIFTED DOWN */}
                   <g className="cid-track-clean">
-                    <text x="25" y="118" fill="#b58eff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    <text x="25" y="128" fill="#b58eff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       CID
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="114" x2="915" y2="114" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="124" x2="915" y2="124" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
                     
                     {/* Participant dot stream with early dropouts and discontinued dots dimmed */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
@@ -3988,7 +3988,7 @@ export default function Home() {
                         <circle
                           key={`cid-dot-${i}`}
                           cx={cx}
-                          cy={114}
+                          cy={124}
                           r={3.4}
                           fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.2)" : "#b58eff"}
                         />
@@ -3998,11 +3998,11 @@ export default function Home() {
                     {/* Step >= 2: Immediately after randomization — 3 CID drop out */}
                     {attritionStep >= 2 && (
                       <g className="cid-dropout-annotation">
-                        <path d="M 229,114 Q 235,134 248,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="248" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <circle cx="257" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <circle cx="266" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <text x="278" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <path d="M 229,124 Q 235,144 248,146" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="146" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="257" cy="146" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="266" cy="146" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <text x="278" y="149.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           3 CID drop out
                         </text>
                       </g>
@@ -4011,22 +4011,22 @@ export default function Home() {
                     {/* Step >= 3: Treatment Discontinuation — 8 CID discontinued (same format as 3 dropouts) */}
                     {attritionStep >= 3 && (
                       <g className="cid-discontinued-annotation">
-                        <path d="M 480,114 Q 486,134 498,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <path d="M 480,124 Q 486,144 498,146" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
                         {[498, 507, 516, 525, 534, 543, 552, 561].map((cx, idx) => (
                           <circle
                             key={`cid-disc-dot-${idx}`}
                             cx={cx}
-                            cy={136}
+                            cy={146}
                             r={3.4}
                             fill="#180e2b"
                             stroke="#b58eff"
                             strokeWidth="1.4"
                           />
                         ))}
-                        <text x="574" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <text x="574" y="149.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           8 CID discontinued assigned treatment
                         </text>
-                        <text x="574" y="151" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                        <text x="574" y="161" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
                           Aggregate count; timing not shown.
                         </text>
                       </g>
@@ -4044,7 +4044,7 @@ export default function Home() {
                       <span className="model-name">PRIMARY ANALYSIS</span>
                     </div>
                     <p className="model-assumption">Prespecified imputation model</p>
-                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
                   </div>
 
                   <div className="sensitivity-model-card">
@@ -4053,7 +4053,7 @@ export default function Home() {
                       <span className="model-name">MULTIPLE IMPUTATION</span>
                     </div>
                     <p className="model-assumption">Missing-at-random assumptions</p>
-                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
                   </div>
 
                   <div className="sensitivity-model-card">
@@ -4062,7 +4062,7 @@ export default function Home() {
                       <span className="model-name">WORST-CASE BOUNDS</span>
                     </div>
                     <p className="model-assumption">Extreme missingness penalties</p>
-                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
                   </div>
 
                   <div className="sensitivity-model-card">
@@ -4071,7 +4071,7 @@ export default function Home() {
                       <span className="model-name">COMPLETE-CASE</span>
                     </div>
                     <p className="model-assumption">Observed participant data only</p>
-                    <div className="model-result-badge">✓ CONSISTENT EFFECT</div>
+                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
                   </div>
                 </div>
 

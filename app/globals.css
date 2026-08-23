@@ -11387,7 +11387,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .model-result-badge {
   font: 700 clamp(0.44rem, 0.5vw, 0.6rem) var(--font-geist-mono), monospace;
-  color: #4ade80;
+  color: #ff7175;
   letter-spacing: 0.05em;
   margin-top: 0.1rem;
 }
