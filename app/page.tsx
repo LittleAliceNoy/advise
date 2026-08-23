@@ -2266,7 +2266,7 @@ export default function Home() {
               </svg>
               <div>
                 <strong>SYSTEMIC STEROID BURDEN</strong>
-                <span>12-month mean daily prednisone dose</span>
+                <span>Mean daily prednisone dose over the entire trial</span>
               </div>
               <div className="txrd-footer-stats">
                 <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
