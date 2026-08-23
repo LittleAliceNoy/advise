@@ -3028,115 +3028,156 @@ export default function Home() {
             {/* RIGHT COLUMN - Fixed-size camera frame with internal animated canvas */}
             <div className="adv-right-col comp-anatomy-column">
               <div className="comp-viewport-frame">
+                
+                {/* Subtle Step Readout */}
+                <div className="comp-step-indicator" onClick={(e) => e.stopPropagation()}>
+                  <span className="step-count">0{comparatorZoomStage + 1} / 04</span>
+                  <button
+                    className="step-reset-btn"
+                    onClick={() => setComparatorZoomStage(0)}
+                    aria-label="Reset sequence"
+                  >
+                    ↻
+                  </button>
+                </div>
+
                 <div className="comp-anatomy-canvas">
+                  
+                  {/* 1. ROOT STRATEGY STRIP */}
+                  <div className="anatomy-root-bar">
+                    <div className="anatomy-root-tag">
+                      <span className="cid-pill">CID</span>
+                      <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                    </div>
+                    <div className="anatomy-root-count">N = 113</div>
+                  </div>
+
+                  {/* 2. PROPORTIONAL BRANCHING TREE */}
+                  <div className="anatomy-proportional-branches">
                     
-                    {/* 1. ROOT STRATEGY STRIP */}
-                    <div className="anatomy-root-bar">
-                      <div className="anatomy-root-tag">
-                        <span className="cid-pill">CID</span>
-                        <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                    {/* Left / Major: 79% Antimetabolites */}
+                    <div className="branch-pane pane-dominant">
+                      <div className="branch-headline-row">
+                        <span className="branch-massive-pct">79%</span>
+                        <div className="branch-label-stack">
+                          <h5>ANTIMETABOLITES</h5>
+                          <span className="sub-badge-dominant">DOMINANT STRATEGY · 87 PTS</span>
+                        </div>
                       </div>
-                      <div className="anatomy-root-count">N = 113</div>
+
+                      <div className="branch-proportions-fill">
+                        <div className="branch-pills-bar">
+                          <span>Methotrexate <em>(44)</em></span>
+                          <span>Mycophenolate <em>(42)</em></span>
+                          <span>Azathioprine <em>(1)</em></span>
+                        </div>
+                        <p className="branch-sub-note">Prior evidence indicated broadly comparable efficacy across antimetabolite agents.</p>
+                      </div>
+
+                      <div className="branch-stat-footer">
+                        <small>DOMINANT CID COMPARATOR ARM</small>
+                      </div>
                     </div>
 
-                    {/* 2. PROPORTIONAL BRANCHING TREE */}
-                    <div className="anatomy-proportional-branches">
-                      
-                      {/* Left / Major: 79% Antimetabolites */}
-                      <div className="branch-pane pane-dominant">
-                        <div className="branch-headline-row">
-                          <span className="branch-massive-pct">79%</span>
-                          <div className="branch-label-stack">
-                            <h5>ANTIMETABOLITES</h5>
-                            <span className="sub-badge-dominant">DOMINANT STRATEGY</span>
-                          </div>
+                    {/* Right / Minor: 21% Calcineurin Inhibitors */}
+                    <div className="branch-pane pane-minority">
+                      <div className="branch-headline-row">
+                        <span className="branch-massive-pct minority-pct">21%</span>
+                        <div className="branch-label-stack">
+                          <h5>CALCINEURIN INHIBITORS</h5>
+                          <span className="sub-badge-minority">MINORITY EXPOSURE · 23 PTS</span>
                         </div>
-                        <div className="branch-pills-bar">
-                          <span>Methotrexate</span>
-                          <span>Mycophenolate</span>
-                          <span>Azathioprine</span>
-                        </div>
-                        <p className="branch-sub-note">Prior evidence suggested broadly similar efficacy.</p>
                       </div>
 
-                      {/* Right / Minor: 21% Calcineurin Inhibitors with ZOOM */}
-                      <div className="branch-pane pane-minority">
-                        <div className="branch-headline-row">
-                          <span className="branch-massive-pct minority-pct">21%</span>
-                          <div className="branch-label-stack">
-                            <h5>CALCINEURIN INHIBITORS</h5>
-                            <span className="sub-badge-minority">MINORITY EXPOSURE</span>
+                      {/* State 1 high-level question cue */}
+                      <div className="state1-question-cue">
+                        <p>CID was heterogeneous — does this 21% minority exposure matter?</p>
+                      </div>
+
+                      {/* SUB-BREAKDOWN */}
+                      <div className="zoom-subdivision-box">
+                        
+                        {/* Tacrolimus Tier (Revealed in State 2) */}
+                        <div className="zoom-tier tacrolimus-tier">
+                          <div className="tac-header-line">
+                            <span className="zoom-drug-title">TACROLIMUS</span>
+                            <span className="zoom-drug-share">19 / 23 (83% of CNIs)</span>
                           </div>
+                          <p className="tac-evidence-note">Prior evidence for tacrolimus was mixed; evidence for cyclosporine suggested potentially lower efficacy than antimetabolites.</p>
                         </div>
 
-                        {/* ZOOM SUB-BREAKDOWN */}
-                        <div className="zoom-subdivision-box">
-                          <div className="zoom-tier tacrolimus-tier">
-                            <span className="zoom-drug-title">TACROLIMUS</span>
-                            <span className="zoom-drug-share">Most CNI exposure (83% of CNIs)</span>
-                          </div>
-                          <div className="zoom-tier cyclosporine-tier">
-                            <div className="csa-inner-card">
+                        {/* State 2 intermediate question */}
+                        <div className="state2-intermediate-hook">
+                          <strong>COULD THE WEAKER COMPONENT HAVE DISADVANTAGED CID?</strong>
+                        </div>
+
+                        {/* Cyclosporine Tier (Hero in State 3) */}
+                        <div className="zoom-tier cyclosporine-tier">
+                          <div className="csa-inner-card">
+                            <div className="csa-text-col">
                               <span className="csa-name">CYCLOSPORINE</span>
-                              <div className="csa-pct-badge">
-                                <span className="csa-red-num">4%</span>
-                                <span className="csa-red-sub">OF TOTAL CID</span>
-                              </div>
+                              <span className="csa-sub-n">Only 4 patients assigned</span>
+                            </div>
+                            <div className="csa-pct-badge">
+                              <span className="csa-red-num">4%</span>
+                              <span className="csa-red-sub">OF TOTAL CID</span>
                             </div>
                           </div>
                         </div>
 
-                        {/* THE CONCERN ANNOTATION */}
-                        <div className="concern-callout-bracket">
-                          <div className="concern-tag-row">
-                            <span className="concern-dot" />
-                            <strong className="concern-label">THE CONCERN</strong>
-                          </div>
-                          <p className="concern-flow-text">
-                            Possibly lower efficacy <span className="concern-arrow">→</span> could disadvantage CID <span className="concern-arrow">→</span> could exaggerate ADA benefit?
-                          </p>
+                      </div>
+
+                      {/* THE CONCERN ANNOTATION (State 3) */}
+                      <div className="concern-callout-bracket">
+                        <div className="concern-tag-row">
+                          <span className="concern-dot" />
+                          <strong className="concern-label">THE CONCERN</strong>
                         </div>
-
+                        <p className="concern-flow-text">
+                          Potentially lower efficacy <span className="concern-arrow">→</span> weaker CID comparator <span className="concern-arrow">→</span> exaggerated ADA advantage?
+                        </p>
                       </div>
+
                     </div>
-
-                    {/* 3. CONVERGING COUNTEREVIDENCE ANCHORS */}
-                    <div className="anatomy-convergence-row">
-                      <div className="evidence-anchor-item">
-                        <div className="anchor-num-head">
-                          <span className="anchor-index">01</span>
-                          <span className="anchor-metric">ONLY 4%</span>
-                        </div>
-                        <p className="anchor-desc">Cyclosporine assigned to only 4% of participants.</p>
-                      </div>
-
-                      <div className="convergence-divider-line" aria-hidden="true">
-                        <span className="convergence-arrow">↓</span>
-                      </div>
-
-                      <div className="evidence-anchor-item">
-                        <div className="anchor-num-head">
-                          <span className="anchor-index">02</span>
-                          <span className="anchor-metric">CONSISTENT</span>
-                        </div>
-                        <p className="anchor-desc">Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
-                      </div>
-                    </div>
-
-                    {/* 4. FINAL RESOLUTION TAKEAWAY */}
-                    <div className="anatomy-conclusion-anchor">
-                      <div className="conclusion-hook-line">
-                        <strong>UNLIKELY TO EXPLAIN <span className="red-highlight-text">ADA’S ADVANTAGE</span></strong>
-                      </div>
-                      <p className="conclusion-sub-text">
-                        Comparator heterogeneity may introduce some efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA's advantage.
-                      </p>
-                    </div>
-
                   </div>
+
+                  {/* 3. CONVERGING COUNTEREVIDENCE ANCHORS (State 4) */}
+                  <div className="anatomy-convergence-row">
+                    <div className="evidence-anchor-item">
+                      <div className="anchor-num-head">
+                        <span className="anchor-index">01</span>
+                        <span className="anchor-metric">ONLY 4%</span>
+                      </div>
+                      <p className="anchor-desc">Cyclosporine was assigned to only 4% of participants.</p>
+                    </div>
+
+                    <div className="convergence-divider-line" aria-hidden="true">
+                      <span className="convergence-arrow">↓</span>
+                    </div>
+
+                    <div className="evidence-anchor-item">
+                      <div className="anchor-num-head">
+                        <span className="anchor-index">02</span>
+                        <span className="anchor-metric">CONSISTENT ACROSS STRATA</span>
+                      </div>
+                      <p className="anchor-desc">Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
+                    </div>
+                  </div>
+
+                  {/* 4. FINAL RESOLUTION TAKEAWAY (State 4) */}
+                  <div className="anatomy-conclusion-anchor">
+                    <div className="conclusion-hook-line">
+                      <strong>UNLIKELY TO EXPLAIN <span className="red-highlight-text">ADA’S ADVANTAGE</span></strong>
+                    </div>
+                    <p className="conclusion-sub-text">
+                      Comparator heterogeneity may introduce some efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA's advantage.
+                    </p>
+                  </div>
+
                 </div>
               </div>
             </div>
+          </div>
         </section>
 
         <section id="limitations-3" className="scene discussion-temporal-scene">

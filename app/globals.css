@@ -10093,6 +10093,46 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   line-height: 1.35;
 }
 
+/* Step Indicator */
+.comp-step-indicator {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(10, 10, 14, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.comp-step-indicator .step-count {
+  font: 700 clamp(0.52rem, 0.58vw, 0.68rem) var(--font-geist-mono), monospace;
+  color: #a09591;
+  letter-spacing: 0.08em;
+}
+
+.comp-step-indicator .step-reset-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.comp-step-indicator .step-reset-btn:hover {
+  color: #fff;
+}
+
 /* Subdivision Box & Drug Tiers */
 .zoom-subdivision-box {
   display: flex;
@@ -10102,26 +10142,93 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: clamp(0.35rem, 0.55vh, 0.55rem);
   border-radius: 2px;
+  transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+.state1-question-cue {
+  padding: 0.4rem 0.2rem;
+  transition: opacity 0.4s ease, height 0.4s ease, margin 0.4s ease;
+}
+
+.state1-question-cue p {
+  font-size: clamp(0.64rem, 0.72vw, 0.84rem);
+  color: #b58eff;
+  line-height: 1.35;
+  margin: 0;
+  font-style: italic;
+}
+
+.state2-intermediate-hook {
+  padding: 0.25rem 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.state2-intermediate-hook strong {
+  font: 700 clamp(0.55rem, 0.62vw, 0.74rem) var(--font-geist-mono), monospace;
+  color: var(--red);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.branch-proportions-fill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.branch-stat-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.35rem;
+}
+
+.branch-stat-footer small {
+  font: 600 clamp(0.44rem, 0.5vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #666;
+  letter-spacing: 0.08em;
+}
+
+.tac-header-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tac-evidence-note {
+  font-size: clamp(0.52rem, 0.58vw, 0.68rem);
+  color: #8c827e;
+  line-height: 1.3;
+  margin: 0.2rem 0 0;
+}
+
+.csa-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.csa-sub-n {
+  font: 500 clamp(0.44rem, 0.5vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #a09591;
 }
 
 .zoom-tier.tacrolimus-tier {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.56rem, 0.62vw, 0.72rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.35rem;
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .zoom-drug-title {
-  color: #a09591;
-  font-weight: 600;
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(0.6rem, 0.68vw, 0.8rem);
 }
 
 .zoom-drug-share {
-  color: #ccc;
+  color: #b58eff;
+  font-size: clamp(0.52rem, 0.58vw, 0.68rem);
 }
 
 .zoom-tier.cyclosporine-tier {
@@ -10134,24 +10241,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   background: rgba(255, 77, 82, 0.09);
   border: 1px solid rgba(255, 77, 82, 0.4);
-  padding: clamp(0.2rem, 0.35vh, 0.35rem) 0.45rem;
+  padding: clamp(0.25rem, 0.4vh, 0.45rem) 0.55rem;
   border-radius: 2px;
   transition: all 0.5s ease;
 }
 
 .csa-name {
-  font: 700 clamp(0.6rem, 0.68vw, 0.78rem) var(--font-geist-mono), monospace;
+  font: 700 clamp(0.64rem, 0.72vw, 0.84rem) var(--font-geist-mono), monospace;
   color: #fff;
 }
 
 .csa-pct-badge {
   display: flex;
   align-items: baseline;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .csa-red-num {
-  font: 700 clamp(0.85rem, 1vw, 1.15rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(1rem, 1.25vw, 1.5rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   transition: font-size 0.5s ease, text-shadow 0.5s ease;
 }
@@ -10288,7 +10395,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
    PROGRESSIVE RIGHT-PANEL VIEWPORT STATES (0, 1, 2, 3)
    ========================================================================== */
 
-/* ── STEP 1: FULL CID MAP (State 0) ── */
+/* ── STEP 1: WHAT WAS CID? (State 0) ── */
 .comp-stage-0 .comp-anatomy-canvas {
   transform: scale(1) translate(0, 0);
   transform-origin: 50% 50%;
@@ -10300,6 +10407,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .comp-stage-0 .pane-minority {
   opacity: 1;
   filter: none;
+}
+.comp-stage-0 .state1-question-cue {
+  opacity: 1;
+  display: block;
+}
+.comp-stage-0 .zoom-subdivision-box {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+.comp-stage-0 .state2-intermediate-hook {
+  opacity: 0;
+  pointer-events: none;
 }
 .comp-stage-0 .zoom-tier.tacrolimus-tier {
   opacity: 0;
@@ -10327,20 +10451,37 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   pointer-events: none;
 }
 
-/* ── STEP 2: FOCUS ON CNI (State 1) ── */
+/* ── STEP 2: WHY WORRY ABOUT CNI? (State 1) ── */
 .comp-stage-1 .comp-anatomy-canvas {
   transform: scale(1.36);
   transform-origin: 82% 26%;
 }
 .comp-stage-1 .pane-dominant {
-  opacity: 0.26;
+  opacity: 0.22;
   filter: blur(1.5px);
 }
 .comp-stage-1 .pane-minority {
   border-color: rgba(255, 77, 82, 0.48);
   box-shadow: 0 0 35px rgba(255, 77, 82, 0.08);
 }
+.comp-stage-1 .state1-question-cue {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.comp-stage-1 .zoom-subdivision-box {
+  opacity: 1;
+  max-height: 250px;
+  pointer-events: auto;
+}
 .comp-stage-1 .zoom-tier.tacrolimus-tier {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.comp-stage-1 .state2-intermediate-hook {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -10366,13 +10507,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   pointer-events: none;
 }
 
-/* ── STEP 3: ZOOM INTO CYCLOSPORINE (State 2) ── */
+/* ── STEP 3: THE SUSPECT IS SMALL (State 2) ── */
 .comp-stage-2 .comp-anatomy-canvas {
   transform: scale(1.82);
   transform-origin: 82% 44%;
 }
 .comp-stage-2 .pane-dominant {
-  opacity: 0.12;
+  opacity: 0.1;
   filter: blur(2.5px);
 }
 .comp-stage-2 .pane-minority {
@@ -10380,9 +10521,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-shadow: 0 0 50px rgba(255, 77, 82, 0.16);
   background: rgba(255, 77, 82, 0.035);
 }
+.comp-stage-2 .state1-question-cue {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.comp-stage-2 .zoom-subdivision-box {
+  opacity: 1;
+  max-height: 250px;
+}
 .comp-stage-2 .zoom-tier.tacrolimus-tier {
-  opacity: 0.55;
+  opacity: 0.45;
   transform: translateY(0);
+}
+.comp-stage-2 .state2-intermediate-hook {
+  opacity: 0.35;
 }
 .comp-stage-2 .zoom-tier.cyclosporine-tier {
   opacity: 1;
@@ -10395,8 +10550,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: rgba(255, 77, 82, 0.22);
 }
 .comp-stage-2 .csa-red-num {
-  font-size: clamp(1.05rem, 1.25vw, 1.5rem);
-  text-shadow: 0 0 15px rgba(255, 77, 82, 0.6);
+  font-size: clamp(1.2rem, 1.45vw, 1.8rem);
+  text-shadow: 0 0 20px rgba(255, 77, 82, 0.75);
 }
 .comp-stage-2 .concern-callout-bracket {
   opacity: 1;
@@ -10418,7 +10573,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   pointer-events: none;
 }
 
-/* ── STEP 4: RESOLUTION / PULL BACK (State 3) ── */
+/* ── STEP 4: TEST THE HYPOTHESIS (State 3) ── */
 .comp-stage-3 .comp-anatomy-canvas {
   transform: scale(1) translate(0, 0);
   transform-origin: 50% 50%;
@@ -10431,9 +10586,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   opacity: 1;
   filter: none;
 }
+.comp-stage-3 .state1-question-cue {
+  display: none;
+}
+.comp-stage-3 .zoom-subdivision-box {
+  opacity: 1;
+  max-height: 250px;
+}
 .comp-stage-3 .zoom-tier.tacrolimus-tier {
   opacity: 1;
   transform: translateY(0);
+}
+.comp-stage-3 .state2-intermediate-hook {
+  display: none;
 }
 .comp-stage-3 .zoom-tier.cyclosporine-tier {
   opacity: 1;
