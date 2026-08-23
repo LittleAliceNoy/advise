@@ -2926,15 +2926,15 @@ export default function Home() {
                     </div>
 
                     {/* Safeguard 03 */}
-                    <div className="lim-safeguard-line-item item-mtqac-oversight">
+                    <div className="lim-safeguard-line-item">
                       <div className="shield-icon-col" aria-hidden="true">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a88aff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                           <path d="m9 12 2 2 4-4"/>
                         </svg>
                       </div>
                       <div className="safeguard-text-col">
-                        <h4 className="violet-heading"><span>03</span> — MTQAC OVERSIGHT</h4>
+                        <h4><span>03</span> — MTQAC OVERSIGHT</h4>
                         <p>Central monitoring of imaging interpretation, activity determination, and protocol adherence</p>
                       </div>
                     </div>
