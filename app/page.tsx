@@ -469,11 +469,18 @@ export default function Home() {
     });
   };
 
-  // Slide 31 Differential Loss to Follow-up State (1 = initial observations, 2 = robustness resolved)
-  const [attritionStep, setAttritionStep] = useState<1 | 2>(1);
+  // Slide 31 Differential Loss to Follow-up State:
+  // 1: Baseline Parallel Participant Tracks
+  // 2: 1 ADA vs 3 CID drop out after randomization
+  // 3: 8 participants CID drop out
+  // 4: Final robustness & conclusion strip
+  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4>(1);
 
   const advanceAttritionStep = (e?: React.MouseEvent) => {
-    setAttritionStep((prev) => (prev === 1 ? 2 : 2));
+    setAttritionStep((prev) => {
+      const next = Math.min(prev + 1, 4) as 1 | 2 | 3 | 4;
+      return next;
+    });
   };
 
   const clearInspectTimers = () => {
@@ -3882,7 +3889,10 @@ export default function Home() {
               <div className="attrition-canvas-top-bar">
                 <span className="canvas-caption-label">DIFFERENTIAL ATTRITION BY TREATMENT ARM</span>
                 <span className="canvas-advance-hint">
-                  {attritionStep === 1 ? "CLICK / ↓ TO REVEAL RESOLUTION" : "ROBUSTNESS CONFIRMED"}
+                  {attritionStep === 1 && "CLICK / ↓ TO REVEAL POST-RANDOMIZATION ATTRITION"}
+                  {attritionStep === 2 && "CLICK / ↓ TO REVEAL DISCONTINUATIONS"}
+                  {attritionStep === 3 && "CLICK / ↓ TO REVEAL ROBUSTNESS RESOLUTION"}
+                  {attritionStep === 4 && "ROBUSTNESS CONFIRMED"}
                 </span>
               </div>
 
@@ -3902,20 +3912,24 @@ export default function Home() {
 
                   {/* COLUMN HEADERS ABOVE BOTH ROWS */}
                   {/* Left Header: IMMEDIATELY AFTER RANDOMIZATION */}
-                  <g className="post-rand-header-group">
-                    <text x="250" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                      IMMEDIATELY AFTER RANDOMIZATION
-                    </text>
-                    <line x1="165" y1="23" x2="335" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                  </g>
+                  {attritionStep >= 2 && (
+                    <g className="post-rand-header-group">
+                      <text x="250" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                        IMMEDIATELY AFTER RANDOMIZATION
+                      </text>
+                      <line x1="165" y1="23" x2="335" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                    </g>
+                  )}
 
                   {/* Right Header: TREATMENT DISCONTINUATION */}
-                  <g className="discontinuation-header-group">
-                    <text x="665" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                      TREATMENT DISCONTINUATION
-                    </text>
-                    <line x1="420" y1="23" x2="915" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                  </g>
+                  {attritionStep >= 3 && (
+                    <g className="discontinuation-header-group">
+                      <text x="665" y="16" textAnchor="middle" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                        TREATMENT DISCONTINUATION
+                      </text>
+                      <line x1="420" y1="23" x2="915" y2="23" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                    </g>
+                  )}
 
                   {/* TRACK 1: ADALIMUMAB (RED) */}
                   <g className="ada-track-clean">
@@ -3931,16 +3945,20 @@ export default function Home() {
                         cx={cx}
                         cy={48}
                         r={3.4}
-                        fill={i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
+                        fill={attritionStep >= 2 && i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
                       />
                     ))}
                     
-                    {/* Near the beginning: 1 ADA dropout */}
-                    <path d="M 229,48 Q 235,66 248,68" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="248" cy="68" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
-                    <text x="258" y="71.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
-                      1 ADA dropout
-                    </text>
+                    {/* Step >= 2: 1 ADA dropout */}
+                    {attritionStep >= 2 && (
+                      <g className="ada-dropout-annotation">
+                        <path d="M 229,48 Q 235,66 248,68" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="68" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                        <text x="258" y="71.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                          1 ADA dropout
+                        </text>
+                      </g>
+                    )}
                   </g>
 
                   {/* TRACK 2: CID (PURPLE) */}
@@ -3953,8 +3971,8 @@ export default function Home() {
                     
                     {/* Participant dot stream with early dropouts and discontinued dots dimmed */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
-                      const isEarlyDropout = [2, 3, 4].includes(i);
-                      const isDiscontinued = [11, 13, 15, 17, 19, 21, 23, 25].includes(i);
+                      const isEarlyDropout = attritionStep >= 2 && [2, 3, 4].includes(i);
+                      const isDiscontinued = attritionStep >= 3 && [11, 13, 15, 17, 19, 21, 23, 25].includes(i);
                       return (
                         <circle
                           key={`cid-dot-${i}`}
@@ -3966,40 +3984,48 @@ export default function Home() {
                       );
                     })}
 
-                    {/* OBSERVATION 1: Immediately after randomization — 3 CID drop out */}
-                    <path d="M 229,114 Q 235,134 248,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    <circle cx="248" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="257" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <circle cx="266" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                    <text x="278" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
-                      3 CID drop out
-                    </text>
+                    {/* Step >= 2: Immediately after randomization — 3 CID drop out */}
+                    {attritionStep >= 2 && (
+                      <g className="cid-dropout-annotation">
+                        <path d="M 229,114 Q 235,134 248,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="257" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="266" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <text x="278" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                          3 CID drop out
+                        </text>
+                      </g>
+                    )}
 
-                    {/* OBSERVATION 2: Treatment Discontinuation — 8 CID discontinued (same format as 3 dropouts) */}
-                    <path d="M 480,114 Q 486,134 498,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                    {[498, 507, 516, 525, 534, 543, 552, 561].map((cx, idx) => (
-                      <circle
-                        key={`cid-disc-dot-${idx}`}
-                        cx={cx}
-                        cy={136}
-                        r={3.4}
-                        fill="#180e2b"
-                        stroke="#b58eff"
-                        strokeWidth="1.4"
-                      />
-                    ))}
-                    <text x="574" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
-                      8 CID discontinued assigned treatment
-                    </text>
-                    <text x="574" y="151" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                      *Schematic representation · Non-chronological aggregate count
-                    </text>
+                    {/* Step >= 3: Treatment Discontinuation — 8 CID discontinued (same format as 3 dropouts) */}
+                    {attritionStep >= 3 && (
+                      <g className="cid-discontinued-annotation">
+                        <path d="M 480,114 Q 486,134 498,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        {[498, 507, 516, 525, 534, 543, 552, 561].map((cx, idx) => (
+                          <circle
+                            key={`cid-disc-dot-${idx}`}
+                            cx={cx}
+                            cy={136}
+                            r={3.4}
+                            fill="#180e2b"
+                            stroke="#b58eff"
+                            strokeWidth="1.4"
+                          />
+                        ))}
+                        <text x="574" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                          8 CID discontinued assigned treatment
+                        </text>
+                        <text x="574" y="151" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                          *Schematic representation · Non-chronological aggregate count
+                        </text>
+                      </g>
+                    )}
                   </g>
                 </svg>
               </div>
 
-              {/* BOTTOM CONCLUSION STRIP */}
-              <div className={`attrition-editorial-takeaway ${attritionStep >= 2 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
+              {/* BOTTOM CONCLUSION STRIP (Step 4) */}
+              <div className={`attrition-editorial-takeaway ${attritionStep === 4 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
                 
                 {/* Horizontal Argument Strip: Differential Attrition -> Potential for bias -> Robustness resolution */}
                 <div className="attrition-argument-strip">
