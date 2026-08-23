@@ -4313,19 +4313,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 04 BOTTOM TAKEAWAY — SIMPLE BORDERLESS EDITORIAL FOOTER */}
+              {/* 04 BOTTOM TAKEAWAY — STRONG FINISHING EDITORIAL STATEMENT */}
               <div className="immuno-editorial-footer">
-                <div className="footer-q-circle">
-                  <span>?</span>
-                </div>
-                <div className="footer-text-col">
-                  <div className="footer-question-row">
-                    <span className="footer-kicker">UNRESOLVED</span>
-                    <h4 className="footer-question-red">SHOULD ADALIMUMAB BE USED ALONE?</h4>
-                  </div>
-                  <p className="footer-body">
-                    <strong>ADVISE showed that monotherapy can be effective.</strong>{" "}
-                    Whether adding a second immunosuppressive agent reduces immunogenicity—and whether that translates into better sustained clinical efficacy—<span className="red-text">remains unknown.</span>
+                <div className="immuno-finishing-statement">
+                  <p className="finishing-text">
+                    <strong className="finishing-lead">ADVISE showed that monotherapy can be effective.</strong>{" "}
+                    <span className="finishing-body">
+                      Whether adding a second immunosuppressive agent reduces immunogenicity—and whether that translates into better sustained clinical efficacy—
+                    </span>
+                    <span className="finishing-punchline">remains unknown.</span>
                   </p>
                 </div>
               </div>

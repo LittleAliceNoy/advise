@@ -11956,79 +11956,47 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 700;
 }
 
-/* 04 Bottom Editorial Footer (Simple, borderless, thin top-line) */
+/* 04 Bottom Editorial Footer — Strong Finishing Statement */
 .immuno-editorial-footer {
-  padding-top: clamp(0.65rem, 1.2vh, 1.25rem);
-  display: flex;
-  align-items: center;
-  gap: clamp(1rem, 1.8vw, 2.2rem);
+  padding-top: clamp(0.6rem, 1.2vh, 1.2rem);
   width: 100%;
   box-sizing: border-box;
 }
 
-.footer-q-circle {
-  width: clamp(34px, 4.2vh, 44px);
-  height: clamp(34px, 4.2vh, 44px);
-  border-radius: 50%;
-  border: 1.5px solid #ff4d52;
-  background: radial-gradient(circle, rgba(255, 77, 82, 0.2) 0%, transparent 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  box-shadow: 0 0 16px rgba(255, 77, 82, 0.25);
+.immuno-finishing-statement {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 77, 82, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 77, 82, 0.24);
+  border-left: 3.5px solid #ff4d52;
+  border-radius: 4px;
+  padding: clamp(0.65rem, 1.1vh, 1rem) clamp(0.9rem, 1.6vw, 1.8rem);
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.footer-q-circle span {
-  font: 800 clamp(1.15rem, 1.4vw, 1.7rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  line-height: 1;
+.finishing-text {
+  font-size: clamp(0.78rem, 0.94vw, 1.12rem);
+  line-height: 1.45;
+  margin: 0;
+  color: #ded7d3;
 }
 
-.footer-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  flex: 1;
-}
-
-.footer-question-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.footer-kicker {
-  font: 700 clamp(0.48rem, 0.54vw, 0.64rem) var(--font-geist-mono), monospace;
-  color: #ff7175;
-  background: rgba(255, 77, 82, 0.1);
-  border: 1px solid rgba(255, 77, 82, 0.35);
-  padding: 0.08rem 0.38rem;
-  border-radius: 2px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.footer-question-red {
-  font: 700 clamp(0.66rem, 0.76vw, 0.9rem) var(--font-geist-mono), monospace;
+.finishing-lead {
   color: #ffffff;
-  letter-spacing: 0.04em;
-  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.finishing-body {
+  color: #ded7d3;
+  font-weight: 400;
+}
+
+.finishing-punchline {
+  color: #ff7175;
+  font-weight: 700;
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-}
-
-.footer-body {
-  font-size: clamp(0.68rem, 0.78vw, 0.92rem);
-  color: #d0c7c3;
-  margin: 0;
-  line-height: 1.35;
-}
-
-/* Footer Cite */
-.immuno-footer-cite {
-  font: 400 clamp(0.52rem, 0.58vw, 0.68rem) var(--font-geist-mono), monospace;
-  color: #736b67;
-  font-style: italic;
-  margin-top: 0.02rem;
 }
 
