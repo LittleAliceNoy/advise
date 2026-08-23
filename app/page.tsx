@@ -4153,23 +4153,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* MAIN CONTAINER / 3 STRUCTURED PANELS + EDITORIAL FOOTER */}
+            {/* MAIN CONTAINER / EDITORIAL STACK SEPARATED BY THIN LINES */}
             <div className="immuno-stack-canvas">
-              {/* 01 MAIN HERO — DOMINANT AREA (~2-2.5x larger, icon beside, thin pathway below) */}
-              <div className="immuno-panel hero-panel">
+              {/* 01 MAIN HERO — DOMINANT AREA */}
+              <div className="immuno-row-tier hero-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge">01</span>
-                  <span className="panel-kicker red-kicker">AFTER ADVISE · CASE SERIES [47–51]</span>
+                  <span className="panel-kicker red-kicker">CASE SERIES · AFTER ADVISE</span>
                 </div>
                 
                 <div className="hero-dominant-center">
                   <div className="hero-title-with-icon">
                     {/* Enlarged Glowing Red Scientific Y-Antibody Icon */}
                     <div className="hero-antibody-visual">
-                      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" className="hero-antibody-svg">
+                      <svg width="96" height="96" viewBox="0 0 100 100" fill="none" className="hero-antibody-svg">
                         <defs>
                           <radialGradient id="antibodyHaloLarge" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.32" />
+                            <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.35" />
                             <stop offset="100%" stopColor="#ff4d52" stopOpacity="0" />
                           </radialGradient>
                         </defs>
@@ -4195,7 +4195,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Causal Sequence: Clean Thin Pathway Underneath */}
+                  {/* Causal Sequence: Clean Thin Pathway Underneath with Reduced Space */}
                   <div className="hero-thin-pathway">
                     <span className="pathway-step pathway-step-red">ANTI-ADALIMUMAB ANTIBODIES</span>
                     <span className="pathway-arrow">──➔</span>
@@ -4206,15 +4206,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 02 SECONDARY EVIDENCE — COMPACT PURPLE PANEL (~25% sleeker) */}
-              <div className="immuno-panel purple-panel compact-panel">
+              {/* 02 SECONDARY EVIDENCE — PURPLE TIER */}
+              <div className="immuno-row-tier purple-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge purple-num">02</span>
                   <span className="panel-kicker purple-kicker">CASE SERIES ALSO SUGGEST</span>
                 </div>
                 <div className="purple-content-flex">
                   <div className="purple-shield-icon">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
                       <path d="M 13 2.5 L 22 6.5 V 13 C 22 18.5 17.5 22.5 13 24 C 8.5 22.5 4 18.5 4 13 V 6.5 Z" stroke="#b58eff" strokeWidth="1.5" fill="rgba(181, 142, 255, 0.08)" />
                       <path d="M 9 13 L 12 16 L 17 10.5" stroke="#b58eff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -4230,8 +4230,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 03 ADVISE BLIND SPOT — COMPACT HORIZONTAL STRIP (~25% sleeker) */}
-              <div className="immuno-panel limitation-panel compact-panel">
+              {/* 03 ADVISE BLIND SPOT — HORIZONTAL STRIP TIER */}
+              <div className="immuno-row-tier limitation-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge">03</span>
                   <span className="panel-kicker red-kicker">WHAT ADVISE COULD NOT ANSWER</span>
@@ -4248,7 +4248,7 @@ export default function Home() {
                   {/* Step 2 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
                         <circle cx="14" cy="8" r="3.2" stroke="#ff4d52" strokeWidth="1.3" />
                         <path d="M 8 20 C 8 16.2 11 14.8 14 14.8 C 17 14.8 20 16.2 20 20" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
                         <circle cx="6" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
@@ -4267,7 +4267,7 @@ export default function Home() {
                   {/* Step 3 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
                         <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
                         <path d="M 10.5 6.5 H 17.5 M 11.8 6.5 V 16.5 C 11.8 18.2 12.8 19.5 14 19.5 C 15.2 19.5 16.2 18.2 16.2 16.5 V 6.5" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
                         <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
@@ -4283,7 +4283,7 @@ export default function Home() {
                   {/* Step 4 */}
                   <div className="lim-step">
                     <div className="lim-icon-wrap">
-                      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
                         <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
                         <path d="M 14 6 C 14 6 9.5 12.5 9.5 16 C 9.5 18.5 11.5 20.5 14 20.5 C 16.5 20.5 18.5 18.5 18.5 16 C 18.5 12.5 14 6 14 6 Z" stroke="#ff4d52" strokeWidth="1.2" strokeLinejoin="round" />
                         <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
