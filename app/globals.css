@@ -11390,22 +11390,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .robustness-analysis-labels {
   display: flex;
-  flex-direction: column;
-  gap: clamp(0.18rem, 0.3vh, 0.32rem);
+  align-items: center;
   flex: 0 0 auto;
 }
 
-.robustness-analysis-item {
-  font-size: clamp(0.58rem, 0.66vw, 0.76rem);
-  color: #a09591;
-  font-family: var(--font-geist-mono), monospace;
+.robustness-assumptions-label {
+  font: 700 clamp(0.52rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
+  color: #d0c7c3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   white-space: nowrap;
-  line-height: 1.35;
-}
-
-.robustness-analysis-item strong {
-  color: #ffffff;
-  font-weight: 700;
 }
 
 .robustness-merge-svg {
