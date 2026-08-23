@@ -10222,8 +10222,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.45));
   margin-bottom: 0.15rem;
+}
+
+.pill-icon-wrap.wrap-yellow {
+  filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.45));
+}
+
+.pill-icon-wrap.wrap-red {
+  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.45));
+}
+
+.pill-icon-wrap.wrap-white {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
 }
 
 .pill-drug-name {
@@ -10234,7 +10245,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .pill-drug-count {
   font: 700 clamp(0.72rem, 0.82vw, 0.95rem) var(--font-geist-mono), monospace;
+}
+
+.pill-drug-count.count-yellow {
+  color: #fef08a;
+  text-shadow: 0 0 8px rgba(254, 240, 138, 0.4);
+}
+
+.pill-drug-count.count-red {
   color: #ff4d52;
+  text-shadow: 0 0 8px rgba(255, 77, 82, 0.4);
+}
+
+.pill-drug-count.count-white {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .focal-statement-box {
