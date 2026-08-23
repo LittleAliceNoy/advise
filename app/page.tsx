@@ -3909,7 +3909,7 @@ export default function Home() {
 
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
-                <svg viewBox="0 0 960 215" className="dominant-attrition-wide-svg">
+                <svg viewBox="0 0 960 250" className="dominant-attrition-wide-svg">
                   <defs>
                     <linearGradient id="adaTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
@@ -3925,36 +3925,36 @@ export default function Home() {
                   {/* Left Header: IMMEDIATELY AFTER RANDOMIZATION (Left-aligned with line) */}
                   {attritionStep >= 2 && (
                     <g className="post-rand-header-group">
-                      <text x="165" y="24" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      <text x="165" y="48" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                         IMMEDIATELY AFTER RANDOMIZATION
                       </text>
-                      <line x1="165" y1="31" x2="340" y2="31" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                      <line x1="165" y1="55" x2="340" y2="55" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                     </g>
                   )}
 
                   {/* Right Header: TREATMENT DISCONTINUATION (Left-aligned with line) */}
                   {attritionStep >= 3 && (
                     <g className="discontinuation-header-group">
-                      <text x="420" y="24" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      <text x="420" y="48" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                         TREATMENT DISCONTINUATION
                       </text>
-                      <line x1="420" y1="31" x2="915" y2="31" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                      <line x1="420" y1="55" x2="915" y2="55" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                     </g>
                   )}
 
-                  {/* TRACK 1: ADALIMUMAB (RED) - SHIFTED DOWN */}
+                  {/* TRACK 1: ADALIMUMAB (RED) - SHIFTED SIGNIFICANTLY DOWN */}
                   <g className="ada-track-clean">
-                    <text x="25" y="74" fill="#ff7175" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    <text x="25" y="100" fill="#ff7175" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       ADALIMUMAB
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="70" x2="915" y2="70" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="96" x2="915" y2="96" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
                     {/* Participant dot stream */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
                       <circle
                         key={`ada-dot-${i}`}
                         cx={cx}
-                        cy={70}
+                        cy={96}
                         r={3.4}
                         fill={attritionStep >= 2 && i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
                       />
@@ -3963,22 +3963,22 @@ export default function Home() {
                     {/* Step >= 2: 1 ADA dropout */}
                     {attritionStep >= 2 && (
                       <g className="ada-dropout-annotation">
-                        <path d="M 229,70 Q 235,92 248,94" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="248" cy="94" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
-                        <text x="258" y="97.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <path d="M 229,96 Q 235,118 248,120" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="120" r="3.4" fill="#140607" stroke="#ff4d52" strokeWidth="1.5" />
+                        <text x="258" y="123.5" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           1 ADA dropout
                         </text>
                       </g>
                     )}
                   </g>
 
-                  {/* TRACK 2: CID (PURPLE) - SHIFTED DOWN */}
+                  {/* TRACK 2: CID (PURPLE) - SHIFTED SIGNIFICANTLY DOWN */}
                   <g className="cid-track-clean">
-                    <text x="25" y="144" fill="#b58eff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    <text x="25" y="172" fill="#b58eff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                       CID
                     </text>
                     {/* Baseline track line */}
-                    <line x1="165" y1="140" x2="915" y2="140" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
+                    <line x1="165" y1="168" x2="915" y2="168" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
                     
                     {/* Participant dot stream with early dropouts and discontinued dots dimmed */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
@@ -3988,7 +3988,7 @@ export default function Home() {
                         <circle
                           key={`cid-dot-${i}`}
                           cx={cx}
-                          cy={140}
+                          cy={168}
                           r={3.4}
                           fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.2)" : "#b58eff"}
                         />
@@ -3998,11 +3998,11 @@ export default function Home() {
                     {/* Step >= 2: Immediately after randomization — 3 CID drop out */}
                     {attritionStep >= 2 && (
                       <g className="cid-dropout-annotation">
-                        <path d="M 229,140 Q 235,164 248,166" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
-                        <circle cx="248" cy="166" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <circle cx="257" cy="166" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <circle cx="266" cy="166" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
-                        <text x="278" y="169.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <path d="M 229,168 Q 235,192 248,194" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="248" cy="194" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="257" cy="194" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <circle cx="266" cy="194" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
+                        <text x="278" y="197.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           3 CID drop out
                         </text>
                       </g>
@@ -4011,22 +4011,22 @@ export default function Home() {
                     {/* Step >= 3: Treatment Discontinuation — 8 CID discontinued (same format as 3 dropouts) */}
                     {attritionStep >= 3 && (
                       <g className="cid-discontinued-annotation">
-                        <path d="M 480,140 Q 486,164 498,166" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <path d="M 480,168 Q 486,192 498,194" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
                         {[498, 507, 516, 525, 534, 543, 552, 561].map((cx, idx) => (
                           <circle
                             key={`cid-disc-dot-${idx}`}
                             cx={cx}
-                            cy={166}
+                            cy={194}
                             r={3.4}
                             fill="#180e2b"
                             stroke="#b58eff"
                             strokeWidth="1.4"
                           />
                         ))}
-                        <text x="574" y="169.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <text x="574" y="197.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           8 CID discontinued assigned treatment
                         </text>
-                        <text x="574" y="182" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                        <text x="574" y="210" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
                           Aggregate count; timing not shown.
                         </text>
                       </g>
