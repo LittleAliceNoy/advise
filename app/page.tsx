@@ -3010,46 +3010,6 @@ export default function Home() {
           onTouchStart={onCompTouchStart}
           onTouchEnd={onCompTouchEnd}
         >
-          {/* Zoom Stage Micro-Pill Controls */}
-          <div className="comp-zoom-controls" onClick={(e) => e.stopPropagation()}>
-            <div className="comp-zoom-step-pills">
-              <button
-                className={`zoom-step-pill ${comparatorZoomStage === 0 ? "active" : ""}`}
-                onClick={() => setComparatorZoomStage(0)}
-              >
-                <span>01</span> FULL VIEW
-              </button>
-              <button
-                className={`zoom-step-pill ${comparatorZoomStage === 1 ? "active" : ""}`}
-                onClick={() => setComparatorZoomStage(1)}
-              >
-                <span>02</span> CID MAP
-              </button>
-              <button
-                className={`zoom-step-pill ${comparatorZoomStage === 2 ? "active" : ""}`}
-                onClick={() => setComparatorZoomStage(2)}
-              >
-                <span>03</span> CYCLOSPORINE 4%
-              </button>
-              <button
-                className={`zoom-step-pill ${comparatorZoomStage === 3 ? "active" : ""}`}
-                onClick={() => setComparatorZoomStage(3)}
-              >
-                <span>04</span> CONCLUSION
-              </button>
-            </div>
-            <div className="comp-zoom-advance-hint">
-              <small>{comparatorZoomStage < 3 ? "CLICK / ↓ TO ZOOM" : "COMPLETE"}</small>
-              <button
-                className="comp-zoom-replay"
-                onClick={() => setComparatorZoomStage(0)}
-                aria-label="Reset zoom sequence"
-              >
-                ↻
-              </button>
-            </div>
-          </div>
-
           <div className="comp-camera-viewport">
             <div className="comp-camera-rig">
               <div className="adv-two-col">
