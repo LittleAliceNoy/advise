@@ -3040,9 +3040,9 @@ export default function Home() {
                 {/* 2. MAIN INTERACTIVE DONUT & CAMERA CANVAS */}
                 <div className={`cid-interactive-canvas focus-${activeBranch}`}>
                   
-                  {/* Glowing SVG Donut Chart */}
+                  {/* Glowing SVG Donut Chart (Enlarged Dominant Visual Object) */}
                   <div className="cid-donut-stage">
-                    <svg viewBox="0 0 460 330" className="cid-luminous-donut-svg">
+                    <svg viewBox="0 0 540 370" className="cid-luminous-donut-svg">
                       <defs>
                         <linearGradient id="pie79Grad" x1="0%" y1="0%" x2="100%" y2="100%">
                           <stop offset="0%" stopColor="#401416" />
@@ -3054,18 +3054,18 @@ export default function Home() {
                           <stop offset="50%" stopColor="#8d64f7" />
                           <stop offset="100%" stopColor="#b58eff" />
                         </linearGradient>
-                        <filter id="glow79" x="-20%" y="-20%" width="140%" height="140%">
-                          <feGaussianBlur stdDeviation="4" result="blur" />
+                        <filter id="glow79" x="-25%" y="-25%" width="150%" height="150%">
+                          <feGaussianBlur stdDeviation="5" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
-                        <filter id="glow21" x="-20%" y="-20%" width="140%" height="140%">
-                          <feGaussianBlur stdDeviation="4" result="blur" />
+                        <filter id="glow21" x="-25%" y="-25%" width="150%" height="150%">
+                          <feGaussianBlur stdDeviation="5" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
                       </defs>
 
-                      {/* Neutral Track */}
-                      <circle cx="230" cy="165" r="95" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="46" />
+                      {/* Neutral Base Track */}
+                      <circle cx="205" cy="185" r="114" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="52" />
 
                       {/* 79% Antimetabolites Arc */}
                       <g
@@ -3075,15 +3075,15 @@ export default function Home() {
                         tabIndex={0}
                       >
                         <circle
-                          cx="230"
-                          cy="165"
-                          r="95"
+                          cx="205"
+                          cy="185"
+                          r="114"
                           fill="none"
                           stroke="url(#pie79Grad)"
-                          strokeWidth="46"
-                          strokeDasharray="466.5 130.4"
+                          strokeWidth="52"
+                          strokeDasharray="564.14 152.14"
                           strokeDashoffset="0"
-                          transform="rotate(-120 230 165)"
+                          transform="rotate(-120 205 185)"
                           filter="url(#glow79)"
                         />
                       </g>
@@ -3096,45 +3096,48 @@ export default function Home() {
                         tabIndex={0}
                       >
                         <circle
-                          cx="230"
-                          cy="165"
-                          r="95"
+                          cx="205"
+                          cy="185"
+                          r="114"
                           fill="none"
                           stroke="url(#pie21Grad)"
-                          strokeWidth="46"
-                          strokeDasharray="120.35 476.55"
-                          strokeDashoffset="-471.55"
-                          transform="rotate(-120 230 165)"
+                          strokeWidth="52"
+                          strokeDasharray="152.14 564.14"
+                          strokeDashoffset="-564.14"
+                          transform="rotate(-120 205 185)"
                           filter="url(#glow21)"
                         />
                       </g>
 
                       {/* Center Dark Core */}
-                      <circle cx="230" cy="165" r="68" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                      <circle cx="205" cy="185" r="86" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+
+                      {/* Leader Line & Label: 21% Calcineurin Inhibitors (Top Right) */}
+                      <g
+                        className={`svg-leader-group leader-cni ${activeBranch === 'cni' ? 'leader-active' : ''}`}
+                        onClick={() => inspectBranch('cni')}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <circle cx="146" cy="58" r="2.5" className="leader-anchor-dot dot-violet" />
+                        <path d="M 146 58 L 180 32 L 525 32" fill="none" className="leader-track-line line-violet" />
+                        <text x="186" y="24" className="svg-leader-label-name name-violet">CALCINEURIN INHIBITORS</text>
+                        <text x="522" y="24" textAnchor="end" className="svg-leader-label-val val-violet">21%</text>
+                      </g>
+
+                      {/* Leader Line & Label: 79% Antimetabolites (Bottom Right) */}
+                      <g
+                        className={`svg-leader-group leader-antimetabolites ${activeBranch === 'antimetabolites' ? 'leader-active' : ''}`}
+                        onClick={() => inspectBranch('antimetabolites')}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <circle cx="332" cy="244" r="2.5" className="leader-anchor-dot dot-red" />
+                        <path d="M 332 244 L 366 270 L 525 270" fill="none" className="leader-track-line line-red" />
+                        <text x="372" y="262" className="svg-leader-label-name">ANTIMETABOLITES</text>
+                        <text x="522" y="262" textAnchor="end" className="svg-leader-label-val val-red">79%</text>
+                      </g>
                     </svg>
-
-                    {/* Clean Minimal Floating Labels (No Square Cards) */}
-                    <div
-                      className={`pie-floating-label label-antimetabolites ${activeBranch === 'antimetabolites' ? 'label-active' : ''}`}
-                      onClick={() => inspectBranch('antimetabolites')}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <span className="pulse-dot dot-red" />
-                      <span className="label-name">ANTIMETABOLITES</span>
-                      <span className="label-val val-red">79%</span>
-                    </div>
-
-                    <div
-                      className={`pie-floating-label label-cni ${activeBranch === 'cni' ? 'label-active' : ''}`}
-                      onClick={() => inspectBranch('cni')}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <span className="pulse-dot dot-violet" />
-                      <span className="label-name name-violet">CALCINEURIN INHIBITORS</span>
-                      <span className="label-val val-violet">21%</span>
-                    </div>
                   </div>
 
                   {/* 3. PROGRESSIVE INSPECTION OVERLAYS */}

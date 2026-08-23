@@ -10002,12 +10002,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   transform: scale(1.24) translate(-10%, -6%);
 }
 
-/* Donut Stage */
+/* Donut Stage — Dominant Visual Object in Right Panel */
 .cid-donut-stage {
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 290px;
+  max-height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10017,7 +10017,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .cid-luminous-donut-svg {
   width: 100%;
   height: 100%;
-  max-height: 270px;
+  max-height: 350px;
   overflow: visible;
 }
 
@@ -10025,93 +10025,96 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   cursor: pointer;
   outline: none;
   transition: filter 0.3s ease, transform 0.3s ease;
-  transform-origin: 230px 165px;
+  transform-origin: 205px 185px;
 }
 
 .donut-clickable-segment:hover circle {
-  stroke-width: 50px;
+  stroke-width: 56px;
 }
 
 .donut-clickable-segment.seg-79:hover {
-  filter: drop-shadow(0 0 16px rgba(255, 77, 82, 0.85));
+  filter: drop-shadow(0 0 20px rgba(255, 77, 82, 0.95));
 }
 
 .donut-clickable-segment.seg-21:hover {
-  filter: drop-shadow(0 0 16px rgba(181, 142, 255, 0.85));
+  filter: drop-shadow(0 0 20px rgba(181, 142, 255, 0.95));
 }
 
-/* Minimal Floating Labels (No Square Cards) */
-.pie-floating-label {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
+/* SVG Leader Lines & Labels */
+.svg-leader-group {
   cursor: pointer;
-  z-index: 6;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  outline: none;
+  transition: opacity 0.25s ease, filter 0.25s ease;
   user-select: none;
 }
 
-.pie-floating-label:hover {
-  transform: scale(1.04);
+.svg-leader-group:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
-.label-antimetabolites {
-  left: 3%;
-  bottom: 12%;
+.leader-track-line {
+  transition: stroke 0.25s ease, stroke-width 0.25s ease;
 }
 
-.label-cni {
-  right: 3%;
-  top: 10%;
+.leader-track-line.line-violet {
+  stroke: rgba(181, 142, 255, 0.4);
+  stroke-width: 1;
 }
 
-.pie-floating-label .label-name {
-  font: 700 clamp(0.68rem, 0.76vw, 0.88rem) var(--font-geist-mono), monospace;
-  color: #fff;
-  letter-spacing: 0.05em;
+.svg-leader-group.leader-cni:hover .leader-track-line.line-violet {
+  stroke: rgba(181, 142, 255, 0.85);
+  stroke-width: 1.5;
+}
+
+.leader-track-line.line-red {
+  stroke: rgba(255, 77, 82, 0.4);
+  stroke-width: 1;
+}
+
+.svg-leader-group.leader-antimetabolites:hover .leader-track-line.line-red {
+  stroke: rgba(255, 77, 82, 0.85);
+  stroke-width: 1.5;
+}
+
+.leader-anchor-dot.dot-violet {
+  fill: #b58eff;
+  filter: drop-shadow(0 0 4px #b58eff);
+}
+
+.leader-anchor-dot.dot-red {
+  fill: #ff4d52;
+  filter: drop-shadow(0 0 4px #ff4d52);
+}
+
+.svg-leader-label-name {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  fill: #ffffff;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: color 0.2s ease;
+  transition: fill 0.2s ease;
 }
 
-.pie-floating-label:hover .label-name {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+.svg-leader-label-name.name-violet {
+  fill: #ddd;
 }
 
-.pie-floating-label .label-val {
-  font: 800 clamp(1.05rem, 1.3vw, 1.55rem) var(--font-geist-mono), monospace;
-  line-height: 1;
+.svg-leader-label-val {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 14px;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
-.pie-floating-label .val-red {
-  color: #ff4d52;
-  text-shadow: 0 0 12px rgba(255, 77, 82, 0.5);
+.svg-leader-label-val.val-violet {
+  fill: #b58eff;
+  filter: drop-shadow(0 0 6px rgba(181, 142, 255, 0.6));
 }
 
-.pie-floating-label .val-violet {
-  color: #b58eff;
-  text-shadow: 0 0 12px rgba(181, 142, 255, 0.5);
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 8px var(--red);
-  animation: pulseDot 2s infinite;
-}
-
-.pulse-dot.dot-violet {
-  background: #b58eff;
-  box-shadow: 0 0 8px #b58eff;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+.svg-leader-label-val.val-red {
+  fill: #ff4d52;
+  filter: drop-shadow(0 0 6px rgba(255, 77, 82, 0.6));
 }
 
 /* Inspection Overlays */
