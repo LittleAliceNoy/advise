@@ -2957,19 +2957,19 @@ export default function Home() {
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
               <p className="eyebrow"><span /> 29 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
-              <p className="comparator-hook">DID A HETEROGENEOUS CID ARM COMPLICATE THE COMPARISON?</p>
-              <h2>One comparator.<br /><span className="violet-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
-              <p className="lede">CID tested a conventional immunosuppressive strategy—not a single standardized drug. This improves clinical relevance, but limits drug-specific interpretation.</p>
+              <p className="red-hook">COULD CALCINEURIN-INHIBITOR USE HAVE DISADVANTAGED CID?</p>
+              <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
+              <p className="lede">CID represented a treatment strategy rather than a single drug. This raises an important question: could inclusion of potentially less-effective calcineurin inhibitors have made CID appear less effective?</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
-                  <h4><span className="violet-num">01</span> — CID WAS NOT A SINGLE THERAPY</h4>
-                  <p>Participants could receive different conventional immunosuppressive agents rather than one standardized comparator drug.</p>
+                  <h4><span className="red-num">01</span> — WHY THE CONCERN IS PLAUSIBLE</h4>
+                  <p>Prior evidence suggested broadly similar efficacy among the three antimetabolites, but possibly lower efficacy with cyclosporine. Evidence for tacrolimus was mixed.</p>
                 </div>
                 
                 <div className="observation-item">
-                  <h4><span className="violet-num">02</span> — BUT MOST FOLLOWED A COMMON STRATEGY</h4>
-                  <p>Most CID treatment was antimetabolite-based, while calcineurin-inhibitor exposure represented a minority of treatment.</p>
+                  <h4><span className="red-num">02</span> — WHY IT PROBABLY DID NOT DRIVE THE RESULT</h4>
+                  <p>CID was overwhelmingly antimetabolite-based, cyclosporine was assigned to only 4% of participants, and results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
                 </div>
               </div>
             </div>
@@ -2981,17 +2981,14 @@ export default function Home() {
                 {/* SECTION 1: TREATMENT-MIX PATHWAY DIAGRAM */}
                 <div className="comp-tree-section">
                   <div className="comp-section-rule-header">
-                    <span className="comp-section-title">CONVENTIONAL IMMUNOSUPPRESSIVE STRATEGY (N = 113)</span>
+                    <span className="comp-section-title">WHAT DID “CID” ACTUALLY CONTAIN?</span>
                   </div>
 
                   <div className="comp-pathway-diagram">
                     {/* Root Node */}
                     <div className="comp-root-node">
-                      <div className="comp-root-badge-row">
-                        <span className="comp-root-pill">COMPARATOR ARM</span>
-                      </div>
-                      <strong className="comp-root-title">CID — Conventional Immunosuppression</strong>
-                      <span className="comp-root-sub">Active strategy of antimetabolite or calcineurin-inhibitor regimens</span>
+                      <strong className="comp-root-title">CID — CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                      <span className="comp-root-sub">N = 113</span>
                     </div>
 
                     {/* Tree Connector Graphic */}
@@ -3023,7 +3020,7 @@ export default function Home() {
                           <span>Mycophenolate</span>
                           <span>Azathioprine</span>
                         </div>
-                        <p className="branch-card-desc">Overwhelming majority of assigned monotherapy in trial</p>
+                        <p className="branch-card-annotation">Prior evidence: broadly similar efficacy</p>
                       </div>
 
                       {/* Right: Calcineurin Inhibitors (21%) */}
@@ -3039,54 +3036,53 @@ export default function Home() {
                         </div>
                         <div className="branch-cni-details">
                           <div className="cni-detail-row">
-                            <span className="cni-drug-label">Tacrolimus:</span>
-                            <span className="cni-drug-stat">83% of CNIs (17% of CID)</span>
+                            <span className="cni-drug-label">TACROLIMUS</span>
+                            <span className="cni-drug-stat">Most CNI exposure (83% of CNIs)</span>
                           </div>
-                          <div className="cni-detail-row csa-callout-row">
-                            <span className="cni-drug-label">Cyclosporine assigned:</span>
-                            <span className="csa-stat-highlight">4% (4 / 113)</span>
+                          <div className="cni-detail-row csa-callout-box">
+                            <span className="cni-drug-label csa-label">CYCLOSPORINE</span>
+                            <span className="csa-stat-highlight">ONLY 4% OF TOTAL CID</span>
                           </div>
                         </div>
-                        <p className="branch-card-desc">Primarily added for 2nd-line or combination therapy</p>
+                        <p className="branch-card-annotation">Limited exposure · Not all CNI was cyclosporine</p>
                       </div>
 
                     </div>
                   </div>
                 </div>
 
-                {/* SECTION 2: TENSION / TRADE-OFF PANEL */}
+                {/* SECTION 2: EVIDENCE RESOLUTION PANEL */}
                 <div className="comp-tension-section">
                   <div className="comp-tension-grid">
-                    {/* Real-World Strength */}
-                    <div className="comp-tension-card card-strength">
+                    {/* Potential Concern */}
+                    <div className="comp-tension-card card-concern">
                       <div className="tension-card-top">
-                        <span className="tension-dot strength-dot" />
-                        <span className="tension-card-heading">REAL-WORLD STRENGTH</span>
+                        <span className="tension-dot concern-dot" />
+                        <span className="tension-card-heading">POTENTIAL CONCERN</span>
                       </div>
-                      <p className="tension-card-body">Reflects how conventional immunosuppression is actually selected and adjusted in clinical practice.</p>
+                      <p className="tension-card-body">Cyclosporine may be less effective than antimetabolites.</p>
                     </div>
 
-                    {/* Tension Indicator */}
+                    {/* Divider */}
                     <div className="comp-tension-arrow-col" aria-hidden="true">
-                      <span className="tension-arrow-symbol">↕</span>
-                      <span className="tension-arrow-label">TENSION</span>
+                      <span className="tension-arrow-symbol">→</span>
                     </div>
 
-                    {/* Analytic Cost */}
-                    <div className="comp-tension-card card-cost">
+                    {/* Counterevidence */}
+                    <div className="comp-tension-card card-counterevidence">
                       <div className="tension-card-top">
-                        <span className="tension-dot cost-dot" />
-                        <span className="tension-card-heading">ANALYTIC COST</span>
+                        <span className="tension-dot counterevidence-dot" />
+                        <span className="tension-card-heading">COUNTEREVIDENCE</span>
                       </div>
-                      <p className="tension-card-body">Treatment effect represents comparison against a strategy, not against one uniform conventional drug.</p>
+                      <p className="tension-card-body">Cyclosporine represented only 4% of CID, and treatment effects were qualitatively similar across immunosuppression strata.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* SECTION 3: BOTTOM CONCLUSION TAKEAWAY */}
                 <div className="comp-conclusion-band">
-                  <strong>A STRATEGY COMPARATOR, <span className="violet-highlight-text">NOT A DRUG COMPARATOR</span></strong>
-                  <p>The result estimates ADA versus conventional immunosuppression as a strategy—not versus any individual conventional agent.</p>
+                  <strong>UNLIKELY TO DRIVE <span className="red-highlight-text">THE TREATMENT EFFECT</span></strong>
+                  <p>CNI heterogeneity could introduce efficacy variation, but limited cyclosporine exposure and consistent stratum results argue against it materially explaining ADA’s advantage.</p>
                 </div>
 
               </div>
