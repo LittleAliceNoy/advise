@@ -3961,9 +3961,9 @@ export default function Home() {
                             cx={cx}
                             cy={114}
                             r={3.4}
-                            fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.2)" : "#b58eff"}
-                            stroke={isDiscontinued ? "rgba(255,77,82,0.6)" : "none"}
-                            strokeWidth={isDiscontinued ? 1 : 0}
+                            fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.22)" : "#b58eff"}
+                            stroke={isDiscontinued ? "rgba(181,142,255,0.7)" : "none"}
+                            strokeWidth={isDiscontinued ? 1.2 : 0}
                           />
                         </g>
                       );
@@ -3980,7 +3980,7 @@ export default function Home() {
 
                     {/* OBSERVATION 2: Separate Aggregate Annotation for the 8 Discontinuations */}
                     <g transform="translate(665, 140)">
-                      <text x="0" y="0" textAnchor="middle" fill="#ff8085" fontSize="8.6" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                      <text x="0" y="0" textAnchor="middle" fill="#b58eff" fontSize="8.6" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
                         8 PARTICIPANTS · ALL ASSIGNED TO CID
                       </text>
                       <text x="0" y="14" textAnchor="middle" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
