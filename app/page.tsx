@@ -4330,11 +4330,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* BOTTOM FOOTNOTE */}
-            <div className="immuno-footer-cite">
-              <span>Evidence from case series. [47–51]</span>
-            </div>
           </div>
         </section>
 
