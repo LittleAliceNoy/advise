@@ -502,10 +502,14 @@ export default function Home() {
   const handleLimitations2Click = (e?: React.MouseEvent) => {
     if (synthesisStep === 0) {
       if (activeBranch === 'idle') {
-        inspectBranch('antimetabolites');
-      } else if (activeBranch === 'antimetabolites') {
-        inspectBranch('cni');
-      } else if (activeBranch === 'cni') {
+        if (!inspected79) {
+          inspectBranch('antimetabolites');
+        } else if (!inspected21) {
+          inspectBranch('cni');
+        } else {
+          closeInspection();
+        }
+      } else {
         closeInspection();
       }
     } else if (synthesisStep === 1) {
@@ -592,6 +596,17 @@ export default function Home() {
   useEffect(() => {
     if (chapters[active]?.id !== "statistics-redesign") return;
     setStatisticsFrameworkStage(-1);
+  }, [active]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "limitations-2") return;
+    clearInspectTimers();
+    setActiveBranch('idle');
+    setBranchStep(0);
+    setInspected79(false);
+    setInspected21(false);
+    setSynthesisStep(0);
+    setConcernRevealed(false);
   }, [active]);
 
   const advanceEfficacyStory = () => {
@@ -3379,7 +3394,7 @@ export default function Home() {
                       className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        inspectBranch('cni');
+                        closeInspection();
                       }}
                       role="button"
                       tabIndex={0}
@@ -3388,7 +3403,7 @@ export default function Home() {
                         className="focal-card focal-borderless"
                         onClick={(e) => {
                           e.stopPropagation();
-                          inspectBranch('cni');
+                          closeInspection();
                         }}
                       >
                         <div className="focal-title-row">
