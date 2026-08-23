@@ -2803,13 +2803,13 @@ export default function Home() {
                 </div>
                 <div className="adv-arch-evidence-stat">
                   <b>EQ-5D INDEX OF 1</b>
-                  <span><em>OR 1.07</em> ADA vs <em>0.86</em> CID</span>
-                  <small>OR ratio 1.25 · P = 0.480</small>
+                  <span><em>OR 1.25</em> (0.67–2.31)</span>
+                  <small>P = 0.480 · Non-significant</small>
                 </div>
                 <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
                   <b>NEI-VFQ-25 COMPOSITE</b>
-                  <span><em>+6.8</em> ADA vs <em>+4.0</em> CID</span>
-                  <small>Δ 2.8 (−0.2–5.7) · P = 0.060</small>
+                  <span><em>Δ 2.8</em> (−0.2–5.7)</span>
+                  <small>P = 0.060 · Non-significant</small>
                 </div>
               </div>
 
