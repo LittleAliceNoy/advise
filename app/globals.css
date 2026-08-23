@@ -11166,9 +11166,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Wide Top Header */
 .attrition-wide-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
+  flex-direction: column;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: clamp(0.4rem, 0.8vh, 0.75rem);
@@ -11177,7 +11175,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .attrition-header-left {
   display: flex;
   flex-direction: column;
-  max-width: 62%;
+  width: 100%;
 }
 
 .discussion-attrition-scene .red-hook {
@@ -11199,29 +11197,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .discussion-attrition-scene .red-text {
   color: var(--red);
-}
-
-.attrition-header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  max-width: 38%;
-  gap: 0.4rem;
-}
-
-.discussion-attrition-scene .lede {
-  font-size: clamp(0.78rem, 0.88vw, 1rem);
-  line-height: 1.45;
-  color: #a09591;
-  margin: 0;
-}
-
-.attrition-step-prompt {
-  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 /* Center Full-Width Canvas Card */

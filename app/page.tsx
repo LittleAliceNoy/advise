@@ -3878,17 +3878,6 @@ export default function Home() {
                   </span>
                 </h2>
               </div>
-              <div className="attrition-header-right">
-                <p className="lede">
-                  Loss to follow-up was greater with CID, creating potential for attrition bias.
-                </p>
-                <div className="attrition-step-prompt">
-                  {attritionStep === 1 && "CLICK / ↓ TO REVEAL POST-RANDOMIZATION ATTRITION"}
-                  {attritionStep === 2 && "CLICK / ↓ TO REVEAL DISCONTINUATIONS"}
-                  {attritionStep === 3 && "CLICK / ↓ TO REVEAL ROBUSTNESS CHECK"}
-                  {attritionStep === 4 && "STEP 4 OF 4 · ROBUSTNESS CONFIRMED"}
-                </div>
-              </div>
             </div>
 
             {/* CENTER FULL-WIDTH PARTICIPANT FLOW CANVAS */}
