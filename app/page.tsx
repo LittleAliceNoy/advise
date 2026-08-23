@@ -3048,16 +3048,20 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* 01 & 02 Points (Revealed on click: synthesisStep === 3) — Matching Slide 28 Observation Layout */}
+                {/* 01 & 02 Points + Conclusion (Revealed on click: synthesisStep === 3) — Matching Slide 28 Observation Layout */}
                 <div className={`adv-observations-block editorial-rules left-synthesis-points ${synthesisStep === 3 ? 'points-revealed' : 'points-hidden'}`}>
                   <div className="observation-item">
                     <h4><span>01</span> — LIMITED EXPOSURE</h4>
-                    <p>Cyclosporine represented only 4% of total CID.</p>
+                    <p>Cyclosporine was assigned to only 4% of participants</p>
                   </div>
                   
                   <div className="observation-item">
-                    <h4><span>02</span> — CONSISTENT RESULTS</h4>
-                    <p>Results were qualitatively similar across the single- and two-immunosuppressive-drug strata.</p>
+                    <h4><span>02</span> — CONSISTENT ACROSS STRATA</h4>
+                    <p>Results were qualitatively similar in the single- and two-immunosuppressive-drug strata</p>
+                  </div>
+
+                  <div className="synthesis-conclusion-callout">
+                    <p>The results were unlikely influenced by the heterogeneity of treatments in the CID group</p>
                   </div>
                 </div>
               </div>

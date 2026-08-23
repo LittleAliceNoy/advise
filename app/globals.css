@@ -10635,6 +10635,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0;
 }
 
+.synthesis-conclusion-callout {
+  margin-top: clamp(0.7rem, 1.2vh, 1.1rem);
+  padding: clamp(0.55rem, 0.85vh, 0.8rem) clamp(0.75rem, 1vw, 1.1rem);
+  background: rgba(255, 77, 82, 0.08);
+  border-left: 3px solid var(--red);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 20px rgba(255, 77, 82, 0.12);
+}
+
+.synthesis-conclusion-callout p {
+  color: #f5f0eb;
+  font: 600 clamp(0.72rem, 0.84vw, 0.98rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
 /* Right Panel Split View (Upper Donut + Lower Detail Cards) */
 .synthesis-split-view {
   width: 100%;
