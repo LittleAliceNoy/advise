@@ -875,40 +875,38 @@ export default function Home() {
                   <p className="mtqac-intro">3 independent uveitis experts not involved in participant management provided centralized clinical quality assurance.</p>
                 </div>
 
-                <div className="mtqac-content-row">
-                  <div className="mtqac-workflow">
-                    <div className="mtqac-wf-node">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                        <rect x="4" y="2" width="16" height="20" rx="1.5"/>
-                        <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01M12 6h.01M12 10h.01M12 14h.01"/>
-                      </svg>
-                      <span>CLINICAL CENTERS</span>
-                    </div>
-                    <div className="mtqac-wf-arrow" aria-hidden="true">
-                      <i>→</i>
-                    </div>
-                    <div className="mtqac-wf-node mtqac-wf-hub">
-                      <strong>MTQAC</strong>
-                      <small>3 Independent Experts</small>
-                    </div>
-                    <div className="mtqac-wf-arrow" aria-hidden="true">
-                      <i>←</i>
-                    </div>
-                    <div className="mtqac-wf-node">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                      </svg>
-                      <span>READING CENTER</span>
-                    </div>
+                <div className="mtqac-workflow">
+                  <div className="mtqac-wf-node">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                      <rect x="4" y="2" width="16" height="20" rx="1.5"/>
+                      <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01M12 6h.01M12 10h.01M12 14h.01"/>
+                    </svg>
+                    <span>CLINICAL CENTERS</span>
                   </div>
-
-                  <ul className="mtqac-duties-list">
-                    <li>Reviewed the first 2 participants at each center</li>
-                    <li>Reviewed protocol-discrepant assessments or treatment decisions flagged by the Coordinating Center</li>
-                    <li>Reconciled clinical-center vs reading-center discrepancies and provided corrective feedback as needed</li>
-                  </ul>
+                  <div className="mtqac-wf-arrow" aria-hidden="true">
+                    <i>→</i>
+                  </div>
+                  <div className="mtqac-wf-node mtqac-wf-hub">
+                    <strong>MTQAC</strong>
+                    <small>3 Independent Experts</small>
+                  </div>
+                  <div className="mtqac-wf-arrow" aria-hidden="true">
+                    <i>←</i>
+                  </div>
+                  <div className="mtqac-wf-node">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span>READING CENTER</span>
+                  </div>
                 </div>
+
+                <ul className="mtqac-duties-list">
+                  <li>Reviewed the first 2 participants at each center</li>
+                  <li>Reviewed protocol-discrepant assessments or treatment decisions flagged by the Coordinating Center</li>
+                  <li>Reconciled clinical-center vs reading-center discrepancies and provided corrective feedback as needed</li>
+                </ul>
               </div>
             </div>
           </div>
