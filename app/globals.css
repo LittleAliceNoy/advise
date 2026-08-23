@@ -11615,8 +11615,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   flex: 1;
   width: 100%;
-  gap: clamp(0.35rem, 0.65vh, 0.75rem);
-  justify-content: space-between;
+  gap: clamp(0.15rem, 0.3vh, 0.4rem);
+  justify-content: flex-start;
 }
 
 .immuno-row-tier {
@@ -11625,7 +11625,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(0.35rem, 0.6vh, 0.65rem) 0;
+  padding: clamp(0.25rem, 0.45vh, 0.5rem) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -11633,7 +11633,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin-bottom: clamp(0.12rem, 0.25vh, 0.25rem);
+  margin-bottom: clamp(0.06rem, 0.12vh, 0.15rem);
 }
 
 .panel-num-badge {
@@ -11669,7 +11669,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .immuno-row-tier.hero-tier {
   display: flex;
   flex-direction: column;
-  padding: clamp(0.2rem, 0.35vh, 0.45rem) 0 clamp(0.25rem, 0.45vh, 0.55rem);
+  padding: clamp(0.18rem, 0.3vh, 0.38rem) 0 clamp(0.2rem, 0.35vh, 0.45rem);
 }
 
 .hero-dominant-center {
@@ -11757,7 +11757,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* 02 Purple Tier */
 .immuno-row-tier.purple-tier {
-  padding: clamp(0.2rem, 0.35vh, 0.45rem) 0 clamp(0.22rem, 0.4vh, 0.45rem);
+  padding: clamp(0.12rem, 0.22vh, 0.3rem) 0 clamp(0.1rem, 0.18vh, 0.22rem);
 }
 
 .purple-content-flex {
@@ -11800,7 +11800,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* 03 Limitation Tier — Two Distinct Subsections */
 .immuno-row-tier.limitation-tier {
-  padding: clamp(0.22rem, 0.4vh, 0.45rem) 0 clamp(0.3rem, 0.5vh, 0.55rem);
+  padding: clamp(0.1rem, 0.18vh, 0.22rem) 0 clamp(0.2rem, 0.35vh, 0.45rem);
 }
 
 .limitation-two-subsections {
