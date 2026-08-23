@@ -14,10 +14,8 @@ const chapters = [
   { id: "tapering-cinematic", label: "Tapering (Cinematic Redesign)" },
   { id: "followup", label: "Follow-up" },
   { id: "outcomes", label: "Outcomes overview" },
-  { id: "secondary-outcomes-redesign", label: "Secondary outcomes (Redesign)" },
   { id: "statistics-sample-only", label: "Statistics — sample size only" },
   { id: "statistics-redesign", label: "Statistical analysis framework (Redesign)" },
-  { id: "quality-assurance", label: "Quality assurance" },
   { id: "participant-flow", label: "Participant flow" },
   { id: "baseline-portrait", label: "Baseline cohort portrait" },
   { id: "treatment-results-redesign", label: "Treatments received (Redesign)" },
@@ -26,18 +24,19 @@ const chapters = [
   { id: "ocular-results", label: "Visual and macular outcomes" },
   { id: "systemic-safety-tolerability", label: "Safety and tolerability" },
   { id: "quality-of-life-results", label: "Quality of life" },
-  { id: "discussion", label: "Discussion" },
-  { id: "discussion-safety", label: "Discussion 2" },
+  { id: "limitations-4", label: "Treatment advancement" },
+  { id: "discussion-safety", label: "Cataract signal" },
   { id: "limitations-1", label: "Masking limitations" },
-  { id: "limitations-2", label: "Limitations 2" },
-  { id: "limitations-3", label: "Limitations 3" },
-  { id: "limitations-4", label: "Limitations 4" },
-  { id: "limitations-5", label: "Limitations 5" },
+  { id: "limitations-2", label: "Comparator heterogeneity" },
+  { id: "limitations-3", label: "Temporal trajectory" },
+  { id: "limitations-5", label: "Missing data & attrition" },
   { id: "limitations-6", label: "Immunogenicity" },
   { id: "conclusion", label: "Conclusion" },
   { id: "outcomes-original", label: "Outcomes (original combined)" },
   { id: "statistics", label: "Statistical analysis" },
   { id: "sample-size-redesign", label: "Sample size (Redesign)" },
+  { id: "secondary-outcomes-redesign", label: "Outcome definitions" },
+  { id: "discussion", label: "Discussion" },
 ];
 
 const strata = [
@@ -457,23 +456,26 @@ export default function Home() {
   const [concernRevealed, setConcernRevealed] = useState(false);
   const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
 
-  // Slide 30 Temporal Trajectory Interactive States (States 1 to 4)
-  const [temporalStep, setTemporalStep] = useState<1 | 2 | 3 | 4>(1);
-
-  const advanceTemporalStep = (e?: React.MouseEvent) => {
-    setTemporalStep((prev) => {
-      const next = (Math.min(prev + 1, 4)) as 1 | 2 | 3 | 4;
-      return next;
-    });
-  };
-
-  // Slide 31 Differential Loss to Follow-up State:
+  // Slide 27 Differential Loss to Follow-up State:
   // 1: Baseline Parallel Participant Tracks
   // 2: 1 ADA vs 3 CID drop out after randomization
   // 3: 8 participants CID drop out
   // 4: Authors' proposed reasons for CID attrition
   // 5: Final robustness & conclusion strip
   const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4 | 5>(1);
+
+  // Slide 26 Temporal Trajectory Story Sequence:
+  // 0: Initial Timeline only
+  // 1: 6M Steroid-Sparing Success
+  // 2: Pointing line 6M -> 12M + 12M Steroid-Sparing Success
+  // 3: Both 6M and 12M Corticosteroid Discontinuation
+  // 4: Extension line straight out from 12M Discontinuation + Red FOLLOW-UP ENDS line
+  const [temporalStep, setTemporalStep] = useState<0 | 1 | 2 | 3 | 4>(0);
+
+  const advanceTemporalStep = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setTemporalStep((prev) => (prev < 4 ? ((prev + 1) as 0 | 1 | 2 | 3 | 4) : 0));
+  };
 
   const advanceAttritionStep = (e?: React.MouseEvent) => {
     setAttritionStep((prev) => {
@@ -634,7 +636,7 @@ export default function Home() {
 
   useEffect(() => {
     if (chapters[active]?.id !== "limitations-3") return;
-    setTemporalStep(1);
+    setTemporalStep(0);
   }, [active]);
 
   useEffect(() => {
@@ -1470,37 +1472,9 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
-          <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / OUTCOME DEFINITIONS</p>
-            <h2>Activity was measured precisely.</h2>
-          </div>
-
-          <section className="inactive-uveitis-definition" aria-label="Definition of inactive uveitis">
-            <header><span>INACTIVE UVEITIS</span><p>Clinical quiescence + applicable disease-specific imaging criteria</p></header>
-            <div className="inactive-definition-groups">
-              <section className="inactive-clinical">
-                <h3>CLINICAL QUIESCENCE</h3>
-                <article><i className="inactive-icon-cells" /><div><span>AC CELLS</span><strong>GRADE 0</strong><small>Anterior / intermediate / panuveitis</small></div></article>
-                <article><i className="inactive-icon-haze" /><div><span>VITREOUS HAZE</span><strong>GRADE 0</strong><small>Intermediate / posterior / panuveitis</small></div></article>
-              </section>
-
-              <section className="inactive-imaging">
-                <h3>DISEASE-SPECIFIC IMAGING CRITERIA</h3>
-                <div>
-                  <article><i className="imaging-icon-field" /><span>BIRDSHOT CHORIORETINITIS</span><strong>VISUAL FIELDS</strong><small>Stable or improved in reliable visual fields</small></article>
-                  <article><i className="imaging-icon-faf" /><span>CHORIORETINITIS</span><strong>FAF</strong><small>No uveitis lesion-related hyperautofluorescence</small></article>
-                  <article><i className="imaging-icon-oct" /><span>EARLY-STAGE VKH</span><strong>OCT</strong><small>No subretinal fluid</small></article>
-                  <article><i className="imaging-icon-ffa" /><span>RETINAL VASCULITIS</span><strong>FFA</strong><small>No increase in retinal nonperfusion, leakage, or vessel staining</small></article>
-                </div>
-              </section>
-            </div>
-          </section>
-        </section>
-
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -1535,7 +1509,7 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family."
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models.</em></h2>
           </div>
 
@@ -1576,48 +1550,10 @@ export default function Home() {
           <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span>Stratification variables: initial prednisone dosage + baseline immunosuppression use</span><span>Sensitivity analyses assessed missingness</span><span>Secondary-outcome P values nominal</span></footer>
         </section>
 
-        <section id="quality-assurance" className="scene qa-scene">
-          <div className="scene-copy qa-copy">
-            <p className="eyebrow"><span /> 15 — METHODOLOGY / QUALITY ASSURANCE</p>
-            <h2>One protocol.<br /><em>Consistent judgment.</em></h2>
-            <p className="lede">Independent oversight aligned disease-activity assessment, treatment decisions, and retinal-image interpretation across every clinical center.</p>
-            <div className="qa-experts"><strong>3</strong><span>independent uveitis experts<br />not managing trial participants</span></div>
-          </div>
-
-          <section className="qa-network" aria-label="Medical Therapy Quality Assurance monitoring workflow">
-            <div className="qa-flow-line" aria-hidden="true"><i /></div>
-            <button className={qaFocus === 0 ? "qa-node active" : "qa-node"} onClick={() => setQaFocus(0)}>
-              <span>01 / CLINICAL CENTERS</span><strong>First 2 participants</strong><small>Activity assessment + medication management at every center</small>
-            </button>
-            <button className={qaFocus === 1 ? "qa-node active" : "qa-node"} onClick={() => setQaFocus(1)}>
-              <span>02 / COORDINATING CENTER</span><strong>Protocol signal</strong><small>Flag any assessment or management decision that appears discrepant</small>
-            </button>
-            <button className={qaFocus === 2 ? "qa-node active" : "qa-node"} onClick={() => setQaFocus(2)}>
-              <span>03 / READING CENTER</span><strong>Retinal images</strong><small>Central interpretation compared with the clinical center</small>
-            </button>
-
-            <div className="qa-core" aria-live="polite">
-              <i /><i /><i />
-              <span>MTQAC REVIEW</span>
-              <strong>{["Activity + treatment", "Protocol discrepancy", "Image discrepancy"][qaFocus]}</strong>
-              <small>{[
-                "Checks early center-level consistency.",
-                "Independent experts adjudicate the flagged decision.",
-                "Center and reading-center interpretations are reconciled.",
-              ][qaFocus]}</small>
-            </div>
-
-            <div className="qa-feedback">
-              <span>CORRECTIVE FEEDBACK · AS NEEDED</span>
-              <div><strong>SPECIFIC CLINICAL CENTER</strong><i>or</i><strong>ENTIRE RESEARCH GROUP</strong></div>
-            </div>
-          </section>
-        </section>
-
         <section id="participant-flow" className="scene participant-flow-scene">
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
-              <p className="eyebrow flow-intro-eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
+              <p className="eyebrow flow-intro-eyebrow"><span /> 14 — RESULTS / PARTICIPANT FLOW</p>
               <div className="flow-intro-title flow-assessed-title"><span>ASSESSED FOR ELIGIBILITY</span><strong>338</strong></div>
               <div className="flow-intro-title flow-excluded-title"><span>EXCLUDED</span><strong>111</strong></div>
               <div className="flow-intro-title flow-randomized-title"><span>RANDOMIZED</span><strong>227</strong></div>
@@ -1647,7 +1583,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 14 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -1723,7 +1659,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 15 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts.</em></h2>
             <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately.</p>
           </div>
@@ -2079,7 +2015,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -2344,7 +2280,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 17 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA.</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster.</p>
           </div>
@@ -2396,7 +2332,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 18 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later.</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids.</p>
           </div>
@@ -2444,7 +2380,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 19 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded.</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution.</p>
           </div>
@@ -2529,7 +2465,7 @@ export default function Home() {
 
         <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 20 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
           </div>
@@ -2583,7 +2519,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -2596,7 +2532,7 @@ export default function Home() {
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 24 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 22 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -2703,7 +2639,7 @@ export default function Home() {
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 25 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="eyebrow"><span /> 23 — DISCUSSION / CATARACT SIGNAL</p>
               <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive.</h2>
@@ -2828,7 +2764,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
+              <p className="eyebrow"><span /> 24 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
@@ -3011,7 +2947,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 25 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
@@ -3501,291 +3437,200 @@ export default function Home() {
 
         <section
           id="limitations-3"
-          className={`scene discussion-temporal-scene temporal-step-${temporalStep}`}
-          onClick={advanceTemporalStep}
+          className="scene discussion-temporal-scene"
         >
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / TEMPORAL TRAJECTORY</p>
-              <p className="red-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="cataract-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
-                <span className="red-text" style={{ display: 'inline' }}>Whether CID catches up is unresolved.</span>
+                <span className="red-text" style={{ display: 'inline' }}>
+                  Whether CID catches up is unknown.
+                </span>
               </h2>
-              <p className="lede">
-                CID used a two-step antimetabolite dose-escalation strategy. This may have modestly delayed successful corticosteroid sparing, although the protocol was designed to allow escalation within the 6-month primary-outcome window.
-              </p>
+              <p className="lede">ADA showed an earlier corticosteroid-sparing advantage. By 12 months, a discontinuation advantage had emerged. What happened next is unknown.</p>
 
-              {/* Revealed ONLY in State 4 at the bottom of the left column */}
-              <div className={`comp-investigation-statement temporal-left-question-block ${temporalStep === 4 ? 'temporal-revealed' : 'temporal-hidden'}`}>
-                <div className="investigation-rule" />
-                <h4>THE CENTRAL INTERPRETIVE QUESTION</h4>
-                <p>Does ADA produce a greater ultimate treatment effect, or does it achieve the same goal sooner?</p>
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-item">
+                  <h4><span>01</span> — STEPWISE DOSE ESCALATION</h4>
+                  <p>CID followed a stepwise titration protocol; similar to what is often used in clinical practice. This may have slightly delayed successful corticosteroid sparing in the CID group.</p>
+                </div>
               </div>
             </div>
 
-            {/* RIGHT COLUMN — MINIMAL SCIENTIFIC FIGURE */}
+            {/* RIGHT COLUMN — HORIZONTAL TIME MATRIX CANVAS */}
             <div className="adv-right-col temporal-figure-column">
-              <div className="temporal-figure-container">
-                
-                {/* 1. MINIMAL UPPER-RIGHT INSTRUCTION (NO BOX/BORDER) */}
-                <div className="figure-top-bar">
-                  <span className="figure-caption-label">CUMULATIVE CORTICOSTEROID SPARING (%)</span>
-                  <span className="figure-advance-prompt">
-                    {temporalStep < 4 ? "CLICK / ↓ TO ADVANCE" : "FINAL STATE"}
-                  </span>
-                </div>
-
-                {/* 2. DOMINANT TRAJECTORY GRAPH SVG */}
-                <div className="trajectory-svg-canvas-wrap">
-                  <svg viewBox="0 0 760 260" className="dominant-trajectory-svg">
-                    <defs>
-                      <linearGradient id="adaPureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.4" />
-                        <stop offset="60%" stopColor="#ff4d52" stopOpacity="0.95" />
-                        <stop offset="100%" stopColor="#ff7175" stopOpacity="1" />
-                      </linearGradient>
-                      <linearGradient id="cidPureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#8f67ff" stopOpacity="0.4" />
-                        <stop offset="50%" stopColor="#a37eff" stopOpacity="0.85" />
-                        <stop offset="100%" stopColor="#b58eff" stopOpacity="1" />
-                      </linearGradient>
-                      <pattern id="unobservedHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-                        <line x1="0" y1="0" x2="0" y2="10" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
-                      </pattern>
-                      <filter id="adaGlowSubtle" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                      </filter>
-                      <filter id="cidGlowSubtle" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                      </filter>
-                    </defs>
-
-                    {/* >12M Unobserved Region Background */}
-                    <rect x="570" y="15" width="165" height="195" fill="url(#unobservedHatch)" rx="2" />
-                    <rect x="570" y="15" width="165" height="195" fill="rgba(0,0,0,0.5)" rx="2" />
-
-                    {/* Subtle translucent purple band for M1–M3 2-STEP CID DOSE ESCALATION */}
-                    <rect x="150" y="25" width="115" height="185" fill="rgba(181, 142, 255, 0.04)" stroke="rgba(181, 142, 255, 0.18)" strokeDasharray="3 3" rx="2" />
-                    <text x="207.5" y="38" textAnchor="middle" fill="#c7adff" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                      2-STEP CID DOSE ESCALATION
-                    </text>
-
-                    {/* Gridlines */}
-                    <line x1="50" y1="210" x2="735" y2="210" stroke="rgba(255,255,255,0.14)" strokeWidth="1.2" />
-                    <line x1="50" y1="135" x2="570" y2="135" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 4" strokeWidth="1" />
-                    <line x1="50" y1="60" x2="570" y2="60" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 4" strokeWidth="1" />
-
-                    {/* Vertical Milestone Guides */}
-                    <line x1="70" y1="20" x2="70" y2="210" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-                    <line x1="265" y1="20" x2="265" y2="210" stroke="rgba(181,142,255,0.2)" strokeDasharray="2 3" strokeWidth="1" />
-                    <line x1="390" y1="20" x2="390" y2="210" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-                    <line x1="570" y1="15" x2="570" y2="215" stroke={temporalStep >= 3 ? "rgba(255,77,82,0.85)" : "rgba(255,255,255,0.25)"} strokeWidth={temporalStep >= 3 ? "1.8" : "1.2"} strokeDasharray="4 3" />
-
-                    {/* M12 Boundary Header Tag */}
-                    {temporalStep >= 3 && (
-                      <g className="m12-boundary-tag">
-                        <rect x="502" y="16" width="136" height="18" fill="#140607" stroke="rgba(255,77,82,0.6)" rx="2" />
-                        <text x="570" y="28.5" textAnchor="middle" fill="#ff7175" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                          FOLLOW-UP ENDS (M12)
-                        </text>
-                      </g>
-                    )}
-
-                    {/* CURVES */}
-                    {/* 1. M0 to M6 Curves (Drawn in temporalStep >= 2) */}
-                    {temporalStep >= 2 && (
-                      <>
-                        {/* ADA M0->M6 (Steep, Fast Sparing) */}
-                        <path
-                          d="M 70,210 C 145,125 255,102 390,96"
-                          fill="none"
-                          stroke="url(#adaPureGrad)"
-                          strokeWidth="4"
-                          filter="url(#adaGlowSubtle)"
-                          opacity={temporalStep === 4 ? 0.45 : 1}
-                          className="traj-path-segment traj-ada-m6"
-                        />
-                        {/* CID M0->M6 (Gradual Sparing during Escalation) */}
-                        <path
-                          d="M 70,210 C 160,205 250,172 390,136"
-                          fill="none"
-                          stroke="url(#cidPureGrad)"
-                          strokeWidth="3.8"
-                          filter="url(#cidGlowSubtle)"
-                          className="traj-path-segment traj-cid-m6"
-                        />
-                      </>
-                    )}
-
-                    {/* 2. M6 to M12 Curves (Drawn in temporalStep >= 3) */}
-                    {temporalStep >= 3 && (
-                      <>
-                        {/* ADA M6->M12 */}
-                        <path
-                          d="M 390,96 C 460,92 515,62 570,56"
-                          fill="none"
-                          stroke="url(#adaPureGrad)"
-                          strokeWidth="4"
-                          filter="url(#adaGlowSubtle)"
-                          opacity={temporalStep === 4 ? 0.45 : 1}
-                          className="traj-path-segment traj-ada-m12"
-                        />
-                        {/* CID M6->M12 (Catches up towards ADA) */}
-                        <path
-                          d="M 390,136 C 460,110 515,88 570,80"
-                          fill="none"
-                          stroke="url(#cidPureGrad)"
-                          strokeWidth="3.8"
-                          filter="url(#cidGlowSubtle)"
-                          className="traj-path-segment traj-cid-m12"
-                        />
-                      </>
-                    )}
-
-                    {/* 3. Hypothetical Dotted Extension into >12M (State 4) */}
-                    {temporalStep === 4 && (
-                      <g className="hypothetical-future-group">
-                        <path
-                          d="M 570,80 C 610,76 650,68 682,64"
-                          fill="none"
-                          stroke="#b58eff"
-                          strokeWidth="2.4"
-                          strokeDasharray="4 4"
-                          opacity="0.9"
-                          className="traj-path-hypothetical"
-                        />
-                        <circle cx="698" cy="63" r="11" fill="#180e2b" stroke="#b58eff" strokeWidth="1.8" />
-                        <text x="698" y="67.5" textAnchor="middle" fill="#d8c9ff" fontSize="13" fontFamily="var(--font-geist-mono)" fontWeight="700">?</text>
-                        
-                        <rect x="635" y="90" width="86" height="16" fill="#120617" stroke="rgba(181,142,255,0.4)" rx="2" />
-                        <text x="678" y="101" textAnchor="middle" fill="#d8c9ff" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                          NOT OBSERVED
-                        </text>
-                        <text x="678" y="122" textAnchor="middle" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                          Would CID continue to catch up?
-                        </text>
-                      </g>
-                    )}
-
-                    {/* NODES & LABELS */}
-                    {/* M0 Node */}
-                    <circle cx="70" cy="210" r="4.5" fill="#fff" />
-
-                    {/* State 2 (M6) Data Nodes & Prominent Separation Callout */}
-                    {temporalStep >= 2 && (
-                      <g className="m6-visual-elements">
-                        {/* ADA M6 Point */}
-                        <circle cx="390" cy="96" r="4.5" fill="#ff4d52" stroke="#fff" strokeWidth="1.5" opacity={temporalStep === 4 ? 0.45 : 1} />
-                        <rect x="340" y="74" width="100" height="17" fill="#1a0708" stroke="rgba(255,77,82,0.5)" rx="2" opacity={temporalStep === 4 ? 0.45 : 1} />
-                        <text x="390" y="86" textAnchor="middle" fill="#ff8085" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" opacity={temporalStep === 4 ? 0.45 : 1}>
-                          ADA 69%
-                        </text>
-
-                        {/* CID M6 Point */}
-                        <circle cx="390" cy="136" r="4.5" fill="#b58eff" stroke="#fff" strokeWidth="1.5" />
-                        <rect x="344" y="142" width="92" height="17" fill="#120a1f" stroke="rgba(181,142,255,0.5)" rx="2" />
-                        <text x="390" y="154" textAnchor="middle" fill="#c7adff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                          CID 54%
-                        </text>
-
-                        {/* Gap Bracket Δ 15 POINTS */}
-                        <line x1="390" y1="103" x2="390" y2="129" stroke="rgba(255,255,255,0.4)" strokeDasharray="2 2" strokeWidth="1.4" />
-                        <rect x="402" y="107" width="84" height="18" fill="rgba(10,10,15,0.92)" stroke="rgba(255,255,255,0.25)" rx="2" />
-                        <text x="444" y="119.5" textAnchor="middle" fill="#fff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                          Δ 15 POINTS
-                        </text>
-                      </g>
-                    )}
-
-                    {/* State 3 (M12) Data Nodes & Gap Contraction Visual */}
-                    {temporalStep >= 3 && (
-                      <g className="m12-visual-elements">
-                        {/* ADA M12 Point */}
-                        <circle cx="570" cy="56" r="4.5" fill="#ff4d52" stroke="#fff" strokeWidth="1.5" opacity={temporalStep === 4 ? 0.45 : 1} />
-                        <rect x="520" y="34" width="100" height="17" fill="#1a0708" stroke="rgba(255,77,82,0.5)" rx="2" opacity={temporalStep === 4 ? 0.45 : 1} />
-                        <text x="570" y="46" textAnchor="middle" fill="#ff8085" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" opacity={temporalStep === 4 ? 0.45 : 1}>
-                          ADA 86%
-                        </text>
-
-                        {/* CID M12 Point */}
-                        <circle cx="570" cy="80" r="4.5" fill="#b58eff" stroke="#fff" strokeWidth="1.5" />
-                        <rect x="523" y="86" width="94" height="17" fill="#120a1f" stroke="rgba(181,142,255,0.5)" rx="2" />
-                        <text x="570" y="98" textAnchor="middle" fill="#c7adff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                          CID 77%
-                        </text>
-
-                        {/* Gap Bracket Δ 9 POINTS · P = .077 */}
-                        <line x1="562" y1="61" x2="562" y2="75" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" />
-                        <rect x="424" y="60" width="130" height="17" fill="rgba(10,10,15,0.92)" stroke="rgba(255,255,255,0.22)" rx="2" />
-                        <text x="489" y="72" textAnchor="middle" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.03em">
-                          Δ 9 POINTS · P = .077
-                        </text>
-                      </g>
-                    )}
-
-                    {/* X-Axis Labels as the narrative: M0 —— M1–M3 —— M6 —— M12 ┊ >12M ? */}
-                    <text x="70" y="228" textAnchor="middle" fill="#8c827e" fontSize="9.5" fontFamily="var(--font-geist-mono)">M0</text>
-                    <text x="207.5" y="228" textAnchor="middle" fill="#a09591" fontSize="9.5" fontFamily="var(--font-geist-mono)">M1–M3</text>
-                    <text x="390" y="228" textAnchor="middle" fill={temporalStep >= 2 ? "#fff" : "#8c827e"} fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight={temporalStep >= 2 ? "700" : "400"}>
-                      M6
-                    </text>
-                    <text x="570" y="228" textAnchor="middle" fill={temporalStep >= 3 ? "#fff" : "#8c827e"} fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight={temporalStep >= 3 ? "700" : "400"}>
-                      M12
-                    </text>
-                    <text x="660" y="228" textAnchor="middle" fill={temporalStep === 4 ? "#ff6468" : "#8c827e"} fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight={temporalStep === 4 ? "700" : "400"} letterSpacing="0.04em">
-                      &gt;12M ?
-                    </text>
-                  </svg>
-                </div>
-
-                {/* 3. ONE THIN CONTEXTUAL STRIP BELOW THE GRAPH */}
-                <div className="figure-contextual-stage">
+              <div 
+                className={`temporal-matrix-canvas step-${temporalStep}`}
+                onClick={advanceTemporalStep}
+                role="button"
+                tabIndex={0}
+                aria-label="Advance temporal trajectory animation"
+              >
+                {/* Main Split: Left Matrix Grid + Right Continuous Hatched Region */}
+                <div className="matrix-canvas-body">
                   
-                  {/* State 1: M0 Baseline */}
-                  {temporalStep === 1 && (
-                    <div className="traj-thin-strip strip-m0">
-                      <span className="strip-tag">M0 · RANDOMIZATION</span>
-                      <p className="strip-desc">Click anywhere or press Space / ↓ to advance time and observe cumulative trajectories.</p>
-                    </div>
-                  )}
+                  {/* Left Side: 2 Outcome Rows flanking Central Timeline */}
+                  <div className="matrix-observed-side">
 
-                  {/* State 2: M6 Primary Endpoint */}
-                  {temporalStep === 2 && (
-                    <div className="traj-thin-strip strip-m6">
-                      <div className="strip-primary-info">
-                        <span className="strip-tag tag-red">M6 · PRIMARY ENDPOINT</span>
-                        <strong className="strip-stats">69% vs 54% · Δ15%</strong>
+                    {/* TOP ROW: STEROID-SPARING SUCCESS */}
+                    <div className="matrix-outcome-row row-top">
+                      <div className="outcome-name-col">
+                        <span className="outcome-label">STEROID-SPARING SUCCESS</span>
                       </div>
-                      <p className="strip-desc">ADA achieved successful corticosteroid sparing faster.</p>
-                    </div>
-                  )}
 
-                  {/* State 3: M12 The Gap Narrowed */}
-                  {temporalStep === 3 && (
-                    <div className="traj-thin-strip strip-m12">
-                      <div className="strip-primary-info">
-                        <span className="strip-tag tag-white">M12 · THE GAP NARROWED</span>
-                        <strong className="strip-stats">86% vs 77% · P = .077</strong>
+                      {/* Top Row - 6M (SIGNIFICANT - Step 1+) */}
+                      <div className={`outcome-data-col col-6m is-significant ${temporalStep >= 1 ? 'is-visible' : 'is-hidden'}`}>
+                        <div className="timepoint-card-stack floating-card sig-glow">
+                          <div className="tp-line-arms">
+                            <span className="arm-item val-ada">ADA <b>69%</b></span>
+                            <span className="arm-sep">·</span>
+                            <span className="arm-item val-cid">CID <b>54%</b></span>
+                          </div>
+                          <div className="tp-line-delta">
+                            <strong>Δ 15 pts</strong>
+                          </div>
+                          <div className="tp-line-stats">
+                            <span>aOR 1.86 · <b className="p-sig">P = 0.029</b></span>
+                          </div>
+                          <div className="tp-line-claim">
+                            <span className="claim-highlight">ADA shows advantage</span>
+                          </div>
+                        </div>
+                        <div className="vertical-connector-stem stem-down stem-long" aria-hidden="true" />
                       </div>
-                      <p className="strip-desc">The corticosteroid-sparing difference was smaller by Month 12.</p>
-                    </div>
-                  )}
 
-                  {/* State 4: Unresolved / Final Interpretation */}
-                  {temporalStep === 4 && (
-                    <div className="traj-thin-strip strip-unresolved">
-                      <div className="strip-conclusion-line">
-                        <strong>FASTER EFFECT <span className="red-highlight-text">≠ PROVEN GREATER ULTIMATE EFFICACY</span></strong>
+                      {/* Top Row - 12M (Step 2+) */}
+                      <div className={`outcome-data-col col-12m ${temporalStep >= 2 ? 'is-visible' : 'is-hidden'}`}>
+                        <div className="timepoint-card-stack floating-card">
+                          <div className="tp-line-arms">
+                            <span className="arm-item val-ada">ADA <b>86%</b></span>
+                            <span className="arm-sep">·</span>
+                            <span className="arm-item val-cid">CID <b>77%</b></span>
+                          </div>
+                          <div className="tp-line-delta">
+                            <strong>Δ 9 pts</strong>
+                          </div>
+                          <div className="tp-line-stats">
+                            <span>aOR 1.89 · P = 0.077</span>
+                          </div>
+                          <div className="tp-line-claim">
+                            <span className="claim-subdued">Difference converged</span>
+                          </div>
+                        </div>
+                        <div className="vertical-connector-stem stem-down" aria-hidden="true" />
                       </div>
-                      <p className="strip-conclusion-desc">
-                        Follow-up ended at 12 months, so longer-term convergence in corticosteroid sparing could not be determined.
-                      </p>
+
+                      {/* Step 2: Solid Trajectory line connecting 6M Delta -> 12M Delta */}
+                      <div className={`trajectory-delta-connector ${temporalStep >= 2 ? 'is-active' : ''}`} aria-hidden="true">
+                        <svg className="trajectory-delta-svg" viewBox="0 0 160 30" preserveAspectRatio="none">
+                          <path d="M 10 7 C 55 7, 105 21, 148 23" fill="none" stroke="rgba(255, 255, 255, 0.85)" strokeWidth="2" className="delta-path" />
+                          <polygon points="152,23 142,18 144,27" fill="#ffffff" />
+                        </svg>
+                      </div>
                     </div>
-                  )}
+
+                    {/* CENTER HORIZONTAL TIMELINE AXIS (Always visible at initial state) */}
+                    <div className="matrix-center-timeline">
+                      <div className="timeline-axis-line" />
+                      <div className="timeline-axis-grid">
+                        <div className="timeline-col-placeholder" />
+                        <div className="timeline-node-col col-6m">
+                          <div className="timeline-node-dot" />
+                          <strong className="timeline-time-label">6 MONTHS</strong>
+                        </div>
+                        <div className="timeline-node-col col-12m">
+                          <div className="timeline-node-dot" />
+                          <strong className="timeline-time-label">12 MONTHS</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* BOTTOM ROW: CORTICOSTEROID DISCONTINUATION (Step 3+) */}
+                    <div className="matrix-outcome-row row-bottom">
+                      <div className="outcome-name-col">
+                        <span className="outcome-label">CORTICOSTEROID DISCONTINUATION</span>
+                      </div>
+
+                      {/* Bottom Row - 6M (Step 3+) */}
+                      <div className={`outcome-data-col col-6m ${temporalStep >= 3 ? 'is-visible' : 'is-hidden'}`}>
+                        <div className="vertical-connector-stem stem-up" aria-hidden="true" />
+                        <div className="timepoint-card-stack floating-card">
+                          <div className="tp-line-arms">
+                            <span className="arm-item val-ada">ADA <b>15%</b></span>
+                            <span className="arm-sep">·</span>
+                            <span className="arm-item val-cid">CID <b>11%</b></span>
+                          </div>
+                          <div className="tp-line-delta">
+                            <strong>Δ 4 pts</strong>
+                          </div>
+                          <div className="tp-line-stats">
+                            <span>P = 0.300</span>
+                          </div>
+                          <div className="tp-line-claim">
+                            <span className="claim-subdued">No difference</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom Row - 12M (SIGNIFICANT - Step 3+) */}
+                      <div className={`outcome-data-col col-12m is-significant ${temporalStep >= 3 ? 'is-visible' : 'is-hidden'}`}>
+                        <div className="vertical-connector-stem stem-up stem-long" aria-hidden="true" />
+                        <div className="timepoint-card-stack floating-card sig-glow">
+                          <div className="tp-line-arms">
+                            <span className="arm-item val-ada">ADA <b>55%</b></span>
+                            <span className="arm-sep">·</span>
+                            <span className="arm-item val-cid">CID <b>40%</b></span>
+                          </div>
+                          <div className="tp-line-delta">
+                            <strong>Δ 15 pts</strong>
+                          </div>
+                          <div className="tp-line-stats">
+                            <span>OR 1.85 · <b className="p-sig">P = 0.028</b></span>
+                          </div>
+                          <div className="tp-line-claim">
+                            <span className="claim-highlight">ADA shows advantage</span>
+                          </div>
+
+                          {/* Step 4: Solid white line crossing boundary into 3-branch speculative fan */}
+                          <div className={`discontinuation-branching-fan ${temporalStep >= 4 ? 'is-active' : ''}`} aria-hidden="true">
+                            <svg className="branching-fan-svg" viewBox="0 0 170 80" preserveAspectRatio="none">
+                              {/* Solid white line from card across red dashed boundary */}
+                              <line x1="0" y1="40" x2="16" y2="40" stroke="#ffffff" strokeWidth="2" />
+                              
+                              {/* Branch 1: Upward (Converge) */}
+                              <path d="M 16 40 C 45 40, 75 16, 115 10" fill="none" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="1.5" strokeDasharray="3 3" />
+                              <text x="120" y="13" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">CONVERGE?</text>
+                              
+                              {/* Branch 2: Straight (Persist) */}
+                              <path d="M 16 40 L 115 40" fill="none" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="1.5" strokeDasharray="3 3" />
+                              <text x="120" y="43" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">PERSIST?</text>
+                              
+                              {/* Branch 3: Downward (Diverge) */}
+                              <path d="M 16 40 C 45 40, 75 64, 115 70" fill="none" stroke="rgba(255, 255, 255, 0.75)" strokeWidth="1.5" strokeDasharray="3 3" />
+                              <text x="120" y="73" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.05em">DIVERGE?</text>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Right Side: Continuous Hatched >M12 Region (Step 4 Reveal) */}
+                  <div className={`matrix-unobserved-side ${temporalStep >= 4 ? 'is-revealed' : 'is-hidden'}`}>
+                    <div className="boundary-marker">
+                      <span className="boundary-pill">FOLLOW-UP ENDS</span>
+                    </div>
+
+                    <div className="unobserved-content-wrap">
+                      <span className="unobserved-q-mark">?</span>
+                      <strong className="unobserved-main-label">BEYOND M12</strong>
+                      <span className="unobserved-not-obs">NOT OBSERVED</span>
+                    </div>
+                  </div>
 
                 </div>
 
@@ -3793,7 +3638,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
 
         <section
           id="limitations-5"
@@ -3804,7 +3648,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 29 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 27 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -4073,7 +3917,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 30 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 28 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -4260,55 +4104,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
-          <div className="scene-copy primary-efficacy-copy">
-            <p className="eyebrow"><span /> 31 — DISCUSSION</p>
-            <h2>Earlier control.<br /><em>Similar destination.</em></h2>
-            <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
-          </div>
-
-          <section className="efficacy-comparisons" aria-label="Temporal efficacy comparisons">
-            <article className="efficacy-chart efficacy-sparing">
-              <header><span>SUCCESSFUL CORTICOSTEROID SPARING</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
-              <div className="efficacy-plot">
-                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid sparing was 69 percent versus 54 percent at 6 months and 86 percent versus 77 percent at 12 months.">
-                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
-                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
-                  <path className="plot-ada" d="M38 132 L300 56 L550 28" />
-                  <path className="plot-cid" d="M38 132 L300 73 L550 40" />
-                  <circle className="plot-ada-point" cx="300" cy="56" r="6" /><circle className="plot-cid-point" cx="300" cy="73" r="6" />
-                  <circle className="plot-ada-point" cx="550" cy="28" r="5" /><circle className="plot-cid-point" cx="550" cy="40" r="5" />
-                </svg>
-                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
-                <div className="timepoint timepoint-six emphasis"><b>6 MONTHS</b><span><em>ADA</em> 69%</span><span><i>CID</i> 54%</span><small>P=0.029</small></div>
-                <div className="timepoint timepoint-twelve"><b>12 MONTHS</b><span><em>ADA</em> 86%</span><span><i>CID</i> 77%</span><small>P=0.077</small></div>
-              </div>
-            </article>
-
-            <article className="efficacy-chart efficacy-discontinuation">
-              <header><span>SUCCESSFUL CORTICOSTEROID DISCONTINUATION</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
-              <div className="efficacy-plot">
-                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid discontinuation was 15 percent versus 11 percent at 6 months and 55 percent versus 40 percent at 12 months.">
-                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
-                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
-                  <path className="plot-ada" d="M38 132 L300 106 L550 61" />
-                  <path className="plot-cid" d="M38 132 L300 113 L550 82" />
-                  <circle className="plot-ada-point" cx="300" cy="106" r="5" /><circle className="plot-cid-point" cx="300" cy="113" r="5" />
-                  <circle className="plot-ada-point" cx="550" cy="61" r="6" /><circle className="plot-cid-point" cx="550" cy="82" r="6" />
-                </svg>
-                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
-                <div className="timepoint timepoint-six"><b>6 MONTHS</b><span><em>ADA</em> 15%</span><span><i>CID</i> 11%</span><small>P=0.30</small></div>
-                <div className="timepoint timepoint-twelve emphasis"><b>12 MONTHS</b><span><em>ADA</em> 55%</span><span><i>CID</i> 40%</span><small>P=0.028</small></div>
-              </div>
-            </article>
-          </section>
-
-          <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
-        </section>
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 32 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 29 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
@@ -4321,7 +4120,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 33 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 30 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -4371,7 +4170,7 @@ export default function Home() {
 
         <section id="statistics" className="scene statistics-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 34 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 31 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -4439,7 +4238,7 @@ export default function Home() {
 
         <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
           <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
-            <p className="eyebrow"><span /> 35 — METHODOLOGY / SAMPLE SIZE</p>
+            <p className="eyebrow"><span /> 32 — METHODOLOGY / SAMPLE SIZE</p>
             <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
           </div>
 
@@ -4451,6 +4250,80 @@ export default function Home() {
             <div className="sample-size-hero"><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><strong>222</strong><span>PARTICIPANTS</span></div>
             <div className="sample-size-assumptions" aria-label="Statistical assumptions"><span>α 0.0492 · TWO-SIDED</span><span>90% POWER</span><span>10% LOSS ALLOWANCE</span></div>
           </section>
+        </section>
+
+        <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
+          <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
+            <p className="eyebrow"><span /> 33 — METHODOLOGY / OUTCOME DEFINITIONS</p>
+            <h2>Activity was measured precisely.</h2>
+          </div>
+
+          <section className="inactive-uveitis-definition" aria-label="Definition of inactive uveitis">
+            <header><span>INACTIVE UVEITIS</span><p>Clinical quiescence + applicable disease-specific imaging criteria</p></header>
+            <div className="inactive-definition-groups">
+              <section className="inactive-clinical">
+                <h3>CLINICAL QUIESCENCE</h3>
+                <article><i className="inactive-icon-cells" /><div><span>AC CELLS</span><strong>GRADE 0</strong><small>Anterior / intermediate / panuveitis</small></div></article>
+                <article><i className="inactive-icon-haze" /><div><span>VITREOUS HAZE</span><strong>GRADE 0</strong><small>Intermediate / posterior / panuveitis</small></div></article>
+              </section>
+
+              <section className="inactive-imaging">
+                <h3>DISEASE-SPECIFIC IMAGING CRITERIA</h3>
+                <div>
+                  <article><i className="imaging-icon-field" /><span>BIRDSHOT CHORIORETINITIS</span><strong>VISUAL FIELDS</strong><small>Stable or improved in reliable visual fields</small></article>
+                  <article><i className="imaging-icon-faf" /><span>CHORIORETINITIS</span><strong>FAF</strong><small>No uveitis lesion-related hyperautofluorescence</small></article>
+                  <article><i className="imaging-icon-oct" /><span>EARLY-STAGE VKH</span><strong>OCT</strong><small>No subretinal fluid</small></article>
+                  <article><i className="imaging-icon-ffa" /><span>RETINAL VASCULITIS</span><strong>FFA</strong><small>No increase in retinal nonperfusion, leakage, or vessel staining</small></article>
+                </div>
+              </section>
+            </div>
+          </section>
+        </section>
+
+        <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
+          <div className="scene-copy primary-efficacy-copy">
+            <p className="eyebrow"><span /> 34 — DISCUSSION</p>
+            <h2>Earlier control.<br /><em>Similar destination.</em></h2>
+            <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
+          </div>
+
+          <section className="efficacy-comparisons" aria-label="Temporal efficacy comparisons">
+            <article className="efficacy-chart efficacy-sparing">
+              <header><span>SUCCESSFUL CORTICOSTEROID SPARING</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid sparing was 69 percent versus 54 percent at 6 months and 86 percent versus 77 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 56 L550 28" />
+                  <path className="plot-cid" d="M38 132 L300 73 L550 40" />
+                  <circle className="plot-ada-point" cx="300" cy="56" r="6" /><circle className="plot-cid-point" cx="300" cy="73" r="6" />
+                  <circle className="plot-ada-point" cx="550" cy="28" r="5" /><circle className="plot-cid-point" cx="550" cy="40" r="5" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six emphasis"><b>6 MONTHS</b><span><em>ADA</em> 69%</span><span><i>CID</i> 54%</span><small>P=0.029</small></div>
+                <div className="timepoint timepoint-twelve"><b>12 MONTHS</b><span><em>ADA</em> 86%</span><span><i>CID</i> 77%</span><small>P=0.077</small></div>
+              </div>
+            </article>
+
+            <article className="efficacy-chart efficacy-discontinuation">
+              <header><span>SUCCESSFUL CORTICOSTEROID DISCONTINUATION</span><small><i className="ada-key" /> ADA <i className="cid-key" /> CID</small></header>
+              <div className="efficacy-plot">
+                <svg viewBox="0 0 600 160" role="img" aria-label="Corticosteroid discontinuation was 15 percent versus 11 percent at 6 months and 55 percent versus 40 percent at 12 months.">
+                  <path className="plot-axis" d="M38 132H565 M38 17V132" />
+                  <path className="plot-guide" d="M300 20V132 M550 20V132" />
+                  <path className="plot-ada" d="M38 132 L300 106 L550 61" />
+                  <path className="plot-cid" d="M38 132 L300 113 L550 82" />
+                  <circle className="plot-ada-point" cx="300" cy="106" r="5" /><circle className="plot-cid-point" cx="300" cy="113" r="5" />
+                  <circle className="plot-ada-point" cx="550" cy="61" r="6" /><circle className="plot-cid-point" cx="550" cy="82" r="6" />
+                </svg>
+                <span className="plot-zero">0%</span><span className="plot-six-label">6 MONTHS</span><span className="plot-twelve-label">12 MONTHS</span>
+                <div className="timepoint timepoint-six"><b>6 MONTHS</b><span><em>ADA</em> 15%</span><span><i>CID</i> 11%</span><small>P=0.30</small></div>
+                <div className="timepoint timepoint-twelve emphasis"><b>12 MONTHS</b><span><em>ADA</em> 55%</span><span><i>CID</i> 40%</span><small>P=0.028</small></div>
+              </div>
+            </article>
+          </section>
+
+          <footer className="efficacy-takeaway"><i aria-hidden="true"><b /></i><p>ADA&apos;s clearest advantage was <em>rapidity</em> of corticosteroid control; CID appeared to catch up for sparing by 12 months, although <strong>discontinuation still favored ADA.</strong></p></footer>
         </section>
       </main>
     </>
