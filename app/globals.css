@@ -10644,37 +10644,43 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   justify-content: space-between;
   gap: clamp(0.6rem, 1.2vh, 1.4rem);
-  animation: fadeInLandscape 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fadeInPure 0.35s ease-out;
   cursor: pointer;
-  transition: all 0.8s ease;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Focus-Dimmed State for Final Reveal Stage */
+@keyframes fadeInPure {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Focus-Dimmed State for Final Reveal Stage (Highlight Part: synthesisStep === 2) */
 .synthesis-split-view.synthesis-focus-dimmed .synthesis-upper-donut {
   opacity: 0.12;
   filter: grayscale(0.7) blur(0.5px);
-  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .synthesis-split-view.synthesis-focus-dimmed .card-antimetabolites {
   opacity: 0.12;
   filter: grayscale(0.7);
-  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .synthesis-split-view.synthesis-focus-dimmed .card-cni {
   background: rgba(8, 8, 12, 0.96);
   border: 1px solid rgba(255, 77, 82, 0.25);
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 77, 82, 0.2);
-  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .synthesis-split-view.synthesis-focus-dimmed .card-cni .split-card-header,
 .synthesis-split-view.synthesis-focus-dimmed .card-cni .split-pill-row-item:not(.row-csa-focus),
-.synthesis-split-view.synthesis-focus-dimmed .card-cni .harmonized-evidence-callout {
+.synthesis-split-view.synthesis-focus-dimmed .card-cni .harmonized-evidence-callout .split-card-title,
+.synthesis-split-view.synthesis-focus-dimmed .card-cni .harmonized-evidence-callout li:not(.evidence-item-csa) {
   opacity: 0.12;
   filter: grayscale(0.7);
-  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .synthesis-split-view.synthesis-focus-dimmed .card-cni .split-pill-row-item.row-csa-focus {
@@ -10684,12 +10690,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: rgba(255, 77, 82, 0.24);
   border-color: rgba(255, 77, 82, 0.95);
   box-shadow: 0 0 25px rgba(255, 77, 82, 0.65), 0 0 50px rgba(255, 77, 82, 0.3);
-  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeInLandscape {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+.synthesis-split-view.synthesis-focus-dimmed .card-cni .harmonized-evidence-callout li.evidence-item-csa {
+  opacity: 1 !important;
+  filter: none !important;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 0 14px rgba(255, 77, 82, 0.6);
+  transform: translateX(2px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.synthesis-split-view.synthesis-focus-dimmed .card-cni .harmonized-evidence-callout li.evidence-item-csa .highlight-lower-red {
+  color: #ff4d52;
+  font-weight: 700;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.85);
 }
 
 .synthesis-upper-donut {

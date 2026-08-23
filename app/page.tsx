@@ -475,19 +475,15 @@ export default function Home() {
     setBranchStep(0);
 
     if (willHave79 && willHave21 && synthesisStep === 0) {
-      // Step 1: CNI overlay card finishes fading out (350ms)
-      const t1 = setTimeout(() => {
-        // Step 2: Right panel reveals (upper donut + lower vertical cards, Cyclosporine already with red glow border)
-        setSynthesisStep(1);
-        
-        // Step 3: Show full revealed panel for 1.1s, then fade the revealed panel and highlight only concern text and red cyclosporine box
-        const t2 = setTimeout(() => {
-          setSynthesisStep(2);
-          setConcernRevealed(true);
-        }, 1100);
-        inspectTimerRef.current.push(t2);
-      }, 350);
-      inspectTimerRef.current.push(t1);
+      // Step 1: Immediately show all final reveal information at the same time
+      setSynthesisStep(1);
+      
+      // Step 2: Show full reveal for 1.1s, then go to the highlight part
+      const t = setTimeout(() => {
+        setSynthesisStep(2);
+        setConcernRevealed(true);
+      }, 1100);
+      inspectTimerRef.current.push(t);
     }
   };
 
@@ -3063,7 +3059,7 @@ export default function Home() {
                 {/* 2. REVEALED STATE: UPPER HALF DONUT + LOWER HALF DUAL DETAIL CARDS */}
                 {synthesisStep >= 1 && activeBranch === 'idle' ? (
                   <div
-                    className={`synthesis-split-view ${synthesisStep >= 2 ? 'synthesis-focus-dimmed' : ''}`}
+                    className={`synthesis-split-view ${synthesisStep === 2 ? 'synthesis-focus-dimmed' : ''}`}
                     onClick={() => synthesisStep === 2 && setSynthesisStep(3)}
                     role="button"
                     tabIndex={0}
@@ -3195,7 +3191,7 @@ export default function Home() {
                       </div>
 
                       {/* Right Card: 21% Calcineurin Inhibitors */}
-                      <div className={`split-detail-card card-cni ${synthesisStep >= 2 ? 'csa-highlighted' : ''}`}>
+                      <div className={`split-detail-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
                         <div className="split-card-header">
                           <span className="split-card-title title-violet">
                             CALCINEURIN INHIBITORS (23 PT)
@@ -3236,8 +3232,8 @@ export default function Home() {
                         <div className="harmonized-evidence-callout callout-cni">
                           <span className="split-card-title title-violet" style={{ marginBottom: '0.12rem' }}>PRIOR EVIDENCE</span>
                           <ul className="harmonized-evidence-list">
-                            <li>Tacrolimus: mixed evidence</li>
-                            <li>Cyclosporine: Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
+                            <li className="evidence-item-tac">Tacrolimus: mixed evidence</li>
+                            <li className="evidence-item-csa">Cyclosporine: Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
                           </ul>
                         </div>
                       </div>
