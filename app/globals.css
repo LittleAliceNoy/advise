@@ -11257,38 +11257,42 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   transition: fill 0.5s ease, opacity 0.5s ease, stroke 0.5s ease;
 }
 
-/* Step 4: Reasons for Greater CID Attrition */
-.attrition-reasons-strip {
+/* Step 4: Reasons for Greater CID Attrition (Matching Editorial Observation Format) */
+.discussion-attrition-scene .adv-observations-block.side-by-side {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(0.6rem, 1.2vw, 1.4rem);
+  gap: clamp(1.2rem, 2.5vw, 3.5rem);
   width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: clamp(0.45rem, 0.75vh, 0.8rem);
+  margin-top: clamp(0.2rem, 0.4vh, 0.5rem);
   animation: fadeInPure 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  margin-top: clamp(0.2rem, 0.5vh, 0.5rem);
 }
 
-.attrition-reason-card {
-  background: rgba(181, 142, 255, 0.035);
-  border: 1px solid rgba(181, 142, 255, 0.16);
-  border-left: 2px solid #b58eff;
-  border-radius: 3px;
-  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.6rem, 1vw, 0.9rem);
+.discussion-attrition-scene .adv-observations-block.side-by-side .observation-item {
+  border: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
 
-.reason-number {
-  font: 700 clamp(0.5rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
-  color: #b58eff;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.reason-text {
+.discussion-attrition-scene .adv-observations-block.side-by-side .observation-item h4 {
+  color: #fff;
   font-size: clamp(0.68rem, 0.76vw, 0.86rem);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.discussion-attrition-scene .adv-observations-block.side-by-side .observation-item h4 span {
+  color: var(--red);
+}
+
+.discussion-attrition-scene .adv-observations-block.side-by-side .observation-item p {
+  color: #a09591;
+  font-size: clamp(0.74rem, 0.82vw, 0.92rem);
   line-height: 1.45;
-  color: #d0c7c3;
   margin: 0;
 }
 
