@@ -3021,12 +3021,13 @@ export default function Home() {
               {/* Left Synthesis Block (Revealed after right panel revealed: concernRevealed === true) */}
               <div className={`left-synthesis-block ${concernRevealed ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
                 <div
-                  className="left-concern-card"
+                  className="left-statement-card"
                   onClick={() => synthesisStep === 1 && setSynthesisStep(2)}
                   style={{ cursor: synthesisStep === 1 ? 'pointer' : 'default' }}
                 >
-                  <span className="concern-badge">THE CONCERN</span>
-                  <p className="concern-main-q">These data raise the question of the impact of calcineurin inhibitors on the overall results of the trial.</p>
+                  <p className="statement-uppercase-text">
+                    THESE DATA RAISE THE QUESTION OF THE IMPACT OF CALCINEURIN INHIBITORS ON THE OVERALL RESULTS OF THE TRIAL
+                  </p>
                 </div>
 
                 {/* 01 & 02 Points (Revealed on second click: synthesisStep === 2) */}

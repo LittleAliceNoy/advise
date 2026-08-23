@@ -10488,69 +10488,36 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   pointer-events: auto;
 }
 
-.left-synthesis-block.synthesis-revealed .left-concern-card {
-  animation: concernSlowPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.left-synthesis-block.synthesis-revealed .left-statement-card {
+  animation: statementSlowPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes concernSlowPop {
+@keyframes statementSlowPop {
   0% {
     opacity: 0;
-    transform: translateY(18px) scale(0.97);
+    transform: translateY(16px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
-.left-concern-card {
+.left-statement-card {
   position: relative;
-  background: linear-gradient(90deg, rgba(140, 10, 18, 0.42), rgba(70, 6, 11, 0.16));
-  padding: 0.65rem 0.95rem 0.65rem 1.15rem;
-  border-radius: 0 4px 4px 0;
+  background: transparent;
+  padding: 0.15rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
-  box-shadow: 0 0 25px rgba(255, 77, 82, 0.12);
 }
 
-.left-concern-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0.24rem;
-  background: var(--red);
-  box-shadow: 0 0 14px rgba(255, 45, 45, 0.45);
-}
-
-.left-concern-card .concern-badge {
-  font: 800 clamp(0.52rem, 0.6vw, 0.72rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.1em;
+.statement-uppercase-text {
+  color: #ffffff;
+  font: 700 clamp(0.72rem, 0.82vw, 0.98rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(255, 77, 82, 0.5);
-}
-
-.left-concern-card .concern-main-q {
-  font-size: clamp(0.72rem, 0.8vw, 0.98rem);
-  color: #ff5258;
-  font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
-  text-shadow: 0 0 10px rgba(255, 77, 82, 0.35);
-}
-
-.left-concern-card .concern-subtext {
-  font-size: clamp(0.64rem, 0.71vw, 0.84rem);
-  color: #ff757a;
-  font-weight: 500;
-  line-height: 1.42;
-  margin: 0;
-  opacity: 0.95;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.25);
 }
 
 .left-synthesis-points {
