@@ -10262,46 +10262,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-.focal-evidence-badge-container {
-  margin-top: 0.55rem;
-  padding: 0.6rem 0.85rem;
-  background: rgba(255, 77, 82, 0.07);
-  border: 1px solid rgba(255, 77, 82, 0.28);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.35rem;
-  box-shadow: 0 0 24px rgba(255, 77, 82, 0.1);
-  transition: all 0.3s ease;
-}
-
-.evidence-badge-header {
+.antimetabolites-evidence-callout {
+  position: relative;
+  margin-top: 0.65rem;
+  background: linear-gradient(90deg, rgba(117, 7, 13, 0.38), rgba(66, 5, 9, 0.12));
+  padding: 0.6rem 0.95rem 0.6rem 1.15rem;
+  border-radius: 0 3px 3px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: left;
 }
 
-.evidence-badge-pill {
-  font: 800 clamp(0.5rem, 0.58vw, 0.68rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  background: rgba(255, 77, 82, 0.16);
-  border: 1px solid rgba(255, 77, 82, 0.38);
-  border-radius: 9999px;
-  padding: 0.12rem 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(255, 77, 82, 0.2);
+.antimetabolites-evidence-callout::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.22rem;
+  background: var(--red);
+  box-shadow: 0 0 12px rgba(255, 45, 45, 0.3);
 }
 
-.evidence-badge-text {
-  font-size: clamp(0.72rem, 0.82vw, 0.94rem);
-  font-weight: 500;
-  color: #f3efe9;
-  line-height: 1.4;
+.antimetabolites-evidence-callout p {
+  color: #e6e2de;
+  font: 500 clamp(0.68rem, 0.76vw, 0.88rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
   margin: 0;
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
 }
 
 /* CNI Evidence Grid in Overlay */

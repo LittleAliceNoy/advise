@@ -3177,12 +3177,9 @@ export default function Home() {
                         </div>
                       </div>
 
-                      {/* Prominent Evidence Badge Callout */}
-                      <div className="focal-evidence-badge-container">
-                        <div className="evidence-badge-header">
-                          <span className="evidence-badge-pill">EVIDENCE BASE</span>
-                        </div>
-                        <p className="evidence-badge-text">
+                      {/* Evidence Badge Callout in steroid-reset style */}
+                      <div className="antimetabolites-evidence-callout">
+                        <p>
                           Prior evidence indicated broadly comparable efficacy across antimetabolite agents.
                         </p>
                       </div>
