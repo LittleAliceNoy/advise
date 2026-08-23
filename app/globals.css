@@ -9561,6 +9561,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-top: 0.2rem;
 }
 
+.discussion-limitations-scene .stat-val-red,
+.discussion-limitations-scene .adv-arch-evidence-stat span .stat-val-red {
+  color: var(--red) !important;
+  font-style: normal;
+}
+
+.discussion-limitations-scene .stat-badge-non-sig-violet {
+  color: #b58eff;
+  background: rgba(181, 142, 255, 0.12);
+  border: 1px solid rgba(181, 142, 255, 0.28);
+  padding: 0.04rem 0.28rem;
+  border-radius: 2px;
+  font-weight: 550;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.88em;
+  letter-spacing: 0.02em;
+}
+
 .limitations-analytical-panel {
   display: flex;
   flex-direction: column;
