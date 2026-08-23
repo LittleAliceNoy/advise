@@ -3875,11 +3875,11 @@ export default function Home() {
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
                 <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
-                <p className="red-hook">COULD GREATER LOSS TO FOLLOW-UP IN THE CID ARM HAVE BIASED THE TREATMENT EFFECT?</p>
+                <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
                   <span className="red-text" style={{ display: "inline" }}>
-                    But the conclusion held.
+                    Did that distort the answer?
                   </span>
                 </h2>
               </div>
