@@ -4037,41 +4037,32 @@ export default function Home() {
 
               {/* Step 5: MULTIPLE SENSITIVITY CALCULATIONS & CORE MESSAGE */}
               <div className={`attrition-sensitivity-resolution ${attritionStep === 5 ? 'resolution-revealed' : 'resolution-hidden'}`}>
-                <div className="sensitivity-models-grid">
-                  <div className="sensitivity-model-card">
-                    <div className="model-header">
-                      <span className="model-calc-icon">∑₁</span>
-                      <span className="model-name">PRIMARY ANALYSIS</span>
+                {/* Schematic Graphic: Multiple Calculations Converging */}
+                <div className="sensitivity-convergence-graphic">
+                  <div className="calc-track-list">
+                    <div className="calc-track-item">
+                      <span className="calc-tag">TECHNIQUE 01</span>
+                      <span className="calc-assumption">Missing-data assumption model A</span>
+                      <span className="calc-line" />
                     </div>
-                    <p className="model-assumption">Prespecified imputation model</p>
-                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
+                    <div className="calc-track-item">
+                      <span className="calc-tag">TECHNIQUE 02</span>
+                      <span className="calc-assumption">Missing-data assumption model B</span>
+                      <span className="calc-line" />
+                    </div>
+                    <div className="calc-track-item">
+                      <span className="calc-tag">TECHNIQUE 03</span>
+                      <span className="calc-assumption">Missing-data assumption model C</span>
+                      <span className="calc-line" />
+                    </div>
                   </div>
 
-                  <div className="sensitivity-model-card">
-                    <div className="model-header">
-                      <span className="model-calc-icon">∑₂</span>
-                      <span className="model-name">MULTIPLE IMPUTATION</span>
+                  <div className="calc-convergence-hub">
+                    <span className="hub-arrow">➔</span>
+                    <div className="hub-badge">
+                      <strong>CONSISTENT RESULTS</strong>
+                      <small>Across All Techniques</small>
                     </div>
-                    <p className="model-assumption">Missing-at-random assumptions</p>
-                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
-                  </div>
-
-                  <div className="sensitivity-model-card">
-                    <div className="model-header">
-                      <span className="model-calc-icon">∑₃</span>
-                      <span className="model-name">WORST-CASE BOUNDS</span>
-                    </div>
-                    <p className="model-assumption">Extreme missingness penalties</p>
-                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
-                  </div>
-
-                  <div className="sensitivity-model-card">
-                    <div className="model-header">
-                      <span className="model-calc-icon">∑₄</span>
-                      <span className="model-name">COMPLETE-CASE</span>
-                    </div>
-                    <p className="model-assumption">Observed participant data only</p>
-                    <div className="model-result-badge">➔ CONSISTENT EFFECT</div>
                   </div>
                 </div>
 
