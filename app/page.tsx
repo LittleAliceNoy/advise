@@ -3888,12 +3888,6 @@ export default function Home() {
             <div className="attrition-full-canvas">
               <div className="attrition-canvas-top-bar">
                 <span className="canvas-caption-label">DIFFERENTIAL ATTRITION BY TREATMENT ARM</span>
-                <span className="canvas-advance-hint">
-                  {attritionStep === 1 && "CLICK / ↓ TO REVEAL POST-RANDOMIZATION ATTRITION"}
-                  {attritionStep === 2 && "CLICK / ↓ TO REVEAL DISCONTINUATIONS"}
-                  {attritionStep === 3 && "CLICK / ↓ TO REVEAL ROBUSTNESS RESOLUTION"}
-                  {attritionStep === 4 && "ROBUSTNESS CONFIRMED"}
-                </span>
               </div>
 
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
