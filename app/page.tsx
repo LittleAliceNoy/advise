@@ -3139,20 +3139,197 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="limitations-3" className="scene discussion-scene limitations-scene">
-          <div className="scene-copy discussion-copy">
-            <p className="eyebrow"><span /> 30 — LIMITATIONS / DOSE &amp; TIME</p>
-            <h2>Time to control.<br /><em>Not the final ceiling.</em></h2>
-            <p className="lede">The CID pathway allowed stepwise antimetabolite escalation, making early speed and long-term efficacy distinct questions.</p>
+        <section id="limitations-3" className="scene discussion-temporal-scene">
+          <div className="adv-two-col">
+            {/* LEFT COLUMN */}
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 30 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="red-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
+              <h2>ADA got there faster.<br /><span className="red-text" style={{display: 'inline'}}>Whether CID catches up is unresolved.</span></h2>
+              <p className="lede">CID used a two-step antimetabolite dose-escalation strategy. This may have modestly delayed successful corticosteroid sparing, although the protocol was designed to allow escalation within the 6-month primary-outcome window.</p>
+
+              <div className="comp-investigation-statement">
+                <div className="investigation-rule" />
+                <h4>THE CENTRAL INTERPRETIVE QUESTION</h4>
+                <p>The key question is therefore temporal: does ADA produce a greater ultimate treatment effect, or does it achieve the same goal sooner?</p>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN — VISUAL TIMELINE & TRAJECTORY CANVAS */}
+            <div className="adv-right-col temporal-trajectory-column">
+              <div className="temporal-canvas-card">
+                
+                {/* 1. TIMELINE MILESTONE HEADER */}
+                <div className="trajectory-header-bar">
+                  <div className="trajectory-milestones">
+                    <span className="milestone-tag">M0 RANDOMIZATION</span>
+                    <span className="milestone-tag tag-escalation">M1–M3 DOSE ESCALATION</span>
+                    <span className="milestone-tag tag-primary">M6 PRIMARY WINDOW</span>
+                    <span className="milestone-tag tag-end">M12 TRIAL END</span>
+                  </div>
+                  <span className="unobserved-badge">NOT OBSERVED (&gt;12M)</span>
+                </div>
+
+                {/* 2. MAIN SVG TRAJECTORY ENGINE */}
+                <div className="trajectory-svg-wrap">
+                  <svg viewBox="0 0 680 180" className="trajectory-vector-chart" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="adaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.4" />
+                        <stop offset="60%" stopColor="#ff4d52" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#ff7175" stopOpacity="1" />
+                      </linearGradient>
+                      <linearGradient id="cidGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#8f67ff" stopOpacity="0.4" />
+                        <stop offset="50%" stopColor="#a37eff" stopOpacity="0.8" />
+                        <stop offset="100%" stopColor="#b58eff" stopOpacity="1" />
+                      </linearGradient>
+                      <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                        <line x1="0" y1="0" x2="0" y2="10" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+                      </pattern>
+                      <filter id="adaGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                      <filter id="cidGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+
+                    {/* Unobserved Zone Background */}
+                    <rect x="510" y="8" width="160" height="162" fill="url(#diagonalHatch)" rx="2" />
+                    <rect x="510" y="8" width="160" height="162" fill="rgba(255,255,255,0.015)" rx="2" />
+
+                    {/* Horizontal Grid lines */}
+                    <line x1="30" y1="155" x2="665" y2="155" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                    <line x1="30" y1="95" x2="510" y2="95" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" strokeWidth="1" />
+                    <line x1="30" y1="35" x2="510" y2="35" stroke="rgba(255,255,255,0.05)" strokeDasharray="3 3" strokeWidth="1" />
+
+                    {/* Vertical Milestone Guides */}
+                    <line x1="30" y1="12" x2="30" y2="155" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                    <line x1="140" y1="12" x2="140" y2="155" stroke="rgba(181,142,255,0.15)" strokeDasharray="2 3" strokeWidth="1" />
+                    <line x1="280" y1="12" x2="280" y2="155" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                    
+                    {/* Strong Month 12 Boundary: Follow-up Ends */}
+                    <line x1="510" y1="8" x2="510" y2="168" stroke="#ff4d52" strokeWidth="2" strokeDasharray="4 3" />
+                    <rect x="448" y="10" width="124" height="18" fill="#120607" stroke="rgba(255,77,82,0.5)" rx="2" />
+                    <text x="510" y="22" textAnchor="middle" fill="#ff7175" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.08em">
+                      FOLLOW-UP ENDS (M12)
+                    </text>
+
+                    {/* Dose Escalation annotation box on CID */}
+                    <rect x="75" y="122" width="130" height="22" fill="#0e0a17" stroke="rgba(181,142,255,0.3)" rx="2" />
+                    <text x="140" y="136" textAnchor="middle" fill="#b58eff" fontSize="8" fontFamily="var(--font-geist-mono)">
+                      2-STEP CID ESCALATION
+                    </text>
+
+                    {/* CID Trajectory Curve (Purple) */}
+                    <path
+                      d="M 30,155 C 80,152 140,138 280,92 C 370,60 440,48 510,44"
+                      fill="none"
+                      stroke="url(#cidGradient)"
+                      strokeWidth="3.2"
+                      filter="url(#cidGlow)"
+                    />
+
+                    {/* Subtle Dotted CID Extension into NOT OBSERVED */}
+                    <path
+                      d="M 510,44 C 555,41 605,33 638,30"
+                      fill="none"
+                      stroke="#b58eff"
+                      strokeWidth="2"
+                      strokeDasharray="3 4"
+                      opacity="0.65"
+                    />
+                    <circle cx="648" cy="29" r="9" fill="#160e26" stroke="#b58eff" strokeWidth="1.5" />
+                    <text x="648" y="32.5" textAnchor="middle" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700">?</text>
+                    <text x="585" y="62" textAnchor="middle" fill="#8f859a" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                      Would CID catch up?
+                    </text>
+
+                    {/* ADA Trajectory Curve (Red) */}
+                    <path
+                      d="M 30,155 C 100,68 180,48 280,45 C 360,43 440,32 510,28"
+                      fill="none"
+                      stroke="url(#adaGradient)"
+                      strokeWidth="3.5"
+                      filter="url(#adaGlow)"
+                    />
+
+                    {/* Milestone Dots & Data Callouts */}
+                    <circle cx="30" cy="155" r="4" fill="#fff" />
+
+                    {/* M6 Callouts */}
+                    <circle cx="280" cy="45" r="4.5" fill="#ff4d52" stroke="#fff" strokeWidth="1.5" />
+                    <rect x="232" y="24" width="96" height="15" fill="#1a0708" stroke="rgba(255,77,82,0.4)" rx="2" />
+                    <text x="280" y="34.5" textAnchor="middle" fill="#ff8085" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                      ADA: 69% SPARING
+                    </text>
+
+                    <circle cx="280" cy="92" r="4.5" fill="#b58eff" stroke="#fff" strokeWidth="1.5" />
+                    <rect x="238" y="98" width="84" height="15" fill="#120a1f" stroke="rgba(181,142,255,0.4)" rx="2" />
+                    <text x="280" y="108.5" textAnchor="middle" fill="#c7adff" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                      CID: 54% (+15% GAP)
+                    </text>
+
+                    {/* M12 Callouts */}
+                    <circle cx="510" cy="28" r="4.5" fill="#ff4d52" stroke="#fff" strokeWidth="1.5" />
+                    <circle cx="510" cy="44" r="4.5" fill="#b58eff" stroke="#fff" strokeWidth="1.5" />
+
+                    {/* Delta indicator */}
+                    <line x1="280" y1="52" x2="280" y2="85" stroke="rgba(255,255,255,0.2)" strokeDasharray="2 2" />
+                    <text x="295" y="72" fill="#e0dad6" fontSize="7.5" fontFamily="var(--font-geist-mono)">Δ +15%</text>
+
+                    <line x1="504" y1="31" x2="504" y2="41" stroke="rgba(255,255,255,0.3)" />
+                    <text x="475" y="38" fill="#e0dad6" fontSize="7.5" fontFamily="var(--font-geist-mono)" textAnchor="end">Δ 9%</text>
+
+                    {/* X Axis Labels */}
+                    <text x="30" y="172" textAnchor="middle" fill="#8c827e" fontSize="8.5" fontFamily="var(--font-geist-mono)">M0</text>
+                    <text x="280" y="172" textAnchor="middle" fill="#8c827e" fontSize="8.5" fontFamily="var(--font-geist-mono)">M6 (PRIMARY)</text>
+                    <text x="510" y="172" textAnchor="middle" fill="#8c827e" fontSize="8.5" fontFamily="var(--font-geist-mono)">M12</text>
+                    <text x="600" y="172" textAnchor="middle" fill="#ff6468" fontSize="8" fontFamily="var(--font-geist-mono)" letterSpacing="0.04em">UNOBSERVED &gt;12M</text>
+                  </svg>
+                </div>
+
+                {/* 3. DUAL 12-MONTH ENDPOINT COMPARISON */}
+                <div className="endpoint-comparison-grid">
+                  <div className="endpoint-card card-sparing">
+                    <div className="endpoint-head-row">
+                      <span className="endpoint-code">ENDPOINT 01</span>
+                      <strong className="endpoint-title">CORTICOSTEROID SPARING</strong>
+                      <span className="endpoint-stat-pill">86% vs 77% (P = 0.077)</span>
+                    </div>
+                    <p className="endpoint-verdict">
+                      <strong>CID appeared to be catching up to ADA by 12 months.</strong> Sparing separation narrowed from +15 points at Month 6 to +9 points at Month 12 as stepwise escalation took effect.
+                    </p>
+                  </div>
+
+                  <div className="endpoint-card card-discontinuation">
+                    <div className="endpoint-head-row">
+                      <span className="endpoint-code code-red">ENDPOINT 02</span>
+                      <strong className="endpoint-title">CORTICOSTEROID DISCONTINUATION</strong>
+                      <span className="endpoint-stat-pill pill-red">55% vs 40% (P = 0.028)</span>
+                    </div>
+                    <p className="endpoint-verdict">
+                      <strong>ADA remained ahead at 12 months.</strong> Zero-steroid success was significantly higher with ADA, and longer-term convergence beyond 12 months was not observed.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 4. FINAL INTERPRETIVE CONCLUSION */}
+                <div className="temporal-conclusion-anchor">
+                  <div className="conclusion-hook-line">
+                    <strong>FASTER EFFECT <span className="red-highlight-text">≠ PROVEN GREATER ULTIMATE EFFICACY</span></strong>
+                  </div>
+                  <p className="conclusion-sub-text">
+                    ADA clearly achieved corticosteroid control more rapidly. The 12-month follow-up was insufficient to determine whether the remaining difference represented greater ultimate efficacy or persistent temporal separation.
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div className="limitation-visual visual-timing" aria-hidden="true"><div className="visual-label">TIME IS PART OF THE COMPARISON</div><div className="stair-track"><i /><i /><i /><i /><b>6M</b><b>12M</b></div><div className="timing-copy"><span>STEPWISE CID ESCALATION</span><span>PRIMARY OUTCOME</span><span>FOLLOW-UP ENDS</span></div></div>
-          <div className="discussion-grid limitations-grid">
-            <article className="signal-card warning-card"><span>01 / DOSE ESCALATION</span><strong>A staged CID pathway</strong><p>Antimetabolites followed a two-step escalation approach, similar to common clinical practice, rather than starting immediately at the maximum dose.</p><i /></article>
-            <article className="signal-card"><span>02 / PRIMARY WINDOW</span><strong>Six months was the test</strong><p>The protocol allowed escalation while preserving enough follow-up to assess successful corticosteroid sparing by the six-month primary outcome.</p><i /></article>
-            <article className="signal-card"><span>03 / RAPIDITY VS EFFICACY</span><strong>CID was catching up</strong><p>ADA achieved sparing sooner, but the 12-month proportions were closer—suggesting a difference in rapidity rather than necessarily ultimate efficacy.</p><i /></article>
-            <article className="signal-card"><span>04 / FOLLOW-UP HORIZON</span><strong>The endpoint came early</strong><p>ADA had higher corticosteroid discontinuation at 12 months, but follow-up ended there, so later CID convergence could not be determined.</p><i /></article>
-          </div>
-          <p className="discussion-footnote">The trial answers which strategy works sooner; it cannot fully answer whether longer follow-up would narrow the discontinuation gap.</p>
         </section>
 
 

@@ -10461,3 +10461,259 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .comp-stage-3 .conclusion-hook-line strong {
   text-shadow: 0 0 25px rgba(255, 77, 82, 0.45);
 }
+
+/* ==========================================================================
+   SLIDE 30: DISCUSSION / TEMPORAL TRAJECTORY (DID ADA WORK BETTER OR JUST FASTER?)
+   ========================================================================== */
+.discussion-temporal-scene {
+  min-height: 100svh;
+  padding: 11vh 6vw 6vh;
+  background: radial-gradient(circle at 75% 45%, rgba(255, 45, 45, 0.03), transparent 45%),
+              radial-gradient(circle at 45% 75%, rgba(181, 142, 255, 0.025), transparent 45%), #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.discussion-temporal-scene .adv-two-col {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 3.5vw, 4.5rem);
+  width: 100%;
+  flex: 1;
+  min-height: calc(100svh - 17vh);
+  align-items: stretch;
+}
+
+/* Left Column */
+.discussion-temporal-scene .adv-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.discussion-temporal-scene .red-hook {
+  color: var(--red);
+  font-size: clamp(0.58rem, 0.7vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.discussion-temporal-scene h2 {
+  font-size: clamp(2.5rem, 3.2vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.discussion-temporal-scene .red-text {
+  color: var(--red);
+  margin-top: 0.2rem;
+}
+
+.discussion-temporal-scene .lede {
+  font-size: clamp(.85rem, .98vw, 1.1rem);
+  line-height: 1.55;
+  color: #a09591;
+  margin: 1.2rem 0 1rem;
+  max-width: 92%;
+}
+
+/* Right Column: Temporal Trajectory Canvas Card */
+.temporal-trajectory-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.temporal-canvas-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 0.8vh, 0.85rem);
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: clamp(0.7rem, 1.1vh, 1.1rem) clamp(0.8rem, 1.2vw, 1.3rem);
+}
+
+/* 1. Header Milestone Tags */
+.trajectory-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: clamp(0.35rem, 0.55vh, 0.55rem);
+}
+
+.trajectory-milestones {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.35rem, 0.6vw, 0.7rem);
+}
+
+.milestone-tag {
+  font: 600 clamp(0.5rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
+  color: #a09591;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.12rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.milestone-tag.tag-escalation {
+  color: #b58eff;
+  background: rgba(181, 142, 255, 0.08);
+  border-color: rgba(181, 142, 255, 0.25);
+}
+
+.milestone-tag.tag-primary {
+  color: #ff8085;
+  background: rgba(255, 77, 82, 0.08);
+  border-color: rgba(255, 77, 82, 0.25);
+}
+
+.milestone-tag.tag-end {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.unobserved-badge {
+  font: 700 clamp(0.5rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
+  color: #ff6468;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 77, 82, 0.1);
+  border: 1px dashed rgba(255, 77, 82, 0.35);
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+}
+
+/* 2. SVG Trajectory Chart */
+.trajectory-svg-wrap {
+  width: 100%;
+  flex: 1.2;
+  min-height: 140px;
+  max-height: 195px;
+  display: flex;
+  align-items: stretch;
+}
+
+.trajectory-vector-chart {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 3. Endpoint Comparison Grid */
+.endpoint-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.6rem, 0.9vw, 1.1rem);
+}
+
+.endpoint-card {
+  border-radius: 3px;
+  padding: clamp(0.45rem, 0.75vh, 0.75rem) clamp(0.6rem, 0.85vw, 0.95rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.endpoint-card.card-sparing {
+  background: rgba(181, 142, 255, 0.03);
+  border: 1px solid rgba(181, 142, 255, 0.25);
+}
+
+.endpoint-card.card-discontinuation {
+  background: rgba(255, 77, 82, 0.03);
+  border: 1px solid rgba(255, 77, 82, 0.3);
+}
+
+.endpoint-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.endpoint-code {
+  font: 700 clamp(0.46rem, 0.52vw, 0.62rem) var(--font-geist-mono), monospace;
+  color: #b58eff;
+  letter-spacing: 0.06em;
+}
+
+.endpoint-code.code-red {
+  color: var(--red);
+}
+
+.endpoint-title {
+  font: 700 clamp(0.6rem, 0.68vw, 0.78rem) var(--font-geist-mono), monospace;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.endpoint-stat-pill {
+  font: 600 clamp(0.5rem, 0.56vw, 0.66rem) var(--font-geist-mono), monospace;
+  color: #d8c9ff;
+  background: rgba(181, 142, 255, 0.12);
+  padding: 0.08rem 0.35rem;
+  border-radius: 2px;
+}
+
+.endpoint-stat-pill.pill-red {
+  color: #ff9da1;
+  background: rgba(255, 77, 82, 0.14);
+}
+
+.endpoint-verdict {
+  font-size: clamp(0.62rem, 0.7vw, 0.8rem);
+  color: #a09591;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.endpoint-verdict strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 4. Final Conclusion Anchor */
+.temporal-conclusion-anchor {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: clamp(0.4rem, 0.6vh, 0.6rem);
+  text-align: center;
+}
+
+.temporal-conclusion-anchor .conclusion-hook-line strong {
+  color: #fff;
+  font: 700 clamp(0.82rem, 0.94vw, 1.1rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.temporal-conclusion-anchor .conclusion-hook-line strong .red-highlight-text {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.temporal-conclusion-anchor .conclusion-sub-text {
+  color: #a09591;
+  font-size: clamp(0.68rem, 0.76vw, 0.86rem);
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 96%;
+}
