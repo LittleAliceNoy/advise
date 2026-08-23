@@ -3144,8 +3144,8 @@ export default function Home() {
                       {/* Left Card: 79% Antimetabolites */}
                       <div className="split-detail-card card-antimetabolites">
                         <div className="split-card-header">
-                          <span className="focal-badge-hero red-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
-                            ANTIMETABOLITES (87 pt)
+                          <span className="split-card-title title-red">
+                            ANTIMETABOLITES (87 PT)
                           </span>
                         </div>
 
@@ -3190,7 +3190,7 @@ export default function Home() {
 
                         {/* Evidence Badge */}
                         <div className="harmonized-evidence-callout callout-antimetabolites">
-                          <span className="evidence-badge-tag tag-red">PRIOR EVIDENCE</span>
+                          <span className="split-card-title title-red" style={{ marginBottom: '0.12rem' }}>PRIOR EVIDENCE</span>
                           <ul className="harmonized-evidence-list">
                             <li>Broadly comparable efficacy across antimetabolites</li>
                           </ul>
@@ -3200,8 +3200,8 @@ export default function Home() {
                       {/* Right Card: 21% Calcineurin Inhibitors */}
                       <div className={`split-detail-card card-cni ${synthesisStep === 2 ? 'csa-highlighted' : ''}`}>
                         <div className="split-card-header">
-                          <span className="focal-badge-hero violet-hero" style={{ fontSize: 'clamp(0.68rem, 0.76vw, 0.92rem)' }}>
-                            CALCINEURIN INHIBITORS (23 pt)
+                          <span className="split-card-title title-violet">
+                            CALCINEURIN INHIBITORS (23 PT)
                           </span>
                         </div>
 
@@ -3237,7 +3237,7 @@ export default function Home() {
 
                         {/* Evidence Callout */}
                         <div className="harmonized-evidence-callout callout-cni">
-                          <span className="evidence-badge-tag tag-violet">PRIOR EVIDENCE</span>
+                          <span className="split-card-title title-violet" style={{ marginBottom: '0.12rem' }}>PRIOR EVIDENCE</span>
                           <ul className="harmonized-evidence-list">
                             <li>Tacrolimus: mixed evidence</li>
                             <li>Cyclosporine: Potentially <span className="highlight-lower-red">lower</span> efficacy than antimetabolites</li>
