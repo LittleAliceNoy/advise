@@ -3951,25 +3951,22 @@ export default function Home() {
                     {/* Baseline track line */}
                     <line x1="165" y1="114" x2="915" y2="114" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
                     
-                    {/* Participant dot stream with 8 randomly dispersed faded discontinuation dots */}
+                    {/* Participant dot stream with early dropouts and discontinued dots dimmed */}
                     {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
                       const isEarlyDropout = [2, 3, 4].includes(i);
-                      const isDiscontinued = [9, 11, 14, 16, 19, 21, 24, 27].includes(i);
+                      const isDiscontinued = [11, 13, 15, 17, 19, 21, 23, 25].includes(i);
                       return (
-                        <g key={`cid-dot-group-${i}`}>
-                          <circle
-                            cx={cx}
-                            cy={114}
-                            r={3.4}
-                            fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.22)" : "#b58eff"}
-                            stroke={isDiscontinued ? "rgba(181,142,255,0.7)" : "none"}
-                            strokeWidth={isDiscontinued ? 1.2 : 0}
-                          />
-                        </g>
+                        <circle
+                          key={`cid-dot-${i}`}
+                          cx={cx}
+                          cy={114}
+                          r={3.4}
+                          fill={isEarlyDropout || isDiscontinued ? "rgba(181,142,255,0.2)" : "#b58eff"}
+                        />
                       );
                     })}
 
-                    {/* OBSERVATION 1: Near the beginning — 3 CID drop out */}
+                    {/* OBSERVATION 1: Immediately after randomization — 3 CID drop out */}
                     <path d="M 229,114 Q 235,134 248,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
                     <circle cx="248" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
                     <circle cx="257" cy="136" r="3.4" fill="#180e2b" stroke="#b58eff" strokeWidth="1.4" />
@@ -3978,15 +3975,25 @@ export default function Home() {
                       3 CID drop out
                     </text>
 
-                    {/* OBSERVATION 2: Separate Aggregate Annotation for the 8 Discontinuations */}
-                    <g transform="translate(665, 140)">
-                      <text x="0" y="0" textAnchor="middle" fill="#b58eff" fontSize="8.6" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
-                        8 PARTICIPANTS · ALL ASSIGNED TO CID
-                      </text>
-                      <text x="0" y="14" textAnchor="middle" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                        *Schematic distribution — exact chronological timing of discontinuations not established
-                      </text>
-                    </g>
+                    {/* OBSERVATION 2: Treatment Discontinuation — 8 CID discontinued (same format as 3 dropouts) */}
+                    <path d="M 480,114 Q 486,134 498,136" fill="none" stroke="rgba(181,142,255,0.7)" strokeDasharray="2 2" strokeWidth="1.2" />
+                    {[498, 507, 516, 525, 534, 543, 552, 561].map((cx, idx) => (
+                      <circle
+                        key={`cid-disc-dot-${idx}`}
+                        cx={cx}
+                        cy={136}
+                        r={3.4}
+                        fill="#180e2b"
+                        stroke="#b58eff"
+                        strokeWidth="1.4"
+                      />
+                    ))}
+                    <text x="574" y="139.5" fill="#d8c9ff" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                      8 CID discontinued assigned treatment
+                    </text>
+                    <text x="574" y="151" fill="#8c827e" fontSize="7.4" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                      *Schematic representation · Non-chronological aggregate count
+                    </text>
                   </g>
                 </svg>
               </div>
