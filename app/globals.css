@@ -10578,7 +10578,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: clamp(0.4rem, 0.7vh, 0.75rem);
+  gap: clamp(0.6rem, 1.2vh, 1.4rem);
   animation: fadeInLandscape 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
 }
@@ -10590,16 +10590,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .synthesis-upper-donut {
   width: 100%;
+  flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  padding: 0.15rem 0;
+  padding: clamp(0.2rem, 0.5vh, 0.6rem) 0;
 }
 
 .split-donut-svg {
   width: 100%;
-  max-height: clamp(140px, 20vh, 185px);
+  height: 100%;
+  max-height: clamp(160px, 24vh, 230px);
 }
 
 .synthesis-lower-cards-grid {
@@ -10607,8 +10609,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   grid-template-columns: 1.12fr 1fr;
   gap: clamp(0.5rem, 0.8vw, 0.9rem);
   width: 100%;
-  flex: 1;
-  align-items: stretch;
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 .split-detail-card {

@@ -3073,7 +3073,7 @@ export default function Home() {
                   >
                     {/* Upper Half: Compact Glowing SVG Donut Chart */}
                     <div className="synthesis-upper-donut">
-                      <svg viewBox="0 0 520 220" className="cid-luminous-donut-svg split-donut-svg">
+                      <svg viewBox="0 0 520 240" className="cid-luminous-donut-svg split-donut-svg">
                         <defs>
                           <linearGradient id="splitPie79Grad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#401416" />
@@ -3096,46 +3096,46 @@ export default function Home() {
                         </defs>
 
                         {/* Neutral Base Track */}
-                        <circle cx="260" cy="110" r="78" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="36" />
+                        <circle cx="260" cy="120" r="86" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="38" />
 
                         {/* 79% Antimetabolites Arc */}
                         <circle
                           cx="260"
-                          cy="110"
-                          r="78"
+                          cy="120"
+                          r="86"
                           fill="none"
                           stroke="url(#splitPie79Grad)"
-                          strokeWidth="36"
-                          strokeDasharray="385.79 104.16"
+                          strokeWidth="38"
+                          strokeDasharray="426.01 114.34"
                           strokeDashoffset="0"
-                          transform="rotate(-13.5 260 110)"
+                          transform="rotate(-13.5 260 120)"
                           filter="url(#splitGlow79)"
                         />
 
                         {/* 21% Calcineurin Inhibitors Arc */}
                         <circle
                           cx="260"
-                          cy="110"
-                          r="78"
+                          cy="120"
+                          r="86"
                           fill="none"
                           stroke="url(#splitPie21Grad)"
-                          strokeWidth="36"
-                          strokeDasharray="104.16 385.79"
+                          strokeWidth="38"
+                          strokeDasharray="114.34 426.01"
                           strokeDashoffset="0"
-                          transform="rotate(-90 260 110)"
+                          transform="rotate(-90 260 120)"
                           filter="url(#splitGlow21)"
                         />
 
                         {/* Center Dark Core */}
-                        <circle cx="260" cy="110" r="58" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                        <circle cx="260" cy="120" r="62" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
                         {/* 21% Calcineurin Inhibitors Label (Top-Right) */}
-                        <text x="340" y="44" className="hero-arc-number num-violet" style={{ fontSize: '22px' }}>21%</text>
-                        <text x="340" y="58" className="hero-arc-sublabel sub-violet" style={{ fontSize: '8px' }}>CALCINEURIN INHIBITORS</text>
+                        <text x="355" y="48" className="hero-arc-number num-violet" style={{ fontSize: '24px' }}>21%</text>
+                        <text x="355" y="63" className="hero-arc-sublabel sub-violet" style={{ fontSize: '8.5px' }}>CALCINEURIN INHIBITORS</text>
 
                         {/* 79% Antimetabolites Label (Left-Lower) */}
-                        <text x="90" y="180" className="hero-arc-number num-red" style={{ fontSize: '22px' }}>79%</text>
-                        <text x="90" y="194" className="hero-arc-sublabel sub-red" style={{ fontSize: '8px' }}>ANTIMETABOLITES</text>
+                        <text x="80" y="195" className="hero-arc-number num-red" style={{ fontSize: '24px' }}>79%</text>
+                        <text x="80" y="210" className="hero-arc-sublabel sub-red" style={{ fontSize: '8.5px' }}>ANTIMETABOLITES</text>
                       </svg>
                     </div>
 
