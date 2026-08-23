@@ -3131,38 +3131,67 @@ export default function Home() {
                   </div>
 
                   {/* 3. PROGRESSIVE INSPECTION OVERLAYS (CLICK TO RETURN) */}
-                  {/* Antimetabolites Inspection Overlay */}
+                  {/* Antimetabolites Inspection Overlay (Borderless, Pill Icons, Bold Red Title) */}
                   <div
                     className={`inspect-focal-overlay overlay-antimetabolites ${activeBranch === 'antimetabolites' ? 'is-active' : ''}`}
                     onClick={closeInspection}
                     role="button"
                     tabIndex={0}
                   >
-                    <div className="focal-card" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
+                    <div className="focal-card focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
-                        <span className="focal-badge">ANTIMETABOLITES · 79%</span>
+                        <span className="focal-badge-hero red-hero">ANTIMETABOLITES · 79% (87 pt)</span>
                         <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
                           <span>✕</span>
                         </button>
                       </div>
 
-                      <div className="focal-drugs-list">
-                        <div className={`drug-chip ${branchStep >= 2 ? 'chip-show' : ''}`}>
-                          <strong>MTX</strong>
-                          <span>44</span>
+                      {/* 3 Pills Row with Distinct Pill Icons (Borderless) */}
+                      <div className="focal-pills-row">
+                        {/* Pill 1: MTX 44 pt */}
+                        <div className={`pill-drug-col ${branchStep >= 2 ? 'pill-show' : ''}`}>
+                          <div className="pill-icon-wrap">
+                            <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
+                              <g transform="rotate(-45 20 20)">
+                                <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#ff4d52" strokeWidth="2.2" />
+                                <line x1="12" y1="20" x2="28" y2="20" stroke="#ff4d52" strokeWidth="2" />
+                                <path d="M 12 20 L 28 20 L 28 26 A 8 8 0 0 1 12 26 Z" fill="rgba(255, 77, 82, 0.45)" />
+                              </g>
+                            </svg>
+                          </div>
+                          <strong className="pill-drug-name">MTX</strong>
+                          <span className="pill-drug-count">44 pt</span>
                         </div>
-                        <div className={`drug-chip ${branchStep >= 3 ? 'chip-show' : ''}`}>
-                          <strong>MYCOPHENOLATE</strong>
-                          <span>42</span>
+
+                        {/* Pill 2: MYCOPHENOLATE 42 pt */}
+                        <div className={`pill-drug-col ${branchStep >= 3 ? 'pill-show' : ''}`}>
+                          <div className="pill-icon-wrap">
+                            <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
+                              <circle cx="20" cy="20" r="14" fill="rgba(255, 77, 82, 0.2)" stroke="#ff4d52" strokeWidth="2.2" />
+                              <line x1="20" y1="7" x2="20" y2="33" stroke="#ff4d52" strokeWidth="1.8" strokeDasharray="3 2" />
+                              <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" />
+                            </svg>
+                          </div>
+                          <strong className="pill-drug-name">MYCOPHENOLATE</strong>
+                          <span className="pill-drug-count">42 pt</span>
                         </div>
-                        <div className={`drug-chip ${branchStep >= 4 ? 'chip-show' : ''}`}>
-                          <strong>AZATHIOPRINE</strong>
-                          <span>1</span>
+
+                        {/* Pill 3: AZATHIOPRINE 1 pt */}
+                        <div className={`pill-drug-col ${branchStep >= 4 ? 'pill-show' : ''}`}>
+                          <div className="pill-icon-wrap">
+                            <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
+                              <rect x="6" y="12" width="28" height="16" rx="8" fill="rgba(255, 77, 82, 0.25)" stroke="#ff4d52" strokeWidth="2.2" />
+                              <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
+                            </svg>
+                          </div>
+                          <strong className="pill-drug-name">AZATHIOPRINE</strong>
+                          <span className="pill-drug-count">1 pt</span>
                         </div>
                       </div>
 
+                      {/* Under the 3 pills */}
                       <div className={`focal-statement-box ${branchStep >= 5 ? 'statement-show' : ''}`}>
-                        <p>Prior evidence indicated broadly comparable efficacy across antimetabolite agents.</p>
+                        <p>Prior evidence indicated broadly comparable efficacy across antimetabolite agents</p>
                       </div>
                     </div>
                   </div>
@@ -3174,9 +3203,9 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                   >
-                    <div className="focal-card card-cni" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
+                    <div className="focal-card card-cni focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
-                        <span className="focal-badge badge-violet">CALCINEURIN INHIBITORS · 21%</span>
+                        <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS · 21% (23 pt)</span>
                         <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
                           <span>✕</span>
                         </button>

@@ -9995,11 +9995,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cid-interactive-canvas.focus-antimetabolites {
-  transform: scale(1.16) translate(6%, 2%);
+  transform: scale(1.04);
 }
 
 .cid-interactive-canvas.focus-cni {
-  transform: scale(1.24) translate(-10%, -6%);
+  transform: scale(1.04);
+}
+
+.cid-interactive-canvas.focus-antimetabolites .cid-donut-stage,
+.cid-interactive-canvas.focus-cni .cid-donut-stage {
+  opacity: 0.16;
+  filter: blur(2px) grayscale(0.2);
+  pointer-events: none;
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
 /* Donut Stage — Dominant Visual Object in Right Panel */
@@ -10108,8 +10116,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .focal-card {
-  width: 92%;
-  max-width: 440px;
+  width: 95%;
+  max-width: 480px;
   background: rgba(10, 10, 14, 0.94);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 77, 82, 0.4);
@@ -10121,28 +10129,39 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: 0.55rem;
 }
 
-.focal-card.card-cni {
-  border-color: rgba(181, 142, 255, 0.45);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(181, 142, 255, 0.14);
+.focal-card.focal-borderless {
+  background: rgba(8, 8, 12, 0.84);
+  backdrop-filter: blur(18px);
+  border: none;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.88);
+  padding: clamp(0.85rem, 1.2vh, 1.25rem) clamp(0.95rem, 1.3vw, 1.45rem);
 }
 
 .focal-title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.45rem;
 }
 
-.focal-badge {
-  font: 700 clamp(0.6rem, 0.68vw, 0.8rem) var(--font-geist-mono), monospace;
-  color: var(--red);
-  letter-spacing: 0.06em;
+.focal-card:not(.focal-borderless) .focal-title-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.focal-badge-hero {
+  font: 800 clamp(0.88rem, 1.05vw, 1.22rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.focal-badge.badge-violet {
+.focal-badge-hero.red-hero {
+  color: #ff4d52;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.6);
+}
+
+.focal-badge-hero.violet-hero {
   color: #b58eff;
+  text-shadow: 0 0 16px rgba(181, 142, 255, 0.6);
 }
 
 .focal-close-btn {
@@ -10150,12 +10169,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: #aaa;
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   cursor: pointer;
   line-height: 1;
   padding: 0;
@@ -10175,47 +10194,55 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: #fff;
 }
 
-.focal-drugs-list {
-  display: flex;
-  gap: 0.4rem;
+/* 3 Pills Row (Borderless) */
+.focal-pills-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.5rem, 0.8vw, 1rem);
+  margin: clamp(0.5rem, 0.8vh, 0.85rem) 0;
 }
 
-.drug-chip {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
-  padding: 0.4rem 0.5rem;
+.pill-drug-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  text-align: center;
+  gap: 0.25rem;
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.drug-chip.chip-show {
+.pill-drug-col.pill-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.drug-chip strong {
-  font: 700 clamp(0.56rem, 0.64vw, 0.76rem) var(--font-geist-mono), monospace;
-  color: #fff;
+.pill-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.45));
+  margin-bottom: 0.15rem;
 }
 
-.drug-chip span {
-  font: 600 clamp(0.48rem, 0.56vw, 0.68rem) var(--font-geist-mono), monospace;
-  color: var(--red);
+.pill-drug-name {
+  font: 700 clamp(0.6rem, 0.68vw, 0.78rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.pill-drug-count {
+  font: 700 clamp(0.72rem, 0.82vw, 0.95rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
 }
 
 .focal-statement-box {
-  border-left: 2px solid var(--red);
-  padding-left: 0.55rem;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  margin-top: 0.35rem;
+  text-align: center;
 }
 
 .focal-statement-box.statement-show {
@@ -10224,10 +10251,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .focal-statement-box p {
-  font-size: clamp(0.62rem, 0.7vw, 0.82rem);
-  color: #ddd;
-  line-height: 1.35;
+  font-size: clamp(0.66rem, 0.75vw, 0.88rem);
+  color: #d6ceca;
+  line-height: 1.4;
   margin: 0;
+  font-style: italic;
 }
 
 /* CNI Evidence Grid in Overlay */
