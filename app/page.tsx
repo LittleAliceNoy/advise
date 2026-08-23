@@ -4040,7 +4040,7 @@ export default function Home() {
                 <div className="robustness-strip-top">
                   <span className="robustness-kicker">ROBUSTNESS TO MISSING DATA</span>
                   <h3 className="robustness-statement">
-                    Different assumptions. <span className="red-highlight-text">Same conclusion.</span>
+                    Different analysis techniques. <span className="red-highlight-text">Same conclusion.</span>
                   </h3>
                 </div>
 
