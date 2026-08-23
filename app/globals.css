@@ -10360,21 +10360,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-badge-tag {
-  font: 800 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-mono), monospace;
-  letter-spacing: 0.05em;
+  font: 800 clamp(0.52rem, 0.58vw, 0.72rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 0.05rem;
+  margin-bottom: 0.08rem;
 }
 
 .evidence-badge-tag.tag-red {
   color: #ff4d52;
-  text-shadow: 0 0 16px rgba(255, 77, 82, 0.5);
+  text-shadow: 0 0 10px rgba(255, 77, 82, 0.4);
 }
 
 .evidence-badge-tag.tag-violet {
   color: #b58eff;
-  text-shadow: 0 0 16px rgba(181, 142, 255, 0.5);
+  text-shadow: 0 0 10px rgba(181, 142, 255, 0.4);
 }
 
 .harmonized-evidence-list {
