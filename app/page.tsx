@@ -3028,19 +3028,6 @@ export default function Home() {
             {/* RIGHT COLUMN - Fixed-size camera frame with internal animated canvas */}
             <div className="adv-right-col comp-anatomy-column">
               <div className="comp-viewport-frame">
-                
-                {/* Subtle Step Readout */}
-                <div className="comp-step-indicator" onClick={(e) => e.stopPropagation()}>
-                  <span className="step-count">0{comparatorZoomStage + 1} / 04</span>
-                  <button
-                    className="step-reset-btn"
-                    onClick={() => setComparatorZoomStage(0)}
-                    aria-label="Reset sequence"
-                  >
-                    ↻
-                  </button>
-                </div>
-
                 <div className="comp-anatomy-canvas">
                   
                   {/* 1. ROOT STRATEGY STRIP */}
