@@ -10421,8 +10421,26 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-shadow: none;
 }
 
+.harmonized-evidence-callout .evidence-badge-tag {
+  font: 700 clamp(0.42rem, 0.46vw, 0.56rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.04rem;
+}
+
+.harmonized-evidence-callout .evidence-badge-tag.tag-red {
+  color: rgba(255, 125, 130, 0.9);
+  text-shadow: none;
+}
+
+.harmonized-evidence-callout .evidence-badge-tag.tag-violet {
+  color: rgba(195, 170, 255, 0.9);
+  text-shadow: none;
+}
+
 .evidence-badge-tag {
-  font: 800 clamp(0.52rem, 0.58vw, 0.72rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-mono), monospace;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   display: inline-block;
@@ -10431,12 +10449,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .evidence-badge-tag.tag-red {
   color: #ff4d52;
-  text-shadow: 0 0 10px rgba(255, 77, 82, 0.4);
+  text-shadow: 0 0 14px rgba(255, 77, 82, 0.5);
 }
 
 .evidence-badge-tag.tag-violet {
   color: #b58eff;
-  text-shadow: 0 0 10px rgba(181, 142, 255, 0.4);
+  text-shadow: 0 0 14px rgba(181, 142, 255, 0.5);
 }
 
 .harmonized-evidence-list {
