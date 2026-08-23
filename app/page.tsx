@@ -30,7 +30,7 @@ const chapters = [
   { id: "quality-of-life-results", label: "Quality of life" },
   { id: "discussion", label: "Discussion" },
   { id: "discussion-safety", label: "Discussion 2" },
-  { id: "limitations-1", label: "Limitations 1" },
+  { id: "limitations-1", label: "Masking limitations" },
   { id: "limitations-2", label: "Limitations 2" },
   { id: "limitations-3", label: "Limitations 3" },
   { id: "limitations-4", label: "Limitations 4" },
@@ -2898,7 +2898,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / LIMITATIONS</p>
+              <p className="eyebrow"><span /> 28 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
