@@ -3110,10 +3110,7 @@ export default function Home() {
                       </g>
 
                       {/* Center Dark Core */}
-                      <circle cx="230" cy="165" r="68" fill="#08080b" stroke="rgba(255,255,255,0.12)" strokeWidth="1.2" />
-                      <text x="230" y="152" textAnchor="middle" fill="#b58eff" fontSize="10" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.08em">CID COMPARATOR</text>
-                      <text x="230" y="174" textAnchor="middle" fill="#ffffff" fontSize="17" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">N = 113</text>
-                      <text x="230" y="191" textAnchor="middle" fill="#8c827e" fontSize="7.8" fontFamily="var(--font-geist-mono)" letterSpacing="0.06em">2 STRATEGIES</text>
+                      <circle cx="230" cy="165" r="68" fill="#08080b" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
                     </svg>
 
                     {/* Clean Minimal Floating Labels (No Square Cards) */}
