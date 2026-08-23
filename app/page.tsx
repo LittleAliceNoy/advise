@@ -469,11 +469,14 @@ export default function Home() {
     });
   };
 
-  // Slide 31 Differential Loss to Follow-up State (0 = initial, 1 = robustness revealed)
-  const [attritionStep, setAttritionStep] = useState<0 | 1>(0);
+  // Slide 31 Differential Loss to Follow-up State (States 1 to 4)
+  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4>(1);
 
-  const toggleAttritionStep = () => {
-    setAttritionStep((prev) => (prev === 0 ? 1 : 1));
+  const advanceAttritionStep = (e?: React.MouseEvent) => {
+    setAttritionStep((prev) => {
+      const next = (Math.min(prev + 1, 4)) as 1 | 2 | 3 | 4;
+      return next;
+    });
   };
 
   const clearInspectTimers = () => {
@@ -633,7 +636,7 @@ export default function Home() {
 
   useEffect(() => {
     if (chapters[active]?.id !== "limitations-5") return;
-    setAttritionStep(0);
+    setAttritionStep(1);
   }, [active]);
 
   const advanceEfficacyStory = () => {
@@ -3859,172 +3862,230 @@ export default function Home() {
 
         <section
           id="limitations-5"
-          className={`scene discussion-attrition-scene ${attritionStep === 1 ? 'attrition-revealed' : 'attrition-initial'}`}
-          onClick={toggleAttritionStep}
+          className={`scene discussion-attrition-scene attrition-step-${attritionStep}`}
+          onClick={advanceAttritionStep}
         >
-          <div className="adv-two-col">
-            {/* LEFT COLUMN - Clean, sparse, no extra boxes */}
-            <div className="adv-left-col">
-              <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
-              <p className="red-hook">COULD GREATER LOSS TO FOLLOW-UP IN THE CID ARM HAVE BIASED THE TREATMENT EFFECT?</p>
-              <h2>
-                More patients left CID.<br />
-                <span className="red-text" style={{ display: 'inline' }}>But the conclusion held.</span>
-              </h2>
-              <p className="lede">
-                Loss to follow-up was greater with CID, creating potential for attrition bias.
-              </p>
+          <div className="attrition-wide-container">
+            {/* TOP EDITORIAL HEADER — Full width header */}
+            <div className="attrition-wide-header">
+              <div className="attrition-header-left">
+                <p className="eyebrow"><span /> 31 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="red-hook">COULD GREATER LOSS TO FOLLOW-UP IN THE CID ARM HAVE BIASED THE TREATMENT EFFECT?</p>
+                <h2>
+                  More patients left CID.{" "}
+                  <span className="red-text" style={{ display: "inline" }}>
+                    But the conclusion held.
+                  </span>
+                </h2>
+              </div>
+              <div className="attrition-header-right">
+                <p className="lede">
+                  Loss to follow-up was greater with CID, creating potential for attrition bias.
+                </p>
+                <div className="attrition-step-prompt">
+                  {attritionStep === 1 && "CLICK / ↓ TO REVEAL POST-RANDOMIZATION ATTRITION"}
+                  {attritionStep === 2 && "CLICK / ↓ TO REVEAL DISCONTINUATIONS"}
+                  {attritionStep === 3 && "CLICK / ↓ TO REVEAL ROBUSTNESS CHECK"}
+                  {attritionStep === 4 && "STEP 4 OF 4 · ROBUSTNESS CONFIRMED"}
+                </div>
+              </div>
             </div>
 
-            {/* RIGHT COLUMN — ELEGANT EDITORIAL SCIENTIFIC INFOGRAPHIC */}
-            <div className="adv-right-col attrition-column">
-              <div className="attrition-editorial-container">
-                
-                {/* 1. TOP TRACK: MINIMAL CUE */}
-                <div className="attrition-top-bar">
-                  <span className="attrition-caption-label">PARTICIPANT RETENTION &amp; ATTRITION DYNAMICS</span>
-                  <span className="attrition-advance-cue">
-                    {attritionStep === 0 ? "CLICK / ↓ TO REVEAL ROBUSTNESS" : "ROBUSTNESS REVEALED"}
-                  </span>
-                </div>
+            {/* CENTER FULL-WIDTH PARTICIPANT FLOW CANVAS */}
+            <div className="attrition-full-canvas">
+              <div className="attrition-canvas-top-bar">
+                <span className="canvas-caption-label">PARALLEL PARTICIPANT RETENTION &amp; ATTRITION DYNAMICS</span>
+                <span className="canvas-time-legend">M0 RANDOMIZATION ➔ M6 PRIMARY OUTCOME ➔ M12 TRIAL END</span>
+              </div>
 
-                {/* 2. MAIN ATTRITION & PIVOT SVG GRAPHIC */}
-                <div className="attrition-svg-wrap">
-                  <svg viewBox="0 0 760 280" className="dominant-attrition-svg">
-                    <defs>
-                      <linearGradient id="adaTrackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.85" />
-                        <stop offset="100%" stopColor="#ff7175" stopOpacity="0.85" />
-                      </linearGradient>
-                      <linearGradient id="cidTrackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#b58eff" stopOpacity="0.85" />
-                        <stop offset="100%" stopColor="#d8c9ff" stopOpacity="0.85" />
-                      </linearGradient>
-                    </defs>
+              {/* DOMINANT WIDE PARTICIPANT FLOW SVG */}
+              <div className="attrition-svg-wide-wrap">
+                <svg viewBox="0 0 960 255" className="dominant-attrition-wide-svg">
+                  <defs>
+                    <linearGradient id="adaTrackGradWide" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
+                      <stop offset="100%" stopColor="#ff7175" stopOpacity="0.95" />
+                    </linearGradient>
+                    <linearGradient id="cidTrackGradWide" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#8f67ff" stopOpacity="0.75" />
+                      <stop offset="100%" stopColor="#b58eff" stopOpacity="0.95" />
+                    </linearGradient>
+                  </defs>
 
-                    {/* TRACK 1: ADA (RED) */}
-                    <g className="ada-track-group">
-                      <text x="25" y="38" fill="#ff7175" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                        ADALIMUMAB
-                      </text>
-                      {/* Retained Stream of dots */}
-                      <line x1="160" y1="35" x2="680" y2="35" stroke="rgba(255, 77, 82, 0.25)" strokeWidth="1.5" />
-                      {[170, 195, 220, 245, 270, 295, 320, 345, 370, 395, 420, 445, 470, 495, 520, 545, 570, 595, 620, 645, 670].map((cx, i) => (
-                        <circle key={`ada-dot-${i}`} cx={cx} cy={35} r={i === 1 ? 3 : 3.5} fill={i === 1 ? "rgba(255,77,82,0.3)" : "#ff4d52"} />
-                      ))}
-                      {/* ADA single early dropout */}
-                      <path d="M 195,35 Q 205,52 225,55" fill="none" stroke="rgba(255,77,82,0.4)" strokeDasharray="2 2" strokeWidth="1.2" />
-                      <circle cx="225" cy="55" r="3" fill="#140607" stroke="#ff4d52" strokeWidth="1.2" />
-                      <text x="234" y="58" fill="#a09591" fontSize="7.5" fontFamily="var(--font-geist-mono)">
-                        1 ADA dropout
-                      </text>
-                    </g>
+                  {/* Vertical Time Milestone Guides */}
+                  <line x1="175" y1="20" x2="175" y2="155" stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
+                  <text x="175" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                    M0 RANDOMIZATION
+                  </text>
 
-                    {/* TRACK 2: CID (PURPLE) */}
-                    <g className="cid-track-group">
-                      <text x="25" y="98" fill="#b58eff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
-                        CID (COMPARATOR)
-                      </text>
-                      {/* Retained Stream of dots */}
-                      <line x1="160" y1="95" x2="680" y2="95" stroke="rgba(181, 142, 255, 0.25)" strokeWidth="1.5" />
-                      {[170, 195, 220, 245, 270, 295, 320, 345, 370, 395, 420, 445, 470, 495, 520, 545, 570, 595, 620, 645, 670].map((cx, i) => {
-                        const isDropout = [1, 2, 6, 9, 12, 14, 16, 18].includes(i);
-                        return (
-                          <circle
-                            key={`cid-dot-${i}`}
-                            cx={cx}
-                            cy={95}
-                            r={isDropout ? 2.8 : 3.5}
-                            fill={isDropout ? "rgba(181,142,255,0.25)" : "#b58eff"}
-                          />
-                        );
-                      })}
+                  <line x1="540" y1="20" x2="540" y2="155" stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
+                  <text x="540" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)">
+                    MONTH 6 PRIMARY
+                  </text>
 
-                      {/* ANNOTATION 1: Immediately after randomization (3 CID vs 1 ADA) */}
-                      <path d="M 195,95 Q 205,115 220,118" fill="none" stroke="rgba(181,142,255,0.5)" strokeDasharray="2 2" strokeWidth="1.2" />
-                      <circle cx="220" cy="118" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.2" />
-                      <circle cx="228" cy="118" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.2" />
-                      <circle cx="236" cy="118" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.2" />
+                  <line x1="905" y1="20" x2="905" y2="155" stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
+                  <text x="905" y="15" textAnchor="middle" fill="#8c827e" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                    MONTH 12 END
+                  </text>
 
-                      <g className="annotation-dropout-box">
-                        <text x="246" y="116" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                          IMMEDIATELY AFTER RANDOMIZATION
-                        </text>
-                        <text x="246" y="126" fill="#d8c9ff" fontSize="7.8" fontFamily="var(--font-geist-mono)">
-                          3 CID vs 1 ADA dropped out
+                  {/* TRACK 1: ADA (RED) */}
+                  <g className="ada-track-wide">
+                    <text x="25" y="48" fill="#ff7175" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      ADALIMUMAB
+                    </text>
+                    {/* Baseline track line */}
+                    <line x1="175" y1="45" x2="905" y2="45" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.8" />
+                    {/* Participant nodes stream */}
+                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => (
+                      <circle
+                        key={`ada-dot-${i}`}
+                        cx={cx}
+                        cy={45}
+                        r={3.4}
+                        fill={attritionStep >= 2 && i === 2 ? "rgba(255,77,82,0.25)" : "#ff4d52"}
+                      />
+                    ))}
+
+                    {/* Step >= 2: 1 ADA early dropout */}
+                    {attritionStep >= 2 && (
+                      <g className="ada-dropout-annotation">
+                        <path d="M 229,45 Q 235,64 252,66" fill="none" stroke="rgba(255,77,82,0.5)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="252" cy="66" r="3.2" fill="#140607" stroke="#ff4d52" strokeWidth="1.4" />
+                        <text x="262" y="69.5" fill="#a09591" fontSize="8" fontFamily="var(--font-geist-mono)">
+                          1 ADA dropout
                         </text>
                       </g>
+                    )}
+                  </g>
 
-                      {/* ANNOTATION 2: Assigned-Treatment Discontinuation (8 participants · ALL CID) */}
-                      <path d="M 445,95 Q 460,115 480,118" fill="none" stroke="rgba(255,77,82,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
-                      <text x="488" y="116" fill="#f5f0eb" fontSize="8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                        ASSIGNED-TREATMENT DISCONTINUATION
-                      </text>
-                      <text x="488" y="126" fill="#ff8085" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="700">
-                        8 participants · ALL CID
-                      </text>
+                  {/* TRACK 2: CID (PURPLE) */}
+                  <g className="cid-track-wide">
+                    <text x="25" y="112" fill="#b58eff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      CID (COMPARATOR)
+                    </text>
+                    {/* Baseline track line */}
+                    <line x1="175" y1="109" x2="905" y2="109" stroke="rgba(181, 142, 255, 0.28)" strokeWidth="1.8" />
+                    {/* Participant nodes stream */}
+                    {[175, 202, 229, 256, 283, 310, 337, 364, 391, 418, 445, 472, 499, 526, 553, 580, 607, 634, 661, 688, 715, 742, 769, 796, 823, 850, 877, 905].map((cx, i) => {
+                      const isPostRand = [2, 3, 4].includes(i);
+                      const isDiscontinuation = [8, 10, 12, 14, 17, 19, 21, 24].includes(i);
+                      const isDimmed = (attritionStep >= 2 && isPostRand) || (attritionStep >= 3 && isDiscontinuation);
+                      return (
+                        <circle
+                          key={`cid-dot-${i}`}
+                          cx={cx}
+                          cy={109}
+                          r={3.4}
+                          fill={isDimmed ? "rgba(181,142,255,0.25)" : "#b58eff"}
+                        />
+                      );
+                    })}
 
-                      {/* Small Sub-Annotation: Possible Contributors */}
-                      <text x="390" y="148" textAnchor="middle" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontStyle="italic">
-                        Possible contributors: Preference for the novel treatment · Drug toxicity
-                      </text>
-                    </g>
+                    {/* Step >= 2: 3 CID Dropouts after Randomization */}
+                    {attritionStep >= 2 && (
+                      <g className="cid-dropout-annotation">
+                        <path d="M 229,109 Q 235,130 252,133" fill="none" stroke="rgba(181,142,255,0.6)" strokeDasharray="2 2" strokeWidth="1.2" />
+                        <circle cx="252" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
+                        <circle cx="261" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
+                        <circle cx="270" cy="133" r="3.2" fill="#180e2b" stroke="#b58eff" strokeWidth="1.3" />
 
-                    {/* 3. VISUAL PIVOT: THIN HORIZONTAL RULE ACROSS THE RIGHT PANEL */}
-                    <line x1="25" y1="168" x2="735" y2="168" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                        <g transform="translate(282, 121)">
+                          <rect x="0" y="0" width="222" height="23" fill="#110a1c" stroke="rgba(181,142,255,0.4)" rx="2" />
+                          <text x="8" y="10" fill="#f5f0eb" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                            IMMEDIATELY AFTER RANDOMIZATION
+                          </text>
+                          <text x="8" y="19" fill="#d8c9ff" fontSize="7.6" fontFamily="var(--font-geist-mono)">
+                            3 CID vs 1 ADA dropped out
+                          </text>
+                        </g>
+                      </g>
+                    )}
 
-                    {/* PIVOT CONTENT */}
-                    <g className="pivot-content-group">
-                      {/* Left: THE CONCERN (Above/below dividing logic) */}
-                      <g className="pivot-concern">
-                        <text x="25" y="194" fill="#ff7175" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                    {/* Step >= 3: 8 Participants Assigned-Treatment Discontinuation */}
+                    {attritionStep >= 3 && (
+                      <g className="cid-discontinued-annotation">
+                        {/* 8 branching connector lines */}
+                        {[391, 445, 499, 553, 634, 688, 742, 823].map((cx, idx) => (
+                          <g key={`disc-line-${idx}`}>
+                            <line x1={cx} y1="109" x2={cx} y2="128" stroke="rgba(255,77,82,0.4)" strokeDasharray="2 2" strokeWidth="1" />
+                            <circle cx={cx} cy="128" r="2.8" fill="#140607" stroke="#ff4d52" strokeWidth="1.2" />
+                          </g>
+                        ))}
+
+                        <g transform="translate(525, 134)">
+                          <rect x="0" y="0" width="265" height="23" fill="#180608" stroke="rgba(255,77,82,0.5)" rx="2" />
+                          <text x="8" y="10" fill="#f5f0eb" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                            ASSIGNED-TREATMENT DISCONTINUATION
+                          </text>
+                          <text x="8" y="19" fill="#ff8085" fontSize="7.6" fontFamily="var(--font-geist-mono)" fontWeight="700">
+                            8 participants · ALL CID
+                          </text>
+                        </g>
+
+                        {/* Possible contributors note */}
+                        <text x="657" y="167" textAnchor="middle" fill="#8c827e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontStyle="italic">
+                          Possible contributors: Preference for the novel treatment · Drug toxicity
+                        </text>
+                      </g>
+                    )}
+                  </g>
+
+                  {/* Step 4: VISUAL PIVOT & ROBUSTNESS CONVERGENCE */}
+                  {attritionStep === 4 && (
+                    <g className="pivot-wide-section">
+                      {/* Thin horizontal dividing rule */}
+                      <line x1="25" y1="180" x2="935" y2="180" stroke="rgba(255,255,255,0.14)" strokeWidth="1" />
+
+                      {/* Left: THE CONCERN */}
+                      <g transform="translate(25, 194)">
+                        <text x="0" y="12" fill="#ff7175" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                           THE CONCERN
                         </text>
-                        <text x="25" y="208" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <text x="0" y="26" fill="#a09591" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           Differential attrition could bias the treatment comparison.
                         </text>
                       </g>
 
-                      {/* Left: THE CHECK */}
-                      <g className={`pivot-check ${attritionStep === 1 ? 'is-revealed' : 'is-dimmed'}`}>
-                        <text x="25" y="238" fill="#ffffff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      {/* Middle: THE CHECK */}
+                      <g transform="translate(360, 194)">
+                        <text x="0" y="12" fill="#ffffff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                           THE CHECK
                         </text>
-                        <text x="25" y="252" fill="#f5f0eb" fontSize="8.2" fontFamily="var(--font-geist-mono)">
+                        <text x="0" y="26" fill="#f5f0eb" fontSize="8.2" fontFamily="var(--font-geist-mono)">
                           Different assumptions about missing data → same overall interpretation
                         </text>
                       </g>
 
-                      {/* Right: CONVERGING ANALYTICAL PATHS ONTO ONE BRIGHT ENDPOINT */}
-                      <g className={`pivot-convergence-graphic ${attritionStep === 1 ? 'is-revealed' : 'is-dimmed'}`}>
-                        {/* 4 Faint analytical paths converging */}
-                        <path d="M 480,195 C 540,198 575,224 610,225" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
-                        <path d="M 480,212 C 535,214 575,224 610,225" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
-                        <path d="M 480,238 C 535,236 575,226 610,225" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
-                        <path d="M 480,255 C 540,252 575,226 610,225" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
+                      {/* Right: CONVERGING ANALYTICAL PATHS ONTO CONSISTENT RESULTS */}
+                      <g transform="translate(680, 188)">
+                        <path d="M 0,10 C 40,12 70,26 95,27" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
+                        <path d="M 0,20 C 40,22 70,26 95,27" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" />
+                        <path d="M 0,34 C 40,32 70,28 95,27" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" />
+                        <path d="M 0,44 C 40,42 70,28 95,27" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" strokeDasharray="3 3" />
 
-                        {/* Convergence Focal Endpoint */}
-                        <circle cx="610" cy="225" r="5" fill="#ffffff" />
-                        <circle cx="610" cy="225" r="9" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
-                        <text x="626" y="228.5" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
+                        <circle cx="95" cy="27" r="5" fill="#ffffff" />
+                        <circle cx="95" cy="27" r="9" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
+                        <text x="112" y="30.5" fill="#ffffff" fontSize="9" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.04em">
                           CONSISTENT RESULTS
                         </text>
                       </g>
                     </g>
-                  </svg>
-                </div>
-
-                {/* 4. STRONG EDITORIAL TAKEAWAY AT THE BOTTOM */}
-                <div className={`attrition-editorial-takeaway ${attritionStep === 1 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
-                  <div className="takeaway-hook">
-                    <strong>ATTRITION WAS A CONCERN. <span className="red-highlight-text">UNLIKELY TO EXPLAIN THE RESULT.</span></strong>
-                  </div>
-                  <p className="takeaway-sub">
-                    Results were consistent across analyses using different assumptions about missing data.
-                  </p>
-                </div>
-
+                  )}
+                </svg>
               </div>
+
+              {/* BOTTOM EDITORIAL TAKEAWAY STRIP (State 4) */}
+              <div className={`attrition-editorial-takeaway ${attritionStep === 4 ? 'takeaway-revealed' : 'takeaway-dimmed'}`}>
+                <div className="takeaway-hook">
+                  <strong>
+                    ATTRITION WAS A CONCERN. <span className="red-highlight-text">UNLIKELY TO EXPLAIN THE RESULT.</span>
+                  </strong>
+                </div>
+                <p className="takeaway-sub">
+                  Results were consistent across analyses using different assumptions about missing data.
+                </p>
+              </div>
+
             </div>
           </div>
         </section>

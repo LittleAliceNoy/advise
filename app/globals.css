@@ -11137,13 +11137,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 /* =========================================================================
-   31 — DISCUSSION / MISSING DATA & ATTRITION SCENE STYLES
+   31 — DISCUSSION / MISSING DATA & ATTRITION SCENE STYLES (FULL-WIDTH CENTERED)
    ========================================================================= */
 .discussion-attrition-scene {
   min-height: 100svh;
-  padding: 11vh 6vw 6vh;
-  background: radial-gradient(circle at 75% 45%, rgba(255, 45, 45, 0.035), transparent 45%),
-              radial-gradient(circle at 45% 75%, rgba(181, 142, 255, 0.025), transparent 45%), #050505;
+  padding: 10vh 6vw 5vh;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 45, 45, 0.03), transparent 60%),
+              radial-gradient(circle at 75% 75%, rgba(181, 142, 255, 0.025), transparent 50%), #050505;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -11151,148 +11151,163 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   user-select: none;
 }
 
-.discussion-attrition-scene .adv-two-col {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(2rem, 3.5vw, 4.5rem);
-  width: 100%;
-  flex: 1;
-  min-height: calc(100svh - 17vh);
-  align-items: stretch;
-}
-
-/* Left Column */
-.discussion-attrition-scene .adv-left-col {
+.attrition-wide-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  flex: 1;
+  min-height: calc(100svh - 15vh);
+  justify-content: space-between;
+  gap: clamp(0.7rem, 1.3vh, 1.4rem);
+}
+
+/* Wide Top Header */
+.attrition-wide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: clamp(0.4rem, 0.8vh, 0.75rem);
+}
+
+.attrition-header-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 62%;
 }
 
 .discussion-attrition-scene .red-hook {
   color: var(--red);
-  font-size: clamp(0.58rem, 0.7vw, 0.8rem);
+  font-size: clamp(0.56rem, 0.68vw, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.06em;
-  margin-top: 1.6rem;
-  margin-bottom: 0.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.35rem;
   text-transform: uppercase;
 }
 
 .discussion-attrition-scene h2 {
-  font-size: clamp(2.5rem, 3.2vw, 3.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-  margin-bottom: 0.2rem;
+  font-size: clamp(1.9rem, 2.5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
 }
 
 .discussion-attrition-scene .red-text {
   color: var(--red);
-  margin-top: 0.2rem;
+}
+
+.attrition-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  max-width: 38%;
+  gap: 0.4rem;
 }
 
 .discussion-attrition-scene .lede {
-  font-size: clamp(.85rem, .98vw, 1.1rem);
-  line-height: 1.55;
+  font-size: clamp(0.78rem, 0.88vw, 1rem);
+  line-height: 1.45;
   color: #a09591;
-  margin: 1.2rem 0 1rem;
-  max-width: 92%;
+  margin: 0;
 }
 
-/* Right Column: Editorial Scientific Infographic */
-.attrition-column {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  flex: 1;
+.attrition-step-prompt {
+  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.attrition-editorial-container {
+/* Center Full-Width Canvas Card */
+.attrition-full-canvas {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
   flex: 1;
   justify-content: space-between;
-  gap: clamp(0.5rem, 0.9vh, 1rem);
   background: rgba(10, 10, 15, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
-  padding: clamp(0.7rem, 1.2vh, 1.2rem) clamp(0.85rem, 1.3vw, 1.4rem);
+  padding: clamp(0.7rem, 1.2vh, 1.2rem) clamp(0.85rem, 1.3vw, 1.5rem);
+  gap: clamp(0.5rem, 0.8vh, 0.9rem);
 }
 
-/* 1. Minimal Upper Header */
-.attrition-top-bar {
+/* Canvas Header Bar */
+.attrition-canvas-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: clamp(0.25rem, 0.45vh, 0.4rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: clamp(0.2rem, 0.4vh, 0.35rem);
 }
 
-.attrition-caption-label {
+.canvas-caption-label {
   font: 700 clamp(0.46rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
   color: #736b67;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.attrition-advance-cue {
-  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-mono), monospace;
+.canvas-time-legend {
+  font: 700 clamp(0.46rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
   color: #a09591;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-/* 2. Main SVG Graphic */
-.attrition-svg-wrap {
+/* SVG Wrap */
+.attrition-svg-wide-wrap {
   width: 100%;
   flex: 1.6;
   min-height: 200px;
-  max-height: 310px;
+  max-height: 300px;
   display: flex;
   align-items: stretch;
 }
 
-.dominant-attrition-svg {
+.dominant-attrition-wide-svg {
   width: 100%;
   height: 100%;
   overflow: visible;
 }
 
-.pivot-check,
-.pivot-convergence-graphic {
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s ease;
+.ada-dropout-annotation,
+.cid-dropout-annotation,
+.cid-discontinued-annotation,
+.pivot-wide-section {
+  animation: fadeInPure 0.5s ease-out;
 }
 
-.pivot-check.is-dimmed,
-.pivot-convergence-graphic.is-dimmed {
-  opacity: 0.25;
-}
-
-.pivot-check.is-revealed,
-.pivot-convergence-graphic.is-revealed {
-  opacity: 1;
-}
-
-/* 3. Final Editorial Takeaway */
+/* Bottom Takeaway */
 .attrition-editorial-takeaway {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: clamp(0.35rem, 0.55vh, 0.6rem);
+  padding-top: clamp(0.35rem, 0.55vh, 0.55rem);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .attrition-editorial-takeaway.takeaway-dimmed {
-  opacity: 0.3;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  border-top: none;
 }
 
 .attrition-editorial-takeaway.takeaway-revealed {
   opacity: 1;
+  max-height: 120px;
+  animation: fadeInPure 0.5s ease-out;
 }
 
 .attrition-editorial-takeaway .takeaway-hook strong {
