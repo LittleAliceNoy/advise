@@ -480,16 +480,8 @@ export default function Home() {
 
     if (branch === 'antimetabolites') {
       setInspected79(true);
-      const t1 = setTimeout(() => setBranchStep(2), 150);
-      const t2 = setTimeout(() => setBranchStep(3), 300);
-      const t3 = setTimeout(() => setBranchStep(4), 450);
-      const t4 = setTimeout(() => setBranchStep(5), 650);
-      inspectTimerRef.current = [t1, t2, t3, t4];
     } else {
       setInspected21(true);
-      const t1 = setTimeout(() => setBranchStep(2), 200);
-      const t2 = setTimeout(() => setBranchStep(3), 450);
-      inspectTimerRef.current = [t1, t2];
     }
   };
 
@@ -3141,15 +3133,12 @@ export default function Home() {
                     <div className="focal-card focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
                         <span className="focal-badge-hero red-hero">ANTIMETABOLITES · 79% (87 pt)</span>
-                        <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
-                          <span>✕</span>
-                        </button>
                       </div>
 
-                      {/* 3 Pills Row with Distinct Pill Icons (Borderless) */}
+                      {/* 3 Pills Row with Distinct Pill Icons (Borderless, Shown At Once) */}
                       <div className="focal-pills-row">
                         {/* Pill 1: MTX (Subtle Pastel Champagne/Yellow Round Scored Tablet) 44 pt */}
-                        <div className={`pill-drug-col ${branchStep >= 2 ? 'pill-show' : ''}`}>
+                        <div className="pill-drug-col pill-show">
                           <div className="pill-icon-wrap wrap-yellow">
                             <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
                               <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
@@ -3162,7 +3151,7 @@ export default function Home() {
                         </div>
 
                         {/* Pill 2: MYCOPHENOLATE (Red Lozenge Caplet) 42 pt */}
-                        <div className={`pill-drug-col ${branchStep >= 3 ? 'pill-show' : ''}`}>
+                        <div className="pill-drug-col pill-show">
                           <div className="pill-icon-wrap wrap-red">
                             <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
                               <g transform="rotate(-30 20 20)">
@@ -3176,7 +3165,7 @@ export default function Home() {
                         </div>
 
                         {/* Pill 3: AZATHIOPRINE (Clean White Round Tablet - No Center Line) 1 pt */}
-                        <div className={`pill-drug-col ${branchStep >= 4 ? 'pill-show' : ''}`}>
+                        <div className="pill-drug-col pill-show">
                           <div className="pill-icon-wrap wrap-white">
                             <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
                               <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
@@ -3188,9 +3177,14 @@ export default function Home() {
                         </div>
                       </div>
 
-                      {/* Under the 3 pills */}
-                      <div className={`focal-statement-box ${branchStep >= 5 ? 'statement-show' : ''}`}>
-                        <p>Prior evidence indicated broadly comparable efficacy across antimetabolite agents</p>
+                      {/* Prominent Evidence Badge Callout */}
+                      <div className="focal-evidence-badge-container">
+                        <div className="evidence-badge-header">
+                          <span className="evidence-badge-pill">EVIDENCE BASE</span>
+                        </div>
+                        <p className="evidence-badge-text">
+                          Prior evidence indicated broadly comparable efficacy across antimetabolite agents.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -3205,14 +3199,11 @@ export default function Home() {
                     <div className="focal-card card-cni focal-borderless" onClick={(e) => { e.stopPropagation(); closeInspection(); }}>
                       <div className="focal-title-row">
                         <span className="focal-badge-hero violet-hero">CALCINEURIN INHIBITORS · 21% (23 pt)</span>
-                        <button className="focal-close-btn" onClick={closeInspection} title="Return to chart">
-                          <span>✕</span>
-                        </button>
                       </div>
 
                       <div className="cni-evidence-grid">
                         {/* 01 Tacrolimus */}
-                        <div className={`cni-evidence-card ${branchStep >= 2 ? 'cni-show' : ''}`}>
+                        <div className="cni-evidence-card cni-show">
                           <div className="cni-card-header">
                             <span className="cni-index">01</span>
                             <strong>TACROLIMUS</strong>
@@ -3222,7 +3213,7 @@ export default function Home() {
                         </div>
 
                         {/* 02 Cyclosporine */}
-                        <div className={`cni-evidence-card card-csa-alert ${branchStep >= 3 ? 'cni-show' : ''}`}>
+                        <div className="cni-evidence-card card-csa-alert cni-show">
                           <div className="cni-card-header">
                             <span className="cni-index idx-red">02</span>
                             <strong className="name-red">CYCLOSPORINE</strong>
