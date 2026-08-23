@@ -456,6 +456,7 @@ export default function Home() {
   const [inspected79, setInspected79] = useState(false);
   const [inspected21, setInspected21] = useState(false);
   const [synthesisStep, setSynthesisStep] = useState<0 | 1 | 2>(0);
+  const [concernRevealed, setConcernRevealed] = useState(false);
   const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
 
   const clearInspectTimers = () => {
@@ -474,8 +475,15 @@ export default function Home() {
     setBranchStep(0);
 
     if (willHave79 && willHave21 && synthesisStep === 0) {
+      // Step 1: CNI card finishes fading out (350ms)
       setTimeout(() => {
+        // Step 2: Right panel reveals information (upper donut + lower vertical detail cards)
         setSynthesisStep(1);
+        
+        // Step 3: Then after the right panel is revealed, THE CONCERN slowly pops up on the left panel
+        setTimeout(() => {
+          setConcernRevealed(true);
+        }, 750);
       }, 350);
     }
   };
@@ -3010,16 +3018,15 @@ export default function Home() {
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
 
-              {/* Left Synthesis Block (Revealed after both branches inspected: synthesisStep >= 1) */}
-              <div className={`left-synthesis-block ${synthesisStep >= 1 ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
+              {/* Left Synthesis Block (Revealed after right panel revealed: concernRevealed === true) */}
+              <div className={`left-synthesis-block ${concernRevealed ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
                 <div
                   className="left-concern-card"
                   onClick={() => synthesisStep === 1 && setSynthesisStep(2)}
                   style={{ cursor: synthesisStep === 1 ? 'pointer' : 'default' }}
                 >
                   <span className="concern-badge">THE CONCERN</span>
-                  <p className="concern-main-q">Could potentially weaker CNI therapy have disadvantaged CID and exaggerated ADA’s advantage?</p>
-                  <p className="concern-subtext">These data raise the question of the impact of calcineurin inhibitors on the overall results of the trial.</p>
+                  <p className="concern-main-q">These data raise the question of the impact of calcineurin inhibitors on the overall results of the trial.</p>
                 </div>
 
                 {/* 01 & 02 Points (Revealed on second click: synthesisStep === 2) */}
@@ -3131,7 +3138,7 @@ export default function Home() {
                       </svg>
                     </div>
 
-                    {/* Lower Half: Dual Detail Cards with pill icons and badges */}
+                    {/* Lower Half: Dual Detail Cards with vertically aligned pill rows */}
                     <div className="synthesis-lower-cards-grid">
                       {/* Left Card: 79% Antimetabolites */}
                       <div className="split-detail-card card-antimetabolites">
@@ -3141,42 +3148,42 @@ export default function Home() {
                           </span>
                         </div>
 
-                        {/* 3 Pills Row with Icons */}
-                        <div className="focal-pills-row split-pills-row">
-                          <div className="pill-drug-col pill-show">
+                        {/* Vertically Aligned Pills */}
+                        <div className="split-pills-vertical-list">
+                          <div className="split-pill-row-item">
                             <div className="pill-icon-wrap wrap-yellow">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <circle cx="20" cy="20" r="14" fill="rgba(245, 230, 168, 0.14)" stroke="#f5e6a8" strokeWidth="1.8" />
                                 <line x1="20" y1="7" x2="20" y2="33" stroke="#f5e6a8" strokeWidth="1.6" strokeDasharray="3 2" />
                                 <circle cx="20" cy="20" r="10" fill="none" stroke="rgba(245, 230, 168, 0.28)" strokeWidth="1" />
                               </svg>
                             </div>
-                            <strong className="pill-drug-name">MTX</strong>
-                            <span className="pill-drug-count count-yellow">44 pt</span>
+                            <span className="split-pill-name">MTX</span>
+                            <span className="split-pill-count count-yellow">44 pt</span>
                           </div>
 
-                          <div className="pill-drug-col pill-show">
+                          <div className="split-pill-row-item">
                             <div className="pill-icon-wrap wrap-red">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-30 20 20)">
                                   <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
                                   <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
                                 </g>
                               </svg>
                             </div>
-                            <strong className="pill-drug-name">MYCOPHENOLATE</strong>
-                            <span className="pill-drug-count count-red">42 pt</span>
+                            <span className="split-pill-name">MYCOPHENOLATE</span>
+                            <span className="split-pill-count count-red">42 pt</span>
                           </div>
 
-                          <div className="pill-drug-col pill-show">
+                          <div className="split-pill-row-item">
                             <div className="pill-icon-wrap wrap-white">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <circle cx="20" cy="20" r="14" fill="rgba(255, 255, 255, 0.16)" stroke="#ffffff" strokeWidth="2" />
                                 <circle cx="20" cy="20" r="9.5" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
                               </svg>
                             </div>
-                            <strong className="pill-drug-name">AZATHIOPRINE</strong>
-                            <span className="pill-drug-count count-white">1 pt</span>
+                            <span className="split-pill-name">AZATHIOPRINE</span>
+                            <span className="split-pill-count count-white">1 pt</span>
                           </div>
                         </div>
 
@@ -3194,11 +3201,11 @@ export default function Home() {
                           </span>
                         </div>
 
-                        {/* 2 Pills Row with Icons */}
-                        <div className="focal-pills-row cni-pills-row split-pills-row">
-                          <div className="pill-drug-col pill-show">
+                        {/* Vertically Aligned Pills */}
+                        <div className="split-pills-vertical-list">
+                          <div className="split-pill-row-item">
                             <div className="pill-icon-wrap wrap-violet">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-45 20 20)">
                                   <rect x="12" y="6" width="16" height="28" rx="8" fill="none" stroke="#b58eff" strokeWidth="2" />
                                   <line x1="12" y1="20" x2="28" y2="20" stroke="#b58eff" strokeWidth="1.8" />
@@ -3206,21 +3213,21 @@ export default function Home() {
                                 </g>
                               </svg>
                             </div>
-                            <strong className="pill-drug-name">TACROLIMUS</strong>
-                            <span className="pill-drug-count count-violet">19 pt</span>
+                            <span className="split-pill-name">TACROLIMUS</span>
+                            <span className="split-pill-count count-violet">19 pt</span>
                           </div>
 
-                          <div className={`pill-drug-col pill-show ${synthesisStep === 2 ? 'pill-csa-focus' : ''}`}>
+                          <div className={`split-pill-row-item ${synthesisStep === 2 ? 'row-csa-focus' : ''}`}>
                             <div className="pill-icon-wrap wrap-red">
-                              <svg viewBox="0 0 40 40" className="pill-svg" width="30" height="30">
+                              <svg viewBox="0 0 40 40" className="pill-svg" width="26" height="26">
                                 <g transform="rotate(-30 20 20)">
                                   <rect x="7" y="12" width="26" height="16" rx="8" fill="rgba(255, 77, 82, 0.35)" stroke="#ff4d52" strokeWidth="2" />
                                   <line x1="20" y1="13" x2="20" y2="27" stroke="#ff4d52" strokeWidth="1.8" />
                                 </g>
                               </svg>
                             </div>
-                            <strong className="pill-drug-name name-red">CYCLOSPORINE</strong>
-                            <span className="pill-drug-count count-red">4 pt <small className="only-4-pct">(4%)</small></span>
+                            <span className="split-pill-name name-red">CYCLOSPORINE</span>
+                            <span className="split-pill-count count-red">4 pt <small className="only-4-pct">(4%)</small></span>
                           </div>
                         </div>
 

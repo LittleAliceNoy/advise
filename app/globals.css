@@ -10679,19 +10679,67 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 0.15rem;
 }
 
-.focal-pills-row.split-pills-row {
-  margin: 0.15rem 0;
-  gap: 0.35rem;
+.split-pills-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.3rem, 0.55vh, 0.45rem);
+  width: 100%;
+  margin: 0.2rem 0;
 }
 
-.split-pills-row .pill-icon-wrap {
-  height: 32px;
+.split-pill-row-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 0.75vw, 0.85rem);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  padding: clamp(0.25rem, 0.45vh, 0.35rem) clamp(0.45rem, 0.7vw, 0.75rem);
+  transition: all 0.3s ease;
+}
+
+.split-pill-row-item.row-csa-focus {
+  background: rgba(255, 77, 82, 0.16);
+  border-color: rgba(255, 77, 82, 0.7);
+  box-shadow: 0 0 14px rgba(255, 77, 82, 0.35);
+  transform: translateX(2px);
+}
+
+.split-pill-row-item .pill-icon-wrap {
+  height: 28px;
+  width: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-pill-name {
+  font: 700 clamp(0.6rem, 0.68vw, 0.8rem) var(--font-geist-mono), monospace;
+  color: #fff;
+  letter-spacing: 0.04em;
+  flex: 1;
+}
+
+.split-pill-name.name-red {
+  color: #ff8589;
+}
+
+.split-pill-count {
+  font: 700 clamp(0.64rem, 0.74vw, 0.86rem) var(--font-geist-mono), monospace;
+  margin-left: auto;
+}
+
+.split-pill-count .only-4-pct {
+  font-size: 0.8em;
+  color: #ff8085;
 }
 
 .split-callout {
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
   padding: 0.32rem 0.65rem 0.32rem 0.85rem;
 }
 
