@@ -4146,9 +4146,9 @@ export default function Home() {
                 <p className="eyebrow"><span /> 32 — DISCUSSION / IMMUNOGENICITY</p>
                 <p className="red-hook">SHOULD ADALIMUMAB BE USED ALONE?</p>
                 <h2>
-                  ADA worked as monotherapy.{" "}
+                  Immunogenicity.{" "}
                   <span className="red-text" style={{ display: "inline" }}>
-                    But immunogenicity was never measured.
+                    Novel concept further to be proved.
                   </span>
                 </h2>
               </div>
