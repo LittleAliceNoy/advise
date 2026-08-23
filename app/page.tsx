@@ -4230,67 +4230,61 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 03 ADVISE BLIND SPOT — HORIZONTAL STRIP TIER */}
+              {/* 03 ADVISE BLIND SPOT — TWO-PART SPLIT */}
               <div className="immuno-row-tier limitation-tier">
                 <div className="panel-badge-row">
                   <span className="panel-num-badge">03</span>
                   <span className="panel-kicker red-kicker">WHAT ADVISE COULD NOT ANSWER</span>
                 </div>
-                <div className="limitation-4step-flow compact-flow">
-                  {/* Step 1 */}
-                  <div className="lim-step">
-                    <div className="lim-stat">78%</div>
-                    <div className="lim-desc">not receiving immunosuppression at baseline</div>
-                  </div>
-
-                  <div className="lim-arrow">→</div>
-
-                  {/* Step 2 */}
-                  <div className="lim-step">
-                    <div className="lim-icon-wrap">
-                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-                        <circle cx="14" cy="8" r="3.2" stroke="#ff4d52" strokeWidth="1.3" />
-                        <path d="M 8 20 C 8 16.2 11 14.8 14 14.8 C 17 14.8 20 16.2 20 20" stroke="#ff4d52" strokeWidth="1.3" strokeLinecap="round" />
-                        <circle cx="6" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
-                        <path d="M 2 20 C 2 17.5 4 16.5 6 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
-                        <circle cx="22" cy="10" r="2.2" stroke="rgba(255,77,82,0.5)" strokeWidth="1" />
-                        <path d="M 26 20 C 26 17.5 24 16.5 22 16.5" stroke="rgba(255,77,82,0.5)" strokeWidth="1" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="lim-desc">
-                      Within the ADA arm: <span className="red-bold">ADALIMUMAB ALONE</span>
+                
+                <div className="limitation-two-subsections">
+                  {/* Section 1: Monotherapy population & potential benefit */}
+                  <div className="lim-sub-block lim-block-left">
+                    <div className="lim-block-content-flex">
+                      <div className="lim-stat-badge">78%</div>
+                      <div className="lim-block-text">
+                        <p className="lim-lead-text">
+                          <strong>78% of participants</strong> were not on immunosuppressive agents at baseline. Within the adalimumab group, these participants were assigned to receive treatment with <strong>adalimumab alone</strong>.
+                        </p>
+                        <p className="lim-implication-text">
+                          ➔ <span className="red-bold">So they may benefit from a second immunosuppressive drug.</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="lim-arrow">→</div>
-
-                  {/* Step 3 */}
-                  <div className="lim-step">
-                    <div className="lim-icon-wrap">
-                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-                        <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
-                        <path d="M 10.5 6.5 H 17.5 M 11.8 6.5 V 16.5 C 11.8 18.2 12.8 19.5 14 19.5 C 15.2 19.5 16.2 18.2 16.2 16.5 V 6.5" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
-                        <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="lim-desc">
-                      Anti-adalimumab antibodies <span className="red-bold">NOT MEASURED</span>
-                    </div>
+                  <div className="lim-sub-divider" aria-hidden="true">
+                    <span>+</span>
                   </div>
 
-                  <div className="lim-arrow">→</div>
+                  {/* Section 2: Unmeasured & Unbanked */}
+                  <div className="lim-sub-block lim-block-right">
+                    <div className="lim-untested-items">
+                      <div className="lim-untested-row">
+                        <div className="lim-row-icon">
+                          <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
+                            <path d="M 10.5 6.5 H 17.5 M 11.8 6.5 V 16.5 C 11.8 18.2 12.8 19.5 14 19.5 C 15.2 19.5 16.2 18.2 16.2 16.5 V 6.5" stroke="#ff4d52" strokeWidth="1.4" strokeLinecap="round" />
+                            <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          </svg>
+                        </div>
+                        <div className="lim-row-text">
+                          Anti-adalimumab antibodies <span className="red-bold">NOT MEASURED</span>
+                        </div>
+                      </div>
 
-                  {/* Step 4 */}
-                  <div className="lim-step">
-                    <div className="lim-icon-wrap">
-                      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-                        <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.1" />
-                        <path d="M 14 6 C 14 6 9.5 12.5 9.5 16 C 9.5 18.5 11.5 20.5 14 20.5 C 16.5 20.5 18.5 18.5 18.5 16 C 18.5 12.5 14 6 14 6 Z" stroke="#ff4d52" strokeWidth="1.2" strokeLinejoin="round" />
-                        <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="lim-desc">
-                      Blood specimens <span className="red-bold">NOT BANKED</span>
+                      <div className="lim-untested-row">
+                        <div className="lim-row-icon">
+                          <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="14" r="12" stroke="rgba(255,77,82,0.4)" strokeWidth="1.2" />
+                            <path d="M 14 6 C 14 6 9.5 12.5 9.5 16 C 9.5 18.5 11.5 20.5 14 20.5 C 16.5 20.5 18.5 18.5 18.5 16 C 18.5 12.5 14 6 14 6 Z" stroke="#ff4d52" strokeWidth="1.4" strokeLinejoin="round" />
+                            <line x1="6" y1="6" x2="22" y2="22" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          </svg>
+                        </div>
+                        <div className="lim-row-text">
+                          <span className="red-bold">NO BANKED</span> blood specimens for later testing
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
