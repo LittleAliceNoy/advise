@@ -2798,7 +2798,7 @@ export default function Home() {
             <div className="adv-right-col">
               <div className="adv-arch-evidence-strip">
                 <div className="adv-arch-evidence-recall">
-                  <strong>SUPPORTIVE EVIDENCE</strong>
+                  <strong>SUPPORT CLAIMS</strong>
                   <span>Participant-reported outcomes at 6 months</span>
                 </div>
                 <div className="adv-arch-evidence-stat">
