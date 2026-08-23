@@ -2259,7 +2259,7 @@ export default function Home() {
 
           {/* FOOTER STRIP */}
           <footer className="txrd-footer">
-            <div className="txrd-footer-card">
+            <div className="txrd-footer-card txrd-footer-steroid-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                 <path d="m8.5 8.5 7 7"/>
@@ -2273,7 +2273,7 @@ export default function Home() {
                 <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
               </div>
               <div className="txrd-footer-subtext">
-                <small>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</small>
+                IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73–1.01 &nbsp;|&nbsp; P = 0.061
               </div>
             </div>
 

@@ -5281,9 +5281,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   padding: clamp(.55rem, .75vw, .95rem) clamp(1rem, 1.4vw, 1.8rem);
   align-items: center;
   box-sizing: border-box;
-  flex: 0 0 13vh;
-  min-height: 13vh;
-  height: 13vh;
+  flex: 0 0 13.5vh;
+  min-height: 13.5vh;
+  height: 13.5vh;
   margin-top: 0;
 }
 
@@ -5293,6 +5293,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(.7rem, 1.1vw, 1.35rem);
   border-right: none;
   padding-right: 0;
+}
+
+.txr-dashboard-scene .txrd-footer-steroid-card {
+  position: relative;
 }
 
 .txr-dashboard-scene .txrd-footer-card:first-child {
@@ -5337,6 +5341,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-left: auto;
 }
 
+.txr-dashboard-scene .txrd-footer-steroid-card .txrd-footer-stats {
+  margin-bottom: clamp(.45rem, .6vw, .8rem);
+}
+
 .txr-dashboard-scene .txrd-footer-stats > div {
   display: flex !important;
   flex-direction: row !important;
@@ -5360,14 +5368,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .txr-dashboard-scene .txrd-footer-subtext {
+  position: absolute;
+  bottom: clamp(.3rem, .45vw, .55rem);
+  right: clamp(1rem, 1.6vw, 2.2rem);
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(.55rem, .6vw, .72rem);
-  color: #d0cbc6;
-  font-weight: 500;
-  border-left: 1px solid rgba(255, 255, 255, 0.16);
-  padding-left: clamp(.8rem, 1.1vw, 1.4rem);
-  margin-left: auto;
-  line-height: 1.35;
+  font-size: clamp(.58rem, .63vw, .74rem);
+  color: #888;
+  border-left: none;
+  padding-left: 0;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -.018em;
   white-space: nowrap;
 }
 
