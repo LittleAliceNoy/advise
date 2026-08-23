@@ -2257,60 +2257,39 @@ export default function Home() {
             </section>
           </div>
 
-          {/* FOOTER STRIP: TWO EQUAL MINI-PANELS */}
+          {/* FOOTER STRIP */}
           <footer className="txrd-footer">
-            <section className="txrd-outcome txrd-footer-outcome txrd-outcome-steroid">
-              <div className="txrd-outcome-header">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
-                  <path d="m8.5 8.5 7 7"/>
-                </svg>
-                <div>
-                  <strong>STEROID BURDEN</strong>
-                  <span>12-month mean prednisone dose</span>
-                </div>
+            <div className="txrd-footer-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                <path d="m8.5 8.5 7 7"/>
+              </svg>
+              <div>
+                <strong>STEROID BURDEN</strong>
+                <span>12-month mean prednisone dose</span>
               </div>
-              <div className="txrd-vs">
-                <div className="txrd-ada-color">
-                  <small>ADA ARM</small>
-                  <strong>11.8</strong>
-                  <span>mg/day</span>
-                </div>
-                <i>VS</i>
-                <div className="txrd-cid-color">
-                  <small>CID ARM</small>
-                  <strong>13.8</strong>
-                  <span>mg/day</span>
-                </div>
+              <div className="txrd-footer-stats">
+                <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
+                <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
               </div>
-              <footer>IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73–1.01 &nbsp;|&nbsp; P = 0.061</footer>
-            </section>
+              <div className="txrd-footer-subtext">
+                <small>IRR 0.86 · 95% CI 0.73–1.01 · P = 0.061</small>
+              </div>
+            </div>
 
-            <section className="txrd-outcome txrd-footer-outcome txrd-outcome-regional">
-              <div className="txrd-outcome-header">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
-                </svg>
-                <div>
-                  <strong>REGIONAL CORTICOSTEROID</strong>
-                  <span>During follow-up</span>
-                </div>
+            <div className="txrd-footer-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
+              </svg>
+              <div>
+                <strong>REGIONAL CORTICOSTEROID</strong>
+                <span>During follow-up</span>
               </div>
-              <div className="txrd-vs">
-                <div className="txrd-ada-color">
-                  <small>ADA ARM</small>
-                  <strong>27</strong>
-                  <span>injections (19 eyes · 13 pts)</span>
-                </div>
-                <i>VS</i>
-                <div className="txrd-cid-color">
-                  <small>CID ARM</small>
-                  <strong>25</strong>
-                  <span>injections (20 eyes · 13 pts)</span>
-                </div>
+              <div className="txrd-footer-stats">
+                <div className="txrd-ada-color"><strong>27</strong><span>Injections<br />(19 eyes · 13 participants)</span></div>
+                <div className="txrd-cid-color"><strong>25</strong><span>Injections<br />(20 eyes · 13 participants)</span></div>
               </div>
-              <footer>Cumulative regional burden during follow-up</footer>
-            </section>
+            </div>
           </footer>
         </section>
 

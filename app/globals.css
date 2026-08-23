@@ -5274,117 +5274,110 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .txr-dashboard-scene .txrd-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(.72rem, 1.05vw, 1.2rem);
-  flex: 0 0 16.5vh;
-  min-height: 16.5vh;
-  height: 16.5vh;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(1rem, 1.8vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.5);
+  padding: clamp(.55rem, .7vw, .85rem) clamp(.9rem, 1.3vw, 1.6rem);
+  align-items: center;
   box-sizing: border-box;
-  background: transparent;
-  border: none;
-  padding: 0;
+  flex: 0 0 11.5vh;
+  min-height: 11.5vh;
+  height: 11.5vh;
   margin-top: 0;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-footer-outcome {
-  grid-column: auto !important;
-  grid-row: auto !important;
-  height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.015);
-  padding: .5rem .85rem .45rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.txr-dashboard-scene .txrd-footer .txrd-outcome-header {
+.txr-dashboard-scene .txrd-footer-card {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  margin-bottom: .1rem;
+  gap: clamp(.65rem, 1vw, 1.2rem);
+  border-right: none;
+  padding-right: 0;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-outcome-header svg {
-  width: 20px;
-  height: 20px;
+.txr-dashboard-scene .txrd-footer-card:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: clamp(1rem, 1.6vw, 2.2rem);
+}
+
+.txr-dashboard-scene .txrd-footer-card svg {
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-outcome-header strong {
-  font-size: clamp(.55rem, .58vw, .66rem);
+.txr-dashboard-scene .txrd-footer-card > div:not(.txrd-footer-stats):not(.txrd-footer-subtext) {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+}
+
+.txr-dashboard-scene .txrd-footer-card > div strong {
   font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(.62rem, .66vw, .76rem);
   color: #eee;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-outcome-header span {
-  font-size: clamp(.44rem, .47vw, .54rem);
+.txr-dashboard-scene .txrd-footer-card > div span {
   font-family: var(--font-geist-mono), monospace;
-  color: #888;
+  font-size: clamp(.46rem, .5vw, .58rem);
+  color: #777;
+  margin-top: .15rem;
+  line-height: 1.2;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-vs {
-  display: grid !important;
-  grid-template-columns: max-content max-content max-content !important;
-  justify-content: center !important;
-  align-items: center !important;
-  column-gap: clamp(.8rem, 1.4vw, 2rem) !important;
-  margin: .05rem 0 !important;
-}
-
-.txr-dashboard-scene .txrd-footer .txrd-vs > div {
+.txr-dashboard-scene .txrd-footer-stats {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: row !important;
   align-items: center !important;
-  text-align: center !important;
+  gap: clamp(.8rem, 1.3vw, 1.8rem) !important;
+  margin-left: auto;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-vs strong {
-  font-size: clamp(1.3rem, 1.45vw, 1.7rem) !important;
+.txr-dashboard-scene .txrd-footer-stats > div {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: .45rem !important;
+}
+
+.txr-dashboard-scene .txrd-footer-stats strong {
+  font-family: var(--font-geist-mono), monospace !important;
+  font-size: clamp(1.2rem, 1.35vw, 1.6rem) !important;
   line-height: 1 !important;
-  margin: .05rem 0 !important;
-  font-family: var(--font-geist-mono), monospace !important;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-vs i {
-  font-size: clamp(.52rem, .55vw, .62rem) !important;
-  color: #555 !important;
-  font-style: normal !important;
+.txr-dashboard-scene .txrd-footer-stats span {
   font-family: var(--font-geist-mono), monospace !important;
-  margin: 0 !important;
+  font-size: clamp(.44rem, .48vw, .54rem) !important;
+  color: #888 !important;
+  line-height: 1.25 !important;
 }
 
-.txr-dashboard-scene .txrd-footer .txrd-vs small,
-.txr-dashboard-scene .txrd-footer .txrd-vs span {
-  font-size: clamp(.42rem, .45vw, .52rem) !important;
-  font-family: var(--font-geist-mono), monospace !important;
-  color: #a8a29e !important;
-}
-
-.txr-dashboard-scene .txrd-footer .txrd-outcome footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  padding-top: .22rem !important;
-  margin-top: .15rem !important;
-  font-family: var(--font-geist-mono), monospace !important;
-  font-size: clamp(.42rem, .45vw, .52rem) !important;
-  color: #bfb9b4 !important;
-  text-align: center !important;
-  white-space: nowrap !important;
+.txr-dashboard-scene .txrd-footer-subtext {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(.44rem, .48vw, .56rem);
+  color: #b8b2ad;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: clamp(.6rem, .9vw, 1.1rem);
+  margin-left: auto;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 /* Page 17/18 — give the treatment pathways enough internal breathing room. */
 .txr-dashboard-scene .txrd-grid-main {
-  flex-basis: 27vh;
-  height: 27vh;
-  margin-bottom: .65vh;
+  flex-basis: 29vh;
+  height: 29vh;
+  margin-bottom: .8vh;
 }
 
 .txr-dashboard-scene .txrd-grid-outcomes {
-  flex-basis: 17vh;
-  height: 17vh;
-  margin-bottom: .65vh;
+  flex-basis: 18vh;
+  height: 18vh;
+  margin-bottom: .8vh;
 }
 
 .txr-dashboard-scene .txrd-pathways .txrd-arms {
