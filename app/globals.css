@@ -9646,14 +9646,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
   border-radius: 4px;
-  padding: clamp(0.6rem, 1vh, 0.95rem) clamp(0.6rem, 0.85vw, 0.95rem) clamp(0.68rem, 1.1vh, 1.05rem);
+  padding: clamp(0.65rem, 1.08vh, 1.02rem) clamp(0.6rem, 0.85vw, 0.95rem) clamp(0.72rem, 1.16vh, 1.12rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-between;
   box-sizing: border-box;
-  min-height: clamp(144px, 18.2vh, 182px);
+  min-height: clamp(152px, 19.2vh, 192px);
 }
 
 .lim-bias-card.card-ada {
