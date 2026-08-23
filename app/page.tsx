@@ -3026,7 +3026,7 @@ export default function Home() {
                   style={{ cursor: synthesisStep === 1 ? 'pointer' : 'default' }}
                 >
                   <p className="statement-uppercase-text">
-                    THESE DATA RAISE THE QUESTION OF THE IMPACT OF CALCINEURIN INHIBITORS ON THE OVERALL RESULTS OF THE TRIAL
+                    THESE DATA RAISE THE QUESTION OF THE IMPACT OF CALCINEURIN INHIBITORS ON THE OVERALL TRIAL RESULTS
                   </p>
                 </div>
 
