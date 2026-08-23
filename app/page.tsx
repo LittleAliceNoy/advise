@@ -3212,7 +3212,7 @@ export default function Home() {
                             </svg>
                           </div>
                           <strong className="pill-drug-name">TACROLIMUS</strong>
-                          <span className="pill-drug-count count-violet">19 pt <small>(83% of CNIs)</small></span>
+                          <span className="pill-drug-count count-violet">19 pt</span>
                         </div>
 
                         {/* Pill 2: CYCLOSPORINE (Red Lozenge Caplet) 4 pt */}
@@ -3226,7 +3226,7 @@ export default function Home() {
                             </svg>
                           </div>
                           <strong className="pill-drug-name name-red">CYCLOSPORINE</strong>
-                          <span className="pill-drug-count count-red">4 pt <small>(4% of CID)</small></span>
+                          <span className="pill-drug-count count-red">4 pt</span>
                         </div>
                       </div>
 
