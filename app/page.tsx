@@ -4035,41 +4035,50 @@ export default function Home() {
                 </svg>
               </div>
 
-              {/* Step 5: MULTIPLE SENSITIVITY CALCULATIONS & CORE MESSAGE */}
+              {/* Step 5: ROBUSTNESS TO MISSING DATA STRIP */}
               <div className={`attrition-sensitivity-resolution ${attritionStep === 5 ? 'resolution-revealed' : 'resolution-hidden'}`}>
-                {/* Schematic Graphic: Multiple Calculations Converging */}
-                <div className="sensitivity-convergence-graphic">
-                  <div className="calc-track-list">
-                    <div className="calc-track-item">
-                      <span className="calc-tag">TECHNIQUE 01</span>
-                      <span className="calc-assumption">Missing-data assumption model A</span>
-                      <span className="calc-line" />
-                    </div>
-                    <div className="calc-track-item">
-                      <span className="calc-tag">TECHNIQUE 02</span>
-                      <span className="calc-assumption">Missing-data assumption model B</span>
-                      <span className="calc-line" />
-                    </div>
-                    <div className="calc-track-item">
-                      <span className="calc-tag">TECHNIQUE 03</span>
-                      <span className="calc-assumption">Missing-data assumption model C</span>
-                      <span className="calc-line" />
-                    </div>
-                  </div>
-
-                  <div className="calc-convergence-hub">
-                    <span className="hub-arrow">➔</span>
-                    <div className="hub-badge">
-                      <strong>CONSISTENT RESULTS</strong>
-                      <small>Across All Techniques</small>
-                    </div>
-                  </div>
+                <div className="robustness-strip-top">
+                  <span className="robustness-kicker">ROBUSTNESS TO MISSING DATA</span>
+                  <h3 className="robustness-statement">
+                    Different assumptions. <span className="red-highlight-text">Same conclusion.</span>
+                  </h3>
                 </div>
 
-                <div className="sensitivity-core-message">
-                  <p>
-                    Results were consistent across a variety of different analysis techniques, each built on different assumptions regarding missing data.
-                  </p>
+                <div className="robustness-strip-body">
+                  {/* Left: 3 Thin Parallel Analysis Lines */}
+                  <div className="robustness-parallel-lines">
+                    <div className="robustness-analysis-row">
+                      <span className="analysis-label">
+                        <strong>ANALYSIS 01</strong> — Alternative missing-data assumption
+                      </span>
+                      <span className="analysis-rule" />
+                      <span className="analysis-endpoint">CONSISTENT</span>
+                    </div>
+
+                    <div className="robustness-analysis-row">
+                      <span className="analysis-label">
+                        <strong>ANALYSIS 02</strong> — Alternative missing-data assumption
+                      </span>
+                      <span className="analysis-rule" />
+                      <span className="analysis-endpoint">CONSISTENT</span>
+                    </div>
+
+                    <div className="robustness-analysis-row">
+                      <span className="analysis-label">
+                        <strong>ANALYSIS 03</strong> — Alternative missing-data assumption
+                      </span>
+                      <span className="analysis-rule" />
+                      <span className="analysis-endpoint">CONSISTENT</span>
+                    </div>
+                  </div>
+
+                  {/* Far Right: Restrained Conclusion Block */}
+                  <div className="robustness-conclusion-block">
+                    <span className="conclusion-kicker">RESULTS REMAINED CONSISTENT</span>
+                    <p className="conclusion-copy">
+                      across analyses using different assumptions about missing data
+                    </p>
+                  </div>
                 </div>
               </div>
 
