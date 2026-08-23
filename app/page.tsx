@@ -884,14 +884,14 @@ export default function Home() {
                     <span>CLINICAL CENTERS</span>
                   </div>
                   <div className="mtqac-wf-arrow" aria-hidden="true">
-                    <i>→</i>
+                    <i>⇄</i>
                   </div>
                   <div className="mtqac-wf-node mtqac-wf-hub">
                     <strong>MTQAC</strong>
                     <small>3 Independent Experts</small>
                   </div>
                   <div className="mtqac-wf-arrow" aria-hidden="true">
-                    <i>←</i>
+                    <i>⇄</i>
                   </div>
                   <div className="mtqac-wf-node">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">

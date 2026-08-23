@@ -135,14 +135,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .mtqac-header { display:flex; flex-direction:column; gap:.1rem; }
 .mtqac-title { color:var(--red); font:600 clamp(.46rem,.52vw,.58rem) var(--font-geist-mono),monospace; letter-spacing:.12em; }
 .mtqac-intro { margin:0; color:#ccc; font-size:clamp(.54rem,.62vw,.7rem); line-height:1.35; }
-.mtqac-workflow { display:flex; align-items:center; justify-content:space-between; gap:.4rem; padding:.3rem .55rem; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.09); border-radius:3px; }
+.mtqac-workflow { display:flex; align-items:center; justify-content:space-between; gap:.4rem; padding:.2rem 0; background:none; border:none; border-radius:0; }
 .mtqac-wf-node { display:flex; align-items:center; gap:.35rem; }
 .mtqac-wf-node svg { width:.95rem; height:.95rem; color:#9c9692; flex-shrink:0; }
 .mtqac-wf-node span { color:#eae5e1; font:600 clamp(.44rem,.5vw,.58rem) var(--font-geist-mono),monospace; letter-spacing:.05em; white-space:nowrap; }
-.mtqac-wf-hub { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:.18rem .55rem; background:rgba(255,45,45,.08); border:1px solid rgba(255,45,45,.35); border-radius:3px; text-align:center; }
+.mtqac-wf-hub { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:.2rem .65rem; background:rgba(255,45,45,.08); border:1px solid rgba(255,45,45,.35); border-radius:0; text-align:center; }
 .mtqac-wf-hub strong { color:#ff666b; font:700 clamp(.48rem,.54vw,.64rem) var(--font-geist-mono),monospace; letter-spacing:.08em; line-height:1.15; }
 .mtqac-wf-hub small { color:#d6cfcb; font:500 clamp(.36rem,.42vw,.5rem) var(--font-geist-mono),monospace; letter-spacing:.02em; white-space:nowrap; line-height:1.15; }
-.mtqac-wf-arrow { color:var(--red); font:700 clamp(.65rem,.78vw,.92rem) var(--font-geist-mono),monospace; opacity:.85; display:flex; align-items:center; justify-content:center; }
+.mtqac-wf-arrow { color:var(--red); font:700 clamp(.7rem,.85vw,1rem) var(--font-geist-mono),monospace; opacity:.9; display:flex; align-items:center; justify-content:center; }
 .mtqac-duties-list { margin:0; padding:0 0 0 .95rem; display:flex; flex-direction:column; gap:.15rem; }
 .mtqac-duties-list li { color:#a8a29e; font-size:clamp(.5rem,.58vw,.66rem); line-height:1.34; }
 .mtqac-duties-list li::marker { color:var(--red); }
