@@ -10880,11 +10880,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .discussion-temporal-scene {
   min-height: 100svh;
   padding: 11vh 6vw 6vh;
-  background: radial-gradient(circle at 75% 45%, rgba(255, 45, 45, 0.03), transparent 45%),
+  background: radial-gradient(circle at 75% 45%, rgba(255, 45, 45, 0.035), transparent 45%),
               radial-gradient(circle at 45% 75%, rgba(181, 142, 255, 0.025), transparent 45%), #050505;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  cursor: pointer;
+  user-select: none;
 }
 
 .discussion-temporal-scene .adv-two-col {
@@ -10934,6 +10936,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   max-width: 92%;
 }
 
+/* Left Column Question Revealed in State 6 */
+.temporal-left-question-block {
+  margin-top: auto;
+  padding-top: 1rem;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), max-height 0.75s ease;
+}
+
+.temporal-left-question-block.temporal-hidden {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(14px);
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.temporal-left-question-block.temporal-revealed {
+  opacity: 1;
+  max-height: 250px;
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: fadeInPure 0.7s ease-out;
+}
+
 /* Right Column: Temporal Trajectory Canvas Card */
 .temporal-trajectory-column {
   display: flex;
@@ -10950,11 +10977,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: 100%;
   flex: 1;
   justify-content: space-between;
-  gap: clamp(0.5rem, 0.8vh, 0.85rem);
-  background: rgba(255, 255, 255, 0.015);
+  gap: clamp(0.4rem, 0.7vh, 0.75rem);
+  background: rgba(10, 10, 15, 0.94);
+  backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  padding: clamp(0.7rem, 1.1vh, 1.1rem) clamp(0.8rem, 1.2vw, 1.3rem);
+  padding: clamp(0.6rem, 1vh, 1rem) clamp(0.75rem, 1.1vw, 1.2rem);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.85);
 }
 
 /* 1. Header Milestone Tags */
@@ -10963,59 +10992,103 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: clamp(0.35rem, 0.55vh, 0.55rem);
+  padding-bottom: clamp(0.3rem, 0.5vh, 0.45rem);
+  gap: 0.5rem;
 }
 
 .trajectory-milestones {
   display: flex;
   align-items: center;
-  gap: clamp(0.35rem, 0.6vw, 0.7rem);
+  flex-wrap: wrap;
+  gap: clamp(0.25rem, 0.5vw, 0.55rem);
 }
 
 .milestone-tag {
-  font: 600 clamp(0.5rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
-  color: #a09591;
+  font: 600 clamp(0.48rem, 0.55vw, 0.68rem) var(--font-geist-mono), monospace;
+  color: #736b67;
   letter-spacing: 0.04em;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.12rem 0.4rem;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.1rem 0.38rem;
   border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.5s ease;
 }
 
-.milestone-tag.tag-escalation {
-  color: #b58eff;
-  background: rgba(181, 142, 255, 0.08);
-  border-color: rgba(181, 142, 255, 0.25);
-}
-
-.milestone-tag.tag-primary {
-  color: #ff8085;
-  background: rgba(255, 77, 82, 0.08);
-  border-color: rgba(255, 77, 82, 0.25);
-}
-
-.milestone-tag.tag-end {
+.milestone-tag.is-active {
   color: #fff;
+  background: rgba(255, 255, 255, 0.07);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.milestone-tag.tag-escalation.is-active {
+  color: #b58eff;
+  background: rgba(181, 142, 255, 0.1);
+  border-color: rgba(181, 142, 255, 0.35);
+  box-shadow: 0 0 12px rgba(181, 142, 255, 0.15);
+}
+
+.milestone-tag.tag-primary.is-active {
+  color: #ff8085;
+  background: rgba(255, 77, 82, 0.1);
+  border-color: rgba(255, 77, 82, 0.35);
+  box-shadow: 0 0 12px rgba(255, 77, 82, 0.15);
+}
+
+.milestone-tag.tag-end.is-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
+}
+
+.trajectory-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
 .unobserved-badge {
-  font: 700 clamp(0.5rem, 0.58vw, 0.7rem) var(--font-geist-mono), monospace;
-  color: #ff6468;
+  font: 700 clamp(0.48rem, 0.55vw, 0.68rem) var(--font-geist-mono), monospace;
+  color: #736b67;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(255, 77, 82, 0.1);
-  border: 1px dashed rgba(255, 77, 82, 0.35);
-  padding: 0.12rem 0.45rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  padding: 0.1rem 0.4rem;
   border-radius: 2px;
+  transition: all 0.5s ease;
+}
+
+.unobserved-badge.badge-highlight {
+  color: #ff6468;
+  background: rgba(255, 77, 82, 0.12);
+  border-color: rgba(255, 77, 82, 0.45);
+  box-shadow: 0 0 14px rgba(255, 77, 82, 0.2);
+}
+
+.temporal-step-cue {
+  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  letter-spacing: 0.06em;
+  background: rgba(255, 77, 82, 0.1);
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  padding: 0.1rem 0.45rem;
+  border-radius: 2px;
+  animation: pulseCue 2s infinite ease-in-out;
+}
+
+@keyframes pulseCue {
+  0%, 100% { opacity: 0.85; border-color: rgba(255, 77, 82, 0.35); }
+  50% { opacity: 1; border-color: rgba(255, 77, 82, 0.7); box-shadow: 0 0 10px rgba(255, 77, 82, 0.25); }
 }
 
 /* 2. SVG Trajectory Chart */
 .trajectory-svg-wrap {
   width: 100%;
-  flex: 1.2;
-  min-height: 140px;
-  max-height: 195px;
+  flex: 1.3;
+  min-height: 150px;
+  max-height: 210px;
   display: flex;
   align-items: stretch;
 }
@@ -11026,91 +11099,342 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   overflow: visible;
 }
 
-/* 3. Endpoint Comparison Grid */
-.endpoint-comparison-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.6rem, 0.9vw, 1.1rem);
+.traj-path-segment {
+  animation: drawTrajPath 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.endpoint-card {
-  border-radius: 3px;
-  padding: clamp(0.45rem, 0.75vh, 0.75rem) clamp(0.6rem, 0.85vw, 0.95rem);
+@keyframes drawTrajPath {
+  0% {
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    opacity: 0;
+  }
+  100% {
+    stroke-dasharray: 450;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.traj-path-hypothetical {
+  animation: fadeInPure 0.8s ease-out;
+}
+
+.m6-visual-elements,
+.m12-visual-elements,
+.hypothetical-future-group,
+.escalation-label-group,
+.m12-boundary-tag {
+  animation: fadeInPure 0.6s ease-out;
+}
+
+/* 3. Narrative Stage Below Timeline */
+.temporal-narrative-stage {
+  width: 100%;
+  min-height: clamp(105px, 15vh, 135px);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  justify-content: center;
 }
 
-.endpoint-card.card-sparing {
-  background: rgba(181, 142, 255, 0.03);
-  border: 1px solid rgba(181, 142, 255, 0.25);
+.temporal-state-card {
+  width: 100%;
+  animation: fadeInPure 0.45s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.25rem, 0.4vh, 0.45rem);
 }
 
-.endpoint-card.card-discontinuation {
-  background: rgba(255, 77, 82, 0.03);
-  border: 1px solid rgba(255, 77, 82, 0.3);
+/* State 1: Intro Cue */
+.state-intro-cue {
+  text-align: center;
+  padding: clamp(0.5rem, 0.9vh, 0.8rem) 0;
 }
 
-.endpoint-head-row {
+.state-intro-cue .cue-headline {
+  color: #f5f0eb;
+  font: 700 clamp(0.72rem, 0.82vw, 0.95rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.state-intro-cue .cue-subtext {
+  color: #a09591;
+  font-size: clamp(0.68rem, 0.76vw, 0.86rem);
+  margin: 0;
+}
+
+/* State 2 & 3: M6 & M12 Milestone Cards */
+.state-m6-card,
+.state-m12-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  padding: clamp(0.45rem, 0.7vh, 0.65rem) clamp(0.65rem, 0.9vw, 0.95rem);
+}
+
+.state-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
-.endpoint-code {
+.state-badge {
   font: 700 clamp(0.46rem, 0.52vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #b58eff;
   letter-spacing: 0.06em;
 }
 
-.endpoint-code.code-red {
+.state-badge.badge-primary {
   color: var(--red);
 }
 
-.endpoint-title {
-  font: 700 clamp(0.6rem, 0.68vw, 0.78rem) var(--font-geist-mono), monospace;
+.state-badge.badge-end {
+  color: #fff;
+}
+
+.state-card-title {
+  font: 700 clamp(0.62rem, 0.72vw, 0.84rem) var(--font-geist-mono), monospace;
   color: #fff;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.endpoint-stat-pill {
-  font: 600 clamp(0.5rem, 0.56vw, 0.66rem) var(--font-geist-mono), monospace;
-  color: #d8c9ff;
-  background: rgba(181, 142, 255, 0.12);
-  padding: 0.08rem 0.35rem;
+.state-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stat-pill {
+  font: 700 clamp(0.52rem, 0.6vw, 0.7rem) var(--font-geist-mono), monospace;
+  padding: 0.1rem 0.4rem;
   border-radius: 2px;
 }
 
-.endpoint-stat-pill.pill-red {
+.stat-pill.pill-ada {
   color: #ff9da1;
-  background: rgba(255, 77, 82, 0.14);
+  background: rgba(255, 77, 82, 0.15);
+  border: 1px solid rgba(255, 77, 82, 0.3);
 }
 
-.endpoint-verdict {
-  font-size: clamp(0.62rem, 0.7vw, 0.8rem);
+.stat-pill.pill-cid {
+  color: #d8c9ff;
+  background: rgba(181, 142, 255, 0.14);
+  border: 1px solid rgba(181, 142, 255, 0.3);
+}
+
+.stat-pill.pill-gap {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-pill.pill-pval {
+  color: #e0dad6;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat-vs {
+  color: #736b67;
+  font-size: 0.68rem;
+  font-style: italic;
+}
+
+.state-card-explanation {
   color: #a09591;
+  font-size: clamp(0.64rem, 0.72vw, 0.82rem);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.state-card-explanation strong {
+  color: #fff;
+}
+
+.gap-progression-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid #b58eff;
+  padding: 0.2rem 0.5rem;
+  margin: 0.15rem 0;
+  border-radius: 0 2px 2px 0;
+}
+
+.gap-step {
+  font: 600 clamp(0.52rem, 0.6vw, 0.7rem) var(--font-geist-mono), monospace;
+  color: #a09591;
+}
+
+.gap-step strong {
+  color: #fff;
+}
+
+.gap-arrow {
+  color: #b58eff;
+  font-weight: 700;
+}
+
+.gap-verdict-tag {
+  font: 700 clamp(0.5rem, 0.58vw, 0.68rem) var(--font-geist-mono), monospace;
+  color: #b58eff;
+  letter-spacing: 0.06em;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+/* State 4: Counterpoint Discontinuation */
+.state-counterpoint-card {
+  background: rgba(18, 10, 12, 0.8);
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  border-radius: 3px;
+  padding: clamp(0.4rem, 0.65vh, 0.6rem) clamp(0.6rem, 0.85vw, 0.9rem);
+  box-shadow: 0 0 20px rgba(255, 77, 82, 0.12);
+}
+
+.counterpoint-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.3rem;
+}
+
+.counterpoint-warning-icon {
+  color: var(--red);
+  font-size: 0.65rem;
+}
+
+.counterpoint-banner strong {
+  color: #fff;
+  font: 800 clamp(0.62rem, 0.72vw, 0.84rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.counterpoint-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(0.4rem, 0.65vw, 0.8rem);
+}
+
+.cp-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cp-card.cp-discontinuation {
+  background: rgba(255, 77, 82, 0.06);
+  border-color: rgba(255, 77, 82, 0.35);
+}
+
+.cp-label {
+  font: 700 clamp(0.44rem, 0.5vw, 0.6rem) var(--font-geist-mono), monospace;
+  color: #a09591;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cp-label.label-red {
+  color: #ff8085;
+}
+
+.cp-stat {
+  font: 700 clamp(0.62rem, 0.72vw, 0.82rem) var(--font-geist-mono), monospace;
+  color: #fff;
+}
+
+.cp-stat.stat-red {
+  color: #ff4d52;
+  text-shadow: 0 0 12px rgba(255, 77, 82, 0.4);
+}
+
+.cp-stat small {
+  font-weight: 500;
+  font-size: 0.64rem;
+  color: #a09591;
+}
+
+.cp-card p {
+  font-size: clamp(0.56rem, 0.64vw, 0.74rem);
+  color: #8c827e;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* State 5: Unobserved Future Card */
+.state-future-card {
+  background: rgba(22, 14, 38, 0.6);
+  border: 1px dashed rgba(181, 142, 255, 0.4);
+  border-radius: 3px;
+  padding: clamp(0.45rem, 0.7vh, 0.65rem) clamp(0.65rem, 0.9vw, 0.95rem);
+}
+
+.future-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.future-badge {
+  font: 700 clamp(0.46rem, 0.54vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #b58eff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.future-header strong {
+  color: #fff;
+  font: 800 clamp(0.62rem, 0.72vw, 0.84rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.future-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0.6rem;
+}
+
+.future-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.future-bullet {
+  color: #b58eff;
+  font: 700 0.65rem var(--font-geist-mono), monospace;
+  flex-shrink: 0;
+}
+
+.future-point p {
+  color: #a09591;
+  font-size: clamp(0.62rem, 0.7vw, 0.8rem);
   line-height: 1.35;
   margin: 0;
 }
 
-.endpoint-verdict strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-/* 4. Final Conclusion Anchor */
+/* State 6: Final Interpretive Conclusion Anchor */
 .temporal-conclusion-anchor {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
-  padding-top: clamp(0.4rem, 0.6vh, 0.6rem);
+  padding-top: clamp(0.35rem, 0.55vh, 0.55rem);
   text-align: center;
+  animation: fadeInPure 0.7s ease-out;
 }
 
 .temporal-conclusion-anchor .conclusion-hook-line strong {
   color: #fff;
-  font: 700 clamp(0.82rem, 0.94vw, 1.1rem) var(--font-geist-mono), monospace;
+  font: 700 clamp(0.76rem, 0.88vw, 1.02rem) var(--font-geist-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: block;
@@ -11124,7 +11448,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .temporal-conclusion-anchor .conclusion-sub-text {
   color: #a09591;
-  font-size: clamp(0.68rem, 0.76vw, 0.86rem);
+  font-size: clamp(0.66rem, 0.74vw, 0.84rem);
   line-height: 1.4;
   margin: 0 auto;
   max-width: 96%;
