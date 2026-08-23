@@ -11814,15 +11814,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-self: stretch;
 }
 
 .lim-block-left {
   flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
 .lim-block-right {
   flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
 .lim-sub1-card {
@@ -11834,7 +11840,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   gap: clamp(0.35rem, 0.6vh, 0.55rem);
   box-sizing: border-box;
-  height: 100%;
+  flex: 1;
   justify-content: space-between;
 }
 
@@ -11917,7 +11923,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   grid-template-columns: 1fr 1fr;
   gap: clamp(0.5rem, 0.8vw, 0.9rem);
   width: 100%;
-  height: 100%;
+  flex: 1;
   align-items: stretch;
 }
 
@@ -11934,7 +11940,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(0.35rem, 0.6vh, 0.65rem);
   box-sizing: border-box;
   height: 100%;
-  min-height: 100%;
 }
 
 .lim-sub2-card-text {
