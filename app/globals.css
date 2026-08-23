@@ -11237,11 +11237,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(1.2rem, 2.5vw, 3.5rem);
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 0;
-  padding-bottom: clamp(0.35rem, 0.6vh, 0.6rem);
-  margin-top: clamp(-0.15rem, -0.22vh, -0.08rem);
-  margin-bottom: clamp(0.75rem, 1.3vh, 1.35rem);
-  min-height: clamp(50px, 6.2vh, 64px);
+  padding-top: clamp(0.2rem, 0.35vh, 0.4rem);
+  padding-bottom: clamp(0.4rem, 0.65vh, 0.65rem);
+  margin-top: clamp(0.3rem, 0.5vh, 0.55rem);
+  margin-bottom: clamp(0.5rem, 0.8vh, 0.9rem);
+  min-height: clamp(52px, 6.4vh, 66px);
   flex: 0 0 auto;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
 }
