@@ -12490,3 +12490,486 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
+
+/* ==========================================================================
+   NEW SLIDE 02: INTRODUCTION / THE CLINICAL PROBLEM
+   ========================================================================== */
+
+.intro-clinical-problem-scene {
+  min-height: 100svh;
+  padding: 11vh 6vw 6vh;
+  background: radial-gradient(circle at 75% 45%, rgba(255, 45, 45, 0.035), transparent 45%),
+              radial-gradient(circle at 25% 65%, rgba(132, 94, 255, 0.015), transparent 40%),
+              #050507;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.intro-clinical-problem-scene .adv-two-col {
+  display: grid;
+  grid-template-columns: 0.94fr 1.06fr;
+  gap: clamp(2.5rem, 4vw, 5rem);
+  width: 100%;
+  flex: 1;
+  min-height: calc(100svh - 17vh);
+  align-items: stretch;
+}
+
+/* Left Column Editorial Rules */
+.intro-clinical-problem-scene .adv-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.intro-clinical-problem-scene .adv-left-col .cataract-hook {
+  color: var(--red);
+  font-size: clamp(0.58rem, 0.7vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.intro-clinical-problem-scene .adv-left-col h2 {
+  font-size: clamp(2.6rem, 3.4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.intro-clinical-problem-scene .adv-left-col .red-text {
+  color: var(--red);
+  margin-top: 0.2rem;
+}
+
+.intro-clinical-problem-scene .adv-left-col .lede {
+  font-size: clamp(.85rem, .98vw, 1.1rem) !important;
+  line-height: 1.55 !important;
+  color: #a09591 !important;
+  margin: 1.2rem 0 1rem !important;
+  max-width: 90% !important;
+}
+
+.intro-clinical-problem-scene .editorial-rules {
+  margin-top: clamp(0.9rem, 1.5vh, 1.6rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-clinical-problem-scene .editorial-rules .observation-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(0.45rem, 0.7vh, 0.75rem) 0;
+}
+
+.intro-clinical-problem-scene .editorial-rules .observation-item h4 {
+  color: #fff;
+  font-size: clamp(0.68rem, 0.76vw, 0.86rem);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.intro-clinical-problem-scene .editorial-rules .observation-item h4 span {
+  color: var(--red);
+}
+
+.intro-clinical-problem-scene .editorial-rules .observation-item p {
+  color: #a09591;
+  font-size: clamp(0.74rem, 0.82vw, 0.92rem);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Right Column: Problem Progression Canvas */
+.intro-problem-figure-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.clinical-problem-canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  background: rgba(10, 10, 15, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: clamp(0.85rem, 1.4vh, 1.4rem) clamp(1rem, 1.5vw, 1.6rem);
+  gap: clamp(0.6rem, 1.1vh, 1.1rem);
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* Tier Structure */
+.problem-tier {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Tier 1: >30 Uveitides Breadth */
+.tier-breadth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tier-header-hub {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.hub-badge {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.82rem, 0.95vw, 1.12rem);
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+  padding: 0.2rem 0.75rem;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.hub-subtext {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.52rem, 0.58vw, 0.70rem);
+  font-weight: 500;
+  color: #8c827e;
+  letter-spacing: 0.03em;
+}
+
+.anatomic-branch-svg-wrap {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.anatomic-branch-svg {
+  width: 92%;
+  height: 100%;
+  overflow: visible;
+}
+
+.anatomic-nodes-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.35rem, 0.6vw, 0.65rem);
+  width: 100%;
+}
+
+.anatomic-node-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(0.35rem, 0.6vh, 0.55rem) 0.3rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.anatomic-node-pill.pill-anterior {
+  opacity: 0.4;
+  filter: grayscale(0.8);
+  border-style: dashed;
+}
+
+.anatomic-node-pill.highlight {
+  border-color: rgba(255, 77, 82, 0.35);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 45, 45, 0.08) 0%, rgba(255, 45, 45, 0.01) 70%, transparent 100%);
+  box-shadow: 0 0 14px rgba(255, 45, 45, 0.08);
+}
+
+.node-icon-circle {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  color: #ff8085;
+  margin-bottom: 0.15rem;
+}
+
+.pill-anterior .node-icon-circle {
+  color: #8c827e;
+}
+
+.pill-eye-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.node-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.54rem, 0.62vw, 0.74rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.node-sub {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.42rem, 0.48vw, 0.56rem);
+  font-weight: 500;
+  color: #8c827e;
+  margin-top: 0.1rem;
+}
+
+/* Tier 2: Filtering & Scope Narrowing */
+.tier-filter {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.35rem, 0.6vh, 0.6rem);
+  position: relative;
+}
+
+.divergent-path-card {
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  padding: clamp(0.3rem, 0.5vh, 0.45rem) clamp(0.6rem, 0.9vw, 1rem);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.55;
+}
+
+.divergent-badge {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.40rem, 0.46vw, 0.54rem);
+  font-weight: 700;
+  color: #8c827e;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+}
+
+.divergent-body {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.divergent-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.50rem, 0.56vw, 0.68rem);
+  font-weight: 700;
+  color: #a8a29e;
+}
+
+.divergent-detail {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.50vw, 0.60rem);
+  color: #6b6360;
+}
+
+.divergent-note {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.40rem, 0.46vw, 0.54rem);
+  color: #554e4c;
+}
+
+.funnel-connector-stem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -0.15rem 0;
+}
+
+.funnel-connector-stem .stem-line {
+  width: 2px;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #ff4d52);
+}
+
+.funnel-connector-stem .stem-arrow {
+  color: #ff4d52;
+  font-size: 0.75rem;
+  line-height: 0.8;
+}
+
+.target-scope-card {
+  border: 1px solid rgba(255, 77, 82, 0.5);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 45, 45, 0.14) 0%, rgba(20, 6, 9, 0.9) 100%);
+  padding: clamp(0.55rem, 1.0vh, 0.85rem) clamp(0.75rem, 1.2vw, 1.2rem);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.target-scope-tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.42rem, 0.48vw, 0.58rem);
+  font-weight: 700;
+  color: #ff8085;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.target-scope-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.target-main-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.88rem, 1.08vw, 1.3rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.target-sub-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.68rem, 0.82vw, 1.0rem);
+  font-weight: 700;
+  color: #ff8085;
+  letter-spacing: 0.04em;
+}
+
+.target-scope-desc {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.46rem, 0.52vw, 0.64rem);
+  color: #a8a29e;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Tier 3: The Clinical Endpoint */
+.tier-endpoint {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.endpoint-conduit-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.endpoint-conduit-arrow .conduit-line {
+  width: 2px;
+  height: 12px;
+  background: #ff4d52;
+  box-shadow: 0 0 8px rgba(255, 77, 82, 0.8);
+}
+
+.endpoint-conduit-arrow .conduit-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+  margin-top: -2px;
+}
+
+.inflammation-endpoint-card {
+  border: 1.5px solid #ff4d52;
+  background: linear-gradient(135deg, rgba(255, 45, 45, 0.18) 0%, rgba(22, 5, 8, 0.96) 100%);
+  box-shadow: 0 0 32px rgba(255, 45, 45, 0.25);
+  border-radius: 4px;
+  padding: clamp(0.65rem, 1.2vh, 1.1rem) clamp(0.85rem, 1.4vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.endpoint-badge {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.50vw, 0.60rem);
+  font-weight: 800;
+  color: #ffffff;
+  background: #ff2d2d;
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  box-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
+}
+
+.endpoint-core-statement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 1vw, 1.2rem);
+}
+
+.statement-subject {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.subject-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(1.15rem, 1.4vw, 1.7rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.subject-qualifier {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.50rem, 0.58vw, 0.70rem);
+  font-weight: 600;
+  color: #ff8085;
+  white-space: nowrap;
+}
+
+.statement-arrow-indicator {
+  font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+  color: #ff4d52;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 14px rgba(255, 77, 82, 0.8);
+}
+
+.statement-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: right;
+}
+
+.outcome-bold {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.85rem, 1.08vw, 1.35rem);
+  font-weight: 800;
+  color: #ff4d52;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-shadow: 0 0 14px rgba(255, 77, 82, 0.6);
+}
+
+.outcome-sub {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.50vw, 0.60rem);
+  color: #c4bbb7;
+  letter-spacing: 0.02em;
+}

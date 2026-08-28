@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 const chapters = [
   { id: "signal", label: "The signal" },
-  { id: "basics", label: "Basic knowledge" },
+  { id: "clinical-problem", label: "The clinical problem" },
   { id: "question", label: "The research question" },
   { id: "study-design", label: "Study design" },
   { id: "screening", label: "Screening pathway" },
@@ -32,6 +32,7 @@ const chapters = [
   { id: "limitations-5", label: "Missing data & attrition" },
   { id: "limitations-6", label: "Immunogenicity" },
   { id: "conclusion", label: "Conclusion" },
+  { id: "basics", label: "Basic knowledge (Old)" },
   { id: "outcomes-original", label: "Outcomes (original combined)" },
   { id: "statistics", label: "Statistical analysis" },
   { id: "sample-size-redesign", label: "Sample size (Redesign)" },
@@ -799,6 +800,156 @@ export default function Home() {
           <div className="hero-meta">
             <span>Presented by · R2 Jirachaya Choovuthayakorn</span>
             <span>Advisor · Prof. Kessara Pathanapitoon, MD, PhD</span>
+          </div>
+        </section>
+
+        {/* --- NEW SLIDE 02: INTRODUCTION / THE CLINICAL PROBLEM --- */}
+        <section id="clinical-problem" className="scene intro-clinical-problem-scene">
+          <div className="adv-two-col">
+            {/* LEFT COLUMN: EDITORIAL & CORE MANDATE */}
+            <div className="adv-left-col">
+              <p className="eyebrow"><span /> 02 — INTRODUCTION / THE CLINICAL PROBLEM</p>
+              <p className="cataract-hook">WHAT ARE WE ACTUALLY TRYING TO CONTROL?</p>
+              <h2>
+                Even low-level inflammation matters.<br />
+                <span className="red-text" style={{ display: 'inline' }}>
+                  Control has to last.
+                </span>
+              </h2>
+              <p className="lede">
+                The uveitides comprise &gt;30 diseases with different anatomic and clinical phenotypes. For many noninfectious intermediate, posterior, and panuveitides, however, the therapeutic objective converges on sustained control of intraocular inflammation.
+              </p>
+
+              <div className="adv-observations-block editorial-rules">
+                <div className="observation-item">
+                  <h4><span>01</span> — CORE THERAPEUTIC OBJECTIVE</h4>
+                  <p>Different diseases. One requirement: complete and sustained inflammatory control to protect long-term visual acuity.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: RESTRAINED PROGRESSION FUNNEL */}
+            <div className="adv-right-col intro-problem-figure-col">
+              <div className="clinical-problem-canvas">
+                
+                {/* TIER 1: >30 UVEITIDES & 4 ANATOMIC SEGMENTS */}
+                <div className="problem-tier tier-breadth">
+                  <div className="tier-header-hub">
+                    <span className="hub-badge">&gt;30 UVEITIDES</span>
+                    <span className="hub-subtext">Heterogeneous etiologies &amp; clinical phenotypes</span>
+                  </div>
+
+                  {/* Branching SVG Network */}
+                  <div className="anatomic-branch-svg-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 400 24" className="anatomic-branch-svg" preserveAspectRatio="none">
+                      <path d="M 200 0 L 200 10 M 48 10 L 352 10 M 48 10 L 48 24 M 149 10 L 149 24 M 251 10 L 251 24 M 352 10 L 352 24" 
+                            fill="none" stroke="rgba(255, 255, 255, 0.28)" strokeWidth="1.2" />
+                    </svg>
+                  </div>
+
+                  {/* 4 Anatomic Node Pills */}
+                  <div className="anatomic-nodes-row">
+                    <div className="anatomic-node-pill pill-anterior">
+                      <div className="node-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
+                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                          <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
+                        </svg>
+                      </div>
+                      <span className="node-title">ANTERIOR</span>
+                      <small className="node-sub">Iris · Ciliary body</small>
+                    </div>
+
+                    <div className="anatomic-node-pill pill-target highlight">
+                      <div className="node-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
+                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                          <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+                        </svg>
+                      </div>
+                      <span className="node-title">INTERMEDIATE</span>
+                      <small className="node-sub">Vitreous · Pars plana</small>
+                    </div>
+
+                    <div className="anatomic-node-pill pill-target highlight">
+                      <div className="node-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
+                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                          <path d="M5 19c3.5-3.5 10.5-3.5 14 0" stroke="currentColor" strokeWidth="1.6" />
+                        </svg>
+                      </div>
+                      <span className="node-title">POSTERIOR</span>
+                      <small className="node-sub">Retina · Choroid</small>
+                    </div>
+
+                    <div className="anatomic-node-pill pill-target highlight">
+                      <div className="node-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
+                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                          <circle cx="12" cy="12" r="6" fill="rgba(255, 77, 82, 0.15)" stroke="currentColor" strokeWidth="1.4" />
+                        </svg>
+                      </div>
+                      <span className="node-title">PANUVEITIS</span>
+                      <small className="node-sub">All segments</small>
+                    </div>
+                  </div>
+                </div>
+
+                {/* TIER 2: FILTER & NARROWING — INFECTIOUS VS NONINFECTIOUS TARGET */}
+                <div className="problem-tier tier-filter">
+                  
+                  {/* Subtle Muted Side Branch: Infectious (Outside Scope) */}
+                  <div className="divergent-path-card">
+                    <div className="divergent-badge">OUTSIDE TARGET PATHWAY</div>
+                    <div className="divergent-body">
+                      <span className="divergent-title">INFECTIOUS UVEITIS</span>
+                      <span className="divergent-detail">Viral · Bacterial · Fungal · Parasitic</span>
+                      <small className="divergent-note">Requires pathogen-directed antimicrobial therapy</small>
+                    </div>
+                  </div>
+
+                  {/* Central Conduit Stem */}
+                  <div className="funnel-connector-stem" aria-hidden="true">
+                    <div className="stem-line" />
+                    <span className="stem-arrow">↓</span>
+                  </div>
+
+                  {/* Core Highlighted Target: Noninfectious Intermediate / Posterior / Panuveitis */}
+                  <div className="target-scope-card">
+                    <div className="target-scope-tag">ADVISE TARGET POPULATION</div>
+                    <div className="target-scope-header">
+                      <span className="target-main-title">NONINFECTIOUS</span>
+                      <span className="target-sub-title">INTERMEDIATE · POSTERIOR · PANUVEITIS</span>
+                    </div>
+                    <p className="target-scope-desc">Presumed autoimmune or autoinflammatory etiology requiring systemic immunomodulation</p>
+                  </div>
+                </div>
+
+                {/* TIER 3: THE CLINICAL ENDPOINT (STRONGEST VISUAL ANCHOR) */}
+                <div className="problem-tier tier-endpoint">
+                  <div className="endpoint-conduit-arrow" aria-hidden="true">
+                    <div className="conduit-line" />
+                    <span className="conduit-dot" />
+                  </div>
+
+                  <div className="inflammation-endpoint-card">
+                    <div className="endpoint-badge">THE FUNDAMENTAL CLINICAL PROBLEM</div>
+                    <div className="endpoint-core-statement">
+                      <div className="statement-subject">
+                        <strong className="subject-title">INFLAMMATION</strong>
+                        <span className="subject-qualifier">Even low-level persistent activity</span>
+                      </div>
+                      <div className="statement-arrow-indicator" aria-hidden="true">→</div>
+                      <div className="statement-outcome">
+                        <strong className="outcome-bold">WORSE VISUAL ACUITY OUTCOMES</strong>
+                        <span className="outcome-sub">Cumulative structural damage · Macular edema · Permanent vision loss</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </section>
 
