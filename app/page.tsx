@@ -1485,7 +1485,7 @@ export default function Home() {
                 <div className="escalation-labels-wrap">
                   <span className="escalation-trigger-tag">WHEN NEEDED</span>
                   <strong className="escalation-action-tag">ADD ANOTHER CLASS</strong>
-                  <span className="escalation-sub-note">insufficient control or steroid sparing</span>
+                  <span className="escalation-sub-note">if inflammation control or steroid sparing is inadequate</span>
                 </div>
               </div>
 
@@ -1563,8 +1563,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="evidence-proof-connector" aria-hidden="true">
-                  <span className="proof-versus-tag">versus</span>
+                {/* Transition Flow: BUT SOME REQUIRE ESCALATION */}
+                <div className="evidence-transition-bridge" aria-label="Progression transition to escalation">
+                  <span className="transition-dash" aria-hidden="true" />
+                  <span className="transition-tag">BUT SOME REQUIRE ESCALATION</span>
+                  <span className="transition-arrow" aria-hidden="true">→</span>
                 </div>
 
                 {/* Proof 2: Escalation / combination (~20–25%) */}
