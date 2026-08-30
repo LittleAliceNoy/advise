@@ -1141,16 +1141,15 @@ export default function Home() {
                       </strong>
                     </div>
 
-                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.68rem, 0.82vw, 1.02rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.50rem, 0.62vw, 0.78rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
-                        NO INCREASE IN SYSTEMIC SIDE EFFECTS*
+                    <div className="must-finding-line" style={{ display: "flex", alignItems: "flex-start", gap: "0.35rem" }}>
+                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.68rem, 0.82vw, 1.02rem)", fontWeight: 300, lineHeight: 1.2, flexShrink: 0 }}>≈</span>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.48rem, 0.58vw, 0.74rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                        NO INCREASE IN SYSTEMIC SIDE EFFECTS <span style={{ fontSize: "0.85em", fontWeight: 600, color: "#ded7d3", textShadow: "none" }}>(except increased antibiotic use for infections)</span>
                       </span>
                     </div>
                   </div>
 
                   <small className="must-body-comparator">vs long-acting intravitreal corticosteroid implant</small>
-                  <small className="must-footnote" style={{ fontSize: "clamp(0.28rem, 0.32vw, 0.40rem)", color: "#8c827e", marginTop: "0.06rem", display: "block" }}>*except increased antibiotic use for infections</small>
                 </div>
               </div>
             </div>
