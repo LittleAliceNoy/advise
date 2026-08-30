@@ -17,8 +17,13 @@
 }
 
 :root {
-  --font-geist-mono: 'Geist Mono', -apple-system, BlinkMacSystemFont, 'SF Mono', monospace;
   --font-geist-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  /*
+   * The deck's technical-label token historically rendered with the same
+   * proportional face as the editorial typography. Keep the token name for
+   * the existing component system, but preserve those established metrics.
+   */
+  --font-geist-mono: var(--font-geist-sans);
   --black: #050505;
   --panel: #0b0b0c;
   --white: #f2f0ec;
