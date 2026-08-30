@@ -1823,24 +1823,10 @@ export default function Home() {
                           <rect x="6" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
                           <text x="21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
 
-                          {/* Attached TNF-α Cytokine Homotrimer Directly on Antigen-Binding Tip */}
+                          {/* Attached TNF-α Molecule: Simple Circle Directly on Antigen-Binding Tip */}
                           <g className="attached-tnf-target" transform="translate(-2, -94)">
-                            {/* Trimeric Subunits */}
-                            <ellipse cx="-10" cy="-14" rx="8.5" ry="12" transform="rotate(-30 -10 -14)" fill="rgba(255, 45, 45, 0.3)" stroke="#ff4d52" strokeWidth="1.6" />
-                            <ellipse cx="10" cy="-14" rx="8.5" ry="12" transform="rotate(30 10 -14)" fill="rgba(255, 45, 45, 0.3)" stroke="#ff4d52" strokeWidth="1.6" />
-                            <ellipse cx="0" cy="-2" rx="8.5" ry="12" fill="rgba(255, 45, 45, 0.38)" stroke="#ff4d52" strokeWidth="1.8" />
-
-                            {/* Core Center Alpha */}
-                            <circle cx="0" cy="-10" r="3.2" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.2" />
-                            <text x="0" y="-10" fill="#0a0406" fontSize="4.4" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
-
-                            {/* Active Site Nodes */}
-                            <circle cx="-8" cy="-20" r="1.8" fill="#ffffff" />
-                            <circle cx="8" cy="-20" r="1.8" fill="#ffffff" />
-                            <circle cx="0" cy="5" r="1.8" fill="#ffffff" />
-
-                            {/* Named only: TNF-α */}
-                            <text x="0" y="-30" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
+                            <circle cx="0" cy="-20" r="18" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="2.0" />
+                            <text x="0" y="-20" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central" letterSpacing="0.04em">TNF-α</text>
                           </g>
                         </g>
 
