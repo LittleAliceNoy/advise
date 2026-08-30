@@ -14347,8 +14347,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: space-between;
   gap: clamp(0.8rem, 1.5vh, 1.6rem);
   background:
-    radial-gradient(ellipse at 25% 42%, rgba(192, 132, 252, 0.08), transparent 45%),
-    radial-gradient(ellipse at 75% 42%, rgba(255, 45, 45, 0.06), transparent 45%),
+    radial-gradient(ellipse at 28% 42%, rgba(255, 45, 45, 0.08), transparent 48%),
+    radial-gradient(ellipse at 78% 42%, rgba(255, 45, 45, 0.05), transparent 48%),
     #06050a;
   box-sizing: border-box;
   overflow: hidden;

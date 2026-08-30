@@ -1470,54 +1470,54 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Center: Molecular Constellation Sphere (Red Glow from Background Atmosphere) */}
+                  {/* Center: Molecular Constellation Sphere (Pure Red/Obsidian Background Atmosphere, No Purple) */}
                   <div className="molecular-sphere-hero" aria-hidden="true">
                     <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
                       <defs>
                         <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.32)" />
-                          <stop offset="35%" stopColor="rgba(255, 77, 82, 0.18)" />
-                          <stop offset="70%" stopColor="rgba(147, 51, 234, 0.06)" />
-                          <stop offset="100%" stopColor="rgba(12, 5, 8, 0.95)" />
+                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
+                          <stop offset="35%" stopColor="rgba(255, 77, 82, 0.16)" />
+                          <stop offset="70%" stopColor="rgba(80, 10, 15, 0.08)" />
+                          <stop offset="100%" stopColor="rgba(10, 4, 6, 0.96)" />
                         </radialGradient>
                       </defs>
 
-                      {/* Outer Spherical Shell & Technical Orbits */}
+                      {/* Outer Spherical Shell & Technical Orbits (No Purple in Background) */}
                       <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(255, 77, 82, 0.55)" strokeWidth="1.5" />
-                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.0" strokeDasharray="4 4" />
-                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.3)" strokeWidth="1.0" strokeDasharray="4 4" />
+                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1.0" strokeDasharray="4 4" />
+                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.0" strokeDasharray="4 4" />
 
-                      {/* Clean Sharp Molecular Constellation Wireframe (No blur on atoms) */}
+                      {/* Clean Sharp Molecular Constellation Wireframe */}
                       {/* Central Core Benzene/Pyrimidine Ring */}
-                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="rgba(255, 45, 45, 0.05)" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1.6" />
+                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="rgba(255, 45, 45, 0.05)" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.6" />
                       {/* Fused 5-Membered Imidazole Ring */}
-                      <polygon points="126,75 152,85 146,115 126,105" fill="rgba(192, 132, 252, 0.06)" stroke="rgba(192, 132, 252, 0.75)" strokeWidth="1.6" />
+                      <polygon points="126,75 152,85 146,115 126,105" fill="rgba(255, 45, 45, 0.06)" stroke="rgba(255, 77, 82, 0.75)" strokeWidth="1.6" />
                       
                       {/* Radiating Chemical Bonds */}
                       <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(192, 132, 252, 0.85)" strokeWidth="1.6" />
+                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(255, 77, 82, 0.85)" strokeWidth="1.6" />
                       <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.4" />
                       <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(192, 132, 252, 0.85)" strokeWidth="1.5" />
+                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(255, 77, 82, 0.85)" strokeWidth="1.5" />
                       <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.4" />
 
-                      {/* Crisp Atomic Nodes (No blur/glow on molecule circles) */}
+                      {/* Crisp Atomic Nodes (White and Red) */}
                       {/* Central Core Nodes */}
                       <circle cx="100" cy="60" r="4" fill="#ffffff" />
-                      <circle cx="126" cy="75" r="3.8" fill="#c084fc" />
+                      <circle cx="126" cy="75" r="3.8" fill="#ffffff" />
                       <circle cx="126" cy="105" r="4.2" fill="#ff4d52" />
-                      <circle cx="100" cy="120" r="3.8" fill="#c084fc" />
+                      <circle cx="100" cy="120" r="3.8" fill="#ffffff" />
                       <circle cx="74" cy="105" r="4" fill="#ffffff" />
-                      <circle cx="74" cy="75" r="3.8" fill="#c084fc" />
+                      <circle cx="74" cy="75" r="3.8" fill="#ffffff" />
                       
                       {/* Outer Valence Nodes */}
                       <circle cx="100" cy="38" r="4.2" fill="#ff4d52" />
                       <circle cx="152" cy="85" r="3.8" fill="#ff4d52" />
                       <circle cx="146" cy="115" r="3.5" fill="#ffffff" />
-                      <circle cx="50" cy="120" r="3.8" fill="#c084fc" />
+                      <circle cx="50" cy="120" r="3.8" fill="#ff4d52" />
                       <circle cx="34" cy="110" r="3" fill="#ffffff" />
                       <circle cx="116" cy="146" r="4.2" fill="#ff4d52" />
-                      <circle cx="174" cy="76" r="3.8" fill="#c084fc" />
+                      <circle cx="174" cy="76" r="3.8" fill="#ff4d52" />
                       <circle cx="148" cy="134" r="3" fill="#ffffff" />
                     </svg>
                   </div>
