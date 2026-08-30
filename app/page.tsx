@@ -1430,10 +1430,10 @@ export default function Home() {
                       <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
                         <svg viewBox="0 0 54 34" className="drug-svg">
                           <defs>
-                            <linearGradient id="fade-tail-aza" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.9" />
-                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
-                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
+                            <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
+                              <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.95" />
+                              <stop offset="40%" stopColor="#c084fc" stopOpacity="0.6" />
+                              <stop offset="80%" stopColor="#c084fc" stopOpacity="0.2" />
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
@@ -1447,10 +1447,11 @@ export default function Home() {
                           {/* Shared Central Fused Bond */}
                           <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
                           
-                          {/* Refined Double Bonds in Purine Core */}
+                          {/* Refined Parallel Double Bonds in Purine Core */}
                           <line x1="8" y1="14.5" x2="12.5" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
                           <line x1="8" y1="21.5" x2="12.5" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="27" y1="12" x2="31.5" y2="16.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                          {/* Strictly Parallel Inner Bond in Pentagon (slope 1.5) */}
+                          <line x1="27.5" y1="12" x2="31.5" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
                           {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) in Red */}
                           <circle cx="6" cy="13" r="1.4" fill="#ff4d52" />
@@ -1458,10 +1459,10 @@ export default function Home() {
                           <circle cx="28.5" cy="10.5" r="1.4" fill="#ff4d52" />
                           <circle cx="28.5" cy="25.5" r="1.4" fill="#ff4d52" />
 
-                          {/* C6-Thiol Stem & Smooth Dissolving Linker to Nitroimidazole */}
+                          {/* C6-Thiol Stem & Short Smooth Dissolving Linker to Left (Nitroimidazole) */}
                           <line x1="13.5" y1="9.5" x2="13.5" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
                           <circle cx="13.5" cy="4.5" r="1.4" fill="#ff4d52" />
-                          <path d="M 13.5 4.5 L 21 4.5 L 27 8 L 34 4.5 L 41 8 L 48 5.5" fill="none" stroke="url(#fade-tail-aza)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M 13.5 4.5 L 9 3 L 4 5" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                       <div className="drug-meta">
