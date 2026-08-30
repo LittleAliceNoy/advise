@@ -1869,12 +1869,6 @@ export default function Home() {
                     </svg>
                   </div>
 
-                  {/* Subordinate Strategy Line */}
-                  <div className="biologic-paradigm-footer">
-                    <span className="paradigm-badge">TARGETED STRATEGY</span>
-                    <span className="paradigm-text">1 drug → 1 defined inflammatory target</span>
-                  </div>
-
                 </div>
               </div>
 
