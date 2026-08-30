@@ -1152,7 +1152,7 @@ export default function Home() {
                     <span className="claim-arrow">→</span>
                     <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
                   </p>
-                  <small className="must-body-comparator">compared with long-acting intravitreal corticosteroid implant strategy</small>
+                  <small className="must-body-comparator">vs long-acting intravitreal corticosteroid implant</small>
                 </div>
               </div>
             </div>
