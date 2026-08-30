@@ -1351,11 +1351,11 @@ export default function Home() {
                           <line x1="6" y1="23" x2="1.5" y2="25.8" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
                           <circle cx="1.5" cy="25.8" r="1.4" fill="#ff4d52" />
 
-                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) in Red (#ff4d52) matching NH2 groups */}
-                          <circle cx="6" cy="13" r="1.4" fill="#ff4d52" />
-                          <circle cx="13.5" cy="26.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="28.5" cy="9.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="28.5" cy="26.5" r="1.4" fill="#ff4d52" />
+                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) labeled as red 'N' */}
+                          <text x="6" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="13.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="28.5" y="9.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="28.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
                           {/* Smooth Dissolving Tail to PABA-Glutamate */}
                           <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
@@ -1453,11 +1453,11 @@ export default function Home() {
                           {/* Strictly Parallel Inner Bond in Pentagon */}
                           <line x1="30" y1="12" x2="34" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
-                          {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) in Red */}
-                          <circle cx="8.5" cy="13" r="1.4" fill="#ff4d52" />
-                          <circle cx="16" cy="26.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="31" cy="10.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="31" cy="25.5" r="1.4" fill="#ff4d52" />
+                          {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) labeled as red 'N' */}
+                          <text x="8.5" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="16" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="31" y="10.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="31" y="25.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
                           {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left */}
                           <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
