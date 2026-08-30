@@ -14949,7 +14949,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: clamp(0.25rem, 0.45vh, 0.6rem);
+  gap: clamp(0.35rem, 0.6vh, 0.8rem);
   background: transparent;
   border: none;
   border-radius: 0px;
@@ -14962,73 +14962,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   height: 100%;
 }
 
-.biologic-core-header {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding-bottom: clamp(0.2rem, 0.3vh, 0.35rem);
-}
-
-.biologic-badge {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.4));
-}
-
-.biologic-badge-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.biologic-title-wrap {
-  display: flex;
-  flex-direction: column;
-}
-
-.biologic-name-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.biologic-drug-name {
-  font: 900 clamp(0.95rem, 1.25vw, 1.55rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-  text-shadow: 0 0 16px rgba(255, 77, 82, 0.35);
-}
-
-.biologic-class-tag {
-  font: 700 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
-  color: #ff5c60;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(255, 77, 82, 0.12);
-  padding: 0.1rem 0.4rem;
-  border: 1px solid rgba(255, 77, 82, 0.3);
-}
-
-.biologic-subtitle {
-  font: 500 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
-  color: #d6d3d1;
-  margin-top: 0.1rem;
-}
-
 .biologic-tall-stage {
   flex: 1;
   min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.1rem, 0.25vh, 0.4rem) 0;
+  padding: clamp(0.1rem, 0.2vh, 0.3rem) 0;
 }
 
 .biologic-tall-svg {
   width: 100%;
-  height: 100%;
-  max-height: clamp(210px, 35vh, 360px);
+  height: auto;
+  max-height: clamp(190px, 31vh, 320px);
   filter: drop-shadow(0 0 16px rgba(255, 45, 45, 0.22));
 }
 

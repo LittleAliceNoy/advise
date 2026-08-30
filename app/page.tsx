@@ -1738,13 +1738,13 @@ export default function Home() {
             {/* MAIN TWO-COLUMN SPLIT: LEFT OCCUPIED ENTIRELY BY ADALIMUMAB */}
             <div className="intro5-main-columns">
               
-              {/* ENTIRE LEFT SIDE: ADALIMUMAB HERO */}
+              {/* ENTIRE LEFT SIDE: ADALIMUMAB HERO & 2016 APPROVAL */}
               <div className="intro5-left-hero">
                 <div className="biologic-mechanism-card full-height">
                   
-                  {/* Tall Full-Height Modular Antibody Showcase SVG */}
+                  {/* Tall Modular Antibody Showcase SVG */}
                   <div className="biologic-tall-stage">
-                    <svg viewBox="0 0 420 330" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                    <svg viewBox="0 0 420 310" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
                       <defs>
                         <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
                           <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
@@ -1754,10 +1754,10 @@ export default function Home() {
                       </defs>
 
                       {/* Ambient Background Aura */}
-                      <circle cx="210" cy="165" r="130" fill="url(#antibody-core-glow-tall)" />
+                      <circle cx="210" cy="150" r="120" fill="url(#antibody-core-glow-tall)" />
 
                       {/* --- MASSIVE MODULAR IgG1 ANTIBODY SCHEMATIC --- */}
-                      <g className="modular-antibody-tall" transform="translate(20, 20)">
+                      <g className="modular-antibody-tall" transform="translate(20, 10)">
 
                         {/* --- Fc STEM (CONSTANT REGION: CH2 & CH3) --- */}
                         {/* CH2 Pair */}
@@ -1851,24 +1851,24 @@ export default function Home() {
                     </svg>
                   </div>
 
+                  {/* 2016 FDA & EMA APPROVAL (MOVED TO LEFT PANEL) */}
+                  <div className="approval-milestone-panel">
+                    <div className="milestone-year-badge">
+                      <span className="milestone-year">2016</span>
+                      <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
+                    </div>
+                    <div className="milestone-body">
+                      <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
+                      <span className="milestone-sub">Following established approval across systemic rheumatic diseases</span>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              {/* ENTIRE RIGHT SIDE: MILESTONE & PRIOR EVIDENCE SIGNALS */}
+              {/* ENTIRE RIGHT SIDE: PRIOR EVIDENCE SIGNALS */}
               <div className="intro5-right-content">
                 
-                {/* 2016 FDA & EMA APPROVAL */}
-                <div className="approval-milestone-panel">
-                  <div className="milestone-year-badge">
-                    <span className="milestone-year">2016</span>
-                    <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
-                  </div>
-                  <div className="milestone-body">
-                    <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
-                    <span className="milestone-sub">Following established approval across systemic rheumatic diseases</span>
-                  </div>
-                </div>
-
                 {/* PRIOR EVIDENCE SECTION */}
                 <div className="intro5-prior-evidence-section">
                   <div className="intro5-section-rule" aria-hidden="true">
