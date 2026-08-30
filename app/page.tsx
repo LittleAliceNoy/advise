@@ -1539,26 +1539,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* SIMPLIFIED COMBINATION BRIDGE */}
-              <div className="escalation-bridge">
-                <div className="bridge-trajectory-top" aria-hidden="true">
-                  <svg viewBox="0 0 100 24" className="bridge-top-svg">
-                    <path d="M 0 20 Q 50 4 95 20" fill="none" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
-                  </svg>
-                </div>
-
-                <div className="bridge-pill">
-                  <strong className="bridge-main-text">COMBINATION WHEN NEEDED</strong>
-                  <span className="bridge-sub-text">to achieve inflammation control</span>
-                </div>
-
-                <div className="bridge-trajectory-bottom" aria-hidden="true">
-                  <svg viewBox="0 0 100 24" className="bridge-bottom-svg">
-                    <path d="M 0 4 Q 50 20 95 4" fill="none" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
-                  </svg>
-                </div>
-              </div>
-
               {/* SECONDARY CLASS: CALCINEURIN INHIBITORS */}
               <div className="pharma-territory territory-calcineurin">
                 <div className="territory-header">

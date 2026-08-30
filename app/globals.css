@@ -14392,8 +14392,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual weight) */
 .intro4-hero-territories {
   display: grid;
-  grid-template-columns: 1.35fr clamp(7.5rem, 9.5vw, 11rem) 1.05fr;
-  gap: clamp(1.0rem, 2.0vw, 2.8rem);
+  grid-template-columns: 1.32fr 1fr;
+  gap: clamp(1.8rem, 3.5vw, 4.5rem);
   align-items: center;
   width: 100%;
 }
