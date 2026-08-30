@@ -1030,11 +1030,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <span className="balance-label" style={{ fontSize: "clamp(0.38rem, 0.44vw, 0.54rem)", color: "#a8a29e", fontWeight: 700, letterSpacing: "0.08em", marginTop: "0.25rem" }}>BOTH ARE REQUIRED</span>
+                <span className="balance-label" style={{ fontSize: "clamp(0.46rem, 0.54vw, 0.68rem)", color: "#ded7d3", fontWeight: 800, letterSpacing: "0.09em", marginTop: "0.25rem" }}>BOTH ARE REQUIRED</span>
 
                 <div className="immunosuppression-text-wrap" style={{ marginTop: "0.15rem" }}>
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.95rem, 1.25vw, 1.55rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap" }}>SYSTEMIC IMMUNOSUPPRESSION</strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.68vw, 0.85rem)", fontWeight: 700, marginTop: "0.12rem" }}>Needed to achieve both goals</span>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.52rem, 0.62vw, 0.78rem)", fontWeight: 700, marginTop: "0.12rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>NEEDED TO ACHIEVE BOTH GOALS</span>
                 </div>
 
                 <span className="arrow-to-res" aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>

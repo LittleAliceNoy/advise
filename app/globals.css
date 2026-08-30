@@ -13838,9 +13838,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .balance-label {
-  font: 700 clamp(0.38rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  letter-spacing: 0.08em;
+  font: 800 clamp(0.46rem, 0.54vw, 0.68rem) var(--font-geist-mono), monospace;
+  color: #ded7d3;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   margin-top: 0.25rem;
 }
@@ -13876,12 +13876,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .immunosuppression-hero-sub {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.55rem, 0.68vw, 0.85rem);
+  font-size: clamp(0.52rem, 0.62vw, 0.78rem);
   font-weight: 700;
   color: #ded7d3;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   display: block;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 .arrow-to-res {
