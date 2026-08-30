@@ -1319,7 +1319,7 @@ export default function Home() {
                     {/* Drug 1: Methotrexate */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
-                        <svg viewBox="0 0 48 34" className="drug-svg">
+                        <svg viewBox="0 0 54 34" className="drug-svg">
                           <defs>
                             <linearGradient id="fade-tail-mtx" x1="0%" y1="0%" x2="100%" y2="0%">
                               <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
@@ -1328,37 +1328,37 @@ export default function Home() {
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                          {/* Symmetrical Fused 2,4-diaminopteridine core */}
+                          {/* Horizontally Expanded Symmetrical Fused 2,4-diaminopteridine core */}
                           {/* Left Hexagon (2,4-diaminopyrimidine) */}
-                          <polygon points="7.5,13 13.5,9.5 19.5,13 19.5,23 13.5,26.5 7.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="6,13 13.5,9.5 21,13 21,23 13.5,26.5 6,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           {/* Right Hexagon (pyrazine) */}
-                          <polygon points="19.5,13 25.5,9.5 31.5,13 31.5,23 25.5,26.5 19.5,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="21,13 28.5,9.5 36,13 36,23 28.5,26.5 21,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           
                           {/* Shared Central Bond */}
-                          <line x1="19.5" y1="13" x2="19.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                          <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
                           
                           {/* Refined Double Bonds */}
-                          <line x1="9" y1="14.2" x2="12.5" y2="11.8" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="9" y1="21.8" x2="12.5" y2="24.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="26.5" y1="11.8" x2="30" y2="14.2" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="26.5" y1="24.2" x2="30" y2="21.8" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="8" y1="14.5" x2="12.5" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="8" y1="21.5" x2="12.5" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="29.5" y1="12" x2="34" y2="14.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="29.5" y1="24" x2="34" y2="21.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
                           {/* 4-Amino Substituent (Top NH2) */}
                           <line x1="13.5" y1="9.5" x2="13.5" y2="4" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
                           <circle cx="13.5" cy="4" r="1.4" fill="#ff4d52" />
 
                           {/* 2-Amino Substituent (Bottom-Left NH2) */}
-                          <line x1="7.5" y1="23" x2="3" y2="25.8" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="3" cy="25.8" r="1.4" fill="#ff4d52" />
+                          <line x1="6" y1="23" x2="1.5" y2="25.8" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="1.5" cy="25.8" r="1.4" fill="#ff4d52" />
 
                           {/* Nitrogen Heteroatoms (N1, N3, N5, N8) in Red (#ff4d52) matching NH2 groups */}
-                          <circle cx="7.5" cy="13" r="1.4" fill="#ff4d52" />
+                          <circle cx="6" cy="13" r="1.4" fill="#ff4d52" />
                           <circle cx="13.5" cy="26.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="25.5" cy="9.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="25.5" cy="26.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="28.5" cy="9.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="28.5" cy="26.5" r="1.4" fill="#ff4d52" />
 
                           {/* Smooth Dissolving Tail to PABA-Glutamate */}
-                          <path d="M 31.5 13 L 37 9.8 L 42.5 13 L 47 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                       <div className="drug-meta">
