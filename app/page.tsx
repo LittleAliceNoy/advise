@@ -14,7 +14,6 @@ const chapters = [
   { id: "randomization", label: "Randomization" },
   { id: "treatment", label: "Treatment by stratum" },
   { id: "tapering", label: "Tapering and reactivation" },
-  { id: "tapering-cinematic", label: "Tapering (Cinematic Redesign)" },
   { id: "followup", label: "Follow-up" },
   { id: "outcomes", label: "Outcomes overview" },
   { id: "statistics-sample-only", label: "Statistics — sample size only" },
@@ -37,6 +36,7 @@ const chapters = [
   { id: "conclusion", label: "Conclusion" },
   { id: "outcomes-original", label: "Outcomes (original combined)" },
   { id: "secondary-outcomes-redesign", label: "Outcome definitions" },
+  { id: "tapering-cinematic", label: "Tapering (Cinematic Redesign)" },
 ];
 
 const strata = [
@@ -887,9 +887,23 @@ export default function Home() {
           <span>ADVISE <b>TRIAL</b></span>
         </button>
         <div className="chapter-readout" aria-live="polite">
-          <span>{String(active + 1).padStart(2, "0")}</span>
-          <i />
-          <span>{String(chapters.length).padStart(2, "0")}</span>
+          {chapters[active]?.id === "outcomes-original" ? (
+            <>
+              <span>11 - 31</span>
+            </>
+          ) : active < 31 ? (
+            <>
+              <span>{String(active + 1).padStart(2, "0")}</span>
+              <i />
+              <span>31</span>
+            </>
+          ) : (
+            <>
+              <span>EXTRA</span>
+              <i />
+              <span>{String(active - 30).padStart(2, "0")}</span>
+            </>
+          )}
         </div>
       </header>
 
@@ -2306,7 +2320,6 @@ export default function Home() {
               </div>
             </article>
           </div>
-
           <div className="injection-window" aria-label="Permitted timing for regional corticosteroid injections for macular edema">
             <div className="injection-title"><span>REGIONAL CORTICOSTEROID</span><small>MACULAR EDEMA · <strong>MAXIMUM 2 INJECTIONS</strong></small></div>
             <div className="injection-timeline">
@@ -2318,283 +2331,13 @@ export default function Home() {
         </section>
 
         <section
-          id="tapering-cinematic"
-          className={`scene tapering-cinematic-scene tapering-stage-${taperingStage}`}
-          onClick={onTaperClick}
-          onTouchStart={onTaperTouchStart}
-          onTouchEnd={onTaperTouchEnd}
-          aria-label="Methodology for corticosteroid tapering and reactivation. Click to advance through the progressive stages."
-        >
-          {/* Atmospheric background — deliberately restrained */}
-          <div className="taperx-atmosphere" aria-hidden="true">
-            <i className="taperx-orbit taperx-orbit-a" />
-            <i className="taperx-orbit taperx-orbit-b" />
-            <i className="taperx-horizon" />
-          </div>
-
-          {/* =========================================================
-              EDITORIAL COPY
-              ========================================================= */}
-          <div className="scene-copy tapering-copy">
-            <p className="eyebrow">
-              <span /> 12 — METHODOLOGY / TAPERING &amp; REACTIVATION
-            </p>
-
-            <h2>
-              Taper the steroid.<br />
-              <em>Escalate when needed.</em>
-            </h2>
-
-            <p className="lede">
-              Taper after 2–4 weeks of disease control.<br />
-              Reactivation resets steroids and advances immunosuppression.
-            </p>
-
-            {/* Small narrative marker — visually similar to existing metadata */}
-            <div className="taperx-sequence-label" aria-hidden="true">
-              <span className={taperingStage <= 1 ? "active" : ""}>01 TAPER</span>
-              <i />
-              <span
-                style={ taperingStage >= 2 && taperingStage <= 7 ? { color: "var(--red)" } : undefined }
-                className={
-                  taperingStage >= 2 && taperingStage <= 7 ? "active" : ""
-                }
-              >
-                02 ESCALATE
-              </span>
-              <i />
-              <span
-                style={ taperingStage === 8 ? { color: "var(--red)" } : undefined }
-                className={taperingStage === 8 ? "active" : ""}
-              >
-                03 RESCUE
-              </span>
-            </div>
-
-            {/* RESCUE STAGE — MOVED TO COPY AREA */}
-            <div className={`taperx-rescue ${taperingStage === 8 ? "active" : ""}`}>
-              <header className="tapering-control-header" style={{ marginBottom: "1.5rem" }}>
-                <span style={{ display: "block", color: "var(--red)", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.12em", marginBottom: "0.3rem" }}>RESCUE THERAPY</span>
-                <strong style={{ display: "block", color: "#eee", fontSize: "1.15rem", fontWeight: 500, letterSpacing: "-0.01em" }}>REGIONAL CORTICOSTEROID</strong>
-              </header>
-
-              <div className="taperx-rescue-indication" style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "2.5rem", padding: "1rem 1.2rem", background: "linear-gradient(90deg, rgba(255,45,45,0.1), transparent)", borderLeft: "2px solid var(--red)" }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: "0.42rem", color: "#ff8c8c", letterSpacing: "0.1em", marginBottom: "0.2rem", fontWeight: 600 }}>INDICATION</div>
-                  <div style={{ fontSize: "1.1rem", color: "#fff", fontWeight: 500, letterSpacing: "-0.02em" }}>Macular Edema</div>
-                </div>
-                <div style={{ display: "flex", gap: "0.4rem" }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 6px rgba(255,45,45,0.5))" }}>
-                    <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
-                  </svg>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 6px rgba(255,45,45,0.5))" }}>
-                    <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
-                  </svg>
-                </div>
-                <div style={{ marginLeft: "0.5rem", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: "1rem" }}>
-                  <strong style={{ display: "block", fontSize: "1.3rem", color: "#fff", lineHeight: 1 }}>MAX 2</strong>
-                  <span style={{ fontSize: "0.4rem", color: "#999", letterSpacing: "0.08em", marginTop: "0.2rem", display: "block" }}>INJECTIONS</span>
-                </div>
-              </div>
-
-
-
-              <div className="taperx-rescue-rule">
-                <span>0</span>
-                <i />
-                <span>2</span>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-                  <strong style={{ color: "#97928e", font: "500 .55rem var(--font-geist-mono), monospace", letterSpacing: "0.14em" }}>PROTECTED</strong>
-                  <span style={{ color: "#595653", font: ".38rem var(--font-geist-mono), monospace", letterSpacing: "0.07em", marginTop: "0.25rem" }}>OUTCOME-ASSESSMENT WINDOW</span>
-                </div>
-                <span>6</span>
-                <i />
-                <span>8 MONTHS</span>
-              </div>
-            </div>
-          </div>
-
-          {/* =========================================================
-              VISUAL FIELD
-              ========================================================= */}
-          <div className="taperx-visual-field">
-            {/* SHARED STEROID RESET BANNER */}
-            <div 
-              style={{
-                position: "absolute",
-                left: taperingStage >= 2 ? "0" : "5%",
-                right: taperingStage >= 2 ? "0" : "5%",
-                zIndex: 15,
-                transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-                opacity: (taperingStage >= 1 && taperingStage <= 8) ? 1 : 0,
-                pointerEvents: (taperingStage >= 1 && taperingStage <= 8) ? "auto" : "none",
-                top: taperingStage >= 2 ? "0" : "60%",
-                transform: taperingStage >= 2 ? "translateY(0)" : "translateY(-50%)",
-              }}
-            >
-              <div className="tapering-control" style={{ width: "100%", maxWidth: taperingStage >= 2 ? "100%" : "800px", margin: "0 auto" }}>
-                <article style={{ position: "relative", width: "100%", margin: 0, inset: "auto", height: "auto", padding: taperingStage >= 2 ? "1.5rem" : undefined }}>
-                  <header>
-                    <span>REACTIVATION</span>
-                    <strong>{taperingStage >= 2 ? "PROTOCOL ADVANCEMENT" : "RESET + HOLD"}</strong>
-                  </header>
-                  <div className="steroid-reset" style={{ marginTop: "1rem" }}>
-                    <b>≥2×</b>
-                    <span>PREDNISONE DOSE</span>
-                    <i>→</i>
-                    <strong>HOLD 2–4 WEEKS</strong>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            {/* ---------------------------------------------------------
-                STAGE 0 — TAPER
-                --------------------------------------------------------- */}
-            <div
-              className={`taperx-scene taperx-taper ${
-                taperingStage === 0 ? "active" : ""
-              }`}
-            >
-              <div className="tapering-control" style={{ position: "absolute", inset: 0, zIndex: 2 }}>
-                <article className="taper-protocol" style={{ position: "absolute", inset: 0, width: "100%", margin: 0, display: "flex", flexDirection: "column", padding: "1.5rem" }}>
-                  <header><span>PREDNISONE</span><strong>WEEKLY TAPER</strong></header>
-                  <div className="taper-trajectory" aria-hidden="true" style={{ flex: 1, height: "auto", margin: "1.5rem .5rem" }}><i /><i /><i /><i /><i /><b /></div>
-                  <div className="taper-checkpoints" style={{ marginTop: "auto" }}>
-                    <div><small>01</small><strong>REDUCE WEEKLY</strong><span>Declining decrements</span></div>
-                    <div><small>02</small><strong>7.5 MG/DAY GOAL</strong><span>Inactive uveitis checkpoint</span></div>
-                    <div><small>03</small><strong>HOLD</strong><span>2 visits · ≥28 days apart</span></div>
-                    <div><small>04</small><strong>RESUME TAPER</strong><span>After both visits</span></div>
-                  </div>
-                  <p className="reset-guidance" style={{ marginTop: "1.5rem" }}><b>PREDNISONE STEPPED DOWN WEEKLY TOWARD 7.5 MG/DAY.</b></p>
-                </article>
-              </div>
-            </div>
-
-            {/* ---------------------------------------------------------
-                STAGE 1 — REACTIVATION
-                --------------------------------------------------------- */}
-            <div
-              className={`taperx-scene taperx-reactivation ${
-                taperingStage === 1 ? "active" : ""
-              }`}
-            >
-              <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingBottom: "10rem" }}>
-                <div style={{ 
-                  width: "5rem", 
-                  height: "5rem", 
-                  borderRadius: "50%", 
-                  border: "2px solid #ff2d2d", 
-                  color: "#ff2d2d", 
-                  display: "flex", 
-                  justifyContent: "center", 
-                  alignItems: "center", 
-                  fontSize: "3.5rem", 
-                  fontWeight: "bold", 
-                  boxShadow: "0 0 35px rgba(255,45,45,0.4), inset 0 0 25px rgba(255,45,45,0.2)",
-                  fontFamily: "var(--font-geist-mono)"
-                }}>
-                  !
-                </div>
-              </div>
-            </div>
-
-            {/* ---------------------------------------------------------
-                STAGES 2–7 — ESCALATION
-                --------------------------------------------------------- */}
-            <div
-              className={`taperx-scene taperx-escalation ${
-                taperingStage >= 2 && taperingStage <= 8 ? "active" : ""
-              } ${taperingStage === 8 ? "faded" : ""}`}
-            >
-
-              <div className="taperx-escalation-grid">
-                <div className="taperx-escalation-axis" aria-hidden="true" />
-
-                <article
-                  className={`taperx-esc-step s1 ${
-                    taperingStage >= 3 ? "revealed" : ""
-                  } ${taperingStage === 3 ? "current" : ""}`}
-                >
-                  <b className="taperx-esc-number">01</b>
-                  <div>
-                    <small>ADA ONLY</small>
-                    <strong>ADD</strong>
-                    <span>CID (ANTIMETABOLITES)</span>
-                  </div>
-                </article>
-
-                <article
-                  className={`taperx-esc-step s2 ${
-                    taperingStage >= 4 ? "revealed" : ""
-                  } ${taperingStage === 4 ? "current" : ""}`}
-                >
-                  <b className="taperx-esc-number">02</b>
-                  <div>
-                    <small>ADA + CID · BELOW MAX</small>
-                    <strong>ESCALATE CID</strong>
-                    <span>TO MAXIMUM DOSE</span>
-                  </div>
-                </article>
-
-                <article
-                  className={`taperx-esc-step s3 ${
-                    taperingStage >= 5 ? "revealed" : ""
-                  } ${taperingStage === 5 ? "current" : ""}`}
-                >
-                  <b className="taperx-esc-number">03</b>
-                  <div>
-                    <small>1 CID · BELOW MAX</small>
-                    <strong>ESCALATE</strong>
-                    <span>TO MAXIMUM DOSE</span>
-                  </div>
-                </article>
-
-                <article
-                  className={`taperx-esc-step s4 ${
-                    taperingStage >= 6 ? "revealed" : ""
-                  } ${taperingStage === 6 ? "current" : ""}`}
-                >
-                  <b className="taperx-esc-number">04</b>
-                  <div>
-                    <small>1 CID · AT MAX</small>
-                    <strong>ADD</strong>
-                    <span>ALTERNATE CLASS</span>
-                  </div>
-                </article>
-
-                <article
-                  className={`taperx-esc-step s5 ${
-                    taperingStage >= 7 ? "revealed" : ""
-                  } ${taperingStage === 7 ? "current" : ""}`}
-                >
-                  <b className="taperx-esc-number">05</b>
-                  <div>
-                    <small>2 CID · AT MAX</small>
-                    <strong>BEST MEDICAL</strong>
-                    <span>JUDGMENT</span>
-                  </div>
-                </article>
-              </div>
-
-              <div className="taperx-escalation-caption">
-                <span>LESS INTENSIVE</span>
-                <i />
-                <span>GREATER TREATMENT INTENSITY</span>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-        <section
           id="followup"
           className={`scene followup-scene followup-stage-${followupStage}`}
           onClick={() => setFollowupStage((stage) => (stage < 2 ? ((stage + 1) as 0 | 1 | 2) : 0))}
           aria-label="Follow-up schedule. Click to reveal every-visit protocols, then milestone evaluations."
         >
           <div className="scene-copy followup-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / FOLLOW-UP</p>
             <h2>A year in focus.<br /><em>Every visit counts.</em></h2>
             <p className="lede">Monthly through month 6, then every 2 months to the 1-year close-out.</p>
           </div>
@@ -2645,7 +2388,7 @@ export default function Home() {
           aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis."
         >
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 14 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -2698,7 +2441,7 @@ export default function Home() {
 
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -2733,7 +2476,7 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family."
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 16 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models.</em></h2>
           </div>
 
@@ -2783,7 +2526,7 @@ export default function Home() {
         <section id="participant-flow" className="scene participant-flow-scene">
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
-              <p className="eyebrow flow-intro-eyebrow"><span /> 17 — RESULTS / PARTICIPANT FLOW</p>
+              <p className="eyebrow flow-intro-eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
               <div className="flow-intro-title flow-assessed-title"><span>ASSESSED FOR ELIGIBILITY</span><strong>338</strong></div>
               <div className="flow-intro-title flow-excluded-title"><span>EXCLUDED</span><strong>111</strong></div>
               <div className="flow-intro-title flow-randomized-title"><span>RANDOMIZED</span><strong>227</strong></div>
@@ -2813,7 +2556,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -2889,7 +2632,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 18 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts.</em></h2>
             <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately.</p>
           </div>
@@ -2961,7 +2704,7 @@ export default function Home() {
         {false && <section id="treatment-results" className="scene treatment-results-scene">
           <div className="scene-header-row">
             <div className="scene-copy treatment-results-copy">
-              <p className="eyebrow"><span /> 19 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
               <h2>Therapy assigned. <em>Treatment evolved.</em></h2>
             </div>
             
@@ -3245,7 +2988,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 19 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -3510,7 +3253,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA.</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster.</p>
           </div>
@@ -3562,7 +3305,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later.</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids.</p>
           </div>
@@ -3610,7 +3353,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 22 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded.</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution.</p>
           </div>
@@ -3695,7 +3438,7 @@ export default function Home() {
 
         <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 23 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
           </div>
@@ -3749,7 +3492,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 24 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -3762,7 +3505,7 @@ export default function Home() {
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 25 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 24 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -3869,7 +3612,7 @@ export default function Home() {
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="eyebrow"><span /> 25 — DISCUSSION / CATARACT SIGNAL</p>
               <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive.</h2>
@@ -3994,7 +3737,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / MASKING LIMITATIONS</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
@@ -4177,7 +3920,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
@@ -4672,7 +4415,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 29 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="eyebrow"><span /> 28 — DISCUSSION / TEMPORAL TRAJECTORY</p>
               <p className="cataract-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
@@ -4878,7 +4621,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 30 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 29 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -5147,7 +4890,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 31 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 30 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -5337,7 +5080,7 @@ export default function Home() {
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 32 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 31 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
@@ -5350,7 +5093,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 33 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 11 - 31 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -5400,7 +5143,7 @@ export default function Home() {
 
         <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
           <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
-            <p className="eyebrow"><span /> 34 — METHODOLOGY / OUTCOME DEFINITIONS</p>
+            <p className="eyebrow"><span /> EXTRA — METHODOLOGY / OUTCOME DEFINITIONS</p>
             <h2>Activity was measured precisely.</h2>
           </div>
 
@@ -5424,6 +5167,274 @@ export default function Home() {
               </section>
             </div>
           </section>
+        </section>
+
+        <section
+          id="tapering-cinematic"
+          className={`scene tapering-cinematic-scene tapering-stage-${taperingStage}`}
+          onClick={onTaperClick}
+          onTouchStart={onTaperTouchStart}
+          onTouchEnd={onTaperTouchEnd}
+          aria-label="Methodology for corticosteroid tapering and reactivation. Click to advance through the progressive stages."
+        >
+          {/* Atmospheric background — deliberately restrained */}
+          <div className="taperx-atmosphere" aria-hidden="true">
+            <i className="taperx-orbit taperx-orbit-a" />
+            <i className="taperx-orbit taperx-orbit-b" />
+            <i className="taperx-horizon" />
+          </div>
+
+          {/* =========================================================
+              EDITORIAL COPY
+              ========================================================= */}
+          <div className="scene-copy tapering-copy">
+            <p className="eyebrow">
+              <span /> EXTRA — METHODOLOGY / TAPERING &amp; REACTIVATION
+            </p>
+
+            <h2>
+              Taper the steroid.<br />
+              <em>Escalate when needed.</em>
+            </h2>
+
+            <p className="lede">
+              Taper after 2–4 weeks of disease control.<br />
+              Reactivation resets steroids and advances immunosuppression.
+            </p>
+
+            {/* Small narrative marker — visually similar to existing metadata */}
+            <div className="taperx-sequence-label" aria-hidden="true">
+              <span className={taperingStage <= 1 ? "active" : ""}>01 TAPER</span>
+              <i />
+              <span
+                style={ taperingStage >= 2 && taperingStage <= 7 ? { color: "var(--red)" } : undefined }
+                className={
+                  taperingStage >= 2 && taperingStage <= 7 ? "active" : ""
+                }
+              >
+                02 ESCALATE
+              </span>
+              <i />
+              <span
+                style={ taperingStage === 8 ? { color: "var(--red)" } : undefined }
+                className={taperingStage === 8 ? "active" : ""}
+              >
+                03 RESCUE
+              </span>
+            </div>
+
+            {/* RESCUE STAGE — MOVED TO COPY AREA */}
+            <div className={`taperx-rescue ${taperingStage === 8 ? "active" : ""}`}>
+              <header className="tapering-control-header" style={{ marginBottom: "1.5rem" }}>
+                <span style={{ display: "block", color: "var(--red)", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.12em", marginBottom: "0.3rem" }}>RESCUE THERAPY</span>
+                <strong style={{ display: "block", color: "#eee", fontSize: "1.15rem", fontWeight: 500, letterSpacing: "-0.01em" }}>REGIONAL CORTICOSTEROID</strong>
+              </header>
+
+              <div className="taperx-rescue-indication" style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "2.5rem", padding: "1rem 1.2rem", background: "linear-gradient(90deg, rgba(255,45,45,0.1), transparent)", borderLeft: "2px solid var(--red)" }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: "0.42rem", color: "#ff8c8c", letterSpacing: "0.1em", marginBottom: "0.2rem", fontWeight: 600 }}>INDICATION</div>
+                  <div style={{ fontSize: "1.1rem", color: "#fff", fontWeight: 500, letterSpacing: "-0.02em" }}>Macular Edema</div>
+                </div>
+                <div style={{ display: "flex", gap: "0.4rem" }}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 6px rgba(255,45,45,0.5))" }}>
+                    <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
+                  </svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 6px rgba(255,45,45,0.5))" }}>
+                    <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
+                  </svg>
+                </div>
+                <div style={{ marginLeft: "0.5rem", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: "1rem" }}>
+                  <strong style={{ display: "block", fontSize: "1.3rem", color: "#fff", lineHeight: 1 }}>MAX 2</strong>
+                  <span style={{ fontSize: "0.4rem", color: "#999", letterSpacing: "0.08em", marginTop: "0.2rem", display: "block" }}>INJECTIONS</span>
+                </div>
+              </div>
+
+              <div className="taperx-rescue-rule">
+                <span>0</span>
+                <i />
+                <span>2</span>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+                  <strong style={{ color: "#97928e", font: "500 .55rem var(--font-geist-mono), monospace", letterSpacing: "0.14em" }}>PROTECTED</strong>
+                  <span style={{ color: "#595653", font: ".38rem var(--font-geist-mono), monospace", letterSpacing: "0.07em", marginTop: "0.25rem" }}>OUTCOME-ASSESSMENT WINDOW</span>
+                </div>
+                <span>6</span>
+                <i />
+                <span>8 MONTHS</span>
+              </div>
+            </div>
+          </div>
+
+          {/* =========================================================
+              VISUAL FIELD
+              ========================================================= */}
+          <div className="taperx-visual-field">
+            {/* SHARED STEROID RESET BANNER */}
+            <div 
+              style={{
+                position: "absolute",
+                left: taperingStage >= 2 ? "0" : "5%",
+                right: taperingStage >= 2 ? "0" : "5%",
+                zIndex: 15,
+                transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                opacity: (taperingStage >= 1 && taperingStage <= 8) ? 1 : 0,
+                pointerEvents: (taperingStage >= 1 && taperingStage <= 8) ? "auto" : "none",
+                top: taperingStage >= 2 ? "0" : "60%",
+                transform: taperingStage >= 2 ? "translateY(0)" : "translateY(-50%)",
+              }}
+            >
+              <div className="tapering-control" style={{ width: "100%", maxWidth: taperingStage >= 2 ? "100%" : "800px", margin: "0 auto" }}>
+                <article style={{ position: "relative", width: "100%", margin: 0, inset: "auto", height: "auto", padding: taperingStage >= 2 ? "1.5rem" : undefined }}>
+                  <header>
+                    <span>REACTIVATION</span>
+                    <strong>{taperingStage >= 2 ? "PROTOCOL ADVANCEMENT" : "RESET + HOLD"}</strong>
+                  </header>
+                  <div className="steroid-reset" style={{ marginTop: "1rem" }}>
+                    <b>≥2×</b>
+                    <span>PREDNISONE DOSE</span>
+                    <i>→</i>
+                    <strong>HOLD 2–4 WEEKS</strong>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            {/* ---------------------------------------------------------
+                STAGE 0 — TAPER
+                --------------------------------------------------------- */}
+            <div
+              className={`taperx-scene taperx-taper ${
+                taperingStage === 0 ? "active" : ""
+              }`}
+            >
+              <div className="tapering-control" style={{ position: "absolute", inset: 0, zIndex: 2 }}>
+                <article className="taper-protocol" style={{ position: "absolute", inset: 0, width: "100%", margin: 0, display: "flex", flexDirection: "column", padding: "1.5rem" }}>
+                  <header><span>PREDNISONE</span><strong>WEEKLY TAPER</strong></header>
+                  <div className="taper-trajectory" aria-hidden="true" style={{ flex: 1, height: "auto", margin: "1.5rem .5rem" }}><i /><i /><i /><i /><i /><b /></div>
+                  <div className="taper-checkpoints" style={{ marginTop: "auto" }}>
+                    <div><small>01</small><strong>REDUCE WEEKLY</strong><span>Declining decrements</span></div>
+                    <div><small>02</small><strong>7.5 MG/DAY GOAL</strong><span>Inactive uveitis checkpoint</span></div>
+                    <div><small>03</small><strong>HOLD</strong><span>2 visits · ≥28 days apart</span></div>
+                    <div><small>04</small><strong>RESUME TAPER</strong><span>After both visits</span></div>
+                  </div>
+                  <p className="reset-guidance" style={{ marginTop: "1.5rem" }}><b>PREDNISONE STEPPED DOWN WEEKLY TOWARD 7.5 MG/DAY.</b></p>
+                </article>
+              </div>
+            </div>
+
+            {/* ---------------------------------------------------------
+                STAGE 1 — REACTIVATION
+                --------------------------------------------------------- */}
+            <div
+              className={`taperx-scene taperx-reactivation ${
+                taperingStage === 1 ? "active" : ""
+              }`}
+            >
+              <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingBottom: "10rem" }}>
+                <div style={{ 
+                  width: "5rem", 
+                  height: "5rem", 
+                  borderRadius: "50%", 
+                  border: "2px solid #ff2d2d", 
+                  color: "#ff2d2d", 
+                  display: "flex", 
+                  justifyContent: "center", 
+                  alignItems: "center", 
+                  fontSize: "3.5rem", 
+                  fontWeight: "bold", 
+                  boxShadow: "0 0 35px rgba(255,45,45,0.4), inset 0 0 25px rgba(255,45,45,0.2)",
+                  fontFamily: "var(--font-geist-mono)"
+                }}>
+                  !
+                </div>
+              </div>
+            </div>
+
+            {/* ---------------------------------------------------------
+                STAGES 2–7 — ESCALATION
+                --------------------------------------------------------- */}
+            <div
+              className={`taperx-scene taperx-escalation ${
+                taperingStage >= 2 && taperingStage <= 8 ? "active" : ""
+              } ${taperingStage === 8 ? "faded" : ""}`}
+            >
+
+              <div className="taperx-escalation-grid">
+                <div className="taperx-escalation-axis" aria-hidden="true" />
+
+                <article
+                  className={`taperx-esc-step s1 ${
+                    taperingStage >= 3 ? "revealed" : ""
+                  } ${taperingStage === 3 ? "current" : ""}`}
+                >
+                  <b className="taperx-esc-number">01</b>
+                  <div>
+                    <small>ADA ONLY</small>
+                    <strong>ADD</strong>
+                    <span>CID (ANTIMETABOLITES)</span>
+                  </div>
+                </article>
+
+                <article
+                  className={`taperx-esc-step s2 ${
+                    taperingStage >= 4 ? "revealed" : ""
+                  } ${taperingStage === 4 ? "current" : ""}`}
+                >
+                  <b className="taperx-esc-number">02</b>
+                  <div>
+                    <small>ADA + CID · BELOW MAX</small>
+                    <strong>ESCALATE CID</strong>
+                    <span>TO MAXIMUM DOSE</span>
+                  </div>
+                </article>
+
+                <article
+                  className={`taperx-esc-step s3 ${
+                    taperingStage >= 5 ? "revealed" : ""
+                  } ${taperingStage === 5 ? "current" : ""}`}
+                >
+                  <b className="taperx-esc-number">03</b>
+                  <div>
+                    <small>1 CID · BELOW MAX</small>
+                    <strong>ESCALATE</strong>
+                    <span>TO MAXIMUM DOSE</span>
+                  </div>
+                </article>
+
+                <article
+                  className={`taperx-esc-step s4 ${
+                    taperingStage >= 6 ? "revealed" : ""
+                  } ${taperingStage === 6 ? "current" : ""}`}
+                >
+                  <b className="taperx-esc-number">04</b>
+                  <div>
+                    <small>1 CID · AT MAX</small>
+                    <strong>ADD</strong>
+                    <span>ALTERNATE CLASS</span>
+                  </div>
+                </article>
+
+                <article
+                  className={`taperx-esc-step s5 ${
+                    taperingStage >= 7 ? "revealed" : ""
+                  } ${taperingStage === 7 ? "current" : ""}`}
+                >
+                  <b className="taperx-esc-number">05</b>
+                  <div>
+                    <small>2 CID · AT MAX</small>
+                    <strong>BEST MEDICAL</strong>
+                    <span>JUDGMENT</span>
+                  </div>
+                </article>
+              </div>
+
+              <div className="taperx-escalation-caption">
+                <span>LESS INTENSIVE</span>
+                <i />
+                <span>GREATER TREATMENT INTENSITY</span>
+              </div>
+            </div>
+          </div>
+
         </section>
       </main>
     </>
