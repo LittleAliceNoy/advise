@@ -1286,7 +1286,8 @@ export default function Home() {
 
           <header className="intro4-header">
             <h2>
-              One agent may <em>not be enough.</em>
+              One agent may<br />
+              <em>not be enough.</em>
             </h2>
           </header>
 

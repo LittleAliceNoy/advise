@@ -14365,18 +14365,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .intro4-header h2 {
   font-family: var(--font-geist-sans), Arial, sans-serif;
   font-size: clamp(2.4rem, 4.0vw, 4.8rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1.0;
-  color: #ffffff;
+  font-weight: 450;
+  letter-spacing: -0.065em;
+  line-height: 0.93;
+  color: var(--white);
   margin: 0;
   text-align: center;
 }
 
 .intro4-header h2 em {
-  color: #ff4d52;
+  color: var(--red);
   font-style: normal;
-  text-shadow: 0 0 28px rgba(255, 77, 82, 0.65), 0 0 10px rgba(255, 77, 82, 0.35);
+  text-shadow: none;
 }
 
 .intro4-content-grid {
