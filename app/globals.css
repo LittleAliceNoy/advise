@@ -14875,40 +14875,496 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin-top: 0.12rem;
 }
 
-/* Slide 05 — unresolved space becomes the reason for ADVISE */
+/* Slide 05 — Adalimumab Targeted Biologic & Prior Evidence */
 .intro5-scene {
-  padding: 8.5vh 6vw 4vh;
-  display: grid;
-  grid-template-rows: auto auto minmax(0,1fr) auto;
-  gap: clamp(.85rem,1.7vh,1.6rem);
+  padding: 7.5vh clamp(2vw, 4.5vw, 4.5rem) 3.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.6rem, 1.2vh, 1.2rem);
   background:
-    radial-gradient(ellipse at 50% 78%, rgba(255,45,45,.11), transparent 34%),
+    radial-gradient(ellipse at 50% 22%, rgba(255, 45, 45, 0.08), transparent 48%),
+    radial-gradient(ellipse at 85% 75%, rgba(192, 132, 252, 0.03), transparent 45%),
     #050507;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.intro5-premise { margin: 0; justify-self: center; color: #a39b97; font-size: clamp(.8rem,1vw,1.15rem); letter-spacing: .015em; }
-.intro5-gap { justify-self: center; width: min(78rem,84vw); min-height: 0; display: grid; grid-template-columns: minmax(0,1fr) clamp(14rem,19vw,22rem) minmax(0,1fr); align-items: center; }
-.intro5-stream { min-width: 0; display: grid; align-items: center; font-family: var(--font-geist-mono), monospace; }
-.intro5-stream-ada { grid-template-columns: auto auto 1fr; }
-.intro5-stream-cid { grid-template-columns: 1fr auto auto; text-align: right; }
-.intro5-stream small { color: #776f6c; font-size: clamp(.42rem,.5vw,.6rem); letter-spacing: .09em; }
-.intro5-stream strong { margin: 0 clamp(.8rem,1.4vw,1.5rem); font-size: clamp(3.4rem,5.4vw,6.4rem); font-weight: 470; line-height: .8; letter-spacing: -.07em; }
-.intro5-stream-ada strong { color: #ff5a60; text-shadow: 0 0 28px rgba(255,45,45,.22); }
-.intro5-stream-cid strong { color: #ae87fa; text-shadow: 0 0 28px rgba(132,94,255,.18); }
-.intro5-stream i { position: relative; height: 1px; }
-.intro5-stream-ada i { background: linear-gradient(90deg, rgba(255,77,82,.75), rgba(255,77,82,.12)); }
-.intro5-stream-cid i { background: linear-gradient(90deg, rgba(181,142,255,.12), rgba(181,142,255,.7)); }
-.intro5-stream i::after { content: ""; position: absolute; top: 50%; width: .45rem; height: .45rem; border: 1px solid; border-radius: 50%; background: #050507; transform: translateY(-50%); }
-.intro5-stream-ada i::after { right: 0; border-color: #ff5a60; box-shadow: 0 0 12px rgba(255,45,45,.6); }
-.intro5-stream-cid i::after { left: 0; border-color: #ae87fa; box-shadow: 0 0 12px rgba(132,94,255,.5); }
-.intro5-absence { align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1px dashed rgba(255,255,255,.08); border-right: 1px dashed rgba(255,255,255,.08); text-align: center; font-family: var(--font-geist-mono), monospace; }
-.intro5-absence span { color: #6e6865; font-size: clamp(.52rem,.63vw,.75rem); letter-spacing: .14em; }
-.intro5-absence strong { margin: .35rem 0; color: #f0ece8; font-size: clamp(1rem,1.35vw,1.65rem); line-height: 1; letter-spacing: .1em; }
-.intro5-reveal { position: relative; justify-self: center; min-width: min(42rem,68vw); padding: .8rem 2rem 1rem; display: grid; justify-items: center; border-top: 1px solid rgba(255,77,82,.6); text-align: center; animation: adviseRevealIn .8s cubic-bezier(.16,1,.3,1) .35s both; }
-.intro5-reveal small { color: #7a7471; font: 600 clamp(.42rem,.5vw,.6rem)/1 var(--font-geist-mono), monospace; letter-spacing: .13em; }
-.intro5-reveal strong { margin-top: .3rem; color: #fff; font-size: clamp(3.6rem,5.8vw,6.8rem); font-weight: 500; line-height: .82; letter-spacing: .2em; text-indent: .2em; text-shadow: 0 0 30px rgba(255,45,45,.28); }
-.intro5-reveal span { margin-top: .55rem; color: #ff666b; font: 600 clamp(.46rem,.56vw,.68rem)/1.2 var(--font-geist-mono), monospace; letter-spacing: .08em; }
-.intro5-reveal > i { position: absolute; left: 50%; bottom: 0; width: 1px; height: .55rem; background: var(--red); box-shadow: 0 0 10px var(--red); }
+.intro5-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.intro5-header h2 {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(2.4rem, 4.0vw, 4.8rem);
+  font-weight: 450;
+  letter-spacing: -0.065em;
+  line-height: 0.93;
+  color: var(--white);
+  margin: 0;
+  text-align: center;
+}
+
+.intro5-header h2 em {
+  color: var(--red);
+  font-style: normal;
+  text-shadow: none;
+}
+
+.intro5-content-grid {
+  width: min(86rem, 93vw);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(0.6rem, 1.2vh, 1.3rem);
+  margin-top: clamp(0.1rem, 0.3vh, 0.4rem);
+}
+
+/* HERO BIOLOGIC MECHANISM & REGULATORY MILESTONE */
+.intro5-hero-territory {
+  display: grid;
+  grid-template-columns: 1fr clamp(15rem, 19vw, 22rem);
+  gap: clamp(1.0rem, 1.8vw, 2.4rem);
+  align-items: stretch;
+  width: 100%;
+}
+
+.biologic-mechanism-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(0.35rem, 0.6vh, 0.75rem);
+  background: rgba(16, 11, 19, 0.6);
+  border: 1px solid rgba(255, 77, 82, 0.22);
+  border-left: 2.5px solid var(--red);
+  border-radius: 0px;
+  padding: clamp(0.45rem, 0.8vh, 0.85rem) clamp(0.75rem, 1.4vw, 1.4rem);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.biologic-core-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-bottom: 1px solid rgba(255, 77, 82, 0.2);
+  padding-bottom: clamp(0.2rem, 0.35vh, 0.4rem);
+}
+
+.biologic-badge {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.4));
+}
+
+.biologic-badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.biologic-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.biologic-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.biologic-drug-name {
+  font: 900 clamp(0.95rem, 1.25vw, 1.55rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.35);
+}
+
+.biologic-class-tag {
+  font: 700 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #ff5c60;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 77, 82, 0.12);
+  padding: 0.1rem 0.4rem;
+  border: 1px solid rgba(255, 77, 82, 0.3);
+}
+
+.biologic-subtitle {
+  font: 500 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  margin-top: 0.1rem;
+}
+
+.biologic-interaction-stage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.biologic-interaction-svg {
+  width: 100%;
+  max-height: clamp(100px, 12.5vh, 135px);
+  filter: drop-shadow(0 0 14px rgba(255, 45, 45, 0.16));
+}
+
+.biologic-paradigm-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: clamp(0.2rem, 0.35vh, 0.4rem);
+}
+
+.paradigm-badge {
+  font: 800 clamp(0.38rem, 0.44vw, 0.56rem) var(--font-geist-mono), monospace;
+  color: var(--red);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.paradigm-text {
+  font: 600 clamp(0.46rem, 0.54vw, 0.70rem) var(--font-geist-mono), monospace;
+  color: #e5e5e5;
+  letter-spacing: 0.03em;
+}
+
+/* APPROVAL MILESTONE PANEL */
+.approval-milestone-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.35rem, 0.6vh, 0.7rem);
+  background: rgba(18, 12, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 2.5px solid var(--red);
+  padding: clamp(0.55rem, 0.9vh, 1.0rem) clamp(0.75rem, 1.1vw, 1.2rem);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.milestone-year-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.milestone-year {
+  font: 900 clamp(1.25rem, 1.7vw, 2.1rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.milestone-agency {
+  font: 800 clamp(0.46rem, 0.55vw, 0.72rem) var(--font-geist-mono), monospace;
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+
+.milestone-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.milestone-indication {
+  font: 700 clamp(0.52rem, 0.64vw, 0.82rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.milestone-sub {
+  font: 500 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #a8a29e;
+  line-height: 1.2;
+}
+
+/* LOWER HALF: MAIN EVIDENCE BEFORE ADVISE */
+.intro5-prior-evidence-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.25rem, 0.45vh, 0.55rem);
+  width: 100%;
+}
+
+.intro5-section-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  margin: clamp(0.1rem, 0.25vh, 0.35rem) 0;
+}
+
+.prior-evidence-grid {
+  display: grid;
+  grid-template-columns: 1.22fr 1fr;
+  gap: clamp(1.0rem, 1.8vw, 2.4rem);
+  width: 100%;
+  align-items: stretch;
+}
+
+.evidence-panel {
+  background: rgba(14, 10, 16, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: clamp(0.45rem, 0.75vh, 0.8rem) clamp(0.75rem, 1.2vw, 1.3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(0.3rem, 0.5vh, 0.6rem);
+  box-sizing: border-box;
+}
+
+.evidence-panel-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.2rem;
+}
+
+.evidence-sig-tag {
+  font: 800 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
+  color: #ff5c60;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rct-sequence-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background: rgba(10, 6, 12, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: clamp(0.25rem, 0.45vh, 0.5rem) clamp(0.5rem, 0.8vw, 0.9rem);
+}
+
+.rct-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.rct-step-sub {
+  font: 700 clamp(0.34rem, 0.40vw, 0.50rem) var(--font-geist-mono), monospace;
+  color: #8c827e;
+  letter-spacing: 0.06em;
+}
+
+.rct-step-title {
+  font: 900 clamp(0.60rem, 0.74vw, 0.92rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+
+.rct-step-title.highlight-red {
+  color: var(--red);
+}
+
+.rct-step-action {
+  font: 500 clamp(0.36rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
+  color: #a8a29e;
+}
+
+.rct-flow-arrow {
+  color: rgba(255, 77, 82, 0.8);
+  font-size: 0.65rem;
+}
+
+.rct-result-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.timeline-delayed-visual {
+  width: 100%;
+  padding: 0.2rem 0;
+}
+
+.timeline-axis {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-arrow-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 77, 82, 0.7) 100%);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.event-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  position: relative;
+  z-index: 2;
+}
+
+.marker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #000;
+}
+
+.dot-placebo {
+  background: #a8a29e;
+}
+
+.dot-ada {
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+}
+
+.marker-label {
+  font: 700 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+}
+
+.rct-result-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.rct-hero-result {
+  font: 900 clamp(0.68rem, 0.86vw, 1.1rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+
+.rct-sub-result {
+  font: 500 clamp(0.40rem, 0.48vw, 0.62rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  line-height: 1.2;
+}
+
+/* SIGNAL 02 COHORT */
+.cohort-content-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 1.4vw, 1.6rem);
+  padding: clamp(0.2rem, 0.4vh, 0.5rem) 0;
+}
+
+.cohort-stat-anchor {
+  font-family: var(--font-geist-mono), monospace !important;
+  font-size: clamp(2.4rem, 3.6vw, 4.4rem) !important;
+  font-weight: 900 !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.04em !important;
+  color: var(--red) !important;
+  text-shadow: none !important;
+  flex-shrink: 0 !important;
+}
+
+.cohort-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cohort-headline {
+  font: 900 clamp(0.66rem, 0.82vw, 1.05rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+
+.cohort-condition {
+  font: 600 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+}
+
+.cohort-outcome-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.outcome-arrow {
+  color: var(--red);
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+
+.cohort-outcome-tag strong {
+  font: 800 clamp(0.48rem, 0.58vw, 0.74rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.cohort-subordinate-footer {
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 0.2rem;
+  font: 500 clamp(0.38rem, 0.44vw, 0.56rem) var(--font-geist-mono), monospace;
+  color: #8c827e;
+}
+
+/* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE */
+.intro5-tension-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(0.4rem, 0.7vh, 0.75rem) clamp(1.0rem, 1.8vw, 2.2rem);
+  background: linear-gradient(90deg, rgba(255, 45, 45, 0.06) 0%, rgba(16, 10, 16, 0.9) 50%, rgba(255, 45, 45, 0.06) 100%);
+  border: 1px solid rgba(255, 77, 82, 0.35);
+  box-sizing: border-box;
+}
+
+.tension-content {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.4rem, 0.8vw, 1.0rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tension-lead {
+  font: 600 clamp(0.56rem, 0.72vw, 0.92rem) var(--font-geist-mono), monospace;
+  color: #a8a29e;
+  letter-spacing: 0.02em;
+}
+
+.tension-question {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.92rem, 1.25vw, 1.55rem);
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.tension-question em {
+  color: var(--red);
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 45, 45, 0.55);
+  text-underline-offset: 3px;
+}
 
 @keyframes introNarrowIn {
   from { opacity: 0; transform: translateY(14px) scale(.985); }
@@ -14929,10 +15385,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   .intro3-progress { grid-template-columns: 1fr; text-align: center; }
   .intro3-progress i { width: 1px; height: 1rem; justify-self: center; }
   .intro3-equation { grid-template-columns: 1fr auto 1fr; }
-  .intro3-equation > b:nth-of-type(2), .intro3-result { display: none; }
-  .intro5-gap { width: 100%; grid-template-columns: 1fr; gap: 1.4rem; }
-  .intro5-absence { min-height: 8rem; }
-  .intro5-reveal { min-width: 92vw; }
+  .intro5-hero-territory { grid-template-columns: 1fr; gap: 1.0rem; }
+  .prior-evidence-grid { grid-template-columns: 1fr; gap: 1.0rem; }
 }
 
 /* Introduction presentation-distance refinement */
@@ -14982,53 +15436,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     font-size: clamp(.72rem, .84vw, 1.0rem);
     gap: 1.4rem;
   }
-
-  .intro5-scene { grid-template-rows: auto minmax(0,1fr) auto; }
-  .intro5-gap {
-    align-self: stretch;
-    width: min(88rem, 90vw);
-    height: 100%;
-    grid-template-columns: minmax(0,1fr) clamp(19rem,24vw,28rem) minmax(0,1fr);
-  }
-  .intro5-stream small { color: #a09894; font-size: clamp(.64rem,.72vw,.86rem); }
-  .intro5-stream strong { font-size: clamp(4.6rem,6.4vw,7.6rem); }
-  .intro5-stream i { height: 2px; animation: introGapLine .85s cubic-bezier(.16,1,.3,1) .18s both; }
-  .intro5-stream i::after { width: .72rem; height: .72rem; }
-  .intro5-stream-ada { animation: introGapAda .65s cubic-bezier(.16,1,.3,1) both; }
-  .intro5-stream-cid { animation: introGapCid .65s cubic-bezier(.16,1,.3,1) .1s both; }
-  .intro5-absence {
-    align-self: center;
-    min-height: 14rem;
-    border-left-color: rgba(255,255,255,.14);
-    border-right-color: rgba(255,255,255,.14);
-    animation: introGapLabel .65s ease .65s both;
-  }
-  .intro5-absence span { color: #a29a96; font-size: clamp(.78rem,.9vw,1.08rem); }
-  .intro5-absence strong { margin: .55rem 0; font-size: clamp(1.55rem,2vw,2.4rem); }
-  .intro5-reveal { min-width: min(48rem,72vw); padding-top: 1rem; animation-delay: 1s; }
-  .intro5-reveal small { color: #aaa19d; font-size: clamp(.62rem,.7vw,.84rem); }
-  .intro5-reveal strong { font-size: clamp(4.8rem,7vw,8.3rem); }
-  .intro5-reveal span { font-size: clamp(.62rem,.72vw,.86rem); }
-}
-
-@keyframes introGapLine {
-  from { transform: scaleX(0); opacity: 0; }
-  to { transform: scaleX(1); opacity: 1; }
-}
-
-@keyframes introGapAda {
-  from { opacity: 0; transform: translateX(-1.4rem); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes introGapCid {
-  from { opacity: 0; transform: translateX(1.4rem); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes introGapLabel {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 /* Introduction final geometry polish — Slides 02–04 only */

@@ -1724,18 +1724,234 @@ export default function Home() {
         </section>
 
         <section id="question" className="scene intro5-scene">
-          <p className="eyebrow intro5-eyebrow"><span /> 05 — INTRODUCTION / THE EVIDENCE GAP</p>
-          <div className="intro5-gap" aria-label="Adalimumab and conventional immunosuppression separated by the missing randomized head-to-head comparison">
-            <div className="intro5-stream intro5-stream-ada"><small>ANTI–TNF-α</small><strong>ADA</strong><i /></div>
-            <div className="intro5-absence"><span>NO RANDOMIZED</span><strong>HEAD-TO-HEAD</strong><span>COMPARISON</span></div>
-            <div className="intro5-stream intro5-stream-cid"><i /><strong>CID</strong><small>STEPWISE IMMUNOSUPPRESSION</small></div>
-          </div>
+          <p className="eyebrow intro5-eyebrow"><span /> 05 — INTRODUCTION / ADALIMUMAB</p>
 
-          <div className="intro5-reveal">
-            <small>THE TRIAL THAT MADE THE COMPARISON</small>
-            <strong>ADVISE</strong>
-            <span>ADALIMUMAB vs CONVENTIONAL IMMUNOSUPPRESSION FOR UVEITIS</span>
-            <i aria-hidden="true" />
+          <header className="intro5-header">
+            <h2>
+              What if <em>one targeted therapy</em><br />
+              could do the job?
+            </h2>
+          </header>
+
+          <div className="intro5-content-grid" aria-label="Targeted biologic strategy: Adalimumab anti-TNF-alpha blockade and prior evidence">
+            
+            {/* HERO BIOLOGIC MECHANISM & REGULATORY MILESTONE */}
+            <div className="intro5-hero-territory">
+              <div className="biologic-mechanism-card">
+                
+                {/* Visual Header Tag */}
+                <div className="biologic-core-header">
+                  <div className="biologic-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="biologic-badge-svg">
+                      <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.12)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M12 6 V18 M6 12 H18" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="biologic-title-wrap">
+                    <div className="biologic-name-row">
+                      <strong className="biologic-drug-name">ADALIMUMAB</strong>
+                      <span className="biologic-class-tag">TARGETED BIOLOGIC</span>
+                    </div>
+                    <span className="biologic-subtitle">Fully human anti–TNF-α monoclonal antibody (IgG1)</span>
+                  </div>
+                </div>
+
+                {/* Scientifically Recognizable Antibody–TNF-α Neutralization Diagram */}
+                <div className="biologic-interaction-stage">
+                  <svg viewBox="0 0 540 130" className="biologic-interaction-svg" aria-label="Adalimumab antibody binding and neutralizing TNF-alpha cytokine homotrimer">
+                    <defs>
+                      <linearGradient id="ada-ab-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
+                        <stop offset="60%" stopColor="#ff4d52" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#ff2d2d" stopOpacity="1" />
+                      </linearGradient>
+                      <radialGradient id="tnf-core-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="rgba(255, 45, 45, 0.25)" />
+                        <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
+                      </radialGradient>
+                    </defs>
+
+                    {/* Left: Adalimumab Monoclonal Antibody (IgG1 Y-structure) */}
+                    <g className="antibody-group" transform="translate(15, 10)">
+                      {/* Heavy Chain Fc Constant Stem */}
+                      <path d="M 42 98 L 42 60" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
+                      <path d="M 48 98 L 48 60" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
+                      {/* Disulfide Hinge */}
+                      <line x1="38" y1="60" x2="52" y2="60" stroke="rgba(255,255,255,0.7)" strokeWidth="1.8" />
+                      
+                      {/* Fab Arms (Extending upward-right toward TNF-alpha) */}
+                      {/* Fab Arm 1 (Upper) */}
+                      <path d="M 42 60 L 68 26" stroke="#ffffff" strokeWidth="3.0" strokeLinecap="round" />
+                      <path d="M 48 60 L 74 26" stroke="#ff4d52" strokeWidth="3.0" strokeLinecap="round" />
+                      {/* Fab 1 Variable Binding Domain (CDR Loops) */}
+                      <path d="M 68 26 C 76 16, 92 16, 98 24" fill="none" stroke="#ff4d52" strokeWidth="3.5" strokeLinecap="round" />
+                      <circle cx="98" cy="24" r="3.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
+
+                      {/* Fab Arm 2 (Lower) */}
+                      <path d="M 42 60 L 72 72" stroke="#ffffff" strokeWidth="3.0" strokeLinecap="round" />
+                      <path d="M 48 60 L 78 72" stroke="#ff4d52" strokeWidth="3.0" strokeLinecap="round" />
+                      {/* Fab 2 Variable Binding Domain */}
+                      <path d="M 72 72 C 82 78, 94 74, 98 66" fill="none" stroke="#ff4d52" strokeWidth="3.5" strokeLinecap="round" />
+                      <circle cx="98" cy="66" r="3.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
+
+                      {/* Label under Antibody */}
+                      <text x="45" y="114" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.08em">IgG1 MONOCLONAL ANTIBODY</text>
+                    </g>
+
+                    {/* Middle: Targeting & Neutralization Vector Arcs */}
+                    <g className="binding-vector-group" transform="translate(130, 25)">
+                      <line x1="0" y1="38" x2="60" y2="38" stroke="rgba(255, 77, 82, 0.6)" strokeWidth="1.5" strokeDasharray="3 3" />
+                      <polygon points="62,38 54,34 54,42" fill="#ff4d52" />
+                      <rect x="6" y="22" width="48" height="15" fill="#08080a" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1" />
+                      <text x="30" y="32.5" fill="#ff4d52" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">BLOCKADE</text>
+                    </g>
+
+                    {/* Right: Trimeric TNF-alpha Molecule (Neutralized Target) */}
+                    <g className="tnf-target-group" transform="translate(225, 10)">
+                      {/* Neutralization Field Atmosphere */}
+                      <circle cx="55" cy="48" r="46" fill="url(#tnf-core-glow)" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+                      
+                      {/* Trimeric Subunits of TNF-alpha (3 Interlocked Elliptical Monomers) */}
+                      <ellipse cx="40" cy="38" rx="14" ry="19" transform="rotate(-30 40 38)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <ellipse cx="70" cy="38" rx="14" ry="19" transform="rotate(30 70 38)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <ellipse cx="55" cy="62" rx="14" ry="19" fill="rgba(255, 45, 45, 0.24)" stroke="#ff4d52" strokeWidth="2.0" />
+
+                      {/* Subunit Core Center Bonds */}
+                      <circle cx="55" cy="48" r="4.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
+                      <text x="55" y="48" fill="#0a0406" fontSize="5.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
+
+                      {/* Subunit Active Site Nodes */}
+                      <circle cx="36" cy="30" r="2.8" fill="#ffffff" />
+                      <circle cx="74" cy="30" r="2.8" fill="#ffffff" />
+                      <circle cx="55" cy="71" r="2.8" fill="#ffffff" />
+
+                      {/* TNF-alpha Target Callout Text */}
+                      <text x="55" y="104" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
+                      <text x="55" y="116" fill="#a8a29e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">SOLUBLE &amp; TRANSMEMBRANE HOMOTRIMER</text>
+                    </g>
+
+                    {/* Receptor Blockade Indicator (Blocking TNFR1 / TNFR2 Activation) */}
+                    <g className="tnfr-blocked-group" transform="translate(370, 18)">
+                      <rect x="0" y="12" width="140" height="66" fill="rgba(20, 15, 22, 0.65)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
+                      <text x="12" y="28" fill="#d6d3d1" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.06em">TARGET OUTCOME</text>
+                      <text x="12" y="43" fill="#ff4d52" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">SPECIFIC INFLAMMATION</text>
+                      <text x="12" y="55" fill="#ff4d52" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">PATHWAY SUPPRESSION</text>
+                      <text x="12" y="68" fill="#8c827e" fontSize="6.2" fontFamily="var(--font-geist-mono)" fontWeight="500">PREVENTS TNFR1 / TNFR2 BINDING</text>
+                    </g>
+                  </svg>
+                </div>
+
+                {/* Subordinate Paradigm Line */}
+                <div className="biologic-paradigm-footer">
+                  <span className="paradigm-badge">PARADIGM SHIFT</span>
+                  <span className="paradigm-text">1 drug → 1 defined inflammatory target</span>
+                </div>
+
+              </div>
+
+              {/* REGULATORY MILESTONE (COMPACT SUPPORTING ELEMENT) */}
+              <div className="approval-milestone-panel">
+                <div className="milestone-year-badge">
+                  <span className="milestone-year">2016</span>
+                  <span className="milestone-agency">FDA APPROVAL</span>
+                </div>
+                <div className="milestone-body">
+                  <strong className="milestone-indication">Noninfectious intermediate, posterior &amp; panuveitis</strong>
+                  <span className="milestone-sub">Subsequently EMA approved</span>
+                </div>
+              </div>
+            </div>
+
+            {/* LOWER HALF: MAIN EVIDENCE BEFORE ADVISE */}
+            <div className="intro5-prior-evidence-section">
+              <div className="intro5-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">WHAT WAS KNOWN PRIOR TO ADVISE</span>
+                <span className="rule-bar" />
+              </div>
+
+              <div className="prior-evidence-grid">
+                
+                {/* SIGNAL 01: RANDOMIZED TRIALS vs PLACEBO */}
+                <div className="evidence-panel panel-rct">
+                  <div className="evidence-panel-header">
+                    <span className="evidence-sig-tag">01 — RANDOMIZED TRIALS vs PLACEBO</span>
+                  </div>
+                  
+                  <div className="rct-sequence-flow">
+                    <div className="rct-step">
+                      <span className="rct-step-sub">INITIAL STEROID</span>
+                      <strong className="rct-step-title">PREDNISONE</strong>
+                      <span className="rct-step-action">tapered → discontinued</span>
+                    </div>
+
+                    <div className="rct-flow-arrow" aria-hidden="true">
+                      <span>▶</span>
+                    </div>
+
+                    <div className="rct-step">
+                      <span className="rct-step-sub">MAINTENANCE</span>
+                      <strong className="rct-step-title highlight-red">ADALIMUMAB</strong>
+                      <span className="rct-step-action">vs placebo</span>
+                    </div>
+                  </div>
+
+                  {/* DOMINANT RESULT: PROLONGED TIME TO RELAPSE */}
+                  <div className="rct-result-lead">
+                    <div className="timeline-delayed-visual" aria-hidden="true">
+                      <div className="timeline-axis">
+                        <div className="event-marker marker-placebo">
+                          <span className="marker-dot dot-placebo" />
+                          <span className="marker-label">Placebo: Early relapse</span>
+                        </div>
+                        <div className="event-marker marker-ada">
+                          <span className="marker-dot dot-ada" />
+                          <span className="marker-label">Adalimumab: Relapse delayed</span>
+                        </div>
+                        <div className="timeline-arrow-line" />
+                      </div>
+                    </div>
+                    <div className="rct-result-text">
+                      <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
+                      <span className="rct-sub-result">Significantly delayed time to treatment failure vs placebo</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SIGNAL 02: FOLLOW-UP COHORT (≈75% ANCHOR) */}
+                <div className="evidence-panel panel-cohort">
+                  <div className="evidence-panel-header">
+                    <span className="evidence-sig-tag">02 — FOLLOW-UP COHORT</span>
+                  </div>
+
+                  <div className="cohort-content-row">
+                    <strong className="cohort-stat-anchor">≈75%</strong>
+                    <div className="cohort-text-details">
+                      <strong className="cohort-headline">INFLAMMATION CONTROL</strong>
+                      <span className="cohort-condition">with prednisone ≤5 mg/day</span>
+                      <div className="cohort-outcome-tag">
+                        <span className="outcome-arrow">↓</span>
+                        <strong>SUBSTANTIAL CORTICOSTEROID SPARING</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="cohort-subordinate-footer">
+                    <span>Follow-up extension cohort evidence</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE */}
+            <div className="intro5-tension-bridge">
+              <div className="tension-content">
+                <span className="tension-lead">Promising evidence.</span>
+                <strong className="tension-question">But <em>compared with what we actually use?</em></strong>
+              </div>
+            </div>
+
           </div>
         </section>
 
