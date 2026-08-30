@@ -7,7 +7,8 @@ const chapters = [
   { id: "clinical-problem", label: "The clinical landscape" },
   { id: "therapeutic-goal", label: "The therapeutic goal" },
   { id: "systemic-strategies", label: "Conventional immunosuppression" },
-  { id: "question", label: "The research question" },
+  { id: "question", label: "Adalimumab" },
+  { id: "evidence-gap", label: "The evidence gap" },
   { id: "study-design", label: "Study design" },
   { id: "screening", label: "Screening pathway" },
   { id: "randomization", label: "Randomization" },
@@ -1898,6 +1899,160 @@ export default function Home() {
               <div className="tension-content">
                 <span className="tension-lead">Promising evidence — but against placebo.</span>
                 <strong className="tension-question">How does adalimumab compare with <span className="tension-highlight-red">conventional immunosuppression?</span></strong>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SLIDE 06: THE EVIDENCE GAP / UNANSWERED QUESTION                          */}
+        {/* ========================================================================= */}
+        <section id="evidence-gap" className="scene intro6-scene">
+          <p className="eyebrow intro6-eyebrow"><span /> 06 — INTRODUCTION / THE EVIDENCE GAP</p>
+
+          <header className="intro6-header">
+            <h2>
+              Both strategies worked.<br />
+              <em>But which should we start with?</em>
+            </h2>
+          </header>
+
+          <div className="intro6-content-stage" aria-label="Head-to-head convergence of conventional immunosuppression versus adalimumab biologic strategy">
+            
+            {/* CONVERGENCE MIDDLE DIAGRAM */}
+            <div className="intro6-convergence-grid">
+              
+              {/* LEFT WING: CONVENTIONAL IMMUNOSUPPRESSION */}
+              <div className="convergence-wing wing-conventional">
+                <div className="wing-header">
+                  <span className="wing-label">CONVENTIONAL IMMUNOSUPPRESSION</span>
+                </div>
+                
+                {/* 3 Small Molecular Structures Cluster */}
+                <div className="wing-molecules-row" aria-label="Methotrexate, Mycophenolate, and Azathioprine molecules">
+                  {/* Molecule 1: MTX */}
+                  <div className="mini-mol-badge" title="Methotrexate">
+                    <svg viewBox="0 0 54 34" className="mini-mol-svg">
+                      <polygon points="6,13 13.5,9.5 21,13 21,23 13.5,26.5 6,23" fill="rgba(255, 45, 45, 0.08)" stroke="#ff4d52" strokeWidth="1.0" strokeLinejoin="round" />
+                      <polygon points="21,13 28.5,9.5 36,13 36,23 28.5,26.5 21,23" fill="rgba(255, 45, 45, 0.12)" stroke="#ff4d52" strokeWidth="1.0" strokeLinejoin="round" />
+                      <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                      <text x="6" y="13" fill="#ff4d52" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">N</text>
+                      <text x="13.5" y="26.5" fill="#ff4d52" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">N</text>
+                      <text x="28.5" y="9.5" fill="#ff4d52" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">N</text>
+                      <text x="28.5" y="26.5" fill="#ff4d52" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">N</text>
+                      <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="#ff4d52" strokeWidth="0.8" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  {/* Molecule 2: MMF */}
+                  <div className="mini-mol-badge" title="Mycophenolate Mofetil">
+                    <svg viewBox="0 0 54 34" className="mini-mol-svg">
+                      <polygon points="5,18 10.5,11 18.5,13 18.5,23 10.5,25" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                      <polygon points="18.5,13 26,9.5 33.5,13 33.5,23 26,26.5 18.5,23" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                      <line x1="18.5" y1="13" x2="18.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                      <text x="7.5" y="4.5" fill="#ffffff" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">O</text>
+                      <text x="5" y="18" fill="#ffffff" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">O</text>
+                      <text x="26" y="3.5" fill="#ffffff" fontSize="5.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">O</text>
+                      <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  {/* Molecule 3: AZA */}
+                  <div className="mini-mol-badge" title="Azathioprine">
+                    <svg viewBox="0 0 54 34" className="mini-mol-svg">
+                      <polygon points="10,17 15,9 24,9 28,17 24,25 15,25" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.0" />
+                      <polygon points="15,9 5,12 5,22 15,25" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" />
+                      <line x1="28" y1="17" x2="34" y2="17" stroke="#ffffff" strokeWidth="1.0" />
+                      <polygon points="34,17 41,10 49,14 47,23 38,23" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.0" />
+                      <line x1="49" y1="14" x2="53" y2="12" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                </div>
+
+                <strong className="wing-sub-list">Methotrexate · Mycophenolate · Azathioprine</strong>
+                <span className="wing-strategy-tag">Established stepwise strategy</span>
+              </div>
+
+              {/* CENTER: CONVERGENCE TRAJECTORY & COLLISION TARGET */}
+              <div className="convergence-center-hub">
+                {/* Visual Trajectory Lines */}
+                <div className="trajectory-track-stage" aria-hidden="true">
+                  <div className="trajectory-line line-left" />
+                  <div className="trajectory-target-node">
+                    <div className="target-pulse-ring" />
+                    <div className="target-core-circle">
+                      <span className="target-question-mark">?</span>
+                    </div>
+                  </div>
+                  <div className="trajectory-line line-right" />
+                </div>
+
+                <strong className="no-comparison-pill">NO DIRECT COMPARISON</strong>
+
+                <div className="clinical-question-core">
+                  <p>
+                    Which initial strategy better achieves<br />
+                    <strong>inflammation control while eliminating corticosteroids?</strong>
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT WING: ADALIMUMAB */}
+              <div className="convergence-wing wing-biologic">
+                <div className="wing-header">
+                  <span className="wing-label highlight-red">ADALIMUMAB</span>
+                </div>
+
+                {/* Antibody Silhouette Icon */}
+                <div className="wing-antibody-box" aria-label="Adalimumab antibody structure">
+                  <svg viewBox="0 0 100 85" className="wing-antibody-svg">
+                    {/* Fc Stem */}
+                    <rect x="42" y="44" width="7" height="15" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.0" />
+                    <rect x="51" y="44" width="7" height="15" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.0" />
+                    <rect x="42" y="61" width="7" height="15" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.0" />
+                    <rect x="51" y="61" width="7" height="15" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.0" />
+                    {/* Hinge */}
+                    <path d="M 45 44 C 45 36, 38 32, 34 27" fill="none" stroke="#ff2d2d" strokeWidth="2.0" strokeLinecap="round" />
+                    <path d="M 55 44 C 55 36, 62 32, 66 27" fill="none" stroke="#ff2d2d" strokeWidth="2.0" strokeLinecap="round" />
+                    {/* Left Fab */}
+                    <g transform="translate(34, 27) rotate(-32)">
+                      <rect x="-10" y="-12" width="8" height="12" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="0.8" />
+                      <rect x="0" y="-12" width="8" height="12" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="0.8" />
+                      <rect x="-10" y="-26" width="8" height="12" rx="1.5" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.0" />
+                      <rect x="0" y="-26" width="8" height="12" rx="1.5" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.0" />
+                    </g>
+                    {/* Right Fab + TNF-alpha */}
+                    <g transform="translate(66, 27) rotate(32)">
+                      <rect x="-8" y="-12" width="8" height="12" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="0.8" />
+                      <rect x="2" y="-12" width="8" height="12" rx="1.5" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="0.8" />
+                      <rect x="-8" y="-26" width="8" height="12" rx="1.5" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.0" />
+                      <rect x="2" y="-26" width="8" height="12" rx="1.5" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.0" />
+                      <circle cx="1" cy="-33" r="6.5" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="0.9" />
+                      <text x="1" y="-33" fill="#ffffff" fontSize="3.2" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">TNF</text>
+                    </g>
+                  </svg>
+                </div>
+
+                <strong className="wing-sub-list highlight-red">Anti–TNF-α</strong>
+                <span className="wing-strategy-tag">Targeted biologic strategy</span>
+              </div>
+
+            </div>
+
+            {/* BOTTOM REVEAL: ADVISE WORDMARK HORIZONTAL HERO */}
+            <div className="intro6-bottom-reveal">
+              {/* Trajectory Guide Vectors Terminating into ADVISE */}
+              <div className="reveal-trajectory-converge" aria-hidden="true">
+                <div className="reveal-stream stream-left" />
+                <div className="reveal-stream stream-right" />
+              </div>
+
+              <div className="reveal-content">
+                <span className="reveal-eyebrow">THE TRIAL DESIGNED TO ANSWER IT</span>
+                <h1 className="reveal-advise-wordmark">ADVISE</h1>
+                <h3 className="reveal-advise-title">
+                  Adalimumab versus Conventional Immunosuppression for Uveitis
+                </h3>
+                <p className="reveal-advise-tagline">A randomized, head-to-head strategy trial</p>
               </div>
             </div>
 
