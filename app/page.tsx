@@ -1943,13 +1943,6 @@ export default function Home() {
                 </div>
 
                 <strong className="no-comparison-pill">NO DIRECT COMPARISON</strong>
-
-                <div className="clinical-question-core">
-                  <p>
-                    Which initial strategy better achieves<br />
-                    <strong>corticosteroid-sparing control?</strong>
-                  </p>
-                </div>
               </div>
 
               {/* RIGHT HERO: ADA */}

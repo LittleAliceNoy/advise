@@ -15408,26 +15408,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-sizing: border-box;
 }
 
-.clinical-question-core {
-  margin: 0;
-  max-width: 36rem;
-}
-
-.clinical-question-core p {
-  margin: 0;
-  font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.96rem, 1.28vw, 1.58rem);
-  font-weight: 450;
-  color: #cfc8c3;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-}
-
-.clinical-question-core strong {
-  color: #ffffff;
-  font-weight: 700;
-}
-
 /* BOTTOM REVEAL: ADVISE WORDMARK HORIZONTAL HERO (~20% OF SCREEN) */
 .intro6-bottom-reveal {
   position: relative;
