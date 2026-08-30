@@ -1679,7 +1679,7 @@ export default function Home() {
                       color: "#ff4d52",
                       flexShrink: 0,
                       display: "inline-block",
-                      textShadow: "0 0 28px rgba(255, 77, 82, 0.75), 0 0 10px rgba(255, 77, 82, 0.45)",
+                      textShadow: "none",
                     }}
                   >
                     ~40–60%
@@ -1712,7 +1712,7 @@ export default function Home() {
                       color: "#c084fc",
                       flexShrink: 0,
                       display: "inline-block",
-                      textShadow: "0 0 28px rgba(192, 132, 252, 0.75), 0 0 10px rgba(192, 132, 252, 0.45)",
+                      textShadow: "none",
                     }}
                   >
                     ~20–25%

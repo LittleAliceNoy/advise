@@ -14827,12 +14827,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .stat-single {
   color: #ff4d52 !important;
-  text-shadow: 0 0 28px rgba(255, 77, 82, 0.75), 0 0 10px rgba(255, 77, 82, 0.45) !important;
+  text-shadow: none !important;
 }
 
 .stat-combo {
   color: #c084fc !important;
-  text-shadow: 0 0 28px rgba(192, 132, 252, 0.75), 0 0 10px rgba(192, 132, 252, 0.45) !important;
+  text-shadow: none !important;
 }
 
 .evidence-text-block {
