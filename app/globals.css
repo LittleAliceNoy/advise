@@ -15437,34 +15437,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   padding: clamp(0.7rem, 1.3vh, 1.5rem) clamp(1.0rem, 2.0vw, 3.0rem);
-  background: rgba(18, 10, 14, 0.95);
-  border-top: 1.5px solid var(--red);
+  background: transparent;
+  border-top: none;
   box-sizing: border-box;
-}
-
-.reveal-trajectory-converge {
-  position: absolute;
-  top: -1.5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.reveal-stream {
-  width: 38%;
-  height: 2px;
-}
-
-.reveal-stream.stream-left {
-  background: #c084fc;
-  box-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
-}
-
-.reveal-stream.stream-right {
-  background: #ff2d2d;
-  box-shadow: 0 0 12px rgba(255, 45, 45, 0.5);
 }
 
 .reveal-content {

@@ -1963,12 +1963,6 @@ export default function Home() {
 
             {/* BOTTOM REVEAL: ADVISE WORDMARK HORIZONTAL HERO */}
             <div className="intro6-bottom-reveal">
-              {/* Trajectory Guide Vectors Terminating into ADVISE */}
-              <div className="reveal-trajectory-converge" aria-hidden="true">
-                <div className="reveal-stream stream-left" />
-                <div className="reveal-stream stream-right" />
-              </div>
-
               <div className="reveal-content">
                 <span className="reveal-eyebrow">THE TRIAL DESIGNED TO ANSWER IT</span>
                 <h1 className="reveal-advise-wordmark">ADVISE</h1>
