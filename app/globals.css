@@ -15083,244 +15083,64 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .evidence-panel-header {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.2rem;
 }
 
 .evidence-sig-tag {
-  font: 800 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
-  color: #ff5c60;
-  letter-spacing: 0.08em;
+  font: 800 clamp(0.50rem, 0.60vw, 0.74rem) var(--font-geist-mono), monospace;
+  color: var(--red);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.rct-sequence-flow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
-  background: rgba(10, 6, 12, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: clamp(0.25rem, 0.45vh, 0.5rem) clamp(0.5rem, 0.8vw, 0.9rem);
-}
-
-.rct-step {
-  display: flex;
-  flex-direction: column;
-}
-
-.rct-step-sub {
-  font: 700 clamp(0.34rem, 0.40vw, 0.50rem) var(--font-geist-mono), monospace;
-  color: #8c827e;
-  letter-spacing: 0.06em;
-}
-
-.rct-step-title {
-  font: 900 clamp(0.60rem, 0.74vw, 0.92rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
-}
-
-.rct-step-title.highlight-red {
-  color: var(--red);
-}
-
-.rct-step-action {
-  font: 500 clamp(0.36rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-}
-
-.rct-flow-arrow {
-  color: rgba(255, 77, 82, 0.8);
-  font-size: 0.65rem;
-}
-
-.rct-result-lead {
+.evidence-content-body {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
-.timeline-delayed-track {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 0.35rem 0.6rem;
-  background: rgba(10, 6, 12, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-sizing: border-box;
-}
-
-.track-bar-container {
-  position: relative;
-  width: 100%;
-  height: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.track-bar-line {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 77, 82, 0.85) 100%);
-  border-radius: 1px;
-}
-
-.track-bar-point {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.track-bar-point.point-placebo {
-  left: 20%;
-}
-
-.track-bar-point.point-ada {
-  left: 80%;
-}
-
-.bar-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  border: 2px solid #0a0406;
-}
-
-.bar-dot.dot-placebo {
-  background: #a8a29e;
-}
-
-.bar-dot.dot-ada {
-  background: var(--red);
-  box-shadow: 0 0 10px var(--red);
-}
-
-.track-labels-grid {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.track-label-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.track-label-col.col-placebo {
-  align-items: flex-start;
-  text-align: left;
-}
-
-.track-label-col.col-ada {
-  align-items: flex-end;
-  text-align: right;
-}
-
-.tl-name {
-  font: 800 clamp(0.48rem, 0.58vw, 0.72rem) var(--font-geist-mono), monospace;
+.evidence-hero-statement {
+  font: 900 clamp(0.85rem, 1.1vw, 1.35rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
-.tl-name.highlight-red {
-  color: var(--red);
-}
-
-.tl-desc {
-  font: 600 clamp(0.38rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
+.evidence-body-desc {
+  font: 500 clamp(0.54rem, 0.66vw, 0.82rem) var(--font-geist-mono), monospace;
   color: #a8a29e;
-}
-
-.tl-desc.highlight-red {
-  color: #ff7175;
-}
-
-.rct-result-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.rct-hero-result {
-  font: 900 clamp(0.68rem, 0.86vw, 1.1rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
-}
-
-.rct-sub-result {
-  font: 500 clamp(0.40rem, 0.48vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #d6d3d1;
-  line-height: 1.2;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* SIGNAL 02 COHORT */
 .cohort-content-row {
   display: flex;
   align-items: center;
-  gap: clamp(0.8rem, 1.4vw, 1.6rem);
-  padding: clamp(0.2rem, 0.4vh, 0.5rem) 0;
+  gap: clamp(0.9rem, 1.6vw, 1.8rem);
 }
 
 .cohort-stat-anchor {
   font-family: var(--font-geist-mono), monospace !important;
-  font-size: clamp(2.4rem, 3.6vw, 4.4rem) !important;
+  font-size: clamp(2.6rem, 4.0vw, 4.8rem) !important;
   font-weight: 900 !important;
   line-height: 0.88 !important;
   letter-spacing: -0.04em !important;
   color: var(--red) !important;
-  text-shadow: none !important;
+  text-shadow: 0 0 20px rgba(255, 45, 45, 0.35) !important;
   flex-shrink: 0 !important;
 }
 
 .cohort-text-details {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.25rem;
 }
 
 .cohort-headline {
-  font: 900 clamp(0.66rem, 0.82vw, 1.05rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(0.85rem, 1.1vw, 1.35rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   letter-spacing: 0.03em;
-  line-height: 1.15;
-}
-
-.cohort-condition {
-  font: 600 clamp(0.44rem, 0.52vw, 0.66rem) var(--font-geist-mono), monospace;
-  color: #d6d3d1;
-}
-
-.cohort-outcome-tag {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
-}
-
-.outcome-arrow {
-  color: var(--red);
-  font-weight: 900;
-  font-size: 0.75rem;
-}
-
-.cohort-outcome-tag strong {
-  font: 800 clamp(0.48rem, 0.58vw, 0.74rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-}
-
-.cohort-subordinate-footer {
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
-  padding-top: 0.2rem;
-  font: 500 clamp(0.38rem, 0.44vw, 0.56rem) var(--font-geist-mono), monospace;
-  color: #8c827e;
+  line-height: 1.2;
 }
 
 /* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE */

@@ -1854,74 +1854,31 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ENTIRE RIGHT SIDE: PRIOR EVIDENCE SIGNALS */}
+              {/* ENTIRE RIGHT SIDE: PRIOR EVIDENCE SUMMARY */}
               <div className="intro5-right-content">
                 
                 {/* PRIOR EVIDENCE SECTION */}
                 <div className="intro5-prior-evidence-section">
                   <div className="intro5-section-rule" aria-hidden="true">
                     <span className="rule-bar" />
-                    <span className="rule-label">KEY EVIDENCE BEFORE ADVISE</span>
+                    <span className="rule-label">EVIDENCE BEFORE ADVISE</span>
                     <span className="rule-bar" />
                   </div>
 
                   <div className="prior-evidence-stack">
-                    {/* SIGNAL 01: RANDOMIZED TRIALS vs PLACEBO */}
+                    {/* SIGNAL 01: RANDOMIZED CLINICAL TRIALS */}
                     <div className="evidence-panel panel-rct">
                       <div className="evidence-panel-header">
                         <span className="evidence-sig-tag">01 — RANDOMIZED CLINICAL TRIALS</span>
                       </div>
                       
-                      <div className="rct-sequence-flow">
-                        <div className="rct-step">
-                          <span className="rct-step-sub">PREDNISONE</span>
-                          <strong className="rct-step-title">TAPERED</strong>
-                          <span className="rct-step-action">→ discontinued</span>
-                        </div>
-
-                        <div className="rct-flow-arrow" aria-hidden="true">
-                          <span>▶</span>
-                        </div>
-
-                        <div className="rct-step">
-                          <span className="rct-step-sub">MAINTENANCE</span>
-                          <strong className="rct-step-title highlight-red">ADALIMUMAB</strong>
-                          <span className="rct-step-action">vs placebo</span>
-                        </div>
-                      </div>
-
-                      {/* DOMINANT RESULT: PROLONGED TIME TO RELAPSE */}
-                      <div className="rct-result-lead">
-                        <div className="timeline-delayed-track" aria-hidden="true">
-                          <div className="track-bar-container">
-                            <div className="track-bar-line" />
-                            <div className="track-bar-point point-placebo">
-                              <span className="bar-dot dot-placebo" />
-                            </div>
-                            <div className="track-bar-point point-ada">
-                              <span className="bar-dot dot-ada" />
-                            </div>
-                          </div>
-                          <div className="track-labels-grid">
-                            <div className="track-label-col col-placebo">
-                              <strong className="tl-name">Placebo</strong>
-                              <span className="tl-desc">Early relapse</span>
-                            </div>
-                            <div className="track-label-col col-ada">
-                              <strong className="tl-name highlight-red">Adalimumab</strong>
-                              <span className="tl-desc highlight-red">Relapse delayed</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="rct-result-text">
-                          <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
-                          <span className="rct-sub-result">Significantly delayed time to relapse vs placebo during steroid taper</span>
-                        </div>
+                      <div className="evidence-content-body">
+                        <strong className="evidence-hero-statement">Significantly prolonged time to uveitis relapse vs. placebo</strong>
+                        <p className="evidence-body-desc">Delayed relapse when prednisone was tapered and discontinued.</p>
                       </div>
                     </div>
 
-                    {/* SIGNAL 02: FOLLOW-UP COHORT (≈75% ANCHOR) */}
+                    {/* SIGNAL 02: FOLLOW-UP COHORT */}
                     <div className="evidence-panel panel-cohort">
                       <div className="evidence-panel-header">
                         <span className="evidence-sig-tag">02 — FOLLOW-UP COHORT</span>
@@ -1930,17 +1887,9 @@ export default function Home() {
                       <div className="cohort-content-row">
                         <strong className="cohort-stat-anchor">≈75%</strong>
                         <div className="cohort-text-details">
-                          <strong className="cohort-headline">INFLAMMATION CONTROL</strong>
-                          <span className="cohort-condition">with prednisone ≤5 mg/day</span>
-                          <div className="cohort-outcome-tag">
-                            <span className="outcome-arrow">↓</span>
-                            <strong>SUBSTANTIAL CORTICOSTEROID SPARING</strong>
-                          </div>
+                          <strong className="cohort-headline">CORTICOSTEROID SPARING</strong>
+                          <p className="evidence-body-desc">Inflammation control with prednisone ≤5 mg/day.</p>
                         </div>
-                      </div>
-
-                      <div className="cohort-subordinate-footer">
-                        <span>Demonstrated durable steroid sparing in extension follow-up</span>
                       </div>
                     </div>
                   </div>
