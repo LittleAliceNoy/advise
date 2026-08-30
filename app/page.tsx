@@ -1432,37 +1432,37 @@ export default function Home() {
                           <defs>
                             <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
                               <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.95" />
-                              <stop offset="40%" stopColor="#c084fc" stopOpacity="0.6" />
-                              <stop offset="80%" stopColor="#c084fc" stopOpacity="0.2" />
+                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.65" />
+                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.25" />
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
                           {/* Horizontally Expanded Symmetrical Fused Purine Core */}
                           {/* Left Hexagon (6-membered Pyrimidine) */}
-                          <polygon points="6,13 13.5,9.5 21,13 21,23 13.5,26.5 6,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="8.5,13 16,9.5 23.5,13 23.5,23 16,26.5 8.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           
                           {/* Right Pentagon (5-membered Imidazole) */}
-                          <polygon points="21,13 28.5,10.5 33.5,18 28.5,25.5 21,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="23.5,13 31,10.5 36,18 31,25.5 23.5,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           
                           {/* Shared Central Fused Bond */}
-                          <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                          <line x1="23.5" y1="13" x2="23.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
                           
                           {/* Refined Parallel Double Bonds in Purine Core */}
-                          <line x1="8" y1="14.5" x2="12.5" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="8" y1="21.5" x2="12.5" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          {/* Strictly Parallel Inner Bond in Pentagon (slope 1.5) */}
-                          <line x1="27.5" y1="12" x2="31.5" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="10.5" y1="14.5" x2="15" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="10.5" y1="21.5" x2="15" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          {/* Strictly Parallel Inner Bond in Pentagon */}
+                          <line x1="30" y1="12" x2="34" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
                           {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) in Red */}
-                          <circle cx="6" cy="13" r="1.4" fill="#ff4d52" />
-                          <circle cx="13.5" cy="26.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="28.5" cy="10.5" r="1.4" fill="#ff4d52" />
-                          <circle cx="28.5" cy="25.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="8.5" cy="13" r="1.4" fill="#ff4d52" />
+                          <circle cx="16" cy="26.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="31" cy="10.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="31" cy="25.5" r="1.4" fill="#ff4d52" />
 
-                          {/* C6-Thiol Stem & Short Smooth Dissolving Linker to Left (Nitroimidazole) */}
-                          <line x1="13.5" y1="9.5" x2="13.5" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="13.5" cy="4.5" r="1.4" fill="#ff4d52" />
-                          <path d="M 13.5 4.5 L 9 3 L 4 5" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                          {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left */}
+                          <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="16" cy="4.5" r="1.4" fill="#ff4d52" />
+                          <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                       <div className="drug-meta">
