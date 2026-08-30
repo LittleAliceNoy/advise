@@ -13564,9 +13564,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: clamp(0.35rem, 0.7vh, 0.75rem);
-  margin-top: 0.2rem;
+  justify-content: space-between;
+  gap: clamp(0.25rem, 0.5vh, 0.55rem);
+  margin-top: 0;
 }
 
 /* TOP ROW: Dual Competing Constraints & Center Balance Scale */
@@ -14124,9 +14124,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .dilemma-bottom-row {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.35rem, 0.65vh, 0.75rem);
+  gap: clamp(0.25rem, 0.45vh, 0.55rem);
   width: 100%;
-  margin-top: clamp(1.2rem, 2.5vh, 2.6rem);
+  margin-top: clamp(0.35rem, 0.7vh, 0.75rem);
+  margin-bottom: 0.15rem;
 }
 
 .dilemma-trajectory-bar {
