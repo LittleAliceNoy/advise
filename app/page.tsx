@@ -1861,7 +1861,7 @@ export default function Home() {
                 <div className="intro5-prior-evidence-section">
                   <div className="intro5-section-rule" aria-hidden="true">
                     <span className="rule-bar" />
-                    <span className="rule-label">EVIDENCE BEFORE ADVISE</span>
+                    <span className="rule-label">KEY EVIDENCE</span>
                     <span className="rule-bar" />
                   </div>
 
