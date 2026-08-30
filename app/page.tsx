@@ -1100,7 +1100,7 @@ export default function Home() {
                   </span>
                 </div>
 
-                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 2 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ marginTop: "0.08rem", marginBottom: "-0.35rem" }}>↓</span>
+                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 2 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ fontSize: "clamp(1.4rem, 1.7vw, 2.0rem)", fontWeight: 900, marginTop: "clamp(0.45rem, 0.7vh, 0.75rem)", height: 0, overflow: "visible", display: "block" }}>↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR (Stage 1+) */}
