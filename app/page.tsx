@@ -1834,9 +1834,9 @@ export default function Home() {
 
                       {/* Direct Title & Subtitle & Description Underneath Antibody Structure */}
                       <g className="antibody-bottom-caption">
-                        <text x="270" y="414" fill="#ffffff" fontSize="24.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB</text>
-                        <text x="270" y="439" fill="#e5e5e5" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
-                        <text x="270" y="464" fill="#d6d3d1" fontSize="12.5" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle" letterSpacing="0.01em">Binds to and neutralizes TNF-α, a protein that causes body-wide inflammation</text>
+                        <text x="270" y="412" fill="#ffffff" fontSize="28.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
+                        <text x="270" y="439" fill="#f5f5f5" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
+                        <text x="270" y="464" fill="#c4bfbb" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle" letterSpacing="0.01em">Binds to and neutralizes TNF-α, a protein that causes body-wide inflammation</text>
                       </g>
                     </svg>
                   </div>
