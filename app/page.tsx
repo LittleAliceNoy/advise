@@ -1379,7 +1379,7 @@ export default function Home() {
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                          {/* Horizontally Expanded Symmetrical Fused Phthalide Core */}
+                          {/* Horizontally Expanded Phthalide Core with Alternating Double Bonds */}
                           {/* Left 5-membered Lactone Ring (Neat Symmetrical Pentagon) */}
                           <polygon points="5,18 10.5,11 18.5,13 18.5,23 10.5,25" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           {/* Right 6-membered Aromatic Ring (Neat Symmetrical Hexagon) */}
@@ -1388,28 +1388,32 @@ export default function Home() {
                           {/* Shared Central Bond */}
                           <line x1="18.5" y1="13" x2="18.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
 
-                          {/* Inner aromatic ring */}
-                          <circle cx="26" cy="18" r="4.2" fill="none" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.8" strokeDasharray="1.6 1.2" />
+                          {/* Alternating Double Bonds in Aromatic Benzene Ring */}
+                          <line x1="19.8" y1="14.8" x2="19.8" y2="21.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="26.5" y1="11.5" x2="31.8" y2="14.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="26.5" y1="24.5" x2="31.8" y2="21.8" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
 
-                          {/* Carbonyl (=O) on lactone */}
-                          <line x1="9.6" y1="11.2" x2="7" y2="5" stroke="#ff4d52" strokeWidth="0.9" />
-                          <line x1="11.4" y1="11.8" x2="8.8" y2="5.6" stroke="#ff4d52" strokeWidth="0.9" />
-                          <circle cx="7.9" cy="5.3" r="1.4" fill="#ff4d52" />
+                          {/* Carbonyl (=O) on lactone in White */}
+                          <line x1="9.6" y1="11.2" x2="7" y2="5" stroke="#ffffff" strokeWidth="0.9" />
+                          <line x1="11.4" y1="11.8" x2="8.8" y2="5.6" stroke="#ffffff" strokeWidth="0.9" />
+                          <circle cx="7.9" cy="5.3" r="1.4" fill="#ffffff" />
                           
-                          {/* Ring Oxygen (-O-) node in Red */}
-                          <circle cx="5" cy="18" r="1.4" fill="#ff4d52" />
+                          {/* Ring Oxygen (-O-) node in White */}
+                          <circle cx="5" cy="18" r="1.4" fill="#ffffff" />
 
-                          {/* Top Hydroxyl (-OH) group in Red */}
-                          <line x1="26" y1="9.5" x2="26" y2="4" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="26" cy="4" r="1.4" fill="#ff4d52" />
+                          {/* Top Hydroxyl (-OH) group in White */}
+                          <line x1="26" y1="9.5" x2="26" y2="4" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="26" cy="4" r="1.4" fill="#ffffff" />
 
-                          {/* Bottom Methyl (-CH3) group in White */}
-                          <line x1="26" y1="26.5" x2="26" y2="31" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="26" cy="31" r="1.2" fill="#ffffff" />
+                          {/* Bottom Methyl (-CH3) branching group in Purple */}
+                          <line x1="26" y1="26.5" x2="26" y2="31" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="26" cy="31" r="1.4" fill="#c084fc" />
 
-                          {/* Bottom-right Methoxy (-OCH3) group with Red Oxygen */}
-                          <line x1="33.5" y1="23" x2="38.5" y2="26" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="38.5" cy="26" r="1.4" fill="#ff4d52" />
+                          {/* Bottom-right Methoxy (-OCH3) group with White Oxygen and Purple Tail */}
+                          <line x1="33.5" y1="23" x2="38.5" y2="26" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="38.5" cy="26" r="1.4" fill="#ffffff" />
+                          <line x1="38.5" y1="26" x2="42.5" y2="24" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="42.5" cy="24" r="1.2" fill="#c084fc" />
 
                           {/* Smooth Dissolving Tail to morpholinoethyl ester */}
                           <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
