@@ -14511,15 +14511,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .drug-moa {
-  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
-  color: #b5aaa6;
+  font: 500 clamp(0.42rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   line-height: 1.2;
   margin-top: 0.08rem;
 }
 
 .molecular-sphere-hero {
-  width: clamp(120px, 12vw, 165px);
-  height: clamp(120px, 12vw, 165px);
+  width: clamp(130px, 13vw, 175px);
+  height: clamp(130px, 13vw, 175px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
@@ -14545,7 +14545,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .bridge-trajectory-top,
 .bridge-trajectory-bottom {
   width: 100%;
-  height: 20px;
+  height: 16px;
   display: grid;
   place-items: center;
 }
@@ -14557,11 +14557,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .bridge-pill {
-  padding: clamp(0.35rem, 0.6vh, 0.6rem) clamp(0.4rem, 0.6vw, 0.7rem);
-  background: rgba(16, 10, 20, 0.9);
-  border: 1px solid rgba(255, 77, 82, 0.45);
+  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.45rem, 0.7vw, 0.75rem);
+  background: rgba(14, 9, 18, 0.85);
+  border: 1px solid rgba(255, 77, 82, 0.35);
   border-radius: 0px;
-  box-shadow: 0 0 16px rgba(255, 77, 82, 0.18);
+  box-shadow: 0 0 14px rgba(255, 77, 82, 0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14570,25 +14570,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-sizing: border-box;
 }
 
-.bridge-chevrons {
-  color: #ff4d52;
-  font-size: 0.85rem;
-  line-height: 1;
-  font-weight: 900;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.6);
-}
-
 .bridge-main-text {
-  font: 900 clamp(0.52rem, 0.62vw, 0.78rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.50rem, 0.60vw, 0.74rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   letter-spacing: 0.05em;
   line-height: 1.15;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.45);
+  text-shadow: 0 0 8px rgba(255, 77, 82, 0.4);
 }
 
 .bridge-sub-text {
-  font: 500 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
-  color: #ded7d3;
+  font: 500 clamp(0.38rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   line-height: 1.2;
 }
 
@@ -14636,8 +14628,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cni-drug-moa {
-  font: 500 clamp(0.42rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #b5aaa6;
+  font: 500 clamp(0.44rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   line-height: 1.2;
   margin-top: 0.08rem;
 }
@@ -14667,7 +14659,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .rule-label {
   font: 700 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
+  color: #d6d3d1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -14733,7 +14725,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .step-desc {
   font: 500 clamp(0.38rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
+  color: #d6d3d1;
   line-height: 1.2;
 }
 
@@ -14756,7 +14748,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
 }
 
-/* Observational Evidence Section */
+/* Observational Evidence Section — Prominent Quantitative Focal Point */
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
@@ -14767,24 +14759,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .evidence-boxes-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(0.6rem, 1.2vw, 1.6rem);
+  gap: clamp(0.8rem, 1.4vw, 1.8rem);
   width: 100%;
 }
 
 .evidence-anno-box {
   display: flex;
   align-items: center;
-  gap: clamp(0.6rem, 1.0vw, 1.2rem);
-  background: rgba(14, 9, 18, 0.75);
-  border: 1px solid rgba(192, 132, 252, 0.2);
+  gap: clamp(0.8rem, 1.3vw, 1.6rem);
   border-radius: 0px;
-  padding: clamp(0.32rem, 0.55vh, 0.5rem) clamp(0.7rem, 1.1vw, 1.3rem);
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.9rem, 1.4vw, 1.6rem);
   box-sizing: border-box;
 }
 
+.evidence-box-single {
+  border: 1.5px solid rgba(255, 77, 82, 0.35);
+  background: linear-gradient(135deg, rgba(255, 77, 82, 0.08) 0%, rgba(14, 8, 14, 0.92) 100%);
+  box-shadow: 0 0 20px rgba(255, 77, 82, 0.1);
+}
+
+.evidence-box-combo {
+  border: 1.5px solid rgba(192, 132, 252, 0.35);
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(12, 8, 18, 0.92) 100%);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.1);
+}
+
 .evidence-cohort-icon {
-  width: 28px;
-  height: 28px;
+  width: clamp(30px, 2.6vw, 38px);
+  height: clamp(30px, 2.6vw, 38px);
   flex-shrink: 0;
 }
 
@@ -14796,21 +14798,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .evidence-anno-content {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 0.8vw, 1.0rem);
+  gap: clamp(0.7rem, 1.1vw, 1.4rem);
 }
 
 .evidence-pct-stat {
-  font: 900 clamp(1.1rem, 1.45vw, 1.85rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font: 900 clamp(1.75rem, 2.45vw, 3.2rem) var(--font-geist-mono), monospace;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
   flex-shrink: 0;
-  text-shadow: 0 0 14px rgba(192, 132, 252, 0.4);
 }
 
-.stat-escalation {
-  color: #ffffff;
-  text-shadow: 0 0 14px rgba(255, 77, 82, 0.4);
+.stat-single {
+  color: #ff4d52;
+  text-shadow: 0 0 20px rgba(255, 77, 82, 0.5);
+}
+
+.stat-combo {
+  color: #c084fc;
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
 }
 
 .evidence-text-block {
@@ -14819,25 +14824,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-headline {
-  font: 800 clamp(0.46rem, 0.56vw, 0.72rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.50rem, 0.60vw, 0.78rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   display: block;
   line-height: 1.15;
 }
 
 .evidence-subtext {
-  font: 500 clamp(0.38rem, 0.44vw, 0.56rem) var(--font-geist-mono), monospace;
-  color: #b5aaa6;
+  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   display: block;
-  margin-top: 0.08rem;
-}
-
-.intro4-footnote {
-  font: 500 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
-  color: #8c827e;
-  text-align: center;
-  margin: 0;
+  margin-top: 0.15rem;
 }
 
 /* Slide 05 — unresolved space becomes the reason for ADVISE */

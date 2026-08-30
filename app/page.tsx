@@ -1372,17 +1372,24 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Center: Glowing 3D Molecular Constellation Sphere */}
+                  {/* Center: Glowing 3D Molecular Constellation Sphere (Red + White + Violet) */}
                   <div className="molecular-sphere-hero" aria-hidden="true">
                     <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
                       <defs>
                         <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(192, 132, 252, 0.28)" />
-                          <stop offset="60%" stopColor="rgba(147, 51, 234, 0.12)" />
-                          <stop offset="100%" stopColor="rgba(10, 8, 14, 0.85)" />
+                          <stop offset="0%" stopColor="rgba(192, 132, 252, 0.22)" />
+                          <stop offset="55%" stopColor="rgba(147, 51, 234, 0.08)" />
+                          <stop offset="100%" stopColor="rgba(8, 6, 12, 0.9)" />
                         </radialGradient>
-                        <filter id="mol-glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="3" result="blur" />
+                        <filter id="mol-glow-red" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3.5" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                        <filter id="mol-glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3.5" result="blur" />
                           <feMerge>
                             <feMergeNode in="blur" />
                             <feMergeNode in="SourceGraphic" />
@@ -1390,60 +1397,64 @@ export default function Home() {
                         </filter>
                       </defs>
 
-                      {/* Outer Spherical Shell & Orbital Rings */}
-                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(192, 132, 252, 0.45)" strokeWidth="1.5" />
-                      <ellipse cx="100" cy="100" rx="88" ry="40" fill="none" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
-                      <ellipse cx="100" cy="100" rx="40" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.25)" strokeWidth="1" strokeDasharray="3 3" />
+                      {/* Outer Spherical Shell & Technical Orbits */}
+                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" />
+                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.35)" strokeWidth="1" strokeDasharray="3 3" />
+                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
 
                       {/* Chemical / Molecular Constellation Wireframe */}
-                      <polygon points="100,60 125,75 125,105 100,120 75,105 75,75" fill="none" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.8" />
-                      <polygon points="125,75 150,85 145,115 125,105" fill="none" stroke="rgba(192, 132, 252, 0.6)" strokeWidth="1.8" />
+                      {/* Central Core Benzene/Pyrimidine Ring */}
+                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.8" />
+                      {/* Fused 5-Membered Imidazole Ring */}
+                      <polygon points="126,75 152,85 146,115 126,105" fill="none" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.8" />
                       
-                      {/* Branching Side Chains */}
-                      <line x1="100" y1="60" x2="100" y2="40" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.8" />
-                      <line x1="75" y1="105" x2="52" y2="120" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.8" />
-                      <line x1="52" y1="120" x2="38" y2="112" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1.5" />
-                      <line x1="100" y1="120" x2="115" y2="145" stroke="rgba(255, 77, 82, 0.75)" strokeWidth="1.8" />
-                      <line x1="150" y1="85" x2="170" y2="78" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.6" />
+                      {/* Radiating Chemical Bonds */}
+                      <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="1.8" />
+                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.8" />
+                      <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.5" />
+                      <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="1.8" />
+                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.6" />
+                      <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1.4" />
 
-                      {/* Atomic Nodes with Dual Red & Purple Energy Centers */}
-                      <circle cx="100" cy="60" r="4.5" fill="#ffffff" filter="url(#mol-glow)" />
-                      <circle cx="125" cy="75" r="4" fill="#c084fc" />
-                      <circle cx="125" cy="105" r="4.5" fill="#ff4d52" filter="url(#mol-glow)" />
+                      {/* Atomic Nodes (Red, White, Violet Trinity) */}
+                      {/* Central Core Nodes */}
+                      <circle cx="100" cy="60" r="4.5" fill="#ffffff" />
+                      <circle cx="126" cy="75" r="4" fill="#c084fc" />
+                      <circle cx="126" cy="105" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
                       <circle cx="100" cy="120" r="4" fill="#c084fc" />
-                      <circle cx="75" cy="105" r="4" fill="#ffffff" />
-                      <circle cx="75" cy="75" r="4" fill="#c084fc" />
+                      <circle cx="74" cy="105" r="4.5" fill="#ffffff" />
+                      <circle cx="74" cy="75" r="4" fill="#c084fc" />
                       
-                      <circle cx="150" cy="85" r="3.5" fill="#ff4d52" />
-                      <circle cx="145" cy="115" r="3.5" fill="#ffffff" />
-                      <circle cx="100" cy="40" r="4" fill="#ff4d52" filter="url(#mol-glow)" />
-                      <circle cx="52" cy="120" r="3.5" fill="#c084fc" />
-                      <circle cx="38" cy="112" r="3" fill="#ffffff" />
-                      <circle cx="115" cy="145" r="3.5" fill="#ff4d52" />
-                      <circle cx="170" cy="78" r="3" fill="#c084fc" />
+                      {/* Outer Valence Nodes */}
+                      <circle cx="100" cy="38" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                      <circle cx="152" cy="85" r="3.8" fill="#ff4d52" />
+                      <circle cx="146" cy="115" r="3.8" fill="#ffffff" />
+                      <circle cx="50" cy="120" r="3.8" fill="#c084fc" />
+                      <circle cx="34" cy="110" r="3.2" fill="#ffffff" />
+                      <circle cx="116" cy="146" r="4.2" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                      <circle cx="174" cy="76" r="3.8" fill="#c084fc" filter="url(#mol-glow-purple)" />
+                      <circle cx="148" cy="134" r="3.2" fill="#ffffff" />
                     </svg>
                   </div>
                 </div>
               </div>
 
-              {/* ESCALATION BRIDGE */}
+              {/* SIMPLIFIED COMBINATION BRIDGE */}
               <div className="escalation-bridge">
                 <div className="bridge-trajectory-top" aria-hidden="true">
-                  <svg viewBox="0 0 100 30" className="bridge-top-svg">
-                    <path d="M 0 25 Q 50 5 95 25" fill="none" stroke="rgba(192, 132, 252, 0.5)" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <svg viewBox="0 0 100 24" className="bridge-top-svg">
+                    <path d="M 0 20 Q 50 4 95 20" fill="none" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
                   </svg>
                 </div>
 
                 <div className="bridge-pill">
-                  <span className="bridge-chevrons" aria-hidden="true">»</span>
-                  <strong className="bridge-main-text">COMBINATION<br />WHEN NEEDED</strong>
-                  <span className="bridge-sub-text">to achieve inflammation control and steroid sparing</span>
-                  <span className="bridge-chevrons" aria-hidden="true">»</span>
+                  <strong className="bridge-main-text">COMBINATION WHEN NEEDED</strong>
+                  <span className="bridge-sub-text">Antimetabolite + calcineurin inhibitor</span>
                 </div>
 
                 <div className="bridge-trajectory-bottom" aria-hidden="true">
-                  <svg viewBox="0 0 100 30" className="bridge-bottom-svg">
-                    <path d="M 0 5 Q 50 25 95 5" fill="none" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1.5" strokeDasharray="3 3" />
+                  <svg viewBox="0 0 100 24" className="bridge-bottom-svg">
+                    <path d="M 0 4 Q 50 20 95 4" fill="none" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
                   </svg>
                 </div>
               </div>
@@ -1572,7 +1583,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* SUPPORTING EVIDENCE ANNOTATIONS */}
+            {/* SUPPORTING EVIDENCE ANNOTATIONS (ENLARGED PERCENTAGES) */}
             <div className="observational-evidence-section">
               <div className="intro4-section-rule" aria-hidden="true">
                 <span className="rule-bar" />
@@ -1581,8 +1592,29 @@ export default function Home() {
               </div>
 
               <div className="evidence-boxes-row">
-                {/* Evidence Block 1 */}
-                <div className="evidence-anno-box">
+                {/* Evidence Block 1: Single Agent (RED) */}
+                <div className="evidence-anno-box evidence-box-single">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-single">~40–60%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
+                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Evidence Block 2: Two Drugs (VIOLET) */}
+                <div className="evidence-anno-box evidence-box-combo">
                   <div className="evidence-cohort-icon" aria-hidden="true">
                     <svg viewBox="0 0 28 28" className="cohort-svg">
                       <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
@@ -1594,28 +1626,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat">~40–60%</strong>
-                    <div className="evidence-text-block">
-                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
-                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evidence Block 2 */}
-                <div className="evidence-anno-box">
-                  <div className="evidence-cohort-icon" aria-hidden="true">
-                    <svg viewBox="0 0 28 28" className="cohort-svg">
-                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
-                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" />
-                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
-                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" />
-                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat stat-escalation">~20–25%</strong>
+                    <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
                     <div className="evidence-text-block">
                       <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
                       <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
@@ -1624,11 +1635,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* CLINICAL FOOTNOTE */}
-            <p className="intro4-footnote">
-              When combination therapy is required, a calcineurin inhibitor such as cyclosporine or tacrolimus is often added to an antimetabolite.
-            </p>
 
           </div>
         </section>
