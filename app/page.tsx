@@ -1134,7 +1134,7 @@ export default function Home() {
                   <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
                   <p className="must-body-claim">
                     <span className="claim-arrow">→</span>
-                    <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
+                    <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY + NO INCREASE SYSTEMIC SIDE EFFECTS</strong>
                   </p>
                   <small className="must-body-comparator">vs long-acting intravitreal corticosteroid implant</small>
                 </div>
