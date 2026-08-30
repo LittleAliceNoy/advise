@@ -1873,8 +1873,8 @@ export default function Home() {
                       </div>
                       
                       <div className="evidence-content-body">
-                        <strong className="evidence-hero-statement">Significantly prolonged time to uveitis relapse vs. placebo</strong>
-                        <p className="evidence-body-desc">Delayed relapse when prednisone was tapered and discontinued.</p>
+                        <strong className="evidence-hero-statement">Prolonged time to uveitis relapse vs placebo</strong>
+                        <p className="evidence-body-desc">during prednisone taper and discontinuation</p>
                       </div>
                     </div>
 
