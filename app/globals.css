@@ -13667,13 +13667,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .ceiling-box {
   margin-top: 0;
+  min-height: clamp(5.6rem, 8.5vh, 7.4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1.5px solid rgba(255, 77, 82, 0.5);
   background: linear-gradient(135deg, rgba(255, 45, 45, 0.08) 0%, rgba(20, 6, 8, 0.85) 100%);
   border-radius: 4px;
-  padding: clamp(0.5rem, 0.9vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.8rem, 1.2vw, 1.4rem);
   text-align: center;
   position: relative;
   box-shadow: 0 0 20px rgba(255, 45, 45, 0.14);
+  box-sizing: border-box;
 }
 
 .box-pointer {
@@ -13731,13 +13737,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Right Constraint: Inflammation Floor (High Luminance & Visual Authority) */
 .floor-box {
   margin-top: 0;
+  min-height: clamp(5.6rem, 8.5vh, 7.4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1.5px solid rgba(192, 132, 252, 0.6);
   background: linear-gradient(135deg, rgba(192, 132, 252, 0.1) 0%, rgba(14, 8, 20, 0.9) 100%);
   border-radius: 4px;
-  padding: clamp(0.5rem, 0.9vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.8rem, 1.2vw, 1.4rem);
   text-align: center;
   position: relative;
   box-shadow: 0 0 24px rgba(192, 132, 252, 0.18);
+  box-sizing: border-box;
 }
 
 .floor-title {
@@ -13840,27 +13852,43 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0.1rem 0;
 }
 
-/* Intermediate Immuno Block */
+/* Intermediate Immuno Block (Borderless, Center Aligned, Bold) */
 .immunosuppression-center-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 100%;
-  margin: -0.15rem 0;
+  margin: 0.15rem auto 0;
 }
 
-.immunosuppression-capsule {
+.immunosuppression-text-wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  border: 1.5px solid rgba(255, 77, 82, 0.55);
-  background: linear-gradient(90deg, rgba(255, 45, 45, 0.15) 0%, rgba(18, 8, 14, 0.95) 100%);
-  border-radius: 6px;
-  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.8rem, 1.2vw, 1.4rem);
-  box-shadow: 0 0 18px rgba(255, 45, 45, 0.2);
-  width: min(34rem, 40vw);
-  box-sizing: border-box;
+  text-align: center;
+}
+
+.immunosuppression-hero-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.74rem, 0.90vw, 1.15rem);
+  font-weight: 900;
+  color: #ff4d52;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(255, 77, 82, 0.45);
+  display: block;
+}
+
+.immunosuppression-hero-sub {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.52vw, 0.65rem);
+  font-weight: 700;
+  color: #ded7d3;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-top: 0.15rem;
 }
 
 .arrow-to-res {
@@ -13868,32 +13896,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-size: 0.95rem;
   line-height: 1;
   margin-top: 0.15rem;
-}
-
-.capsule-icon {
-  width: 24px;
-  height: 24px;
-  color: #ff8085;
-  flex-shrink: 0;
-}
-
-.capsule-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.capsule-title {
-  font: 800 clamp(0.58rem, 0.68vw, 0.84rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  display: block;
-}
-
-.capsule-desc {
-  font: 500 clamp(0.40rem, 0.46vw, 0.56rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  display: block;
 }
 
 /* MIDDLE ROW: Resolution Equation + MUST Landmark Panel */

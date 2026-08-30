@@ -1041,11 +1041,12 @@ export default function Home() {
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc">
-                      Even low-level inflammation results in <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES</span>.
+                      Even low-level inflammation results in<br />
+                      <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES.</span>
                     </p>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
-                    <svg viewBox="0 0 54 40" className="dilemma-svg-eye-large">
+                    <svg viewBox="0 0 60 42" className="dilemma-svg-eye-large">
                       <defs>
                         <filter id="eye-pupil-glow" x="-50%" y="-50%" width="200%" height="200%">
                           <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -1055,9 +1056,9 @@ export default function Home() {
                           </feMerge>
                         </filter>
                       </defs>
-                      <path d="M3 20 Q27 4 51 20 Q27 36 3 20 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="2.0" />
-                      <circle cx="27" cy="20" r="8.5" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <circle cx="27" cy="20" r="3.5" fill="#ff4d52" filter="url(#eye-pupil-glow)" />
+                      <path d="M 3 21 Q 30 1 57 21 Q 30 41 3 21 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="2.0" />
+                      <circle cx="30" cy="21" r="9" fill="none" stroke="#ffffff" strokeWidth="1.8" />
+                      <circle cx="30" cy="21" r="4.2" fill="#ff4d52" filter="url(#eye-pupil-glow)" />
                     </svg>
                   </div>
                 </div>
@@ -1071,21 +1072,11 @@ export default function Home() {
 
             </div>
 
-            {/* SOLUTION CONNECTOR: SYSTEMIC IMMUNOSUPPRESSION */}
+            {/* SOLUTION CONNECTOR: SYSTEMIC IMMUNOSUPPRESSION (Borderless, Center Aligned, Bold) */}
             <div className="immunosuppression-center-block">
-              <div className="immunosuppression-capsule">
-                <div className="capsule-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="dilemma-svg">
-                    <circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M3 18 C3 14 6 13 9 13 C12 13 15 14 15 18" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" strokeWidth="1.3" />
-                    <path d="M15 14 C17 14 21 15 21 18" fill="none" stroke="currentColor" strokeWidth="1.3" />
-                  </svg>
-                </div>
-                <div className="capsule-content">
-                  <strong className="capsule-title">SYSTEMIC IMMUNOSUPPRESSION</strong>
-                  <small className="capsule-desc">Needed to achieve both goals</small>
-                </div>
+              <div className="immunosuppression-text-wrap">
+                <strong className="immunosuppression-hero-title">SYSTEMIC IMMUNOSUPPRESSION</strong>
+                <span className="immunosuppression-hero-sub">Needed to achieve both goals</span>
               </div>
               <span className="arrow-to-res" aria-hidden="true">↓</span>
             </div>
