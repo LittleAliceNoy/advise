@@ -14677,10 +14677,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: rgba(12, 9, 16, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(90deg, rgba(255, 77, 82, 0.06) 0%, rgba(14, 9, 16, 0.85) 50%, rgba(255, 77, 82, 0.06) 100%);
+  border: 1px solid rgba(255, 77, 82, 0.25);
   border-radius: 0px;
   padding: clamp(0.32rem, 0.55vh, 0.5rem) clamp(0.8rem, 1.5vw, 1.8rem);
+  box-shadow: 0 0 16px rgba(255, 77, 82, 0.08);
   box-sizing: border-box;
 }
 
@@ -14694,10 +14695,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: clamp(26px, 2.3vw, 34px);
   height: clamp(26px, 2.3vw, 34px);
   border-radius: 50%;
-  border: 1.2px solid rgba(192, 132, 252, 0.5);
+  border: 1.2px solid rgba(255, 77, 82, 0.55);
   display: grid;
   place-items: center;
-  background: rgba(192, 132, 252, 0.08);
+  background: rgba(255, 77, 82, 0.12);
+  box-shadow: 0 0 10px rgba(255, 77, 82, 0.2);
   flex-shrink: 0;
 }
 
@@ -14713,8 +14715,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .step-num-tag {
   font: 800 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
-  color: #c084fc;
+  color: #ff4d52;
   letter-spacing: 0.08em;
+  text-shadow: 0 0 8px rgba(255, 77, 82, 0.35);
 }
 
 .step-goal-tag {
@@ -14738,18 +14741,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: rgba(192, 132, 252, 0.6);
+  color: rgba(255, 77, 82, 0.8);
   font-size: 0.6rem;
 }
 
 .step-dotted-line {
   width: clamp(20px, 3.5vw, 48px);
   height: 1px;
-  border-top: 1.5px dashed rgba(192, 132, 252, 0.45);
+  border-top: 1.5px dashed rgba(255, 77, 82, 0.5);
 }
 
 .step-arrowhead {
-  color: rgba(192, 132, 252, 0.6);
+  color: #ff4d52;
+  text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
 }
 
 /* Observational Evidence Section */

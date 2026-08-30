@@ -1519,7 +1519,7 @@ export default function Home() {
                 <div className="step-item">
                   <div className="step-icon-circle step-icon-play" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="step-svg">
-                      <polygon points="9,6 18,12 9,18" fill="#c084fc" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                      <polygon points="9,6 18,12 9,18" fill="#ff4d52" stroke="#ff4d52" strokeWidth="1.5" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="step-text-wrap">
@@ -1539,7 +1539,7 @@ export default function Home() {
                 <div className="step-item">
                   <div className="step-icon-circle step-icon-arrow" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="step-svg">
-                      <path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#c084fc" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="step-text-wrap">
@@ -1559,7 +1559,7 @@ export default function Home() {
                 <div className="step-item">
                   <div className="step-icon-circle step-icon-goal" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="step-svg">
-                      <path d="M12 2 L20 6 V12 C20 17 12 21 12 21 C12 21 4 17 4 12 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="M12 2 L20 6 V12 C20 17 12 21 12 21 C12 21 4 17 4 12 V6 Z" fill="rgba(255, 77, 82, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
                       <path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
