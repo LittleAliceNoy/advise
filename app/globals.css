@@ -13714,16 +13714,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .ceiling-dose {
-  font: 900 clamp(3.8rem, 5.2vw, 6.4rem) var(--font-geist-mono), monospace !important;
+  font-family: var(--font-geist-mono), monospace !important;
+  font-size: clamp(3.8rem, 5.2vw, 6.4rem) !important;
+  font-weight: 900 !important;
   color: #ffffff !important;
-  line-height: 0.8 !important;
+  line-height: 0.82 !important;
   letter-spacing: -0.04em !important;
   display: block !important;
   text-shadow: 0 0 28px rgba(255, 255, 255, 0.4) !important;
 }
 
 .ceiling-unit {
-  font: 700 clamp(0.55rem, 0.65vw, 0.80rem) var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.55rem, 0.65vw, 0.80rem);
+  font-weight: 700;
   color: #a8a29e;
   letter-spacing: 0.08em;
   display: block;
@@ -13731,7 +13735,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .ceiling-label {
-  font: 700 clamp(0.44rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.52vw, 0.64rem);
+  font-weight: 700;
   color: #8c827e;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -13752,7 +13758,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .floor-title {
-  font: 900 clamp(1.4rem, 1.85vw, 2.35rem) var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(1.4rem, 1.85vw, 2.35rem);
+  font-weight: 900;
   color: #ffffff;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -13762,7 +13770,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .floor-label {
-  font: 700 clamp(0.44rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.44rem, 0.52vw, 0.64rem);
+  font-weight: 700;
   color: #8c827e;
   letter-spacing: 0.06em;
   text-transform: uppercase;

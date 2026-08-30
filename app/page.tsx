@@ -955,10 +955,10 @@ export default function Home() {
                 <div className="ceiling-box">
                   <span className="box-pointer" aria-hidden="true">▼</span>
                   <div className="ceiling-dose-wrap">
-                    <strong className="ceiling-dose">≤7.5</strong>
+                    <strong className="ceiling-dose" style={{ fontSize: "clamp(3.8rem, 5.2vw, 6.4rem)", fontWeight: 900, lineHeight: 0.82, color: "#ffffff", display: "block" }}>≤7.5</strong>
                   </div>
-                  <span className="ceiling-unit">MG / DAY</span>
-                  <small className="ceiling-label">LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
+                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.55rem, 0.65vw, 0.80rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.44rem, 0.52vw, 0.64rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
                 </div>
               </div>
 
@@ -972,7 +972,7 @@ export default function Home() {
                   </div>
 
                   {/* Hero Balance Scale SVG Circle */}
-                  <div className="scale-hero-circle">
+                  <div className="scale-hero-circle" style={{ width: "clamp(145px, 13.5vw, 180px)", height: "clamp(145px, 13.5vw, 180px)" }}>
                     <svg viewBox="0 0 160 140" className="scale-hero-svg" aria-label="Balance scale weighing steroid ceiling against inflammation floor">
                       <defs>
                         <filter id="pivot-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -1042,7 +1042,7 @@ export default function Home() {
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc desc-inflammation">
                       Even low-level inflammation<br />
-                      <span className="red-highlight-bold">→ WORSE VISUAL ACUITY OUTCOMES</span>
+                      <span className="red-highlight-bold" style={{ fontSize: "clamp(0.68rem, 0.80vw, 1.02rem)", fontWeight: 800, color: "#ff4d52", display: "block", marginTop: "0.25rem" }}>→ WORSE VISUAL ACUITY OUTCOMES</span>
                     </p>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
@@ -1065,8 +1065,8 @@ export default function Home() {
 
                 <div className="floor-box">
                   <span className="box-pointer pointer-right" aria-hidden="true">▼</span>
-                  <strong className="floor-title">INACTIVE<br />UVEITIS</strong>
-                  <small className="floor-label">COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <strong className="floor-title" style={{ fontSize: "clamp(1.4rem, 1.85vw, 2.35rem)", fontWeight: 900, lineHeight: 1.05, color: "#ffffff", display: "block" }}>INACTIVE<br />UVEITIS</strong>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.44rem, 0.52vw, 0.64rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 
@@ -1102,14 +1102,14 @@ export default function Home() {
                       <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="res-label">INACTIVE<br />UVEITIS</span>
+                  <span className="res-label" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
                 </div>
 
-                <span className="res-operator" aria-hidden="true">+</span>
+                <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
 
                 <div className="resolution-item res-dose">
-                  <strong className="res-dose-num">≤7.5</strong>
-                  <span className="res-dose-unit">MG / DAY</span>
+                  <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
+                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.48rem, 0.55vw, 0.68rem)", fontWeight: 700, color: "#a8a29e", display: "block", marginTop: "0.15rem" }}>MG / DAY</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true">=</span>
