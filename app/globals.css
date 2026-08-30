@@ -14989,56 +14989,37 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
 }
 
-/* APPROVAL MILESTONE PANEL */
-.approval-milestone-panel {
+/* APPROVAL MILESTONE PANEL (ETHICS & OVERSIGHT STYLE, CENTER-ALIGNED) */
+.approval-milestone-panel.ethics-style-center {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: clamp(0.25rem, 0.45vh, 0.55rem);
-  background: rgba(18, 12, 20, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 2.5px solid var(--red);
-  padding: clamp(0.45rem, 0.75vh, 0.85rem) clamp(0.75rem, 1.1vw, 1.2rem);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  gap: clamp(0.2rem, 0.4vh, 0.45rem);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.035), rgba(77, 5, 8, 0.22), rgba(255, 255, 255, 0.035));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 77, 82, 0.45);
+  padding: clamp(0.55rem, 0.9vh, 0.95rem) clamp(0.85rem, 1.3vw, 1.5rem);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
+  width: 100%;
 }
 
-.milestone-year-badge {
-  display: flex;
-  align-items: baseline;
-  gap: 0.55rem;
-}
-
-.milestone-year {
-  font: 900 clamp(1.2rem, 1.6vw, 1.95rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-}
-
-.milestone-agency {
-  font: 800 clamp(0.46rem, 0.55vw, 0.72rem) var(--font-geist-mono), monospace;
+.milestone-agency-tag {
   color: var(--red);
-  letter-spacing: 0.1em;
+  font: 700 clamp(0.48rem, 0.58vw, 0.70rem) var(--font-geist-mono), monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.milestone-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.milestone-indication {
-  font: 700 clamp(0.50rem, 0.62vw, 0.80rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-}
-
-.milestone-sub {
-  font: 500 clamp(0.40rem, 0.48vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  line-height: 1.2;
+.milestone-indication-text {
+  margin: 0;
+  color: #f0ece8;
+  font-size: clamp(0.72rem, 0.90vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 /* PRIOR EVIDENCE SECTION */

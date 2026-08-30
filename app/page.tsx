@@ -1846,15 +1846,10 @@ export default function Home() {
               {/* ENTIRE RIGHT SIDE: APPROVAL & KEY EVIDENCE */}
               <div className="intro5-right-content">
                 
-                {/* 2016 FDA & EMA APPROVAL */}
-                <div className="approval-milestone-panel">
-                  <div className="milestone-year-badge">
-                    <span className="milestone-year">2016</span>
-                    <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
-                  </div>
-                  <div className="milestone-body">
-                    <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
-                  </div>
+                {/* 2016 FDA & EMA APPROVAL (ETHICS-STYLE CENTER-ALIGNED PANEL) */}
+                <div className="approval-milestone-panel ethics-style-center">
+                  <span className="milestone-agency-tag">2016 · FDA &amp; EMA APPROVED</span>
+                  <p className="milestone-indication-text">Non-infectious intermediate, posterior &amp; panuveitis</p>
                 </div>
 
                 {/* PRIOR EVIDENCE SECTION */}
