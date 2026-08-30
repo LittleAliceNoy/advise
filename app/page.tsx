@@ -1041,8 +1041,8 @@ export default function Home() {
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <div className="constraint-desc desc-inflammation">
-                      <span className="desc-lead" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", color: "#a8a29e", display: "block" }}>Even low-level inflammation</span>
-                      <strong className="red-highlight-bold" style={{ fontSize: "clamp(0.85rem, 1.05vw, 1.32rem)", fontWeight: 900, color: "#ff4d52", display: "block", marginTop: "0.2rem", letterSpacing: "0.02em", textShadow: "0 0 14px rgba(255, 77, 82, 0.75)" }}>→ WORSE VISUAL ACUITY OUTCOMES</strong>
+                      <span className="desc-lead" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 700, color: "#e7e2df", display: "block" }}>Even low-level inflammation</span>
+                      <strong className="red-highlight-bold" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 800, color: "#ff4d52", display: "block", marginTop: "0.15rem", letterSpacing: "0.02em", textShadow: "0 0 12px rgba(255, 77, 82, 0.7)" }}>→ WORSE VISUAL ACUITY OUTCOMES</strong>
                     </div>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
