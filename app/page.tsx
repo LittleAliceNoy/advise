@@ -1077,39 +1077,34 @@ export default function Home() {
             {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR */}
             <div className="dilemma-middle-row">
               <div className="resolution-equation-block">
-                <div className="res-tag-bar">
-                  <span className="res-equation-tag">PREFERRED OUTCOME</span>
+                <div className="resolution-item res-disease">
+                  <div className="res-icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" className="res-eye-icon">
+                      <path d="M3 16 Q16 6 29 16 Q16 26 3 16 Z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <circle cx="16" cy="16" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <span className="res-label" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
                 </div>
-                <div className="res-equation-flow">
-                  <div className="resolution-item res-disease">
-                    <div className="res-icon-circle" aria-hidden="true">
-                      <svg viewBox="0 0 32 32" className="res-eye-icon">
-                        <path d="M3 16 Q16 6 29 16 Q16 26 3 16 Z" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                        <circle cx="16" cy="16" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                        <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <span className="res-label" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
+
+                <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
+
+                <div className="resolution-item res-dose">
+                  <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
+                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.48rem, 0.55vw, 0.68rem)", fontWeight: 700, color: "#a8a29e", display: "block", marginTop: "0.15rem" }}>MG / DAY</span>
+                </div>
+
+                <span className="res-operator" aria-hidden="true">=</span>
+
+                <div className="resolution-item res-outcome">
+                  <div className="res-shield-circle" aria-hidden="true">
+                    <svg viewBox="0 0 32 36" className="res-shield-icon">
+                      <path d="M16 2 L28 7 V18 C28 26 16 34 16 34 C16 34 4 26 4 18 V7 Z" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <path d="M10.5 17.5 L14.5 21.5 L22 13" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </div>
-
-                  <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
-
-                  <div className="resolution-item res-dose">
-                    <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
-                    <span className="res-dose-unit" style={{ fontSize: "clamp(0.48rem, 0.55vw, 0.68rem)", fontWeight: 700, color: "#a8a29e", display: "block", marginTop: "0.15rem" }}>MG / DAY</span>
-                  </div>
-
-                  <span className="res-operator" aria-hidden="true">=</span>
-
-                  <div className="resolution-item res-outcome">
-                    <div className="res-shield-circle" aria-hidden="true">
-                      <svg viewBox="0 0 32 36" className="res-shield-icon">
-                        <path d="M16 2 L28 7 V18 C28 26 16 34 16 34 C16 34 4 26 4 18 V7 Z" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <path d="M10.5 17.5 L14.5 21.5 L22 13" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <span className="res-outcome-text">SUCCESSFUL<br />CORTICOSTEROID<br />SPARING</span>
-                  </div>
+                  <span className="res-outcome-text">SUCCESSFUL<br />CORTICOSTEROID<br />SPARING</span>
                 </div>
               </div>
 
