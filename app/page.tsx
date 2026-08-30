@@ -1539,16 +1539,14 @@ export default function Home() {
                   {/* Drug 1: Cyclosporine */}
                   <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
-                      <svg viewBox="0 0 40 40" className="cluster-svg">
-                        <circle cx="20" cy="20" r="14" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeDasharray="3 3" />
-                        <circle cx="20" cy="6" r="2.5" fill="#ffffff" />
-                        <circle cx="30" cy="10" r="2.5" fill="#c084fc" />
-                        <circle cx="34" cy="20" r="2.5" fill="#ffffff" />
-                        <circle cx="30" cy="30" r="2.5" fill="#c084fc" />
-                        <circle cx="20" cy="34" r="2.5" fill="#ffffff" />
-                        <circle cx="10" cy="30" r="2.5" fill="#c084fc" />
-                        <circle cx="6" cy="20" r="2.5" fill="#ffffff" />
-                        <circle cx="10" cy="10" r="2.5" fill="#c084fc" />
+                      <svg viewBox="0 0 44 44" className="cluster-svg">
+                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
+                        <circle cx="14" cy="16" r="6" fill="#a855f7" />
+                        <circle cx="30" cy="16" r="6" fill="#c084fc" />
+                        <circle cx="16" cy="28" r="6" fill="#ff4d52" />
+                        <circle cx="28" cy="28" r="6" fill="#a855f7" />
+                        <circle cx="22" cy="12" r="5" fill="#ffffff" />
+                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
@@ -1560,15 +1558,14 @@ export default function Home() {
                   {/* Drug 2: Tacrolimus */}
                   <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
-                      <svg viewBox="0 0 40 40" className="cluster-svg">
-                        <circle cx="20" cy="20" r="14" fill="none" stroke="#c084fc" strokeWidth="1.6" />
-                        <path d="M12 20 A8 8 0 0 1 28 20" fill="none" stroke="#c084fc" strokeWidth="1.4" strokeDasharray="2 2" />
-                        <circle cx="20" cy="6" r="2.5" fill="#ffffff" />
-                        <circle cx="32" cy="13" r="2.5" fill="#c084fc" />
-                        <circle cx="32" cy="27" r="2.5" fill="#ffffff" />
-                        <circle cx="20" cy="34" r="2.5" fill="#c084fc" />
-                        <circle cx="8" cy="27" r="2.5" fill="#ffffff" />
-                        <circle cx="8" cy="13" r="2.5" fill="#c084fc" />
+                      <svg viewBox="0 0 44 44" className="cluster-svg">
+                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
+                        <circle cx="15" cy="18" r="6.5" fill="#c084fc" />
+                        <circle cx="29" cy="18" r="6.5" fill="#ff4d52" />
+                        <circle cx="22" cy="30" r="6.5" fill="#a855f7" />
+                        <circle cx="13" cy="28" r="5" fill="#ffffff" />
+                        <circle cx="31" cy="28" r="5" fill="#c084fc" />
+                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
