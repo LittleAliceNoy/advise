@@ -1925,8 +1925,8 @@ export default function Home() {
               
               {/* LEFT HERO: CID */}
               <div className="convergence-wing wing-cid">
-                <span className="wing-huge-abbr">CID</span>
-                <strong className="wing-full-name">CONVENTIONAL IMMUNOSUPPRESSION</strong>
+                <span className="wing-huge-abbr highlight-purple">CID</span>
+                <strong className="wing-full-name highlight-purple">CONVENTIONAL IMMUNOSUPPRESSION</strong>
                 <span className="wing-strategy-desc">Established systemic strategy</span>
               </div>
 
@@ -1935,7 +1935,6 @@ export default function Home() {
                 <div className="trajectory-track-stage" aria-hidden="true">
                   <div className="trajectory-line line-left" />
                   <div className="trajectory-target-node">
-                    <div className="target-pulse-ring" />
                     <div className="target-core-circle">
                       <span className="target-question-mark">?</span>
                     </div>
@@ -1948,23 +1947,14 @@ export default function Home() {
                 <div className="clinical-question-core">
                   <p>
                     Which initial strategy better achieves<br />
-                    <strong>inflammation control while eliminating corticosteroids?</strong>
+                    <strong>corticosteroid-sparing control?</strong>
                   </p>
                 </div>
               </div>
 
               {/* RIGHT HERO: ADA */}
               <div className="convergence-wing wing-ada">
-                <div className="wing-ada-header-row">
-                  <span className="wing-huge-abbr highlight-red">ADA</span>
-                  <div className="wing-tiny-antibody-icon" aria-hidden="true">
-                    <svg viewBox="0 0 40 36" className="tiny-antibody-svg">
-                      <path d="M 20 34 L 20 20 M 20 20 L 9 8 M 20 20 L 31 8" fill="none" stroke="#ff4d52" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      <circle cx="9" cy="8" r="2.5" fill="#ff2d2d" />
-                      <circle cx="31" cy="8" r="2.5" fill="#ff2d2d" />
-                    </svg>
-                  </div>
-                </div>
+                <span className="wing-huge-abbr highlight-red">ADA</span>
                 <strong className="wing-full-name highlight-red">ADALIMUMAB</strong>
                 <span className="wing-strategy-desc">Targeted anti–TNF-α strategy</span>
               </div>

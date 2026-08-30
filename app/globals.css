@@ -15215,10 +15215,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* SLIDE 06: THE EVIDENCE GAP / CONVERGENCE & ADVISE REVEAL                  */
 /* ========================================================================= */
 .intro6-scene {
-  background:
-    radial-gradient(ellipse at 50% 15%, rgba(255, 45, 45, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 90%, rgba(255, 45, 45, 0.08) 0%, transparent 55%),
-    #050204;
+  background: #050204;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15240,10 +15237,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .intro6-header h2 {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(2.0rem, 3.2vw, 4.0rem);
+  font-size: clamp(1.4rem, 2.1vw, 2.6rem);
   font-weight: 500;
-  letter-spacing: -0.055em;
-  line-height: 1.1;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
   color: var(--white);
   margin: 0;
   text-align: center;
@@ -15253,7 +15250,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: var(--red);
   font-style: normal;
   font-weight: 600;
-  text-shadow: 0 0 24px rgba(255, 45, 45, 0.35);
+  text-shadow: 0 0 20px rgba(255, 45, 45, 0.35);
 }
 
 .intro6-content-stage {
@@ -15271,7 +15268,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
 .intro6-convergence-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.6fr 1.1fr;
+  grid-template-columns: 1.15fr 1.5fr 1.15fr;
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
   width: 100%;
@@ -15285,7 +15282,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.15rem, 0.3vh, 0.35rem);
+  gap: clamp(0.2rem, 0.35vh, 0.45rem);
   background: transparent;
   border: none;
   padding: 0;
@@ -15294,50 +15291,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .wing-huge-abbr {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(3.2rem, 5.2vw, 6.4rem);
+  font-size: clamp(3.4rem, 5.5vw, 6.8rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 0.92;
-  color: #f0ece8;
-  text-shadow: 0 0 28px rgba(192, 132, 252, 0.25);
+}
+
+.wing-huge-abbr.highlight-purple {
+  color: #c084fc;
+  text-shadow: 0 0 32px rgba(192, 132, 252, 0.4);
 }
 
 .wing-huge-abbr.highlight-red {
   color: var(--red);
-  text-shadow: 0 0 32px rgba(255, 45, 45, 0.45);
-}
-
-.wing-ada-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.wing-tiny-antibody-icon {
-  width: clamp(22px, 2.6vw, 34px);
-  height: clamp(20px, 2.4vw, 30px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.85;
-}
-
-.tiny-antibody-svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 8px rgba(255, 45, 45, 0.4));
+  text-shadow: 0 0 36px rgba(255, 45, 45, 0.55);
 }
 
 .wing-full-name {
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(0.72rem, 0.95vw, 1.2rem);
   font-weight: 800;
-  color: #ffffff;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
   margin-top: clamp(0.1rem, 0.2vh, 0.3rem);
+}
+
+.wing-full-name.highlight-purple {
+  color: #c084fc;
 }
 
 .wing-full-name.highlight-red {
@@ -15359,7 +15340,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.45rem, 0.8vh, 1.0rem);
+  gap: clamp(0.5rem, 0.9vh, 1.1rem);
   width: 100%;
 }
 
@@ -15377,41 +15358,33 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .trajectory-line.line-left {
-  background: linear-gradient(90deg, rgba(192, 132, 252, 0.6) 0%, rgba(255, 77, 82, 0.95) 100%);
-  box-shadow: 0 0 10px rgba(255, 45, 45, 0.45);
+  background: #c084fc;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
 }
 
 .trajectory-line.line-right {
-  background: linear-gradient(270deg, rgba(255, 45, 45, 0.6) 0%, rgba(255, 77, 82, 0.95) 100%);
-  box-shadow: 0 0 10px rgba(255, 45, 45, 0.45);
+  background: #ff2d2d;
+  box-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
 }
 
 .trajectory-target-node {
   position: relative;
-  width: clamp(44px, 5.2vw, 68px);
-  height: clamp(44px, 5.2vw, 68px);
+  width: clamp(48px, 5.8vw, 76px);
+  height: clamp(48px, 5.8vw, 76px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin: 0 clamp(0.4rem, 0.8vw, 1.0rem);
-}
-
-.target-pulse-ring {
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 45, 45, 0.7);
-  animation: rotate 14s linear infinite;
+  margin: 0 clamp(0.5rem, 0.9vw, 1.2rem);
 }
 
 .target-core-circle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid var(--red);
-  background: radial-gradient(circle, rgba(255, 45, 45, 0.35) 0%, rgba(18, 8, 14, 0.95) 80%);
-  box-shadow: 0 0 24px rgba(255, 45, 45, 0.5);
+  border: 2.5px solid var(--red);
+  background: #120407;
+  box-shadow: 0 0 36px rgba(255, 45, 45, 0.85), 0 0 72px rgba(255, 45, 45, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15419,20 +15392,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .target-question-mark {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(1.4rem, 2.0vw, 2.6rem);
+  font-size: clamp(1.6rem, 2.3vw, 3.0rem);
   font-weight: 900;
   color: #ffffff;
   line-height: 1;
+  text-shadow: 0 0 16px rgba(255, 45, 45, 0.9);
 }
 
 .no-comparison-pill {
-  font: 800 clamp(0.58rem, 0.72vw, 0.92rem) var(--font-geist-mono), monospace;
-  color: var(--red);
+  font: 900 clamp(0.68rem, 0.86vw, 1.12rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: clamp(0.2rem, 0.35vh, 0.4rem) clamp(0.7rem, 1.1vw, 1.4rem);
-  background: rgba(255, 45, 45, 0.08);
-  border: 1px solid rgba(255, 45, 45, 0.35);
+  padding: clamp(0.28rem, 0.45vh, 0.55rem) clamp(0.85rem, 1.4vw, 1.8rem);
+  background: rgba(255, 45, 45, 0.16);
+  border: 1.5px solid var(--red);
   box-sizing: border-box;
 }
 
@@ -15444,7 +15418,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .clinical-question-core p {
   margin: 0;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.92rem, 1.2vw, 1.5rem);
+  font-size: clamp(0.96rem, 1.28vw, 1.58rem);
   font-weight: 450;
   color: #cfc8c3;
   line-height: 1.35;
@@ -15465,14 +15439,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   padding: clamp(0.7rem, 1.3vh, 1.5rem) clamp(1.0rem, 2.0vw, 3.0rem);
-  background: linear-gradient(90deg, rgba(255, 45, 45, 0.02) 0%, rgba(30, 15, 22, 0.85) 50%, rgba(255, 45, 45, 0.02) 100%);
-  border-top: 1px solid rgba(255, 77, 82, 0.4);
+  background: rgba(18, 10, 14, 0.95);
+  border-top: 1.5px solid var(--red);
   box-sizing: border-box;
 }
 
 .reveal-trajectory-converge {
   position: absolute;
-  top: -1px;
+  top: -1.5px;
   left: 0;
   right: 0;
   height: 2px;
@@ -15486,13 +15460,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .reveal-stream.stream-left {
-  background: linear-gradient(90deg, transparent 0%, rgba(192, 132, 252, 0.8) 50%, rgba(255, 77, 82, 0.95) 100%);
-  box-shadow: 0 0 14px rgba(255, 45, 45, 0.55);
+  background: #c084fc;
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
 }
 
 .reveal-stream.stream-right {
-  background: linear-gradient(270deg, transparent 0%, rgba(255, 77, 82, 0.8) 50%, rgba(255, 77, 82, 0.95) 100%);
-  box-shadow: 0 0 14px rgba(255, 45, 45, 0.55);
+  background: #ff2d2d;
+  box-shadow: 0 0 12px rgba(255, 45, 45, 0.5);
 }
 
 .reveal-content {
