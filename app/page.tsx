@@ -1362,13 +1362,40 @@ export default function Home() {
                     {/* Drug 2: Mycophenolate Mofetil */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
-                        <svg viewBox="0 0 32 32" className="drug-svg">
-                          <path d="M16 16 L8 8 M16 16 L24 8 M16 16 L8 24 M16 16 L24 24" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" />
-                          <circle cx="16" cy="16" r="3.5" fill="#ff4d52" />
-                          <circle cx="8" cy="8" r="2.5" fill="#c084fc" />
-                          <circle cx="24" cy="8" r="2.5" fill="#c084fc" />
-                          <circle cx="8" cy="24" r="2.5" fill="#c084fc" />
-                          <circle cx="24" cy="24" r="2.5" fill="#c084fc" />
+                        <svg viewBox="0 0 38 32" className="drug-svg">
+                          {/* Mycophenolic acid / Isobenzofuranone core of Mycophenolate */}
+                          {/* Fused 6-membered aromatic ring (benzene) */}
+                          <polygon points="16,11 22,7.5 28,11 28,19 22,22.5 16,19" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          {/* Aromatic inner delocalization circle */}
+                          <circle cx="22" cy="15" r="4.2" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                          
+                          {/* Fused 5-membered lactone ring (phthalide) */}
+                          <polygon points="16,11 10,8.5 6,14.5 10,21.5 16,19" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          
+                          {/* Carbonyl (=O) on lactone */}
+                          <line x1="9.5" y1="8" x2="8" y2="2.5" stroke="#ff4d52" strokeWidth="1.3" />
+                          <line x1="11.5" y1="8.5" x2="10" y2="3" stroke="#ff4d52" strokeWidth="1.3" />
+                          <circle cx="9" cy="2.5" r="2.0" fill="#ff4d52" />
+                          
+                          {/* Ring Oxygen (-O-) node */}
+                          <circle cx="6" cy="14.5" r="2.0" fill="#c084fc" />
+
+                          {/* Top Hydroxyl (-OH) group */}
+                          <line x1="22" y1="7.5" x2="22" y2="2" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
+                          <circle cx="22" cy="2" r="2.0" fill="#ff4d52" />
+
+                          {/* Bottom Methyl (-CH3) group */}
+                          <line x1="22" y1="22.5" x2="22" y2="28" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
+                          <circle cx="22" cy="28" r="1.6" fill="#ffffff" />
+
+                          {/* Bottom-right Methoxy (-OCH3) group */}
+                          <line x1="28" y1="19" x2="33" y2="22.5" stroke="#c084fc" strokeWidth="1.4" strokeLinecap="round" />
+                          <circle cx="33" cy="22.5" r="1.8" fill="#c084fc" />
+
+                          {/* Top-right Alkyl / Unsaturated hexenoic side chain */}
+                          <path d="M 28 11 L 32.5 8 L 36.5 11" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                          <line x1="33" y1="6.8" x2="36" y2="9.2" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
+                          <circle cx="36.5" cy="11" r="1.5" fill="#ffffff" />
                         </svg>
                       </div>
                       <div className="drug-meta">
