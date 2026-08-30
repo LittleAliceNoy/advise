@@ -15127,8 +15127,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: clamp(0.4rem, 0.7vh, 0.75rem) clamp(1.0rem, 1.8vw, 2.2rem);
-  background: linear-gradient(90deg, rgba(255, 45, 45, 0.06) 0%, rgba(16, 10, 16, 0.9) 50%, rgba(255, 45, 45, 0.06) 100%);
+  padding: clamp(0.35rem, 0.6vh, 0.65rem) clamp(1.0rem, 1.8vw, 2.2rem);
+  background: linear-gradient(90deg, rgba(255, 45, 45, 0.04) 0%, rgba(16, 10, 16, 0.9) 50%, rgba(255, 45, 45, 0.04) 100%);
   border: 1px solid rgba(255, 77, 82, 0.35);
   box-sizing: border-box;
 }
@@ -15136,31 +15136,29 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .tension-content {
   display: flex;
   align-items: baseline;
-  gap: clamp(0.4rem, 0.8vw, 1.0rem);
+  gap: clamp(0.5rem, 1.0vw, 1.2rem);
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
 }
 
 .tension-lead {
-  font: 600 clamp(0.56rem, 0.72vw, 0.92rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  letter-spacing: 0.02em;
+  font: 600 clamp(0.56rem, 0.70vw, 0.88rem) var(--font-geist-mono), monospace;
+  color: #a89f9c;
+  letter-spacing: 0.03em;
 }
 
 .tension-question {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.92rem, 1.25vw, 1.55rem);
-  font-weight: 500;
+  font-size: clamp(0.88rem, 1.15vw, 1.45rem);
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
-.tension-question em {
+.tension-highlight-red {
   color: var(--red);
-  font-style: normal;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 45, 45, 0.55);
-  text-underline-offset: 3px;
+  font-weight: 800;
 }
 
 @keyframes introNarrowIn {

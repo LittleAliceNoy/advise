@@ -1832,10 +1832,11 @@ export default function Home() {
 
                       </g>
 
-                      {/* Direct Title & Subtitle Underneath Antibody Structure */}
+                      {/* Direct Title & Subtitle & Description Underneath Antibody Structure */}
                       <g className="antibody-bottom-caption">
-                        <text x="270" y="422" fill="#ffffff" fontSize="24.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB</text>
-                        <text x="270" y="452" fill="#e5e5e5" fontSize="14.0" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
+                        <text x="270" y="415" fill="#ffffff" fontSize="23.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB</text>
+                        <text x="270" y="440" fill="#e5e5e5" fontSize="12.5" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
+                        <text x="270" y="462" fill="#a8a29e" fontSize="10.2" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle" letterSpacing="0.02em">Binds to and neutralizes TNF-α, a protein that causes body-wide inflammation</text>
                       </g>
                     </svg>
                   </div>
@@ -1890,6 +1891,14 @@ export default function Home() {
                   </div>
                 </div>
 
+              </div>
+            </div>
+
+            {/* NARRATIVE TENSION BRIDGE TO SLIDE 06 */}
+            <div className="intro5-tension-bridge">
+              <div className="tension-content">
+                <span className="tension-lead">Promising evidence — but against placebo.</span>
+                <strong className="tension-question">How does adalimumab compare with <span className="tension-highlight-red">conventional immunosuppression?</span></strong>
               </div>
             </div>
 
