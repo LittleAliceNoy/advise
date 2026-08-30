@@ -1744,7 +1744,7 @@ export default function Home() {
                   
                   {/* Tall Modular Antibody Showcase SVG */}
                   <div className="biologic-tall-stage">
-                    <svg viewBox="0 0 540 475" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                    <svg viewBox="0 0 540 375" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
                       <defs>
                         <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
                           <stop offset="0%" stopColor="rgba(255, 45, 45, 0.42)" />
