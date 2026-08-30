@@ -38,7 +38,7 @@ const SLIDES = [
 ];
 
 async function main() {
-  console.log("Launching headless Chrome...");
+  console.log("Launching headless Chrome at 1920x1080 (2x Retina)...");
   const browser = await puppeteer.launch({
     executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     headless: true,
@@ -55,28 +55,31 @@ async function main() {
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 2 });
 
-  console.log("Navigating to http://localhost:3000 ...");
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  console.log("Navigating to http://localhost:3000/?handout=true ...");
+  await page.goto("http://localhost:3000/?handout=true", { waitUntil: "networkidle0" });
 
-  // Hide side navigation dots and smooth out scroll
+  // Wait for React hydration
+  await page.waitForFunction(() => window.__IS_HYDRATED__ === true, { timeout: 15000 });
+
+  // Remove navigation UI and disable smooth snapping during capture
   await page.addStyleTag({
     content: `
       .chapter-nav { display: none !important; }
       .deck { scroll-behavior: auto !important; scroll-snap-type: none !important; }
-      * { transition-duration: 0.001s !important; }
+      * { transition: none !important; animation-duration: 0.001s !important; }
     `
   });
 
-  // Trigger global state reveal
+  // Call global reveal
   await page.evaluate(() => {
     if (typeof window.__REVEAL_ALL_SLIDES__ === "function") {
       window.__REVEAL_ALL_SLIDES__();
     }
   });
 
-  await new Promise((r) => setTimeout(r, 600));
+  await new Promise((r) => setTimeout(r, 800));
 
-  const tempDir = path.join(process.cwd(), "temp_pdf_frames");
+  const tempDir = path.join(process.cwd(), "temp_inspect_frames");
   if (!fs.existsSync(tempDir)) {
     fs.mkdirSync(tempDir, { recursive: true });
   }
@@ -85,20 +88,22 @@ async function main() {
 
   for (let i = 0; i < SLIDES.length; i++) {
     const slide = SLIDES[i];
-    console.log(`[${i + 1}/${SLIDES.length}] Preparing slide: ${slide.name} (#${slide.id})...`);
+    console.log(`[${i + 1}/${SLIDES.length}] Preparing & capturing: ${slide.name} (#${slide.id})...`);
 
-    // Prepare slide state and position
+    // Prepare slide state and scroll exactly into viewport
     await page.evaluate((id) => {
       if (typeof window.__PREPARE_SLIDE__ === "function") {
         window.__PREPARE_SLIDE__(id);
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView();
+      }
+      const el = document.getElementById(id);
+      const deck = document.querySelector(".deck");
+      if (el && deck) {
+        deck.scrollTop = el.offsetTop;
       }
     }, slide.id);
 
-    // Wait for animations and layout to settle
-    await new Promise((r) => setTimeout(r, 700));
+    // Wait for React re-render, canvas redraw and DOM paint to settle
+    await new Promise((r) => setTimeout(r, 600));
 
     // Force canvas repaints if present
     await page.evaluate((id) => {
@@ -115,6 +120,8 @@ async function main() {
     await new Promise((r) => setTimeout(r, 200));
 
     const imgPath = path.join(tempDir, `slide_${String(i + 1).padStart(2, "0")}_${slide.id}.png`);
+    
+    // Capture the full 1920x1080 viewport
     await page.screenshot({ path: imgPath, type: "png" });
     imagePaths.push(imgPath);
   }
@@ -150,14 +157,6 @@ async function main() {
   console.log(`- ${sitePdfPath}`);
   console.log(`- ${rootPdfPath}`);
   console.log(`Total Size: ${(pdfBytes.length / (1024 * 1024)).toFixed(2)} MB`);
-
-  // Clean up frames
-  try {
-    for (const p of imagePaths) {
-      fs.unlinkSync(p);
-    }
-    fs.rmdirSync(tempDir);
-  } catch (e) {}
 }
 
 main().catch((err) => {

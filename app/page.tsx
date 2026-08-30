@@ -365,7 +365,7 @@ export default function Home() {
   const [selectedAnalysis, setSelectedAnalysis] = useState(0);
   const [qaFocus, setQaFocus] = useState(0);
   const [cohortCycle, setCohortCycle] = useState(0);
-  const [treatmentPhase, setTreatmentPhase] = useState(0);
+  const [treatmentPhase, setTreatmentPhase] = useState(1);
   const [treatmentStoryStage, setTreatmentStoryStage] = useState(-1);
   const [treatmentMetric, setTreatmentMetric] = useState(0);
   const [steroidPct, setSteroidPct] = useState(82);
@@ -448,9 +448,9 @@ export default function Home() {
   const [efficacyStoryStage, setEfficacyStoryStage] = useState(5);
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
-  const [taperingStage, setTaperingStage] = useState(0);
-  const [followupStage, setFollowupStage] = useState<0 | 1 | 2>(0);
-  const [therapeuticGoalStage, setTherapeuticGoalStage] = useState(0);
+  const [taperingStage, setTaperingStage] = useState(7);
+  const [followupStage, setFollowupStage] = useState<0 | 1 | 2>(2);
+  const [therapeuticGoalStage, setTherapeuticGoalStage] = useState(3);
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
@@ -459,10 +459,10 @@ export default function Home() {
   // Slide 29 Interactive CID Donut & Inspection States
   const [activeBranch, setActiveBranch] = useState<'idle' | 'antimetabolites' | 'cni'>('idle');
   const [branchStep, setBranchStep] = useState(0);
-  const [inspected79, setInspected79] = useState(false);
-  const [inspected21, setInspected21] = useState(false);
-  const [synthesisStep, setSynthesisStep] = useState<0 | 1 | 2 | 3>(0);
-  const [concernRevealed, setConcernRevealed] = useState(false);
+  const [inspected79, setInspected79] = useState(true);
+  const [inspected21, setInspected21] = useState(true);
+  const [synthesisStep, setSynthesisStep] = useState<0 | 1 | 2 | 3>(3);
+  const [concernRevealed, setConcernRevealed] = useState(true);
   const inspectTimerRef = useRef<NodeJS.Timeout[]>([]);
 
   // Slide 27 Differential Loss to Follow-up State:
@@ -471,7 +471,7 @@ export default function Home() {
   // 3: 8 participants CID drop out
   // 4: Authors' proposed reasons for CID attrition
   // 5: Final robustness & conclusion strip
-  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4 | 5>(1);
+  const [attritionStep, setAttritionStep] = useState<1 | 2 | 3 | 4 | 5>(5);
 
   // Slide 26 Temporal Trajectory Story Sequence:
   // 0: Initial Timeline only
@@ -479,7 +479,7 @@ export default function Home() {
   // 2: Pointing line 6M -> 12M + 12M Steroid-Sparing Success
   // 3: Both 6M and 12M Corticosteroid Discontinuation
   // 4: Extension line straight out from 12M Discontinuation + Red FOLLOW-UP ENDS line
-  const [temporalStep, setTemporalStep] = useState<0 | 1 | 2 | 3 | 4>(0);
+  const [temporalStep, setTemporalStep] = useState<0 | 1 | 2 | 3 | 4>(4);
 
   const advanceTemporalStep = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -557,10 +557,11 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      (window as any).__REVEAL_ALL_SLIDES__ = () => {
+      const revealAll = () => {
         (window as any).__INSTANT_CHART__ = true;
         setTherapeuticGoalStage(3);
         setTaperingStage(7);
+        setFollowupStage(2);
         setStatisticsFrameworkStage(-1);
         setTreatmentStoryStage(-1);
         setTreatmentPhase(1);
@@ -575,10 +576,19 @@ export default function Home() {
         setAttritionStep(5);
       };
 
+      (window as any).__REVEAL_ALL_SLIDES__ = revealAll;
+      (window as any).__IS_HYDRATED__ = true;
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("handout") === "true") {
+        revealAll();
+      }
+
       (window as any).__PREPARE_SLIDE__ = (slideId: string) => {
         (window as any).__INSTANT_CHART__ = true;
         if (slideId === "therapeutic-goal") setTherapeuticGoalStage(3);
         if (slideId === "tapering-cinematic") setTaperingStage(7);
+        if (slideId === "followup") setFollowupStage(2);
         if (slideId === "statistics-redesign") setStatisticsFrameworkStage(-1);
         if (slideId === "treatment-results-redesign") {
           setTreatmentStoryStage(-1);
@@ -684,26 +694,41 @@ export default function Home() {
     advanceTherapeuticGoal();
   };
 
+  const [isHandout, setIsHandout] = useState(false);
+
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("handout") === "true" || (window as any).__HANDOUT_MODE__) {
+        setIsHandout(true);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "results") return;
     setEfficacyStoryStage(0);
     setEfficacyFocus(2);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "tapering-cinematic") return;
     setTaperingStage(0);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "followup") return;
     setFollowupStage(0);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "outcomes") return;
     setOutcomesStoryStage(0);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
     if (chapters[active]?.id !== "sample-size-redesign") return;
@@ -721,6 +746,7 @@ export default function Home() {
   }, [active]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "limitations-2") return;
     clearInspectTimers();
     setActiveBranch('idle');
@@ -729,17 +755,19 @@ export default function Home() {
     setInspected21(false);
     setSynthesisStep(0);
     setConcernRevealed(false);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "limitations-3") return;
     setTemporalStep(0);
-  }, [active]);
+  }, [active, isHandout]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "limitations-5") return;
     setAttritionStep(1);
-  }, [active]);
+  }, [active, isHandout]);
 
   const advanceEfficacyStory = () => {
     setEfficacyStoryStage((current) => {
