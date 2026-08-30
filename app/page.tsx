@@ -6,7 +6,7 @@ const chapters = [
   { id: "signal", label: "The signal" },
   { id: "clinical-problem", label: "The clinical landscape" },
   { id: "therapeutic-goal", label: "The therapeutic goal" },
-  { id: "systemic-strategies", label: "Two systemic strategies" },
+  { id: "systemic-strategies", label: "Conventional immunosuppression" },
   { id: "question", label: "The research question" },
   { id: "study-design", label: "Study design" },
   { id: "screening", label: "Screening pathway" },
@@ -1282,46 +1282,355 @@ export default function Home() {
         </section>
 
         <section id="systemic-strategies" className="scene intro4-scene">
-          <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / TWO SYSTEMIC STRATEGIES</p>
-          <div className="intro4-split" aria-label="Two plausible systemic treatment pathways before ADVISE">
-            <article className="intro4-path intro4-cid">
-              <header><small>ESTABLISHED STEPWISE STRATEGY</small><strong>CONVENTIONAL<br />IMMUNOSUPPRESSION</strong></header>
-              <div className="intro4-pathway">
-                <div><span>START</span><strong>ANTIMETABOLITE</strong><small>Methotrexate · Mycophenolate · Azathioprine</small></div>
-                <i aria-hidden="true" />
-                <div><span>IF NEEDED</span><strong>ESCALATE / ADD ANOTHER CLASS</strong><small>For example, a calcineurin inhibitor</small></div>
-                <i aria-hidden="true" />
-                <div><span>STRATEGY</span><strong>STEPWISE CONTROL</strong></div>
-              </div>
-            </article>
+          <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / CONVENTIONAL IMMUNOSUPPRESSION</p>
 
-            <div className="intro4-axis" aria-hidden="true"><i /><b>OR</b><i /></div>
+          <header className="intro4-header">
+            <h2>CONVENTIONAL IMMUNOSUPPRESSION</h2>
+            <div className="intro4-subrule" aria-hidden="true">
+              <span className="subrule-line" />
+              <span className="subrule-text">THE ESTABLISHED SYSTEMIC TOOLKIT</span>
+              <span className="subrule-line" />
+            </div>
+          </header>
 
-            <article className="intro4-path intro4-ada">
-              <header><small>TARGETED BIOLOGIC</small><strong>ADALIMUMAB</strong><span>ANTI–TNF-α MONOCLONAL ANTIBODY</span></header>
-              <div className="intro4-ada-evidence">
-                <div className="ada-evidence-hub"><i aria-hidden="true" /><span>EVIDENCE BEFORE ADVISE</span></div>
-                <div className="ada-evidence-sources">
-                  <div>
-                    <span>RANDOMIZED TRIALS vs PLACEBO</span>
-                    <strong>PROLONGED TIME<br />TO RELAPSE</strong>
-                    <small>During corticosteroid taper and discontinuation</small>
+          <div className="intro4-content-grid" aria-label="Conventional immunosuppression drug classes and stepwise strategy">
+            
+            {/* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual attention) */}
+            <div className="intro4-hero-territories">
+              
+              {/* PRIMARY / FOUNDATION CLASS: ANTIMETABOLITES */}
+              <div className="pharma-territory territory-antimetabolites">
+                <div className="territory-header">
+                  <div className="territory-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </div>
-                  <b aria-hidden="true">+</b>
-                  <div>
-                    <span>FOLLOW-UP COHORT</span>
-                    <strong>SUGGESTED SUBSTANTIAL<br />CORTICOSTEROID SPARING</strong>
+                  <div className="territory-titles">
+                    <strong className="territory-class-name">ANTIMETABOLITES</strong>
+                    <span className="territory-class-tag">THE INITIAL / FOUNDATION CLASS</span>
                   </div>
                 </div>
-                <div className="ada-evidence-foundation"><i aria-hidden="true" /><span>SUPPORTED A PLAUSIBLE APPROACH TO</span><strong>BIOLOGIC CONTROL</strong></div>
-              </div>
-            </article>
-          </div>
 
-          <div className="intro4-convergence">
-            <i /><div><small>SAME CLINICAL DESTINATION</small><strong>INACTIVE UVEITIS <span>+</span> LOWER PREDNISONE</strong></div><i />
+                <div className="antimetabolites-visual-core">
+                  {/* Left: 3 Drug Cards/Items */}
+                  <div className="drug-nodes-col">
+                    {/* Drug 1: Methotrexate */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" className="drug-svg">
+                          <polygon points="16,4 28,10 28,22 16,28 4,22 4,10" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
+                          <circle cx="16" cy="16" r="4" fill="#ff4d52" />
+                          <circle cx="16" cy="4" r="2" fill="#c084fc" />
+                          <circle cx="28" cy="10" r="2" fill="#c084fc" />
+                          <circle cx="28" cy="22" r="2" fill="#c084fc" />
+                          <circle cx="16" cy="28" r="2" fill="#c084fc" />
+                          <circle cx="4" cy="22" r="2" fill="#c084fc" />
+                          <circle cx="4" cy="10" r="2" fill="#c084fc" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">METHOTREXATE</strong>
+                        <span className="drug-moa">Folate antagonist</span>
+                      </div>
+                    </div>
+
+                    {/* Drug 2: Mycophenolate Mofetil */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" className="drug-svg">
+                          <path d="M16 16 L8 8 M16 16 L24 8 M16 16 L8 24 M16 16 L24 24" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" />
+                          <circle cx="16" cy="16" r="3.5" fill="#ff4d52" />
+                          <circle cx="8" cy="8" r="2.5" fill="#c084fc" />
+                          <circle cx="24" cy="8" r="2.5" fill="#c084fc" />
+                          <circle cx="8" cy="24" r="2.5" fill="#c084fc" />
+                          <circle cx="24" cy="24" r="2.5" fill="#c084fc" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">MYCOPHENOLATE MOFETIL</strong>
+                        <span className="drug-moa">Inosine monophosphate dehydrogenase inhibitor</span>
+                      </div>
+                    </div>
+
+                    {/* Drug 3: Azathioprine */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" className="drug-svg">
+                          <path d="M10 6 Q16 16 10 26 M22 6 Q16 16 22 26" fill="none" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" />
+                          <line x1="10" y1="8" x2="22" y2="8" stroke="#ff4d52" strokeWidth="1.4" />
+                          <line x1="12" y1="12" x2="20" y2="12" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" />
+                          <line x1="12" y1="20" x2="20" y2="20" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" />
+                          <line x1="10" y1="24" x2="22" y2="24" stroke="#ff4d52" strokeWidth="1.4" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">AZATHIOPRINE</strong>
+                        <span className="drug-moa">Purine analog</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Center: Glowing 3D Molecular Constellation Sphere */}
+                  <div className="molecular-sphere-hero" aria-hidden="true">
+                    <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
+                      <defs>
+                        <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(192, 132, 252, 0.28)" />
+                          <stop offset="60%" stopColor="rgba(147, 51, 234, 0.12)" />
+                          <stop offset="100%" stopColor="rgba(10, 8, 14, 0.85)" />
+                        </radialGradient>
+                        <filter id="mol-glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                      </defs>
+
+                      {/* Outer Spherical Shell & Orbital Rings */}
+                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(192, 132, 252, 0.45)" strokeWidth="1.5" />
+                      <ellipse cx="100" cy="100" rx="88" ry="40" fill="none" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
+                      <ellipse cx="100" cy="100" rx="40" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.25)" strokeWidth="1" strokeDasharray="3 3" />
+
+                      {/* Chemical / Molecular Constellation Wireframe */}
+                      <polygon points="100,60 125,75 125,105 100,120 75,105 75,75" fill="none" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.8" />
+                      <polygon points="125,75 150,85 145,115 125,105" fill="none" stroke="rgba(192, 132, 252, 0.6)" strokeWidth="1.8" />
+                      
+                      {/* Branching Side Chains */}
+                      <line x1="100" y1="60" x2="100" y2="40" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.8" />
+                      <line x1="75" y1="105" x2="52" y2="120" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.8" />
+                      <line x1="52" y1="120" x2="38" y2="112" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1.5" />
+                      <line x1="100" y1="120" x2="115" y2="145" stroke="rgba(255, 77, 82, 0.75)" strokeWidth="1.8" />
+                      <line x1="150" y1="85" x2="170" y2="78" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.6" />
+
+                      {/* Atomic Nodes with Dual Red & Purple Energy Centers */}
+                      <circle cx="100" cy="60" r="4.5" fill="#ffffff" filter="url(#mol-glow)" />
+                      <circle cx="125" cy="75" r="4" fill="#c084fc" />
+                      <circle cx="125" cy="105" r="4.5" fill="#ff4d52" filter="url(#mol-glow)" />
+                      <circle cx="100" cy="120" r="4" fill="#c084fc" />
+                      <circle cx="75" cy="105" r="4" fill="#ffffff" />
+                      <circle cx="75" cy="75" r="4" fill="#c084fc" />
+                      
+                      <circle cx="150" cy="85" r="3.5" fill="#ff4d52" />
+                      <circle cx="145" cy="115" r="3.5" fill="#ffffff" />
+                      <circle cx="100" cy="40" r="4" fill="#ff4d52" filter="url(#mol-glow)" />
+                      <circle cx="52" cy="120" r="3.5" fill="#c084fc" />
+                      <circle cx="38" cy="112" r="3" fill="#ffffff" />
+                      <circle cx="115" cy="145" r="3.5" fill="#ff4d52" />
+                      <circle cx="170" cy="78" r="3" fill="#c084fc" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* ESCALATION BRIDGE */}
+              <div className="escalation-bridge">
+                <div className="bridge-trajectory-top" aria-hidden="true">
+                  <svg viewBox="0 0 100 30" className="bridge-top-svg">
+                    <path d="M 0 25 Q 50 5 95 25" fill="none" stroke="rgba(192, 132, 252, 0.5)" strokeWidth="1.5" strokeDasharray="3 3" />
+                  </svg>
+                </div>
+
+                <div className="bridge-pill">
+                  <span className="bridge-chevrons" aria-hidden="true">»</span>
+                  <strong className="bridge-main-text">COMBINATION<br />WHEN NEEDED</strong>
+                  <span className="bridge-sub-text">to achieve inflammation control and steroid sparing</span>
+                  <span className="bridge-chevrons" aria-hidden="true">»</span>
+                </div>
+
+                <div className="bridge-trajectory-bottom" aria-hidden="true">
+                  <svg viewBox="0 0 100 30" className="bridge-bottom-svg">
+                    <path d="M 0 5 Q 50 25 95 5" fill="none" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1.5" strokeDasharray="3 3" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* SECONDARY CLASS: CALCINEURIN INHIBITORS */}
+              <div className="pharma-territory territory-calcineurin">
+                <div className="territory-header">
+                  <div className="territory-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="territory-titles">
+                    <strong className="territory-class-name">CALCINEURIN INHIBITORS</strong>
+                    <span className="territory-class-tag territory-addon-tag">COMMON ADD-ON CLASS</span>
+                  </div>
+                </div>
+
+                <div className="calcineurin-cards-col">
+                  {/* Drug 1: Cyclosporine */}
+                  <div className="calcineurin-drug-box">
+                    <div className="calcineurin-cluster-icon" aria-hidden="true">
+                      <svg viewBox="0 0 44 44" className="cluster-svg">
+                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
+                        <circle cx="14" cy="16" r="6" fill="#a855f7" />
+                        <circle cx="30" cy="16" r="6" fill="#c084fc" />
+                        <circle cx="16" cy="28" r="6" fill="#ff4d52" />
+                        <circle cx="28" cy="28" r="6" fill="#a855f7" />
+                        <circle cx="22" cy="12" r="5" fill="#ffffff" />
+                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
+                      </svg>
+                    </div>
+                    <div className="calcineurin-drug-info">
+                      <strong className="cni-drug-name">CYCLOSPORINE</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via cyclophilin binding</span>
+                    </div>
+                  </div>
+
+                  {/* Drug 2: Tacrolimus */}
+                  <div className="calcineurin-drug-box">
+                    <div className="calcineurin-cluster-icon" aria-hidden="true">
+                      <svg viewBox="0 0 44 44" className="cluster-svg">
+                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
+                        <circle cx="15" cy="18" r="6.5" fill="#c084fc" />
+                        <circle cx="29" cy="18" r="6.5" fill="#ff4d52" />
+                        <circle cx="22" cy="30" r="6.5" fill="#a855f7" />
+                        <circle cx="13" cy="28" r="5" fill="#ffffff" />
+                        <circle cx="31" cy="28" r="5" fill="#c084fc" />
+                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
+                      </svg>
+                    </div>
+                    <div className="calcineurin-drug-info">
+                      <strong className="cni-drug-name">TACROLIMUS</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via FKBP binding</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* STEPWISE APPROACH PATHWAY (Subordinate Horizontal Flow) */}
+            <div className="stepwise-pathway-section">
+              <div className="intro4-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">THE ESTABLISHED STEPWISE APPROACH</span>
+                <span className="rule-bar" />
+              </div>
+
+              <div className="stepwise-steps-flow">
+                {/* Step 1 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <polygon points="9,6 18,12 9,18" fill="#c084fc" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag">1 START</span>
+                    <strong className="step-title">ANTIMETABOLITE</strong>
+                    <span className="step-desc">First-line foundation therapy</span>
+                  </div>
+                </div>
+
+                {/* Connector Arrow 1 */}
+                <div className="step-arrow-wrap" aria-hidden="true">
+                  <span className="step-dotted-line" />
+                  <span className="step-arrowhead">▶</span>
+                </div>
+
+                {/* Step 2 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#c084fc" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag">2 IF NEEDED</span>
+                    <strong className="step-title">ADD ANOTHER CLASS</strong>
+                    <span className="step-desc">Often a calcineurin inhibitor</span>
+                  </div>
+                </div>
+
+                {/* Connector Arrow 2 */}
+                <div className="step-arrow-wrap" aria-hidden="true">
+                  <span className="step-dotted-line" />
+                  <span className="step-arrowhead">▶</span>
+                </div>
+
+                {/* Step 3 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-goal" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <path d="M12 2 L20 6 V12 C20 17 12 21 12 21 C12 21 4 17 4 12 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag step-goal-tag">3 GOAL</span>
+                    <strong className="step-title">STEPWISE CONTROL</strong>
+                    <span className="step-desc">Achieve inflammation control and steroid sparing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SUPPORTING EVIDENCE ANNOTATIONS */}
+            <div className="observational-evidence-section">
+              <div className="intro4-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">SUPPORTING EVIDENCE FROM OBSERVATIONAL STUDIES</span>
+                <span className="rule-bar" />
+              </div>
+
+              <div className="evidence-boxes-row">
+                {/* Evidence Block 1 */}
+                <div className="evidence-anno-box">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat">~40–60%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
+                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Evidence Block 2 */}
+                <div className="evidence-anno-box">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-escalation">~20–25%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
+                      <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CLINICAL FOOTNOTE */}
+            <p className="intro4-footnote">
+              When combination therapy is required, a calcineurin inhibitor such as cyclosporine or tacrolimus is often added to an antimetabolite.
+            </p>
+
           </div>
-          <p className="intro4-close">Different evidence histories. Same clinical destination.</p>
         </section>
 
         <section id="question" className="scene intro5-scene">
