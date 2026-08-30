@@ -1095,10 +1095,12 @@ export default function Home() {
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.48rem, 0.56vw, 0.70rem)", fontWeight: 600, marginTop: "0.12rem", color: "#a8a29e", letterSpacing: "0.04em" }}>Needed to achieve both goals</span>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.65vw, 0.82rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                    NEEDED TO ACHIEVE BOTH GOALS
+                  </span>
                 </div>
 
-                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>
+                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ marginTop: "0.08rem", marginBottom: "-0.35rem" }}>↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR (Stage 1+) */}
