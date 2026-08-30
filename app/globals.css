@@ -15010,13 +15010,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.1rem 0;
+  padding: 0.15rem 0;
 }
 
 .biologic-interaction-svg {
   width: 100%;
-  max-height: clamp(105px, 13.5vh, 145px);
-  filter: drop-shadow(0 0 14px rgba(255, 45, 45, 0.16));
+  max-height: clamp(130px, 16.5vh, 175px);
+  filter: drop-shadow(0 0 16px rgba(255, 45, 45, 0.18));
 }
 
 .biologic-paradigm-footer {

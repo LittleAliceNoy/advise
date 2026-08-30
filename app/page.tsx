@@ -1756,81 +1756,147 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Scientifically Recognizable Antibody–TNF-α Neutralization Diagram */}
-                {/* Scientifically Recognizable Antibody–TNF-α Neutralization Diagram */}
+                {/* Hero Modular IgG1 Monoclonal Antibody & TNF-alpha Neutralization Stage */}
                 <div className="biologic-interaction-stage">
-                  <svg viewBox="0 0 660 110" className="biologic-interaction-svg" aria-label="Adalimumab antibody binding and neutralizing TNF-alpha cytokine homotrimer">
+                  <svg viewBox="0 0 770 175" className="biologic-interaction-svg" aria-label="Adalimumab modular IgG1 antibody binding and neutralizing TNF-alpha cytokine homotrimer">
                     <defs>
-                      <linearGradient id="ada-ab-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-                        <stop offset="60%" stopColor="#ff4d52" stopOpacity="0.9" />
-                        <stop offset="100%" stopColor="#ff2d2d" stopOpacity="1" />
-                      </linearGradient>
-                      <radialGradient id="tnf-core-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="rgba(255, 45, 45, 0.25)" />
+                      <radialGradient id="antibody-core-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="rgba(255, 45, 45, 0.32)" />
+                        <stop offset="60%" stopColor="rgba(255, 45, 45, 0.08)" />
                         <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
+                      </radialGradient>
+                      <radialGradient id="tnf-target-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="rgba(255, 77, 82, 0.35)" />
+                        <stop offset="70%" stopColor="rgba(255, 77, 82, 0.06)" />
+                        <stop offset="100%" stopColor="rgba(255, 77, 82, 0)" />
                       </radialGradient>
                     </defs>
 
-                    {/* 1. Left: Adalimumab Monoclonal Antibody (Page 30 Canonical IgG1 Structure) */}
-                    <g className="antibody-group" transform="translate(20, 0)">
-                      <circle cx="50" cy="40" r="38" fill="url(#tnf-core-glow)" />
-                      {/* Heavy chain stem (Fc) */}
-                      <line x1="50" y1="38" x2="50" y2="70" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
-                      {/* Heavy chain left arm */}
-                      <line x1="50" y1="38" x2="26" y2="14" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
-                      {/* Heavy chain right arm */}
-                      <line x1="50" y1="38" x2="74" y2="14" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
-                      {/* Light chain left parallel segment */}
-                      <line x1="33" y1="28" x2="20" y2="15" stroke="#ff7175" strokeWidth="3.6" strokeLinecap="round" />
-                      {/* Light chain right parallel segment */}
-                      <line x1="67" y1="28" x2="80" y2="15" stroke="#ff7175" strokeWidth="3.6" strokeLinecap="round" />
+                    {/* 1. LARGE PROMINENT MODULAR IgG1 MONOCLONAL ANTIBODY */}
+                    <g className="modular-antibody-hero" transform="translate(15, 6)">
+                      {/* Ambient Aura */}
+                      <circle cx="177" cy="85" r="75" fill="url(#antibody-core-glow)" />
 
-                      {/* Label under Antibody */}
-                      <text x="50" y="88" fill="#ffffff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB (IgG1)</text>
-                      <text x="50" y="100" fill="#8c827e" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Monoclonal Antibody</text>
+                      {/* --- Fc STEM (CONSTANT REGION: CH2 & CH3) --- */}
+                      {/* CH2 Pair */}
+                      <rect x="151" y="74" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <text x="163" y="91" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH2</text>
+
+                      <rect x="179" y="74" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <text x="191" y="91" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH2</text>
+
+                      {/* CH3 Pair */}
+                      <rect x="151" y="110" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <text x="163" y="127" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH3</text>
+
+                      <rect x="179" y="110" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <text x="191" y="127" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH3</text>
+
+                      {/* Fc Central Cleft Line */}
+                      <line x1="177" y1="74" x2="177" y2="142" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+
+                      {/* --- HINGE REGION WITH DISULFIDE BONDS --- */}
+                      <path d="M 163 74 C 163 60, 142 52, 136 44" fill="none" stroke="#ff2d2d" strokeWidth="3.4" strokeLinecap="round" />
+                      <path d="M 191 74 C 191 60, 212 52, 218 44" fill="none" stroke="#ff2d2d" strokeWidth="3.4" strokeLinecap="round" />
+                      {/* Parallel Hinge Disulfide Bridges */}
+                      <line x1="166" y1="61" x2="188" y2="61" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
+                      <line x1="166" y1="67" x2="188" y2="67" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
+
+                      {/* --- LEFT FAB ARM (ANGLED -32°) --- */}
+                      <g transform="translate(136, 44) rotate(-32)">
+                        {/* Constant Domains: CL (outer) & CH1 (inner) */}
+                        <rect x="-29" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <text x="-17" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CL</text>
+
+                        <rect x="-1" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <text x="11" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH1</text>
+
+                        {/* Interchain Disulfide Bridge */}
+                        <line x1="-5" y1="-20" x2="-1" y2="-20" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
+
+                        {/* Variable Antigen-Binding Tips (VL & VH in Vibrant Red) */}
+                        <rect x="-29" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
+                        <text x="-17" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+
+                        <rect x="-1" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
+                        <text x="11" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+
+                        {/* Antigen Binding CDR Label */}
+                        <text x="-3" y="-77" fill="#ff5c60" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ANTIGEN BINDING (Fab)</text>
+                      </g>
+
+                      {/* --- RIGHT FAB ARM (ANGLED +32°) --- */}
+                      <g transform="translate(218, 44) rotate(32)">
+                        {/* Constant Domains: CH1 (inner) & CL (outer) */}
+                        <rect x="-23" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <text x="-11" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH1</text>
+
+                        <rect x="5" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <text x="17" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CL</text>
+
+                        {/* Interchain Disulfide Bridge */}
+                        <line x1="1" y1="-20" x2="5" y2="-20" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
+
+                        {/* Variable Antigen-Binding Tips (VH & VL in Vibrant Red) */}
+                        <rect x="-23" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
+                        <text x="-11" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+
+                        <rect x="5" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
+                        <text x="17" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+
+                        {/* Antigen Binding CDR Label */}
+                        <text x="3" y="-77" fill="#ff5c60" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ANTIGEN BINDING (Fab)</text>
+                      </g>
+
+                      {/* Bottom Antibody Description */}
+                      <text x="177" y="156" fill="#ffffff" fontSize="9.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB (IgG1)</text>
+                      <text x="177" y="167" fill="#a8a29e" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Fully Human Monoclonal Antibody</text>
                     </g>
 
-                    {/* 2. Middle: Targeting & Neutralization Vector Arcs */}
-                    <g className="binding-vector-group" transform="translate(145, 14)">
-                      <line x1="0" y1="26" x2="68" y2="26" stroke="rgba(255, 77, 82, 0.7)" strokeWidth="1.6" strokeDasharray="3 3" />
-                      <polygon points="72,26 62,21 62,31" fill="#ff4d52" />
-                      <rect x="8" y="10" width="52" height="15" fill="#08080a" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1" />
-                      <text x="34" y="20.5" fill="#ff4d52" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">BLOCKADE</text>
-                      <text x="34" y="42" fill="#a8a29e" fontSize="6.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Target Neutralization</text>
+                    {/* 2. DIRECTED TARGETING & BLOCKADE VECTOR */}
+                    <g className="blockade-flow-group" transform="translate(325, 45)">
+                      <line x1="0" y1="36" x2="54" y2="36" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="2.0" strokeDasharray="4 3" />
+                      <polygon points="60,36 48,30 48,42" fill="#ff4d52" />
+                      <rect x="4" y="15" width="46" height="17" rx="2" fill="#0c070e" stroke="rgba(255, 77, 82, 0.5)" strokeWidth="1.2" />
+                      <text x="27" y="27" fill="#ff4d52" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">BLOCKS</text>
+                      <text x="27" y="58" fill="#d6d3d1" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Neutralization</text>
                     </g>
 
-                    {/* 3. Right: Trimeric TNF-alpha Molecule (Neutralized Target) */}
-                    <g className="tnf-target-group" transform="translate(245, 0)">
-                      {/* Neutralization Field Atmosphere */}
-                      <circle cx="55" cy="40" r="38" fill="url(#tnf-core-glow)" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+                    {/* 3. TNF-ALPHA HOMOTRIMER TARGET CYTOKINE */}
+                    <g className="tnf-target-group" transform="translate(400, 22)">
+                      {/* Atmospheric Aura */}
+                      <circle cx="60" cy="55" r="48" fill="url(#tnf-target-glow)" stroke="rgba(255, 77, 82, 0.35)" strokeWidth="1.4" strokeDasharray="4 4" />
+
+                      {/* 3 Subunits of TNF-alpha Trimer */}
+                      <ellipse cx="46" cy="44" rx="14" ry="19" transform="rotate(-30 46 44)" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <ellipse cx="74" cy="44" rx="14" ry="19" transform="rotate(30 74 44)" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <ellipse cx="60" cy="68" rx="14" ry="19" fill="rgba(255, 45, 45, 0.28)" stroke="#ff4d52" strokeWidth="2.0" />
+
+                      {/* Subunit Core Center */}
+                      <circle cx="60" cy="53" r="4.8" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.6" />
+                      <text x="60" y="53" fill="#0a0406" fontSize="6.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
+
+                      {/* Active Site Receptors */}
+                      <circle cx="42" cy="35" r="2.8" fill="#ffffff" />
+                      <circle cx="78" cy="35" r="2.8" fill="#ffffff" />
+                      <circle cx="60" cy="78" r="2.8" fill="#ffffff" />
+
+                      {/* Target Callout Labels */}
+                      <text x="60" y="114" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
+                      <text x="60" y="127" fill="#ff5c60" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.05em">HOMOTRIMER CYTOKINE</text>
+                      <text x="60" y="138" fill="#a8a29e" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle">Soluble &amp; Transmembrane Target</text>
+                    </g>
+
+                    {/* 4. TARGET OUTCOME PANEL */}
+                    <g className="tnfr-blocked-group" transform="translate(535, 18)">
+                      <rect x="0" y="0" width="220" height="126" rx="2" fill="rgba(18, 11, 20, 0.75)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
+                      <text x="14" y="22" fill="#a8a29e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.08em">TARGET OUTCOME</text>
+                      <text x="14" y="40" fill="#ff4d52" fontSize="9.2" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">SPECIFIC PATHWAY BLOCKADE</text>
                       
-                      {/* Trimeric Subunits of TNF-alpha (3 Interlocked Elliptical Monomers) */}
-                      <ellipse cx="43" cy="32" rx="12" ry="16" transform="rotate(-30 43 32)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <ellipse cx="67" cy="32" rx="12" ry="16" transform="rotate(30 67 32)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <ellipse cx="55" cy="52" rx="12" ry="16" fill="rgba(255, 45, 45, 0.24)" stroke="#ff4d52" strokeWidth="1.8" />
-
-                      {/* Subunit Core Center Bonds */}
-                      <circle cx="55" cy="40" r="4.0" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.4" />
-                      <text x="55" y="40" fill="#0a0406" fontSize="5.2" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
-
-                      {/* Subunit Active Site Nodes */}
-                      <circle cx="39" cy="25" r="2.2" fill="#ffffff" />
-                      <circle cx="71" cy="25" r="2.2" fill="#ffffff" />
-                      <circle cx="55" cy="60" r="2.2" fill="#ffffff" />
-
-                      {/* TNF-alpha Target Callout Text */}
-                      <text x="55" y="88" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
-                      <text x="55" y="100" fill="#a8a29e" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Target Cytokine</text>
-                    </g>
-
-                    {/* 4. Target Outcome Panel */}
-                    <g className="tnfr-blocked-group" transform="translate(370, 8)">
-                      <rect x="0" y="0" width="275" height="86" fill="rgba(20, 15, 22, 0.7)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
-                      <text x="14" y="18" fill="#a8a29e" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.08em">TARGET OUTCOME</text>
-                      <text x="14" y="34" fill="#ff4d52" fontSize="9.0" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.03em">SPECIFIC INFLAMMATION PATHWAY SUPPRESSION</text>
-                      <text x="14" y="52" fill="#d6d3d1" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="500">· Prevents soluble &amp; transmembrane TNF-α receptor binding</text>
-                      <text x="14" y="68" fill="#8c827e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="500">· Halts downstream TNFR1 / TNFR2 inflammatory cascade</text>
+                      <text x="14" y="62" fill="#e5e5e5" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="600">· High-affinity target neutralization</text>
+                      <text x="14" y="77" fill="#d6d3d1" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="500">· Prevents TNFR1 &amp; TNFR2 binding</text>
+                      <text x="14" y="92" fill="#8c827e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="500">· Halts downstream inflammatory cascade</text>
+                      <text x="14" y="112" fill="#ff5c60" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="700">1 Drug → 1 Defined Target</text>
                     </g>
                   </svg>
                 </div>
