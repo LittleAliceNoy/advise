@@ -1981,7 +1981,7 @@ export default function Home() {
 
         <section id="study-design" className="scene design-scene">
           <div className="scene-copy design-copy">
-            <p className="eyebrow"><span /> 06 — METHODOLOGY / STUDY DESIGN</p>
+            <p className="eyebrow"><span /> 07 — METHODOLOGY / STUDY DESIGN</p>
             <h2>Built across<br /><em>three continents.</em></h2>
             <p className="lede">The ADVISE Trial was a multicenter, randomized, unmasked, parallel-treatment comparative-effectiveness superiority trial comparing adalimumab with conventional immunosuppressive drugs for uveitis.</p>
             <div className="design-attributes" aria-label="Study design features">
@@ -2056,7 +2056,7 @@ export default function Home() {
 
         <section id="screening" className="scene journey-scene">
           <div className="scene-copy journey-copy screening-inclusion-copy">
-            <p className="eyebrow"><span /> 07 — METHODOLOGY / SCREENING PATHWAY</p>
+            <p className="eyebrow"><span /> 08 — METHODOLOGY / SCREENING PATHWAY</p>
             <h2>The entry<br /><em>window.</em></h2>
             <p className="lede">Three inclusion thresholds defined who could proceed to the eight-part safety screen.</p>
             <div className="inclusion-metrics" aria-label="Key inclusion criteria">
@@ -2092,7 +2092,7 @@ export default function Home() {
 
         <section id="randomization" className="scene randomization-scene">
           <div className="scene-copy randomization-copy">
-            <p className="eyebrow"><span /> 08 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
+            <p className="eyebrow"><span /> 09 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
             <h2>Four strata.<br /><em>One balanced split.</em></h2>
             <p className="lede">Participants were stratified by current immunosuppression and anticipated prednisone dose, then randomized within each stratum using varying-size permuted blocks to maintain the expected allocation ratio.</p>
             <div className="randomization-timeline" aria-label="Steps completed before randomization assignment was revealed">
@@ -2137,7 +2137,7 @@ export default function Home() {
 
         <section id="treatment" className="scene treatment-scene">
           <div className="scene-copy treatment-copy">
-            <p className="eyebrow"><span /> 09 — METHODOLOGY / TREATMENT BY STRATUM</p>
+            <p className="eyebrow"><span /> 10 — METHODOLOGY / TREATMENT BY STRATUM</p>
             <h2>Baseline therapy.<br /><em>Defines the next step.</em></h2>
           <p className="lede">No drug at baseline? Start one. Already on one? Add another.</p>
           </div>
@@ -2198,7 +2198,7 @@ export default function Home() {
 
         <section id="tapering" className="scene tapering-scene">
           <div className="scene-copy tapering-copy">
-            <p className="eyebrow"><span /> 10 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
             <h2>Taper the steroid.<br /><em>Escalate when needed.</em></h2>
             <p className="lede">Taper after 2–4 weeks of disease control; reactivation resets steroids and advances immunosuppression.</p>
           </div>
@@ -2259,7 +2259,7 @@ export default function Home() {
               ========================================================= */}
           <div className="scene-copy tapering-copy">
             <p className="eyebrow">
-              <span /> 11 — METHODOLOGY / TAPERING &amp; REACTIVATION
+              <span /> 12 — METHODOLOGY / TAPERING &amp; REACTIVATION
             </p>
 
             <h2>
@@ -2511,7 +2511,7 @@ export default function Home() {
 
         <section id="followup" className="scene followup-scene">
           <div className="scene-copy followup-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / FOLLOW-UP</p>
             <h2>A year in focus.<br /><em>Every visit counts.</em></h2>
             <p className="lede">Monthly through month 6, then every 2 months to the 1-year close-out.</p>
           </div>
@@ -2562,7 +2562,7 @@ export default function Home() {
           aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis."
         >
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 14 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -2615,7 +2615,7 @@ export default function Home() {
 
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -2650,7 +2650,7 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family."
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 16 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models.</em></h2>
           </div>
 
@@ -2694,7 +2694,7 @@ export default function Home() {
         <section id="participant-flow" className="scene participant-flow-scene">
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
-              <p className="eyebrow flow-intro-eyebrow"><span /> 14 — RESULTS / PARTICIPANT FLOW</p>
+              <p className="eyebrow flow-intro-eyebrow"><span /> 17 — RESULTS / PARTICIPANT FLOW</p>
               <div className="flow-intro-title flow-assessed-title"><span>ASSESSED FOR ELIGIBILITY</span><strong>338</strong></div>
               <div className="flow-intro-title flow-excluded-title"><span>EXCLUDED</span><strong>111</strong></div>
               <div className="flow-intro-title flow-randomized-title"><span>RANDOMIZED</span><strong>227</strong></div>
@@ -2724,7 +2724,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 17 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -2800,7 +2800,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 18 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts.</em></h2>
             <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately.</p>
           </div>
@@ -2872,7 +2872,7 @@ export default function Home() {
         {false && <section id="treatment-results" className="scene treatment-results-scene">
           <div className="scene-header-row">
             <div className="scene-copy treatment-results-copy">
-              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 19 — RESULTS / TREATMENTS</p>
               <h2>Therapy assigned. <em>Treatment evolved.</em></h2>
             </div>
             
@@ -3156,7 +3156,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 19 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -3421,7 +3421,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 20 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA.</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster.</p>
           </div>
@@ -3473,7 +3473,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later.</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids.</p>
           </div>
@@ -3521,7 +3521,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 22 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded.</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution.</p>
           </div>
@@ -3606,7 +3606,7 @@ export default function Home() {
 
         <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
           </div>
@@ -3660,7 +3660,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 24 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -3673,7 +3673,7 @@ export default function Home() {
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 24 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 25 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -3780,7 +3780,7 @@ export default function Home() {
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 25 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / CATARACT SIGNAL</p>
               <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive.</h2>
@@ -3905,7 +3905,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
+              <p className="eyebrow"><span /> 27 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
@@ -4088,7 +4088,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 28 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
@@ -4583,7 +4583,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="eyebrow"><span /> 29 — DISCUSSION / TEMPORAL TRAJECTORY</p>
               <p className="cataract-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
@@ -4789,7 +4789,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 29 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 30 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -5058,7 +5058,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 30 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 31 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -5248,7 +5248,7 @@ export default function Home() {
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 31 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 32 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
@@ -5283,7 +5283,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 30 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 34 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -5333,7 +5333,7 @@ export default function Home() {
 
         <section id="statistics" className="scene statistics-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 31 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 35 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -5401,7 +5401,7 @@ export default function Home() {
 
         <section id="sample-size-redesign" className="scene sample-size-redesign-scene">
           <div className="scene-copy primary-outcome-redesign-copy sample-size-redesign-copy">
-            <p className="eyebrow"><span /> 32 — METHODOLOGY / SAMPLE SIZE</p>
+            <p className="eyebrow"><span /> 36 — METHODOLOGY / SAMPLE SIZE</p>
             <h2>Power the comparison.<br /><em>Size the trial.</em></h2>
           </div>
 
@@ -5417,7 +5417,7 @@ export default function Home() {
 
         <section id="secondary-outcomes-redesign" className="scene secondary-outcomes-redesign-scene" aria-label="Definition of inactive uveitis">
           <div className="scene-copy primary-outcome-redesign-copy secondary-outcomes-redesign-copy">
-            <p className="eyebrow"><span /> 33 — METHODOLOGY / OUTCOME DEFINITIONS</p>
+            <p className="eyebrow"><span /> 37 — METHODOLOGY / OUTCOME DEFINITIONS</p>
             <h2>Activity was measured precisely.</h2>
           </div>
 
@@ -5445,7 +5445,7 @@ export default function Home() {
 
         <section id="discussion" className="scene discussion-scene primary-efficacy-discussion">
           <div className="scene-copy primary-efficacy-copy">
-            <p className="eyebrow"><span /> 34 — DISCUSSION</p>
+            <p className="eyebrow"><span /> 38 — DISCUSSION</p>
             <h2>Earlier control.<br /><em>Similar destination.</em></h2>
             <p className="lede">ADA achieved successful corticosteroid sparing faster; by 12 months the gap narrowed. Successful corticosteroid discontinuation remained higher with ADA.</p>
           </div>
