@@ -1840,23 +1840,23 @@ export default function Home() {
                     </svg>
                   </div>
 
-                  {/* 2016 FDA & EMA APPROVAL (MOVED TO LEFT PANEL) */}
-                  <div className="approval-milestone-panel">
-                    <div className="milestone-year-badge">
-                      <span className="milestone-year">2016</span>
-                      <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
-                    </div>
-                    <div className="milestone-body">
-                      <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
-                    </div>
-                  </div>
-
                 </div>
               </div>
 
-              {/* ENTIRE RIGHT SIDE: PRIOR EVIDENCE SUMMARY */}
+              {/* ENTIRE RIGHT SIDE: APPROVAL & KEY EVIDENCE */}
               <div className="intro5-right-content">
                 
+                {/* 2016 FDA & EMA APPROVAL */}
+                <div className="approval-milestone-panel">
+                  <div className="milestone-year-badge">
+                    <span className="milestone-year">2016</span>
+                    <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
+                  </div>
+                  <div className="milestone-body">
+                    <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
+                  </div>
+                </div>
+
                 {/* PRIOR EVIDENCE SECTION */}
                 <div className="intro5-prior-evidence-section">
                   <div className="intro5-section-rule" aria-hidden="true">
