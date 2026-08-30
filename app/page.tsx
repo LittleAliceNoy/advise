@@ -1040,10 +1040,10 @@ export default function Home() {
                 <div className="constraint-header header-right-flex">
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
-                    <div className="constraint-desc desc-inflammation">
-                      <span className="desc-lead" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 700, color: "#e7e2df", display: "block" }}>Even low-level inflammation</span>
-                      <strong className="red-highlight-bold" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 800, color: "#ff4d52", display: "block", marginTop: "0.15rem", letterSpacing: "0.02em", textShadow: "0 0 12px rgba(255, 77, 82, 0.7)" }}>→ WORSE VISUAL ACUITY OUTCOMES</strong>
-                    </div>
+                    <p className="constraint-desc">
+                      Even low-level inflammation<br />
+                      <span className="red-bold-word">→ WORSE VISUAL ACUITY OUTCOMES</span>
+                    </p>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
                     <svg viewBox="0 0 54 40" className="dilemma-svg-eye-large">
