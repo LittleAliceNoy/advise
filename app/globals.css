@@ -14084,9 +14084,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .dilemma-bottom-row {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.3rem, 0.55vh, 0.6rem);
+  gap: clamp(0.35rem, 0.65vh, 0.75rem);
   width: 100%;
-  margin-top: clamp(0.55rem, 1.1vh, 1.1rem);
+  margin-top: clamp(1.2rem, 2.5vh, 2.6rem);
 }
 
 .dilemma-trajectory-bar {
