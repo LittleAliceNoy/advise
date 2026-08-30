@@ -14029,7 +14029,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .must-main-title {
-  font: 900 clamp(0.80rem, 0.98vw, 1.25rem) var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.80rem, 0.98vw, 1.25rem);
   color: #ffffff;
   letter-spacing: 0.03em;
 }
