@@ -1431,7 +1431,7 @@ export default function Home() {
                         <svg viewBox="0 0 54 34" className="drug-svg">
                           <defs>
                             <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
-                              <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.95" />
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
                               <stop offset="35%" stopColor="#c084fc" stopOpacity="0.65" />
                               <stop offset="70%" stopColor="#c084fc" stopOpacity="0.25" />
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
@@ -1459,9 +1459,9 @@ export default function Home() {
                           <text x="31" y="10.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
                           <text x="31" y="25.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
-                          {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left */}
-                          <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="16" cy="4.5" r="1.4" fill="#ff4d52" />
+                          {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left in White 'S' */}
+                          <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="16" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">S</text>
                           <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
