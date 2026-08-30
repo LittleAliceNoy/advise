@@ -956,8 +956,8 @@ export default function Home() {
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
-                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.42rem, 0.48vw, 0.58rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
+                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.54rem, 0.62vw, 0.76rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.44rem, 0.50vw, 0.62rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM USE THRESHOLD</small>
                 </div>
               </div>
 
@@ -1031,8 +1031,10 @@ export default function Home() {
                 </div>
 
                 <div className="immunosuppression-text-wrap" style={{ marginTop: "0.25rem" }}>
-                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.95rem, 1.25vw, 1.55rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap" }}>SYSTEMIC IMMUNOSUPPRESSION</strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.52rem, 0.62vw, 0.78rem)", fontWeight: 700, marginTop: "0.15rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>NEEDED TO ACHIEVE BOTH GOALS</span>
+                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#f5f5f7" }}>
+                    <span style={{ color: "#ff4d52" }}>SYSTEMIC</span> IMMUNOSUPPRESSION
+                  </strong>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.48rem, 0.56vw, 0.70rem)", fontWeight: 600, marginTop: "0.12rem", color: "#a8a29e", letterSpacing: "0.04em" }}>Needed to achieve both goals</span>
                 </div>
 
                 <span className="arrow-to-res" aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>
@@ -1068,7 +1070,7 @@ export default function Home() {
 
                 <div className="floor-box">
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.42rem, 0.48vw, 0.58rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.44rem, 0.50vw, 0.62rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 
@@ -1085,14 +1087,14 @@ export default function Home() {
                       <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="res-label" style={{ fontSize: "clamp(0.72rem, 0.88vw, 1.15rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
+                  <span className="res-label" style={{ fontSize: "clamp(0.76rem, 0.92vw, 1.20rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
 
                 <div className="resolution-item res-dose">
                   <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
-                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.48rem, 0.55vw, 0.68rem)", fontWeight: 700, color: "#a8a29e", display: "block", marginTop: "0.15rem" }}>MG / DAY</span>
+                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.56rem, 0.68vw, 0.84rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true">=</span>
@@ -1124,8 +1126,7 @@ export default function Home() {
                   </div>
                   <div className="must-panel-titles">
                     <span className="must-badge-tag">LANDMARK EVIDENCE</span>
-                    <strong className="must-main-title">MUST TRIAL</strong>
-                    <span className="must-sub-tag">7-YEAR FOLLOW-UP</span>
+                    <strong className="must-main-title">MUST TRIAL <span className="must-title-sep">·</span> 7-YEAR FOLLOW-UP</strong>
                   </div>
                 </div>
 
@@ -1150,7 +1151,7 @@ export default function Home() {
                 </div>
 
                 <div className="bar-track-wrap">
-                  <span className="bar-label">TAPER TO LOWEST EFFECTIVE DOSE</span>
+                  <span className="bar-label">TAPER TOWARD DISCONTINUATION</span>
                   <div className="bar-axis-row">
                     <span className="bar-tick" />
                     <div className="bar-gradient-line" />
