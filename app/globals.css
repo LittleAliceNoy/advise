@@ -14668,7 +14668,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro4-content-grid {
-  width: min(88rem, 94vw);
+  width: min(85rem, 91vw);
   flex: none;
   min-height: 0;
   display: flex;
@@ -14735,7 +14735,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-class-name {
-  font: 600 clamp(1.02rem, 1.22vw, 1.42rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(1.18rem, 1.40vw, 1.68rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.03em;
   line-height: 1.12;
@@ -14743,7 +14743,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-class-tag {
-  font: 600 clamp(0.54rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.68rem, 0.78vw, 0.94rem) var(--font-geist-sans), Arial, sans-serif;
   color: #c084fc;
   letter-spacing: 0.075em;
   text-transform: uppercase;
@@ -14771,18 +14771,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .drug-node-card {
   display: flex;
   align-items: center;
-  gap: clamp(0.6rem, 0.9vw, 1.1rem);
+  gap: clamp(0.7rem, 1.0vw, 1.2rem);
   background: rgba(18, 12, 24, 0.65);
   border: 1px solid rgba(192, 132, 252, 0.20);
   border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.48rem, 0.78vh, 0.76rem) clamp(0.7rem, 1.0vw, 1.15rem);
+  padding: clamp(0.55rem, 0.90vh, 0.88rem) clamp(0.8rem, 1.15vw, 1.3rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .drug-icon-box {
-  width: clamp(38px, 3.2vw, 48px);
-  height: clamp(30px, 2.6vw, 38px);
+  width: clamp(42px, 3.5vw, 52px);
+  height: clamp(32px, 2.8vw, 42px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
@@ -14799,14 +14799,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .drug-name {
-  font: 600 clamp(0.80rem, 0.92vw, 1.08rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.96rem, 1.12vw, 1.34rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .drug-moa {
-  font: 400 clamp(0.55rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.25;
   margin-top: 0.12rem;
@@ -14838,18 +14838,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .calcineurin-drug-box {
   display: flex;
   align-items: center;
-  gap: clamp(0.65rem, 1.0vw, 1.15rem);
+  gap: clamp(0.75rem, 1.1vw, 1.3rem);
   background: rgba(18, 12, 24, 0.65);
   border: 1px solid rgba(192, 132, 252, 0.20);
   border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.65rem, 1.05vh, 1.05rem) clamp(0.8rem, 1.15vw, 1.3rem);
+  padding: clamp(0.78rem, 1.25vh, 1.25rem) clamp(0.9rem, 1.25vw, 1.45rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .calcineurin-cluster-icon {
-  width: clamp(36px, 3.0vw, 44px);
-  height: clamp(36px, 3.0vw, 44px);
+  width: clamp(40px, 3.4vw, 50px);
+  height: clamp(40px, 3.4vw, 50px);
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.35));
 }
@@ -14865,14 +14865,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cni-drug-name {
-  font: 600 clamp(0.80rem, 0.92vw, 1.08rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.96rem, 1.12vw, 1.34rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .cni-drug-moa {
-  font: 400 clamp(0.55rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.25;
   margin-top: 0.12rem;
@@ -14903,7 +14903,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .rule-label {
-  font: 600 clamp(0.52rem, 0.58vw, 0.70rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.64rem, 0.74vw, 0.90rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -14917,7 +14917,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: linear-gradient(90deg, rgba(255, 77, 82, 0.07) 0%, rgba(14, 9, 16, 0.90) 50%, rgba(255, 77, 82, 0.07) 100%);
   border: 1px solid rgba(255, 77, 82, 0.28);
   border-radius: 0px;
-  padding: clamp(0.55rem, 0.85vh, 0.85rem) clamp(1.1rem, 1.8vw, 2.2rem);
+  padding: clamp(0.65rem, 1.0vh, 1.05rem) clamp(1.2rem, 2.0vw, 2.4rem);
   box-shadow: 0 0 16px rgba(255, 77, 82, 0.08);
   box-sizing: border-box;
 }
@@ -14925,14 +14925,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .step-item {
   display: flex;
   align-items: center;
-  gap: clamp(0.55rem, 0.8vw, 0.95rem);
+  gap: clamp(0.65rem, 0.95vw, 1.15rem);
 }
 
 .step-icon-circle {
-  width: clamp(28px, 2.5vw, 36px);
-  height: clamp(28px, 2.5vw, 36px);
+  width: clamp(34px, 3.0vw, 44px);
+  height: clamp(34px, 3.0vw, 44px);
   border-radius: 50%;
-  border: 1.4px solid rgba(255, 77, 82, 0.55);
+  border: 1.5px solid rgba(255, 77, 82, 0.55);
   display: grid;
   place-items: center;
   background: rgba(255, 77, 82, 0.12);
@@ -14951,7 +14951,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-num-tag {
-  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 700 clamp(0.68rem, 0.80vw, 1.0rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ff4d52;
   letter-spacing: 0.06em;
   text-shadow: 0 0 8px rgba(255, 77, 82, 0.35);
@@ -14962,14 +14962,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-title {
-  font: 600 clamp(0.74rem, 0.84vw, 1.02rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.98rem, 1.15vw, 1.40rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.015em;
   line-height: 1.15;
 }
 
 .step-desc {
-  font: 400 clamp(0.52rem, 0.58vw, 0.70rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.68rem, 0.78vw, 0.94rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.22;
   margin-top: 0.1rem;
@@ -14978,19 +14978,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .step-arrow-wrap {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.4rem;
   color: rgba(255, 77, 82, 0.8);
-  font-size: 0.65rem;
+  font-size: 0.95rem;
 }
 
 .step-dotted-line {
   width: clamp(24px, 4.0vw, 54px);
   height: 1px;
-  border-top: 1.5px dashed rgba(255, 77, 82, 0.5);
+  border-top: 2px dashed rgba(255, 77, 82, 0.6);
 }
 
 .step-arrowhead {
   color: #ff4d52;
+  font-size: 0.95rem;
   text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
 }
 
@@ -15006,7 +15007,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .evidence-boxes-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.8rem, 3.8vw, 4.8rem);
+  gap: clamp(1.2rem, 2.8vw, 3.4rem);
   width: 100%;
   align-items: center;
   margin-top: clamp(0.35rem, 0.6vh, 0.75rem);
@@ -15031,8 +15032,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-cohort-icon {
-  width: clamp(38px, 3.2vw, 48px);
-  height: clamp(38px, 3.2vw, 48px);
+  width: clamp(44px, 3.6vw, 54px);
+  height: clamp(44px, 3.6vw, 54px);
   border-radius: 50%;
   flex-shrink: 0;
   display: grid;
@@ -15058,10 +15059,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .evidence-pct-stat {
   font-family: var(--font-geist-sans), Arial, sans-serif !important;
-  font-size: clamp(2.8rem, 4.2vw, 5.0rem) !important;
+  font-size: clamp(1.8rem, 2.5vw, 3.0rem) !important;
   font-weight: 800 !important;
-  line-height: 0.88 !important;
-  letter-spacing: -0.04em !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.03em !important;
   flex-shrink: 0 !important;
   display: inline-block !important;
 }
@@ -15082,7 +15083,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-headline {
-  font: 600 clamp(0.66rem, 0.74vw, 0.90rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.72rem, 0.84vw, 1.05rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   display: block;
@@ -15091,10 +15092,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-subtext {
-  font: 400 clamp(0.54rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.60rem, 0.70vw, 0.86rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   display: block;
-  margin-top: 0.14rem;
+  margin-top: 0.12rem;
   line-height: 1.25;
 }
 

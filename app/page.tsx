@@ -1777,9 +1777,9 @@ export default function Home() {
                   <strong
                     className="evidence-pct-stat stat-single"
                     style={{
-                      fontSize: "clamp(2.6rem, 3.8vw, 4.8rem)",
-                      fontWeight: 900,
-                      lineHeight: 0.88,
+                      fontSize: "clamp(1.8rem, 2.5vw, 3.0rem)",
+                      fontWeight: 800,
+                      lineHeight: 0.95,
                       letterSpacing: "-0.03em",
                       color: "#ff4d52",
                       flexShrink: 0,
@@ -1810,9 +1810,9 @@ export default function Home() {
                   <strong
                     className="evidence-pct-stat stat-combo"
                     style={{
-                      fontSize: "clamp(2.6rem, 3.8vw, 4.8rem)",
-                      fontWeight: 900,
-                      lineHeight: 0.88,
+                      fontSize: "clamp(1.8rem, 2.5vw, 3.0rem)",
+                      fontWeight: 800,
+                      lineHeight: 0.95,
                       letterSpacing: "-0.03em",
                       color: "#c084fc",
                       flexShrink: 0,
