@@ -14419,12 +14419,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-header {
-  display: flex;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
   align-items: center;
   gap: 0.6rem;
   margin-bottom: clamp(0.45rem, 0.8vh, 0.8rem);
   border-bottom: 1px solid rgba(192, 132, 252, 0.25);
   padding-bottom: clamp(0.22rem, 0.35vh, 0.40rem);
+  padding-right: clamp(0.8rem, 1.2vw, 1.8rem);
 }
 
 .territory-badge {
