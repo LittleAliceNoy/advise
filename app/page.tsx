@@ -1845,7 +1845,6 @@ export default function Home() {
                     </div>
                     <div className="milestone-body">
                       <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
-                      <span className="milestone-sub">Following established approval across systemic rheumatic diseases</span>
                     </div>
                   </div>
 
