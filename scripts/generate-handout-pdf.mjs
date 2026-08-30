@@ -166,14 +166,11 @@ async function main() {
   }
 
   const pdfBytes = await pdfDoc.save();
-  const sitePdfPath = path.join(process.cwd(), "ADVISE_Trial_Presentation_Handout.pdf");
   const rootPdfPath = path.join(process.cwd(), "..", "ADVISE_Trial_Presentation_Handout.pdf");
   
-  fs.writeFileSync(sitePdfPath, pdfBytes);
   fs.writeFileSync(rootPdfPath, pdfBytes);
 
   console.log(`\n✅ PDF Handout created successfully:`);
-  console.log(`- ${sitePdfPath}`);
   console.log(`- ${rootPdfPath}`);
   console.log(`Total Size: ${(pdfBytes.length / (1024 * 1024)).toFixed(2)} MB`);
 }
