@@ -1343,13 +1343,13 @@ export default function Home() {
                           <line x1="29.5" y1="12" x2="34" y2="14.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
                           <line x1="29.5" y1="24" x2="34" y2="21.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
-                          {/* 4-Amino Substituent (Top NH2) */}
-                          <line x1="13.5" y1="9.5" x2="13.5" y2="4" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="13.5" cy="4" r="1.4" fill="#ff4d52" />
+                          {/* 4-Amino Substituent (Top N) */}
+                          <line x1="13.5" y1="9.5" x2="13.5" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="13.5" y="3.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
-                          {/* 2-Amino Substituent (Bottom-Left NH2) */}
-                          <line x1="6" y1="23" x2="1.5" y2="25.8" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="1.5" cy="25.8" r="1.4" fill="#ff4d52" />
+                          {/* 2-Amino Substituent (Bottom-Left N) */}
+                          <line x1="6" y1="23" x2="2.5" y2="25.2" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="1.8" y="26" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
                           {/* Nitrogen Heteroatoms (N1, N3, N5, N8) labeled as red 'N' */}
                           <text x="6" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
