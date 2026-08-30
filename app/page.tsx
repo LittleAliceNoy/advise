@@ -1683,7 +1683,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* SUPPORTING EVIDENCE ANNOTATIONS (ENLARGED PERCENTAGES, CLOSE TO STEPWISE) */}
+            {/* SUPPORTING EVIDENCE ANNOTATIONS (PROMINENT PERCENTAGES, NO BOX CARDS) */}
             <div className="observational-evidence-section">
               <div className="intro4-section-rule" aria-hidden="true">
                 <span className="rule-bar" />
@@ -1694,7 +1694,7 @@ export default function Home() {
               <div className="evidence-boxes-row">
                 {/* Evidence Block 1: Single Agent (RED) */}
                 <div className="evidence-anno-box evidence-box-single">
-                  <div className="evidence-cohort-icon" aria-hidden="true">
+                  <div className="evidence-cohort-icon cohort-icon-red" aria-hidden="true">
                     <svg viewBox="0 0 28 28" className="cohort-svg">
                       <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
                       <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
@@ -1704,18 +1704,16 @@ export default function Home() {
                       <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat stat-single">~40–60%</strong>
-                    <div className="evidence-text-block">
-                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
-                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
-                    </div>
+                  <strong className="evidence-pct-stat stat-single">~40–60%</strong>
+                  <div className="evidence-text-block">
+                    <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
+                    <span className="evidence-subtext">with a single immunosuppressive agent</span>
                   </div>
                 </div>
 
                 {/* Evidence Block 2: Two Drugs (VIOLET) */}
                 <div className="evidence-anno-box evidence-box-combo">
-                  <div className="evidence-cohort-icon" aria-hidden="true">
+                  <div className="evidence-cohort-icon cohort-icon-violet" aria-hidden="true">
                     <svg viewBox="0 0 28 28" className="cohort-svg">
                       <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
                       <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" />
@@ -1725,12 +1723,10 @@ export default function Home() {
                       <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
-                    <div className="evidence-text-block">
-                      <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
-                      <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
-                    </div>
+                  <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
+                  <div className="evidence-text-block">
+                    <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
+                    <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
                   </div>
                 </div>
               </div>
