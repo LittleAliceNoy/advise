@@ -1080,11 +1080,11 @@ export default function Home() {
             <div className="dilemma-middle-row">
               <div className="resolution-equation-block">
                 <div className="resolution-item res-disease">
-                  <div className="res-icon-circle" aria-hidden="true">
+                  <div className="res-icon-circle" aria-hidden="true" style={{ width: "clamp(38px, 3.4vw, 48px)", height: "clamp(38px, 3.4vw, 48px)" }}>
                     <svg viewBox="0 0 32 32" className="res-eye-icon">
-                      <path d="M3 16 Q16 6 29 16 Q16 26 3 16 Z" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                      <circle cx="16" cy="16" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                      <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 16 Q16 5 30 16 Q16 27 2 16 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="2.0" />
+                      <circle cx="16" cy="16" r="5" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="m12.5 16 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <span className="res-label" style={{ fontSize: "clamp(0.76rem, 0.92vw, 1.20rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>

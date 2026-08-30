@@ -13906,12 +13906,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .res-icon-circle {
-  width: 34px;
-  height: 34px;
-  color: #ff8085;
+  width: clamp(38px, 3.4vw, 48px);
+  height: clamp(38px, 3.4vw, 48px);
+  color: #c084fc;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(192, 132, 252, 0.4));
 }
 
 .res-eye-icon {
@@ -14085,6 +14086,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   gap: clamp(0.3rem, 0.55vh, 0.6rem);
   width: 100%;
+  margin-top: clamp(0.55rem, 1.1vh, 1.1rem);
 }
 
 .dilemma-trajectory-bar {
