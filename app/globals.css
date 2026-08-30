@@ -14974,7 +14974,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .biologic-tall-svg {
   width: 100%;
   height: auto;
-  max-height: clamp(230px, 37vh, 385px);
+  max-height: clamp(240px, 39vh, 410px);
+  overflow: visible;
   filter: drop-shadow(0 0 16px rgba(255, 45, 45, 0.22));
 }
 
