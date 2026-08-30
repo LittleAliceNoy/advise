@@ -1319,38 +1319,39 @@ export default function Home() {
                     {/* Drug 1: Methotrexate */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
-                        <svg viewBox="0 0 36 32" className="drug-svg">
+                        <svg viewBox="0 0 42 32" className="drug-svg">
                           {/* Fused 2,4-diaminopteridine core of Methotrexate */}
                           {/* Left Ring (2,4-diaminopyrimidine) */}
-                          <polygon points="12,10 18,13.5 18,21.5 12,25 6,21.5 6,13.5" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          <polygon points="11,10 17,13.5 17,21.5 11,25 5,21.5 5,13.5" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
                           {/* Right Ring (pyrazine) */}
-                          <polygon points="18,13.5 24,10 30,13.5 30,21.5 24,25 18,21.5" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          <polygon points="17,13.5 23,10 29,13.5 29,21.5 23,25 17,21.5" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
                           
                           {/* Shared Central Bond */}
-                          <line x1="16" y1="14.5" x2="16" y2="20.5" stroke="#ffffff" strokeWidth="1.3" />
+                          <line x1="15" y1="14.5" x2="15" y2="20.5" stroke="#ffffff" strokeWidth="1.3" />
                           {/* Double Bonds in Rings */}
-                          <line x1="8" y1="14.5" x2="11.8" y2="12.2" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="8" y1="20.5" x2="11.8" y2="22.8" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="24.2" y1="12.2" x2="28" y2="14.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="24.2" y1="22.8" x2="28" y2="20.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="7" y1="14.5" x2="10.8" y2="12.2" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="7" y1="20.5" x2="10.8" y2="22.8" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="23.2" y1="12.2" x2="27" y2="14.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="23.2" y1="22.8" x2="27" y2="20.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
 
                           {/* 4-Amino Substituent (Top NH2) */}
-                          <line x1="12" y1="10" x2="12" y2="4.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                          <circle cx="12" cy="4" r="2.2" fill="#ff4d52" />
+                          <line x1="11" y1="10" x2="11" y2="4.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="11" cy="4" r="2.0" fill="#ff4d52" />
 
                           {/* 2-Amino Substituent (Bottom-Left NH2) */}
-                          <line x1="6" y1="21.5" x2="2" y2="24" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                          <circle cx="2" cy="24" r="2.2" fill="#ff4d52" />
+                          <line x1="5" y1="21.5" x2="1.5" y2="24" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="1.5" cy="24" r="2.0" fill="#ff4d52" />
 
-                          {/* 6-Alkyl Bridge to PABA/Glutamate (Right-pointing chain) */}
-                          <line x1="30" y1="13.5" x2="35" y2="10.5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
-                          <circle cx="35" cy="10.5" r="1.6" fill="#ffffff" />
+                          {/* Heteroatoms (N1, N3, N5, N8) */}
+                          <circle cx="5" cy="13.5" r="1.6" fill="#c084fc" />
+                          <circle cx="11" cy="25" r="1.6" fill="#c084fc" />
+                          <circle cx="23" cy="10" r="1.6" fill="#c084fc" />
+                          <circle cx="23" cy="25" r="1.6" fill="#c084fc" />
 
-                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) */}
-                          <circle cx="6" cy="13.5" r="1.8" fill="#c084fc" />
-                          <circle cx="12" cy="25" r="1.8" fill="#c084fc" />
-                          <circle cx="24" cy="10" r="1.8" fill="#c084fc" />
-                          <circle cx="24" cy="25" r="1.8" fill="#c084fc" />
+                          {/* Partial Structure R-group link to PABA-Glutamate tail */}
+                          <line x1="29" y1="13.5" x2="33.5" y2="10.5" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
+                          <path d="M 33 8.5 Q 34.5 10.5 33 12.5" fill="none" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
+                          <text x="36" y="11.5" fill="#ff4d52" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="900" dominantBaseline="middle">R</text>
                         </svg>
                       </div>
                       <div className="drug-meta">
@@ -1362,40 +1363,41 @@ export default function Home() {
                     {/* Drug 2: Mycophenolate Mofetil */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
-                        <svg viewBox="0 0 38 32" className="drug-svg">
+                        <svg viewBox="0 0 42 32" className="drug-svg">
                           {/* Mycophenolic acid / Isobenzofuranone core of Mycophenolate */}
                           {/* Fused 6-membered aromatic ring (benzene) */}
-                          <polygon points="16,11 22,7.5 28,11 28,19 22,22.5 16,19" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          <polygon points="15,11 21,7.5 27,11 27,19 21,22.5 15,19" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
                           {/* Aromatic inner delocalization circle */}
-                          <circle cx="22" cy="15" r="4.2" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                          <circle cx="21" cy="15" r="3.8" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.1" strokeDasharray="2 1.5" />
                           
                           {/* Fused 5-membered lactone ring (phthalide) */}
-                          <polygon points="16,11 10,8.5 6,14.5 10,21.5 16,19" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          <polygon points="15,11 9,8.5 5,14.5 9,21.5 15,19" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
                           
                           {/* Carbonyl (=O) on lactone */}
-                          <line x1="9.5" y1="8" x2="8" y2="2.5" stroke="#ff4d52" strokeWidth="1.3" />
-                          <line x1="11.5" y1="8.5" x2="10" y2="3" stroke="#ff4d52" strokeWidth="1.3" />
-                          <circle cx="9" cy="2.5" r="2.0" fill="#ff4d52" />
+                          <line x1="8.5" y1="8" x2="7" y2="2.5" stroke="#ff4d52" strokeWidth="1.3" />
+                          <line x1="10.5" y1="8.5" x2="9" y2="3" stroke="#ff4d52" strokeWidth="1.3" />
+                          <circle cx="8" cy="2.5" r="1.8" fill="#ff4d52" />
                           
                           {/* Ring Oxygen (-O-) node */}
-                          <circle cx="6" cy="14.5" r="2.0" fill="#c084fc" />
+                          <circle cx="5" cy="14.5" r="1.8" fill="#c084fc" />
 
                           {/* Top Hydroxyl (-OH) group */}
-                          <line x1="22" y1="7.5" x2="22" y2="2" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
-                          <circle cx="22" cy="2" r="2.0" fill="#ff4d52" />
+                          <line x1="21" y1="7.5" x2="21" y2="2" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
+                          <circle cx="21" cy="2" r="1.8" fill="#ff4d52" />
 
                           {/* Bottom Methyl (-CH3) group */}
-                          <line x1="22" y1="22.5" x2="22" y2="28" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
-                          <circle cx="22" cy="28" r="1.6" fill="#ffffff" />
+                          <line x1="21" y1="22.5" x2="21" y2="27.5" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
+                          <circle cx="21" cy="27.5" r="1.5" fill="#ffffff" />
 
                           {/* Bottom-right Methoxy (-OCH3) group */}
-                          <line x1="28" y1="19" x2="33" y2="22.5" stroke="#c084fc" strokeWidth="1.4" strokeLinecap="round" />
-                          <circle cx="33" cy="22.5" r="1.8" fill="#c084fc" />
+                          <line x1="27" y1="19" x2="31.5" y2="22" stroke="#c084fc" strokeWidth="1.4" strokeLinecap="round" />
+                          <circle cx="31.5" cy="22" r="1.6" fill="#c084fc" />
 
-                          {/* Top-right Alkyl / Unsaturated hexenoic side chain */}
-                          <path d="M 28 11 L 32.5 8 L 36.5 11" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                          <line x1="33" y1="6.8" x2="36" y2="9.2" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
-                          <circle cx="36.5" cy="11" r="1.5" fill="#ffffff" />
+                          {/* Partial Structure R-group link to morpholinoethyl ester tail */}
+                          <path d="M 27 11 L 31 8 L 33.5 9.8" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                          <line x1="31" y1="6.8" x2="33" y2="8.5" stroke="#ff4d52" strokeWidth="1.1" strokeLinecap="round" />
+                          <path d="M 33.5 8 Q 35 10 33.5 12" fill="none" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
+                          <text x="36.5" y="10.5" fill="#ff4d52" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="900" dominantBaseline="middle">R</text>
                         </svg>
                       </div>
                       <div className="drug-meta">
@@ -1407,31 +1409,33 @@ export default function Home() {
                     {/* Drug 3: Azathioprine */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
-                        <svg viewBox="0 0 36 32" className="drug-svg">
+                        <svg viewBox="0 0 38 34" className="drug-svg">
                           {/* Purine Heterocycle (fused 6-membered pyrimidine + 5-membered pentagonal imidazole ring) */}
                           {/* Left 6-membered Pyrimidine Ring (Hexagon) */}
-                          <polygon points="12,6 18.5,10 18.5,22 12,26 5.5,22 5.5,10" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                          <polygon points="12,8 18.5,12 18.5,23 12,27 5.5,23 5.5,12" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
                           
                           {/* Right 5-membered Imidazole Ring (True Pentagon) */}
-                          <polygon points="18.5,10 25,8.5 29.5,16 25,23.5 18.5,22" fill="rgba(192, 132, 252, 0.10)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                          <polygon points="18.5,12 25,10.5 29.5,17.5 25,24.5 18.5,23" fill="rgba(192, 132, 252, 0.10)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
                           
                           {/* Shared Central Fused Bond */}
-                          <line x1="16.5" y1="11" x2="16.5" y2="21" stroke="#ffffff" strokeWidth="1.3" />
+                          <line x1="16.5" y1="13" x2="16.5" y2="22" stroke="#ffffff" strokeWidth="1.3" />
                           
                           {/* Double Bonds in Purine Core */}
-                          <line x1="7.5" y1="11" x2="11.5" y2="8.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="7.5" y1="21" x2="11.5" y2="23.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="24" y1="10.8" x2="27.5" y2="15.8" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
-
-                          {/* 6-Position Thiol / Substituent Linker (Top) */}
-                          <line x1="12" y1="6" x2="12" y2="1.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                          <circle cx="12" cy="1.5" r="2.0" fill="#ff4d52" />
+                          <line x1="7.5" y1="13" x2="11.5" y2="10.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="7.5" y1="22" x2="11.5" y2="24.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="24" y1="12.8" x2="27.5" y2="17.3" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
 
                           {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) */}
-                          <circle cx="5.5" cy="10" r="1.8" fill="#c084fc" />
-                          <circle cx="12" cy="26" r="1.8" fill="#c084fc" />
-                          <circle cx="25" cy="8.5" r="1.8" fill="#c084fc" />
-                          <circle cx="25" cy="23.5" r="1.8" fill="#c084fc" />
+                          <circle cx="5.5" cy="12" r="1.8" fill="#c084fc" />
+                          <circle cx="12" cy="27" r="1.8" fill="#c084fc" />
+                          <circle cx="25" cy="10.5" r="1.8" fill="#c084fc" />
+                          <circle cx="25" cy="24.5" r="1.8" fill="#c084fc" />
+
+                          {/* Partial Structure C6-Thiol connection to Nitroimidazole R-group */}
+                          <line x1="12" y1="8" x2="12" y2="3.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="12" cy="3.5" r="2.0" fill="#ff4d52" />
+                          <path d="M 10 3.5 Q 12 1.8 14 3.5" fill="none" stroke="#ff4d52" strokeWidth="1.2" strokeLinecap="round" />
+                          <text x="16.5" y="3.5" fill="#ff4d52" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="900" dominantBaseline="middle">R</text>
                         </svg>
                       </div>
                       <div className="drug-meta">
