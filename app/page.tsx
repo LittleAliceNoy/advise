@@ -1285,12 +1285,9 @@ export default function Home() {
           <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / CONVENTIONAL IMMUNOSUPPRESSION</p>
 
           <header className="intro4-header">
-            <h2>CONVENTIONAL IMMUNOSUPPRESSION</h2>
-            <div className="intro4-subrule" aria-hidden="true">
-              <span className="subrule-line" />
-              <span className="subrule-text">THE ESTABLISHED SYSTEMIC TOOLKIT</span>
-              <span className="subrule-line" />
-            </div>
+            <h2>
+              One agent may <em>not be enough.</em>
+            </h2>
           </header>
 
           <div className="intro4-content-grid" aria-label="Conventional immunosuppression drug classes and stepwise strategy">
