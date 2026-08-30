@@ -1135,15 +1135,15 @@ export default function Home() {
 
                   <div className="must-findings-group" style={{ margin: "0.15rem 0", display: "flex", flexDirection: "column", gap: "0.18rem" }}>
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.48rem, 0.58vw, 0.72rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
-                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.38rem, 0.46vw, 0.58rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.56rem, 0.68vw, 0.84rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
+                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.44rem, 0.54vw, 0.68rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         SUPERIOR LONG-TERM VISUAL ACUITY
                       </strong>
                     </div>
 
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.52rem, 0.62vw, 0.76rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.38rem, 0.46vw, 0.58rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.60rem, 0.72vw, 0.88rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.44rem, 0.54vw, 0.68rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS*
                       </span>
                     </div>

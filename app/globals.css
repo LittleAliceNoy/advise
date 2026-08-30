@@ -14071,7 +14071,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .claim-arrow {
   color: #ff4d52;
-  font-size: 0.68rem;
+  font-size: clamp(0.56rem, 0.68vw, 0.84rem);
   font-weight: 900;
   line-height: 1;
   flex-shrink: 0;
@@ -14079,15 +14079,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .claim-approx {
   color: #ff4d52;
-  font-size: 0.74rem;
+  font-size: clamp(0.60rem, 0.72vw, 0.88rem);
   line-height: 1;
-  font-weight: 400;
+  font-weight: 300;
   flex-shrink: 0;
 }
 
 .claim-highlight {
-  font: 800 clamp(0.38rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace !important;
-  font-size: clamp(0.38rem, 0.46vw, 0.58rem) !important;
+  font: 800 clamp(0.44rem, 0.54vw, 0.68rem) var(--font-geist-mono), monospace !important;
+  font-size: clamp(0.44rem, 0.54vw, 0.68rem) !important;
   color: #ff4d52 !important;
   letter-spacing: 0.02em !important;
   line-height: 1.2 !important;
@@ -14095,8 +14095,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .claim-safety-text {
-  font: 800 clamp(0.38rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace !important;
-  font-size: clamp(0.38rem, 0.46vw, 0.58rem) !important;
+  font: 800 clamp(0.44rem, 0.54vw, 0.68rem) var(--font-geist-mono), monospace !important;
+  font-size: clamp(0.44rem, 0.54vw, 0.68rem) !important;
   color: #ff4d52 !important;
   letter-spacing: 0.02em !important;
   line-height: 1.2 !important;
