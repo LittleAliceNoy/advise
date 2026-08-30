@@ -1407,12 +1407,42 @@ export default function Home() {
                     {/* Drug 3: Azathioprine */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
-                        <svg viewBox="0 0 32 32" className="drug-svg">
-                          <path d="M10 6 Q16 16 10 26 M22 6 Q16 16 22 26" fill="none" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" />
-                          <line x1="10" y1="8" x2="22" y2="8" stroke="#ff4d52" strokeWidth="1.4" />
-                          <line x1="12" y1="12" x2="20" y2="12" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" />
-                          <line x1="12" y1="20" x2="20" y2="20" stroke="rgba(255,255,255,0.7)" strokeWidth="1.4" />
-                          <line x1="10" y1="24" x2="22" y2="24" stroke="#ff4d52" strokeWidth="1.4" />
+                        <svg viewBox="0 0 36 34" className="drug-svg">
+                          {/* Azathioprine: 6-mercaptopurine attached via thioether bridge to 1-methyl-4-nitroimidazole */}
+                          
+                          {/* Top 5-membered 1-methyl-4-nitroimidazole ring */}
+                          <polygon points="12,11 9,6 14,3 19,6 18,11" fill="rgba(192, 132, 252, 0.1)" stroke="#c084fc" strokeWidth="1.3" strokeLinejoin="round" />
+                          {/* Top Nitro Group (-NO2) */}
+                          <line x1="16.5" y1="4.5" x2="22" y2="2" stroke="#ff4d52" strokeWidth="1.5" strokeLinecap="round" />
+                          <circle cx="22" cy="2" r="2.0" fill="#ff4d52" />
+                          {/* 1-Methyl Group (-CH3) pointing down-left */}
+                          <line x1="12" y1="11" x2="7.5" y2="13.5" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" />
+                          <circle cx="7.5" cy="13.5" r="1.5" fill="#ffffff" />
+                          {/* Imidazole Ring Nitrogen nodes */}
+                          <circle cx="9" cy="6" r="1.6" fill="#c084fc" />
+                          <circle cx="12" cy="11" r="1.6" fill="#c084fc" />
+
+                          {/* Central Thioether Bridge (-S-) */}
+                          <line x1="18" y1="11" x2="16.5" y2="16.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="16.5" cy="16.5" r="2.2" fill="#ff4d52" />
+
+                          {/* Bottom Fused Purine Core */}
+                          {/* 6-membered pyrimidine ring */}
+                          <polygon points="16.5,16.5 22,19.5 22,27 16.5,30 11,27 11,19.5" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          {/* Fused 5-membered imidazole ring (purine N7/N9) */}
+                          <polygon points="22,19.5 28.5,21.5 28.5,25 22,27" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          
+                          {/* Purine Double Bonds & Resonances */}
+                          <line x1="12.5" y1="20.5" x2="15.5" y2="18.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="12.5" y1="26" x2="15.5" y2="28" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="20.5" y1="20.5" x2="20.5" y2="26" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="23.5" y1="21.5" x2="27" y2="22.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+
+                          {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) */}
+                          <circle cx="11" cy="19.5" r="1.6" fill="#c084fc" />
+                          <circle cx="16.5" cy="30" r="1.6" fill="#c084fc" />
+                          <circle cx="28.5" cy="21.5" r="1.6" fill="#c084fc" />
+                          <circle cx="28.5" cy="25" r="1.6" fill="#c084fc" />
                         </svg>
                       </div>
                       <div className="drug-meta">
