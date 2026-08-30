@@ -1771,31 +1771,22 @@ export default function Home() {
                       </radialGradient>
                     </defs>
 
-                    {/* Left: Adalimumab Monoclonal Antibody (IgG1 Y-structure) */}
-                    <g className="antibody-group" transform="translate(15, 10)">
-                      {/* Heavy Chain Fc Constant Stem */}
-                      <path d="M 42 98 L 42 60" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
-                      <path d="M 48 98 L 48 60" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
-                      {/* Disulfide Hinge */}
-                      <line x1="38" y1="60" x2="52" y2="60" stroke="rgba(255,255,255,0.7)" strokeWidth="1.8" />
-                      
-                      {/* Fab Arms (Extending upward-right toward TNF-alpha) */}
-                      {/* Fab Arm 1 (Upper) */}
-                      <path d="M 42 60 L 68 26" stroke="#ffffff" strokeWidth="3.0" strokeLinecap="round" />
-                      <path d="M 48 60 L 74 26" stroke="#ff4d52" strokeWidth="3.0" strokeLinecap="round" />
-                      {/* Fab 1 Variable Binding Domain (CDR Loops) */}
-                      <path d="M 68 26 C 76 16, 92 16, 98 24" fill="none" stroke="#ff4d52" strokeWidth="3.5" strokeLinecap="round" />
-                      <circle cx="98" cy="24" r="3.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
-
-                      {/* Fab Arm 2 (Lower) */}
-                      <path d="M 42 60 L 72 72" stroke="#ffffff" strokeWidth="3.0" strokeLinecap="round" />
-                      <path d="M 48 60 L 78 72" stroke="#ff4d52" strokeWidth="3.0" strokeLinecap="round" />
-                      {/* Fab 2 Variable Binding Domain */}
-                      <path d="M 72 72 C 82 78, 94 74, 98 66" fill="none" stroke="#ff4d52" strokeWidth="3.5" strokeLinecap="round" />
-                      <circle cx="98" cy="66" r="3.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
+                    {/* Left: Adalimumab Monoclonal Antibody (Exact Page 30 IgG1 Structure) */}
+                    <g className="antibody-group" transform="translate(12, 6)">
+                      <circle cx="50" cy="50" r="46" fill="url(#tnf-core-glow)" />
+                      {/* Heavy chain stem (Fc) */}
+                      <line x1="50" y1="48" x2="50" y2="85" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      {/* Heavy chain left arm */}
+                      <line x1="50" y1="48" x2="20" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      {/* Heavy chain right arm */}
+                      <line x1="50" y1="48" x2="80" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      {/* Light chain left parallel segment */}
+                      <line x1="29" y1="36" x2="13" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
+                      {/* Light chain right parallel segment */}
+                      <line x1="71" y1="36" x2="87" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
 
                       {/* Label under Antibody */}
-                      <text x="45" y="114" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.08em">IgG1 MONOCLONAL ANTIBODY</text>
+                      <text x="50" y="104" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.08em">IgG1 MONOCLONAL ANTIBODY</text>
                     </g>
 
                     {/* Middle: Targeting & Neutralization Vector Arcs */}
