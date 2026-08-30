@@ -14627,6 +14627,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* Slide 04 — Conventional Immunosuppression: Drug Classes Hero */
 .intro4-scene {
+  /* Preserve the reference slide's compact technical face locally, while the
+     rest of the deck uses the proportional editorial token. */
+  --font-geist-mono: 'Geist Mono';
   padding: 7.5vh clamp(2vw, 4.5vw, 4.5rem) 4.2vh;
   display: flex;
   flex-direction: column;
