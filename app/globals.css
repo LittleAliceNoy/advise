@@ -14541,17 +14541,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .molecular-sphere-hero {
-  width: clamp(130px, 13vw, 175px);
-  height: clamp(130px, 13vw, 175px);
+  width: clamp(112px, 11vw, 150px);
+  height: clamp(112px, 11vw, 150px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
+  opacity: 0.82;
 }
 
 .molecular-sphere-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 22px rgba(255, 77, 82, 0.45)) drop-shadow(0 0 8px rgba(255, 77, 82, 0.3));
+  filter: drop-shadow(0 0 10px rgba(255, 45, 45, 0.20));
 }
 
 /* Escalation Bridge Between Drug Classes */

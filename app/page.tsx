@@ -1306,7 +1306,7 @@ export default function Home() {
                   </div>
                   <div className="territory-titles">
                     <strong className="territory-class-name">ANTIMETABOLITES</strong>
-                    <span className="territory-class-tag">THE INITIAL / FOUNDATION CLASS</span>
+                    <span className="territory-class-tag">TYPICAL INITIAL CLASS</span>
                   </div>
                 </div>
 
@@ -1424,100 +1424,97 @@ export default function Home() {
 
                     {/* Drug 3: Azathioprine */}
                     <div className="drug-node-card">
-                      <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
+                      <div className="drug-icon-box drug-icon-dual" aria-hidden="true">
                         <svg viewBox="0 0 54 34" className="drug-svg">
                           <defs>
-                            <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
-                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.65" />
-                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.25" />
+                            <linearGradient id="fade-tail-aza" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
+                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                          {/* Horizontally Expanded Symmetrical Fused Purine Core */}
-                          {/* Left Hexagon (6-membered Pyrimidine) */}
-                          <polygon points="8.5,13 16,9.5 23.5,13 23.5,23 16,26.5 8.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                          
-                          {/* Right Pentagon (5-membered Imidazole) */}
-                          <polygon points="23.5,13 31,10.5 36,18 31,25.5 23.5,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                          
-                          {/* Shared Central Fused Bond */}
-                          <line x1="23.5" y1="13" x2="23.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
-                          
-                          {/* Refined Parallel Double Bonds in Purine Core */}
-                          <line x1="10.5" y1="14.5" x2="15" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          <line x1="10.5" y1="21.5" x2="15" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                          {/* Strictly Parallel Inner Bond in Pentagon */}
-                          <line x1="30" y1="12" x2="34" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
-
-                          {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) labeled as red 'N' */}
-                          <text x="8.5" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                          <text x="16" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                          <text x="31" y="10.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                          <text x="31" y="25.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-
-                          {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left in White 'S' */}
-                          <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                          <text x="16" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">S</text>
-                          <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                          {/* Purine Backbone (Fused Pyrimidine 6-ring + Imidazole 5-ring) */}
+                          <polygon points="10,17 15,9 24,9 28,17 24,25 15,25" fill="rgba(192, 132, 252, 0.18)" stroke="#c084fc" strokeWidth="1.6" />
+                          <circle cx="10" cy="17" r="1.8" fill="#ffffff" />
+                          <circle cx="15" cy="9" r="1.8" fill="#c084fc" />
+                          <circle cx="24" cy="9" r="1.8" fill="#ffffff" />
+                          <circle cx="28" cy="17" r="1.8" fill="#c084fc" />
+                          <circle cx="24" cy="25" r="1.8" fill="#ffffff" />
+                          <circle cx="15" cy="25" r="1.8" fill="#c084fc" />
+                          {/* 5-Membered Imidazole Ring fused on edge */}
+                          <polygon points="15,9 5,12 5,22 15,25" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
+                          <circle cx="5" cy="12" r="1.8" fill="#ffffff" />
+                          <circle cx="5" cy="22" r="1.8" fill="#c084fc" />
+                          {/* Thioether Bridge */}
+                          <line x1="28" y1="17" x2="34" y2="17" stroke="#ffffff" strokeWidth="1.6" />
+                          <circle cx="34" cy="17" r="1.8" fill="#ffffff" />
+                          {/* 1-Methyl-4-nitro-1H-imidazol-5-yl Ring */}
+                          <polygon points="34,17 41,10 49,14 47,23 38,23" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.6" />
+                          <circle cx="41" cy="10" r="1.8" fill="#c084fc" />
+                          <circle cx="49" cy="14" r="1.8" fill="#ffffff" />
+                          <circle cx="47" cy="23" r="1.8" fill="#c084fc" />
+                          <circle cx="38" cy="23" r="1.8" fill="#ffffff" />
+                          {/* Nitro Group -NO2 branch */}
+                          <line x1="49" y1="14" x2="53" y2="12" stroke="url(#fade-tail-aza)" strokeWidth="1.6" strokeLinecap="round" />
                         </svg>
                       </div>
                       <div className="drug-meta">
-                        <strong className="drug-name">AZATHIOPRINE</strong>
-                        <span className="drug-moa">Purine analog</span>
+                        <strong className="drug-name">Azathioprine</strong>
+                        <span className="drug-moa">Purine synthesis inhibitor · prodrug of 6-MP</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Center: Molecular Constellation Sphere (Pure Red/Obsidian Background Atmosphere, No Purple) */}
+                  {/* Center: Molecular Constellation Sphere (Refined Faint Red/Obsidian Atmosphere) */}
                   <div className="molecular-sphere-hero" aria-hidden="true">
                     <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
                       <defs>
                         <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
-                          <stop offset="35%" stopColor="rgba(255, 77, 82, 0.16)" />
-                          <stop offset="70%" stopColor="rgba(80, 10, 15, 0.08)" />
-                          <stop offset="100%" stopColor="rgba(10, 4, 6, 0.96)" />
+                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.16)" />
+                          <stop offset="40%" stopColor="rgba(255, 77, 82, 0.08)" />
+                          <stop offset="75%" stopColor="rgba(80, 10, 15, 0.03)" />
+                          <stop offset="100%" stopColor="rgba(10, 4, 6, 0.94)" />
                         </radialGradient>
                       </defs>
 
-                      {/* Outer Spherical Shell & Technical Orbits (No Purple in Background) */}
-                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(255, 77, 82, 0.55)" strokeWidth="1.5" />
-                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1.0" strokeDasharray="4 4" />
-                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.0" strokeDasharray="4 4" />
+                      {/* Outer Spherical Shell & Technical Orbits (Faint Red Accent) */}
+                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(255, 77, 82, 0.28)" strokeWidth="1.2" />
+                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.20)" strokeWidth="0.9" strokeDasharray="4 4" />
+                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(255, 255, 255, 0.14)" strokeWidth="0.9" strokeDasharray="4 4" />
 
                       {/* Clean Sharp Molecular Constellation Wireframe */}
                       {/* Central Core Benzene/Pyrimidine Ring */}
-                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="rgba(255, 45, 45, 0.05)" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.6" />
+                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="rgba(255, 45, 45, 0.03)" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.3" />
                       {/* Fused 5-Membered Imidazole Ring */}
-                      <polygon points="126,75 152,85 146,115 126,105" fill="rgba(255, 45, 45, 0.06)" stroke="rgba(255, 77, 82, 0.75)" strokeWidth="1.6" />
+                      <polygon points="126,75 152,85 146,115 126,105" fill="rgba(255, 45, 45, 0.04)" stroke="rgba(255, 77, 82, 0.50)" strokeWidth="1.3" />
                       
                       {/* Radiating Chemical Bonds */}
-                      <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(255, 77, 82, 0.85)" strokeWidth="1.6" />
-                      <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.4" />
-                      <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(255, 77, 82, 0.85)" strokeWidth="1.5" />
-                      <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.4" />
+                      <line x1="100" y1="60" x2="100" y2="38" stroke="rgba(255, 77, 82, 0.55)" strokeWidth="1.3" />
+                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(255, 77, 82, 0.50)" strokeWidth="1.2" />
+                      <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.40)" strokeWidth="1.1" />
+                      <line x1="100" y1="120" x2="116" y2="146" stroke="rgba(255, 77, 82, 0.55)" strokeWidth="1.3" />
+                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(255, 77, 82, 0.50)" strokeWidth="1.2" />
+                      <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.40)" strokeWidth="1.1" />
 
-                      {/* Crisp Atomic Nodes (White and Red) */}
+                      {/* Crisp Atomic Nodes (Subtle, Refined Scale) */}
                       {/* Central Core Nodes */}
-                      <circle cx="100" cy="60" r="4" fill="#ffffff" />
-                      <circle cx="126" cy="75" r="3.8" fill="#ffffff" />
-                      <circle cx="126" cy="105" r="4.2" fill="#ff4d52" />
-                      <circle cx="100" cy="120" r="3.8" fill="#ffffff" />
-                      <circle cx="74" cy="105" r="4" fill="#ffffff" />
-                      <circle cx="74" cy="75" r="3.8" fill="#ffffff" />
+                      <circle cx="100" cy="60" r="3.5" fill="#ffffff" />
+                      <circle cx="126" cy="75" r="3.2" fill="#ffffff" />
+                      <circle cx="126" cy="105" r="3.6" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="100" cy="120" r="3.2" fill="#ffffff" />
+                      <circle cx="74" cy="105" r="3.5" fill="#ffffff" />
+                      <circle cx="74" cy="75" r="3.2" fill="#ffffff" />
                       
                       {/* Outer Valence Nodes */}
-                      <circle cx="100" cy="38" r="4.2" fill="#ff4d52" />
-                      <circle cx="152" cy="85" r="3.8" fill="#ff4d52" />
-                      <circle cx="146" cy="115" r="3.5" fill="#ffffff" />
-                      <circle cx="50" cy="120" r="3.8" fill="#ff4d52" />
-                      <circle cx="34" cy="110" r="3" fill="#ffffff" />
-                      <circle cx="116" cy="146" r="4.2" fill="#ff4d52" />
-                      <circle cx="174" cy="76" r="3.8" fill="#ff4d52" />
-                      <circle cx="148" cy="134" r="3" fill="#ffffff" />
+                      <circle cx="100" cy="38" r="3.6" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="152" cy="85" r="3.2" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="146" cy="115" r="3.0" fill="#ffffff" />
+                      <circle cx="50" cy="120" r="3.2" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="34" cy="110" r="2.8" fill="#ffffff" />
+                      <circle cx="116" cy="146" r="3.6" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="174" cy="76" r="3.2" fill="rgba(255, 77, 82, 0.85)" />
+                      <circle cx="148" cy="134" r="2.8" fill="#ffffff" />
                     </svg>
                   </div>
                 </div>
@@ -1542,38 +1539,41 @@ export default function Home() {
                   {/* Drug 1: Cyclosporine */}
                   <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
-                      <svg viewBox="0 0 44 44" className="cluster-svg">
-                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
-                        <circle cx="14" cy="16" r="6" fill="#a855f7" />
-                        <circle cx="30" cy="16" r="6" fill="#c084fc" />
-                        <circle cx="16" cy="28" r="6" fill="#ff4d52" />
-                        <circle cx="28" cy="28" r="6" fill="#a855f7" />
-                        <circle cx="22" cy="12" r="5" fill="#ffffff" />
-                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
+                      <svg viewBox="0 0 40 40" className="cluster-svg">
+                        <circle cx="20" cy="20" r="14" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeDasharray="3 3" />
+                        <circle cx="20" cy="6" r="2.5" fill="#ffffff" />
+                        <circle cx="30" cy="10" r="2.5" fill="#c084fc" />
+                        <circle cx="34" cy="20" r="2.5" fill="#ffffff" />
+                        <circle cx="30" cy="30" r="2.5" fill="#c084fc" />
+                        <circle cx="20" cy="34" r="2.5" fill="#ffffff" />
+                        <circle cx="10" cy="30" r="2.5" fill="#c084fc" />
+                        <circle cx="6" cy="20" r="2.5" fill="#ffffff" />
+                        <circle cx="10" cy="10" r="2.5" fill="#c084fc" />
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
-                      <strong className="cni-drug-name">CYCLOSPORINE</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibition via cyclophilin binding</span>
+                      <strong className="cni-drug-name">Cyclosporine</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibitor · cyclic peptide</span>
                     </div>
                   </div>
 
                   {/* Drug 2: Tacrolimus */}
                   <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
-                      <svg viewBox="0 0 44 44" className="cluster-svg">
-                        <circle cx="22" cy="22" r="8" fill="#7c3aed" />
-                        <circle cx="15" cy="18" r="6.5" fill="#c084fc" />
-                        <circle cx="29" cy="18" r="6.5" fill="#ff4d52" />
-                        <circle cx="22" cy="30" r="6.5" fill="#a855f7" />
-                        <circle cx="13" cy="28" r="5" fill="#ffffff" />
-                        <circle cx="31" cy="28" r="5" fill="#c084fc" />
-                        <circle cx="22" cy="22" r="3" fill="#ffffff" />
+                      <svg viewBox="0 0 40 40" className="cluster-svg">
+                        <circle cx="20" cy="20" r="14" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                        <path d="M12 20 A8 8 0 0 1 28 20" fill="none" stroke="#c084fc" strokeWidth="1.4" strokeDasharray="2 2" />
+                        <circle cx="20" cy="6" r="2.5" fill="#ffffff" />
+                        <circle cx="32" cy="13" r="2.5" fill="#c084fc" />
+                        <circle cx="32" cy="27" r="2.5" fill="#ffffff" />
+                        <circle cx="20" cy="34" r="2.5" fill="#c084fc" />
+                        <circle cx="8" cy="27" r="2.5" fill="#ffffff" />
+                        <circle cx="8" cy="13" r="2.5" fill="#c084fc" />
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
-                      <strong className="cni-drug-name">TACROLIMUS</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibition via FKBP binding</span>
+                      <strong className="cni-drug-name">Tacrolimus</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibitor · macrolide</span>
                     </div>
                   </div>
                 </div>
@@ -1640,8 +1640,7 @@ export default function Home() {
                   </div>
                   <div className="step-text-wrap">
                     <span className="step-num-tag step-goal-tag">3 GOAL</span>
-                    <strong className="step-title">STEPWISE CONTROL</strong>
-                    <span className="step-desc">Achieve inflammation control and steroid sparing</span>
+                    <strong className="step-title">INFLAMMATION CONTROL + STEROID SPARING</strong>
                   </div>
                 </div>
               </div>
