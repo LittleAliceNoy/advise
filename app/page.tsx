@@ -454,7 +454,8 @@ export default function Home() {
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
-  const [showCataractWarning, setShowCataractWarning] = useState(false);
+  const [showCataractWarning, setShowCataractWarning] = useState(true);
+  const [isHandout, setIsHandout] = useState(false);
 
   // Slide 29 Interactive CID Donut & Inspection States
   const [activeBranch, setActiveBranch] = useState<'idle' | 'antimetabolites' | 'cni'>('idle');
@@ -559,6 +560,7 @@ export default function Home() {
     if (typeof window !== "undefined") {
       const revealAll = () => {
         (window as any).__INSTANT_CHART__ = true;
+        setIsHandout(true);
         setTherapeuticGoalStage(3);
         setTaperingStage(7);
         setFollowupStage(2);
@@ -567,6 +569,7 @@ export default function Home() {
         setTreatmentPhase(1);
         setEfficacyStoryStage(5);
         setDiscontinuationStoryStage(5);
+        setShowCataractWarning(true);
         setActiveBranch('idle');
         setInspected79(true);
         setInspected21(true);
@@ -586,6 +589,7 @@ export default function Home() {
 
       (window as any).__PREPARE_SLIDE__ = (slideId: string) => {
         (window as any).__INSTANT_CHART__ = true;
+        setIsHandout(true);
         if (slideId === "therapeutic-goal") setTherapeuticGoalStage(3);
         if (slideId === "tapering-cinematic") setTaperingStage(7);
         if (slideId === "followup") setFollowupStage(2);
@@ -596,6 +600,7 @@ export default function Home() {
         }
         if (slideId === "results") setEfficacyStoryStage(5);
         if (slideId === "discontinuation") setDiscontinuationStoryStage(5);
+        if (slideId === "discussion-safety") setShowCataractWarning(true);
         if (slideId === "limitations-2") {
           setActiveBranch('idle');
           setInspected79(true);
@@ -667,9 +672,10 @@ export default function Home() {
   }, [active, therapeuticGoalStage]);
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "therapeutic-goal") return;
     setTherapeuticGoalStage(0);
-  }, [active]);
+  }, [active, isHandout]);
 
   const advanceTherapeuticGoal = () => {
     setTherapeuticGoalStage((s) => (s < 3 ? s + 1 : s));
@@ -693,8 +699,6 @@ export default function Home() {
     if (Date.now() - therapeuticTouchAdvancedAt.current < 500 || therapeuticGoalStage >= 3) return;
     advanceTherapeuticGoal();
   };
-
-  const [isHandout, setIsHandout] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -831,10 +835,11 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "discontinuation") return;
     setDiscontinuationStoryStage(0);
     setDiscontinuationFocus(2);
-  }, [active]);
+  }, [active, isHandout]);
 
   const advanceDiscontinuationStory = () => {
     setDiscontinuationStoryStage((current) => {

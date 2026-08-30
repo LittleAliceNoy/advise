@@ -14,7 +14,7 @@ const SLIDES = [
   { id: "screening", name: "08 - Screening Pathway" },
   { id: "randomization", name: "09 - Randomization" },
   { id: "treatment", name: "10 - Treatment by Stratum" },
-  { id: "tapering-cinematic", name: "11 - Tapering and Reactivation (Cinematic)" },
+  { id: "tapering", name: "11 - Tapering and Reactivation" },
   { id: "followup", name: "12 - Follow-up" },
   { id: "outcomes-original", name: "13 - Outcomes (Original Combined)" },
   { id: "statistics-sample-only", name: "14 - Statistics Sample Size" },
@@ -55,11 +55,15 @@ async function main() {
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 2 });
 
-  console.log("Navigating to http://localhost:3000/?handout=true ...");
-  await page.goto("http://localhost:3000/?handout=true", { waitUntil: "networkidle0" });
+  page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
+  page.on("pageerror", (err) => console.log("PAGE ERROR:", err.toString()));
 
-  // Wait for React hydration
-  await page.waitForFunction(() => window.__IS_HYDRATED__ === true, { timeout: 15000 });
+  console.log("Navigating to http://localhost:3000/?handout=true ...");
+  await page.goto("http://localhost:3000/?handout=true", { waitUntil: "domcontentloaded" });
+
+  // Wait for React hydration or presence of deck
+  await page.waitForSelector(".deck", { timeout: 15000 });
+  await page.waitForFunction(() => typeof window.__REVEAL_ALL_SLIDES__ === "function" || document.querySelectorAll(".scene").length > 20, { timeout: 15000 });
 
   // Remove navigation UI and disable smooth snapping during capture
   await page.addStyleTag({
