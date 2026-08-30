@@ -1757,8 +1757,9 @@ export default function Home() {
                 </div>
 
                 {/* Scientifically Recognizable Antibody–TNF-α Neutralization Diagram */}
+                {/* Scientifically Recognizable Antibody–TNF-α Neutralization Diagram */}
                 <div className="biologic-interaction-stage">
-                  <svg viewBox="0 0 540 130" className="biologic-interaction-svg" aria-label="Adalimumab antibody binding and neutralizing TNF-alpha cytokine homotrimer">
+                  <svg viewBox="0 0 660 110" className="biologic-interaction-svg" aria-label="Adalimumab antibody binding and neutralizing TNF-alpha cytokine homotrimer">
                     <defs>
                       <linearGradient id="ada-ab-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
@@ -1771,63 +1772,65 @@ export default function Home() {
                       </radialGradient>
                     </defs>
 
-                    {/* Left: Adalimumab Monoclonal Antibody (Exact Page 30 IgG1 Structure) */}
-                    <g className="antibody-group" transform="translate(12, 6)">
-                      <circle cx="50" cy="50" r="46" fill="url(#tnf-core-glow)" />
+                    {/* 1. Left: Adalimumab Monoclonal Antibody (Page 30 Canonical IgG1 Structure) */}
+                    <g className="antibody-group" transform="translate(20, 0)">
+                      <circle cx="50" cy="40" r="38" fill="url(#tnf-core-glow)" />
                       {/* Heavy chain stem (Fc) */}
-                      <line x1="50" y1="48" x2="50" y2="85" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      <line x1="50" y1="38" x2="50" y2="70" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
                       {/* Heavy chain left arm */}
-                      <line x1="50" y1="48" x2="20" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      <line x1="50" y1="38" x2="26" y2="14" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
                       {/* Heavy chain right arm */}
-                      <line x1="50" y1="48" x2="80" y2="18" stroke="#ff4d52" strokeWidth="6.5" strokeLinecap="round" />
+                      <line x1="50" y1="38" x2="74" y2="14" stroke="#ff4d52" strokeWidth="5.5" strokeLinecap="round" />
                       {/* Light chain left parallel segment */}
-                      <line x1="29" y1="36" x2="13" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
+                      <line x1="33" y1="28" x2="20" y2="15" stroke="#ff7175" strokeWidth="3.6" strokeLinecap="round" />
                       {/* Light chain right parallel segment */}
-                      <line x1="71" y1="36" x2="87" y2="20" stroke="#ff7175" strokeWidth="4.2" strokeLinecap="round" />
+                      <line x1="67" y1="28" x2="80" y2="15" stroke="#ff7175" strokeWidth="3.6" strokeLinecap="round" />
 
                       {/* Label under Antibody */}
-                      <text x="50" y="104" fill="#8c827e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.08em">IgG1 MONOCLONAL ANTIBODY</text>
+                      <text x="50" y="88" fill="#ffffff" fontSize="8.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB (IgG1)</text>
+                      <text x="50" y="100" fill="#8c827e" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Monoclonal Antibody</text>
                     </g>
 
-                    {/* Middle: Targeting & Neutralization Vector Arcs */}
-                    <g className="binding-vector-group" transform="translate(130, 25)">
-                      <line x1="0" y1="38" x2="60" y2="38" stroke="rgba(255, 77, 82, 0.6)" strokeWidth="1.5" strokeDasharray="3 3" />
-                      <polygon points="62,38 54,34 54,42" fill="#ff4d52" />
-                      <rect x="6" y="22" width="48" height="15" fill="#08080a" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1" />
-                      <text x="30" y="32.5" fill="#ff4d52" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">BLOCKADE</text>
+                    {/* 2. Middle: Targeting & Neutralization Vector Arcs */}
+                    <g className="binding-vector-group" transform="translate(145, 14)">
+                      <line x1="0" y1="26" x2="68" y2="26" stroke="rgba(255, 77, 82, 0.7)" strokeWidth="1.6" strokeDasharray="3 3" />
+                      <polygon points="72,26 62,21 62,31" fill="#ff4d52" />
+                      <rect x="8" y="10" width="52" height="15" fill="#08080a" stroke="rgba(255, 77, 82, 0.45)" strokeWidth="1" />
+                      <text x="34" y="20.5" fill="#ff4d52" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">BLOCKADE</text>
+                      <text x="34" y="42" fill="#a8a29e" fontSize="6.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Target Neutralization</text>
                     </g>
 
-                    {/* Right: Trimeric TNF-alpha Molecule (Neutralized Target) */}
-                    <g className="tnf-target-group" transform="translate(225, 10)">
+                    {/* 3. Right: Trimeric TNF-alpha Molecule (Neutralized Target) */}
+                    <g className="tnf-target-group" transform="translate(245, 0)">
                       {/* Neutralization Field Atmosphere */}
-                      <circle cx="55" cy="48" r="46" fill="url(#tnf-core-glow)" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+                      <circle cx="55" cy="40" r="38" fill="url(#tnf-core-glow)" stroke="rgba(255, 77, 82, 0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
                       
                       {/* Trimeric Subunits of TNF-alpha (3 Interlocked Elliptical Monomers) */}
-                      <ellipse cx="40" cy="38" rx="14" ry="19" transform="rotate(-30 40 38)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.8" />
-                      <ellipse cx="70" cy="38" rx="14" ry="19" transform="rotate(30 70 38)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.8" />
-                      <ellipse cx="55" cy="62" rx="14" ry="19" fill="rgba(255, 45, 45, 0.24)" stroke="#ff4d52" strokeWidth="2.0" />
+                      <ellipse cx="43" cy="32" rx="12" ry="16" transform="rotate(-30 43 32)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <ellipse cx="67" cy="32" rx="12" ry="16" transform="rotate(30 67 32)" fill="rgba(255, 45, 45, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <ellipse cx="55" cy="52" rx="12" ry="16" fill="rgba(255, 45, 45, 0.24)" stroke="#ff4d52" strokeWidth="1.8" />
 
                       {/* Subunit Core Center Bonds */}
-                      <circle cx="55" cy="48" r="4.5" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.5" />
-                      <text x="55" y="48" fill="#0a0406" fontSize="5.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
+                      <circle cx="55" cy="40" r="4.0" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.4" />
+                      <text x="55" y="40" fill="#0a0406" fontSize="5.2" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
 
                       {/* Subunit Active Site Nodes */}
-                      <circle cx="36" cy="30" r="2.8" fill="#ffffff" />
-                      <circle cx="74" cy="30" r="2.8" fill="#ffffff" />
-                      <circle cx="55" cy="71" r="2.8" fill="#ffffff" />
+                      <circle cx="39" cy="25" r="2.2" fill="#ffffff" />
+                      <circle cx="71" cy="25" r="2.2" fill="#ffffff" />
+                      <circle cx="55" cy="60" r="2.2" fill="#ffffff" />
 
                       {/* TNF-alpha Target Callout Text */}
-                      <text x="55" y="104" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
-                      <text x="55" y="116" fill="#a8a29e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">SOLUBLE &amp; TRANSMEMBRANE HOMOTRIMER</text>
+                      <text x="55" y="88" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
+                      <text x="55" y="100" fill="#a8a29e" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Target Cytokine</text>
                     </g>
 
-                    {/* Receptor Blockade Indicator (Blocking TNFR1 / TNFR2 Activation) */}
-                    <g className="tnfr-blocked-group" transform="translate(370, 18)">
-                      <rect x="0" y="12" width="140" height="66" fill="rgba(20, 15, 22, 0.65)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
-                      <text x="12" y="28" fill="#d6d3d1" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.06em">TARGET OUTCOME</text>
-                      <text x="12" y="43" fill="#ff4d52" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">SPECIFIC INFLAMMATION</text>
-                      <text x="12" y="55" fill="#ff4d52" fontSize="8.8" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">PATHWAY SUPPRESSION</text>
-                      <text x="12" y="68" fill="#8c827e" fontSize="6.2" fontFamily="var(--font-geist-mono)" fontWeight="500">PREVENTS TNFR1 / TNFR2 BINDING</text>
+                    {/* 4. Target Outcome Panel */}
+                    <g className="tnfr-blocked-group" transform="translate(370, 8)">
+                      <rect x="0" y="0" width="275" height="86" fill="rgba(20, 15, 22, 0.7)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
+                      <text x="14" y="18" fill="#a8a29e" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.08em">TARGET OUTCOME</text>
+                      <text x="14" y="34" fill="#ff4d52" fontSize="9.0" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.03em">SPECIFIC INFLAMMATION PATHWAY SUPPRESSION</text>
+                      <text x="14" y="52" fill="#d6d3d1" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="500">· Prevents soluble &amp; transmembrane TNF-α receptor binding</text>
+                      <text x="14" y="68" fill="#8c827e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="500">· Halts downstream TNFR1 / TNFR2 inflammatory cascade</text>
                     </g>
                   </svg>
                 </div>
@@ -1889,19 +1892,28 @@ export default function Home() {
 
                   {/* DOMINANT RESULT: PROLONGED TIME TO RELAPSE */}
                   <div className="rct-result-lead">
-                    <div className="timeline-delayed-visual" aria-hidden="true">
-                      <div className="timeline-axis">
-                        <div className="event-marker marker-placebo">
-                          <span className="marker-dot dot-placebo" />
-                          <span className="marker-label">Placebo: Early relapse</span>
+                    <div className="timeline-delayed-track" aria-hidden="true">
+                      <div className="track-bar-container">
+                        <div className="track-bar-line" />
+                        <div className="track-bar-point point-placebo">
+                          <span className="bar-dot dot-placebo" />
                         </div>
-                        <div className="event-marker marker-ada">
-                          <span className="marker-dot dot-ada" />
-                          <span className="marker-label">Adalimumab: Relapse delayed</span>
+                        <div className="track-bar-point point-ada">
+                          <span className="bar-dot dot-ada" />
                         </div>
-                        <div className="timeline-arrow-line" />
+                      </div>
+                      <div className="track-labels-grid">
+                        <div className="track-label-col col-placebo">
+                          <strong className="tl-name">Placebo</strong>
+                          <span className="tl-desc">Early relapse</span>
+                        </div>
+                        <div className="track-label-col col-ada">
+                          <strong className="tl-name highlight-red">Adalimumab</strong>
+                          <span className="tl-desc highlight-red">Relapse delayed</span>
+                        </div>
                       </div>
                     </div>
+
                     <div className="rct-result-text">
                       <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
                       <span className="rct-sub-result">Significantly delayed time to treatment failure vs placebo</span>
