@@ -962,7 +962,7 @@ export default function Home() {
               </div>
 
               {/* CENTER CONVERGENCE: HERO BALANCE SCALE */}
-              <div className="dilemma-column col-balance-convergence">
+              <div className="dilemma-column col-balance-convergence" style={{ marginTop: "clamp(0.5rem, 1.0vh, 1.2rem)" }}>
                 <div className="balance-scale-hero-wrapper">
                   {/* Left connector arrow */}
                   <div className="scale-connector connector-left" aria-hidden="true">
@@ -1030,7 +1030,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="immunosuppression-text-wrap" style={{ marginTop: "0.25rem" }}>
+                <div className="immunosuppression-text-wrap" style={{ marginTop: "clamp(0.35rem, 0.6vh, 0.65rem)" }}>
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>

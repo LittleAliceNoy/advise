@@ -13775,6 +13775,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-top: clamp(0.5rem, 1.0vh, 1.2rem);
 }
 
 .balance-scale-hero-wrapper {
@@ -13845,6 +13846,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: clamp(0.35rem, 0.6vh, 0.65rem);
 }
 
 .immunosuppression-hero-title {
