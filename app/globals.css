@@ -13666,20 +13666,26 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .desc-inflammation {
-  font: 400 clamp(0.56rem, 0.66vw, 0.82rem) var(--font-geist-mono), monospace;
-  color: #b5aaa6;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.52rem, 0.60vw, 0.74rem);
+  color: #a8a29e;
   line-height: 1.35;
   margin: 0.15rem 0 0;
 }
 
+.desc-lead {
+  color: #b5aaa6;
+}
+
 .red-highlight-bold {
+  font-family: var(--font-geist-mono), monospace;
   color: #ff4d52;
-  font-weight: 800;
-  font-size: clamp(0.68rem, 0.80vw, 1.02rem);
-  letter-spacing: 0.03em;
+  font-weight: 900;
+  font-size: clamp(0.85rem, 1.05vw, 1.32rem);
+  letter-spacing: 0.02em;
   display: block;
-  margin-top: 0.25rem;
-  text-shadow: 0 0 12px rgba(255, 77, 82, 0.75);
+  margin-top: 0.2rem;
+  text-shadow: 0 0 14px rgba(255, 77, 82, 0.75);
 }
 
 .ceiling-box {
