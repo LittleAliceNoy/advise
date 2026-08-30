@@ -1319,15 +1319,38 @@ export default function Home() {
                     {/* Drug 1: Methotrexate */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
-                        <svg viewBox="0 0 32 32" className="drug-svg">
-                          <polygon points="16,4 28,10 28,22 16,28 4,22 4,10" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
-                          <circle cx="16" cy="16" r="4" fill="#ff4d52" />
-                          <circle cx="16" cy="4" r="2" fill="#c084fc" />
-                          <circle cx="28" cy="10" r="2" fill="#c084fc" />
-                          <circle cx="28" cy="22" r="2" fill="#c084fc" />
-                          <circle cx="16" cy="28" r="2" fill="#c084fc" />
-                          <circle cx="4" cy="22" r="2" fill="#c084fc" />
-                          <circle cx="4" cy="10" r="2" fill="#c084fc" />
+                        <svg viewBox="0 0 36 32" className="drug-svg">
+                          {/* Fused 2,4-diaminopteridine core of Methotrexate */}
+                          {/* Left Ring (2,4-diaminopyrimidine) */}
+                          <polygon points="12,10 18,13.5 18,21.5 12,25 6,21.5 6,13.5" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          {/* Right Ring (pyrazine) */}
+                          <polygon points="18,13.5 24,10 30,13.5 30,21.5 24,25 18,21.5" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.4" strokeLinejoin="round" />
+                          
+                          {/* Shared Central Bond */}
+                          <line x1="16" y1="14.5" x2="16" y2="20.5" stroke="#ffffff" strokeWidth="1.3" />
+                          {/* Double Bonds in Rings */}
+                          <line x1="8" y1="14.5" x2="11.8" y2="12.2" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="8" y1="20.5" x2="11.8" y2="22.8" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="24.2" y1="12.2" x2="28" y2="14.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="24.2" y1="22.8" x2="28" y2="20.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+
+                          {/* 4-Amino Substituent (Top NH2) */}
+                          <line x1="12" y1="10" x2="12" y2="4.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="12" cy="4" r="2.2" fill="#ff4d52" />
+
+                          {/* 2-Amino Substituent (Bottom-Left NH2) */}
+                          <line x1="6" y1="21.5" x2="2" y2="24" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="2" cy="24" r="2.2" fill="#ff4d52" />
+
+                          {/* 6-Alkyl Bridge to PABA/Glutamate (Right-pointing chain) */}
+                          <line x1="30" y1="13.5" x2="35" y2="10.5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+                          <circle cx="35" cy="10.5" r="1.6" fill="#ffffff" />
+
+                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) */}
+                          <circle cx="6" cy="13.5" r="1.8" fill="#c084fc" />
+                          <circle cx="12" cy="25" r="1.8" fill="#c084fc" />
+                          <circle cx="24" cy="10" r="1.8" fill="#c084fc" />
+                          <circle cx="24" cy="25" r="1.8" fill="#c084fc" />
                         </svg>
                       </div>
                       <div className="drug-meta">
