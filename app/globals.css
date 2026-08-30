@@ -15257,10 +15257,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: clamp(0.6rem, 1.2vh, 1.6rem);
-  margin-top: clamp(0.2rem, 0.5vh, 0.8rem);
+  gap: clamp(0.8rem, 1.6vh, 2.0rem);
+  margin-top: 0;
 }
 
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
@@ -15270,9 +15270,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
   width: 100%;
-  flex: 1;
-  min-height: 0;
-  padding: clamp(0.5rem, 1.0vh, 1.5rem) 0;
+  flex: 0 0 auto;
+  padding: 0;
 }
 
 .convergence-wing {
@@ -15338,7 +15337,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.5rem, 0.9vh, 1.1rem);
+  gap: clamp(0.4rem, 0.7vh, 0.9rem);
   width: 100%;
 }
 
@@ -15405,6 +15404,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-sizing: border-box;
 }
 
+.center-down-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(0.15rem, 0.3vh, 0.4rem);
+}
+
+.down-arrow-svg {
+  width: clamp(20px, 2.4vw, 32px);
+  height: clamp(20px, 2.4vw, 32px);
+  filter: drop-shadow(0 0 8px rgba(255, 45, 45, 0.7));
+}
+
 /* BOTTOM REVEAL: ADVISE WORDMARK HORIZONTAL HERO (~20% OF SCREEN) */
 .intro6-bottom-reveal {
   position: relative;
@@ -15413,7 +15425,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.7rem, 1.3vh, 1.5rem) clamp(1.0rem, 2.0vw, 3.0rem);
+  padding: 0;
+  margin-top: clamp(0.2rem, 0.6vh, 0.8rem);
   background: transparent;
   border-top: none;
   box-sizing: border-box;

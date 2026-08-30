@@ -1945,6 +1945,14 @@ export default function Home() {
                 </div>
 
                 <strong className="no-comparison-pill">NO DIRECT COMPARISON</strong>
+
+                {/* Downward Arrow pointing to ADVISE */}
+                <div className="center-down-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="down-arrow-svg">
+                    <line x1="12" y1="2" x2="12" y2="18" stroke="var(--red)" strokeWidth="2.4" strokeLinecap="round" />
+                    <polyline points="6,12 12,18 18,12" fill="none" stroke="var(--red)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
 
               {/* RIGHT HERO: ADA */}
@@ -1964,7 +1972,7 @@ export default function Home() {
                 <h3 className="reveal-advise-title">
                   Adalimumab versus Conventional Immunosuppression for Uveitis
                 </h3>
-                <p className="reveal-advise-tagline">A randomized, head-to-head strategy trial</p>
+                <p className="reveal-advise-tagline">A RANDOMIZED, HEAD-TO-HEAD STRATEGY TRIAL</p>
               </div>
             </div>
 
