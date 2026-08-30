@@ -13564,8 +13564,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(0.45rem, 0.95vh, 0.95rem);
+  justify-content: flex-start;
+  gap: clamp(0.35rem, 0.7vh, 0.75rem);
   margin-top: 0.2rem;
 }
 
@@ -13881,7 +13881,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: #ff4d52;
   font-size: 0.95rem;
   line-height: 1;
-  margin-top: 0.15rem;
+  margin-top: 0.08rem;
+  margin-bottom: -0.15rem;
 }
 
 /* MIDDLE ROW: Resolution Equation + MUST Landmark Panel */
@@ -13891,6 +13892,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(0.8rem, 1.5vw, 1.8rem);
   align-items: center;
   width: 100%;
+  margin-top: -0.25rem;
 }
 
 .resolution-equation-block {
