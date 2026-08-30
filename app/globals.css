@@ -13668,6 +13668,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .ceiling-box {
   margin-top: 0;
   min-height: clamp(5.6rem, 8.5vh, 7.4rem);
+  width: min(100%, clamp(16.5rem, 22.5vw, 24.5rem));
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13680,20 +13682,6 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
   box-shadow: 0 0 20px rgba(255, 45, 45, 0.14);
   box-sizing: border-box;
-}
-
-.box-pointer {
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ff4d52;
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
-.pointer-right {
-  color: #c084fc;
 }
 
 .ceiling-dose-wrap {
@@ -13738,6 +13726,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .floor-box {
   margin-top: 0;
   min-height: clamp(5.6rem, 8.5vh, 7.4rem);
+  width: min(100%, clamp(16.5rem, 22.5vw, 24.5rem));
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
