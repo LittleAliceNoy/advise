@@ -534,6 +534,139 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 #tapering .window strong {
   font-size: clamp(.65rem,.72vw,.84rem);
 }
+
+/* Slides 08–10 — restore presentation-distance typography.
+   These scenes retained early microtype values intended for a denser draft,
+   making their supporting information markedly smaller than the surrounding
+   deck. The geometry stays fixed; only the internal reading scale is lifted. */
+@media (min-width: 701px) {
+  /* 08 — Screening pathway */
+  #screening .orbital-panel-header {
+    font-size: clamp(.66rem, .72vw, .82rem);
+  }
+  #screening .journey-label {
+    font-size: clamp(.6rem, .68vw, .78rem);
+  }
+  #screening .gate {
+    min-height: 2.65rem;
+    padding: .56rem .66rem;
+    font-size: clamp(.5rem, .56vw, .64rem);
+    line-height: 1.28;
+    letter-spacing: .01em;
+  }
+  #screening .gate span {
+    margin-top: .12rem;
+    margin-left: 1.35rem;
+  }
+  #screening .clearance-status {
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+  #screening .inclusion-metrics span {
+    color: #aaa6a2;
+    font-size: clamp(.6rem, .66vw, .76rem);
+  }
+  #screening .disease-window > span {
+    font-size: clamp(.64rem, .7vw, .8rem);
+  }
+  #screening .disease-window small {
+    color: #aaa6a2;
+    font-size: clamp(.54rem, .6vw, .7rem);
+  }
+  #screening .disease-window p {
+    color: #8f8a86;
+    font-size: clamp(.52rem, .58vw, .68rem);
+  }
+
+  /* 09 — Stratification and randomization */
+  #randomization .randomization-timeline span {
+    padding: .55rem .65rem;
+    font-size: clamp(.48rem, .54vw, .62rem);
+    line-height: 1.25;
+  }
+  #randomization .randomization-timeline span:not(:last-child)::after {
+    font-size: .72rem;
+  }
+  #randomization .strata-source {
+    min-width: 13rem;
+    padding: .52rem 1rem;
+  }
+  #randomization .strata-source span {
+    font-size: clamp(.64rem, .7vw, .8rem);
+  }
+  #randomization .four-strata-flow {
+    top: 48%;
+    bottom: 4%;
+  }
+  #randomization .strata-columns {
+    top: 5rem;
+    bottom: 4.15rem;
+  }
+  #randomization .stratum-code {
+    font-size: clamp(1.45rem, 1.65vw, 1.9rem);
+  }
+  #randomization .stratum-column > small {
+    color: #9f9a96;
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+  #randomization .permuted-block {
+    min-height: 1.75rem;
+  }
+  #randomization .permuted-block > i {
+    width: 1.36rem;
+    font-size: clamp(.54rem, .58vw, .66rem);
+  }
+  #randomization .strata-balance strong {
+    font-size: clamp(.64rem, .7vw, .8rem);
+  }
+  #randomization .strata-legend span,
+  #randomization .strata-legend strong {
+    color: #aaa6a2;
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+
+  /* 10 — Treatment by stratum */
+  #treatment .treatment-symbol {
+    color: #aaa6a2;
+    font-size: clamp(.52rem, .58vw, .68rem);
+  }
+  #treatment .treatment-section-title {
+    font-size: clamp(.66rem, .74vw, .86rem);
+  }
+  #treatment .treatment-table-head > span,
+  #treatment .treatment-table-head > strong {
+    color: #aaa6a2;
+    font-size: clamp(.62rem, .7vw, .82rem);
+  }
+  #treatment .treatment-stratum > strong {
+    font-size: clamp(.78rem, .88vw, 1rem);
+  }
+  #treatment .treatment-stratum > span {
+    color: #aaa6a2 !important;
+    font-size: clamp(.62rem, .7vw, .82rem) !important;
+  }
+  #treatment .treatment-plan > small {
+    color: #aaa6a2;
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+  #treatment .treatment-plan > i,
+  #treatment .treatment-plan > em {
+    font-size: clamp(.62rem, .68vw, .78rem);
+  }
+  #treatment .drug-chip {
+    padding: .42rem .76rem;
+    font-size: clamp(.62rem, .7vw, .82rem) !important;
+  }
+  #treatment .prednisolone-cards i {
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+  #treatment .prednisolone-cards span {
+    color: #aaa6a2;
+    font-size: clamp(.58rem, .66vw, .76rem);
+  }
+  #treatment .prednisolone-cards strong {
+    font-size: clamp(.76rem, .86vw, 1rem);
+  }
+}
 #tapering .window span {
   font-size:clamp(.72rem,.8vw,.94rem);
 }
