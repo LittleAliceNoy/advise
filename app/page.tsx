@@ -957,7 +957,7 @@ export default function Home() {
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
                   <span className="ceiling-unit" style={{ fontSize: "clamp(0.54rem, 0.62vw, 0.76rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>LONG-TERM USE THRESHOLD</small>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
                 </div>
               </div>
 
