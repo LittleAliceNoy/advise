@@ -15121,39 +15121,41 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   line-height: 1.2;
 }
 
-/* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE */
+/* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE (BOX REMOVED, 2 SEPARATE LINES) */
 .intro5-tension-bridge {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: clamp(0.35rem, 0.6vh, 0.65rem) clamp(1.0rem, 1.8vw, 2.2rem);
-  background: linear-gradient(90deg, rgba(255, 45, 45, 0.04) 0%, rgba(16, 10, 16, 0.9) 50%, rgba(255, 45, 45, 0.04) 100%);
-  border: 1px solid rgba(255, 77, 82, 0.35);
+  padding: clamp(0.2rem, 0.4vh, 0.6rem) 0 clamp(0.1rem, 0.2vh, 0.3rem);
+  background: transparent;
+  border: none;
   box-sizing: border-box;
 }
 
 .tension-content {
   display: flex;
-  align-items: baseline;
-  gap: clamp(0.5rem, 1.0vw, 1.2rem);
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: clamp(0.15rem, 0.3vh, 0.35rem);
   text-align: center;
 }
 
 .tension-lead {
-  font: 600 clamp(0.56rem, 0.70vw, 0.88rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.60rem, 0.76vw, 0.94rem) var(--font-geist-mono), monospace;
   color: #a89f9c;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .tension-question {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.88rem, 1.15vw, 1.45rem);
+  font-size: clamp(0.96rem, 1.30vw, 1.68rem);
   font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .tension-highlight-red {
