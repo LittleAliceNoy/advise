@@ -957,7 +957,7 @@ export default function Home() {
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
                   <span className="ceiling-unit" style={{ fontSize: "clamp(0.54rem, 0.62vw, 0.76rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.44rem, 0.50vw, 0.62rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM USE THRESHOLD</small>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>LONG-TERM USE THRESHOLD</small>
                 </div>
               </div>
 
@@ -1031,8 +1031,8 @@ export default function Home() {
                 </div>
 
                 <div className="immunosuppression-text-wrap" style={{ marginTop: "0.25rem" }}>
-                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#f5f5f7" }}>
-                    <span style={{ color: "#ff4d52" }}>SYSTEMIC</span> IMMUNOSUPPRESSION
+                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
+                    SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
                   <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.48rem, 0.56vw, 0.70rem)", fontWeight: 600, marginTop: "0.12rem", color: "#a8a29e", letterSpacing: "0.04em" }}>Needed to achieve both goals</span>
                 </div>
@@ -1070,7 +1070,7 @@ export default function Home() {
 
                 <div className="floor-box">
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.44rem, 0.50vw, 0.62rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 

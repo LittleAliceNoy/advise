@@ -13714,9 +13714,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .ceiling-label {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.44rem, 0.50vw, 0.62rem);
-  font-weight: 700;
-  color: #a8a29e;
+  font-size: clamp(0.52rem, 0.60vw, 0.74rem);
+  font-weight: 800;
+  color: #d6d3d1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   display: block;
@@ -13759,9 +13759,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .floor-label {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.44rem, 0.50vw, 0.62rem);
-  font-weight: 700;
-  color: #a8a29e;
+  font-size: clamp(0.52rem, 0.60vw, 0.74rem);
+  font-weight: 800;
+  color: #d6d3d1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   display: block;
@@ -13851,10 +13851,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(0.85rem, 1.08vw, 1.38rem);
   font-weight: 900;
-  color: #f5f5f7;
+  color: #ffffff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow: 0 0 14px rgba(255, 77, 82, 0.25);
   display: block;
 }
 
