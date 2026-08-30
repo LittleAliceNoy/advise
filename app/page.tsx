@@ -932,22 +932,22 @@ export default function Home() {
 
           <div className="intro3-dilemma-grid" aria-label="Competing clinical requirements: steroid ceiling versus inflammation floor, resolved by systemic immunosuppression">
             
-            {/* TOP ROW: DUAL CLINICAL CONSTRAINTS + BALANCE CONVERGENCE */}
+            {/* TOP ROW: DUAL CLINICAL CONSTRAINTS + HERO BALANCE SCALE */}
             <div className="dilemma-top-row">
               
               {/* LEFT CONSTRAINT: STEROID CEILING */}
               <div className="dilemma-column col-steroid-ceiling">
                 <div className="constraint-header">
                   <div className="constraint-icon icon-shield-down" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="dilemma-svg">
-                      <path d="M12 2 L20 6 V13 C20 18 12 22 12 22 C12 22 4 18 4 13 V6 Z" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
-                      <path d="M12 7 v8 M9 12 l3 3 3-3" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg viewBox="0 0 36 44" className="dilemma-svg-large">
+                      <path d="M18 2 L32 7 V22 C32 32 18 40 18 40 C18 40 4 32 4 22 V7 Z" fill="rgba(255, 45, 45, 0.08)" stroke="#ff4d52" strokeWidth="1.8" strokeLinejoin="round" />
+                      <path d="M18 12 V28 M12 22 L18 28 L24 22" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="constraint-title-block">
                     <strong className="constraint-title">STEROID CEILING</strong>
                     <p className="constraint-desc">
-                      Oral corticosteroids alone do <strong>not</strong> control inflammation at doses sufficiently low for long-term use.
+                      Oral corticosteroids alone do <span className="red-bold-word">not</span> control inflammation at doses sufficiently low for long-term use.
                     </p>
                   </div>
                 </div>
@@ -956,44 +956,93 @@ export default function Home() {
                   <span className="box-pointer" aria-hidden="true">▼</span>
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose">≤7.5</strong>
-                    <span className="ceiling-unit">MG / DAY</span>
                   </div>
+                  <span className="ceiling-unit">MG / DAY</span>
                   <small className="ceiling-label">LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
                 </div>
               </div>
 
-              {/* CENTER CONVERGENCE: BALANCE SCALE & SYSTEMIC IMMUNOSUPPRESSION */}
+              {/* CENTER CONVERGENCE: HERO BALANCE SCALE & SYSTEMIC IMMUNOSUPPRESSION */}
               <div className="dilemma-column col-balance-convergence">
-                <div className="balance-scale-wrapper">
-                  <div className="balance-scale-icon" aria-hidden="true">
-                    <svg viewBox="0 0 80 60" className="scale-svg">
-                      {/* Fulcrum and Stand */}
-                      <path d="M40 18 v30 M28 50 h24" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeLinecap="round" />
-                      <circle cx="40" cy="18" r="3.5" fill="#ff4d52" stroke="#ffffff" strokeWidth="1" />
-                      {/* Beam */}
-                      <path d="M16 22 L64 22" stroke="rgba(255,255,255,0.6)" strokeWidth="1.4" strokeLinecap="round" />
-                      {/* Left Pan (Shield) */}
-                      <path d="M16 22 L10 34 H22 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
-                      <path d="M16 38 L20 40 V45 C20 48 16 50 16 50 C16 50 12 48 12 45 V40 Z" fill="none" stroke="#ff4d52" strokeWidth="1.2" />
-                      <path d="M14 44 l1.5 1.5 3-3" fill="none" stroke="#ff4d52" strokeWidth="1.2" />
-                      {/* Right Pan (Eye) */}
-                      <path d="M64 22 L58 34 H70 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
-                      <circle cx="64" cy="44" r="5" fill="none" stroke="#c084fc" strokeWidth="1.2" />
-                      <circle cx="64" cy="44" r="2" fill="#c084fc" />
+                
+                <div className="balance-scale-hero-wrapper">
+                  {/* Left connector arrow */}
+                  <div className="scale-connector connector-left" aria-hidden="true">
+                    <span className="connector-arrow">◀</span>
+                    <span className="connector-line" />
+                  </div>
+
+                  {/* Hero Balance Scale SVG Circle */}
+                  <div className="scale-hero-circle">
+                    <svg viewBox="0 0 160 140" className="scale-hero-svg" aria-label="Balance scale weighing steroid ceiling against inflammation floor">
+                      <defs>
+                        <filter id="pivot-glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3.5" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                        <radialGradient id="shield-cargo-grad" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(255,45,45,0.3)" />
+                          <stop offset="100%" stopColor="rgba(255,45,45,0.02)" />
+                        </radialGradient>
+                        <radialGradient id="eye-cargo-grad" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(192,132,252,0.3)" />
+                          <stop offset="100%" stopColor="rgba(192,132,252,0.02)" />
+                        </radialGradient>
+                      </defs>
+
+                      {/* Scale Base & Stand */}
+                      <path d="M 52 120 Q 80 114 108 120 L 114 125 H 46 Z" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" />
+                      <line x1="80" y1="40" x2="80" y2="116" stroke="rgba(255,255,255,0.6)" strokeWidth="1.8" />
+                      <line x1="76" y1="52" x2="76" y2="114" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                      <line x1="84" y1="52" x2="84" y2="114" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+
+                      {/* Central Pivot with high intensity red glow */}
+                      <circle cx="80" cy="38" r="8" fill="#08080c" stroke="rgba(255,255,255,0.8)" strokeWidth="1.4" />
+                      <circle cx="80" cy="38" r="4" fill="#ff4d52" filter="url(#pivot-glow)" />
+
+                      {/* Balance Beam */}
+                      <path d="M 28 44 Q 80 34 132 44" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" />
+                      <circle cx="28" cy="44" r="3" fill="#08080c" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" />
+                      <circle cx="132" cy="44" r="3" fill="#08080c" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" />
+
+                      {/* Left Pan (Shield Cargo) */}
+                      <line x1="28" y1="47" x2="16" y2="82" stroke="rgba(255,255,255,0.4)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                      <line x1="28" y1="47" x2="40" y2="82" stroke="rgba(255,255,255,0.4)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                      <path d="M 12 82 Q 28 90 44 82" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.3" />
+                      <path d="M 28 56 L 38 61 V 73 C 38 80 28 85 28 85 C 28 85 18 80 18 73 V 61 Z" fill="url(#shield-cargo-grad)" stroke="#ff4d52" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M 23 70 L 26.5 73.5 L 33 66" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+
+                      {/* Right Pan (Eye Cargo) */}
+                      <line x1="132" y1="47" x2="120" y2="82" stroke="rgba(255,255,255,0.4)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                      <line x1="132" y1="47" x2="144" y2="82" stroke="rgba(255,255,255,0.4)" strokeWidth="1.1" strokeDasharray="2 1.5" />
+                      <path d="M 116 82 Q 132 90 148 82" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.3" />
+                      <path d="M 118 70 Q 132 58 146 70 Q 132 82 118 70 Z" fill="url(#eye-cargo-grad)" stroke="#c084fc" strokeWidth="1.5" />
+                      <circle cx="132" cy="70" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.2" />
+                      <circle cx="132" cy="70" r="2" fill="#ff4d52" filter="url(#pivot-glow)" />
                     </svg>
                   </div>
-                  <span className="balance-label">BOTH ARE REQUIRED</span>
-                  <span className="balance-arrow-down" aria-hidden="true">↓</span>
+
+                  {/* Right connector arrow */}
+                  <div className="scale-connector connector-right" aria-hidden="true">
+                    <span className="connector-line" />
+                    <span className="connector-arrow">▶</span>
+                  </div>
                 </div>
+
+                <span className="balance-label">BOTH ARE REQUIRED</span>
+                <span className="balance-arrow-down" aria-hidden="true">↓</span>
 
                 {/* THE CORE SOLUTION: SYSTEMIC IMMUNOSUPPRESSION */}
                 <div className="immunosuppression-capsule">
                   <div className="capsule-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="dilemma-svg">
-                      <circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                      <path d="M3 18 C3 14 6 13 9 13 C12 13 15 14 15 18" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                      <circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" strokeWidth="1.2" />
-                      <path d="M15 14 C17 14 21 15 21 18" fill="none" stroke="currentColor" strokeWidth="1.2" />
+                      <circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      <path d="M3 18 C3 14 6 13 9 13 C12 13 15 14 15 18" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" strokeWidth="1.3" />
+                      <path d="M15 14 C17 14 21 15 21 18" fill="none" stroke="currentColor" strokeWidth="1.3" />
                     </svg>
                   </div>
                   <div className="capsule-content">
@@ -1001,30 +1050,32 @@ export default function Home() {
                     <small className="capsule-desc">Needed to achieve both goals</small>
                   </div>
                 </div>
+
+                <span className="balance-arrow-down arrow-to-res" aria-hidden="true">↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR */}
               <div className="dilemma-column col-inflammation-floor">
-                <div className="constraint-header">
-                  <div className="constraint-icon icon-eye-target" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="dilemma-svg">
-                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" fill="none" stroke="#c084fc" strokeWidth="1.6" />
-                      <circle cx="12" cy="12" r="4.5" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.5" />
-                      <circle cx="12" cy="12" r="2" fill="#ff4d52" />
-                    </svg>
-                  </div>
-                  <div className="constraint-title-block">
+                <div className="constraint-header header-right-flex">
+                  <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc desc-inflammation">
-                      <strong>EVEN LOW-LEVEL INFLAMMATION</strong><br />
+                      Even low-level inflammation<br />
                       <span className="red-highlight-bold">→ WORSE VISUAL ACUITY OUTCOMES</span>
                     </p>
+                  </div>
+                  <div className="constraint-icon icon-eye-target" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" className="dilemma-svg-large">
+                      <path d="M4 22 Q22 8 40 22 Q22 36 4 22 Z" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.8" />
+                      <circle cx="22" cy="22" r="7" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.5" />
+                      <circle cx="22" cy="22" r="3" fill="#ff4d52" />
+                    </svg>
                   </div>
                 </div>
 
                 <div className="floor-box">
                   <span className="box-pointer pointer-right" aria-hidden="true">▼</span>
-                  <strong className="floor-title">INACTIVE UVEITIS</strong>
+                  <strong className="floor-title">INACTIVE<br />UVEITIS</strong>
                   <small className="floor-label">COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
@@ -1036,10 +1087,10 @@ export default function Home() {
               <div className="resolution-equation-block">
                 <div className="resolution-item res-disease">
                   <div className="res-icon-circle" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="res-eye-icon">
-                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.3" />
-                      <path d="m9.5 12 1.8 1.8 3.5-3.6" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg viewBox="0 0 32 32" className="res-eye-icon">
+                      <path d="M3 16 Q16 6 29 16 Q16 26 3 16 Z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                      <circle cx="16" cy="16" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      <path d="m13 16 2.2 2.2 4.5-4.5" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <span className="res-label">INACTIVE<br />UVEITIS</span>
@@ -1056,9 +1107,9 @@ export default function Home() {
 
                 <div className="resolution-item res-outcome">
                   <div className="res-shield-circle" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="res-shield-icon">
-                      <path d="M12 2 L20 6 V13 C20 18 12 22 12 22 C12 22 4 18 4 13 V6 Z" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <path d="M8.5 12 L11 14.5 L16.5 9" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg viewBox="0 0 32 36" className="res-shield-icon">
+                      <path d="M16 2 L28 7 V18 C28 26 16 34 16 34 C16 34 4 26 4 18 V7 Z" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.8" />
+                      <path d="M10.5 17.5 L14.5 21.5 L22 13" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <span className="res-outcome-text">SUCCESSFUL<br />CORTICOSTEROID<br />SPARING</span>
@@ -1081,17 +1132,18 @@ export default function Home() {
                   </div>
                   <div className="must-panel-titles">
                     <span className="must-badge-tag">LANDMARK EVIDENCE</span>
-                    <strong className="must-main-title">MUST TRIAL · 7-YEAR FOLLOW-UP</strong>
+                    <strong className="must-main-title">MUST TRIAL</strong>
+                    <span className="must-sub-tag">7-YEAR FOLLOW-UP</span>
                   </div>
                 </div>
 
                 <div className="must-panel-body">
+                  <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
                   <p className="must-body-claim">
-                    <span className="regimen-brief">Systemic therapy</span>
                     <span className="claim-arrow">→</span>
                     <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
                   </p>
-                  <small className="must-body-comparator">vs intravitreal corticosteroid implant strategy</small>
+                  <small className="must-body-comparator">compared with long-acting intravitreal corticosteroid implant strategy</small>
                 </div>
               </div>
             </div>
@@ -1101,8 +1153,10 @@ export default function Home() {
               {/* HERO TRAJECTORY VECTOR */}
               <div className="dilemma-trajectory-bar" aria-label="Steroid tapering trajectory from 7.5 to 0 mg/day">
                 <div className="bar-node start-node">
-                  <strong>7.5</strong>
-                  <small>MG / DAY</small>
+                  <div className="start-node-numbers">
+                    <strong>7.5</strong>
+                    <small>MG / DAY</small>
+                  </div>
                   <span className="bar-tick" />
                 </div>
 
@@ -1113,8 +1167,10 @@ export default function Home() {
 
                 <div className="bar-node end-node">
                   <span className="bar-arrow" aria-hidden="true">►</span>
-                  <strong>0</strong>
-                  <small>MG / DAY</small>
+                  <div className="end-node-numbers">
+                    <strong>0</strong>
+                    <small>MG / DAY</small>
+                  </div>
                 </div>
               </div>
 
@@ -1124,13 +1180,13 @@ export default function Home() {
                   <span className="ring-dot" />
                 </div>
                 <div className="goal-content">
-                  <span className="goal-tag">FURTHER CLINICAL GOAL</span>
+                  <span className="goal-tag">FARTHER CLINICAL GOAL</span>
                   <div className="goal-equation">
                     <span className="goal-item">INACTIVE UVEITIS</span>
                     <div className="goal-eye-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" className="mini-eye-svg">
-                        <path d="M2 10s2.8-5 8-5 8 5 8 5-2.8 5-8 5-8-5-8-5Z" fill="none" stroke="#c084fc" strokeWidth="1.2" />
-                        <path d="m7.5 10 1.5 1.5 3-3" fill="none" stroke="#c084fc" strokeWidth="1.4" />
+                      <svg viewBox="0 0 24 24" className="mini-eye-svg">
+                        <path d="M2 12 Q12 4 22 12 Q12 20 2 12 Z" fill="none" stroke="#c084fc" strokeWidth="1.5" />
+                        <path d="m9 12 2 2 4.5-4.5" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                     <span className="goal-op">+</span>
@@ -1138,9 +1194,9 @@ export default function Home() {
                     <span className="goal-unit">MG / DAY</span>
                     <span className="goal-op">=</span>
                     <div className="goal-shield-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" className="mini-shield-svg">
-                        <path d="M10 2 L17 5 V11 C17 15 10 18 10 18 C10 18 3 15 3 11 V5 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.2" />
-                        <path d="M7 10 L9 12 L13 8" fill="none" stroke="#c084fc" strokeWidth="1.4" />
+                      <svg viewBox="0 0 24 26" className="mini-shield-svg">
+                        <path d="M12 2 L22 6 V14 C22 20 12 24 12 24 C12 24 2 20 2 14 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.5" />
+                        <path d="M8 13 L11 16 L16 10" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                     <strong className="goal-outcome-title">SUCCESSFUL CORTICOSTEROID DISCONTINUATION</strong>

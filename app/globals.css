@@ -13587,16 +13587,25 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .constraint-header {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.85rem;
   align-items: flex-start;
 }
 
+.header-right-flex {
+  justify-content: flex-end;
+}
+
 .constraint-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
+}
+
+.dilemma-svg-large {
+  width: 100%;
+  height: 100%;
 }
 
 .dilemma-svg {
@@ -13609,8 +13618,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
 }
 
+.title-block-right {
+  text-align: right;
+}
+
 .constraint-title {
-  font: 800 clamp(0.68rem, 0.78vw, 0.95rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.70rem, 0.82vw, 1.0rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -13622,39 +13635,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .constraint-desc {
-  font: 400 clamp(0.58rem, 0.68vw, 0.84rem) var(--font-geist-mono), monospace;
+  font: 400 clamp(0.56rem, 0.66vw, 0.82rem) var(--font-geist-mono), monospace;
   color: #b5aaa6;
   line-height: 1.35;
   margin: 0.15rem 0 0;
 }
 
-.constraint-desc strong {
+.red-bold-word {
   color: #ff4d52;
+  font-weight: 800;
 }
 
 .desc-inflammation {
-  font-size: clamp(0.66rem, 0.76vw, 0.94rem) !important;
-  color: #ded7d3 !important;
-  line-height: 1.32 !important;
-}
-
-.desc-inflammation strong {
-  color: #ffffff !important;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-size: clamp(0.56rem, 0.66vw, 0.82rem);
+  color: #b5aaa6;
+  line-height: 1.35;
 }
 
 .red-highlight-bold {
   color: #ff4d52;
   font-weight: 800;
-  font-size: clamp(0.72rem, 0.84vw, 1.05rem);
+  font-size: clamp(0.66rem, 0.78vw, 0.98rem);
   display: block;
   margin-top: 0.15rem;
-  text-shadow: 0 0 12px rgba(255, 77, 82, 0.7);
+  text-shadow: 0 0 10px rgba(255, 77, 82, 0.6);
 }
 
-.col-inflammation-floor .constraint-icon {
-  filter: drop-shadow(0 0 10px rgba(255, 77, 82, 0.7));
+.icon-eye-target {
+  filter: drop-shadow(0 0 12px rgba(255, 77, 82, 0.75));
 }
 
 .ceiling-box {
@@ -13662,10 +13670,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1.5px solid rgba(255, 77, 82, 0.5);
   background: linear-gradient(135deg, rgba(255, 45, 45, 0.08) 0%, rgba(20, 6, 8, 0.85) 100%);
   border-radius: 4px;
-  padding: clamp(0.45rem, 0.85vh, 0.75rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  padding: clamp(0.5rem, 0.9vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.4rem);
   text-align: center;
   position: relative;
-  box-shadow: 0 0 18px rgba(255, 45, 45, 0.12);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.14);
 }
 
 .box-pointer {
@@ -13684,65 +13692,67 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .ceiling-dose-wrap {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
 }
 
 .ceiling-dose {
-  font: 900 clamp(2.4rem, 3.3vw, 4.2rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(3.2rem, 4.4vw, 5.2rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  line-height: 0.85;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.35);
 }
 
 .ceiling-unit {
   font: 700 clamp(0.52rem, 0.60vw, 0.74rem) var(--font-geist-mono), monospace;
   color: #a8a29e;
-  margin-left: 0.35rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 0.2rem;
 }
 
 .ceiling-label {
-  font: 700 clamp(0.44rem, 0.50vw, 0.60rem) var(--font-geist-mono), monospace;
-  color: #ded7d3;
+  font: 700 clamp(0.42rem, 0.48vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #8c827e;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
 /* Right Constraint: Inflammation Floor (High Luminance & Visual Authority) */
 .floor-box {
   margin-top: 0.5rem;
-  border: 1.5px solid rgba(192, 132, 252, 0.65);
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.12) 0%, rgba(14, 8, 20, 0.9) 100%);
+  border: 1.5px solid rgba(192, 132, 252, 0.6);
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.1) 0%, rgba(14, 8, 20, 0.9) 100%);
   border-radius: 4px;
-  padding: clamp(0.55rem, 0.95vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  padding: clamp(0.5rem, 0.9vh, 0.85rem) clamp(0.8rem, 1.2vw, 1.4rem);
   text-align: center;
   position: relative;
   box-shadow: 0 0 24px rgba(192, 132, 252, 0.18);
 }
 
 .floor-title {
-  font: 900 clamp(1.3rem, 1.75vw, 2.2rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(1.4rem, 1.85vw, 2.35rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   display: block;
-  line-height: 1;
+  line-height: 1.05;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .floor-label {
-  font: 700 clamp(0.44rem, 0.50vw, 0.60rem) var(--font-geist-mono), monospace;
-  color: #e5dfdb;
+  font: 700 clamp(0.42rem, 0.48vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #8c827e;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   display: block;
-  margin-top: 0.35rem;
+  margin-top: 0.25rem;
 }
 
-/* Center Balance Scale & Immunosuppression Capsule */
+/* Center Hero Balance Scale */
 .col-balance-convergence {
   display: flex;
   flex-direction: column;
@@ -13751,58 +13761,93 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
 }
 
-.balance-scale-wrapper {
+.balance-scale-hero-wrapper {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.scale-connector {
+  flex: 1;
+  display: flex;
   align-items: center;
 }
 
-.balance-scale-icon {
-  width: 76px;
-  height: 56px;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+.connector-line {
+  flex: 1;
+  height: 1px;
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.28);
+}
+
+.connector-arrow {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+.connector-left .connector-arrow {
+  margin-right: 2px;
+}
+
+.connector-right .connector-arrow {
+  margin-left: 2px;
+}
+
+.scale-hero-circle {
+  width: clamp(120px, 11vw, 150px);
+  height: clamp(120px, 11vw, 150px);
+  border: 1.5px dashed rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(10, 10, 15, 0.6);
+  background: radial-gradient(circle, rgba(255, 45, 45, 0.08) 0%, rgba(10, 8, 14, 0.85) 70%);
+  box-shadow: 0 0 25px rgba(255, 45, 45, 0.15);
+  flex-shrink: 0;
+  margin: 0 0.4rem;
 }
 
-.scale-svg {
-  width: 58px;
-  height: 44px;
+.scale-hero-svg {
+  width: 90%;
+  height: 90%;
 }
 
 .balance-label {
-  font: 800 clamp(0.48rem, 0.55vw, 0.68rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.52rem, 0.60vw, 0.74rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
 }
 
 .balance-arrow-down {
   color: #ff4d52;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1;
-  margin: 0.15rem 0;
+  margin: 0.1rem 0;
+}
+
+.arrow-to-res {
+  margin-top: 0.2rem;
 }
 
 .immunosuppression-capsule {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  border: 1px solid rgba(255, 77, 82, 0.5);
-  background: linear-gradient(90deg, rgba(255, 45, 45, 0.12) 0%, rgba(18, 8, 12, 0.9) 100%);
-  border-radius: 4px;
-  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.6rem, 0.9vw, 1.1rem);
-  box-shadow: 0 0 14px rgba(255, 45, 45, 0.15);
+  gap: 0.75rem;
+  border: 1.5px solid rgba(255, 77, 82, 0.55);
+  background: linear-gradient(90deg, rgba(255, 45, 45, 0.15) 0%, rgba(18, 8, 14, 0.95) 100%);
+  border-radius: 6px;
+  padding: clamp(0.4rem, 0.7vh, 0.65rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  box-shadow: 0 0 18px rgba(255, 45, 45, 0.2);
   width: 100%;
   box-sizing: border-box;
 }
 
 .capsule-icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   color: #ff8085;
   flex-shrink: 0;
 }
@@ -13813,7 +13858,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .capsule-title {
-  font: 800 clamp(0.55rem, 0.64vw, 0.78rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.58rem, 0.68vw, 0.84rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -13848,13 +13893,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .resolution-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .res-icon-circle {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   color: #ff8085;
   display: grid;
   place-items: center;
@@ -13867,14 +13913,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .res-label {
-  font: 800 clamp(0.65rem, 0.76vw, 0.95rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.58rem, 0.68vw, 0.85rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   line-height: 1.15;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .res-operator {
-  font: 300 clamp(1.4rem, 1.8vw, 2.4rem) var(--font-geist-mono), monospace;
+  font: 300 clamp(1.6rem, 2.2vw, 2.8rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   line-height: 1;
 }
@@ -13886,10 +13933,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .res-dose-num {
-  font: 900 clamp(2.2rem, 3.0vw, 3.8rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(2.6rem, 3.6vw, 4.4rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
-  line-height: 0.85;
-  text-shadow: 0 0 16px rgba(255, 77, 82, 0.5);
+  line-height: 0.82;
+  text-shadow: 0 0 18px rgba(255, 77, 82, 0.55);
 }
 
 .res-dose-unit {
@@ -13900,8 +13947,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .res-shield-circle {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -13910,14 +13957,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .res-shield-icon {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 6px rgba(255, 77, 82, 0.5));
+  filter: drop-shadow(0 0 8px rgba(255, 77, 82, 0.55));
 }
 
 .res-outcome-text {
-  font: 800 clamp(0.65rem, 0.76vw, 0.95rem) var(--font-geist-mono), monospace;
+  font: 800 clamp(0.58rem, 0.68vw, 0.85rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   line-height: 1.15;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .curly-bracket-wrap {
@@ -13926,30 +13974,30 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .curly-bracket {
-  font: 200 clamp(3.0rem, 4.0vw, 5.2rem) sans-serif;
+  font: 200 clamp(3.2rem, 4.4vw, 5.6rem) sans-serif;
   color: rgba(255, 77, 82, 0.6);
   line-height: 0.8;
 }
 
-/* MUST Landmark Evidence Stamp (Subordinate, compact proof point) */
+/* MUST Landmark Evidence Stamp */
 .must-landmark-panel {
   background: rgba(14, 8, 12, 0.85);
-  border: 1px solid rgba(255, 77, 82, 0.35);
+  border: 1px solid rgba(255, 77, 82, 0.4);
   border-radius: 4px;
-  padding: clamp(0.4rem, 0.7vh, 0.65rem) clamp(0.7rem, 1.1vw, 1.3rem);
-  box-shadow: 0 0 14px rgba(255, 45, 45, 0.1);
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  box-shadow: 0 0 16px rgba(255, 45, 45, 0.12);
 }
 
 .must-panel-header {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 0.2rem;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
 }
 
 .must-star-badge {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
@@ -13960,21 +14008,30 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .must-panel-titles {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .must-badge-tag {
-  font: 700 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
+  font: 700 clamp(0.38rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
   color: #ff8085;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: block;
+  width: 100%;
 }
 
 .must-main-title {
-  font: 800 clamp(0.76rem, 0.92vw, 1.15rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(0.88rem, 1.1vw, 1.4rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+}
+
+.must-sub-tag {
+  font: 700 clamp(0.44rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  letter-spacing: 0.06em;
+  margin-left: 0.4rem;
 }
 
 .must-panel-body {
@@ -13982,30 +14039,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
 }
 
+.must-body-regimen {
+  font: 600 clamp(0.42rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
+  color: #ded7d3;
+  margin: 0;
+}
+
 .must-body-claim {
   font-family: var(--font-geist-mono), monospace;
-  margin: 0.05rem 0;
+  margin: 0.1rem 0;
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 
-.regimen-brief {
-  font: 600 clamp(0.44rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
-  color: #c9c3bf;
-}
-
 .claim-highlight {
-  font-size: clamp(0.56rem, 0.66vw, 0.84rem);
+  font-size: clamp(0.58rem, 0.70vw, 0.88rem);
   font-weight: 800;
   color: #ff4d52;
   letter-spacing: 0.02em;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.5);
+  text-shadow: 0 0 10px rgba(255, 77, 82, 0.6);
 }
 
 .must-body-comparator {
-  font: 500 clamp(0.38rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
-  color: #8c827e;
+  font: 500 clamp(0.38rem, 0.44vw, 0.52rem) var(--font-geist-mono), monospace;
+  color: #78716c;
   margin: 0;
   display: block;
 }
@@ -14034,6 +14092,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-family: var(--font-geist-mono), monospace;
 }
 
+.start-node-numbers,
+.end-node-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.end-node-numbers {
+  align-items: flex-end;
+}
+
 .start-node strong {
   font: 900 clamp(1.4rem, 1.8vw, 2.4rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
@@ -14050,10 +14119,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .bar-tick {
   width: 2px;
-  height: 16px;
+  height: 20px;
   background: #ff4d52;
   display: inline-block;
-  margin-left: 0.3rem;
+  margin-left: 0.4rem;
 }
 
 .bar-channel {
