@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist-8ac0455e797f/geist-98bbbccb.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --font-geist-mono: 'Geist Mono', -apple-system, BlinkMacSystemFont, 'SF Mono', monospace;
+  --font-geist-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
   --black: #050505;
   --panel: #0b0b0c;
   --white: #f2f0ec;
@@ -11,8 +29,8 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; background: var(--black); color: var(--white); overflow: hidden; }
-body { font-family: Arial, Helvetica, sans-serif; }
+html, body { margin: 0; background: var(--black); color: var(--white); overflow: hidden; font-variant-numeric: no-slashed-zero; font-feature-settings: "zero" 0; }
+body { font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; }
 button { font: inherit; }
 
 .deck { height: 100svh; overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none; background: var(--black); }
@@ -21,7 +39,7 @@ button { font: inherit; }
 .scene::before { content: ""; position: absolute; inset: 0; z-index: -3; background: radial-gradient(circle at 72% 48%, rgba(128,0,0,.13), transparent 34%), linear-gradient(115deg, #050505 0%, #080808 70%, #020202 100%); }
 .scene::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 8; background: repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,.012) 5px); mix-blend-mode: screen; }
 .scene-copy { position: relative; z-index: 3; width: min(47rem, 48vw); }
-.eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1.6rem; color: #b8b5b1; font: 600 .7rem/1 var(--font-geist-mono), monospace; letter-spacing: .18em; }
+.eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1.6rem; color: #b8b5b1; font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; font-size: .72rem; font-weight: 600; line-height: 1; letter-spacing: .16em; text-transform: uppercase; }
 .eyebrow > span { width: .55rem; height: .55rem; border-radius: 50%; background: var(--red); box-shadow: 0 0 18px var(--red); animation: pulse 2s ease-in-out infinite; }
 h1, h2 { font-family: var(--font-geist-sans), Arial, sans-serif; font-weight: 450; letter-spacing: -.065em; line-height: .93; margin: 0; }
 h1 { font-size: clamp(4rem, 7.5vw, 8.4rem); }
@@ -30,11 +48,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .lede { color: #aaa8a4; font-size: clamp(.98rem, 1.25vw, 1.25rem); line-height: 1.6; max-width: 40rem; margin: 2rem 0 0; }
 
 .topbar { position: fixed; left: 2.2rem; right: 2.2rem; top: 1.8rem; z-index: 50; display: flex; justify-content: space-between; align-items: center; mix-blend-mode: difference; color: #fff; }
-.brand { border: 0; color: inherit; background: transparent; display: flex; align-items: center; gap: .7rem; font-size: .78rem; letter-spacing: .12em; cursor: pointer; }
+.brand { border: 0; color: inherit; background: transparent; display: flex; align-items: center; gap: .7rem; font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .12em; cursor: pointer; }
 .brand b { font-weight: 400; opacity: .5; }
 .brand-mark { width: 1.6rem; height: 1.1rem; border: 1px solid currentColor; border-radius: 50%; display: grid; place-items: center; }
 .brand-mark i { width: .35rem; height: .35rem; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); }
-.chapter-readout { display: flex; gap: .6rem; align-items: center; font: .65rem var(--font-geist-mono), monospace; letter-spacing: .12em; }
+.chapter-readout { display: flex; gap: .6rem; align-items: center; font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; font-size: .68rem; font-weight: 600; line-height: 1; letter-spacing: .12em; }
 .chapter-readout i { width: 2.5rem; height: 1px; background: #fff; opacity: .35; }
 .progress-track { position: fixed; z-index: 60; right: 0; top: 0; height: 100svh; width: 3px; background: rgba(255,255,255,.08); }
 .progress-track span { display: block; width: 100%; background: var(--red); box-shadow: 0 0 16px var(--red); transition: height .12s linear; }
@@ -12175,7 +12193,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: 0.7rem;
   margin: 0 0 0.5rem;
   color: #b8b5b1;
-  font: 600 clamp(0.56rem, 0.68vw, 0.78rem)/1 var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(0.56rem, 0.68vw, 0.78rem);
+  font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   white-space: nowrap;
