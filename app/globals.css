@@ -14071,7 +14071,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .claim-arrow {
   color: #ff4d52;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 900;
   line-height: 1;
   flex-shrink: 0;
@@ -14079,25 +14079,26 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .claim-approx {
   color: #ff4d52;
-  font-size: 0.95rem;
+  font-size: 0.84rem;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 400;
   flex-shrink: 0;
 }
 
 .claim-highlight {
-  font: 900 clamp(0.50rem, 0.60vw, 0.76rem) var(--font-geist-mono), monospace;
+  font: 900 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.55);
+  text-shadow: 0 0 6px rgba(255, 77, 82, 0.45);
 }
 
 .claim-safety-text {
-  font: 800 clamp(0.48rem, 0.56vw, 0.70rem) var(--font-geist-mono), monospace;
-  color: #f5f5f7;
+  font: 800 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
   letter-spacing: 0.02em;
   line-height: 1.2;
+  text-shadow: 0 0 6px rgba(255, 77, 82, 0.45);
 }
 
 .must-body-comparator {
