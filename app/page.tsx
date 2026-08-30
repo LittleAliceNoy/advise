@@ -1133,17 +1133,17 @@ export default function Home() {
                 <div className="must-panel-body">
                   <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
 
-                  <div className="must-findings-group" style={{ margin: "0.15rem 0", display: "flex", flexDirection: "column", gap: "0.18rem" }}>
+                  <div className="must-findings-group" style={{ margin: "0.15rem 0", display: "flex", flexDirection: "column", gap: "0.20rem" }}>
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.64rem, 0.78vw, 0.96rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
-                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.50rem, 0.62vw, 0.78rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.70rem, 0.86vw, 1.08rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
+                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.55rem, 0.68vw, 0.86rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         SUPERIOR LONG-TERM VISUAL ACUITY
                       </strong>
                     </div>
 
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "flex-start", gap: "0.35rem" }}>
-                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.68rem, 0.82vw, 1.02rem)", fontWeight: 300, lineHeight: 1.2, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.48rem, 0.58vw, 0.74rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.74rem, 0.90vw, 1.12rem)", fontWeight: 300, lineHeight: 1.2, flexShrink: 0 }}>≈</span>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.53rem, 0.65vw, 0.82rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS <span style={{ fontSize: "0.85em", fontWeight: 600, color: "#ded7d3", textShadow: "none" }}>(except increased antibiotic use for infections)</span>
                       </span>
                     </div>
