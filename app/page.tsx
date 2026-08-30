@@ -958,7 +958,7 @@ export default function Home() {
                     <strong className="ceiling-dose">≤7.5</strong>
                     <span className="ceiling-unit">MG / DAY</span>
                   </div>
-                  <small className="ceiling-label">DOSE SUFFICIENTLY LOW FOR LONG-TERM USE</small>
+                  <small className="ceiling-label">LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
                 </div>
               </div>
 
@@ -1009,14 +1009,14 @@ export default function Home() {
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="dilemma-svg">
                       <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" fill="none" stroke="#c084fc" strokeWidth="1.6" />
-                      <circle cx="12" cy="12" r="3.5" fill="rgba(255, 45, 45, 0.2)" stroke="#ff4d52" strokeWidth="1.4" />
-                      <circle cx="12" cy="12" r="1.5" fill="#ff4d52" />
+                      <circle cx="12" cy="12" r="4.5" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.5" />
+                      <circle cx="12" cy="12" r="2" fill="#ff4d52" />
                     </svg>
                   </div>
                   <div className="constraint-title-block">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
-                    <p className="constraint-desc">
-                      Even low-level inflammation<br />
+                    <p className="constraint-desc desc-inflammation">
+                      <strong>EVEN LOW-LEVEL INFLAMMATION</strong><br />
                       <span className="red-highlight-bold">→ WORSE VISUAL ACUITY OUTCOMES</span>
                     </p>
                   </div>
@@ -1070,7 +1070,7 @@ export default function Home() {
                 <span className="curly-bracket">{"}"}</span>
               </div>
 
-              {/* MUST TRIAL LANDMARK CARD */}
+              {/* MUST TRIAL LANDMARK EVIDENCE STAMP */}
               <div className="must-landmark-panel">
                 <div className="must-panel-header">
                   <div className="must-star-badge" aria-hidden="true">
@@ -1081,18 +1081,17 @@ export default function Home() {
                   </div>
                   <div className="must-panel-titles">
                     <span className="must-badge-tag">LANDMARK EVIDENCE</span>
-                    <strong className="must-main-title">MUST TRIAL</strong>
-                    <span className="must-sub-tag">7-YEAR FOLLOW-UP</span>
+                    <strong className="must-main-title">MUST TRIAL · 7-YEAR FOLLOW-UP</strong>
                   </div>
                 </div>
 
                 <div className="must-panel-body">
-                  <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
                   <p className="must-body-claim">
+                    <span className="regimen-brief">Systemic therapy</span>
                     <span className="claim-arrow">→</span>
                     <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
                   </p>
-                  <small className="must-body-comparator">compared with long-acting intravitreal corticosteroid implant strategy</small>
+                  <small className="must-body-comparator">vs intravitreal corticosteroid implant strategy</small>
                 </div>
               </div>
             </div>
