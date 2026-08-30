@@ -13838,18 +13838,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .balance-label {
-  font: 800 clamp(0.52rem, 0.60vw, 0.74rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.1em;
+  font: 700 clamp(0.38rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
+  color: #a8a29e;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: 0.35rem;
-}
-
-.balance-arrow-down {
-  color: #ff4d52;
-  font-size: 0.95rem;
-  line-height: 1;
-  margin: 0.1rem 0;
+  margin-top: 0.25rem;
 }
 
 /* Intermediate Immuno Block (Borderless, Center Aligned, Bold) */

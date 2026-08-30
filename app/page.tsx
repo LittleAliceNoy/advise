@@ -1030,7 +1030,14 @@ export default function Home() {
                   </div>
                 </div>
 
-                <span className="balance-label">BOTH ARE REQUIRED</span>
+                <span className="balance-label" style={{ fontSize: "clamp(0.38rem, 0.44vw, 0.54rem)", color: "#a8a29e", fontWeight: 700, letterSpacing: "0.08em", marginTop: "0.25rem" }}>BOTH ARE REQUIRED</span>
+
+                <div className="immunosuppression-text-wrap" style={{ marginTop: "0.15rem" }}>
+                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.95rem, 1.25vw, 1.55rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap" }}>SYSTEMIC IMMUNOSUPPRESSION</strong>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.68vw, 0.85rem)", fontWeight: 700, marginTop: "0.12rem" }}>Needed to achieve both goals</span>
+                </div>
+
+                <span className="arrow-to-res" aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR */}
@@ -1067,15 +1074,6 @@ export default function Home() {
                 </div>
               </div>
 
-            </div>
-
-            {/* SOLUTION CONNECTOR: SYSTEMIC IMMUNOSUPPRESSION (Borderless, Center Aligned, Bold) */}
-            <div className="immunosuppression-center-block">
-              <div className="immunosuppression-text-wrap">
-                <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.95rem, 1.25vw, 1.55rem)", fontWeight: 900, letterSpacing: "0.06em" }}>SYSTEMIC IMMUNOSUPPRESSION</strong>
-                <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.68vw, 0.85rem)", fontWeight: 700, marginTop: "0.2rem" }}>Needed to achieve both goals</span>
-              </div>
-              <span className="arrow-to-res" aria-hidden="true">↓</span>
             </div>
 
             {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR */}
