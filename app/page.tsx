@@ -1831,14 +1831,14 @@ export default function Home() {
                         </g>
 
                       </g>
-
-                      {/* Direct Title & Subtitle & Description Underneath Antibody Structure */}
-                      <g className="antibody-bottom-caption">
-                        <text x="270" y="412" fill="#ffffff" fontSize="28.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
-                        <text x="270" y="439" fill="#f5f5f5" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
-                        <text x="270" y="464" fill="#c4bfbb" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle" letterSpacing="0.01em">Binds to and neutralizes TNF-α, a protein that causes body-wide inflammation</text>
-                      </g>
                     </svg>
+                  </div>
+
+                  {/* PROMINENT HERO CAPTION UNDERNEATH ANTIBODY */}
+                  <div className="antibody-hero-caption-block">
+                    <h3 className="antibody-hero-name">ADALIMUMAB</h3>
+                    <h4 className="antibody-hero-sub">Fully human anti–TNF-α monoclonal antibody (IgG1)</h4>
+                    <p className="antibody-hero-desc">Binds to and neutralizes TNF-α, a protein that causes body-wide inflammation</p>
                   </div>
 
                 </div>

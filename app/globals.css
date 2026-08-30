@@ -14968,15 +14968,60 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.1rem, 0.2vh, 0.3rem) 0;
+  padding: 0;
 }
 
 .biologic-tall-svg {
   width: 100%;
   height: auto;
-  max-height: clamp(240px, 39vh, 410px);
+  max-height: clamp(200px, 32vh, 340px);
   overflow: visible;
   filter: drop-shadow(0 0 16px rgba(255, 45, 45, 0.22));
+}
+
+/* PROMINENT HERO CAPTION UNDERNEATH ANTIBODY */
+.antibody-hero-caption-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(0.2rem, 0.4vh, 0.5rem);
+  width: 100%;
+  padding-top: clamp(0.2rem, 0.5vh, 0.6rem);
+}
+
+.antibody-hero-name {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(1.8rem, 2.4vw, 3.2rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-shadow: 0 0 24px rgba(255, 45, 45, 0.25);
+}
+
+.antibody-hero-sub {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.82rem, 1.02vw, 1.35rem);
+  font-weight: 700;
+  color: #f5f5f5;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+.antibody-hero-desc {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.72rem, 0.90vw, 1.15rem);
+  font-weight: 500;
+  color: #d6d3d1;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  max-width: 95%;
 }
 
 /* ENTIRE RIGHT SIDE (ALIGNED ON THE SAME VERTICAL PLANE AS THE ANTIBODY) */
