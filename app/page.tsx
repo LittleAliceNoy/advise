@@ -1704,7 +1704,21 @@ export default function Home() {
                       <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <strong className="evidence-pct-stat stat-single">~40–60%</strong>
+                  <strong
+                    className="evidence-pct-stat stat-single"
+                    style={{
+                      fontSize: "clamp(2.6rem, 3.8vw, 4.8rem)",
+                      fontWeight: 900,
+                      lineHeight: 0.88,
+                      letterSpacing: "-0.03em",
+                      color: "#ff4d52",
+                      flexShrink: 0,
+                      display: "inline-block",
+                      textShadow: "0 0 28px rgba(255, 77, 82, 0.75), 0 0 10px rgba(255, 77, 82, 0.45)",
+                    }}
+                  >
+                    ~40–60%
+                  </strong>
                   <div className="evidence-text-block">
                     <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
                     <span className="evidence-subtext">with a single immunosuppressive agent</span>
@@ -1723,7 +1737,21 @@ export default function Home() {
                       <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
+                  <strong
+                    className="evidence-pct-stat stat-combo"
+                    style={{
+                      fontSize: "clamp(2.6rem, 3.8vw, 4.8rem)",
+                      fontWeight: 900,
+                      lineHeight: 0.88,
+                      letterSpacing: "-0.03em",
+                      color: "#c084fc",
+                      flexShrink: 0,
+                      display: "inline-block",
+                      textShadow: "0 0 28px rgba(192, 132, 252, 0.75), 0 0 10px rgba(192, 132, 252, 0.45)",
+                    }}
+                  >
+                    ~20–25%
+                  </strong>
                   <div className="evidence-text-block">
                     <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
                     <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
