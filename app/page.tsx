@@ -1728,8 +1728,7 @@ export default function Home() {
 
           <header className="intro5-header">
             <h2>
-              A targeted<br />
-              <em>alternative emerged.</em>
+              A targeted <em>alternative emerged.</em>
             </h2>
           </header>
 
