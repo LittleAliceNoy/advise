@@ -1145,10 +1145,10 @@ export default function Home() {
                       </strong>
                     </div>
 
-                    <div className="must-finding-line" style={{ display: "flex", alignItems: "flex-start", gap: "0.35rem" }}>
-                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.82rem, 1.00vw, 1.25rem)", fontWeight: 300, lineHeight: 1.2, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.60rem, 0.75vw, 0.94rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
-                        NO INCREASE IN SYSTEMIC SIDE EFFECTS <span style={{ fontSize: "0.85em", fontWeight: 600, color: "#ded7d3", textShadow: "none" }}>(except increased antibiotic use for infections)</span>
+                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
+                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.82rem, 1.00vw, 1.25rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.60rem, 0.75vw, 0.94rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                        NO INCREASE IN SYSTEMIC SIDE EFFECTS
                       </span>
                     </div>
                   </div>
