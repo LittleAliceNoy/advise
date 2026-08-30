@@ -1744,7 +1744,7 @@ export default function Home() {
                   
                   {/* Tall Modular Antibody Showcase SVG */}
                   <div className="biologic-tall-stage">
-                    <svg viewBox="0 0 500 385" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                    <svg viewBox="0 0 500 405" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
                       <defs>
                         <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
                           <stop offset="0%" stopColor="rgba(255, 45, 45, 0.42)" />
@@ -1834,8 +1834,8 @@ export default function Home() {
 
                       {/* Direct Title & Subtitle Underneath Antibody Structure */}
                       <g className="antibody-bottom-caption">
-                        <text x="250" y="348" fill="#ffffff" fontSize="17.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
-                        <text x="250" y="370" fill="#d6d3d1" fontSize="10.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
+                        <text x="250" y="352" fill="#ffffff" fontSize="23.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">ADALIMUMAB</text>
+                        <text x="250" y="380" fill="#e5e5e5" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
                       </g>
                     </svg>
                   </div>
