@@ -1284,229 +1284,299 @@ export default function Home() {
         <section id="systemic-strategies" className="scene intro4-scene">
           <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / CONVENTIONAL IMMUNOSUPPRESSION</p>
 
-          <header className="intro4-narrative-header">
-            <h2 className="intro4-hero-headline">
-              One agent may <span className="headline-red-accent">not be enough.</span>
-            </h2>
-            <p className="intro4-support-line">
-              Conventional immunosuppression uses a stepwise, multi-class strategy.
-            </p>
+          <header className="intro4-header">
+            <h2>CONVENTIONAL IMMUNOSUPPRESSION</h2>
+            <div className="intro4-subrule" aria-hidden="true">
+              <span className="subrule-line" />
+              <span className="subrule-text">THE ESTABLISHED SYSTEMIC TOOLKIT</span>
+              <span className="subrule-line" />
+            </div>
           </header>
 
-          <div className="intro4-pathway-canvas" aria-label="Conventional immunosuppression stepwise therapeutic pathway">
+          <div className="intro4-content-grid" aria-label="Conventional immunosuppression drug classes and stepwise strategy">
             
-            {/* HORIZONTAL THERAPEUTIC PATHWAY (OPEN COMPOSITION) */}
-            <div className="therapeutic-pathway-row">
+            {/* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual attention) */}
+            <div className="intro4-hero-territories">
               
-              {/* LEFT: ANTIMETABOLITES (INITIAL / FOUNDATION CLASS) */}
-              <div className="pathway-class-zone zone-antimetabolites">
-                <div className="class-zone-header">
-                  <div className="class-zone-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="shield-mini-svg">
-                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
-                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              {/* PRIMARY / FOUNDATION CLASS: ANTIMETABOLITES */}
+              <div className="pharma-territory territory-antimetabolites">
+                <div className="territory-header">
+                  <div className="territory-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <div className="class-zone-titles">
-                    <strong className="class-zone-name">ANTIMETABOLITES</strong>
-                    <span className="class-zone-role">INITIAL / FOUNDATION CLASS</span>
+                  <div className="territory-titles">
+                    <strong className="territory-class-name">ANTIMETABOLITES</strong>
+                    <span className="territory-class-tag">THE INITIAL / FOUNDATION CLASS</span>
                   </div>
                 </div>
 
-                <div className="pathway-drugs-stack">
-                  {/* Drug 1: Methotrexate */}
-                  <div className="pathway-drug-item">
-                    <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
-                      <svg viewBox="0 0 54 34" className="drug-svg">
-                        <defs>
-                          <linearGradient id="fade-tail-mtx" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-                            <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
-                            <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
-                            <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        {/* Horizontally Expanded Symmetrical Fused 2,4-diaminopteridine core */}
-                        {/* Left Hexagon (2,4-diaminopyrimidine) */}
-                        <polygon points="6,13 13.5,9.5 21,13 21,23 13.5,26.5 6,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        {/* Right Hexagon (pyrazine) */}
-                        <polygon points="21,13 28.5,9.5 36,13 36,23 28.5,26.5 21,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        
-                        {/* Shared Central Bond */}
-                        <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
-                        
-                        {/* Refined Double Bonds */}
-                        <line x1="8" y1="14.5" x2="12.5" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="8" y1="21.5" x2="12.5" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="29.5" y1="12" x2="34" y2="14.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="29.5" y1="24" x2="34" y2="21.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                <div className="antimetabolites-visual-core">
+                  {/* Left: 3 Drug Cards/Items */}
+                  <div className="drug-nodes-col">
+                    {/* Drug 1: Methotrexate */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
+                        <svg viewBox="0 0 54 34" className="drug-svg">
+                          <defs>
+                            <linearGradient id="fade-tail-mtx" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
+                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
+                              <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
+                            </linearGradient>
+                          </defs>
+                          {/* Horizontally Expanded Symmetrical Fused 2,4-diaminopteridine core */}
+                          {/* Left Hexagon (2,4-diaminopyrimidine) */}
+                          <polygon points="6,13 13.5,9.5 21,13 21,23 13.5,26.5 6,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          {/* Right Hexagon (pyrazine) */}
+                          <polygon points="21,13 28.5,9.5 36,13 36,23 28.5,26.5 21,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          
+                          {/* Shared Central Bond */}
+                          <line x1="21" y1="13" x2="21" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                          
+                          {/* Refined Double Bonds */}
+                          <line x1="8" y1="14.5" x2="12.5" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="8" y1="21.5" x2="12.5" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="29.5" y1="12" x2="34" y2="14.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="29.5" y1="24" x2="34" y2="21.5" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
 
-                        {/* 4-Amino Substituent (Top N) */}
-                        <line x1="13.5" y1="9.5" x2="13.5" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                        <text x="13.5" y="3.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          {/* 4-Amino Substituent (Top N) */}
+                          <line x1="13.5" y1="9.5" x2="13.5" y2="4.5" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="13.5" y="3.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
-                        {/* 2-Amino Substituent (Bottom-Left N) */}
-                        <line x1="6" y1="23" x2="2.5" y2="25.2" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                        <text x="1.8" y="26" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          {/* 2-Amino Substituent (Bottom-Left N) */}
+                          <line x1="6" y1="23" x2="2.5" y2="25.2" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="1.8" y="26" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
-                        {/* Nitrogen Heteroatoms (N1, N3, N5, N8) labeled as red 'N' */}
-                        <text x="6" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="13.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="28.5" y="9.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="28.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) labeled as red 'N' */}
+                          <text x="6" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="13.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="28.5" y="9.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="28.5" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
 
-                        {/* Smooth Dissolving Tail to PABA-Glutamate */}
-                        <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                          {/* Smooth Dissolving Tail to PABA-Glutamate */}
+                          <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">METHOTREXATE</strong>
+                        <span className="drug-moa">Folate antagonist</span>
+                      </div>
                     </div>
-                    <div className="drug-text-block">
-                      <strong className="drug-title-name">Methotrexate</strong>
-                      <span className="drug-subtitle-moa">folate antagonist</span>
+
+                    {/* Drug 2: Mycophenolate Mofetil */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
+                        <svg viewBox="0 0 54 34" className="drug-svg">
+                          <defs>
+                            <linearGradient id="fade-tail-mmf" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
+                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
+                              <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
+                            </linearGradient>
+                          </defs>
+                          {/* Horizontally Expanded Phthalide Core with Alternating Double Bonds */}
+                          {/* Left 5-membered Lactone Ring (Neat Symmetrical Pentagon) */}
+                          <polygon points="5,18 10.5,11 18.5,13 18.5,23 10.5,25" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          {/* Right 6-membered Aromatic Ring (Neat Symmetrical Hexagon) */}
+                          <polygon points="18.5,13 26,9.5 33.5,13 33.5,23 26,26.5 18.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          
+                          {/* Shared Central Bond */}
+                          <line x1="18.5" y1="13" x2="18.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+
+                          {/* Alternating Double Bonds in Aromatic Benzene Ring */}
+                          <line x1="19.8" y1="14.8" x2="19.8" y2="21.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="26.5" y1="11.5" x2="31.8" y2="14.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="26.5" y1="24.5" x2="31.8" y2="21.8" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+
+                          {/* Carbonyl (=O) on lactone in White 'O' */}
+                          <line x1="9.6" y1="11.2" x2="7.5" y2="5.5" stroke="#ffffff" strokeWidth="0.9" />
+                          <line x1="11.4" y1="11.8" x2="9.3" y2="6.1" stroke="#ffffff" strokeWidth="0.9" />
+                          <text x="7.5" y="4.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+                          
+                          {/* Ring Oxygen (-O-) node in White 'O' */}
+                          <text x="5" y="18" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+
+                          {/* Top Hydroxyl (-OH) group in White 'O' */}
+                          <line x1="26" y1="9.5" x2="26" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="26" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+
+                          {/* Bottom Methyl (-CH3) branching group in Purple */}
+                          <line x1="26" y1="26.5" x2="26" y2="31" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="26" cy="31" r="1.4" fill="#c084fc" />
+
+                          {/* Bottom-right Methoxy (-OCH3) group with White 'O' and Purple Tail */}
+                          <line x1="33.5" y1="23" x2="37" y2="25.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="38.5" y="26" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+                          <line x1="40" y1="26.5" x2="43.5" y2="24.5" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="43.5" cy="24.5" r="1.2" fill="#c084fc" />
+
+                          {/* Smooth Dissolving Tail to morpholinoethyl ester */}
+                          <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">MYCOPHENOLATE MOFETIL</strong>
+                        <span className="drug-moa">Inosine monophosphate dehydrogenase inhibitor</span>
+                      </div>
+                    </div>
+
+                    {/* Drug 3: Azathioprine */}
+                    <div className="drug-node-card">
+                      <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
+                        <svg viewBox="0 0 54 34" className="drug-svg">
+                          <defs>
+                            <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
+                              <stop offset="35%" stopColor="#c084fc" stopOpacity="0.65" />
+                              <stop offset="70%" stopColor="#c084fc" stopOpacity="0.25" />
+                              <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
+                            </linearGradient>
+                          </defs>
+                          {/* Horizontally Expanded Symmetrical Fused Purine Core */}
+                          {/* Left Hexagon (6-membered Pyrimidine) */}
+                          <polygon points="8.5,13 16,9.5 23.5,13 23.5,23 16,26.5 8.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          
+                          {/* Right Pentagon (5-membered Imidazole) */}
+                          <polygon points="23.5,13 31,10.5 36,18 31,25.5 23.5,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          
+                          {/* Shared Central Fused Bond */}
+                          <line x1="23.5" y1="13" x2="23.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                          
+                          {/* Refined Parallel Double Bonds in Purine Core */}
+                          <line x1="10.5" y1="14.5" x2="15" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          <line x1="10.5" y1="21.5" x2="15" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                          {/* Strictly Parallel Inner Bond in Pentagon */}
+                          <line x1="30" y1="12" x2="34" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
+
+                          {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) labeled as red 'N' */}
+                          <text x="8.5" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="16" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="31" y="10.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+                          <text x="31" y="25.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
+
+                          {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left in White 'S' */}
+                          <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="16" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">S</text>
+                          <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div className="drug-meta">
+                        <strong className="drug-name">AZATHIOPRINE</strong>
+                        <span className="drug-moa">Purine analog</span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Drug 2: Mycophenolate Mofetil */}
-                  <div className="pathway-drug-item">
-                    <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
-                      <svg viewBox="0 0 54 34" className="drug-svg">
-                        <defs>
-                          <linearGradient id="fade-tail-mmf" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-                            <stop offset="35%" stopColor="#c084fc" stopOpacity="0.6" />
-                            <stop offset="70%" stopColor="#c084fc" stopOpacity="0.2" />
-                            <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        {/* Horizontally Expanded Phthalide Core with Alternating Double Bonds */}
-                        {/* Left 5-membered Lactone Ring (Neat Symmetrical Pentagon) */}
-                        <polygon points="5,18 10.5,11 18.5,13 18.5,23 10.5,25" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        {/* Right 6-membered Aromatic Ring (Neat Symmetrical Hexagon) */}
-                        <polygon points="18.5,13 26,9.5 33.5,13 33.5,23 26,26.5 18.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        
-                        {/* Shared Central Bond */}
-                        <line x1="18.5" y1="13" x2="18.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+                  {/* Center: Glowing 3D Molecular Constellation Sphere (Red + White + Violet) */}
+                  <div className="molecular-sphere-hero" aria-hidden="true">
+                    <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
+                      <defs>
+                        <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(192, 132, 252, 0.22)" />
+                          <stop offset="55%" stopColor="rgba(147, 51, 234, 0.08)" />
+                          <stop offset="100%" stopColor="rgba(8, 6, 12, 0.9)" />
+                        </radialGradient>
+                        <filter id="mol-glow-red" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3.5" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                        <filter id="mol-glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="3.5" result="blur" />
+                          <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                      </defs>
 
-                        {/* Alternating Double Bonds in Aromatic Benzene Ring */}
-                        <line x1="19.8" y1="14.8" x2="19.8" y2="21.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="26.5" y1="11.5" x2="31.8" y2="14.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="26.5" y1="24.5" x2="31.8" y2="21.8" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
+                      {/* Outer Spherical Shell & Technical Orbits */}
+                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" />
+                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.35)" strokeWidth="1" strokeDasharray="3 3" />
+                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
 
-                        {/* Carbonyl (=O) on lactone in White 'O' */}
-                        <line x1="9.6" y1="11.2" x2="7.5" y2="5.5" stroke="#ffffff" strokeWidth="0.9" />
-                        <line x1="11.4" y1="11.8" x2="9.3" y2="6.1" stroke="#ffffff" strokeWidth="0.9" />
-                        <text x="7.5" y="4.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
-                        
-                        {/* Ring Oxygen (-O-) node in White 'O' */}
-                        <text x="5" y="18" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+                      {/* Chemical / Molecular Constellation Wireframe */}
+                      {/* Central Core Benzene/Pyrimidine Ring */}
+                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.8" />
+                      {/* Fused 5-Membered Imidazole Ring */}
+                      <polygon points="126,75 152,85 146,115 126,105" fill="none" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.8" />
+                      
+                      {/* Radiating Chemical Bonds */}
+                      <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="1.8" />
+                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.8" />
+                      <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.5" />
+                      <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="1.8" />
+                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.6" />
+                      <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1.4" />
 
-                        {/* Top Hydroxyl (-OH) group in White 'O' */}
-                        <line x1="26" y1="9.5" x2="26" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                        <text x="26" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
-
-                        {/* Bottom Methyl (-CH3) branching group in Purple */}
-                        <line x1="26" y1="26.5" x2="26" y2="31" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
-                        <circle cx="26" cy="31" r="1.4" fill="#c084fc" />
-
-                        {/* Bottom-right Methoxy (-OCH3) group with White 'O' and Purple Tail */}
-                        <line x1="33.5" y1="23" x2="37" y2="25.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                        <text x="38.5" y="26" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
-                        <line x1="40" y1="26.5" x2="43.5" y2="24.5" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
-                        <circle cx="43.5" cy="24.5" r="1.2" fill="#c084fc" />
-
-                        {/* Smooth Dissolving Tail to morpholinoethyl ester */}
-                        <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <div className="drug-text-block">
-                      <strong className="drug-title-name">Mycophenolate mofetil</strong>
-                      <span className="drug-subtitle-moa">inosine monophosphate dehydrogenase inhibitor</span>
-                    </div>
-                  </div>
-
-                  {/* Drug 3: Azathioprine */}
-                  <div className="pathway-drug-item">
-                    <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
-                      <svg viewBox="0 0 54 34" className="drug-svg">
-                        <defs>
-                          <linearGradient id="fade-tail-aza-left" x1="100%" y1="0%" x2="0%" y2="0%">
-                            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-                            <stop offset="35%" stopColor="#c084fc" stopOpacity="0.65" />
-                            <stop offset="70%" stopColor="#c084fc" stopOpacity="0.25" />
-                            <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        {/* Horizontally Expanded Symmetrical Fused Purine Core */}
-                        {/* Left Hexagon (6-membered Pyrimidine) */}
-                        <polygon points="8.5,13 16,9.5 23.5,13 23.5,23 16,26.5 8.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        
-                        {/* Right Pentagon (5-membered Imidazole) */}
-                        <polygon points="23.5,13 31,10.5 36,18 31,25.5 23.5,23" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
-                        
-                        {/* Shared Central Fused Bond */}
-                        <line x1="23.5" y1="13" x2="23.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
-                        
-                        {/* Refined Parallel Double Bonds in Purine Core */}
-                        <line x1="10.5" y1="14.5" x2="15" y2="12" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        <line x1="10.5" y1="21.5" x2="15" y2="24" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
-                        {/* Strictly Parallel Inner Bond in Pentagon */}
-                        <line x1="30" y1="12" x2="34" y2="18" stroke="#c084fc" strokeWidth="0.8" strokeLinecap="round" />
-
-                        {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) labeled as red 'N' */}
-                        <text x="8.5" y="13" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="16" y="26.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="31" y="10.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-                        <text x="31" y="25.5" fill="#ff4d52" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">N</text>
-
-                        {/* C6-Thiol Stem & Extended Smooth Dissolving Linker to Left in White 'S' */}
-                        <line x1="16" y1="9.5" x2="16" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                        <text x="16" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">S</text>
-                        <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <div className="drug-text-block">
-                      <strong className="drug-title-name">Azathioprine</strong>
-                      <span className="drug-subtitle-moa">purine analog</span>
-                    </div>
+                      {/* Atomic Nodes (Red, White, Violet Trinity) */}
+                      {/* Central Core Nodes */}
+                      <circle cx="100" cy="60" r="4.5" fill="#ffffff" />
+                      <circle cx="126" cy="75" r="4" fill="#c084fc" />
+                      <circle cx="126" cy="105" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                      <circle cx="100" cy="120" r="4" fill="#c084fc" />
+                      <circle cx="74" cy="105" r="4.5" fill="#ffffff" />
+                      <circle cx="74" cy="75" r="4" fill="#c084fc" />
+                      
+                      {/* Outer Valence Nodes */}
+                      <circle cx="100" cy="38" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                      <circle cx="152" cy="85" r="3.8" fill="#ff4d52" />
+                      <circle cx="146" cy="115" r="3.8" fill="#ffffff" />
+                      <circle cx="50" cy="120" r="3.8" fill="#c084fc" />
+                      <circle cx="34" cy="110" r="3.2" fill="#ffffff" />
+                      <circle cx="116" cy="146" r="4.2" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                      <circle cx="174" cy="76" r="3.8" fill="#c084fc" filter="url(#mol-glow-purple)" />
+                      <circle cx="148" cy="134" r="3.2" fill="#ffffff" />
+                    </svg>
                   </div>
                 </div>
               </div>
 
-              {/* CENTRAL ESCALATION CONNECTOR (+ / WHEN NEEDED / ADD ANOTHER CLASS) */}
-              <div className="pathway-escalation-node">
-                <div className="escalation-flow-track" aria-hidden="true">
-                  <span className="flow-dash-line line-left" />
-                  <div className="escalation-plus-circle" aria-label="Plus combination junction">
-                    <span className="escalation-plus-glyph">+</span>
-                  </div>
-                  <span className="flow-dash-line line-right" />
-                  <span className="flow-arrow-head">▶</span>
+              {/* SIMPLIFIED COMBINATION BRIDGE */}
+              <div className="escalation-bridge">
+                <div className="bridge-trajectory-top" aria-hidden="true">
+                  <svg viewBox="0 0 100 24" className="bridge-top-svg">
+                    <path d="M 0 20 Q 50 4 95 20" fill="none" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
+                  </svg>
                 </div>
 
-                <div className="escalation-labels-wrap">
-                  <span className="escalation-trigger-tag">WHEN NEEDED</span>
-                  <strong className="escalation-action-tag">ADD ANOTHER CLASS</strong>
-                  <span className="escalation-sub-note">if inflammation control or steroid sparing is inadequate</span>
+                <div className="bridge-pill">
+                  <strong className="bridge-main-text">COMBINATION WHEN NEEDED</strong>
+                  <span className="bridge-sub-text">to achieve inflammation control</span>
+                </div>
+
+                <div className="bridge-trajectory-bottom" aria-hidden="true">
+                  <svg viewBox="0 0 100 24" className="bridge-bottom-svg">
+                    <path d="M 0 4 Q 50 20 95 4" fill="none" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.4" strokeDasharray="3 3" />
+                  </svg>
                 </div>
               </div>
 
-              {/* RIGHT: CALCINEURIN INHIBITORS (COMMON ADD-ON CLASS) */}
-              <div className="pathway-class-zone zone-calcineurin">
-                <div className="class-zone-header">
-                  <div className="class-zone-badge badge-cni" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="shield-mini-svg">
-                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
-                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              {/* SECONDARY CLASS: CALCINEURIN INHIBITORS */}
+              <div className="pharma-territory territory-calcineurin">
+                <div className="territory-header">
+                  <div className="territory-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <div className="class-zone-titles">
-                    <strong className="class-zone-name">CALCINEURIN INHIBITORS</strong>
-                    <span className="class-zone-role role-addon">COMMON ADD-ON CLASS</span>
+                  <div className="territory-titles">
+                    <strong className="territory-class-name">CALCINEURIN INHIBITORS</strong>
+                    <span className="territory-class-tag territory-addon-tag">COMMON ADD-ON CLASS</span>
                   </div>
                 </div>
 
-                <div className="pathway-drugs-stack stack-cni">
+                <div className="calcineurin-cards-col">
                   {/* Drug 1: Cyclosporine */}
-                  <div className="pathway-drug-item">
+                  <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
                       <svg viewBox="0 0 44 44" className="cluster-svg">
                         <circle cx="22" cy="22" r="8" fill="#7c3aed" />
@@ -1518,14 +1588,14 @@ export default function Home() {
                         <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
-                    <div className="drug-text-block">
-                      <strong className="drug-title-name">Cyclosporine</strong>
-                      <span className="drug-subtitle-moa">calcineurin inhibition via cyclophilin binding</span>
+                    <div className="calcineurin-drug-info">
+                      <strong className="cni-drug-name">CYCLOSPORINE</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via cyclophilin binding</span>
                     </div>
                   </div>
 
                   {/* Drug 2: Tacrolimus */}
-                  <div className="pathway-drug-item">
+                  <div className="calcineurin-drug-box">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
                       <svg viewBox="0 0 44 44" className="cluster-svg">
                         <circle cx="22" cy="22" r="8" fill="#7c3aed" />
@@ -1537,9 +1607,9 @@ export default function Home() {
                         <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
-                    <div className="drug-text-block">
-                      <strong className="drug-title-name">Tacrolimus</strong>
-                      <span className="drug-subtitle-moa">calcineurin inhibition via FKBP binding</span>
+                    <div className="calcineurin-drug-info">
+                      <strong className="cni-drug-name">TACROLIMUS</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via FKBP binding</span>
                     </div>
                   </div>
                 </div>
@@ -1547,35 +1617,120 @@ export default function Home() {
 
             </div>
 
-            {/* RESTRAINED EVIDENCE BAND (PERCENTAGES AS EMPIRICAL PROOF) */}
-            <div className="pathway-evidence-band">
-              <div className="evidence-band-intro">
-                <span className="evidence-tiny-eyebrow">OBSERVATIONAL EVIDENCE</span>
+            {/* STEPWISE APPROACH PATHWAY (Subordinate Horizontal Flow) */}
+            <div className="stepwise-pathway-section">
+              <div className="intro4-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">THE ESTABLISHED STEPWISE APPROACH</span>
+                <span className="rule-bar" />
               </div>
 
-              <div className="evidence-band-grid">
-                {/* Proof 1: First-line foundation (~40–60%) */}
-                <div className="evidence-proof-card proof-foundation">
-                  <strong className="evidence-proof-pct pct-red">~40–60%</strong>
-                  <div className="evidence-proof-text">
-                    <strong className="proof-lead">successful corticosteroid sparing</strong>
-                    <span className="proof-sub">with a single immunosuppressive agent</span>
+              <div className="stepwise-steps-flow">
+                {/* Step 1 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <polygon points="9,6 18,12 9,18" fill="#ff4d52" stroke="#ff4d52" strokeWidth="1.5" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag">1 START</span>
+                    <strong className="step-title">ANTIMETABOLITE</strong>
+                    <span className="step-desc">First-line foundation therapy</span>
                   </div>
                 </div>
 
-                {/* Transition Flow: BUT SOME REQUIRE ESCALATION */}
-                <div className="evidence-transition-bridge" aria-label="Progression transition to escalation">
-                  <span className="transition-dash" aria-hidden="true" />
-                  <span className="transition-tag">BUT SOME REQUIRE ESCALATION</span>
-                  <span className="transition-arrow" aria-hidden="true">→</span>
+                {/* Connector Arrow 1 */}
+                <div className="step-arrow-wrap" aria-hidden="true">
+                  <span className="step-dotted-line" />
+                  <span className="step-arrowhead">▶</span>
                 </div>
 
-                {/* Proof 2: Escalation / combination (~20–25%) */}
-                <div className="evidence-proof-card proof-escalation">
-                  <strong className="evidence-proof-pct pct-violet">~20–25%</strong>
-                  <div className="evidence-proof-text">
-                    <strong className="proof-lead">need two immunosuppressive drugs</strong>
-                    <span className="proof-sub">to achieve successful corticosteroid sparing</span>
+                {/* Step 2 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <path d="M5 12 H19 M13 6 L19 12 L13 18" fill="none" stroke="#ff4d52" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag">2 IF NEEDED</span>
+                    <strong className="step-title">ADD ANOTHER CLASS</strong>
+                    <span className="step-desc">Often a calcineurin inhibitor</span>
+                  </div>
+                </div>
+
+                {/* Connector Arrow 2 */}
+                <div className="step-arrow-wrap" aria-hidden="true">
+                  <span className="step-dotted-line" />
+                  <span className="step-arrowhead">▶</span>
+                </div>
+
+                {/* Step 3 */}
+                <div className="step-item">
+                  <div className="step-icon-circle step-icon-goal" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="step-svg">
+                      <path d="M12 2 L20 6 V12 C20 17 12 21 12 21 C12 21 4 17 4 12 V6 Z" fill="rgba(255, 77, 82, 0.18)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="step-text-wrap">
+                    <span className="step-num-tag step-goal-tag">3 GOAL</span>
+                    <strong className="step-title">STEPWISE CONTROL</strong>
+                    <span className="step-desc">Achieve inflammation control and steroid sparing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SUPPORTING EVIDENCE ANNOTATIONS (ENLARGED PERCENTAGES, CLOSE TO STEPWISE) */}
+            <div className="observational-evidence-section">
+              <div className="intro4-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">SUPPORTING EVIDENCE FROM OBSERVATIONAL STUDIES</span>
+                <span className="rule-bar" />
+              </div>
+
+              <div className="evidence-boxes-row">
+                {/* Evidence Block 1: Single Agent (RED) */}
+                <div className="evidence-anno-box evidence-box-single">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-single">~40–60%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
+                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Evidence Block 2: Two Drugs (VIOLET) */}
+                <div className="evidence-anno-box evidence-box-combo">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
+                      <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
+                    </div>
                   </div>
                 </div>
               </div>

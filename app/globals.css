@@ -14338,24 +14338,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-transform: uppercase;
 }
 
-/* Slide 04 — Conventional Immunosuppression: Stepwise Strategy & Escalation */
+/* Slide 04 — Conventional Immunosuppression: Drug Classes Hero */
 .intro4-scene {
-  padding: 7.5vh clamp(2vw, 4.5vw, 5rem) 4vh;
+  padding: 8.5vh clamp(2vw, 4.5vw, 4.5rem) 4.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(0.5rem, 1.0vh, 1.0rem);
+  gap: clamp(0.35rem, 0.7vh, 0.75rem);
   background:
-    radial-gradient(ellipse at 22% 45%, rgba(192, 132, 252, 0.08), transparent 48%),
-    radial-gradient(ellipse at 50% 50%, rgba(255, 77, 82, 0.07), transparent 40%),
-    radial-gradient(ellipse at 78% 45%, rgba(192, 132, 252, 0.06), transparent 48%),
+    radial-gradient(ellipse at 25% 42%, rgba(192, 132, 252, 0.08), transparent 45%),
+    radial-gradient(ellipse at 75% 42%, rgba(255, 45, 45, 0.06), transparent 45%),
     #06050a;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.intro4-narrative-header {
+.intro4-header {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -14363,124 +14362,128 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: 100%;
 }
 
-.intro4-hero-headline {
-  font: 900 clamp(2.0rem, 3.4vw, 4.2rem) var(--font-geist-mono), monospace;
+.intro4-header h2 {
+  font: 900 clamp(1.3rem, 2.0vw, 2.5rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: -0.015em;
-  line-height: 1.08;
+  letter-spacing: 0.03em;
   margin: 0;
-  text-shadow: 0 0 28px rgba(255, 255, 255, 0.22);
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.25);
 }
 
-.headline-red-accent {
-  color: #ff4d52;
-  text-shadow: 0 0 32px rgba(255, 77, 82, 0.75), 0 0 10px rgba(255, 77, 82, 0.45);
+.intro4-subrule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.3rem;
 }
 
-.intro4-support-line {
-  font: 500 clamp(0.68rem, 0.88vw, 1.08rem) var(--font-geist-mono), monospace;
-  color: #d6d3d1;
-  margin: 0.4rem 0 0;
-  letter-spacing: 0.02em;
-}
-
-.intro4-pathway-canvas {
+.intro4-content-grid {
   width: min(84rem, 92vw);
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(0.5rem, 1.0vh, 1.2rem);
-  margin-top: clamp(0.2rem, 0.5vh, 0.5rem);
+  justify-content: flex-start;
+  gap: clamp(0.35rem, 0.7vh, 0.8rem);
+  margin-top: 0.1rem;
 }
 
-/* HORIZONTAL THERAPEUTIC PATHWAY (OPEN COMPOSITION) */
-.therapeutic-pathway-row {
+/* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual weight) */
+.intro4-hero-territories {
   display: grid;
-  grid-template-columns: 1.18fr clamp(10rem, 13.5vw, 15.5rem) 0.98fr;
-  gap: clamp(0.8rem, 1.5vw, 2.0rem);
+  grid-template-columns: 1.35fr clamp(7.5rem, 9.5vw, 11rem) 1.05fr;
+  gap: clamp(0.6rem, 1.2vw, 1.5rem);
   align-items: center;
   width: 100%;
-  flex: 1.5;
-  min-height: 0;
 }
 
-.pathway-class-zone {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  gap: clamp(0.35rem, 0.6vh, 0.7rem);
+.pharma-territory {
+  border-radius: 0px;
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.7rem, 1.1vw, 1.3rem);
+  box-sizing: border-box;
   position: relative;
 }
 
-.class-zone-header {
+.territory-antimetabolites {
+  border: 1.5px solid rgba(192, 132, 252, 0.45);
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.09) 0%, rgba(12, 8, 18, 0.92) 100%);
+  box-shadow: 0 0 24px rgba(192, 132, 252, 0.14);
+}
+
+.territory-calcineurin {
+  border: 1.5px solid rgba(192, 132, 252, 0.32);
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.05) 0%, rgba(10, 7, 16, 0.92) 100%);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.08);
+}
+
+.territory-header {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  border-bottom: 1px solid rgba(192, 132, 252, 0.25);
-  padding-bottom: clamp(0.22rem, 0.35vh, 0.40rem);
+  gap: 0.6rem;
+  margin-bottom: clamp(0.35rem, 0.6vh, 0.65rem);
 }
 
-.class-zone-badge {
-  width: 20px;
-  height: 20px;
+.territory-badge {
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.35));
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.4));
 }
 
-.shield-mini-svg {
+.pharma-shield-svg {
   width: 100%;
   height: 100%;
 }
 
-.class-zone-titles {
+.territory-titles {
   display: flex;
   flex-direction: column;
 }
 
-.class-zone-name {
-  font: 900 clamp(0.92rem, 1.25vw, 1.55rem) var(--font-geist-mono), monospace;
+.territory-class-name {
+  font: 900 clamp(0.92rem, 1.22vw, 1.5rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   letter-spacing: 0.04em;
   line-height: 1.1;
-  text-shadow: 0 0 16px rgba(192, 132, 252, 0.3);
+  text-shadow: 0 0 16px rgba(192, 132, 252, 0.35);
 }
 
-.class-zone-role {
-  font: 700 clamp(0.40rem, 0.48vw, 0.62rem) var(--font-geist-mono), monospace;
+.territory-class-tag {
+  font: 700 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
   color: #c084fc;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0.1rem;
 }
 
-.role-addon {
+.territory-addon-tag {
   color: #c084fc;
-  text-shadow: 0 0 8px rgba(192, 132, 252, 0.3);
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.35);
 }
 
-.pathway-drugs-stack {
+.antimetabolites-visual-core {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(0.6rem, 1.0vw, 1.2rem);
+  align-items: center;
+}
+
+.drug-nodes-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.25rem, 0.45vh, 0.55rem);
-  justify-content: space-around;
-  flex: 1;
+  gap: clamp(0.3rem, 0.55vh, 0.6rem);
 }
 
-.pathway-drug-item {
+.drug-node-card {
   display: flex;
   align-items: center;
-  gap: clamp(0.55rem, 0.9vw, 1.1rem);
-  padding: clamp(0.28rem, 0.48vh, 0.50rem) clamp(0.55rem, 0.85vw, 1.0rem);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(18, 12, 24, 0.5) 100%);
-  border-left: 2px solid rgba(192, 132, 252, 0.45);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  border-right: none;
+  gap: clamp(0.45rem, 0.7vw, 0.8rem);
+  background: rgba(18, 12, 24, 0.8);
+  border: 1px solid rgba(192, 132, 252, 0.25);
   border-radius: 0px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.8vw, 0.9rem);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.08);
 }
 
 .drug-icon-box {
@@ -14496,23 +14499,109 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   height: 100%;
 }
 
-.drug-text-block {
+.drug-meta {
   display: flex;
   flex-direction: column;
 }
 
-.drug-title-name {
-  font: 800 clamp(0.70rem, 0.86vw, 1.08rem) var(--font-geist-mono), monospace;
+.drug-name {
+  font: 900 clamp(0.62rem, 0.76vw, 0.95rem) var(--font-geist-mono), monospace;
   color: #ffffff;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 1.15;
 }
 
-.drug-subtitle-moa {
-  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
+.drug-moa {
+  font: 500 clamp(0.42rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   line-height: 1.2;
-  margin-top: 0.06rem;
+  margin-top: 0.08rem;
+}
+
+.molecular-sphere-hero {
+  width: clamp(130px, 13vw, 175px);
+  height: clamp(130px, 13vw, 175px);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.molecular-sphere-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.25));
+}
+
+/* Escalation Bridge Between Drug Classes */
+.escalation-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.bridge-trajectory-top,
+.bridge-trajectory-bottom {
+  width: 100%;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.bridge-top-svg,
+.bridge-bottom-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bridge-pill {
+  padding: clamp(0.1rem, 0.2vh, 0.25rem) 0;
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bridge-main-text {
+  font: 800 clamp(0.52rem, 0.62vw, 0.76rem) var(--font-geist-mono), monospace;
+  color: #ff4d52;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  text-shadow: 0 0 8px rgba(255, 77, 82, 0.4);
+}
+
+.bridge-sub-text {
+  font: 500 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  line-height: 1.2;
+}
+
+.calcineurin-cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.4rem, 0.7vh, 0.75rem);
+  justify-content: center;
+  height: 100%;
+}
+
+.calcineurin-drug-box {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.55rem, 0.9vw, 1.0rem);
+  background: rgba(16, 11, 22, 0.8);
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  border-radius: 0px;
+  padding: clamp(0.4rem, 0.7vh, 0.7rem) clamp(0.65rem, 1.0vw, 1.1rem);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.08);
 }
 
 .calcineurin-cluster-icon {
@@ -14527,187 +14616,228 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   height: 100%;
 }
 
-/* CENTRAL ESCALATION CONNECTOR (+ / WHEN NEEDED / ADD ANOTHER CLASS) */
-.pathway-escalation-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  gap: clamp(0.25rem, 0.45vh, 0.55rem);
-}
-
-.escalation-flow-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 0.35rem;
-  color: #ff4d52;
-}
-
-.flow-dash-line {
-  flex: 1;
-  height: 1px;
-  border-top: 1.6px dashed rgba(255, 77, 82, 0.65);
-}
-
-.flow-arrow-head {
-  color: #ff4d52;
-  font-size: clamp(0.75rem, 0.9vw, 1.05rem);
-  text-shadow: 0 0 10px rgba(255, 77, 82, 0.8);
-}
-
-.escalation-plus-circle {
-  width: clamp(36px, 3.0vw, 46px);
-  height: clamp(36px, 3.0vw, 46px);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 77, 82, 0.25) 0%, rgba(18, 8, 12, 0.98) 100%);
-  border: 1.8px solid #ff4d52;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 0 24px rgba(255, 77, 82, 0.6), 0 0 10px rgba(255, 77, 82, 0.35);
-}
-
-.escalation-plus-glyph {
-  font: 900 clamp(1.3rem, 1.7vw, 2.0rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  line-height: 1;
-  text-shadow: 0 0 10px #ffffff;
-}
-
-.escalation-labels-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.12rem;
-}
-
-.escalation-trigger-tag {
-  font: 900 clamp(0.54rem, 0.64vw, 0.78rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.6);
-}
-
-.escalation-action-tag {
-  font: 900 clamp(0.60rem, 0.72vw, 0.90rem) var(--font-geist-mono), monospace;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1.15;
-}
-
-.escalation-sub-note {
-  font: 500 clamp(0.38rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  line-height: 1.2;
-}
-
-/* RESTRAINED EVIDENCE BAND (PERCENTAGES AS EMPIRICAL PROOF) */
-.pathway-evidence-band {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.2rem, 0.35vh, 0.45rem);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: clamp(0.35rem, 0.6vh, 0.75rem);
-}
-
-.evidence-band-intro {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.evidence-tiny-eyebrow {
-  font: 700 clamp(0.36rem, 0.42vw, 0.54rem) var(--font-geist-mono), monospace;
-  color: #78716c;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.evidence-band-grid {
-  display: grid;
-  grid-template-columns: 1.18fr clamp(10rem, 13.5vw, 15.5rem) 0.98fr;
-  gap: clamp(0.8rem, 1.5vw, 2.0rem);
-  align-items: center;
-  width: 100%;
-}
-
-.evidence-proof-card {
-  display: flex;
-  align-items: center;
-  gap: clamp(0.8rem, 1.4vw, 1.8rem);
-}
-
-.evidence-proof-pct {
-  font: 900 clamp(2.2rem, 3.2vw, 4.2rem) var(--font-geist-mono), monospace;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
-  flex-shrink: 0;
-}
-
-.pct-red {
-  color: #ff4d52;
-  text-shadow: 0 0 24px rgba(255, 77, 82, 0.6), 0 0 8px rgba(255, 77, 82, 0.3);
-}
-
-.pct-violet {
-  color: #c084fc;
-  text-shadow: 0 0 24px rgba(192, 132, 252, 0.6), 0 0 8px rgba(192, 132, 252, 0.3);
-}
-
-.evidence-proof-text {
+.calcineurin-drug-info {
   display: flex;
   flex-direction: column;
 }
 
-.proof-lead {
-  font: 800 clamp(0.52rem, 0.64vw, 0.82rem) var(--font-geist-mono), monospace;
+.cni-drug-name {
+  font: 900 clamp(0.68rem, 0.84vw, 1.05rem) var(--font-geist-mono), monospace;
   color: #ffffff;
   letter-spacing: 0.03em;
   line-height: 1.15;
-  display: block;
 }
 
-.proof-sub {
-  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
-  color: #a8a29e;
-  display: block;
-  margin-top: 0.1rem;
+.cni-drug-moa {
+  font: 500 clamp(0.44rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  line-height: 1.2;
+  margin-top: 0.08rem;
 }
 
-.evidence-transition-bridge {
+/* Subordinate Stepwise Approach Section */
+.stepwise-pathway-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.08rem, 0.15vh, 0.2rem);
+  width: 100%;
+}
+
+.intro4-section-rule {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.75rem;
+  width: 100%;
+  margin: clamp(0.02rem, 0.08vh, 0.1rem) 0;
 }
 
-.transition-dash {
-  width: clamp(10px, 1.5vw, 20px);
+.rule-bar {
+  flex: 1;
   height: 1px;
-  border-top: 1.2px dashed rgba(255, 77, 82, 0.45);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.transition-tag {
-  font: 800 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
+.rule-label {
+  font: 700 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stepwise-steps-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 77, 82, 0.06) 0%, rgba(14, 9, 16, 0.85) 50%, rgba(255, 77, 82, 0.06) 100%);
+  border: 1px solid rgba(255, 77, 82, 0.25);
+  border-radius: 0px;
+  padding: clamp(0.32rem, 0.55vh, 0.5rem) clamp(0.8rem, 1.5vw, 1.8rem);
+  box-shadow: 0 0 16px rgba(255, 77, 82, 0.08);
+  box-sizing: border-box;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.45rem, 0.7vw, 0.8rem);
+}
+
+.step-icon-circle {
+  width: clamp(26px, 2.3vw, 34px);
+  height: clamp(26px, 2.3vw, 34px);
+  border-radius: 50%;
+  border: 1.2px solid rgba(255, 77, 82, 0.55);
+  display: grid;
+  place-items: center;
+  background: rgba(255, 77, 82, 0.12);
+  box-shadow: 0 0 10px rgba(255, 77, 82, 0.2);
+  flex-shrink: 0;
+}
+
+.step-svg {
+  width: 55%;
+  height: 55%;
+}
+
+.step-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-num-tag {
+  font: 800 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
   color: #ff4d52;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.5);
-  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 77, 82, 0.35);
+}
+
+.step-goal-tag {
+  color: #ff4d52;
+}
+
+.step-title {
+  font: 900 clamp(0.58rem, 0.70vw, 0.88rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+
+.step-desc {
+  font: 500 clamp(0.38rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
   line-height: 1.2;
 }
 
-.transition-arrow {
+.step-arrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgba(255, 77, 82, 0.8);
+  font-size: 0.6rem;
+}
+
+.step-dotted-line {
+  width: clamp(20px, 3.5vw, 48px);
+  height: 1px;
+  border-top: 1.5px dashed rgba(255, 77, 82, 0.5);
+}
+
+.step-arrowhead {
   color: #ff4d52;
-  font-size: clamp(0.68rem, 0.8vw, 0.95rem);
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.6);
+  text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
+}
+
+/* Observational Evidence Section — Prominent Quantitative Focal Point */
+.observational-evidence-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.08rem, 0.15vh, 0.2rem);
+  width: 100%;
+  margin-top: 0;
+}
+
+.evidence-boxes-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.8rem, 1.4vw, 1.8rem);
+  width: 100%;
+}
+
+.evidence-anno-box {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 1.3vw, 1.6rem);
+  border-radius: 0px;
+  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.9rem, 1.4vw, 1.6rem);
+  box-sizing: border-box;
+}
+
+.evidence-box-single {
+  border: 1.5px solid rgba(255, 77, 82, 0.35);
+  background: linear-gradient(135deg, rgba(255, 77, 82, 0.08) 0%, rgba(14, 8, 14, 0.92) 100%);
+  box-shadow: 0 0 20px rgba(255, 77, 82, 0.1);
+}
+
+.evidence-box-combo {
+  border: 1.5px solid rgba(192, 132, 252, 0.35);
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(12, 8, 18, 0.92) 100%);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.1);
+}
+
+.evidence-cohort-icon {
+  width: clamp(30px, 2.6vw, 38px);
+  height: clamp(30px, 2.6vw, 38px);
+  flex-shrink: 0;
+}
+
+.cohort-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.evidence-anno-content {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.7rem, 1.1vw, 1.4rem);
+}
+
+.evidence-pct-stat {
+  font: 900 clamp(2.1rem, 3.0vw, 4.0rem) var(--font-geist-mono), monospace;
+  line-height: 0.90;
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+}
+
+.stat-single {
+  color: #ff4d52;
+  text-shadow: 0 0 24px rgba(255, 77, 82, 0.65), 0 0 10px rgba(255, 77, 82, 0.35);
+}
+
+.stat-combo {
+  color: #c084fc;
+  text-shadow: 0 0 24px rgba(192, 132, 252, 0.65), 0 0 10px rgba(192, 132, 252, 0.35);
+}
+
+.evidence-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.evidence-headline {
+  font: 800 clamp(0.50rem, 0.60vw, 0.78rem) var(--font-geist-mono), monospace;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  display: block;
+  line-height: 1.15;
+}
+
+.evidence-subtext {
+  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
+  color: #d6d3d1;
+  display: block;
+  margin-top: 0.15rem;
 }
 
 /* Slide 05 — unresolved space becomes the reason for ADVISE */
