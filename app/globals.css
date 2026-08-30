@@ -14930,7 +14930,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* MAIN TWO-COLUMN SPLIT (ADALIMUMAB OCCUPIES ENTIRE LEFT SIDE) */
 .intro5-main-columns {
   display: grid;
-  grid-template-columns: 1.08fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: clamp(1.0rem, 1.8vw, 2.2rem);
   flex: 1;
   min-height: 0;
@@ -14974,7 +14974,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .biologic-tall-svg {
   width: 100%;
   height: auto;
-  max-height: clamp(190px, 31vh, 320px);
+  max-height: clamp(230px, 37vh, 385px);
   filter: drop-shadow(0 0 16px rgba(255, 45, 45, 0.22));
 }
 

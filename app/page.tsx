@@ -1744,95 +1744,95 @@ export default function Home() {
                   
                   {/* Tall Modular Antibody Showcase SVG */}
                   <div className="biologic-tall-stage">
-                    <svg viewBox="0 0 420 310" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                    <svg viewBox="0 0 450 355" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
                       <defs>
                         <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
-                          <stop offset="60%" stopColor="rgba(255, 45, 45, 0.08)" />
+                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.40)" />
+                          <stop offset="60%" stopColor="rgba(255, 45, 45, 0.10)" />
                           <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
                         </radialGradient>
                       </defs>
 
                       {/* Ambient Background Aura */}
-                      <circle cx="210" cy="150" r="120" fill="url(#antibody-core-glow-tall)" />
+                      <circle cx="225" cy="170" r="145" fill="url(#antibody-core-glow-tall)" />
 
                       {/* --- MASSIVE MODULAR IgG1 ANTIBODY SCHEMATIC --- */}
-                      <g className="modular-antibody-tall" transform="translate(20, 10)">
+                      <g className="modular-antibody-tall" transform="translate(25, 12)">
 
                         {/* --- Fc STEM (CONSTANT REGION: CH2 & CH3) --- */}
                         {/* CH2 Pair */}
-                        <rect x="160" y="165" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <text x="175" y="190" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
+                        <rect x="179" y="168" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                        <text x="197" y="197" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
 
-                        <rect x="198" y="165" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <text x="213" y="190" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
+                        <rect x="225" y="168" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                        <text x="243" y="197" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
 
                         {/* CH3 Pair */}
-                        <rect x="160" y="213" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <text x="175" y="238" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
+                        <rect x="179" y="222" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                        <text x="197" y="251" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
 
-                        <rect x="198" y="213" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <text x="213" y="238" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
+                        <rect x="225" y="222" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                        <text x="243" y="251" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
 
                         {/* Central Cleft Line */}
-                        <line x1="194" y1="165" x2="194" y2="255" stroke="rgba(255,255,255,0.18)" strokeWidth="1.2" />
+                        <line x1="220" y1="168" x2="220" y2="270" stroke="rgba(255,255,255,0.22)" strokeWidth="1.4" />
 
                         {/* --- HINGE REGION WITH DISULFIDE BONDS --- */}
-                        <path d="M 175 165 C 175 146, 148 135, 140 125" fill="none" stroke="#ff2d2d" strokeWidth="4.2" strokeLinecap="round" />
-                        <path d="M 213 165 C 213 146, 240 135, 248 125" fill="none" stroke="#ff2d2d" strokeWidth="4.2" strokeLinecap="round" />
+                        <path d="M 197 168 C 197 146, 166 134, 156 122" fill="none" stroke="#ff2d2d" strokeWidth="4.8" strokeLinecap="round" />
+                        <path d="M 243 168 C 243 146, 274 134, 284 122" fill="none" stroke="#ff2d2d" strokeWidth="4.8" strokeLinecap="round" />
                         {/* Parallel Hinge Disulfide Bridges */}
-                        <line x1="179" y1="147" x2="209" y2="147" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
-                        <line x1="179" y1="155" x2="209" y2="155" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+                        <line x1="201" y1="147" x2="239" y2="147" stroke="#ff2d2d" strokeWidth="3.6" strokeLinecap="round" />
+                        <line x1="201" y1="156" x2="239" y2="156" stroke="#ff2d2d" strokeWidth="3.6" strokeLinecap="round" />
 
                         {/* --- LEFT FAB ARM (ANGLED -32°) --- */}
-                        <g transform="translate(140, 125) rotate(-32)">
+                        <g transform="translate(156, 122) rotate(-32)">
                           {/* Constant Domains: CL (outer) & CH1 (inner) */}
-                          <rect x="-36" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                          <text x="-21" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
+                          <rect x="-44" y="-52" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                          <text x="-26" y="-23" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
 
-                          <rect x="0" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                          <text x="15" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
+                          <rect x="-2" y="-52" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                          <text x="16" y="-23" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
 
                           {/* Interchain Disulfide Bridge */}
-                          <line x1="-6" y1="-25" x2="0" y2="-25" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+                          <line x1="-8" y1="-28" x2="-2" y2="-28" stroke="#ff2d2d" strokeWidth="3.6" strokeLinecap="round" />
 
                           {/* Variable Antigen-Binding Tips (VL & VH in Vibrant Red) */}
-                          <rect x="-36" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
-                          <text x="-21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+                          <rect x="-44" y="-106" width="36" height="48" rx="4" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.4" />
+                          <text x="-26" y="-77" fill="#ffffff" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
 
-                          <rect x="0" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
-                          <text x="15" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+                          <rect x="-2" y="-106" width="36" height="48" rx="4" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.4" />
+                          <text x="16" y="-77" fill="#ffffff" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
                         </g>
 
                         {/* --- RIGHT FAB ARM (ANGLED +32°) WITH ATTACHED TNF-α MOLECULE --- */}
-                        <g transform="translate(248, 125) rotate(32)">
+                        <g transform="translate(284, 122) rotate(32)">
                           {/* Constant Domains: CH1 (inner) & CL (outer) */}
-                          <rect x="-30" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                          <text x="-15" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
+                          <rect x="-34" y="-52" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                          <text x="-16" y="-23" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
 
-                          <rect x="6" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
-                          <text x="21" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
+                          <rect x="8" y="-52" width="36" height="48" rx="4" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="2.0" />
+                          <text x="26" y="-23" fill="#d6d3d1" fontSize="11.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
 
                           {/* Interchain Disulfide Bridge */}
-                          <line x1="0" y1="-25" x2="6" y2="-25" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+                          <line x1="2" y1="-28" x2="8" y2="-28" stroke="#ff2d2d" strokeWidth="3.6" strokeLinecap="round" />
 
                           {/* Variable Antigen-Binding Tips (VH & VL in Vibrant Red) */}
-                          <rect x="-30" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
-                          <text x="-15" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+                          <rect x="-34" y="-106" width="36" height="48" rx="4" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.4" />
+                          <text x="-16" y="-77" fill="#ffffff" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
 
-                          <rect x="6" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
-                          <text x="21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+                          <rect x="8" y="-106" width="36" height="48" rx="4" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.4" />
+                          <text x="26" y="-77" fill="#ffffff" fontSize="12.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
 
-                          {/* Attached TNF-α Molecule: Simple Circle Directly on Antigen-Binding Tip */}
-                          <g className="attached-tnf-target" transform="translate(-2, -94)">
-                            <circle cx="0" cy="-20" r="18" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="2.0" />
-                            <text x="0" y="-20" fill="#ffffff" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central" letterSpacing="0.04em">TNF-α</text>
+                          {/* Attached TNF-α Molecule: Scaled Simple Circle Directly on Antigen-Binding Tip */}
+                          <g className="attached-tnf-target" transform="translate(-2, -106)">
+                            <circle cx="0" cy="-24" r="22" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="2.2" />
+                            <text x="0" y="-24" fill="#ffffff" fontSize="11.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central" letterSpacing="0.04em">TNF-α</text>
                           </g>
                         </g>
 
                         {/* Direct Title & Subtitle Underneath Antibody Structure */}
-                        <text x="194" y="278" fill="#ffffff" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
-                        <text x="194" y="295" fill="#d6d3d1" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
+                        <text x="220" y="298" fill="#ffffff" fontSize="15.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
+                        <text x="220" y="318" fill="#d6d3d1" fontSize="9.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
                       </g>
                     </svg>
                   </div>
