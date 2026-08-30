@@ -969,7 +969,7 @@ export default function Home() {
               Control the disease.<br />
               <em>Reduce the steroid burden.</em>
             </h2>
-            <div className="intro3-subrule" aria-hidden="true" style={{ position: "relative" }}>
+            <div className="intro3-subrule" aria-hidden="true">
               <span className="subrule-line" />
               <span className="subrule-text">UVEITIS THERAPEUTIC DILEMMA</span>
               <span className="subrule-line" />
@@ -982,7 +982,6 @@ export default function Home() {
                   }}
                   aria-label="Replay therapeutic goal animation"
                   title="Replay animation"
-                  style={{ marginLeft: "0.5rem" }}
                 >
                   ↻
                 </button>

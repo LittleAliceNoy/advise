@@ -13542,6 +13542,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   gap: 0.8rem;
   margin-top: 0.35rem;
+  position: relative;
+}
+
+.intro3-subrule .efficacy-story-replay {
+  position: absolute;
+  left: calc(50% + clamp(140px, 14vw, 190px));
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.intro3-subrule .efficacy-story-replay:hover {
+  color: #ff6266;
+  background: rgba(255, 45, 45, 0.06);
+  transform: translateY(-50%) rotate(-35deg);
 }
 
 .subrule-line {
