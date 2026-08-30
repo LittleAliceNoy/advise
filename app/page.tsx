@@ -1351,11 +1351,11 @@ export default function Home() {
                           <line x1="7.5" y1="23" x2="3" y2="25.8" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
                           <circle cx="3" cy="25.8" r="1.4" fill="#ff4d52" />
 
-                          {/* Heteroatoms (N1, N3, N5, N8) */}
-                          <circle cx="7.5" cy="13" r="1.3" fill="#c084fc" />
-                          <circle cx="13.5" cy="26.5" r="1.3" fill="#c084fc" />
-                          <circle cx="25.5" cy="9.5" r="1.3" fill="#c084fc" />
-                          <circle cx="25.5" cy="26.5" r="1.3" fill="#c084fc" />
+                          {/* Nitrogen Heteroatoms (N1, N3, N5, N8) in Red (#ff4d52) matching NH2 groups */}
+                          <circle cx="7.5" cy="13" r="1.4" fill="#ff4d52" />
+                          <circle cx="13.5" cy="26.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="25.5" cy="9.5" r="1.4" fill="#ff4d52" />
+                          <circle cx="25.5" cy="26.5" r="1.4" fill="#ff4d52" />
 
                           {/* Smooth Dissolving Tail to PABA-Glutamate */}
                           <path d="M 31.5 13 L 37 9.8 L 42.5 13 L 47 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
