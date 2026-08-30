@@ -1472,18 +1472,20 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Center: Glowing 3D Molecular Constellation Sphere (Red + White + Violet) */}
+                  {/* Center: Glowing 3D Molecular Constellation Sphere (Red Accent Glow + Floating/Rotating Animation) */}
                   <div className="molecular-sphere-hero" aria-hidden="true">
                     <svg viewBox="0 0 200 200" className="molecular-sphere-svg">
                       <defs>
                         <radialGradient id="sphere-core-grad" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(192, 132, 252, 0.22)" />
-                          <stop offset="55%" stopColor="rgba(147, 51, 234, 0.08)" />
-                          <stop offset="100%" stopColor="rgba(8, 6, 12, 0.9)" />
+                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.35)" />
+                          <stop offset="40%" stopColor="rgba(255, 45, 45, 0.16)" />
+                          <stop offset="80%" stopColor="rgba(192, 132, 252, 0.05)" />
+                          <stop offset="100%" stopColor="rgba(14, 5, 8, 0.94)" />
                         </radialGradient>
-                        <filter id="mol-glow-red" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="3.5" result="blur" />
+                        <filter id="mol-glow-red" x="-60%" y="-60%" width="220%" height="220%">
+                          <feGaussianBlur stdDeviation="4.5" result="blur" />
                           <feMerge>
+                            <feMergeNode in="blur" />
                             <feMergeNode in="blur" />
                             <feMergeNode in="SourceGraphic" />
                           </feMerge>
@@ -1497,43 +1499,49 @@ export default function Home() {
                         </filter>
                       </defs>
 
-                      {/* Outer Spherical Shell & Technical Orbits */}
-                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(192, 132, 252, 0.4)" strokeWidth="1.4" />
-                      <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.35)" strokeWidth="1" strokeDasharray="3 3" />
-                      <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(192, 132, 252, 0.3)" strokeWidth="1" strokeDasharray="3 3" />
+                      {/* Outer Spherical Shell */}
+                      <circle cx="100" cy="100" r="88" fill="url(#sphere-core-grad)" stroke="rgba(255, 77, 82, 0.6)" strokeWidth="1.6" />
 
-                      {/* Chemical / Molecular Constellation Wireframe */}
-                      {/* Central Core Benzene/Pyrimidine Ring */}
-                      <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.8" />
-                      {/* Fused 5-Membered Imidazole Ring */}
-                      <polygon points="126,75 152,85 146,115 126,105" fill="none" stroke="rgba(192, 132, 252, 0.7)" strokeWidth="1.8" />
-                      
-                      {/* Radiating Chemical Bonds */}
-                      <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.8" />
-                      <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.5" />
-                      <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="1.8" />
-                      <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(192, 132, 252, 0.8)" strokeWidth="1.6" />
-                      <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1.4" />
+                      {/* Technical Orbits with counter-rotation */}
+                      <g className="mol-orbit-group">
+                        <ellipse cx="100" cy="100" rx="88" ry="42" fill="none" stroke="rgba(255, 77, 82, 0.55)" strokeWidth="1.2" strokeDasharray="4 4" />
+                        <ellipse cx="100" cy="100" rx="42" ry="88" fill="none" stroke="rgba(255, 110, 115, 0.45)" strokeWidth="1.2" strokeDasharray="4 4" />
+                      </g>
 
-                      {/* Atomic Nodes (Red, White, Violet Trinity) */}
-                      {/* Central Core Nodes */}
-                      <circle cx="100" cy="60" r="4.5" fill="#ffffff" />
-                      <circle cx="126" cy="75" r="4" fill="#c084fc" />
-                      <circle cx="126" cy="105" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
-                      <circle cx="100" cy="120" r="4" fill="#c084fc" />
-                      <circle cx="74" cy="105" r="4.5" fill="#ffffff" />
-                      <circle cx="74" cy="75" r="4" fill="#c084fc" />
-                      
-                      {/* Outer Valence Nodes */}
-                      <circle cx="100" cy="38" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
-                      <circle cx="152" cy="85" r="3.8" fill="#ff4d52" />
-                      <circle cx="146" cy="115" r="3.8" fill="#ffffff" />
-                      <circle cx="50" cy="120" r="3.8" fill="#c084fc" />
-                      <circle cx="34" cy="110" r="3.2" fill="#ffffff" />
-                      <circle cx="116" cy="146" r="4.2" fill="#ff4d52" filter="url(#mol-glow-red)" />
-                      <circle cx="174" cy="76" r="3.8" fill="#c084fc" filter="url(#mol-glow-purple)" />
-                      <circle cx="148" cy="134" r="3.2" fill="#ffffff" />
+                      {/* Rotating Chemical / Molecular Constellation Wireframe */}
+                      <g className="mol-rotating-structure">
+                        {/* Central Core Benzene/Pyrimidine Ring */}
+                        <polygon points="100,60 126,75 126,105 100,120 74,105 74,75" fill="none" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="1.8" />
+                        {/* Fused 5-Membered Imidazole Ring */}
+                        <polygon points="126,75 152,85 146,115 126,105" fill="none" stroke="rgba(255, 77, 82, 0.75)" strokeWidth="1.8" />
+                        
+                        {/* Radiating Chemical Bonds */}
+                        <line x1="100" y1="60" x2="100" y2="38" stroke="#ff4d52" strokeWidth="2.0" filter="url(#mol-glow-red)" />
+                        <line x1="74" y1="105" x2="50" y2="120" stroke="rgba(255, 77, 82, 0.85)" strokeWidth="1.8" />
+                        <line x1="50" y1="120" x2="34" y2="110" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.5" />
+                        <line x1="100" y1="120" x2="116" y2="146" stroke="#ff4d52" strokeWidth="2.0" filter="url(#mol-glow-red)" />
+                        <line x1="152" y1="85" x2="174" y2="76" stroke="rgba(192, 132, 252, 0.85)" strokeWidth="1.6" />
+                        <line x1="126" y1="105" x2="148" y2="134" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.4" />
+
+                        {/* Atomic Nodes (Red Accent, White, Violet Trinity) */}
+                        {/* Central Core Nodes */}
+                        <circle cx="100" cy="60" r="4.5" fill="#ffffff" />
+                        <circle cx="126" cy="75" r="4" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="126" cy="105" r="5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="100" cy="120" r="4" fill="#c084fc" />
+                        <circle cx="74" cy="105" r="4.5" fill="#ffffff" />
+                        <circle cx="74" cy="75" r="4.5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        
+                        {/* Outer Valence Nodes */}
+                        <circle cx="100" cy="38" r="5" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="152" cy="85" r="4.2" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="146" cy="115" r="3.8" fill="#ffffff" />
+                        <circle cx="50" cy="120" r="4.2" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="34" cy="110" r="3.2" fill="#ffffff" />
+                        <circle cx="116" cy="146" r="4.8" fill="#ff4d52" filter="url(#mol-glow-red)" />
+                        <circle cx="174" cy="76" r="3.8" fill="#c084fc" filter="url(#mol-glow-purple)" />
+                        <circle cx="148" cy="134" r="3.2" fill="#ffffff" />
+                      </g>
                     </svg>
                   </div>
                 </div>
