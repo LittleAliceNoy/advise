@@ -1751,31 +1751,10 @@ export default function Home() {
                           <stop offset="60%" stopColor="rgba(255, 45, 45, 0.08)" />
                           <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
                         </radialGradient>
-                        <radialGradient id="tnf-glow-tall" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.4)" />
-                          <stop offset="70%" stopColor="rgba(255, 77, 82, 0.08)" />
-                          <stop offset="100%" stopColor="rgba(255, 77, 82, 0)" />
-                        </radialGradient>
                       </defs>
 
                       {/* Ambient Background Aura */}
                       <circle cx="210" cy="165" r="130" fill="url(#antibody-core-glow-tall)" />
-
-                      {/* --- TOP: TARGET TNF-α CYTOKINE BLOCKADE INTERACTION --- */}
-                      <g className="tnf-blockade-top" transform="translate(145, 6)">
-                        {/* Neutralization Field */}
-                        <circle cx="65" cy="38" r="36" fill="url(#tnf-glow-tall)" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.2" strokeDasharray="3 3" />
-                        {/* 3 Homotrimer Subunits */}
-                        <ellipse cx="54" cy="30" rx="10" ry="14" transform="rotate(-30 54 30)" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <ellipse cx="76" cy="30" rx="10" ry="14" transform="rotate(30 76 30)" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <ellipse cx="65" cy="48" rx="10" ry="14" fill="rgba(255, 45, 45, 0.32)" stroke="#ff4d52" strokeWidth="1.8" />
-                        <circle cx="65" cy="36" r="3.6" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.4" />
-                        <text x="65" y="36" fill="#0a0406" fontSize="4.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
-                        
-                        {/* Tag */}
-                        <rect x="25" y="68" width="80" height="14" rx="2" fill="#0c070e" stroke="rgba(255, 77, 82, 0.5)" strokeWidth="1" />
-                        <text x="65" y="78" fill="#ff4d52" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">BLOCKS TNF-α</text>
-                      </g>
 
                       {/* --- MASSIVE MODULAR IgG1 ANTIBODY SCHEMATIC --- */}
                       <g className="modular-antibody-tall" transform="translate(20, 20)">
@@ -1825,7 +1804,7 @@ export default function Home() {
                           <text x="15" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
                         </g>
 
-                        {/* --- RIGHT FAB ARM (ANGLED +32°) --- */}
+                        {/* --- RIGHT FAB ARM (ANGLED +32°) WITH ATTACHED TNF-α MOLECULE --- */}
                         <g transform="translate(248, 125) rotate(32)">
                           {/* Constant Domains: CH1 (inner) & CL (outer) */}
                           <rect x="-30" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
@@ -1843,6 +1822,26 @@ export default function Home() {
 
                           <rect x="6" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
                           <text x="21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+
+                          {/* Attached TNF-α Cytokine Homotrimer Directly on Antigen-Binding Tip */}
+                          <g className="attached-tnf-target" transform="translate(-2, -94)">
+                            {/* Trimeric Subunits */}
+                            <ellipse cx="-10" cy="-14" rx="8.5" ry="12" transform="rotate(-30 -10 -14)" fill="rgba(255, 45, 45, 0.3)" stroke="#ff4d52" strokeWidth="1.6" />
+                            <ellipse cx="10" cy="-14" rx="8.5" ry="12" transform="rotate(30 10 -14)" fill="rgba(255, 45, 45, 0.3)" stroke="#ff4d52" strokeWidth="1.6" />
+                            <ellipse cx="0" cy="-2" rx="8.5" ry="12" fill="rgba(255, 45, 45, 0.38)" stroke="#ff4d52" strokeWidth="1.8" />
+
+                            {/* Core Center Alpha */}
+                            <circle cx="0" cy="-10" r="3.2" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.2" />
+                            <text x="0" y="-10" fill="#0a0406" fontSize="4.4" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
+
+                            {/* Active Site Nodes */}
+                            <circle cx="-8" cy="-20" r="1.8" fill="#ffffff" />
+                            <circle cx="8" cy="-20" r="1.8" fill="#ffffff" />
+                            <circle cx="0" cy="5" r="1.8" fill="#ffffff" />
+
+                            {/* Named only: TNF-α */}
+                            <text x="0" y="-30" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
+                          </g>
                         </g>
 
                         {/* Direct Title & Subtitle Underneath Antibody Structure */}
