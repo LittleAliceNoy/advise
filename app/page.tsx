@@ -1742,26 +1742,9 @@ export default function Home() {
               <div className="intro5-left-hero">
                 <div className="biologic-mechanism-card full-height">
                   
-                  {/* Visual Header Tag */}
-                  <div className="biologic-core-header">
-                    <div className="biologic-badge" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" className="biologic-badge-svg">
-                        <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.12)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <path d="M12 6 V18 M6 12 H18" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <div className="biologic-title-wrap">
-                      <div className="biologic-name-row">
-                        <strong className="biologic-drug-name">ADALIMUMAB</strong>
-                        <span className="biologic-class-tag">TARGETED BIOLOGIC</span>
-                      </div>
-                      <span className="biologic-subtitle">Fully human anti–TNF-α monoclonal antibody (IgG1)</span>
-                    </div>
-                  </div>
-
                   {/* Tall Full-Height Modular Antibody Showcase SVG */}
                   <div className="biologic-tall-stage">
-                    <svg viewBox="0 0 420 350" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                    <svg viewBox="0 0 420 330" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
                       <defs>
                         <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
                           <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
@@ -1776,7 +1759,7 @@ export default function Home() {
                       </defs>
 
                       {/* Ambient Background Aura */}
-                      <circle cx="210" cy="180" r="130" fill="url(#antibody-core-glow-tall)" />
+                      <circle cx="210" cy="165" r="130" fill="url(#antibody-core-glow-tall)" />
 
                       {/* --- TOP: TARGET TNF-α CYTOKINE BLOCKADE INTERACTION --- */}
                       <g className="tnf-blockade-top" transform="translate(145, 6)">
@@ -1862,9 +1845,9 @@ export default function Home() {
                           <text x="21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
                         </g>
 
-                        {/* Bottom Labels */}
-                        <text x="194" y="272" fill="#ffffff" fontSize="10.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">HUMAN IgG1 MONOCLONAL ANTIBODY</text>
-                        <text x="194" y="286" fill="#a8a29e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">High-affinity neutralization of soluble &amp; transmembrane TNF-α</text>
+                        {/* Direct Title & Subtitle Underneath Antibody Structure */}
+                        <text x="194" y="278" fill="#ffffff" fontSize="13.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB</text>
+                        <text x="194" y="295" fill="#d6d3d1" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.03em">Fully human anti–TNF-α monoclonal antibody (IgG1)</text>
                       </g>
                     </svg>
                   </div>
