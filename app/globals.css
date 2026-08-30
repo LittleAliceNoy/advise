@@ -13897,12 +13897,35 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .resolution-equation-block {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   background: rgba(12, 12, 16, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  padding: clamp(0.5rem, 0.85vh, 0.8rem) clamp(0.9rem, 1.5vw, 1.6rem);
+  padding: clamp(0.45rem, 0.75vh, 0.7rem) clamp(0.9rem, 1.5vw, 1.6rem);
+  gap: 0.35rem;
+  box-sizing: border-box;
+}
+
+.res-tag-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.res-equation-tag {
+  font: 700 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
+  color: #ff8085;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.res-equation-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 0.8rem;
 }
 
