@@ -13872,23 +13872,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .immunosuppression-hero-title {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.74rem, 0.90vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.55rem);
   font-weight: 900;
   color: #ff4d52;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(255, 77, 82, 0.45);
+  text-shadow: 0 0 18px rgba(255, 77, 82, 0.55);
   display: block;
 }
 
 .immunosuppression-hero-sub {
   font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.44rem, 0.52vw, 0.65rem);
+  font-size: clamp(0.55rem, 0.68vw, 0.85rem);
   font-weight: 700;
   color: #ded7d3;
   letter-spacing: 0.04em;
   display: block;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .arrow-to-res {

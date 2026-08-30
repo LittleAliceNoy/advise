@@ -953,7 +953,6 @@ export default function Home() {
                 </div>
 
                 <div className="ceiling-box">
-                  <span className="box-pointer" aria-hidden="true">▼</span>
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
@@ -1032,7 +1031,6 @@ export default function Home() {
                 </div>
 
                 <span className="balance-label">BOTH ARE REQUIRED</span>
-                <span className="balance-arrow-down" aria-hidden="true">↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR */}
@@ -1064,7 +1062,6 @@ export default function Home() {
                 </div>
 
                 <div className="floor-box">
-                  <span className="box-pointer pointer-right" aria-hidden="true">▼</span>
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
                   <small className="floor-label" style={{ fontSize: "clamp(0.42rem, 0.48vw, 0.58rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
@@ -1075,8 +1072,8 @@ export default function Home() {
             {/* SOLUTION CONNECTOR: SYSTEMIC IMMUNOSUPPRESSION (Borderless, Center Aligned, Bold) */}
             <div className="immunosuppression-center-block">
               <div className="immunosuppression-text-wrap">
-                <strong className="immunosuppression-hero-title">SYSTEMIC IMMUNOSUPPRESSION</strong>
-                <span className="immunosuppression-hero-sub">Needed to achieve both goals</span>
+                <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.95rem, 1.25vw, 1.55rem)", fontWeight: 900, letterSpacing: "0.06em" }}>SYSTEMIC IMMUNOSUPPRESSION</strong>
+                <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.68vw, 0.85rem)", fontWeight: 700, marginTop: "0.2rem" }}>Needed to achieve both goals</span>
               </div>
               <span className="arrow-to-res" aria-hidden="true">↓</span>
             </div>
