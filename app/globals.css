@@ -14340,12 +14340,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* Slide 04 — Conventional Immunosuppression: Drug Classes Hero */
 .intro4-scene {
-  padding: 8.5vh clamp(2vw, 4.5vw, 4.5rem) 4.5vh;
+  padding: 7.5vh clamp(2vw, 4.5vw, 4.5rem) 4.2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(0.35rem, 0.7vh, 0.75rem);
+  gap: clamp(0.8rem, 1.5vh, 1.6rem);
   background:
     radial-gradient(ellipse at 25% 42%, rgba(192, 132, 252, 0.08), transparent 45%),
     radial-gradient(ellipse at 75% 42%, rgba(255, 45, 45, 0.06), transparent 45%),
@@ -14379,49 +14379,51 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro4-content-grid {
-  width: min(84rem, 92vw);
+  width: min(86rem, 93vw);
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: clamp(0.35rem, 0.7vh, 0.8rem);
-  margin-top: 0.1rem;
+  justify-content: space-between;
+  gap: clamp(0.9rem, 1.8vh, 2.2rem);
+  margin-top: 0.2rem;
 }
 
 /* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual weight) */
 .intro4-hero-territories {
   display: grid;
   grid-template-columns: 1.35fr clamp(7.5rem, 9.5vw, 11rem) 1.05fr;
-  gap: clamp(0.6rem, 1.2vw, 1.5rem);
+  gap: clamp(1.0rem, 2.0vw, 2.8rem);
   align-items: center;
   width: 100%;
 }
 
 .pharma-territory {
   border-radius: 0px;
-  padding: clamp(0.45rem, 0.8vh, 0.75rem) clamp(0.7rem, 1.1vw, 1.3rem);
+  padding: 0;
   box-sizing: border-box;
   position: relative;
 }
 
 .territory-antimetabolites {
-  border: 1.5px solid rgba(192, 132, 252, 0.45);
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.09) 0%, rgba(12, 8, 18, 0.92) 100%);
-  box-shadow: 0 0 24px rgba(192, 132, 252, 0.14);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .territory-calcineurin {
-  border: 1.5px solid rgba(192, 132, 252, 0.32);
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.05) 0%, rgba(10, 7, 16, 0.92) 100%);
-  box-shadow: 0 0 20px rgba(192, 132, 252, 0.08);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .territory-header {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: clamp(0.35rem, 0.6vh, 0.65rem);
+  margin-bottom: clamp(0.45rem, 0.8vh, 0.8rem);
+  border-bottom: 1px solid rgba(192, 132, 252, 0.25);
+  padding-bottom: clamp(0.22rem, 0.35vh, 0.40rem);
 }
 
 .territory-badge {
@@ -14478,12 +14480,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .drug-node-card {
   display: flex;
   align-items: center;
-  gap: clamp(0.45rem, 0.7vw, 0.8rem);
-  background: rgba(18, 12, 24, 0.8);
-  border: 1px solid rgba(192, 132, 252, 0.25);
+  gap: clamp(0.5rem, 0.8vw, 1.0rem);
+  background: rgba(18, 12, 24, 0.6);
+  border: 1px solid rgba(192, 132, 252, 0.18);
+  border-left: 2px solid rgba(192, 132, 252, 0.45);
   border-radius: 0px;
   padding: clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.8vw, 0.9rem);
-  box-shadow: 0 0 12px rgba(192, 132, 252, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .drug-icon-box {
@@ -14597,11 +14600,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   align-items: center;
   gap: clamp(0.55rem, 0.9vw, 1.0rem);
-  background: rgba(16, 11, 22, 0.8);
-  border: 1px solid rgba(192, 132, 252, 0.25);
+  background: rgba(18, 12, 24, 0.6);
+  border: 1px solid rgba(192, 132, 252, 0.18);
+  border-left: 2px solid rgba(192, 132, 252, 0.45);
   border-radius: 0px;
   padding: clamp(0.4rem, 0.7vh, 0.7rem) clamp(0.65rem, 1.0vw, 1.1rem);
-  box-shadow: 0 0 12px rgba(192, 132, 252, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .calcineurin-cluster-icon {
@@ -14639,7 +14643,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .stepwise-pathway-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.08rem, 0.15vh, 0.2rem);
+  gap: clamp(0.3rem, 0.55vh, 0.65rem);
   width: 100%;
 }
 
@@ -14649,7 +14653,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
-  margin: clamp(0.02rem, 0.08vh, 0.1rem) 0;
+  margin: clamp(0.15rem, 0.35vh, 0.45rem) 0;
 }
 
 .rule-bar {
@@ -14673,7 +14677,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   background: linear-gradient(90deg, rgba(255, 77, 82, 0.06) 0%, rgba(14, 9, 16, 0.85) 50%, rgba(255, 77, 82, 0.06) 100%);
   border: 1px solid rgba(255, 77, 82, 0.25);
   border-radius: 0px;
-  padding: clamp(0.32rem, 0.55vh, 0.5rem) clamp(0.8rem, 1.5vw, 1.8rem);
+  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.8rem, 1.5vw, 1.8rem);
   box-shadow: 0 0 16px rgba(255, 77, 82, 0.08);
   box-sizing: border-box;
 }
@@ -14753,9 +14757,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.08rem, 0.15vh, 0.2rem);
+  gap: clamp(0.3rem, 0.55vh, 0.65rem);
   width: 100%;
-  margin-top: 0;
+  margin-top: clamp(0.15rem, 0.35vh, 0.45rem);
 }
 
 .evidence-boxes-row {
