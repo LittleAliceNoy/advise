@@ -1091,7 +1091,7 @@ export default function Home() {
                 </div>
 
                 {/* Systemic Immunosuppression Solution Text (Stage 1+) */}
-                <div className={`immunosuppression-text-wrap therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} style={{ marginTop: "clamp(0.35rem, 0.6vh, 0.65rem)" }}>
+                <div className={`immunosuppression-text-wrap therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} style={{ marginTop: "clamp(0.75rem, 1.2vh, 1.4rem)" }}>
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
