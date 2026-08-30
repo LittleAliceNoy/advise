@@ -302,6 +302,11 @@ function CumulativeChart({ focus, highlights, series, ariaLabel }: { focus: numb
 
     const animate = (time: number) => {
       if (!visible) return;
+      if (typeof window !== "undefined" && (window as any).__INSTANT_CHART__) {
+        currentProgress = 1;
+        draw(1);
+        return;
+      }
       if (!start) start = time;
       const progress = Math.min(1, (time - start) / 1500);
       currentProgress = 1 - Math.pow(1 - progress, 3);
@@ -551,6 +556,53 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      (window as any).__REVEAL_ALL_SLIDES__ = () => {
+        (window as any).__INSTANT_CHART__ = true;
+        setTherapeuticGoalStage(3);
+        setTaperingStage(7);
+        setStatisticsFrameworkStage(-1);
+        setTreatmentStoryStage(-1);
+        setTreatmentPhase(1);
+        setEfficacyStoryStage(5);
+        setDiscontinuationStoryStage(5);
+        setActiveBranch('idle');
+        setInspected79(true);
+        setInspected21(true);
+        setSynthesisStep(3);
+        setConcernRevealed(true);
+        setTemporalStep(4);
+        setAttritionStep(5);
+      };
+
+      (window as any).__PREPARE_SLIDE__ = (slideId: string) => {
+        (window as any).__INSTANT_CHART__ = true;
+        if (slideId === "therapeutic-goal") setTherapeuticGoalStage(3);
+        if (slideId === "tapering-cinematic") setTaperingStage(7);
+        if (slideId === "statistics-redesign") setStatisticsFrameworkStage(-1);
+        if (slideId === "treatment-results-redesign") {
+          setTreatmentStoryStage(-1);
+          setTreatmentPhase(1);
+        }
+        if (slideId === "results") setEfficacyStoryStage(5);
+        if (slideId === "discontinuation") setDiscontinuationStoryStage(5);
+        if (slideId === "limitations-2") {
+          setActiveBranch('idle');
+          setInspected79(true);
+          setInspected21(true);
+          setSynthesisStep(3);
+          setConcernRevealed(true);
+        }
+        if (slideId === "limitations-3") setTemporalStep(4);
+        if (slideId === "limitations-5") setAttritionStep(5);
+
+        const targetEl = document.getElementById(slideId);
+        const deck = deckRef.current;
+        if (targetEl && deck) {
+          deck.scrollTop = targetEl.offsetTop;
+        }
+      };
+    }
     return () => clearInspectTimers();
   }, []);
 
