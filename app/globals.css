@@ -14086,19 +14086,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .claim-highlight {
-  font: 900 clamp(0.36rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-shadow: 0 0 5px rgba(255, 77, 82, 0.4);
+  font: 800 clamp(0.38rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace !important;
+  font-size: clamp(0.38rem, 0.46vw, 0.58rem) !important;
+  color: #ff4d52 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 0 5px rgba(255, 77, 82, 0.4) !important;
 }
 
 .claim-safety-text {
-  font: 800 clamp(0.36rem, 0.44vw, 0.54rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-shadow: 0 0 5px rgba(255, 77, 82, 0.4);
+  font: 800 clamp(0.38rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace !important;
+  font-size: clamp(0.38rem, 0.46vw, 0.58rem) !important;
+  color: #ff4d52 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 0 5px rgba(255, 77, 82, 0.4) !important;
 }
 
 .must-body-comparator {
