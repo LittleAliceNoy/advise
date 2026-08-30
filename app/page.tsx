@@ -1549,7 +1549,7 @@ export default function Home() {
 
                 <div className="bridge-pill">
                   <strong className="bridge-main-text">COMBINATION WHEN NEEDED</strong>
-                  <span className="bridge-sub-text">Antimetabolite + calcineurin inhibitor</span>
+                  <span className="bridge-sub-text">to achieve inflammation control</span>
                 </div>
 
                 <div className="bridge-trajectory-bottom" aria-hidden="true">
@@ -1617,6 +1617,59 @@ export default function Home() {
 
             </div>
 
+            {/* SUPPORTING EVIDENCE ANNOTATIONS (MOVED UPWARD & MORE PROMINENT) */}
+            <div className="observational-evidence-section">
+              <div className="intro4-section-rule" aria-hidden="true">
+                <span className="rule-bar" />
+                <span className="rule-label">SUPPORTING EVIDENCE FROM OBSERVATIONAL STUDIES</span>
+                <span className="rule-bar" />
+              </div>
+
+              <div className="evidence-boxes-row">
+                {/* Evidence Block 1: Single Agent (RED) */}
+                <div className="evidence-anno-box evidence-box-single">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-single">~40–60%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
+                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Evidence Block 2: Two Drugs (VIOLET) */}
+                <div className="evidence-anno-box evidence-box-combo">
+                  <div className="evidence-cohort-icon" aria-hidden="true">
+                    <svg viewBox="0 0 28 28" className="cohort-svg">
+                      <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
+                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div className="evidence-anno-content">
+                    <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
+                    <div className="evidence-text-block">
+                      <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
+                      <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* STEPWISE APPROACH PATHWAY (Subordinate Horizontal Flow) */}
             <div className="stepwise-pathway-section">
               <div className="intro4-section-rule" aria-hidden="true">
@@ -1678,59 +1731,6 @@ export default function Home() {
                     <span className="step-num-tag step-goal-tag">3 GOAL</span>
                     <strong className="step-title">STEPWISE CONTROL</strong>
                     <span className="step-desc">Achieve inflammation control and steroid sparing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* SUPPORTING EVIDENCE ANNOTATIONS (ENLARGED PERCENTAGES) */}
-            <div className="observational-evidence-section">
-              <div className="intro4-section-rule" aria-hidden="true">
-                <span className="rule-bar" />
-                <span className="rule-label">SUPPORTING EVIDENCE FROM OBSERVATIONAL STUDIES</span>
-                <span className="rule-bar" />
-              </div>
-
-              <div className="evidence-boxes-row">
-                {/* Evidence Block 1: Single Agent (RED) */}
-                <div className="evidence-anno-box evidence-box-single">
-                  <div className="evidence-cohort-icon" aria-hidden="true">
-                    <svg viewBox="0 0 28 28" className="cohort-svg">
-                      <circle cx="14" cy="8" r="4" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
-                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
-                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
-                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" />
-                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.3" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat stat-single">~40–60%</strong>
-                    <div className="evidence-text-block">
-                      <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
-                      <span className="evidence-subtext">with a single immunosuppressive agent</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evidence Block 2: Two Drugs (VIOLET) */}
-                <div className="evidence-anno-box evidence-box-combo">
-                  <div className="evidence-cohort-icon" aria-hidden="true">
-                    <svg viewBox="0 0 28 28" className="cohort-svg">
-                      <circle cx="14" cy="8" r="4" fill="none" stroke="#c084fc" strokeWidth="1.6" />
-                      <path d="M6 22 C6 17 10 15 14 15 C18 15 22 17 22 22" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" />
-                      <circle cx="6" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
-                      <path d="M1 21 C1 18 3 16.5 6 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
-                      <circle cx="22" cy="11" r="2.8" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" />
-                      <path d="M27 21 C27 18 25 16.5 22 16.5" fill="none" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="1.3" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <div className="evidence-anno-content">
-                    <strong className="evidence-pct-stat stat-combo">~20–25%</strong>
-                    <div className="evidence-text-block">
-                      <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
-                      <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
-                    </div>
                   </div>
                 </div>
               </div>
