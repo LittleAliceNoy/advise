@@ -15605,6 +15605,159 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 800;
 }
 
+/* Slide 05 — reference typography and proportion restoration.
+   The visual structure is already approved; restore its presentation-scale,
+   proportional reading hierarchy without changing content or geometry. */
+@media (min-width: 701px) {
+  .intro5-scene .antibody-hero-name,
+  .intro5-scene .antibody-hero-sub,
+  .intro5-scene .antibody-hero-desc,
+  .intro5-scene .milestone-agency-tag,
+  .intro5-scene .evidence-sig-tag,
+  .intro5-scene .evidence-hero-statement,
+  .intro5-scene .evidence-body-desc,
+  .intro5-scene .cohort-stat-anchor,
+  .intro5-scene .cohort-headline,
+  .intro5-scene .tension-lead {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif !important;
+  }
+
+  .intro5-header h2 {
+    font-size: clamp(2.3rem, 3.8vw, 4.55rem);
+    font-weight: 450;
+    letter-spacing: -0.06em;
+    line-height: 1.02;
+  }
+
+  .intro5-content-grid {
+    margin-top: clamp(0.45rem, 0.8vh, 0.82rem);
+    gap: clamp(0.7rem, 1.2vh, 1.3rem);
+  }
+
+  .intro5-main-columns {
+    gap: clamp(1.4rem, 2.35vw, 2.8rem);
+  }
+
+  .biologic-tall-svg {
+    max-height: clamp(235px, 37vh, 390px);
+  }
+
+  .antibody-hero-caption-block {
+    gap: clamp(0.24rem, 0.42vh, 0.5rem);
+    margin-top: clamp(0.65rem, 1.1vh, 1.2rem);
+  }
+
+  .antibody-hero-name {
+    font-size: clamp(2.1rem, 2.7vw, 3.45rem);
+    font-weight: 760;
+    letter-spacing: 0.055em;
+    line-height: 1.04;
+  }
+
+  .antibody-hero-sub {
+    font-size: clamp(0.94rem, 1.12vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.28;
+  }
+
+  .antibody-hero-desc {
+    font-size: clamp(0.78rem, 0.98vw, 1.2rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.38;
+  }
+
+  .intro5-right-content {
+    gap: clamp(0.95rem, 1.55vh, 1.7rem);
+    padding-bottom: clamp(0.7rem, 1.35vh, 1.45rem);
+  }
+
+  .approval-milestone-panel.ethics-style-center {
+    gap: clamp(0.3rem, 0.58vh, 0.62rem);
+    padding: clamp(0.72rem, 1.12vh, 1.18rem) clamp(1rem, 1.55vw, 1.7rem);
+  }
+
+  .milestone-agency-tag {
+    font-size: clamp(0.58rem, 0.68vw, 0.82rem);
+    font-weight: 520;
+    letter-spacing: 0.11em;
+  }
+
+  .milestone-indication-text {
+    font-size: clamp(0.82rem, 1vw, 1.24rem);
+    font-weight: 600;
+    line-height: 1.32;
+  }
+
+  .intro5-prior-evidence-section {
+    gap: clamp(0.78rem, 1.18vh, 1.3rem);
+  }
+
+  .prior-evidence-stack {
+    gap: clamp(0.88rem, 1.4vh, 1.58rem);
+  }
+
+  .evidence-panel {
+    gap: clamp(0.46rem, 0.72vh, 0.78rem);
+    padding: clamp(0.62rem, 1vh, 1.05rem) clamp(0.95rem, 1.45vw, 1.55rem);
+  }
+
+  .evidence-sig-tag {
+    font-size: clamp(0.6rem, 0.7vw, 0.86rem);
+    font-weight: 520;
+    letter-spacing: 0.09em;
+  }
+
+  .evidence-content-body {
+    gap: clamp(0.42rem, 0.65vh, 0.7rem);
+  }
+
+  .evidence-hero-statement,
+  .cohort-headline {
+    font-size: clamp(0.96rem, 1.2vw, 1.46rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.24;
+  }
+
+  .evidence-body-desc {
+    font-size: clamp(0.64rem, 0.76vw, 0.92rem);
+    font-weight: 400;
+    line-height: 1.38;
+  }
+
+  .cohort-content-row {
+    gap: clamp(1.05rem, 1.85vw, 2rem);
+  }
+
+  .cohort-stat-anchor {
+    font-size: clamp(1.65rem, 2.12vw, 2.65rem) !important;
+    font-weight: 760 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .cohort-text-details {
+    gap: clamp(0.3rem, 0.48vh, 0.5rem);
+  }
+
+  .tension-content {
+    gap: clamp(0.25rem, 0.48vh, 0.54rem);
+  }
+
+  .tension-lead {
+    font-size: clamp(0.7rem, 0.84vw, 1.04rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .tension-question {
+    font-size: clamp(1.08rem, 1.48vw, 1.86rem);
+    font-weight: 600;
+    line-height: 1.22;
+  }
+}
+
 /* ========================================================================= */
 /* SLIDE 06: THE EVIDENCE GAP / CONVERGENCE & ADVISE REVEAL                  */
 /* ========================================================================= */
