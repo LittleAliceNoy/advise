@@ -706,6 +706,13 @@ export default function Home() {
       if (params.get("handout") === "true" || (window as any).__HANDOUT_MODE__) {
         setIsHandout(true);
       }
+      const slideParam = params.get("slide");
+      if (slideParam) {
+        const slideIndex = parseInt(slideParam, 10) - 1;
+        if (!isNaN(slideIndex) && slideIndex >= 0 && slideIndex < chapters.length) {
+          goTo(slideIndex);
+        }
+      }
     }
   }, []);
 
@@ -1408,7 +1415,7 @@ export default function Home() {
                   </div>
                   <div className="territory-titles">
                     <strong className="territory-class-name">ANTIMETABOLITES</strong>
-                    <span className="territory-class-tag">TYPICAL INITIAL CLASS</span>
+                    <span className="territory-class-tag">THE INITIAL / FOUNDATION CLASS</span>
                   </div>
                 </div>
 
@@ -1562,8 +1569,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div className="drug-meta">
-                        <strong className="drug-name">Azathioprine</strong>
-                        <span className="drug-moa">Purine synthesis inhibitor · prodrug of 6-MP</span>
+                        <strong className="drug-name">AZATHIOPRINE</strong>
+                        <span className="drug-moa">Purine analog</span>
                       </div>
                     </div>
                   </div>
@@ -1652,8 +1659,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
-                      <strong className="cni-drug-name">Cyclosporine</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibitor · cyclic peptide</span>
+                      <strong className="cni-drug-name">CYCLOSPORINE</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via cyclophilin binding</span>
                     </div>
                   </div>
 
@@ -1671,8 +1678,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="calcineurin-drug-info">
-                      <strong className="cni-drug-name">Tacrolimus</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibitor · macrolide</span>
+                      <strong className="cni-drug-name">TACROLIMUS</strong>
+                      <span className="cni-drug-moa">Calcineurin inhibition via FKBP binding</span>
                     </div>
                   </div>
                 </div>
@@ -1739,7 +1746,8 @@ export default function Home() {
                   </div>
                   <div className="step-text-wrap">
                     <span className="step-num-tag step-goal-tag">3 GOAL</span>
-                    <strong className="step-title">INFLAMMATION CONTROL + STEROID SPARING</strong>
+                    <strong className="step-title">STEPWISE CONTROL</strong>
+                    <span className="step-desc">Achieve inflammation control and steroid sparing</span>
                   </div>
                 </div>
               </div>

@@ -14627,12 +14627,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* Slide 04 — Conventional Immunosuppression: Drug Classes Hero */
 .intro4-scene {
-  padding: 7.5vh clamp(2vw, 4.5vw, 4.5rem) 4.2vh;
+  padding: 6.5vh clamp(2vw, 4.5vw, 4.5rem) 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(0.8rem, 1.5vh, 1.6rem);
+  justify-content: flex-start;
+  gap: 0;
   background:
     radial-gradient(ellipse at 28% 42%, rgba(255, 45, 45, 0.08), transparent 48%),
     radial-gradient(ellipse at 78% 42%, rgba(255, 45, 45, 0.05), transparent 48%),
@@ -14647,14 +14647,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: clamp(1.2rem, 2.2vh, 2.2rem);
 }
 
 .intro4-header h2 {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(2.4rem, 4.0vw, 4.8rem);
+  font-size: clamp(2.8rem, 4.4vw, 5.2rem);
   font-weight: 450;
-  letter-spacing: -0.065em;
-  line-height: 0.93;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
   color: var(--white);
   margin: 0;
   text-align: center;
@@ -14667,21 +14668,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro4-content-grid {
-  width: min(86rem, 93vw);
-  flex: 1;
+  width: min(88rem, 94vw);
+  flex: none;
   min-height: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 0;
-  margin-top: clamp(0.2rem, 0.5vh, 0.5rem);
 }
 
-/* HERO PHARMACOLOGIC CLASSES AREA (~60-65% visual weight) */
+/* HERO PHARMACOLOGIC CLASSES AREA */
 .intro4-hero-territories {
   display: grid;
-  grid-template-columns: 1.32fr 1fr;
-  gap: clamp(1.8rem, 3.5vw, 4.5rem);
+  grid-template-columns: 1.28fr 1fr;
+  gap: clamp(1.8rem, 3.6vw, 4.5rem);
   align-items: center;
   width: 100%;
 }
@@ -14710,16 +14710,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: fit-content;
   max-width: 100%;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: clamp(0.45rem, 0.8vh, 0.8rem);
-  border-bottom: 1px solid rgba(192, 132, 252, 0.25);
-  padding-bottom: clamp(0.22rem, 0.35vh, 0.40rem);
-  padding-right: clamp(0.8rem, 1.2vw, 1.8rem);
+  gap: 0.65rem;
+  margin-bottom: clamp(0.55rem, 0.9vh, 0.9rem);
+  border-bottom: 1.5px solid rgba(192, 132, 252, 0.28);
+  padding-bottom: clamp(0.25rem, 0.4vh, 0.45rem);
+  padding-right: clamp(1.0rem, 2.0vw, 2.8rem);
 }
 
 .territory-badge {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.4));
 }
@@ -14735,19 +14735,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-class-name {
-  font: 900 clamp(0.92rem, 1.22vw, 1.5rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(1.02rem, 1.22vw, 1.42rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
+  letter-spacing: 0.03em;
+  line-height: 1.12;
   text-shadow: 0 0 16px rgba(192, 132, 252, 0.35);
 }
 
 .territory-class-tag {
-  font: 700 clamp(0.42rem, 0.50vw, 0.64rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.54rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
   color: #c084fc;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
-  margin-top: 0.1rem;
+  margin-top: 0.12rem;
 }
 
 .territory-addon-tag {
@@ -14758,31 +14758,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .antimetabolites-visual-core {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: clamp(0.6rem, 1.0vw, 1.2rem);
+  gap: clamp(0.8rem, 1.4vw, 1.6rem);
   align-items: center;
 }
 
 .drug-nodes-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.3rem, 0.55vh, 0.6rem);
+  gap: clamp(0.42rem, 0.72vh, 0.72rem);
 }
 
 .drug-node-card {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 0.8vw, 1.0rem);
-  background: rgba(18, 12, 24, 0.6);
-  border: 1px solid rgba(192, 132, 252, 0.18);
-  border-left: 2px solid rgba(192, 132, 252, 0.45);
+  gap: clamp(0.6rem, 0.9vw, 1.1rem);
+  background: rgba(18, 12, 24, 0.65);
+  border: 1px solid rgba(192, 132, 252, 0.20);
+  border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.8vw, 0.9rem);
+  padding: clamp(0.48rem, 0.78vh, 0.76rem) clamp(0.7rem, 1.0vw, 1.15rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .drug-icon-box {
-  width: clamp(34px, 2.9vw, 46px);
-  height: clamp(28px, 2.4vw, 36px);
+  width: clamp(38px, 3.2vw, 48px);
+  height: clamp(30px, 2.6vw, 38px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
@@ -14799,91 +14799,38 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .drug-name {
-  font: 900 clamp(0.62rem, 0.76vw, 0.95rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.80rem, 0.92vw, 1.08rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .drug-moa {
-  font: 500 clamp(0.42rem, 0.50vw, 0.62rem) var(--font-geist-mono), monospace;
+  font: 400 clamp(0.55rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
-  line-height: 1.2;
-  margin-top: 0.08rem;
+  line-height: 1.25;
+  margin-top: 0.12rem;
 }
 
 .molecular-sphere-hero {
-  width: clamp(112px, 11vw, 150px);
-  height: clamp(112px, 11vw, 150px);
+  width: clamp(140px, 14vw, 180px);
+  height: clamp(140px, 14vw, 180px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  opacity: 0.82;
+  opacity: 0.92;
 }
 
 .molecular-sphere-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 10px rgba(255, 45, 45, 0.20));
-}
-
-/* Escalation Bridge Between Drug Classes */
-.escalation-bridge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  width: 100%;
-}
-
-.bridge-trajectory-top,
-.bridge-trajectory-bottom {
-  width: 100%;
-  height: 16px;
-  display: grid;
-  place-items: center;
-}
-
-.bridge-top-svg,
-.bridge-bottom-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.bridge-pill {
-  padding: clamp(0.1rem, 0.2vh, 0.25rem) 0;
-  background: transparent;
-  border: none;
-  border-radius: 0px;
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.bridge-main-text {
-  font: 800 clamp(0.52rem, 0.62vw, 0.76rem) var(--font-geist-mono), monospace;
-  color: #ff4d52;
-  letter-spacing: 0.06em;
-  line-height: 1.15;
-  text-shadow: 0 0 8px rgba(255, 77, 82, 0.4);
-}
-
-.bridge-sub-text {
-  font: 500 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
-  color: #d6d3d1;
-  line-height: 1.2;
+  filter: drop-shadow(0 0 12px rgba(255, 45, 45, 0.22));
 }
 
 .calcineurin-cards-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.4rem, 0.7vh, 0.75rem);
+  gap: clamp(0.6rem, 1.0vh, 1.0rem);
   justify-content: center;
   height: 100%;
 }
@@ -14891,18 +14838,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .calcineurin-drug-box {
   display: flex;
   align-items: center;
-  gap: clamp(0.55rem, 0.9vw, 1.0rem);
-  background: rgba(18, 12, 24, 0.6);
-  border: 1px solid rgba(192, 132, 252, 0.18);
-  border-left: 2px solid rgba(192, 132, 252, 0.45);
+  gap: clamp(0.65rem, 1.0vw, 1.15rem);
+  background: rgba(18, 12, 24, 0.65);
+  border: 1px solid rgba(192, 132, 252, 0.20);
+  border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.4rem, 0.7vh, 0.7rem) clamp(0.65rem, 1.0vw, 1.1rem);
+  padding: clamp(0.65rem, 1.05vh, 1.05rem) clamp(0.8rem, 1.15vw, 1.3rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .calcineurin-cluster-icon {
-  width: clamp(32px, 2.8vw, 42px);
-  height: clamp(32px, 2.8vw, 42px);
+  width: clamp(36px, 3.0vw, 44px);
+  height: clamp(36px, 3.0vw, 44px);
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.35));
 }
@@ -14918,26 +14865,26 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cni-drug-name {
-  font: 900 clamp(0.68rem, 0.84vw, 1.05rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.80rem, 0.92vw, 1.08rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .cni-drug-moa {
-  font: 500 clamp(0.44rem, 0.52vw, 0.64rem) var(--font-geist-mono), monospace;
+  font: 400 clamp(0.55rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
-  line-height: 1.2;
-  margin-top: 0.08rem;
+  line-height: 1.25;
+  margin-top: 0.12rem;
 }
 
-/* Subordinate Stepwise Approach Section — Locked in its exact location */
+/* Subordinate Stepwise Approach Section */
 .stepwise-pathway-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.3rem, 0.55vh, 0.65rem);
+  gap: clamp(0.35rem, 0.6vh, 0.65rem);
   width: 100%;
-  margin-top: clamp(0.9rem, 1.8vh, 2.2rem);
+  margin-top: clamp(1.4rem, 2.4vh, 2.6rem);
 }
 
 .intro4-section-rule {
@@ -14946,7 +14893,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
-  margin: clamp(0.15rem, 0.35vh, 0.45rem) 0;
+  margin: clamp(0.15rem, 0.3vh, 0.4rem) 0;
 }
 
 .rule-bar {
@@ -14956,9 +14903,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .rule-label {
-  font: 700 clamp(0.40rem, 0.46vw, 0.58rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.52rem, 0.58vw, 0.70rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -14967,10 +14914,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: linear-gradient(90deg, rgba(255, 77, 82, 0.06) 0%, rgba(14, 9, 16, 0.85) 50%, rgba(255, 77, 82, 0.06) 100%);
-  border: 1px solid rgba(255, 77, 82, 0.25);
+  background: linear-gradient(90deg, rgba(255, 77, 82, 0.07) 0%, rgba(14, 9, 16, 0.90) 50%, rgba(255, 77, 82, 0.07) 100%);
+  border: 1px solid rgba(255, 77, 82, 0.28);
   border-radius: 0px;
-  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.8rem, 1.5vw, 1.8rem);
+  padding: clamp(0.55rem, 0.85vh, 0.85rem) clamp(1.1rem, 1.8vw, 2.2rem);
   box-shadow: 0 0 16px rgba(255, 77, 82, 0.08);
   box-sizing: border-box;
 }
@@ -14978,14 +14925,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .step-item {
   display: flex;
   align-items: center;
-  gap: clamp(0.45rem, 0.7vw, 0.8rem);
+  gap: clamp(0.55rem, 0.8vw, 0.95rem);
 }
 
 .step-icon-circle {
-  width: clamp(26px, 2.3vw, 34px);
-  height: clamp(26px, 2.3vw, 34px);
+  width: clamp(28px, 2.5vw, 36px);
+  height: clamp(28px, 2.5vw, 36px);
   border-radius: 50%;
-  border: 1.2px solid rgba(255, 77, 82, 0.55);
+  border: 1.4px solid rgba(255, 77, 82, 0.55);
   display: grid;
   place-items: center;
   background: rgba(255, 77, 82, 0.12);
@@ -15004,9 +14951,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-num-tag {
-  font: 800 clamp(0.36rem, 0.42vw, 0.52rem) var(--font-geist-mono), monospace;
+  font: 700 clamp(0.48rem, 0.54vw, 0.65rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ff4d52;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-shadow: 0 0 8px rgba(255, 77, 82, 0.35);
 }
 
@@ -15015,16 +14962,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-title {
-  font: 900 clamp(0.58rem, 0.70vw, 0.88rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.74rem, 0.84vw, 1.02rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.015em;
   line-height: 1.15;
 }
 
 .step-desc {
-  font: 500 clamp(0.38rem, 0.44vw, 0.55rem) var(--font-geist-mono), monospace;
+  font: 400 clamp(0.52rem, 0.58vw, 0.70rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
-  line-height: 1.2;
+  line-height: 1.22;
+  margin-top: 0.1rem;
 }
 
 .step-arrow-wrap {
@@ -15032,11 +14980,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   gap: 0.25rem;
   color: rgba(255, 77, 82, 0.8);
-  font-size: 0.6rem;
+  font-size: 0.65rem;
 }
 
 .step-dotted-line {
-  width: clamp(20px, 3.5vw, 48px);
+  width: clamp(24px, 4.0vw, 54px);
   height: 1px;
   border-top: 1.5px dashed rgba(255, 77, 82, 0.5);
 }
@@ -15046,31 +14994,32 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
 }
 
-/* Observational Evidence Section — Positioned downward with generous spacing */
+/* Observational Evidence Section */
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.25rem, 0.45vh, 0.6rem);
+  gap: clamp(0.35rem, 0.6vh, 0.65rem);
   width: 100%;
-  margin-top: clamp(2.4rem, 4.4vh, 4.6rem);
+  margin-top: clamp(1.8rem, 3.0vh, 3.4rem);
 }
 
 .evidence-boxes-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.2rem, 2.4vw, 3.2rem);
+  gap: clamp(1.8rem, 3.8vw, 4.8rem);
   width: 100%;
   align-items: center;
+  margin-top: clamp(0.35rem, 0.6vh, 0.75rem);
 }
 
 .evidence-anno-box {
   display: flex;
   align-items: center;
-  gap: clamp(0.8rem, 1.4vw, 1.8rem);
+  gap: clamp(0.85rem, 1.3vw, 1.6rem);
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  padding: clamp(0.2rem, 0.4vh, 0.5rem) 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15082,8 +15031,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-cohort-icon {
-  width: clamp(34px, 3.0vw, 46px);
-  height: clamp(34px, 3.0vw, 46px);
+  width: clamp(38px, 3.2vw, 48px);
+  height: clamp(38px, 3.2vw, 48px);
   border-radius: 50%;
   flex-shrink: 0;
   display: grid;
@@ -15108,9 +15057,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-pct-stat {
-  font-family: var(--font-geist-mono), monospace !important;
-  font-size: clamp(2.6rem, 3.8vw, 4.8rem) !important;
-  font-weight: 900 !important;
+  font-family: var(--font-geist-sans), Arial, sans-serif !important;
+  font-size: clamp(2.8rem, 4.2vw, 5.0rem) !important;
+  font-weight: 800 !important;
   line-height: 0.88 !important;
   letter-spacing: -0.04em !important;
   flex-shrink: 0 !important;
@@ -15133,140 +15082,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-headline {
-  font: 800 clamp(0.52rem, 0.64vw, 0.82rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.66rem, 0.74vw, 0.90rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   display: block;
-  line-height: 1.15;
+  line-height: 1.22;
+  white-space: nowrap;
 }
 
 .evidence-subtext {
-  font: 500 clamp(0.40rem, 0.48vw, 0.60rem) var(--font-geist-mono), monospace;
+  font: 400 clamp(0.54rem, 0.62vw, 0.74rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   display: block;
-  margin-top: 0.12rem;
-}
-
-/* Slide 04 — reference typography restoration.
-   Keep its composition intact while returning the information hierarchy to the
-   lighter, proportional editorial treatment used by the approved reference. */
-@media (min-width: 701px) {
-  .intro4-scene .territory-class-name,
-  .intro4-scene .territory-class-tag,
-  .intro4-scene .drug-name,
-  .intro4-scene .drug-moa,
-  .intro4-scene .cni-drug-name,
-  .intro4-scene .cni-drug-moa,
-  .intro4-scene .rule-label,
-  .intro4-scene .step-num-tag,
-  .intro4-scene .step-title,
-  .intro4-scene .step-desc,
-  .intro4-scene .evidence-headline,
-  .intro4-scene .evidence-subtext {
-    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  }
-
-  .intro4-scene .territory-class-name {
-    font-size: clamp(1.02rem, 1.2vw, 1.45rem);
-    font-weight: 520;
-    letter-spacing: 0.02em;
-  }
-
-  .intro4-scene .territory-class-tag {
-    font-size: clamp(0.54rem, 0.58vw, 0.7rem);
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    margin-top: 0.16rem;
-  }
-
-  .intro4-scene .territory-header {
-    margin-bottom: clamp(0.6rem, 1vh, 0.95rem);
-  }
-
-  .intro4-scene .drug-nodes-col {
-    gap: clamp(0.42rem, 0.72vh, 0.72rem);
-  }
-
-  .intro4-scene .drug-node-card {
-    padding: clamp(0.42rem, 0.66vh, 0.64rem) clamp(0.62rem, 0.9vw, 1rem);
-  }
-
-  .intro4-scene .drug-name,
-  .intro4-scene .cni-drug-name {
-    font-size: clamp(0.76rem, 0.86vw, 1.03rem);
-    font-weight: 530;
-    letter-spacing: 0.015em;
-    line-height: 1.18;
-  }
-
-  .intro4-scene .drug-moa,
-  .intro4-scene .cni-drug-moa {
-    font-size: clamp(0.54rem, 0.59vw, 0.7rem);
-    font-weight: 400;
-    line-height: 1.28;
-    margin-top: 0.14rem;
-  }
-
-  .intro4-scene .calcineurin-cards-col {
-    gap: clamp(0.55rem, 0.9vh, 0.9rem);
-  }
-
-  .intro4-scene .calcineurin-drug-box {
-    padding: clamp(0.52rem, 0.84vh, 0.82rem) clamp(0.75rem, 1.05vw, 1.18rem);
-  }
-
-  .intro4-scene .stepwise-pathway-section {
-    margin-top: clamp(1.1rem, 2vh, 2.25rem);
-    gap: clamp(0.42rem, 0.68vh, 0.72rem);
-  }
-
-  .intro4-scene .rule-label {
-    font-size: clamp(0.5rem, 0.54vw, 0.66rem);
-    font-weight: 500;
-    letter-spacing: 0.12em;
-  }
-
-  .intro4-scene .stepwise-steps-flow {
-    padding: clamp(0.5rem, 0.78vh, 0.72rem) clamp(0.95rem, 1.65vw, 1.9rem);
-  }
-
-  .intro4-scene .step-num-tag {
-    font-size: clamp(0.44rem, 0.48vw, 0.58rem);
-    font-weight: 520;
-    letter-spacing: 0.065em;
-  }
-
-  .intro4-scene .step-title {
-    font-size: clamp(0.7rem, 0.78vw, 0.94rem);
-    font-weight: 520;
-    letter-spacing: 0.012em;
-    line-height: 1.18;
-  }
-
-  .intro4-scene .step-desc {
-    font-size: clamp(0.48rem, 0.53vw, 0.64rem);
-    font-weight: 400;
-    line-height: 1.28;
-    margin-top: 0.1rem;
-  }
-
-  .intro4-scene .observational-evidence-section {
-    margin-top: clamp(2.65rem, 4.75vh, 4.85rem);
-  }
-
-  .intro4-scene .evidence-headline {
-    font-size: clamp(0.62rem, 0.68vw, 0.82rem);
-    font-weight: 520;
-    letter-spacing: 0.015em;
-    line-height: 1.2;
-  }
-
-  .intro4-scene .evidence-subtext {
-    font-size: clamp(0.5rem, 0.55vw, 0.66rem);
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 0.16rem;
-  }
+  margin-top: 0.14rem;
+  line-height: 1.25;
 }
 
 /* Slide 05 — Adalimumab Targeted Biologic & Prior Evidence */
