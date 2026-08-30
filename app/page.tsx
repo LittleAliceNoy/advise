@@ -1864,7 +1864,7 @@ export default function Home() {
 
                         {/* Bottom Labels */}
                         <text x="194" y="272" fill="#ffffff" fontSize="10.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">HUMAN IgG1 MONOCLONAL ANTIBODY</text>
-                        <text x="194" y="286" fill="#a8a29e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Binds soluble &amp; transmembrane TNF-α with high affinity</text>
+                        <text x="194" y="286" fill="#a8a29e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">High-affinity neutralization of soluble &amp; transmembrane TNF-α</text>
                       </g>
                     </svg>
                   </div>
@@ -1881,15 +1881,15 @@ export default function Home() {
               {/* ENTIRE RIGHT SIDE: MILESTONE & PRIOR EVIDENCE SIGNALS */}
               <div className="intro5-right-content">
                 
-                {/* 2016 FDA APPROVAL */}
+                {/* 2016 FDA & EMA APPROVAL */}
                 <div className="approval-milestone-panel">
                   <div className="milestone-year-badge">
                     <span className="milestone-year">2016</span>
-                    <span className="milestone-agency">FDA APPROVAL</span>
+                    <span className="milestone-agency">FDA &amp; EMA APPROVED</span>
                   </div>
                   <div className="milestone-body">
-                    <strong className="milestone-indication">Noninfectious intermediate, posterior &amp; panuveitis</strong>
-                    <span className="milestone-sub">Subsequently EMA approved</span>
+                    <strong className="milestone-indication">Non-infectious intermediate, posterior &amp; panuveitis</strong>
+                    <span className="milestone-sub">Following established approval across systemic rheumatic diseases</span>
                   </div>
                 </div>
 
@@ -1897,7 +1897,7 @@ export default function Home() {
                 <div className="intro5-prior-evidence-section">
                   <div className="intro5-section-rule" aria-hidden="true">
                     <span className="rule-bar" />
-                    <span className="rule-label">WHAT WAS KNOWN PRIOR TO ADVISE</span>
+                    <span className="rule-label">KEY EVIDENCE BEFORE ADVISE</span>
                     <span className="rule-bar" />
                   </div>
 
@@ -1905,14 +1905,14 @@ export default function Home() {
                     {/* SIGNAL 01: RANDOMIZED TRIALS vs PLACEBO */}
                     <div className="evidence-panel panel-rct">
                       <div className="evidence-panel-header">
-                        <span className="evidence-sig-tag">01 — RANDOMIZED TRIALS vs PLACEBO</span>
+                        <span className="evidence-sig-tag">01 — RANDOMIZED CLINICAL TRIALS</span>
                       </div>
                       
                       <div className="rct-sequence-flow">
                         <div className="rct-step">
-                          <span className="rct-step-sub">INITIAL STEROID</span>
-                          <strong className="rct-step-title">PREDNISONE</strong>
-                          <span className="rct-step-action">tapered → discontinued</span>
+                          <span className="rct-step-sub">PREDNISONE</span>
+                          <strong className="rct-step-title">TAPERED</strong>
+                          <span className="rct-step-action">→ discontinued</span>
                         </div>
 
                         <div className="rct-flow-arrow" aria-hidden="true">
@@ -1952,7 +1952,7 @@ export default function Home() {
 
                         <div className="rct-result-text">
                           <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
-                          <span className="rct-sub-result">Significantly delayed time to treatment failure vs placebo</span>
+                          <span className="rct-sub-result">Significantly delayed time to relapse vs placebo during steroid taper</span>
                         </div>
                       </div>
                     </div>
@@ -1976,7 +1976,7 @@ export default function Home() {
                       </div>
 
                       <div className="cohort-subordinate-footer">
-                        <span>Follow-up extension cohort evidence</span>
+                        <span>Demonstrated durable steroid sparing in extension follow-up</span>
                       </div>
                     </div>
                   </div>
