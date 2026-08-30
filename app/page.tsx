@@ -1126,7 +1126,11 @@ export default function Home() {
                   </div>
                   <div className="must-panel-titles">
                     <span className="must-badge-tag">LANDMARK EVIDENCE</span>
-                    <strong className="must-main-title">MUST TRIAL <span className="must-title-sep">·</span> 7-YEAR FOLLOW-UP</strong>
+                    <strong className="must-main-title">
+                      <b style={{ fontWeight: 900, color: "#ffffff" }}>MUST TRIAL</b>
+                      <span className="must-title-sep">·</span>
+                      <span style={{ fontWeight: 700, color: "#e7e5e4" }}>7-YEAR FOLLOW-UP</span>
+                    </strong>
                   </div>
                 </div>
 
