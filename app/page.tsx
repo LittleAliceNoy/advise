@@ -1370,7 +1370,7 @@ export default function Home() {
                     {/* Drug 2: Mycophenolate Mofetil */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
-                        <svg viewBox="0 0 48 34" className="drug-svg">
+                        <svg viewBox="0 0 54 34" className="drug-svg">
                           <defs>
                             <linearGradient id="fade-tail-mmf" x1="0%" y1="0%" x2="100%" y2="0%">
                               <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
@@ -1379,37 +1379,40 @@ export default function Home() {
                               <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                          {/* Symmetrical Fused Phthalide Core */}
+                          {/* Horizontally Expanded Symmetrical Fused Phthalide Core */}
                           {/* Left 5-membered Lactone Ring (Neat Symmetrical Pentagon) */}
-                          <polygon points="5.5,18 10,11.5 16.5,13 16.5,23 10,24.5" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="5,18 10.5,11 18.5,13 18.5,23 10.5,25" fill="rgba(192, 132, 252, 0.05)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           {/* Right 6-membered Aromatic Ring (Neat Symmetrical Hexagon) */}
-                          <polygon points="16.5,13 22.5,9.5 28.5,13 28.5,23 22.5,26.5 16.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
+                          <polygon points="18.5,13 26,9.5 33.5,13 33.5,23 26,26.5 18.5,23" fill="rgba(192, 132, 252, 0.08)" stroke="#c084fc" strokeWidth="1.0" strokeLinejoin="round" />
                           
+                          {/* Shared Central Bond */}
+                          <line x1="18.5" y1="13" x2="18.5" y2="23" stroke="#ffffff" strokeWidth="0.9" />
+
                           {/* Inner aromatic ring */}
-                          <circle cx="22.5" cy="18" r="3.8" fill="none" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.8" strokeDasharray="1.6 1.2" />
+                          <circle cx="26" cy="18" r="4.2" fill="none" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="0.8" strokeDasharray="1.6 1.2" />
 
                           {/* Carbonyl (=O) on lactone */}
-                          <line x1="9.2" y1="11.5" x2="7" y2="5.5" stroke="#ff4d52" strokeWidth="0.9" />
-                          <line x1="10.8" y1="12" x2="8.6" y2="6" stroke="#ff4d52" strokeWidth="0.9" />
-                          <circle cx="7.8" cy="5.8" r="1.4" fill="#ff4d52" />
+                          <line x1="9.6" y1="11.2" x2="7" y2="5" stroke="#ff4d52" strokeWidth="0.9" />
+                          <line x1="11.4" y1="11.8" x2="8.8" y2="5.6" stroke="#ff4d52" strokeWidth="0.9" />
+                          <circle cx="7.9" cy="5.3" r="1.4" fill="#ff4d52" />
                           
-                          {/* Ring Oxygen (-O-) node */}
-                          <circle cx="5.5" cy="18" r="1.3" fill="#c084fc" />
+                          {/* Ring Oxygen (-O-) node in Red */}
+                          <circle cx="5" cy="18" r="1.4" fill="#ff4d52" />
 
-                          {/* Top Hydroxyl (-OH) group */}
-                          <line x1="22.5" y1="9.5" x2="22.5" y2="4" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="22.5" cy="4" r="1.4" fill="#ff4d52" />
+                          {/* Top Hydroxyl (-OH) group in Red */}
+                          <line x1="26" y1="9.5" x2="26" y2="4" stroke="#ff4d52" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="26" cy="4" r="1.4" fill="#ff4d52" />
 
-                          {/* Bottom Methyl (-CH3) group */}
-                          <line x1="22.5" y1="26.5" x2="22.5" y2="31" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="22.5" cy="31" r="1.2" fill="#ffffff" />
+                          {/* Bottom Methyl (-CH3) group in White */}
+                          <line x1="26" y1="26.5" x2="26" y2="31" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="26" cy="31" r="1.2" fill="#ffffff" />
 
-                          {/* Bottom-right Methoxy (-OCH3) group */}
-                          <line x1="28.5" y1="23" x2="33" y2="25.8" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="33" cy="25.8" r="1.3" fill="#c084fc" />
+                          {/* Bottom-right Methoxy (-OCH3) group with Red Oxygen */}
+                          <line x1="33.5" y1="23" x2="38.5" y2="26" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="38.5" cy="26" r="1.4" fill="#ff4d52" />
 
                           {/* Smooth Dissolving Tail to morpholinoethyl ester */}
-                          <path d="M 28.5 13 L 34 9.8 L 39.5 13 L 45 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                       <div className="drug-meta">
