@@ -14758,13 +14758,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   text-shadow: 0 0 6px rgba(255, 77, 82, 0.6);
 }
 
-/* Observational Evidence Section — Positioned closely underneath Stepwise */
+/* Observational Evidence Section — Positioned comfortably underneath Stepwise */
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.22rem, 0.4vh, 0.55rem);
+  gap: clamp(0.25rem, 0.45vh, 0.6rem);
   width: 100%;
-  margin-top: clamp(0.6rem, 1.2vh, 1.4rem);
+  margin-top: clamp(1.0rem, 1.8vh, 2.0rem);
 }
 
 .evidence-boxes-row {
