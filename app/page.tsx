@@ -1920,7 +1920,7 @@ export default function Home() {
 
           <div className="intro6-content-stage" aria-label="Head-to-head convergence of conventional immunosuppression versus adalimumab biologic strategy">
             
-            {/* CONVERGENCE MIDDLE HERO (CID vs ADA → ? → NO DIRECT COMPARISON) */}
+            {/* CONVERGENCE MIDDLE HERO (CID ──── ? ──── ADA) */}
             <div className="intro6-convergence-grid">
               
               {/* LEFT HERO: CID */}
@@ -1930,29 +1930,17 @@ export default function Home() {
                 <span className="wing-strategy-desc">Established systemic strategy</span>
               </div>
 
-              {/* CENTER HUB: TRAJECTORIES COLLIDING INTO QUESTION MARK */}
+              {/* CENTER HUB: 1px TRAJECTORIES CONVERGING INTO ? */}
               <div className="convergence-center-hub">
                 <div className="trajectory-track-stage" aria-hidden="true">
                   <div className="trajectory-line line-left" />
                   <div className="trajectory-target-node">
-                    <div className="target-core-circle">
-                      <svg viewBox="0 0 24 24" className="target-thunderbolt-svg" aria-hidden="true">
-                        <polygon points="13,2 4,14 11,14 9,22 20,10 13,10" fill="#ffffff" />
-                      </svg>
-                    </div>
+                    <span className="trajectory-question-mark">?</span>
                   </div>
                   <div className="trajectory-line line-right" />
                 </div>
 
-                <strong className="no-comparison-pill">NO DIRECT COMPARISON</strong>
-
-                {/* Downward Arrow pointing to ADVISE */}
-                <div className="center-down-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="down-arrow-svg">
-                    <line x1="12" y1="2" x2="12" y2="18" stroke="var(--red)" strokeWidth="2.4" strokeLinecap="round" />
-                    <polyline points="6,12 12,18 18,12" fill="none" stroke="var(--red)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
+                <span className="no-comparison-text">NO DIRECT COMPARISON</span>
               </div>
 
               {/* RIGHT HERO: ADA */}
@@ -1964,15 +1952,18 @@ export default function Home() {
 
             </div>
 
-            {/* BOTTOM REVEAL: ADVISE WORDMARK HORIZONTAL HERO */}
+            {/* BOTTOM REVEAL: ADVISE TECHNICAL FIELD (FORESHADOWING SLIDE 07 METHODS PANEL) */}
             <div className="intro6-bottom-reveal">
               <div className="reveal-content">
-                <span className="reveal-eyebrow">THE TRIAL DESIGNED TO ANSWER IT</span>
+                <span className="reveal-eyebrow">THE TRIAL BUILT TO ANSWER IT</span>
                 <h1 className="reveal-advise-wordmark">ADVISE</h1>
                 <h3 className="reveal-advise-title">
                   Adalimumab versus Conventional Immunosuppression for Uveitis
                 </h3>
-                <p className="reveal-advise-tagline">A RANDOMIZED, HEAD-TO-HEAD STRATEGY TRIAL</p>
+                <p className="reveal-advise-tagline">
+                  <span>RANDOMIZED · HEAD-TO-HEAD</span>
+                  <span>COMPARATIVE-EFFECTIVENESS TRIAL</span>
+                </p>
               </div>
             </div>
 
