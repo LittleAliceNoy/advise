@@ -1284,38 +1284,38 @@ export default function Home() {
         <section id="systemic-strategies" className="scene intro4-scene">
           <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / CONVENTIONAL IMMUNOSUPPRESSION</p>
 
-          <header className="intro4-header">
-            <h2>CONVENTIONAL IMMUNOSUPPRESSION</h2>
-            <div className="intro4-subrule" aria-hidden="true">
-              <span className="subrule-line" />
-              <span className="subrule-text">THE ESTABLISHED SYSTEMIC TOOLKIT</span>
-              <span className="subrule-line" />
-            </div>
+          <header className="intro4-narrative-header">
+            <h2 className="intro4-hero-headline">
+              One agent may <span className="headline-red-accent">not be enough.</span>
+            </h2>
+            <p className="intro4-support-line">
+              Conventional immunosuppression uses a stepwise, multi-class strategy.
+            </p>
           </header>
 
-          <div className="intro4-content-grid" aria-label="Conventional immunosuppression drug classes and stepwise strategy">
+          <div className="intro4-pathway-canvas" aria-label="Conventional immunosuppression stepwise therapeutic pathway">
             
-            {/* 1 — HERO DRUG TOOLKIT (~60-65% visual area: ANTIMETABOLITES → ± → CALCINEURIN INHIBITORS) */}
-            <div className="toolkit-hero-stage">
+            {/* HORIZONTAL THERAPEUTIC PATHWAY (OPEN COMPOSITION) */}
+            <div className="therapeutic-pathway-row">
               
-              {/* Left Column: ANTIMETABOLITES (Foundation Class) */}
-              <div className="toolkit-class-panel panel-antimetabolites">
-                <div className="toolkit-class-header">
-                  <div className="toolkit-class-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
-                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
-                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+              {/* LEFT: ANTIMETABOLITES (INITIAL / FOUNDATION CLASS) */}
+              <div className="pathway-class-zone zone-antimetabolites">
+                <div className="class-zone-header">
+                  <div className="class-zone-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="shield-mini-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <div className="toolkit-class-titles">
-                    <strong className="toolkit-class-name">ANTIMETABOLITES</strong>
-                    <span className="toolkit-class-tag">INITIAL / FOUNDATION CLASS</span>
+                  <div className="class-zone-titles">
+                    <strong className="class-zone-name">ANTIMETABOLITES</strong>
+                    <span className="class-zone-role">INITIAL / FOUNDATION CLASS</span>
                   </div>
                 </div>
 
-                <div className="toolkit-drugs-list">
+                <div className="pathway-drugs-stack">
                   {/* Drug 1: Methotrexate */}
-                  <div className="toolkit-drug-card">
+                  <div className="pathway-drug-item">
                     <div className="drug-icon-box drug-icon-hex" aria-hidden="true">
                       <svg viewBox="0 0 54 34" className="drug-svg">
                         <defs>
@@ -1359,14 +1359,14 @@ export default function Home() {
                         <path d="M 36 13 L 41.5 9.8 L 47 13 L 52 10.5" fill="none" stroke="url(#fade-tail-mtx)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="toolkit-drug-meta">
-                      <strong className="toolkit-drug-title">METHOTREXATE</strong>
-                      <span className="toolkit-drug-sub">Folate antagonist</span>
+                    <div className="drug-text-block">
+                      <strong className="drug-title-name">Methotrexate</strong>
+                      <span className="drug-subtitle-moa">folate antagonist</span>
                     </div>
                   </div>
 
                   {/* Drug 2: Mycophenolate Mofetil */}
-                  <div className="toolkit-drug-card">
+                  <div className="pathway-drug-item">
                     <div className="drug-icon-box drug-icon-fork" aria-hidden="true">
                       <svg viewBox="0 0 54 34" className="drug-svg">
                         <defs>
@@ -1417,14 +1417,14 @@ export default function Home() {
                         <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="toolkit-drug-meta">
-                      <strong className="toolkit-drug-title">MYCOPHENOLATE MOFETIL</strong>
-                      <span className="toolkit-drug-sub">Inosine monophosphate dehydrogenase inhibitor</span>
+                    <div className="drug-text-block">
+                      <strong className="drug-title-name">Mycophenolate mofetil</strong>
+                      <span className="drug-subtitle-moa">inosine monophosphate dehydrogenase inhibitor</span>
                     </div>
                   </div>
 
                   {/* Drug 3: Azathioprine */}
-                  <div className="toolkit-drug-card">
+                  <div className="pathway-drug-item">
                     <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
                       <svg viewBox="0 0 54 34" className="drug-svg">
                         <defs>
@@ -1463,60 +1463,50 @@ export default function Home() {
                         <path d="M 16 4.5 L 11 2.5 L 6 5 L 1.5 3" fill="none" stroke="url(#fade-tail-aza-left)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <div className="toolkit-drug-meta">
-                      <strong className="toolkit-drug-title">AZATHIOPRINE</strong>
-                      <span className="toolkit-drug-sub">Purine analog</span>
+                    <div className="drug-text-block">
+                      <strong className="drug-title-name">Azathioprine</strong>
+                      <span className="drug-subtitle-moa">purine analog</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Center: VISUAL JUNCTION (+ / WHEN NEEDED) with subtle atmospheric watermark */}
-              <div className="toolkit-junction">
-                <div className="junction-watermark-bg" aria-hidden="true">
-                  <svg viewBox="0 0 160 160" className="junction-watermark-svg">
-                    <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(192, 132, 252, 0.12)" strokeWidth="1.0" />
-                    <ellipse cx="80" cy="80" rx="70" ry="32" fill="none" stroke="rgba(255, 77, 82, 0.12)" strokeWidth="0.8" strokeDasharray="3 3" />
-                    <ellipse cx="80" cy="80" rx="32" ry="70" fill="none" stroke="rgba(192, 132, 252, 0.10)" strokeWidth="0.8" strokeDasharray="3 3" />
-                    <polygon points="80,50 100,62 100,86 80,98 60,86 60,62" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1.2" />
-                    <circle cx="80" cy="50" r="3" fill="rgba(255, 255, 255, 0.3)" />
-                    <circle cx="100" cy="62" r="3" fill="rgba(192, 132, 252, 0.4)" />
-                    <circle cx="100" cy="86" r="3" fill="rgba(255, 77, 82, 0.4)" />
-                    <circle cx="80" cy="98" r="3" fill="rgba(192, 132, 252, 0.4)" />
-                    <circle cx="60" cy="86" r="3" fill="rgba(255, 255, 255, 0.3)" />
-                    <circle cx="60" cy="62" r="3" fill="rgba(192, 132, 252, 0.4)" />
-                  </svg>
+              {/* CENTRAL ESCALATION CONNECTOR (+ / WHEN NEEDED / ADD ANOTHER CLASS) */}
+              <div className="pathway-escalation-node">
+                <div className="escalation-flow-track" aria-hidden="true">
+                  <span className="flow-dash-line line-left" />
+                  <div className="escalation-plus-circle" aria-label="Plus combination junction">
+                    <span className="escalation-plus-glyph">+</span>
+                  </div>
+                  <span className="flow-dash-line line-right" />
+                  <span className="flow-arrow-head">▶</span>
                 </div>
 
-                <div className="junction-connector-content">
-                  <div className="junction-line-top" aria-hidden="true" />
-                  <div className="junction-symbol-badge" aria-label="Plus or minus combination junction">
-                    <span className="junction-plus-glyph">+</span>
-                  </div>
-                  <strong className="junction-label-text">WHEN NEEDED</strong>
-                  <span className="junction-sublabel-text">Combination Escalation</span>
-                  <div className="junction-line-bottom" aria-hidden="true" />
+                <div className="escalation-labels-wrap">
+                  <span className="escalation-trigger-tag">WHEN NEEDED</span>
+                  <strong className="escalation-action-tag">ADD ANOTHER CLASS</strong>
+                  <span className="escalation-sub-note">insufficient control or steroid sparing</span>
                 </div>
               </div>
 
-              {/* Right Column: CALCINEURIN INHIBITORS (Common Add-on Class) */}
-              <div className="toolkit-class-panel panel-calcineurin">
-                <div className="toolkit-class-header">
-                  <div className="toolkit-class-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="pharma-shield-svg">
-                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.8" />
-                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" />
+              {/* RIGHT: CALCINEURIN INHIBITORS (COMMON ADD-ON CLASS) */}
+              <div className="pathway-class-zone zone-calcineurin">
+                <div className="class-zone-header">
+                  <div className="class-zone-badge badge-cni" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="shield-mini-svg">
+                      <path d="M12 2 L22 6 V13 C22 19 12 23 12 23 C12 23 2 19 2 13 V6 Z" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc" strokeWidth="1.6" />
+                      <path d="m8.5 12.5 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <div className="toolkit-class-titles">
-                    <strong className="toolkit-class-name">CALCINEURIN INHIBITORS</strong>
-                    <span className="toolkit-class-tag tag-addon">COMMON ADD-ON CLASS</span>
+                  <div className="class-zone-titles">
+                    <strong className="class-zone-name">CALCINEURIN INHIBITORS</strong>
+                    <span className="class-zone-role role-addon">COMMON ADD-ON CLASS</span>
                   </div>
                 </div>
 
-                <div className="toolkit-drugs-list">
+                <div className="pathway-drugs-stack stack-cni">
                   {/* Drug 1: Cyclosporine */}
-                  <div className="toolkit-drug-card">
+                  <div className="pathway-drug-item">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
                       <svg viewBox="0 0 44 44" className="cluster-svg">
                         <circle cx="22" cy="22" r="8" fill="#7c3aed" />
@@ -1528,14 +1518,14 @@ export default function Home() {
                         <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
-                    <div className="toolkit-drug-meta">
-                      <strong className="toolkit-drug-title">CYCLOSPORINE</strong>
-                      <span className="toolkit-drug-sub">Calcineurin inhibition via cyclophilin binding</span>
+                    <div className="drug-text-block">
+                      <strong className="drug-title-name">Cyclosporine</strong>
+                      <span className="drug-subtitle-moa">calcineurin inhibition via cyclophilin binding</span>
                     </div>
                   </div>
 
                   {/* Drug 2: Tacrolimus */}
-                  <div className="toolkit-drug-card">
+                  <div className="pathway-drug-item">
                     <div className="calcineurin-cluster-icon" aria-hidden="true">
                       <svg viewBox="0 0 44 44" className="cluster-svg">
                         <circle cx="22" cy="22" r="8" fill="#7c3aed" />
@@ -1547,9 +1537,9 @@ export default function Home() {
                         <circle cx="22" cy="22" r="3" fill="#ffffff" />
                       </svg>
                     </div>
-                    <div className="toolkit-drug-meta">
-                      <strong className="toolkit-drug-title">TACROLIMUS</strong>
-                      <span className="toolkit-drug-sub">Calcineurin inhibition via FKBP binding</span>
+                    <div className="drug-text-block">
+                      <strong className="drug-title-name">Tacrolimus</strong>
+                      <span className="drug-subtitle-moa">calcineurin inhibition via FKBP binding</span>
                     </div>
                   </div>
                 </div>
@@ -1557,77 +1547,32 @@ export default function Home() {
 
             </div>
 
-            {/* 2 — INTEGRATED STEPWISE PROGRESSION (Thin Cinematic Pathway) */}
-            <div className="cinematic-stepwise-strip">
-              <div className="stepwise-flow-wrapper">
-                {/* Step 01 */}
-                <div className="cinematic-step-node">
-                  <div className="step-badge-num">01</div>
-                  <div className="step-label-group">
-                    <strong className="step-action-title">START</strong>
-                    <span className="step-action-desc">Antimetabolite foundation</span>
-                  </div>
-                </div>
-
-                {/* Director Arrow 1 */}
-                <div className="cinematic-step-arrow" aria-hidden="true">
-                  <span className="arrow-track" />
-                  <span className="arrow-glyph">→</span>
-                </div>
-
-                {/* Step 02 */}
-                <div className="cinematic-step-node">
-                  <div className="step-badge-num">02</div>
-                  <div className="step-label-group">
-                    <strong className="step-action-title">ESCALATE IF NEEDED</strong>
-                    <span className="step-action-desc">Add another class</span>
-                  </div>
-                </div>
-
-                {/* Director Arrow 2 */}
-                <div className="cinematic-step-arrow" aria-hidden="true">
-                  <span className="arrow-track" />
-                  <span className="arrow-glyph">→</span>
-                </div>
-
-                {/* Step 03 */}
-                <div className="cinematic-step-node step-node-goal">
-                  <div className="step-badge-num badge-goal">03</div>
-                  <div className="step-label-group">
-                    <strong className="step-action-title title-goal">GOAL</strong>
-                    <span className="step-action-desc">Inflammation control + corticosteroid sparing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 3 — SIMPLIFIED EVIDENCE SECTION (Lightweight Unboxed Quantitative Anchors) */}
-            <div className="unboxed-evidence-strip">
-              <div className="evidence-strip-header">
-                <span className="strip-rule-line" />
-                <span className="strip-rule-title">SUPPORTING EVIDENCE · OBSERVATIONAL STUDIES</span>
-                <span className="strip-rule-line" />
+            {/* RESTRAINED EVIDENCE BAND (PERCENTAGES AS EMPIRICAL PROOF) */}
+            <div className="pathway-evidence-band">
+              <div className="evidence-band-intro">
+                <span className="evidence-tiny-eyebrow">OBSERVATIONAL EVIDENCE</span>
               </div>
 
-              <div className="evidence-anchors-grid">
-                {/* Quantitative Anchor 1: ~40–60% (Red) */}
-                <div className="evidence-anchor-item anchor-single">
-                  <strong className="evidence-hero-pct pct-red">~40–60%</strong>
-                  <div className="evidence-hero-details">
-                    <span className="evidence-primary-lead">successful corticosteroid sparing</span>
-                    <span className="evidence-secondary-sub">with a single immunosuppressive agent</span>
+              <div className="evidence-band-grid">
+                {/* Proof 1: First-line foundation (~40–60%) */}
+                <div className="evidence-proof-card proof-foundation">
+                  <strong className="evidence-proof-pct pct-red">~40–60%</strong>
+                  <div className="evidence-proof-text">
+                    <strong className="proof-lead">successful corticosteroid sparing</strong>
+                    <span className="proof-sub">with a single immunosuppressive agent</span>
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="evidence-anchor-divider" aria-hidden="true" />
+                <div className="evidence-proof-connector" aria-hidden="true">
+                  <span className="proof-versus-tag">versus</span>
+                </div>
 
-                {/* Quantitative Anchor 2: ~20–25% (Violet) */}
-                <div className="evidence-anchor-item anchor-combo">
-                  <strong className="evidence-hero-pct pct-violet">~20–25%</strong>
-                  <div className="evidence-hero-details">
-                    <span className="evidence-primary-lead">require two immunosuppressive drugs</span>
-                    <span className="evidence-secondary-sub">to achieve successful corticosteroid sparing</span>
+                {/* Proof 2: Escalation / combination (~20–25%) */}
+                <div className="evidence-proof-card proof-escalation">
+                  <strong className="evidence-proof-pct pct-violet">~20–25%</strong>
+                  <div className="evidence-proof-text">
+                    <strong className="proof-lead">need two immunosuppressive drugs</strong>
+                    <span className="proof-sub">to achieve successful corticosteroid sparing</span>
                   </div>
                 </div>
               </div>
