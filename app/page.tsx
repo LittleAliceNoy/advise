@@ -1735,278 +1735,250 @@ export default function Home() {
 
           <div className="intro5-content-grid" aria-label="Targeted biologic strategy: Adalimumab anti-TNF-alpha blockade and prior evidence">
             
-            {/* HERO BIOLOGIC MECHANISM & REGULATORY MILESTONE */}
-            <div className="intro5-hero-territory">
-              <div className="biologic-mechanism-card">
-                
-                {/* Visual Header Tag */}
-                <div className="biologic-core-header">
-                  <div className="biologic-badge" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="biologic-badge-svg">
-                      <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.12)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <path d="M12 6 V18 M6 12 H18" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" />
+            {/* MAIN TWO-COLUMN SPLIT: LEFT OCCUPIED ENTIRELY BY ADALIMUMAB */}
+            <div className="intro5-main-columns">
+              
+              {/* ENTIRE LEFT SIDE: ADALIMUMAB HERO */}
+              <div className="intro5-left-hero">
+                <div className="biologic-mechanism-card full-height">
+                  
+                  {/* Visual Header Tag */}
+                  <div className="biologic-core-header">
+                    <div className="biologic-badge" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" className="biologic-badge-svg">
+                        <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.12)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <path d="M12 6 V18 M6 12 H18" stroke="#ffffff" strokeWidth="2.0" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                    <div className="biologic-title-wrap">
+                      <div className="biologic-name-row">
+                        <strong className="biologic-drug-name">ADALIMUMAB</strong>
+                        <span className="biologic-class-tag">TARGETED BIOLOGIC</span>
+                      </div>
+                      <span className="biologic-subtitle">Fully human anti–TNF-α monoclonal antibody (IgG1)</span>
+                    </div>
+                  </div>
+
+                  {/* Tall Full-Height Modular Antibody Showcase SVG */}
+                  <div className="biologic-tall-stage">
+                    <svg viewBox="0 0 420 350" className="biologic-tall-svg" aria-label="Adalimumab tall modular IgG1 antibody structure binding and neutralizing TNF-alpha cytokine">
+                      <defs>
+                        <radialGradient id="antibody-core-glow-tall" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(255, 45, 45, 0.35)" />
+                          <stop offset="60%" stopColor="rgba(255, 45, 45, 0.08)" />
+                          <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
+                        </radialGradient>
+                        <radialGradient id="tnf-glow-tall" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="rgba(255, 77, 82, 0.4)" />
+                          <stop offset="70%" stopColor="rgba(255, 77, 82, 0.08)" />
+                          <stop offset="100%" stopColor="rgba(255, 77, 82, 0)" />
+                        </radialGradient>
+                      </defs>
+
+                      {/* Ambient Background Aura */}
+                      <circle cx="210" cy="180" r="130" fill="url(#antibody-core-glow-tall)" />
+
+                      {/* --- TOP: TARGET TNF-α CYTOKINE BLOCKADE INTERACTION --- */}
+                      <g className="tnf-blockade-top" transform="translate(145, 6)">
+                        {/* Neutralization Field */}
+                        <circle cx="65" cy="38" r="36" fill="url(#tnf-glow-tall)" stroke="rgba(255, 77, 82, 0.4)" strokeWidth="1.2" strokeDasharray="3 3" />
+                        {/* 3 Homotrimer Subunits */}
+                        <ellipse cx="54" cy="30" rx="10" ry="14" transform="rotate(-30 54 30)" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <ellipse cx="76" cy="30" rx="10" ry="14" transform="rotate(30 76 30)" fill="rgba(255, 45, 45, 0.25)" stroke="#ff4d52" strokeWidth="1.6" />
+                        <ellipse cx="65" cy="48" rx="10" ry="14" fill="rgba(255, 45, 45, 0.32)" stroke="#ff4d52" strokeWidth="1.8" />
+                        <circle cx="65" cy="36" r="3.6" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.4" />
+                        <text x="65" y="36" fill="#0a0406" fontSize="4.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
+                        
+                        {/* Tag */}
+                        <rect x="25" y="68" width="80" height="14" rx="2" fill="#0c070e" stroke="rgba(255, 77, 82, 0.5)" strokeWidth="1" />
+                        <text x="65" y="78" fill="#ff4d52" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.06em">BLOCKS TNF-α</text>
+                      </g>
+
+                      {/* --- MASSIVE MODULAR IgG1 ANTIBODY SCHEMATIC --- */}
+                      <g className="modular-antibody-tall" transform="translate(20, 20)">
+
+                        {/* --- Fc STEM (CONSTANT REGION: CH2 & CH3) --- */}
+                        {/* CH2 Pair */}
+                        <rect x="160" y="165" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                        <text x="175" y="190" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
+
+                        <rect x="198" y="165" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                        <text x="213" y="190" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH2</text>
+
+                        {/* CH3 Pair */}
+                        <rect x="160" y="213" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                        <text x="175" y="238" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
+
+                        <rect x="198" y="213" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                        <text x="213" y="238" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH3</text>
+
+                        {/* Central Cleft Line */}
+                        <line x1="194" y1="165" x2="194" y2="255" stroke="rgba(255,255,255,0.18)" strokeWidth="1.2" />
+
+                        {/* --- HINGE REGION WITH DISULFIDE BONDS --- */}
+                        <path d="M 175 165 C 175 146, 148 135, 140 125" fill="none" stroke="#ff2d2d" strokeWidth="4.2" strokeLinecap="round" />
+                        <path d="M 213 165 C 213 146, 240 135, 248 125" fill="none" stroke="#ff2d2d" strokeWidth="4.2" strokeLinecap="round" />
+                        {/* Parallel Hinge Disulfide Bridges */}
+                        <line x1="179" y1="147" x2="209" y2="147" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+                        <line x1="179" y1="155" x2="209" y2="155" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+
+                        {/* --- LEFT FAB ARM (ANGLED -32°) --- */}
+                        <g transform="translate(140, 125) rotate(-32)">
+                          {/* Constant Domains: CL (outer) & CH1 (inner) */}
+                          <rect x="-36" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                          <text x="-21" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
+
+                          <rect x="0" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                          <text x="15" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
+
+                          {/* Interchain Disulfide Bridge */}
+                          <line x1="-6" y1="-25" x2="0" y2="-25" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+
+                          {/* Variable Antigen-Binding Tips (VL & VH in Vibrant Red) */}
+                          <rect x="-36" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
+                          <text x="-21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+
+                          <rect x="0" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
+                          <text x="15" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+                        </g>
+
+                        {/* --- RIGHT FAB ARM (ANGLED +32°) --- */}
+                        <g transform="translate(248, 125) rotate(32)">
+                          {/* Constant Domains: CH1 (inner) & CL (outer) */}
+                          <rect x="-30" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                          <text x="-15" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CH1</text>
+
+                          <rect x="6" y="-46" width="30" height="42" rx="3" fill="rgba(25, 14, 25, 0.85)" stroke="#ff4d52" strokeWidth="1.8" />
+                          <text x="21" y="-21" fill="#d6d3d1" fontSize="9.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle">CL</text>
+
+                          {/* Interchain Disulfide Bridge */}
+                          <line x1="0" y1="-25" x2="6" y2="-25" stroke="#ff2d2d" strokeWidth="3.2" strokeLinecap="round" />
+
+                          {/* Variable Antigen-Binding Tips (VH & VL in Vibrant Red) */}
+                          <rect x="-30" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
+                          <text x="-15" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
+
+                          <rect x="6" y="-94" width="30" height="42" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="2.2" />
+                          <text x="21" y="-69" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
+                        </g>
+
+                        {/* Bottom Labels */}
+                        <text x="194" y="272" fill="#ffffff" fontSize="10.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">HUMAN IgG1 MONOCLONAL ANTIBODY</text>
+                        <text x="194" y="286" fill="#a8a29e" fontSize="7.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Binds soluble &amp; transmembrane TNF-α with high affinity</text>
+                      </g>
                     </svg>
                   </div>
-                  <div className="biologic-title-wrap">
-                    <div className="biologic-name-row">
-                      <strong className="biologic-drug-name">ADALIMUMAB</strong>
-                      <span className="biologic-class-tag">TARGETED BIOLOGIC</span>
-                    </div>
-                    <span className="biologic-subtitle">Fully human anti–TNF-α monoclonal antibody (IgG1)</span>
+
+                  {/* Subordinate Strategy Line */}
+                  <div className="biologic-paradigm-footer">
+                    <span className="paradigm-badge">TARGETED STRATEGY</span>
+                    <span className="paradigm-text">1 drug → 1 defined inflammatory target</span>
                   </div>
-                </div>
 
-                {/* Hero Modular IgG1 Monoclonal Antibody & TNF-alpha Neutralization Stage */}
-                <div className="biologic-interaction-stage">
-                  <svg viewBox="0 0 770 175" className="biologic-interaction-svg" aria-label="Adalimumab modular IgG1 antibody binding and neutralizing TNF-alpha cytokine homotrimer">
-                    <defs>
-                      <radialGradient id="antibody-core-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="rgba(255, 45, 45, 0.32)" />
-                        <stop offset="60%" stopColor="rgba(255, 45, 45, 0.08)" />
-                        <stop offset="100%" stopColor="rgba(255, 45, 45, 0)" />
-                      </radialGradient>
-                      <radialGradient id="tnf-target-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="rgba(255, 77, 82, 0.35)" />
-                        <stop offset="70%" stopColor="rgba(255, 77, 82, 0.06)" />
-                        <stop offset="100%" stopColor="rgba(255, 77, 82, 0)" />
-                      </radialGradient>
-                    </defs>
-
-                    {/* 1. LARGE PROMINENT MODULAR IgG1 MONOCLONAL ANTIBODY */}
-                    <g className="modular-antibody-hero" transform="translate(15, 6)">
-                      {/* Ambient Aura */}
-                      <circle cx="177" cy="85" r="75" fill="url(#antibody-core-glow)" />
-
-                      {/* --- Fc STEM (CONSTANT REGION: CH2 & CH3) --- */}
-                      {/* CH2 Pair */}
-                      <rect x="151" y="74" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <text x="163" y="91" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH2</text>
-
-                      <rect x="179" y="74" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <text x="191" y="91" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH2</text>
-
-                      {/* CH3 Pair */}
-                      <rect x="151" y="110" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <text x="163" y="127" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH3</text>
-
-                      <rect x="179" y="110" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                      <text x="191" y="127" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH3</text>
-
-                      {/* Fc Central Cleft Line */}
-                      <line x1="177" y1="74" x2="177" y2="142" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-
-                      {/* --- HINGE REGION WITH DISULFIDE BONDS --- */}
-                      <path d="M 163 74 C 163 60, 142 52, 136 44" fill="none" stroke="#ff2d2d" strokeWidth="3.4" strokeLinecap="round" />
-                      <path d="M 191 74 C 191 60, 212 52, 218 44" fill="none" stroke="#ff2d2d" strokeWidth="3.4" strokeLinecap="round" />
-                      {/* Parallel Hinge Disulfide Bridges */}
-                      <line x1="166" y1="61" x2="188" y2="61" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
-                      <line x1="166" y1="67" x2="188" y2="67" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
-
-                      {/* --- LEFT FAB ARM (ANGLED -32°) --- */}
-                      <g transform="translate(136, 44) rotate(-32)">
-                        {/* Constant Domains: CL (outer) & CH1 (inner) */}
-                        <rect x="-29" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <text x="-17" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CL</text>
-
-                        <rect x="-1" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <text x="11" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH1</text>
-
-                        {/* Interchain Disulfide Bridge */}
-                        <line x1="-5" y1="-20" x2="-1" y2="-20" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
-
-                        {/* Variable Antigen-Binding Tips (VL & VH in Vibrant Red) */}
-                        <rect x="-29" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
-                        <text x="-17" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
-
-                        <rect x="-1" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
-                        <text x="11" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
-
-                        {/* Antigen Binding CDR Label */}
-                        <text x="-3" y="-77" fill="#ff5c60" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ANTIGEN BINDING (Fab)</text>
-                      </g>
-
-                      {/* --- RIGHT FAB ARM (ANGLED +32°) --- */}
-                      <g transform="translate(218, 44) rotate(32)">
-                        {/* Constant Domains: CH1 (inner) & CL (outer) */}
-                        <rect x="-23" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <text x="-11" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CH1</text>
-
-                        <rect x="5" y="-36" width="24" height="32" rx="3" fill="rgba(25, 14, 25, 0.75)" stroke="#ff4d52" strokeWidth="1.6" />
-                        <text x="17" y="-19" fill="#d6d3d1" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="700" textAnchor="middle">CL</text>
-
-                        {/* Interchain Disulfide Bridge */}
-                        <line x1="1" y1="-20" x2="5" y2="-20" stroke="#ff2d2d" strokeWidth="2.6" strokeLinecap="round" />
-
-                        {/* Variable Antigen-Binding Tips (VH & VL in Vibrant Red) */}
-                        <rect x="-23" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
-                        <text x="-11" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VH</text>
-
-                        <rect x="5" y="-72" width="24" height="32" rx="3" fill="#ff2d2d" stroke="#ff7175" strokeWidth="1.8" />
-                        <text x="17" y="-55" fill="#ffffff" fontSize="8.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle">VL</text>
-
-                        {/* Antigen Binding CDR Label */}
-                        <text x="3" y="-77" fill="#ff5c60" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.06em">ANTIGEN BINDING (Fab)</text>
-                      </g>
-
-                      {/* Bottom Antibody Description */}
-                      <text x="177" y="156" fill="#ffffff" fontSize="9.0" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.08em">ADALIMUMAB (IgG1)</text>
-                      <text x="177" y="167" fill="#a8a29e" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.04em">Fully Human Monoclonal Antibody</text>
-                    </g>
-
-                    {/* 2. DIRECTED TARGETING & BLOCKADE VECTOR */}
-                    <g className="blockade-flow-group" transform="translate(325, 45)">
-                      <line x1="0" y1="36" x2="54" y2="36" stroke="rgba(255, 77, 82, 0.8)" strokeWidth="2.0" strokeDasharray="4 3" />
-                      <polygon points="60,36 48,30 48,42" fill="#ff4d52" />
-                      <rect x="4" y="15" width="46" height="17" rx="2" fill="#0c070e" stroke="rgba(255, 77, 82, 0.5)" strokeWidth="1.2" />
-                      <text x="27" y="27" fill="#ff4d52" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">BLOCKS</text>
-                      <text x="27" y="58" fill="#d6d3d1" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">Neutralization</text>
-                    </g>
-
-                    {/* 3. TNF-ALPHA HOMOTRIMER TARGET CYTOKINE */}
-                    <g className="tnf-target-group" transform="translate(400, 22)">
-                      {/* Atmospheric Aura */}
-                      <circle cx="60" cy="55" r="48" fill="url(#tnf-target-glow)" stroke="rgba(255, 77, 82, 0.35)" strokeWidth="1.4" strokeDasharray="4 4" />
-
-                      {/* 3 Subunits of TNF-alpha Trimer */}
-                      <ellipse cx="46" cy="44" rx="14" ry="19" transform="rotate(-30 46 44)" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="1.8" />
-                      <ellipse cx="74" cy="44" rx="14" ry="19" transform="rotate(30 74 44)" fill="rgba(255, 45, 45, 0.22)" stroke="#ff4d52" strokeWidth="1.8" />
-                      <ellipse cx="60" cy="68" rx="14" ry="19" fill="rgba(255, 45, 45, 0.28)" stroke="#ff4d52" strokeWidth="2.0" />
-
-                      {/* Subunit Core Center */}
-                      <circle cx="60" cy="53" r="4.8" fill="#ffffff" stroke="#ff4d52" strokeWidth="1.6" />
-                      <text x="60" y="53" fill="#0a0406" fontSize="6.0" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" dominantBaseline="central">α</text>
-
-                      {/* Active Site Receptors */}
-                      <circle cx="42" cy="35" r="2.8" fill="#ffffff" />
-                      <circle cx="78" cy="35" r="2.8" fill="#ffffff" />
-                      <circle cx="60" cy="78" r="2.8" fill="#ffffff" />
-
-                      {/* Target Callout Labels */}
-                      <text x="60" y="114" fill="#ffffff" fontSize="10.5" fontFamily="var(--font-geist-mono)" fontWeight="900" textAnchor="middle" letterSpacing="0.08em">TNF-α</text>
-                      <text x="60" y="127" fill="#ff5c60" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="800" textAnchor="middle" letterSpacing="0.05em">HOMOTRIMER CYTOKINE</text>
-                      <text x="60" y="138" fill="#a8a29e" fontSize="6.5" fontFamily="var(--font-geist-mono)" fontWeight="500" textAnchor="middle">Soluble &amp; Transmembrane Target</text>
-                    </g>
-
-                    {/* 4. TARGET OUTCOME PANEL */}
-                    <g className="tnfr-blocked-group" transform="translate(535, 18)">
-                      <rect x="0" y="0" width="220" height="126" rx="2" fill="rgba(18, 11, 20, 0.75)" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
-                      <text x="14" y="22" fill="#a8a29e" fontSize="7.5" fontFamily="var(--font-geist-mono)" fontWeight="800" letterSpacing="0.08em">TARGET OUTCOME</text>
-                      <text x="14" y="40" fill="#ff4d52" fontSize="9.2" fontFamily="var(--font-geist-mono)" fontWeight="900" letterSpacing="0.02em">SPECIFIC PATHWAY BLOCKADE</text>
-                      
-                      <text x="14" y="62" fill="#e5e5e5" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="600">· High-affinity target neutralization</text>
-                      <text x="14" y="77" fill="#d6d3d1" fontSize="7.0" fontFamily="var(--font-geist-mono)" fontWeight="500">· Prevents TNFR1 &amp; TNFR2 binding</text>
-                      <text x="14" y="92" fill="#8c827e" fontSize="6.8" fontFamily="var(--font-geist-mono)" fontWeight="500">· Halts downstream inflammatory cascade</text>
-                      <text x="14" y="112" fill="#ff5c60" fontSize="7.2" fontFamily="var(--font-geist-mono)" fontWeight="700">1 Drug → 1 Defined Target</text>
-                    </g>
-                  </svg>
-                </div>
-
-                {/* Subordinate Strategy Line */}
-                <div className="biologic-paradigm-footer">
-                  <span className="paradigm-badge">TARGETED STRATEGY</span>
-                  <span className="paradigm-text">1 drug → 1 defined inflammatory target</span>
-                </div>
-
-              </div>
-
-              {/* REGULATORY MILESTONE (COMPACT SUPPORTING ELEMENT) */}
-              <div className="approval-milestone-panel">
-                <div className="milestone-year-badge">
-                  <span className="milestone-year">2016</span>
-                  <span className="milestone-agency">FDA APPROVAL</span>
-                </div>
-                <div className="milestone-body">
-                  <strong className="milestone-indication">Noninfectious intermediate, posterior &amp; panuveitis</strong>
-                  <span className="milestone-sub">Subsequently EMA approved</span>
                 </div>
               </div>
-            </div>
 
-            {/* LOWER HALF: MAIN EVIDENCE BEFORE ADVISE */}
-            <div className="intro5-prior-evidence-section">
-              <div className="intro5-section-rule" aria-hidden="true">
-                <span className="rule-bar" />
-                <span className="rule-label">WHAT WAS KNOWN PRIOR TO ADVISE</span>
-                <span className="rule-bar" />
-              </div>
-
-              <div className="prior-evidence-grid">
+              {/* ENTIRE RIGHT SIDE: MILESTONE & PRIOR EVIDENCE SIGNALS */}
+              <div className="intro5-right-content">
                 
-                {/* SIGNAL 01: RANDOMIZED TRIALS vs PLACEBO */}
-                <div className="evidence-panel panel-rct">
-                  <div className="evidence-panel-header">
-                    <span className="evidence-sig-tag">01 — RANDOMIZED TRIALS vs PLACEBO</span>
+                {/* 2016 FDA APPROVAL */}
+                <div className="approval-milestone-panel">
+                  <div className="milestone-year-badge">
+                    <span className="milestone-year">2016</span>
+                    <span className="milestone-agency">FDA APPROVAL</span>
                   </div>
-                  
-                  <div className="rct-sequence-flow">
-                    <div className="rct-step">
-                      <span className="rct-step-sub">INITIAL STEROID</span>
-                      <strong className="rct-step-title">PREDNISONE</strong>
-                      <span className="rct-step-action">tapered → discontinued</span>
-                    </div>
-
-                    <div className="rct-flow-arrow" aria-hidden="true">
-                      <span>▶</span>
-                    </div>
-
-                    <div className="rct-step">
-                      <span className="rct-step-sub">MAINTENANCE</span>
-                      <strong className="rct-step-title highlight-red">ADALIMUMAB</strong>
-                      <span className="rct-step-action">vs placebo</span>
-                    </div>
-                  </div>
-
-                  {/* DOMINANT RESULT: PROLONGED TIME TO RELAPSE */}
-                  <div className="rct-result-lead">
-                    <div className="timeline-delayed-track" aria-hidden="true">
-                      <div className="track-bar-container">
-                        <div className="track-bar-line" />
-                        <div className="track-bar-point point-placebo">
-                          <span className="bar-dot dot-placebo" />
-                        </div>
-                        <div className="track-bar-point point-ada">
-                          <span className="bar-dot dot-ada" />
-                        </div>
-                      </div>
-                      <div className="track-labels-grid">
-                        <div className="track-label-col col-placebo">
-                          <strong className="tl-name">Placebo</strong>
-                          <span className="tl-desc">Early relapse</span>
-                        </div>
-                        <div className="track-label-col col-ada">
-                          <strong className="tl-name highlight-red">Adalimumab</strong>
-                          <span className="tl-desc highlight-red">Relapse delayed</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rct-result-text">
-                      <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
-                      <span className="rct-sub-result">Significantly delayed time to treatment failure vs placebo</span>
-                    </div>
+                  <div className="milestone-body">
+                    <strong className="milestone-indication">Noninfectious intermediate, posterior &amp; panuveitis</strong>
+                    <span className="milestone-sub">Subsequently EMA approved</span>
                   </div>
                 </div>
 
-                {/* SIGNAL 02: FOLLOW-UP COHORT (≈75% ANCHOR) */}
-                <div className="evidence-panel panel-cohort">
-                  <div className="evidence-panel-header">
-                    <span className="evidence-sig-tag">02 — FOLLOW-UP COHORT</span>
+                {/* PRIOR EVIDENCE SECTION */}
+                <div className="intro5-prior-evidence-section">
+                  <div className="intro5-section-rule" aria-hidden="true">
+                    <span className="rule-bar" />
+                    <span className="rule-label">WHAT WAS KNOWN PRIOR TO ADVISE</span>
+                    <span className="rule-bar" />
                   </div>
 
-                  <div className="cohort-content-row">
-                    <strong className="cohort-stat-anchor">≈75%</strong>
-                    <div className="cohort-text-details">
-                      <strong className="cohort-headline">INFLAMMATION CONTROL</strong>
-                      <span className="cohort-condition">with prednisone ≤5 mg/day</span>
-                      <div className="cohort-outcome-tag">
-                        <span className="outcome-arrow">↓</span>
-                        <strong>SUBSTANTIAL CORTICOSTEROID SPARING</strong>
+                  <div className="prior-evidence-stack">
+                    {/* SIGNAL 01: RANDOMIZED TRIALS vs PLACEBO */}
+                    <div className="evidence-panel panel-rct">
+                      <div className="evidence-panel-header">
+                        <span className="evidence-sig-tag">01 — RANDOMIZED TRIALS vs PLACEBO</span>
+                      </div>
+                      
+                      <div className="rct-sequence-flow">
+                        <div className="rct-step">
+                          <span className="rct-step-sub">INITIAL STEROID</span>
+                          <strong className="rct-step-title">PREDNISONE</strong>
+                          <span className="rct-step-action">tapered → discontinued</span>
+                        </div>
+
+                        <div className="rct-flow-arrow" aria-hidden="true">
+                          <span>▶</span>
+                        </div>
+
+                        <div className="rct-step">
+                          <span className="rct-step-sub">MAINTENANCE</span>
+                          <strong className="rct-step-title highlight-red">ADALIMUMAB</strong>
+                          <span className="rct-step-action">vs placebo</span>
+                        </div>
+                      </div>
+
+                      {/* DOMINANT RESULT: PROLONGED TIME TO RELAPSE */}
+                      <div className="rct-result-lead">
+                        <div className="timeline-delayed-track" aria-hidden="true">
+                          <div className="track-bar-container">
+                            <div className="track-bar-line" />
+                            <div className="track-bar-point point-placebo">
+                              <span className="bar-dot dot-placebo" />
+                            </div>
+                            <div className="track-bar-point point-ada">
+                              <span className="bar-dot dot-ada" />
+                            </div>
+                          </div>
+                          <div className="track-labels-grid">
+                            <div className="track-label-col col-placebo">
+                              <strong className="tl-name">Placebo</strong>
+                              <span className="tl-desc">Early relapse</span>
+                            </div>
+                            <div className="track-label-col col-ada">
+                              <strong className="tl-name highlight-red">Adalimumab</strong>
+                              <span className="tl-desc highlight-red">Relapse delayed</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="rct-result-text">
+                          <strong className="rct-hero-result">PROLONGED TIME TO UVEITIS RELAPSE</strong>
+                          <span className="rct-sub-result">Significantly delayed time to treatment failure vs placebo</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="cohort-subordinate-footer">
-                    <span>Follow-up extension cohort evidence</span>
+                    {/* SIGNAL 02: FOLLOW-UP COHORT (≈75% ANCHOR) */}
+                    <div className="evidence-panel panel-cohort">
+                      <div className="evidence-panel-header">
+                        <span className="evidence-sig-tag">02 — FOLLOW-UP COHORT</span>
+                      </div>
+
+                      <div className="cohort-content-row">
+                        <strong className="cohort-stat-anchor">≈75%</strong>
+                        <div className="cohort-text-details">
+                          <strong className="cohort-headline">INFLAMMATION CONTROL</strong>
+                          <span className="cohort-condition">with prednisone ≤5 mg/day</span>
+                          <div className="cohort-outcome-tag">
+                            <span className="outcome-arrow">↓</span>
+                            <strong>SUBSTANTIAL CORTICOSTEROID SPARING</strong>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="cohort-subordinate-footer">
+                        <span>Follow-up extension cohort evidence</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
