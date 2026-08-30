@@ -15596,11 +15596,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 100svh;
   max-height: 100svh;
   overflow: hidden;
-  padding: clamp(3.8rem, 8.0vh, 5.8rem) clamp(1.2rem, 3.5vw, 4.0rem) clamp(1.0rem, 2.5vh, 2.0rem);
+  padding: 6.5vh clamp(1.2rem, 3.5vw, 4.0rem) 0;
   box-sizing: border-box;
 }
 
@@ -15610,14 +15610,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: clamp(2.4rem, 4.6vh, 4.8rem);
 }
 
 .intro6-header h2 {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(2.2rem, 3.8vw, 4.8rem);
+  font-size: clamp(2.1rem, 3.2vw, 3.9rem);
   font-weight: 450;
-  letter-spacing: -0.065em;
-  line-height: 0.95;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
   color: var(--white);
   margin: 0;
   text-align: center;
@@ -15629,26 +15630,27 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro6-content-stage {
-  width: min(88rem, 94vw);
-  flex: 1;
+  width: min(86rem, 92vw);
+  flex: none;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: clamp(0.8rem, 1.6vh, 2.0rem);
+  gap: 0;
   margin-top: 0;
 }
 
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
 .intro6-convergence-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1.5fr 1.15fr;
+  grid-template-columns: 1.1fr 1.6fr 1.1fr;
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
   width: 100%;
   flex: 0 0 auto;
   padding: 0;
+  margin-bottom: clamp(2.2rem, 4.2vh, 4.4rem);
 }
 
 .convergence-wing {
@@ -15656,7 +15658,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.2rem, 0.35vh, 0.45rem);
+  gap: clamp(0.15rem, 0.3vh, 0.35rem);
   background: transparent;
   border: none;
   padding: 0;
@@ -15664,11 +15666,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .wing-huge-abbr {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(3.4rem, 5.5vw, 6.8rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(3.6rem, 5.8vw, 6.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.90;
 }
 
 .wing-huge-abbr.highlight-purple {
@@ -15682,13 +15684,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .wing-full-name {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.72rem, 0.95vw, 1.2rem);
-  font-weight: 800;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.72rem, 0.88vw, 1.12rem);
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
-  margin-top: clamp(0.1rem, 0.2vh, 0.3rem);
+  margin-top: clamp(0.15rem, 0.3vh, 0.35rem);
 }
 
 .wing-full-name.highlight-purple {
@@ -15700,11 +15702,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .wing-strategy-desc {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.52rem, 0.65vw, 0.82rem);
-  font-weight: 500;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.50rem, 0.58vw, 0.74rem);
+  font-weight: 400;
   color: #a8a29e;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -15714,7 +15716,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.35rem, 0.6vh, 0.75rem);
+  gap: clamp(0.4rem, 0.7vh, 0.85rem);
   width: 100%;
 }
 
@@ -15746,21 +15748,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin: 0 clamp(0.4rem, 0.8vw, 1.2rem);
+  margin: 0 clamp(0.5rem, 1.0vw, 1.4rem);
 }
 
 .trajectory-question-mark {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(1.0rem, 1.4vw, 1.8rem);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(1.0rem, 1.3vw, 1.6rem);
   font-weight: 400;
   color: #ffffff;
   line-height: 1;
 }
 
 .no-comparison-text {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.6rem, 0.72vw, 0.9rem);
-  font-weight: 400;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.54rem, 0.62vw, 0.78rem);
+  font-weight: 500;
   color: #d1c7c2;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -15774,16 +15776,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .intro6-bottom-reveal {
   position: relative;
   width: 100%;
-  max-width: min(78rem, 94vw);
+  max-width: min(82rem, 92vw);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.85rem, 1.6vh, 1.5rem) clamp(1.2rem, 3vw, 3.2rem);
-  margin-top: clamp(1.4rem, 3.2vh, 3.0rem);
+  padding: clamp(1.1rem, 2.0vh, 2.0rem) clamp(1.5rem, 3.5vw, 4.0rem);
   background: linear-gradient(180deg, rgba(255, 45, 45, 0.035) 0%, rgba(255, 45, 45, 0.008) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.13);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-sizing: border-box;
 }
 
@@ -15793,12 +15794,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: clamp(0.18rem, 0.32vh, 0.4rem);
+  gap: clamp(0.2rem, 0.36vh, 0.45rem);
   width: 100%;
 }
 
 .reveal-eyebrow {
-  font: 800 clamp(0.52rem, 0.64vw, 0.8rem) var(--font-geist-mono), monospace;
+  font: 600 clamp(0.54rem, 0.64vw, 0.80rem) var(--font-geist-sans), Arial, sans-serif;
   color: #a89f9c;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -15806,10 +15807,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .reveal-advise-wordmark {
   margin: 0;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(2.4rem, 3.8vw, 4.6rem);
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(2.6rem, 4.2vw, 5.0rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
   line-height: 0.95;
   color: #ffffff;
   text-shadow: 0 0 28px rgba(255, 45, 45, 0.45);
@@ -15818,8 +15819,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .reveal-advise-title {
   margin: 0;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.82rem, 1.1vw, 1.45rem);
-  font-weight: 500;
+  font-size: clamp(0.85rem, 1.08vw, 1.35rem);
+  font-weight: 450;
   color: #f0ece8;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -15829,16 +15830,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .reveal-advise-tagline {
   margin: 0;
-  margin-top: clamp(0.2rem, 0.4vh, 0.45rem);
+  margin-top: clamp(0.3rem, 0.5vh, 0.6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.12rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.56rem, 0.68vw, 0.86rem);
-  font-weight: 700;
+  gap: 0.15rem;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.54rem, 0.64vw, 0.80rem);
+  font-weight: 600;
   color: var(--red);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 
