@@ -1,138 +1,484 @@
-# ADVISE presentation handoff
+# ADVISE presentation — canonical project handoff
 
-This document is for continuing work in a new chat. Read it before editing. The project is a React/Vinext presentation, not a PowerPoint file.
+Last reconciled: 29 August 2026
 
-## Project location and commands
+This is the only canonical handoff for the ADVISE presentation. The former
+root `HANDOFF.md` and `NEW_CHAT_HANDOFF.md` were deleted so future sessions do
+not inherit conflicting copies. Read this document before editing.
 
-- Repository: `/Users/jirachayachoovuthayakorn/Desktop/ADVISE/site`
-- GitHub remote: `https://github.com/LittleAliceNoy/advise.git`
+The current source is always authoritative. Recheck the worktree, `chapters`
+array, physical scene order, and rendered page at the start of a session rather
+than assuming this snapshot is still current.
+
+## 1. Project, source of truth, and safe workflow
+
+- Project: `/Users/jirachayachoovuthayakorn/Desktop/ADVISE/site`
+- Repository: `https://github.com/LittleAliceNoy/advise.git`
 - Branch: `main`
-- Main source files:
-  - `app/page.tsx` — chapter list, navigation, all slide JSX/content
-  - `app/globals.css` — all presentation styles; later rules intentionally override earlier ones
-- Study/source material: `/Users/jirachayachoovuthayakorn/Desktop/ADVISE/Adalimumab vs.md`
-- Start locally: `npm run dev`
-- Build/type check: `npm run build`
+- Framework: React 19 with Vinext and a Next-style `app` directory. This is a
+  web presentation, not a PowerPoint deck.
+- Current reconciled commit: `ca0c7ff`
+  (`feat(slide-02): add Introduction / Clinical Problem conceptual progression
+  funnel and lock Slide 24-26 typography parity`).
+- Primary source files:
+  - `app/page.tsx`: chapter list, physical scene order, navigation, scientific
+    copy, data, and interactive states.
+  - `app/globals.css`: global design system, animations, responsive rules, and
+    slide-specific overrides. Later rules win when specificity is equal.
+  - `../Adalimumab vs.md`: authoritative trial source for wording,
+    definitions, values, and statistical claims.
+- Development server: `npm run dev`
+- Required implementation verification: `npm run build`
+- Edit with `apply_patch`. Avoid destructive Git commands.
 
-Use `apply_patch` for edits. Do not use destructive Git commands. The parent folder `/Users/jirachayachoovuthayakorn/Desktop/ADVISE` is only a wrapper Git repository and does not have the GitHub remote. Commit and push from `site`.
+Before editing, run `git status --short` inside `site`. Preserve all user-owned
+changes. Work only on the slide named by the user unless broader work is
+explicitly requested. Do not commit or push handoff documents unless asked.
 
-## Presentation-wide conventions
+The existing `tests/rendered-html.test.mjs` is stale starter-template coverage
+and does not validate this presentation. Do not treat `npm test` as proof that
+the deck is correct until that test is rewritten. The production build plus
+rendered visual inspection is the current verification path.
 
-- The deck is a full-screen slide experience. Navigation is driven by the `chapters` array near the start of `app/page.tsx`.
-- Current deck length: **37 slides**. The right rail and counter are generated from that array.
-- The visual system is intentionally consistent:
-  - near-black background
-  - ADA = vivid red
-  - CID = violet/purple
-  - white = primary typography
-  - muted gray = secondary text
-  - thin rules / borders, restrained red and purple atmospheric gradients
-  - editorial typography, not dashboard cards or generic charts
-- Preserve the existing header, brand, page counter, and right-side progress rail unless a user explicitly requests otherwise.
-- When editing a single slide, do not alter other scenes or shared presentation behavior.
-- Always inspect at a 16:9 presentation viewport (1920×1080) and check for clipping, text collisions, or vertical overflow. A taller browser window may expose percentage-height problems, so inspect that too if spacing uses viewport percentages.
+## 2. What the deck is trying to feel like
 
-## Scientific-content rule
+The ADVISE deck is an interactive, cinematic, editorial scientific story. It
+should feel closer to a carefully art-directed journal feature or TED-stage
+scientific argument than a dashboard, poster, or conventional PowerPoint.
 
-The user cares strongly about numerical accuracy. The screenshots are visual references only. Verify wording and values against `Adalimumab vs.md` before changing scientific claims.
+The visual rhythm is:
 
-Important source locations in `Adalimumab vs.md`:
+1. State a precise clinical question or conclusion.
+2. Give only enough explanatory context to orient the audience.
+3. Let one dominant visual system carry the reasoning.
+4. Reveal evidence deliberately when interaction improves comprehension.
+5. End with a restrained takeaway, not another dense panel.
 
-- Table 5 / safety outcomes: around lines 251–282
-- Quality-of-life narrative: immediately after Table 5
-- The primary/successful corticosteroid-sparing definition and methodology are earlier in the source.
+Each slide should communicate one main idea. The headline expresses the
+interpretation; the visualization shows why it is credible. Avoid slides that
+merely inventory facts.
 
-Do not imply that adalimumab is conventional immunosuppressive therapy (IMT). Do not fabricate statistics, denominators, P values, event rates, model specifications, or outcome definitions.
+### Core visual language
 
-## Current high-priority slide state
+- Canvas: true full-screen 16:9; primary inspection size is 1920 x 1080.
+- Background: near-black (`#050505`, `#050507`, or `#08080c`) with very subtle
+  crimson and occasional violet atmospheric gradients.
+- Primary text: warm/off white (`#f2f0ec` and nearby values).
+- Secondary text: muted warm gray (`#9b9a98`, `#a09591`, and nearby values).
+- ADA: vivid red (`var(--red)`, `#ff2d2d`, `#ff4d52`, `#ff7175`, `#ff8085`).
+- CID: violet/purple (`#8f67ff`, `#b58eff`, and related muted violets).
+- Neutral comparisons, uncertainty, and connective geometry: white/gray.
+- Borders: usually 1 px and low contrast. Use square corners or a restrained
+  2-4 px radius.
+- Glow: atmospheric and selective. Reserve stronger glow for the decisive
+  endpoint, active state, or statistically important signal.
+- Texture: the global scene scan-line overlay is intentionally faint.
 
-### Safety and tolerability — currently display counter 24 / 37
+Color is semantic, not decorative. ADA values and paths stay red; CID values
+and paths stay violet. Muted gray communicates context, uncertainty, inactive
+states, or secondary evidence. Do not recolor groups merely for variety.
 
-Scene ID: `systemic-safety-tolerability` in `app/page.tsx`.
+### Typography and hierarchy
 
-Exact safety slide hierarchy:
+The opening slides can use the larger global `h2`, but recent introduction and
+discussion slides establish the preferred editorial scale for new
+content-heavy slides:
 
-1. Headline:
-   - `Fewer safety signals with ADA.` (white)
-   - `Serious events remained similar.` (red)
-2. Supporting sentence:
-   - `ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.`
-3. Main / largest evidence block, left:
-   - `SAFETY SIGNALS THAT DIFFERED`
-   - Cataract surgery, phakic eyes: ADA 2% vs CID 11%, P=0.009
-   - ≥15-letter BCVA loss, 3-line decrease: ADA 6% vs CID 13%, P=0.026
-   - ≥30-letter BCVA loss, 6-line decrease: ADA 3% vs CID 7%, P=0.430. Its P value is muted, but the rest of the row remains full-color.
-   - Elevated liver enzymes: ADA 2% vs CID 10%, P=0.014
-4. Smaller secondary panel, upper right:
-   - `OTHER OCULAR EVENTS`, header `ADA / CID`
-   - IOP +10 mmHg: 9% / 8%, P=0.730
-   - IOP ≥24 mmHg: 11% / 13%, P=0.500
-   - IOP ≥30 mmHg: 5% / 5%, P=0.930
-   - IOP medication: 16% / 10%, P=0.850
-   - New glaucoma: 1% / 11%, P=0.200
-   - Glaucoma surgery: 1% / 3%, P=0.290
-   - ADA values red, CID values violet; separators/P values gray.
-   - Do NOT add systemic/laboratory Table 5 rows to this panel unless asked. The user explicitly requested only ocular adverse events here.
-5. Bottom left:
-   - `TREATMENT INTOLERANCE`
-   - Dramatic 0 ADA vs 8 CID is approved and must remain dominant.
-   - Detail is deliberately condensed for presentation readability:
-     - `CID discontinuations`
-     - `MTX-based 6 · Mycophenolate 2`
-     - `After discontinuation: 6 → another CID · 1 → ADA · 1 → stopped`
-6. Bottom right:
-   - `SERIOUS SYSTEMIC EVENTS — NO SIGNIFICANT DIFFERENCE`
-   - Infections requiring antibiotics: ADA 0.40/PY, CID 0.37/PY, IRR 1.10, 95% CI 0.61–2.00, P=0.760
-   - Hospitalizations: ADA 0.045/PY, CID 0.115/PY, IRR 0.39, 95% CI 0.12–1.26, P=0.120
-   - Other serious systemic AEs: rare and similar between groups; no new demyelination events in either group.
-   - This section is meant to be a substantial counterweight to the safety-signals panel, not a tiny footnote.
+- Eyebrow: uppercase mono, widely tracked, muted white, with the red pulse dot.
+- Question hook (`.cataract-hook`): red uppercase, approximately
+  `clamp(0.58rem, 0.7vw, 0.8rem)`, weight 600.
+- Editorial headline: approximately `clamp(2.6rem, 3.4vw, 4rem)`, line-height
+  `0.98`, tracking `-0.05em`.
+- Headline emphasis: a short red second line or phrase, not multiple competing
+  colors.
+- Lede: approximately `clamp(.85rem, .98vw, 1.1rem)`, line-height `1.55`,
+  muted warm gray, normally no more than 90% of the left column.
+- Editorial evidence rules: thin top rule, numbered mono heading such as
+  `01 — CORE THERAPEUTIC OBJECTIVE`, and concise gray body copy.
+- Data telemetry: Geist Mono, compact labels, uppercase where useful, with
+  numbers visually stronger than descriptors.
 
-Important layout rules for this slide:
+Slides 26 (`limitations-1`) and 28 (`limitations-3`) are the best current
+references for left-column editorial hierarchy. Slide 02 (`clinical-problem`)
+uses a distinct full-width clinical-landscape composition.
 
-- The top area is `.safety-qol-top`; the lower area is `.safety-bottom-band`.
-- The main safety panel uses a fitted CSS grid (`grid-template-rows: auto repeat(4, minmax(0,1fr))`). Do not change the safety rows back to percentage `min-height` rules; that caused the upper content to overflow into the lower band on tall browser windows.
-- The upper-right panel is `.table-five-events`; it also uses fitted grid rows so its six rows do not collide with the bottom band.
-- The current CSS refinements are near the later Page 25 override section in `app/globals.css`. Prefer adding narrow overrides near this established section rather than refactoring the much older, earlier safety CSS.
+### Composition and evidence density
 
-### Quality of life — follows the safety slide
+- Preserve generous outer margins and the fixed global brand, counter,
+  right-side chapter rail, and progress track.
+- A common contemporary layout is a two-column editorial frame: argument on
+  the left, dominant scientific figure on the right.
+- The right side should be one coherent visual system, not unrelated cards.
+  Use paths, tiers, timelines, matrices, funnels, or a single evidence field to
+  make relationships visible.
+- Use cards only when they represent meaningful units in a larger system.
+  Avoid generic dashboard grids, thick containers, repeated rounded boxes, and
+  excessive badges.
+- Establish a clear evidence hierarchy. One panel or signal should dominate;
+  secondary evidence should visibly recede.
+- Prefer thin rules, whitespace, alignment, and contrast over decoration.
+- Keep copy concise enough to be read while presenting. Supporting detail
+  belongs in small telemetry or a short editorial rule, not paragraph stacks.
 
-Scene ID: `quality-of-life-results`.
+### Motion and interaction
 
-It has a dedicated slide and must not be moved back into the safety slide unless the user explicitly asks. Its source-supported content is:
+Motion should explain sequence, causality, comparison, or uncertainty. It
+should not exist simply to make the slide busy.
 
-- EQ-5D: no significant change in the proportion of individuals with a perfect score.
-- NEI-VFQ-25: similar improvements in both groups, near the 4–6-point minimally clinically meaningful difference.
-- SF-36 Physical: ADA essentially unchanged; CID small decline; significant difference at 6 months but not 12 months; neither had a clinically meaningful change.
+- Start interactive stories with a legible base state.
+- Reveal one conceptual step per click.
+- Use lines and connectors to lead the eye before revealing the destination.
+- Delay a dependent result until its connector or transition arrives.
+- Keep inactive material hidden or clearly muted.
+- Reset state when re-entering the slide when the interaction requires it.
+- Add a clear accessible role/label to clickable canvases and preserve keyboard
+  navigation.
+- Five states including the initial state is a useful upper bound unless the
+  scientific argument genuinely needs more.
+
+## 3. Scientific-content rules
+
+- Screenshots and visual references guide composition only; they are not data
+  sources.
+- Verify every clinical, numerical, statistical, and methodological statement
+  in `../Adalimumab vs.md` before adding or changing it.
+- Do not invent denominators, P values, event rates, confidence intervals,
+  outcomes, definitions, model specifications, or causal interpretations.
+- Do not imply that adalimumab is conventional immunosuppressive therapy (IMT).
+- Do not call ADA globally safer. The supported message is that selected
+  tolerability/safety signals favored ADA while serious events were similar.
+- Preserve the distinction between observed results and speculation. Beyond
+  Month 12, the deck must say that the trajectory was not observed.
+- Do not give a nonsignificant result the same visual emphasis as a significant
+  result unless the slide is explicitly explaining uncertainty.
+
+Important source areas in `Adalimumab vs.md`:
+
+- Safety/Table 5: approximately lines 251-282.
+- Quality-of-life narrative: immediately after Table 5.
+- Corticosteroid-sparing definitions and methodology: earlier in the source.
+
+## 4. Current chapter map
+
+The current `chapters` array contains 37 entries. The counter and chapter rail
+are generated from this array; never hard-code the total.
+
+| # | Scene ID | Role |
+|---:|---|---|
+| 01 | `signal` | Opening clinical signal |
+| 02 | `clinical-problem` | Introduction / clinical landscape |
+| 03 | `therapeutic-goal` | Corticosteroid-sparing objective |
+| 04 | `systemic-strategies` | Conventional therapy and adalimumab |
+| 05 | `question` | Evidence gap / ADVISE reveal |
+| 06 | `study-design` | Study design and network |
+| 07 | `screening` | Screening pathway |
+| 08 | `randomization` | Randomization |
+| 09 | `treatment` | Treatment by stratum |
+| 10 | `tapering` | Tapering and reactivation |
+| 11 | `tapering-cinematic` | Cinematic tapering redesign |
+| 12 | `followup` | Follow-up schedule |
+| 13 | `outcomes` | Outcomes overview |
+| 14 | `statistics-sample-only` | Sample-size-only statistics |
+| 15 | `statistics-redesign` | Statistical framework redesign |
+| 16 | `participant-flow` | Participant flow |
+| 17 | `baseline-portrait` | Baseline cohort |
+| 18 | `treatment-results-redesign` | Treatments received |
+| 19 | `results` | Corticosteroid sparing |
+| 20 | `discontinuation` | Corticosteroid discontinuation |
+| 21 | `ocular-results` | Visual and macular outcomes |
+| 22 | `systemic-safety-tolerability` | Safety and tolerability |
+| 23 | `quality-of-life-results` | Quality of life |
+| 24 | `limitations-4` | Treatment advancement |
+| 25 | `discussion-safety` | Cataract signal |
+| 26 | `limitations-1` | Masking limitations |
+| 27 | `limitations-2` | Comparator heterogeneity |
+| 28 | `limitations-3` | Temporal trajectory |
+| 29 | `limitations-5` | Missing data and attrition |
+| 30 | `limitations-6` | Immunogenicity |
+| 31 | `conclusion` | Main conclusion |
+| 32 | `basics` | Legacy original Slide 02 |
+| 33 | `outcomes-original` | Legacy combined outcomes page |
+| 34 | `statistics` | Legacy combined statistics page |
+| 35 | `sample-size-redesign` | Sample-size redesign |
+| 36 | `secondary-outcomes-redesign` | Outcome definitions redesign |
+| 37 | `discussion` | Legacy efficacy discussion |
+
+There are 31 main narrative chapters plus 6 preserved legacy/variant chapters,
+but all 37 remain live in `chapters`, the counter, the rail, and the rendered
+deck. “Archived” means preserved for reference; it does not currently mean
+hidden or excluded from navigation. The `chapters` array and physical JSX
+scene order currently match.
+
+When adding a new slide, add its unique ID to `chapters` and place its JSX in
+the same relative physical order. Decide explicitly whether it belongs in the
+main narrative or the legacy/variant section. Do not create another array/DOM
+mismatch.
+
+## 5. Key slide references and preservation rules
+
+### Slide 02 — Clinical landscape (`clinical-problem`)
+
+Purpose: establish that heterogeneous uveitides are classified and assessed in
+different ways, yet many noninfectious forms converge on one systemic approach.
+
+- This is a full-width clinical landscape, not an ADVISE eligibility or patient-
+  selection diagram.
+- `>30 UVEITIDES` is the upper hero and introduces a heterogeneous group of
+  diseases characterized by intraocular inflammation.
+- The middle taxonomy preserves all categories: anterior, intermediate,
+  posterior, and panuveitis by anatomy; infectious and noninfectious by
+  etiology. Infectious uses a germ motif; noninfectious uses an inflammatory-
+  glow motif and includes the nuanced subclass label `PRESUMED AUTOIMMUNE /
+  AUTOINFLAMMATORY`. A vertical divider separates the etiologies; do not use a
+  bidirectional arrow.
+  Nothing is visually discarded at this stage.
+- The four schematic eye icons localize inflammation anatomically: anterior
+  emphasizes iris/ciliary-body structures, intermediate the vitreous, posterior
+  the retinal/choroidal wall, and panuveitis all three compartments.
+- The taxonomy leads directly into the clinician's multimodal activity
+  assessment: history, ophthalmic examination with anterior-chamber/vitreous
+  grading, and often disease-specific imaging. These use detailed line-art SVGs;
+  the examination symbol is a diagrammatic slit lamp with the chin/forehead rest
+  on the left, the narrow illumination assembly centrally, a single compact
+  binocular microscope on the right, a minimal right-sided joystick, pivot, and
+  base. It intentionally omits a physician silhouette. Do not add a central eye
+  icon.
+- The bottom transition is the prominent two-line statement `MANY NON-INFECTIOUS
+  INTERMEDIATE, POSTERIOR AND PANUVEITIDES / CONVERGE ON A COMMON SYSTEMIC
+  APPROACH`. The single centered, compact treatment destination is `ORAL
+  CORTICOSTEROIDS + IMMUNOSUPPRESSION`; do not restore named disease streams or
+  the earlier `DIFFERENT DISEASES` headline.
+- A scoped short-height layout keeps the entire composition inside wide,
+  shallow presentation windows; preserve this so the hero cannot collide with
+  the eyebrow and the treatment destination cannot be clipped.
+- Do not restore the old funnel, `ADVISE-RELEVANT POPULATION`, exclusion labels,
+  or persistent-inflammation-to-visual-acuity endpoint.
+- Preserve the legacy `basics` scene unless explicitly asked to remove it.
+
+### Slides 02-05 — Introduction arc
+
+The introduction is a four-slide story after the title signal; treat these
+slides as a sequence, not four independent designs.
+
+1. Slide 02, `clinical-problem`: survey the heterogeneous clinical landscape,
+   show how clinicians classify and assess activity, then reveal that many
+   noninfectious forms converge on oral corticosteroids plus immunosuppression.
+2. Slide 03, `therapeutic-goal`: translate sustained control into the two
+   concepts used later in the trial—successful corticosteroid sparing and
+   successful corticosteroid discontinuation. The equations are the hero, and
+   discontinuation is visibly the further clinical goal.
+3. Slide 04, `systemic-strategies`: introduce conventional immunosuppression
+   and adalimumab as two plausible paths to the same target while keeping their
+   different evidence histories visually and scientifically distinct. Keep the
+   pathways in an equal violet/red split screen and converge them only at the
+   common clinical destination.
+4. Slide 05, `question`: remove the supporting detail, expose the absent
+   randomized head-to-head comparison through empty space between the two
+   evidence streams, then reveal ADVISE as the trial that made the comparison.
+
+Introduction-specific visual grammar:
+
+- Introduction is progressive visual storytelling: landscape and convergence,
+  transformation, confrontation, and reveal.
+- The small red provocative question plus large white/red interpretive
+  headline is reserved for Discussion. Do not use that device on Slides 02-05.
+- Do not repeat one left-text/right-visual template across the introduction.
+- Do not add numbered editorial takeaway blocks to these slides.
+- Slide 02 is a clinical landscape converging on systemic therapy; Slide 03 is a centered clinical equation;
+  Slide 04 is a true split-screen pathway; Slide 05 is a minimal cinematic gap.
+- Preserve negative space. These slides should become progressively more
+  focused as the story moves toward ADVISE.
+- Every Introduction slide has one projector-readable hero object. Necessary
+  labels use presentation-scale type and sufficient contrast; faint text is
+  reserved for genuinely tertiary metadata.
+- Slide 03 uses the prednisone `7.5 -> 0 mg/day` transition as the visual hinge
+  between sparing and the further goal of discontinuation.
+- Slide 04 intentionally differentiates the pathway geometries: CID escalates
+  through a staggered treatment path, while ADA anchors two parallel pre-ADVISE
+  evidence sources—randomized placebo-controlled trials and a follow-up
+  cohort—around the targeted biologic. Do not depict those evidence sources as
+  sequential patient-treatment steps.
+- Slide 05 removes the supporting premise sentence. The interrupted lines,
+  stop nodes, and enlarged `NO RANDOMIZED HEAD-TO-HEAD COMPARISON` occupy the
+  evidence gap before the ADVISE reveal.
+
+Scientific safeguards for this arc:
+
+- Do not introduce ADVISE results before the Study Design section.
+- Do not present historical conventional response percentages beside the
+  adalimumab cohort estimate as if they were comparable. Those historical
+  percentages are intentionally absent from Slide 04.
+- Previous randomized adalimumab trials established longer time to relapse
+  versus placebo during corticosteroid taper/discontinuation; cohort evidence
+  only suggested corticosteroid-sparing effectiveness.
+- Preserve the exact conceptual thresholds: inactive uveitis plus prednisone
+  `<=7.5 mg/day` for successful sparing, and inactive uveitis plus prednisone
+  `0 mg/day` for successful discontinuation.
+- The visual progression is heterogeneity -> sustained control -> steroid
+  dependence -> two strategies -> unresolved comparison -> ADVISE.
+
+### Slide 06 — Study design (`study-design`)
+
+- Preserve the order `CLINICAL CENTERS <-> MTQAC <-> READING CENTER`.
+- `.mtqac-workflow` uses `justify-content: flex-start`, `width: fit-content`,
+  and `max-width: 100%`.
+- At 1920 x 1080, the current rendered layout gives the Reading Center roughly
+  200 px of clearance from the internal ethics panel's right edge and has no
+  workflow overflow. The earlier right-clearance request is not an unresolved
+  desktop task.
+- At the narrow in-app browser size previously observed (545 x 837), this row
+  overflows the internal panel. Treat that as a separate responsive request,
+  not evidence that the 16:9 presentation layout is stale.
+- If source and browser disagree, reload or restart the development server and
+  compare rendered DOM/computed styles before changing CSS.
+
+### Slide 22 — Safety and tolerability (`systemic-safety-tolerability`)
+
+The hierarchy is deliberate:
+
+1. Headline: fewer selected safety signals with ADA; serious events remained
+   similar.
+2. Dominant upper-left `SAFETY SIGNALS THAT DIFFERED` panel:
+   - Cataract surgery, phakic eyes: ADA 2% vs CID 11%, P=0.009.
+   - >=15-letter BCVA loss: ADA 6% vs CID 13%, P=0.026.
+   - >=30-letter BCVA loss: ADA 3% vs CID 7%, P=0.430. Keep this P value muted.
+   - Elevated liver enzymes: ADA 2% vs CID 10%, P=0.014.
+3. Smaller upper-right `OTHER OCULAR EVENTS` panel:
+   - IOP +10 mmHg: 9% / 8%, P=0.730.
+   - IOP >=24 mmHg: 11% / 13%, P=0.500.
+   - IOP >=30 mmHg: 5% / 5%, P=0.930.
+   - IOP medication: 16% / 10%, P=0.850.
+   - New glaucoma: 1% / 11%, P=0.200.
+   - Glaucoma surgery: 1% / 3%, P=0.290.
+   This panel is ocular only; do not add systemic/laboratory rows.
+4. Bottom-left treatment intolerance: preserve dominant `0 ADA vs 8 CID`,
+   MTX-based 6 / mycophenolate 2, and subsequent-treatment summary.
+5. Bottom-right serious systemic events: keep it a substantial counterweight.
+   - Infections requiring antibiotics: ADA 0.40/PY, CID 0.37/PY, IRR 1.10,
+     95% CI 0.61-2.00, P=0.760.
+   - Hospitalizations: ADA 0.045/PY, CID 0.115/PY, IRR 0.39,
+     95% CI 0.12-1.26, P=0.120.
+   - Other serious systemic AEs were rare and similar; no new demyelination
+     events occurred in either group.
+
+Layout safeguards:
+
+- `.safety-qol-top` and `.safety-bottom-band` form the upper/lower structure.
+- The main panel uses
+  `grid-template-rows: auto repeat(4, minmax(0, 1fr))`.
+- The ocular-events panel also uses fitted rows. Do not return either area to
+  percentage `min-height` rules; that previously caused overlap on tall
+  windows.
+- Prefer narrow overrides near the later safety section instead of refactoring
+  older shared CSS.
+
+### Slide 23 — Quality of life (`quality-of-life-results`)
+
+Keep QoL on its own slide; do not merge it into Safety.
+
+- EQ-5D: no significant change in the proportion with a perfect score.
+- NEI-VFQ-25: both groups improved similarly, near the 4-6 point minimally
+  clinically meaningful difference.
+- SF-36 Physical: ADA essentially unchanged, CID declined slightly; the
+  6-month difference was not sustained at 12 months, and neither group had a
+  clinically meaningful change.
 - SF-36 Mental: no significant between-group difference at 6 or 12 months.
 
-## Other important slide history
+### Slide 28 — Temporal trajectory (`limitations-3`)
 
-- Methodology slides have been repeatedly refined. Do not delete the original combined outcomes/methodology archive pages; the user previously had to request restoration after one was removed.
-- Existing outcomes/statistics pages include several intentional archived variants. Preserve their scene IDs and only modify pages explicitly named by the user.
-- The current sample-size redesign is the last chapter (`sample-size-redesign`). It was intentionally moved to the end of the deck.
-- Page numbers in eyebrow text (for example, `24 — RESULTS`) describe the source/deck narrative, while the displayed right-side counter is generated from the current chapter order. Do not “fix” a discrepancy unless the user specifically requests renumbering.
+Purpose: distinguish an observed earlier ADA advantage from the unobserved
+question of whether CID might catch up after Month 12.
 
-## Git and handoff process
+`temporalStep` is `0..4`:
 
-When the user asks to push:
+1. State 0: timeline only, with 6- and 12-month nodes.
+2. Step 1: reveal 6-month steroid sparing — ADA 69%, CID 54%, delta 15 points,
+   aOR 1.86, P=0.029.
+3. Step 2: draw the white trajectory, then after 0.45 seconds reveal
+   12-month sparing — ADA 86%, CID 77%, delta 9 points, aOR 1.89, P=0.077.
+4. Step 3: reveal discontinuation at 6 months (15% vs 11%, P=0.300) and
+   12 months (55% vs 40%, OR 1.85, P=0.028).
+5. Step 4: extend from the 12-month discontinuation result across `FOLLOW-UP
+   ENDS` into the dashed `CONVERGE? / PERSIST? / DIVERGE?` fan and reveal
+   `BEYOND M12 — NOT OBSERVED`.
+6. The next click resets to State 0.
 
-1. Run `git -C site status --short`.
-2. Commit only intended project files in `site`.
-3. Push with `git -C site push origin main`.
-4. If the sandbox cannot resolve GitHub, re-run that exact push with required elevated network permission.
-5. Report the pushed commit hash.
+Preserve `.matrix-observed-side { z-index: 10; }` and
+`.discontinuation-branching-fan { z-index: 50; }`. The speculative area should
+never visually dim the observed evidence.
 
-Before finalizing any visual change:
+### Legacy and variant slides
 
-1. Run `npm run build` from `site`.
-2. Inspect the named scene at 1920×1080.
-3. Check no child element leaves the scene bounds and no adjacent blocks overlap.
-4. Keep the answer concise and report build status.
+- Preserve `outcomes-original`; it was previously removed accidentally and had
+  to be restored.
+- Preserve `statistics-sample-only`, `statistics-redesign`, `statistics`,
+  `sample-size-redesign`, `secondary-outcomes-redesign`, and `discussion`
+  unless the user explicitly asks to remove or reorder them.
+- `sample-size-redesign` is chapter 35, followed by Outcome definitions and
+  Discussion. It is not the final chapter.
+- Eyebrow numbers on legacy slides reflect narrative/version history and do not
+  always match the current counter. Do not renumber them casually.
 
-## What not to do
+## 6. Building the next homogeneous slide
 
-- Do not make visual/scientific guesses when a source value is available.
-- Do not replace slide content outside the requested scope.
-- Do not turn the editorial slides into dense cards or conventional PowerPoint charts.
-- Do not use excessive glow, thick borders, or generic dashboard visuals.
-- Do not call a treatment globally safer when the evidence only supports selected tolerability/safety signals with serious events similar.
+Before writing JSX, define the slide in one sentence:
+
+- What question does it answer?
+- What is the single conclusion the audience should remember?
+- Which relationship makes that conclusion easiest to understand: comparison,
+  sequence, hierarchy, convergence, attrition, or uncertainty?
+
+Choose the nearest visual precedent:
+
+- Clinical taxonomy, multimodal assessment, or therapeutic convergence: Slide 02.
+- Editorial discussion with one dominant scientific figure: Slides 26 and 28.
+- Dense evidence hierarchy with primary and secondary blocks: Slide 22.
+- Patient-reported outcome synthesis: Slide 23.
+- Network/process methodology: Slide 06.
+
+Recommended structure for a new editorial/data slide:
+
+1. Left column: eyebrow -> red question hook -> interpretive headline -> short
+   lede -> one or two editorial rules.
+2. Right column: one coherent canvas showing the scientific relationship.
+3. Use red and violet only where their treatment semantics apply.
+4. Make the statistically or clinically decisive signal the strongest element.
+5. Use gray to recede context, alternatives, or unobserved outcomes.
+6. Add staged interaction only when revealing everything at once would weaken
+   understanding.
+
+Do not copy a prior slide mechanically. Match its hierarchy, spacing, color
+logic, and pacing while choosing a visual form appropriate to the new
+scientific relationship. Homogeneity means shared grammar, not identical
+layouts.
+
+Use slide-scoped class names to avoid leaking styles. Because `globals.css` is
+large and intentionally layered, prefer a narrow, clearly labeled override near
+the current slide-specific section or at the end. Inspect for older selectors
+before adding a rule.
+
+## 7. Verification checklist
+
+For every visual or content change:
+
+1. Confirm only requested files/slides changed with `git status --short` and
+   `git diff`.
+2. Run `npm run build` from `site`.
+3. Inspect the named scene at 1920 x 1080.
+4. Confirm no child leaves the scene bounds and no blocks overlap, collide,
+   clip, or overflow.
+5. Test every click state through its final state and reset.
+6. Confirm the counter and active rail dot map to the intended chapter.
+7. Check ADA/CID colors and scientific wording remain consistent.
+8. If responsive behavior was requested, inspect the relevant narrow and tall
+   viewports separately; do not infer desktop failure from the narrow embedded
+   browser.
+9. Report exactly what changed and whether the build passed.
+
+## 8. Git handoff rules
+
+- Work from `site` on `main` unless the user requests another branch.
+- Commit only intended project files.
+- Do not commit or push these handoff documents unless explicitly requested.
+- When asked to push: inspect status, commit intended files, run
+  `git push origin main`, and report the pushed commit hash.

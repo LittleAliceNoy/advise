@@ -4,7 +4,9 @@ import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 const chapters = [
   { id: "signal", label: "The signal" },
-  { id: "clinical-problem", label: "The clinical problem" },
+  { id: "clinical-problem", label: "The clinical landscape" },
+  { id: "therapeutic-goal", label: "The therapeutic goal" },
+  { id: "systemic-strategies", label: "Two systemic strategies" },
   { id: "question", label: "The research question" },
   { id: "study-design", label: "Study design" },
   { id: "screening", label: "Screening pathway" },
@@ -803,195 +805,219 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- NEW SLIDE 02: INTRODUCTION / THE CLINICAL PROBLEM --- */}
-        <section id="clinical-problem" className="scene intro-clinical-problem-scene">
-          <div className="adv-two-col">
-            {/* LEFT COLUMN: EDITORIAL & CORE MANDATE */}
-            <div className="adv-left-col">
-              <p className="eyebrow"><span /> 02 — INTRODUCTION / THE CLINICAL PROBLEM</p>
-              <p className="cataract-hook">WHAT ARE WE ACTUALLY TRYING TO CONTROL?</p>
-              <h2>
-                Even low-level inflammation matters.<br />
-                <span className="red-text" style={{ display: 'inline' }}>
-                  Control has to last.
-                </span>
-              </h2>
-              <p className="lede">
-                The uveitides comprise &gt;30 diseases with different anatomic and clinical phenotypes. For many noninfectious intermediate, posterior, and panuveitides, however, the therapeutic objective converges on sustained control of intraocular inflammation.
-              </p>
+        <section id="clinical-problem" className="scene intro2-landscape-scene">
+          <p className="eyebrow landscape-eyebrow"><span /> 02 — INTRODUCTION / THE CLINICAL LANDSCAPE</p>
 
-              <div className="adv-observations-block editorial-rules">
-                <div className="observation-item">
-                  <h4><span>01</span> — CORE THERAPEUTIC OBJECTIVE</h4>
-                  <p>Different diseases. One requirement: complete and sustained inflammatory control to protect long-term visual acuity.</p>
+          <div className="landscape-stage">
+            <header className="landscape-hero">
+              <h2><span>&gt;30</span> UVEITIDES</h2>
+              <p>A heterogeneous group of diseases<br />characterized by intraocular inflammation.</p>
+            </header>
+
+            <div className="landscape-taxonomy">
+              <section className="landscape-anatomy" aria-label="Anatomic classification of uveitis">
+                <header><strong>ANATOMIC CLASSIFICATION</strong><small>Based on the primary site of inflammation</small></header>
+                <div className="landscape-anatomy-nodes">
+                  {[
+                    ["ANTERIOR", "anterior"],
+                    ["INTERMEDIATE", "intermediate"],
+                    ["POSTERIOR", "posterior"],
+                    ["PANUVEITIS", "panuveitis"],
+                  ].map(([label, region]) => (
+                    <div className="landscape-anatomy-node" key={label}>
+                      <span>{label}</span>
+                      <i className={`landscape-eye-section ${region}`} aria-hidden="true"><b /></i>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </section>
+
+              <section className="landscape-etiology" aria-label="Etiologic classification of uveitis">
+                <header><strong>ETIOLOGY</strong><small>By nature of the disease</small></header>
+                <div className="landscape-etiology-axis">
+                  <div><span>INFECTIOUS</span><i className="etiology-germs" aria-hidden="true"><i /></i></div>
+                  <em className="etiology-divider" aria-hidden="true"><i /></em>
+                  <div className="etiology-noninfectious"><span>NON-INFECTIOUS</span><i className="etiology-inflammation" aria-hidden="true" /><small>PRESUMED AUTOIMMUNE / AUTOINFLAMMATORY</small></div>
+                </div>
+              </section>
             </div>
 
-            {/* RIGHT COLUMN: RESTRAINED PROGRESSION FUNNEL */}
-            <div className="adv-right-col intro-problem-figure-col">
-              <div className="clinical-problem-canvas">
-                
-                {/* TIER 1: >30 UVEITIDES & 4 ANATOMIC SEGMENTS */}
-                <div className="problem-tier tier-breadth">
-                  <div className="tier-header-hub">
-                    <span className="hub-badge">&gt;30 UVEITIDES</span>
-                    <span className="hub-subtext">Heterogeneous etiologies &amp; clinical phenotypes</span>
-                  </div>
-
-                  {/* Branching SVG Network */}
-                  <div className="anatomic-branch-svg-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 400 24" className="anatomic-branch-svg" preserveAspectRatio="none">
-                      <path d="M 200 0 L 200 10 M 48 10 L 352 10 M 48 10 L 48 24 M 149 10 L 149 24 M 251 10 L 251 24 M 352 10 L 352 24" 
-                            fill="none" stroke="rgba(255, 255, 255, 0.28)" strokeWidth="1.2" />
+            <section className="landscape-assessment" aria-label="Multimodal assessment of uveitis activity">
+              <header><strong>ACTIVITY ASSESSMENT</strong><small>A combination of clinical evaluation and imaging</small></header>
+              <div className="assessment-modalities">
+                <article>
+                  <span className="assessment-icon assessment-history" aria-hidden="true">
+                    <svg viewBox="0 0 64 64">
+                      <path d="M17 10h22l9 9v35H17z" />
+                      <path d="M39 10v10h9M24 31h17M24 38h17M24 45h11" />
+                      <circle cx="25" cy="22" r="4" />
+                      <path d="M19.5 29c1.3-3.4 9.7-3.4 11 0" />
+                      <circle className="svg-accent" cx="46" cy="47" r="7" />
+                      <path className="svg-accent" d="M46 43v4l3 2" />
                     </svg>
-                  </div>
+                  </span>
+                  <div><strong>HISTORY</strong><small>Symptoms · disease course · prior treatment</small></div>
+                </article>
+                <em aria-hidden="true">+</em>
+                <article>
+                  <span className="assessment-icon assessment-exam" aria-hidden="true">
+                    <svg viewBox="0 0 120 80">
+                      <path d="M7 68h105M15 62h69M22 56h42v6H18v-2c0-2 2-4 4-4z" />
 
-                  {/* 4 Anatomic Node Pills */}
-                  <div className="anatomic-nodes-row">
-                    <div className="anatomic-node-pill pill-anterior">
-                      <div className="node-icon-circle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
-                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                          <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.2" strokeDasharray="1.5 1.5" />
-                        </svg>
-                      </div>
-                      <span className="node-title">ANTERIOR</span>
-                      <small className="node-sub">Iris · Ciliary body</small>
-                    </div>
+                      <path d="M33 12v43M44 12v43M30 12h17M30 17h17" />
+                      <path d="M30 42h17M30 46c4 4 12 4 17 0" />
 
-                    <div className="anatomic-node-pill pill-target highlight">
-                      <div className="node-icon-circle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
-                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                          <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
-                        </svg>
-                      </div>
-                      <span className="node-title">INTERMEDIATE</span>
-                      <small className="node-sub">Vitreous · Pars plana</small>
-                    </div>
+                      <path d="M44 8v48M39 8h10M40 3h9v9h-9zM44 27h10M44 39h10" />
+                      <path d="M44 27h16M44 36h16" />
+                      <path d="M55 36v10c0 6-4 9-10 9h-7" />
+                      <circle cx="44" cy="58" r="3" />
 
-                    <div className="anatomic-node-pill pill-target highlight">
-                      <div className="node-icon-circle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
-                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                          <path d="M5 19c3.5-3.5 10.5-3.5 14 0" stroke="currentColor" strokeWidth="1.6" />
-                        </svg>
-                      </div>
-                      <span className="node-title">POSTERIOR</span>
-                      <small className="node-sub">Retina · Choroid</small>
-                    </div>
+                      <path d="M60 23h16v13H60zM76 25h6v9h-6" />
+                      <path className="svg-accent svg-beam" d="M44 31H88" />
 
-                    <div className="anatomic-node-pill pill-target highlight">
-                      <div className="node-icon-circle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" className="pill-eye-icon">
-                          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                          <circle cx="12" cy="12" r="6" fill="rgba(255, 77, 82, 0.15)" stroke="currentColor" strokeWidth="1.4" />
-                        </svg>
-                      </div>
-                      <span className="node-title">PANUVEITIS</span>
-                      <small className="node-sub">All segments</small>
-                    </div>
-                  </div>
-                </div>
-
-                {/* TIER 2: FILTER & NARROWING — INFECTIOUS VS NONINFECTIOUS TARGET */}
-                <div className="problem-tier tier-filter">
-                  
-                  {/* Subtle Muted Side Branch: Infectious (Outside Scope) */}
-                  <div className="divergent-path-card">
-                    <div className="divergent-badge">OUTSIDE TARGET PATHWAY</div>
-                    <div className="divergent-body">
-                      <span className="divergent-title">INFECTIOUS UVEITIS</span>
-                      <span className="divergent-detail">Viral · Bacterial · Fungal · Parasitic</span>
-                      <small className="divergent-note">Requires pathogen-directed antimicrobial therapy</small>
-                    </div>
-                  </div>
-
-                  {/* Central Conduit Stem */}
-                  <div className="funnel-connector-stem" aria-hidden="true">
-                    <div className="stem-line" />
-                    <span className="stem-arrow">↓</span>
-                  </div>
-
-                  {/* Core Highlighted Target: Noninfectious Intermediate / Posterior / Panuveitis */}
-                  <div className="target-scope-card">
-                    <div className="target-scope-tag">ADVISE TARGET POPULATION</div>
-                    <div className="target-scope-header">
-                      <span className="target-main-title">NONINFECTIOUS</span>
-                      <span className="target-sub-title">INTERMEDIATE · POSTERIOR · PANUVEITIS</span>
-                    </div>
-                    <p className="target-scope-desc">Presumed autoimmune or autoinflammatory etiology requiring systemic immunomodulation</p>
-                  </div>
-                </div>
-
-                {/* TIER 3: THE CLINICAL ENDPOINT (STRONGEST VISUAL ANCHOR) */}
-                <div className="problem-tier tier-endpoint">
-                  <div className="endpoint-conduit-arrow" aria-hidden="true">
-                    <div className="conduit-line" />
-                    <span className="conduit-dot" />
-                  </div>
-
-                  <div className="inflammation-endpoint-card">
-                    <div className="endpoint-badge">THE FUNDAMENTAL CLINICAL PROBLEM</div>
-                    <div className="endpoint-core-statement">
-                      <div className="statement-subject">
-                        <strong className="subject-title">INFLAMMATION</strong>
-                        <span className="subject-qualifier">Even low-level persistent activity</span>
-                      </div>
-                      <div className="statement-arrow-indicator" aria-hidden="true">→</div>
-                      <div className="statement-outcome">
-                        <strong className="outcome-bold">WORSE VISUAL ACUITY OUTCOMES</strong>
-                        <span className="outcome-sub">Cumulative structural damage · Macular edema · Permanent vision loss</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                      <path d="M72 62v-8" />
+                      <circle cx="72" cy="52" r="2" />
+                    </svg>
+                  </span>
+                  <div><strong>OPHTHALMIC EXAMINATION</strong><small>Anterior chamber and vitreous inflammation grading</small></div>
+                </article>
+                <em aria-hidden="true">+</em>
+                <article>
+                  <span className="assessment-icon assessment-imaging" aria-hidden="true">
+                    <svg viewBox="0 0 64 64">
+                      <path d="M11 20v-7h7M46 13h7v7M53 44v7h-7M18 51h-7v-7" />
+                      <path d="M12 32c8-11 32-11 40 0-8 11-32 11-40 0z" />
+                      <circle cx="32" cy="32" r="10" />
+                      <circle className="svg-accent" cx="32" cy="32" r="4" />
+                      <path d="M32 15v8M32 41v8M15 32h8M41 32h8" />
+                      <path className="svg-accent svg-scan" d="M20 39c7-5 17-7 25-5" />
+                    </svg>
+                  </span>
+                  <div><strong>IMAGING</strong><small>Often disease-specific</small></div>
+                </article>
               </div>
+            </section>
+
+            <section className="landscape-convergence" aria-label="Many noninfectious uveitides converge on oral corticosteroids and immunosuppression">
+              <header>
+                <small>Despite their clinical and presumed immunologic differences,</small>
+                <strong>MANY NON-INFECTIOUS INTERMEDIATE, POSTERIOR AND PANUVEITIDES</strong>
+                <span>CONVERGE ON A COMMON SYSTEMIC APPROACH</span>
+              </header>
+
+              <div className="landscape-convergence-body">
+                <div className="landscape-therapy">
+                  <span className="therapy-icon" aria-hidden="true"><i /><b /></span>
+                  <div><strong>ORAL CORTICOSTEROIDS<br /><em>+</em> IMMUNOSUPPRESSION</strong><small>The established systemic approach for many non-infectious uveitides.</small></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="therapeutic-goal" className="scene intro3-scene">
+          <p className="eyebrow intro3-eyebrow"><span /> 03 — INTRODUCTION / THE THERAPEUTIC GOAL</p>
+          <header className="intro3-header">
+            <h2>Control the disease.<br /><em>Reduce the steroid burden.</em></h2>
+          </header>
+
+          <div className="intro3-transformation" aria-label="Clinical progression from inflammation control to corticosteroid sparing and discontinuation">
+            <div className="intro3-progress">
+              <span className="is-active">CONTROL INFLAMMATION</span><i />
+              <span>REDUCE PREDNISONE</span><i />
+              <span className="is-ideal">IDEALLY DISCONTINUE</span>
+            </div>
+
+            <div className="intro3-equations">
+              <article className="intro3-equation intro3-sparing">
+                <div><small>DISEASE STATE</small><strong>INACTIVE<br />UVEITIS</strong></div>
+                <b>+</b>
+                <div><small>PREDNISONE</small><strong>≤7.5</strong><span>MG / DAY</span></div>
+                <b>=</b>
+                <div className="intro3-result"><small>SUCCESSFUL</small><strong>CORTICOSTEROID<br />SPARING</strong></div>
+              </article>
+
+              <div className="intro3-further">
+                <small>PREDNISONE</small>
+                <strong>7.5</strong>
+                <i aria-hidden="true" />
+                <strong>0</strong>
+                <span>MG / DAY · FURTHER CLINICAL GOAL</span>
+              </div>
+
+              <article className="intro3-equation intro3-discontinuation">
+                <div><small>DISEASE STATE</small><strong>INACTIVE<br />UVEITIS</strong></div>
+                <b>+</b>
+                <div><small>PREDNISONE</small><strong>0</strong><span>MG / DAY</span></div>
+                <b>=</b>
+                <div className="intro3-result"><small>SUCCESSFUL</small><strong>CORTICOSTEROID<br />DISCONTINUATION</strong></div>
+              </article>
             </div>
           </div>
         </section>
 
-        <section id="basics" className="scene basics-scene">
-          <div className="scene-copy">
-            <p className="eyebrow"><span /> 02 — BASIC KNOWLEDGE</p>
-            <h2>When inflammation<br />moves <em>inside the eye.</em></h2>
-            <p className="lede">Uveitis is a family of 30+ inflammatory diseases. In intermediate, posterior, and panuveitis, inflammation can threaten the retina, choroid, and vision itself.</p>
-            <div className="micro-facts">
-              <div><strong>30+</strong><span>uveitic diseases</span></div>
-              <div><strong>≤7.5</strong><span>mg/day prednisone target</span></div>
-            </div>
+        <section id="systemic-strategies" className="scene intro4-scene">
+          <p className="eyebrow intro4-eyebrow"><span /> 04 — INTRODUCTION / TWO SYSTEMIC STRATEGIES</p>
+          <div className="intro4-split" aria-label="Two plausible systemic treatment pathways before ADVISE">
+            <article className="intro4-path intro4-cid">
+              <header><small>ESTABLISHED STEPWISE STRATEGY</small><strong>CONVENTIONAL<br />IMMUNOSUPPRESSION</strong></header>
+              <div className="intro4-pathway">
+                <div><span>START</span><strong>ANTIMETABOLITE</strong><small>Methotrexate · Mycophenolate · Azathioprine</small></div>
+                <i aria-hidden="true" />
+                <div><span>IF NEEDED</span><strong>ESCALATE / ADD ANOTHER CLASS</strong><small>For example, a calcineurin inhibitor</small></div>
+                <i aria-hidden="true" />
+                <div><span>STRATEGY</span><strong>STEPWISE CONTROL</strong></div>
+              </div>
+            </article>
+
+            <div className="intro4-axis" aria-hidden="true"><i /><b>OR</b><i /></div>
+
+            <article className="intro4-path intro4-ada">
+              <header><small>TARGETED BIOLOGIC</small><strong>ADALIMUMAB</strong><span>ANTI–TNF-α MONOCLONAL ANTIBODY</span></header>
+              <div className="intro4-ada-evidence">
+                <div className="ada-evidence-hub"><i aria-hidden="true" /><span>EVIDENCE BEFORE ADVISE</span></div>
+                <div className="ada-evidence-sources">
+                  <div>
+                    <span>RANDOMIZED TRIALS vs PLACEBO</span>
+                    <strong>PROLONGED TIME<br />TO RELAPSE</strong>
+                    <small>During corticosteroid taper and discontinuation</small>
+                  </div>
+                  <b aria-hidden="true">+</b>
+                  <div>
+                    <span>FOLLOW-UP COHORT</span>
+                    <strong>SUGGESTED SUBSTANTIAL<br />CORTICOSTEROID SPARING</strong>
+                  </div>
+                </div>
+                <div className="ada-evidence-foundation"><i aria-hidden="true" /><span>SUPPORTED A PLAUSIBLE APPROACH TO</span><strong>BIOLOGIC CONTROL</strong></div>
+              </div>
+            </article>
           </div>
-          <div className="anatomy-graphic" aria-label="Animated cross-section of an inflamed eye">
-            <div className="eye-shell">
-              <div className="eye-flare flare-one" /><div className="eye-flare flare-two" />
-              <div className="lens" /><div className="retina" /><div className="optic" />
-            </div>
-            <span className="label label-retina"><i />RETINA</span>
-            <span className="label label-inflammation"><i />INFLAMMATION</span>
-            <span className="label label-nerve"><i />OPTIC NERVE</span>
+
+          <div className="intro4-convergence">
+            <i /><div><small>SAME CLINICAL DESTINATION</small><strong>INACTIVE UVEITIS <span>+</span> LOWER PREDNISONE</strong></div><i />
           </div>
-          <p className="side-note">The clinical target: inactive disease with the lowest possible corticosteroid exposure.</p>
+          <p className="intro4-close">Different evidence histories. Same clinical destination.</p>
         </section>
 
-        <section id="question" className="scene question-scene">
-          <div className="question-orbits" aria-hidden="true">
-            <div className="choice choice-ada"><div className="molecule"><i /><i /><i /><i /></div><span>ADALIMUMAB</span></div>
-            <div className="versus">VS</div>
-            <div className="choice choice-cid"><div className="tablet-stack"><i /><i /><i /></div><span>CONVENTIONAL</span></div>
+        <section id="question" className="scene intro5-scene">
+          <p className="eyebrow intro5-eyebrow"><span /> 05 — INTRODUCTION / THE EVIDENCE GAP</p>
+          <div className="intro5-gap" aria-label="Adalimumab and conventional immunosuppression separated by the missing randomized head-to-head comparison">
+            <div className="intro5-stream intro5-stream-ada"><small>ANTI–TNF-α</small><strong>ADA</strong><i /></div>
+            <div className="intro5-absence"><span>NO RANDOMIZED</span><strong>HEAD-TO-HEAD</strong><span>COMPARISON</span></div>
+            <div className="intro5-stream intro5-stream-cid"><i /><strong>CID</strong><small>STEPWISE IMMUNOSUPPRESSION</small></div>
           </div>
-          <div className="scene-copy centered-copy">
-            <p className="eyebrow"><span /> 03 — THE RESEARCH QUESTION</p>
-            <h2>Two proven paths.<br /><em>One missing comparison.</em></h2>
-            <p className="lede">Adalimumab was known to delay relapse versus placebo. Conventional antimetabolites and calcineurin inhibitors were standard care. Their head-to-head effectiveness was unknown.</p>
-            <div className="research-question">Which approach achieves steroid-sparing control sooner?</div>
+
+          <div className="intro5-reveal">
+            <small>THE TRIAL THAT MADE THE COMPARISON</small>
+            <strong>ADVISE</strong>
+            <span>ADALIMUMAB vs CONVENTIONAL IMMUNOSUPPRESSION FOR UVEITIS</span>
+            <i aria-hidden="true" />
           </div>
         </section>
 
         <section id="study-design" className="scene design-scene">
           <div className="scene-copy design-copy">
-            <p className="eyebrow"><span /> 04 — METHODOLOGY / STUDY DESIGN</p>
+            <p className="eyebrow"><span /> 06 — METHODOLOGY / STUDY DESIGN</p>
             <h2>Built across<br /><em>three continents.</em></h2>
             <p className="lede">The ADVISE Trial was a multicenter, randomized, unmasked, parallel-treatment comparative-effectiveness superiority trial comparing adalimumab with conventional immunosuppressive drugs for uveitis.</p>
             <div className="design-attributes" aria-label="Study design features">
@@ -1066,7 +1092,7 @@ export default function Home() {
 
         <section id="screening" className="scene journey-scene">
           <div className="scene-copy journey-copy screening-inclusion-copy">
-            <p className="eyebrow"><span /> 05 — METHODOLOGY / SCREENING PATHWAY</p>
+            <p className="eyebrow"><span /> 07 — METHODOLOGY / SCREENING PATHWAY</p>
             <h2>The entry<br /><em>window.</em></h2>
             <p className="lede">Three inclusion thresholds defined who could proceed to the eight-part safety screen.</p>
             <div className="inclusion-metrics" aria-label="Key inclusion criteria">
@@ -1102,7 +1128,7 @@ export default function Home() {
 
         <section id="randomization" className="scene randomization-scene">
           <div className="scene-copy randomization-copy">
-            <p className="eyebrow"><span /> 06 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
+            <p className="eyebrow"><span /> 08 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
             <h2>Four strata.<br /><em>One balanced split.</em></h2>
             <p className="lede">Participants were stratified by current immunosuppression and anticipated prednisone dose, then randomized within each stratum using varying-size permuted blocks to maintain the expected allocation ratio.</p>
             <div className="randomization-timeline" aria-label="Steps completed before randomization assignment was revealed">
@@ -1147,7 +1173,7 @@ export default function Home() {
 
         <section id="treatment" className="scene treatment-scene">
           <div className="scene-copy treatment-copy">
-            <p className="eyebrow"><span /> 07 — METHODOLOGY / TREATMENT BY STRATUM</p>
+            <p className="eyebrow"><span /> 09 — METHODOLOGY / TREATMENT BY STRATUM</p>
             <h2>Baseline therapy.<br /><em>Defines the next step.</em></h2>
           <p className="lede">No drug at baseline? Start one. Already on one? Add another.</p>
           </div>
@@ -1208,7 +1234,7 @@ export default function Home() {
 
         <section id="tapering" className="scene tapering-scene">
           <div className="scene-copy tapering-copy">
-            <p className="eyebrow"><span /> 08 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
+            <p className="eyebrow"><span /> 10 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
             <h2>Taper the steroid.<br /><em>Escalate when needed.</em></h2>
             <p className="lede">Taper after 2–4 weeks of disease control; reactivation resets steroids and advances immunosuppression.</p>
           </div>
@@ -1269,7 +1295,7 @@ export default function Home() {
               ========================================================= */}
           <div className="scene-copy tapering-copy">
             <p className="eyebrow">
-              <span /> 09 — METHODOLOGY / TAPERING &amp; REACTIVATION
+              <span /> 11 — METHODOLOGY / TAPERING &amp; REACTIVATION
             </p>
 
             <h2>
@@ -1521,7 +1547,7 @@ export default function Home() {
 
         <section id="followup" className="scene followup-scene">
           <div className="scene-copy followup-copy">
-            <p className="eyebrow"><span /> 10 — METHODOLOGY / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / FOLLOW-UP</p>
             <h2>A year in focus.<br /><em>Every visit counts.</em></h2>
             <p className="lede">Monthly through month 6, then every 2 months to the 1-year close-out.</p>
           </div>
@@ -1572,7 +1598,7 @@ export default function Home() {
           aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis."
         >
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it.</em></h2>
           </div>
 
@@ -1625,7 +1651,7 @@ export default function Home() {
 
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey.</em></h2>
           </div>
 
@@ -1660,7 +1686,7 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family."
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models.</em></h2>
           </div>
 
@@ -1734,7 +1760,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 14 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized.</em></h2>
             <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for.</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -1810,7 +1836,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 15 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts.</em></h2>
             <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately.</p>
           </div>
@@ -1882,7 +1908,7 @@ export default function Home() {
         {false && <section id="treatment-results" className="scene treatment-results-scene">
           <div className="scene-header-row">
             <div className="scene-copy treatment-results-copy">
-              <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
               <h2>Therapy assigned. <em>Treatment evolved.</em></h2>
             </div>
             
@@ -2166,7 +2192,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 16 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved.</span>
@@ -2431,7 +2457,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA.</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster.</p>
           </div>
@@ -2483,7 +2509,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence."
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 18 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later.</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids.</p>
           </div>
@@ -2531,7 +2557,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 19 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded.</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution.</p>
           </div>
@@ -2616,7 +2642,7 @@ export default function Home() {
 
         <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar.</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar.</p>
           </div>
@@ -2670,7 +2696,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar.</em></h2>
             <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference.</p>
           </div>
@@ -2683,7 +2709,7 @@ export default function Home() {
         <section id="limitations-4" className="scene discussion-advancement-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 22 — DISCUSSION / TREATMENT ADVANCEMENT</p>
+              <p className="eyebrow"><span /> 24 — DISCUSSION / TREATMENT ADVANCEMENT</p>
               <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit.</h2>
@@ -2790,7 +2816,7 @@ export default function Home() {
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 23 — DISCUSSION / CATARACT SIGNAL</p>
+              <p className="eyebrow"><span /> 25 — DISCUSSION / CATARACT SIGNAL</p>
               <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive.</h2>
@@ -2915,7 +2941,7 @@ export default function Home() {
         <section id="limitations-1" className="scene discussion-limitations-scene">
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 24 — DISCUSSION / MASKING LIMITATIONS</p>
+              <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled.</span></h2>
               <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias.</p>
@@ -3098,7 +3124,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 25 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways.</span></h2>
               <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator.</p>
@@ -3593,7 +3619,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="eyebrow"><span /> 28 — DISCUSSION / TEMPORAL TRAJECTORY</p>
               <p className="cataract-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
@@ -3799,7 +3825,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 27 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 29 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -4068,7 +4094,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 28 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 30 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -4258,7 +4284,7 @@ export default function Home() {
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 29 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 31 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster.</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months.</p>
             <blockquote className="conclusion-caveat">
@@ -4267,6 +4293,28 @@ export default function Home() {
             <div className="citation">ADVISE Trial Research Group · Ophthalmology, Vol. 133, Issue 3 · NCT03828019</div>
             <button className="restart" onClick={() => goTo(0)}>↻ Restart story</button>
           </div>
+        </section>
+
+        <section id="basics" className="scene basics-scene">
+          <div className="scene-copy">
+            <p className="eyebrow"><span /> 02 — BASIC KNOWLEDGE</p>
+            <h2>When inflammation<br />moves <em>inside the eye.</em></h2>
+            <p className="lede">Uveitis is a family of 30+ inflammatory diseases. In intermediate, posterior, and panuveitis, inflammation can threaten the retina, choroid, and vision itself.</p>
+            <div className="micro-facts">
+              <div><strong>30+</strong><span>uveitic diseases</span></div>
+              <div><strong>≤7.5</strong><span>mg/day prednisone target</span></div>
+            </div>
+          </div>
+          <div className="anatomy-graphic" aria-label="Animated cross-section of an inflamed eye">
+            <div className="eye-shell">
+              <div className="eye-flare flare-one" /><div className="eye-flare flare-two" />
+              <div className="lens" /><div className="retina" /><div className="optic" />
+            </div>
+            <span className="label label-retina"><i />RETINA</span>
+            <span className="label label-inflammation"><i />INFLAMMATION</span>
+            <span className="label label-nerve"><i />OPTIC NERVE</span>
+          </div>
+          <p className="side-note">The clinical target: inactive disease with the lowest possible corticosteroid exposure.</p>
         </section>
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
