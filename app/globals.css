@@ -14384,8 +14384,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(0.3rem, 0.6vh, 0.65rem);
+  justify-content: flex-start;
+  gap: clamp(0.35rem, 0.7vh, 0.8rem);
   margin-top: 0.1rem;
 }
 
@@ -14639,7 +14639,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .stepwise-pathway-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.12rem, 0.2vh, 0.25rem);
+  gap: clamp(0.08rem, 0.15vh, 0.2rem);
   width: 100%;
 }
 
@@ -14649,7 +14649,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
-  margin: clamp(0.04rem, 0.1vh, 0.12rem) 0;
+  margin: clamp(0.02rem, 0.08vh, 0.1rem) 0;
 }
 
 .rule-bar {
@@ -14753,9 +14753,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.12rem, 0.2vh, 0.25rem);
+  gap: clamp(0.08rem, 0.15vh, 0.2rem);
   width: 100%;
-  margin-top: clamp(0.05rem, 0.15vh, 0.2rem);
+  margin-top: 0;
 }
 
 .evidence-boxes-row {
