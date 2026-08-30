@@ -348,6 +348,8 @@ function CumulativeChart({ focus, highlights, series, ariaLabel }: { focus: numb
 
 export default function Home() {
   const deckRef = useRef<HTMLElement>(null);
+  const therapeuticTouchStartY = useRef<number | null>(null);
+  const therapeuticTouchAdvancedAt = useRef(0);
   const efficacyTouchStartY = useRef<number | null>(null);
   const efficacyTouchAdvancedAt = useRef(0);
   const discontinuationTouchStartY = useRef<number | null>(null);
@@ -445,6 +447,7 @@ export default function Home() {
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
   const [taperingStage, setTaperingStage] = useState(0);
+  const [therapeuticGoalStage, setTherapeuticGoalStage] = useState(0);
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
@@ -580,11 +583,19 @@ export default function Home() {
     const onKey = (event: KeyboardEvent) => {
       if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(event.key)) {
         event.preventDefault();
-        goTo(Math.min(active + 1, chapters.length - 1));
+        if (chapters[active]?.id === "therapeutic-goal" && therapeuticGoalStage < 3) {
+          setTherapeuticGoalStage((s) => s + 1);
+        } else {
+          goTo(Math.min(active + 1, chapters.length - 1));
+        }
       }
       if (["ArrowUp", "ArrowLeft", "PageUp"].includes(event.key)) {
         event.preventDefault();
-        goTo(Math.max(active - 1, 0));
+        if (chapters[active]?.id === "therapeutic-goal" && therapeuticGoalStage > 0) {
+          setTherapeuticGoalStage((s) => s - 1);
+        } else {
+          goTo(Math.max(active - 1, 0));
+        }
       }
     };
     window.addEventListener("keydown", onKey);
@@ -593,7 +604,35 @@ export default function Home() {
       deck.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", onKey);
     };
+  }, [active, therapeuticGoalStage]);
+
+  useEffect(() => {
+    if (chapters[active]?.id !== "therapeutic-goal") return;
+    setTherapeuticGoalStage(0);
   }, [active]);
+
+  const advanceTherapeuticGoal = () => {
+    setTherapeuticGoalStage((s) => (s < 3 ? s + 1 : s));
+  };
+
+  const onTherapeuticTouchStart = (event: TouchEvent<HTMLElement>) => {
+    therapeuticTouchStartY.current = event.touches[0]?.clientY ?? null;
+  };
+
+  const onTherapeuticTouchEnd = (event: TouchEvent<HTMLElement>) => {
+    const startY = therapeuticTouchStartY.current;
+    const endY = event.changedTouches[0]?.clientY;
+    therapeuticTouchStartY.current = null;
+    if (startY === null || endY === undefined || startY - endY < 42 || therapeuticGoalStage >= 3) return;
+    event.preventDefault();
+    therapeuticTouchAdvancedAt.current = Date.now();
+    advanceTherapeuticGoal();
+  };
+
+  const onTherapeuticClick = () => {
+    if (Date.now() - therapeuticTouchAdvancedAt.current < 500 || therapeuticGoalStage >= 3) return;
+    advanceTherapeuticGoal();
+  };
 
   useEffect(() => {
     if (chapters[active]?.id !== "results") return;
@@ -915,7 +954,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="therapeutic-goal" className="scene intro3-scene">
+        <section
+          id="therapeutic-goal"
+          className={`scene intro3-scene stage-${therapeuticGoalStage}`}
+          onClick={onTherapeuticClick}
+          onTouchStart={onTherapeuticTouchStart}
+          onTouchEnd={onTherapeuticTouchEnd}
+          style={{ cursor: therapeuticGoalStage < 3 ? "pointer" : "default" }}
+        >
           <p className="eyebrow intro3-eyebrow"><span /> 03 — INTRODUCTION / THE THERAPEUTIC GOAL</p>
           
           <header className="intro3-header">
@@ -923,10 +969,24 @@ export default function Home() {
               Control the disease.<br />
               <em>Reduce the steroid burden.</em>
             </h2>
-            <div className="intro3-subrule" aria-hidden="true">
+            <div className="intro3-subrule" aria-hidden="true" style={{ position: "relative" }}>
               <span className="subrule-line" />
               <span className="subrule-text">UVEITIS THERAPEUTIC DILEMMA</span>
               <span className="subrule-line" />
+              {therapeuticGoalStage > 0 && (
+                <button
+                  className="efficacy-story-replay"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setTherapeuticGoalStage(0);
+                  }}
+                  aria-label="Replay therapeutic goal animation"
+                  title="Replay animation"
+                  style={{ marginLeft: "0.5rem" }}
+                >
+                  ↻
+                </button>
+              )}
             </div>
           </header>
 
@@ -935,8 +995,8 @@ export default function Home() {
             {/* TOP ROW: DUAL CLINICAL CONSTRAINTS + HERO BALANCE SCALE */}
             <div className="dilemma-top-row">
               
-              {/* LEFT CONSTRAINT: STEROID CEILING */}
-              <div className="dilemma-column col-steroid-ceiling">
+              {/* LEFT CONSTRAINT: STEROID CEILING (Stage 1+) */}
+              <div className={`dilemma-column col-steroid-ceiling therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`}>
                 <div className="constraint-header">
                   <div className="constraint-icon icon-shield-down" aria-hidden="true">
                     <svg viewBox="0 0 36 44" className="dilemma-svg-large">
@@ -964,13 +1024,13 @@ export default function Home() {
               {/* CENTER CONVERGENCE: HERO BALANCE SCALE */}
               <div className="dilemma-column col-balance-convergence" style={{ marginTop: "clamp(0.5rem, 1.0vh, 1.2rem)" }}>
                 <div className="balance-scale-hero-wrapper">
-                  {/* Left connector arrow */}
-                  <div className="scale-connector connector-left" aria-hidden="true">
+                  {/* Left connector arrow (Stage 1+) */}
+                  <div className={`scale-connector connector-left therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true">
                     <span className="connector-arrow">◀</span>
                     <span className="connector-line" />
                   </div>
 
-                  {/* Hero Balance Scale SVG Circle */}
+                  {/* Hero Balance Scale SVG Circle (Always visible in center) */}
                   <div className="scale-hero-circle" style={{ width: "clamp(145px, 13.5vw, 180px)", height: "clamp(145px, 13.5vw, 180px)" }}>
                     <svg viewBox="0 0 160 140" className="scale-hero-svg" aria-label="Balance scale weighing steroid ceiling against inflammation floor">
                       <defs>
@@ -1023,25 +1083,26 @@ export default function Home() {
                     </svg>
                   </div>
 
-                  {/* Right connector arrow */}
-                  <div className="scale-connector connector-right" aria-hidden="true">
+                  {/* Right connector arrow (Stage 1+) */}
+                  <div className={`scale-connector connector-right therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true">
                     <span className="connector-line" />
                     <span className="connector-arrow">▶</span>
                   </div>
                 </div>
 
-                <div className="immunosuppression-text-wrap" style={{ marginTop: "clamp(0.35rem, 0.6vh, 0.65rem)" }}>
+                {/* Systemic Immunosuppression Solution Text (Stage 1+) */}
+                <div className={`immunosuppression-text-wrap therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} style={{ marginTop: "clamp(0.35rem, 0.6vh, 0.65rem)" }}>
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
                   <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.48rem, 0.56vw, 0.70rem)", fontWeight: 600, marginTop: "0.12rem", color: "#a8a29e", letterSpacing: "0.04em" }}>Needed to achieve both goals</span>
                 </div>
 
-                <span className="arrow-to-res" aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>
+                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ marginTop: "0.15rem" }}>↓</span>
               </div>
 
-              {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR */}
-              <div className="dilemma-column col-inflammation-floor">
+              {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR (Stage 1+) */}
+              <div className={`dilemma-column col-inflammation-floor therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`}>
                 <div className="constraint-header header-right-flex">
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
@@ -1076,8 +1137,8 @@ export default function Home() {
 
             </div>
 
-            {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR */}
-            <div className="dilemma-middle-row">
+            {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR (Stage 2+) */}
+            <div className={`dilemma-middle-row therapeutic-stage-item ${therapeuticGoalStage >= 2 ? "stage-visible" : "stage-hidden"}`}>
               <div className="resolution-equation-block">
                 <div className="resolution-item res-disease">
                   <div className="res-icon-circle" aria-hidden="true" style={{ width: "clamp(38px, 3.4vw, 48px)", height: "clamp(38px, 3.4vw, 48px)" }}>
@@ -1147,7 +1208,7 @@ export default function Home() {
 
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
                       <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.82rem, 1.00vw, 1.25rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.60rem, 0.75vw, 0.94rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.60rem, 0.75vw, 0.94rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS
                       </span>
                     </div>
@@ -1158,8 +1219,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BOTTOM ROW: STEROID TRAJECTORY & FURTHER CLINICAL GOAL */}
-            <div className="dilemma-bottom-row">
+            {/* BOTTOM ROW: STEROID TRAJECTORY & FURTHER CLINICAL GOAL (Stage 3+) */}
+            <div className={`dilemma-bottom-row therapeutic-stage-item ${therapeuticGoalStage >= 3 ? "stage-visible" : "stage-hidden"}`}>
               {/* HERO TRAJECTORY VECTOR */}
               <div className="dilemma-trajectory-bar" aria-label="Steroid tapering trajectory from 7.5 to 0 mg/day">
                 <div className="bar-endpoint start-endpoint">
