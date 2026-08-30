@@ -1961,14 +1961,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* UNRESOLVED QUESTION / NARRATIVE TENSION BRIDGE */}
-            <div className="intro5-tension-bridge">
-              <div className="tension-content">
-                <span className="tension-lead">Promising evidence.</span>
-                <strong className="tension-question">But <em>compared with what we actually use?</em></strong>
-              </div>
-            </div>
-
           </div>
         </section>
 
