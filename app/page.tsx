@@ -1407,31 +1407,31 @@ export default function Home() {
                     {/* Drug 3: Azathioprine */}
                     <div className="drug-node-card">
                       <div className="drug-icon-box drug-icon-dna" aria-hidden="true">
-                        <svg viewBox="0 0 34 32" className="drug-svg">
-                          {/* Purine Heterocycle (fused pyrimidine + imidazole rings with N1, N3, N7, N9) */}
-                          {/* 6-membered Pyrimidine Ring */}
-                          <polygon points="12,7 18.5,11 18.5,21 12,25 5.5,21 5.5,11" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
-                          {/* Fused 5-membered Imidazole Ring */}
-                          <polygon points="18.5,11 26.5,13.5 26.5,18.5 18.5,21" fill="rgba(192, 132, 252, 0.09)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                        <svg viewBox="0 0 36 32" className="drug-svg">
+                          {/* Purine Heterocycle (fused 6-membered pyrimidine + 5-membered pentagonal imidazole ring) */}
+                          {/* Left 6-membered Pyrimidine Ring (Hexagon) */}
+                          <polygon points="12,6 18.5,10 18.5,22 12,26 5.5,22 5.5,10" fill="rgba(192, 132, 252, 0.14)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
+                          
+                          {/* Right 5-membered Imidazole Ring (True Pentagon) */}
+                          <polygon points="18.5,10 25,8.5 29.5,16 25,23.5 18.5,22" fill="rgba(192, 132, 252, 0.10)" stroke="#c084fc" strokeWidth="1.5" strokeLinejoin="round" />
                           
                           {/* Shared Central Fused Bond */}
-                          <line x1="16.5" y1="12" x2="16.5" y2="20" stroke="#ffffff" strokeWidth="1.3" />
+                          <line x1="16.5" y1="11" x2="16.5" y2="21" stroke="#ffffff" strokeWidth="1.3" />
                           
                           {/* Double Bonds in Purine Core */}
-                          <line x1="7.5" y1="12" x2="11.5" y2="9.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="7.5" y1="20" x2="11.5" y2="22.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="20.5" y1="13.2" x2="24.5" y2="14.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
-                          <line x1="20.5" y1="18.8" x2="24.5" y2="17.5" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="7.5" y1="11" x2="11.5" y2="8.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="7.5" y1="21" x2="11.5" y2="23.5" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                          <line x1="24" y1="10.8" x2="27.5" y2="15.8" stroke="#c084fc" strokeWidth="1.2" strokeLinecap="round" />
 
-                          {/* 6-Position Thiol / Substituent Linker */}
-                          <line x1="12" y1="7" x2="12" y2="2" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
-                          <circle cx="12" cy="2" r="2.0" fill="#ff4d52" />
+                          {/* 6-Position Thiol / Substituent Linker (Top) */}
+                          <line x1="12" y1="6" x2="12" y2="1.5" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="12" cy="1.5" r="2.0" fill="#ff4d52" />
 
                           {/* Purine Nitrogen Heteroatoms (N1, N3, N7, N9) */}
-                          <circle cx="5.5" cy="11" r="1.8" fill="#c084fc" />
-                          <circle cx="12" cy="25" r="1.8" fill="#c084fc" />
-                          <circle cx="26.5" cy="13.5" r="1.8" fill="#c084fc" />
-                          <circle cx="26.5" cy="18.5" r="1.8" fill="#c084fc" />
+                          <circle cx="5.5" cy="10" r="1.8" fill="#c084fc" />
+                          <circle cx="12" cy="26" r="1.8" fill="#c084fc" />
+                          <circle cx="25" cy="8.5" r="1.8" fill="#c084fc" />
+                          <circle cx="25" cy="23.5" r="1.8" fill="#c084fc" />
                         </svg>
                       </div>
                       <div className="drug-meta">
