@@ -1146,25 +1146,25 @@ export default function Home() {
             <div className="dilemma-bottom-row">
               {/* HERO TRAJECTORY VECTOR */}
               <div className="dilemma-trajectory-bar" aria-label="Steroid tapering trajectory from 7.5 to 0 mg/day">
-                <div className="bar-node start-node">
-                  <div className="start-node-numbers">
-                    <strong>7.5</strong>
-                    <small>MG / DAY</small>
-                  </div>
-                  <span className="bar-tick" />
+                <div className="bar-endpoint start-endpoint">
+                  <strong className="endpoint-num num-start">7.5</strong>
+                  <small className="endpoint-unit">MG / DAY</small>
                 </div>
 
-                <div className="bar-channel">
+                <div className="bar-track-wrap">
                   <span className="bar-label">TAPER TO LOWEST EFFECTIVE DOSE</span>
-                  <div className="bar-gradient-line" />
+                  <div className="bar-axis-row">
+                    <span className="bar-tick" />
+                    <div className="bar-gradient-line" />
+                    <svg viewBox="0 0 10 14" className="bar-arrow-svg" aria-hidden="true">
+                      <polygon points="0,1 9,7 0,13" fill="#c084fc" />
+                    </svg>
+                  </div>
                 </div>
 
-                <div className="bar-node end-node">
-                  <span className="bar-arrow" aria-hidden="true">►</span>
-                  <div className="end-node-numbers">
-                    <strong>0</strong>
-                    <small>MG / DAY</small>
-                  </div>
+                <div className="bar-endpoint end-endpoint">
+                  <strong className="endpoint-num num-end">0</strong>
+                  <small className="endpoint-unit">MG / DAY</small>
                 </div>
               </div>
 
