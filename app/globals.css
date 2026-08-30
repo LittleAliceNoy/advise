@@ -14761,9 +14761,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .observational-evidence-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.25rem, 0.45vh, 0.6rem);
+  gap: clamp(0.22rem, 0.4vh, 0.55rem);
   width: 100%;
-  margin-top: calc(-1 * clamp(0.35rem, 0.8vh, 1.0rem));
+  margin-top: calc(-1 * clamp(0.75rem, 1.6vh, 1.8rem));
+  margin-bottom: clamp(0.2rem, 0.4vh, 0.5rem);
 }
 
 .evidence-boxes-row {
