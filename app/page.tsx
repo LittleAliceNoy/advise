@@ -908,7 +908,7 @@ export default function Home() {
               <div className="landscape-convergence-body">
                 <div className="landscape-therapy">
                   <span className="therapy-icon" aria-hidden="true"><i /><b /></span>
-                  <div><strong>ORAL CORTICOSTEROIDS<br /><em>+</em> IMMUNOSUPPRESSION</strong><small>The established systemic approach for many non-infectious uveitides.</small></div>
+                  <div><strong>ORAL CORTICOSTEROIDS<br /><em>+</em> IMMUNOSUPPRESSION</strong></div>
                 </div>
               </div>
             </section>
@@ -917,42 +917,239 @@ export default function Home() {
 
         <section id="therapeutic-goal" className="scene intro3-scene">
           <p className="eyebrow intro3-eyebrow"><span /> 03 — INTRODUCTION / THE THERAPEUTIC GOAL</p>
+          
           <header className="intro3-header">
-            <h2>Control the disease.<br /><em>Reduce the steroid burden.</em></h2>
+            <h2>
+              Control the disease.<br />
+              <em>Reduce the steroid burden.</em>
+            </h2>
+            <div className="intro3-subrule" aria-hidden="true">
+              <span className="subrule-line" />
+              <span className="subrule-text">UVEITIS THERAPEUTIC DILEMMA</span>
+              <span className="subrule-line" />
+            </div>
           </header>
 
-          <div className="intro3-transformation" aria-label="Clinical progression from inflammation control to corticosteroid sparing and discontinuation">
-            <div className="intro3-progress">
-              <span className="is-active">CONTROL INFLAMMATION</span><i />
-              <span>REDUCE PREDNISONE</span><i />
-              <span className="is-ideal">IDEALLY DISCONTINUE</span>
-            </div>
+          <div className="intro3-dilemma-grid" aria-label="Competing clinical requirements: steroid ceiling versus inflammation floor, resolved by systemic immunosuppression">
+            
+            {/* TOP ROW: DUAL CLINICAL CONSTRAINTS + BALANCE CONVERGENCE */}
+            <div className="dilemma-top-row">
+              
+              {/* LEFT CONSTRAINT: STEROID CEILING */}
+              <div className="dilemma-column col-steroid-ceiling">
+                <div className="constraint-header">
+                  <div className="constraint-icon icon-shield-down" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="dilemma-svg">
+                      <path d="M12 2 L20 6 V13 C20 18 12 22 12 22 C12 22 4 18 4 13 V6 Z" fill="none" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M12 7 v8 M9 12 l3 3 3-3" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="constraint-title-block">
+                    <strong className="constraint-title">STEROID CEILING</strong>
+                    <p className="constraint-desc">
+                      Oral corticosteroids alone do <strong>not</strong> control inflammation at doses sufficiently low for long-term use.
+                    </p>
+                  </div>
+                </div>
 
-            <div className="intro3-equations">
-              <article className="intro3-equation intro3-sparing">
-                <div><small>DISEASE STATE</small><strong>INACTIVE<br />UVEITIS</strong></div>
-                <b>+</b>
-                <div><small>PREDNISONE</small><strong>≤7.5</strong><span>MG / DAY</span></div>
-                <b>=</b>
-                <div className="intro3-result"><small>SUCCESSFUL</small><strong>CORTICOSTEROID<br />SPARING</strong></div>
-              </article>
-
-              <div className="intro3-further">
-                <small>PREDNISONE</small>
-                <strong>7.5</strong>
-                <i aria-hidden="true" />
-                <strong>0</strong>
-                <span>MG / DAY · FURTHER CLINICAL GOAL</span>
+                <div className="ceiling-box">
+                  <span className="box-pointer" aria-hidden="true">▼</span>
+                  <div className="ceiling-dose-wrap">
+                    <strong className="ceiling-dose">≤7.5</strong>
+                    <span className="ceiling-unit">MG / DAY</span>
+                  </div>
+                  <small className="ceiling-label">DOSE SUFFICIENTLY LOW FOR LONG-TERM USE</small>
+                </div>
               </div>
 
-              <article className="intro3-equation intro3-discontinuation">
-                <div><small>DISEASE STATE</small><strong>INACTIVE<br />UVEITIS</strong></div>
-                <b>+</b>
-                <div><small>PREDNISONE</small><strong>0</strong><span>MG / DAY</span></div>
-                <b>=</b>
-                <div className="intro3-result"><small>SUCCESSFUL</small><strong>CORTICOSTEROID<br />DISCONTINUATION</strong></div>
-              </article>
+              {/* CENTER CONVERGENCE: BALANCE SCALE & SYSTEMIC IMMUNOSUPPRESSION */}
+              <div className="dilemma-column col-balance-convergence">
+                <div className="balance-scale-wrapper">
+                  <div className="balance-scale-icon" aria-hidden="true">
+                    <svg viewBox="0 0 80 60" className="scale-svg">
+                      {/* Fulcrum and Stand */}
+                      <path d="M40 18 v30 M28 50 h24" stroke="rgba(255,255,255,0.4)" strokeWidth="1.4" strokeLinecap="round" />
+                      <circle cx="40" cy="18" r="3.5" fill="#ff4d52" stroke="#ffffff" strokeWidth="1" />
+                      {/* Beam */}
+                      <path d="M16 22 L64 22" stroke="rgba(255,255,255,0.6)" strokeWidth="1.4" strokeLinecap="round" />
+                      {/* Left Pan (Shield) */}
+                      <path d="M16 22 L10 34 H22 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
+                      <path d="M16 38 L20 40 V45 C20 48 16 50 16 50 C16 50 12 48 12 45 V40 Z" fill="none" stroke="#ff4d52" strokeWidth="1.2" />
+                      <path d="M14 44 l1.5 1.5 3-3" fill="none" stroke="#ff4d52" strokeWidth="1.2" />
+                      {/* Right Pan (Eye) */}
+                      <path d="M64 22 L58 34 H70 Z" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
+                      <circle cx="64" cy="44" r="5" fill="none" stroke="#c084fc" strokeWidth="1.2" />
+                      <circle cx="64" cy="44" r="2" fill="#c084fc" />
+                    </svg>
+                  </div>
+                  <span className="balance-label">BOTH ARE REQUIRED</span>
+                  <span className="balance-arrow-down" aria-hidden="true">↓</span>
+                </div>
+
+                {/* THE CORE SOLUTION: SYSTEMIC IMMUNOSUPPRESSION */}
+                <div className="immunosuppression-capsule">
+                  <div className="capsule-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="dilemma-svg">
+                      <circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      <path d="M3 18 C3 14 6 13 9 13 C12 13 15 14 15 18" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      <circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" strokeWidth="1.2" />
+                      <path d="M15 14 C17 14 21 15 21 18" fill="none" stroke="currentColor" strokeWidth="1.2" />
+                    </svg>
+                  </div>
+                  <div className="capsule-content">
+                    <strong className="capsule-title">SYSTEMIC IMMUNOSUPPRESSION</strong>
+                    <small className="capsule-desc">Needed to achieve both goals</small>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR */}
+              <div className="dilemma-column col-inflammation-floor">
+                <div className="constraint-header">
+                  <div className="constraint-icon icon-eye-target" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="dilemma-svg">
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" fill="none" stroke="#c084fc" strokeWidth="1.6" />
+                      <circle cx="12" cy="12" r="3.5" fill="rgba(255, 45, 45, 0.2)" stroke="#ff4d52" strokeWidth="1.4" />
+                      <circle cx="12" cy="12" r="1.5" fill="#ff4d52" />
+                    </svg>
+                  </div>
+                  <div className="constraint-title-block">
+                    <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
+                    <p className="constraint-desc">
+                      Even low-level inflammation<br />
+                      <span className="red-highlight-bold">→ WORSE VISUAL ACUITY OUTCOMES</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="floor-box">
+                  <span className="box-pointer pointer-right" aria-hidden="true">▼</span>
+                  <strong className="floor-title">INACTIVE UVEITIS</strong>
+                  <small className="floor-label">COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                </div>
+              </div>
+
             </div>
+
+            {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR */}
+            <div className="dilemma-middle-row">
+              <div className="resolution-equation-block">
+                <div className="resolution-item res-disease">
+                  <div className="res-icon-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="res-eye-icon">
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.3" />
+                      <path d="m9.5 12 1.8 1.8 3.5-3.6" fill="none" stroke="#ff4d52" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <span className="res-label">INACTIVE<br />UVEITIS</span>
+                </div>
+
+                <span className="res-operator" aria-hidden="true">+</span>
+
+                <div className="resolution-item res-dose">
+                  <strong className="res-dose-num">≤7.5</strong>
+                  <span className="res-dose-unit">MG / DAY</span>
+                </div>
+
+                <span className="res-operator" aria-hidden="true">=</span>
+
+                <div className="resolution-item res-outcome">
+                  <div className="res-shield-circle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="res-shield-icon">
+                      <path d="M12 2 L20 6 V13 C20 18 12 22 12 22 C12 22 4 18 4 13 V6 Z" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.6" />
+                      <path d="M8.5 12 L11 14.5 L16.5 9" fill="none" stroke="#ff4d52" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <span className="res-outcome-text">SUCCESSFUL<br />CORTICOSTEROID<br />SPARING</span>
+                </div>
+              </div>
+
+              {/* CURLY BRACKET CONNECTOR */}
+              <div className="curly-bracket-wrap" aria-hidden="true">
+                <span className="curly-bracket">{"}"}</span>
+              </div>
+
+              {/* MUST TRIAL LANDMARK CARD */}
+              <div className="must-landmark-panel">
+                <div className="must-panel-header">
+                  <div className="must-star-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="star-svg">
+                      <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.4" />
+                      <path d="M12 5.5 L13.5 9.5 H17.5 L14.2 12 L15.5 16 L12 13.5 L8.5 16 L9.8 12 L6.5 9.5 H10.5 Z" fill="#ff4d52" />
+                    </svg>
+                  </div>
+                  <div className="must-panel-titles">
+                    <span className="must-badge-tag">LANDMARK EVIDENCE</span>
+                    <strong className="must-main-title">MUST TRIAL</strong>
+                    <span className="must-sub-tag">7-YEAR FOLLOW-UP</span>
+                  </div>
+                </div>
+
+                <div className="must-panel-body">
+                  <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
+                  <p className="must-body-claim">
+                    <span className="claim-arrow">→</span>
+                    <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
+                  </p>
+                  <small className="must-body-comparator">compared with long-acting intravitreal corticosteroid implant strategy</small>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTTOM ROW: STEROID TRAJECTORY & FURTHER CLINICAL GOAL */}
+            <div className="dilemma-bottom-row">
+              {/* HERO TRAJECTORY VECTOR */}
+              <div className="dilemma-trajectory-bar" aria-label="Steroid tapering trajectory from 7.5 to 0 mg/day">
+                <div className="bar-node start-node">
+                  <strong>7.5</strong>
+                  <small>MG / DAY</small>
+                  <span className="bar-tick" />
+                </div>
+
+                <div className="bar-channel">
+                  <span className="bar-label">TAPER TO LOWEST EFFECTIVE DOSE</span>
+                  <div className="bar-gradient-line" />
+                </div>
+
+                <div className="bar-node end-node">
+                  <span className="bar-arrow" aria-hidden="true">►</span>
+                  <strong>0</strong>
+                  <small>MG / DAY</small>
+                </div>
+              </div>
+
+              {/* FURTHER CLINICAL GOAL BAR */}
+              <div className="further-goal-inline-bar">
+                <div className="goal-target-ring" aria-hidden="true">
+                  <span className="ring-dot" />
+                </div>
+                <div className="goal-content">
+                  <span className="goal-tag">FURTHER CLINICAL GOAL</span>
+                  <div className="goal-equation">
+                    <span className="goal-item">INACTIVE UVEITIS</span>
+                    <div className="goal-eye-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" className="mini-eye-svg">
+                        <path d="M2 10s2.8-5 8-5 8 5 8 5-2.8 5-8 5-8-5-8-5Z" fill="none" stroke="#c084fc" strokeWidth="1.2" />
+                        <path d="m7.5 10 1.5 1.5 3-3" fill="none" stroke="#c084fc" strokeWidth="1.4" />
+                      </svg>
+                    </div>
+                    <span className="goal-op">+</span>
+                    <strong className="goal-dose">0</strong>
+                    <span className="goal-unit">MG / DAY</span>
+                    <span className="goal-op">=</span>
+                    <div className="goal-shield-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" className="mini-shield-svg">
+                        <path d="M10 2 L17 5 V11 C17 15 10 18 10 18 C10 18 3 15 3 11 V5 Z" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" strokeWidth="1.2" />
+                        <path d="M7 10 L9 12 L13 8" fill="none" stroke="#c084fc" strokeWidth="1.4" />
+                      </svg>
+                    </div>
+                    <strong className="goal-outcome-title">SUCCESSFUL CORTICOSTEROID DISCONTINUATION</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
