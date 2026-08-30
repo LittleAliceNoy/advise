@@ -1132,11 +1132,27 @@ export default function Home() {
 
                 <div className="must-panel-body">
                   <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
-                  <p className="must-body-claim">
-                    <span className="claim-arrow">→</span>
-                    <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY + NO INCREASE SYSTEMIC SIDE EFFECTS</strong>
-                  </p>
+
+                  {/* Row 1: Visual Outcome (Primary Finding, Red) */}
+                  <div className="must-evidence-row">
+                    <span className="must-row-label">VISUAL OUTCOME</span>
+                    <div className="must-finding-line">
+                      <span className="claim-arrow">→</span>
+                      <strong className="claim-highlight">SUPERIOR LONG-TERM VISUAL ACUITY</strong>
+                    </div>
+                  </div>
+
+                  {/* Row 2: Systemic Safety (Secondary Finding, White/Off-White) */}
+                  <div className="must-evidence-row">
+                    <span className="must-row-label">SYSTEMIC SAFETY</span>
+                    <div className="must-finding-line">
+                      <span className="claim-approx">≈</span>
+                      <span className="claim-safety-text">NO INCREASE IN SYSTEMIC SIDE EFFECTS*</span>
+                    </div>
+                  </div>
+
                   <small className="must-body-comparator">vs long-acting intravitreal corticosteroid implant</small>
+                  <small className="must-footnote">*except increased antibiotic use for infections</small>
                 </div>
               </div>
             </div>
