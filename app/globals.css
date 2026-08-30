@@ -1928,6 +1928,22 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   letter-spacing: .055em;
 }
 
+.handout-mode .statistics-sample-only-scene .calc-track,
+.handout-mode .statistics-sample-only-scene .calc-parameter,
+.handout-mode .statistics-sample-only-scene .calc-effect-size,
+.handout-mode .statistics-sample-only-scene .calc-split,
+.handout-mode .statistics-sample-only-scene .calc-note,
+.handout-mode .statistics-sample-only-scene .calc-core,
+.handout-mode .statistics-sample-only-scene .calc-core > small,
+.handout-mode .statistics-sample-only-scene .calc-core > strong,
+.handout-mode .statistics-sample-only-scene .calc-core > span,
+.handout-mode .statistics-sample-only-scene .calc-input {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 @keyframes calcTrackInLeft { from { opacity:0; transform:scaleX(0); } to { opacity:1; transform:scaleX(1); } }
 @keyframes calcTrackInRight { from { opacity:0; transform:scaleX(0); } to { opacity:1; transform:scaleX(1); } }
 @keyframes effectSizeReveal { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }

@@ -70,7 +70,22 @@ async function main() {
     content: `
       .chapter-nav { display: none !important; }
       .deck { scroll-behavior: auto !important; scroll-snap-type: none !important; }
-      * { transition: none !important; animation-duration: 0.001s !important; }
+      * { transition: none !important; }
+      .statistics-sample-only-scene .calc-track,
+      .statistics-sample-only-scene .calc-parameter,
+      .statistics-sample-only-scene .calc-effect-size,
+      .statistics-sample-only-scene .calc-split,
+      .statistics-sample-only-scene .calc-note,
+      .statistics-sample-only-scene .calc-core,
+      .statistics-sample-only-scene .calc-core > small,
+      .statistics-sample-only-scene .calc-core > strong,
+      .statistics-sample-only-scene .calc-core > span,
+      .statistics-sample-only-scene .calc-input {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+        visibility: visible !important;
+      }
     `
   });
 

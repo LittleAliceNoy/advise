@@ -907,7 +907,7 @@ export default function Home() {
         ))}
       </nav>
 
-      <main className="deck" ref={deckRef}>
+      <main className={`deck ${isHandout ? "handout-mode" : ""}`} ref={deckRef}>
         <section id="signal" className="scene hero-scene">
           <div className="star-field" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /></div>
           <div className="hero-orbit" aria-hidden="true">
