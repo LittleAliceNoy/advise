@@ -1728,8 +1728,8 @@ export default function Home() {
 
           <header className="intro5-header">
             <h2>
-              What if <em>one targeted therapy</em><br />
-              could do the job?
+              A targeted<br />
+              <em>alternative emerged.</em>
             </h2>
           </header>
 
@@ -1841,9 +1841,9 @@ export default function Home() {
                   </svg>
                 </div>
 
-                {/* Subordinate Paradigm Line */}
+                {/* Subordinate Strategy Line */}
                 <div className="biologic-paradigm-footer">
-                  <span className="paradigm-badge">PARADIGM SHIFT</span>
+                  <span className="paradigm-badge">TARGETED STRATEGY</span>
                   <span className="paradigm-text">1 drug → 1 defined inflammatory target</span>
                 </div>
 
