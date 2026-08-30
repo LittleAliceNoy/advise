@@ -13667,8 +13667,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .ceiling-box {
   margin-top: 0;
+  margin-left: calc(40px + 0.85rem);
   min-height: clamp(5.6rem, 8.5vh, 7.4rem);
-  width: min(100%, clamp(16.5rem, 22.5vw, 24.5rem));
+  width: min(calc(100% - 40px - 0.85rem), clamp(15.5rem, 21vw, 23.5rem));
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -13725,8 +13726,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Right Constraint: Inflammation Floor (High Luminance & Visual Authority) */
 .floor-box {
   margin-top: 0;
+  margin-right: calc(clamp(52px, 4.4vw, 68px) + 0.85rem);
   min-height: clamp(5.6rem, 8.5vh, 7.4rem);
-  width: min(100%, clamp(16.5rem, 22.5vw, 24.5rem));
+  width: min(calc(100% - clamp(52px, 4.4vw, 68px) - 0.85rem), clamp(15.5rem, 21vw, 23.5rem));
   align-self: flex-end;
   display: flex;
   flex-direction: column;
