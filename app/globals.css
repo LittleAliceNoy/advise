@@ -13581,8 +13581,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .dilemma-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-width: 0;
+}
+
+.col-steroid-ceiling,
+.col-inflammation-floor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.45rem, 0.8vh, 0.75rem);
 }
 
 .constraint-header {
@@ -13593,6 +13600,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .header-right-flex {
   justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .constraint-icon {
@@ -13603,7 +13611,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   place-items: center;
 }
 
+.icon-eye-target {
+  width: clamp(52px, 4.4vw, 68px);
+  height: clamp(36px, 3.0vw, 48px);
+  filter: drop-shadow(0 0 14px rgba(255, 77, 82, 0.8));
+}
+
 .dilemma-svg-large {
+  width: 100%;
+  height: 100%;
+}
+
+.dilemma-svg-eye-large {
   width: 100%;
   height: 100%;
 }
@@ -13647,26 +13666,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .desc-inflammation {
-  font-size: clamp(0.56rem, 0.66vw, 0.82rem);
+  font: 400 clamp(0.56rem, 0.66vw, 0.82rem) var(--font-geist-mono), monospace;
   color: #b5aaa6;
   line-height: 1.35;
+  margin: 0.15rem 0 0;
 }
 
 .red-highlight-bold {
   color: #ff4d52;
   font-weight: 800;
-  font-size: clamp(0.66rem, 0.78vw, 0.98rem);
+  font-size: clamp(0.58rem, 0.68vw, 0.84rem);
   display: block;
   margin-top: 0.15rem;
   text-shadow: 0 0 10px rgba(255, 77, 82, 0.6);
 }
 
-.icon-eye-target {
-  filter: drop-shadow(0 0 12px rgba(255, 77, 82, 0.75));
-}
-
 .ceiling-box {
-  margin-top: 0.5rem;
+  margin-top: 0;
   border: 1.5px solid rgba(255, 77, 82, 0.5);
   background: linear-gradient(135deg, rgba(255, 45, 45, 0.08) 0%, rgba(20, 6, 8, 0.85) 100%);
   border-radius: 4px;
@@ -13723,7 +13739,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* Right Constraint: Inflammation Floor (High Luminance & Visual Authority) */
 .floor-box {
-  margin-top: 0.5rem;
+  margin-top: 0;
   border: 1.5px solid rgba(192, 132, 252, 0.6);
   background: linear-gradient(135deg, rgba(192, 132, 252, 0.1) 0%, rgba(14, 8, 20, 0.9) 100%);
   border-radius: 4px;
@@ -13818,7 +13834,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   color: #ffffff;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 0.4rem;
+  margin-top: 0.35rem;
 }
 
 .balance-arrow-down {
@@ -13828,8 +13844,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   margin: 0.1rem 0;
 }
 
-.arrow-to-res {
-  margin-top: 0.2rem;
+/* Intermediate Immuno Block */
+.immunosuppression-center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: -0.15rem 0;
 }
 
 .immunosuppression-capsule {
@@ -13839,10 +13861,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border: 1.5px solid rgba(255, 77, 82, 0.55);
   background: linear-gradient(90deg, rgba(255, 45, 45, 0.15) 0%, rgba(18, 8, 14, 0.95) 100%);
   border-radius: 6px;
-  padding: clamp(0.4rem, 0.7vh, 0.65rem) clamp(0.8rem, 1.2vw, 1.4rem);
+  padding: clamp(0.35rem, 0.6vh, 0.55rem) clamp(0.8rem, 1.2vw, 1.4rem);
   box-shadow: 0 0 18px rgba(255, 45, 45, 0.2);
-  width: 100%;
+  width: min(34rem, 40vw);
   box-sizing: border-box;
+}
+
+.arrow-to-res {
+  color: #ff4d52;
+  font-size: 0.95rem;
+  line-height: 1;
+  margin-top: 0.15rem;
 }
 
 .capsule-icon {
