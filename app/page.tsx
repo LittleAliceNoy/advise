@@ -1936,7 +1936,9 @@ export default function Home() {
                   <div className="trajectory-line line-left" />
                   <div className="trajectory-target-node">
                     <div className="target-core-circle">
-                      <span className="target-question-mark">?</span>
+                      <svg viewBox="0 0 24 24" className="target-thunderbolt-svg" aria-hidden="true">
+                        <polygon points="13,2 4,14 11,14 9,22 20,10 13,10" fill="#ffffff" />
+                      </svg>
                     </div>
                   </div>
                   <div className="trajectory-line line-right" />
