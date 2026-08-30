@@ -955,10 +955,10 @@ export default function Home() {
                 <div className="ceiling-box">
                   <span className="box-pointer" aria-hidden="true">▼</span>
                   <div className="ceiling-dose-wrap">
-                    <strong className="ceiling-dose" style={{ fontSize: "clamp(3.8rem, 5.2vw, 6.4rem)", fontWeight: 900, lineHeight: 0.82, color: "#ffffff", display: "block" }}>≤7.5</strong>
+                    <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
-                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.55rem, 0.65vw, 0.80rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.44rem, 0.52vw, 0.64rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
+                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.42rem, 0.48vw, 0.58rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>LONG-TERM SYSTEMIC SAFETY THRESHOLD</small>
                 </div>
               </div>
 
@@ -1065,8 +1065,8 @@ export default function Home() {
 
                 <div className="floor-box">
                   <span className="box-pointer pointer-right" aria-hidden="true">▼</span>
-                  <strong className="floor-title" style={{ fontSize: "clamp(1.4rem, 1.85vw, 2.35rem)", fontWeight: 900, lineHeight: 1.05, color: "#ffffff", display: "block" }}>INACTIVE<br />UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.44rem, 0.52vw, 0.64rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.42rem, 0.48vw, 0.58rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 
