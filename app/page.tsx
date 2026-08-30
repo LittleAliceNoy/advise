@@ -1393,27 +1393,27 @@ export default function Home() {
                           <line x1="26.5" y1="11.5" x2="31.8" y2="14.2" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
                           <line x1="26.5" y1="24.5" x2="31.8" y2="21.8" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round" />
 
-                          {/* Carbonyl (=O) on lactone in White */}
-                          <line x1="9.6" y1="11.2" x2="7" y2="5" stroke="#ffffff" strokeWidth="0.9" />
-                          <line x1="11.4" y1="11.8" x2="8.8" y2="5.6" stroke="#ffffff" strokeWidth="0.9" />
-                          <circle cx="7.9" cy="5.3" r="1.4" fill="#ffffff" />
+                          {/* Carbonyl (=O) on lactone in White 'O' */}
+                          <line x1="9.6" y1="11.2" x2="7.5" y2="5.5" stroke="#ffffff" strokeWidth="0.9" />
+                          <line x1="11.4" y1="11.8" x2="9.3" y2="6.1" stroke="#ffffff" strokeWidth="0.9" />
+                          <text x="7.5" y="4.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
                           
-                          {/* Ring Oxygen (-O-) node in White */}
-                          <circle cx="5" cy="18" r="1.4" fill="#ffffff" />
+                          {/* Ring Oxygen (-O-) node in White 'O' */}
+                          <text x="5" y="18" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
 
-                          {/* Top Hydroxyl (-OH) group in White */}
-                          <line x1="26" y1="9.5" x2="26" y2="4" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="26" cy="4" r="1.4" fill="#ffffff" />
+                          {/* Top Hydroxyl (-OH) group in White 'O' */}
+                          <line x1="26" y1="9.5" x2="26" y2="4.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="26" y="3.5" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
 
                           {/* Bottom Methyl (-CH3) branching group in Purple */}
                           <line x1="26" y1="26.5" x2="26" y2="31" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
                           <circle cx="26" cy="31" r="1.4" fill="#c084fc" />
 
-                          {/* Bottom-right Methoxy (-OCH3) group with White Oxygen and Purple Tail */}
-                          <line x1="33.5" y1="23" x2="38.5" y2="26" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="38.5" cy="26" r="1.4" fill="#ffffff" />
-                          <line x1="38.5" y1="26" x2="42.5" y2="24" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
-                          <circle cx="42.5" cy="24" r="1.2" fill="#c084fc" />
+                          {/* Bottom-right Methoxy (-OCH3) group with White 'O' and Purple Tail */}
+                          <line x1="33.5" y1="23" x2="37" y2="25.5" stroke="#ffffff" strokeWidth="1.0" strokeLinecap="round" />
+                          <text x="38.5" y="26" fill="#ffffff" fontSize="5.2" fontFamily="var(--font-geist-mono), monospace" fontWeight="900" textAnchor="middle" dominantBaseline="central" paintOrder="stroke" stroke="#120c18" strokeWidth="2.5">O</text>
+                          <line x1="40" y1="26.5" x2="43.5" y2="24.5" stroke="#c084fc" strokeWidth="1.0" strokeLinecap="round" />
+                          <circle cx="43.5" cy="24.5" r="1.2" fill="#c084fc" />
 
                           {/* Smooth Dissolving Tail to morpholinoethyl ester */}
                           <path d="M 33.5 13 L 39 9.8 L 44.5 13 L 50 10.5" fill="none" stroke="url(#fade-tail-mmf)" strokeWidth="1.0" strokeLinecap="round" strokeLinejoin="round" />
