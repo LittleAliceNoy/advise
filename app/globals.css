@@ -17523,20 +17523,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Page 13 — give the larger inactive-uveitis definition the air it needs. */
 @media (min-width: 701px) {
   #outcomes .outcomes-inactive-popup {
-    top: 29%;
-    left: 10.5vw;
-    right: 10.5vw;
-    height: 42%;
+    top: 22.7%;
+    left: 8vw;
+    right: 8vw;
+    height: 54.6%;
   }
 
   #outcomes .outcomes-inactive-popup > header {
-    min-height: 4.4rem;
-    gap: .48rem;
+    min-height: 8.25rem;
+    gap: .72rem;
   }
 
   #outcomes .outcomes-inactive-popup .inactive-definition-groups {
-    height: calc(100% - 4.4rem);
-    padding: clamp(1.0rem, 2.2vh, 1.75rem) clamp(1.2rem, 2.25vw, 2.4rem);
+    height: calc(100% - 8.25rem);
+    padding: clamp(1.35rem, 2.8vh, 2.3rem) clamp(1.55rem, 2.8vw, 3.1rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical {
@@ -17558,6 +17558,57 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   #outcomes .outcomes-inactive-popup .inactive-imaging > div {
     padding-top: clamp(.95rem, 1.95vh, 1.45rem);
     gap: clamp(.95rem, 1.75vh, 1.45rem) clamp(1.2rem, 2.2vw, 2.5rem);
+  }
+}
+
+/* Page 13 — large-format inactive-uveitis definition for room-scale reading. */
+@media (min-width: 701px) {
+  #outcomes .outcomes-inactive-popup > header > span {
+    font-size: clamp(1.92rem, 2.20vw, 2.64rem);
+  }
+
+  #outcomes .outcomes-inactive-popup > header > p {
+    font-size: clamp(1.38rem, 1.66vw, 1.94rem);
+    line-height: 1.30;
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical h3,
+  #outcomes .outcomes-inactive-popup .inactive-imaging h3 {
+    font-size: clamp(1.68rem, 1.94vw, 2.28rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical article > i {
+    width: clamp(4.2rem, 5.3vw, 6.25rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical span {
+    font-size: clamp(1.60rem, 1.86vw, 2.18rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical strong {
+    font-size: clamp(1.78rem, 2.06vw, 2.42rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical small {
+    font-size: clamp(1.32rem, 1.54vw, 1.80rem);
+    line-height: 1.34;
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging article > i {
+    width: clamp(3.25rem, 4.15vw, 4.85rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging span {
+    font-size: clamp(1.36rem, 1.58vw, 1.86rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging strong {
+    font-size: clamp(1.54rem, 1.78vw, 2.08rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging small {
+    font-size: clamp(1.28rem, 1.48vw, 1.74rem);
+    line-height: 1.30;
   }
 }
 
