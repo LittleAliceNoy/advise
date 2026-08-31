@@ -1122,7 +1122,8 @@ export default function Home() {
                   <div className="constraint-title-block">
                     <strong className="constraint-title">STEROID CEILING</strong>
                     <p className="constraint-desc">
-                      Oral corticosteroids alone do <span className="red-bold-word">NOT</span> control inflammation at doses sufficiently low for long-term use.
+                      Oral corticosteroids alone do <span className="red-bold-word">NOT</span> control inflammation<br />
+                      at doses sufficiently low for long-term use.
                     </p>
                   </div>
                 </div>
@@ -1224,7 +1225,8 @@ export default function Home() {
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc">
-                      Even low-level inflammation results in <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES.</span>
+                      Even low-level inflammation results in<br />
+                      <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES.</span>
                     </p>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
