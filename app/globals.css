@@ -17431,46 +17431,51 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #followup .followup-panel header {
-    font-size: clamp(1.04rem, 1.22vw, 1.46rem);
+    font-size: clamp(1.24rem, 1.55vw, 1.86rem);
     letter-spacing: .07em;
   }
 
   #followup .visit-suite > div > b {
-    font-size: clamp(.98rem, 1.15vw, 1.38rem);
+    font-size: clamp(1.22rem, 1.50vw, 1.80rem);
   }
 
   #followup .visit-suite > div > span {
-    font-size: clamp(.90rem, 1.05vw, 1.26rem);
+    font-size: clamp(1.04rem, 1.28vw, 1.54rem);
     line-height: 1.38;
   }
 
   #followup .milestone-dates {
-    font-size: clamp(.94rem, 1.10vw, 1.32rem);
+    font-size: clamp(1.12rem, 1.38vw, 1.66rem);
   }
 
   #followup .milestone-suite .milestone-test b {
-    font-size: clamp(.96rem, 1.14vw, 1.36rem);
+    font-size: clamp(1.16rem, 1.42vw, 1.70rem);
   }
 
   #followup .milestone-suite .milestone-test span {
-    font-size: clamp(.90rem, 1.05vw, 1.26rem);
+    font-size: clamp(1.04rem, 1.28vw, 1.54rem);
   }
 
   #followup .milestone-suite .milestone-test i {
-    font-size: clamp(.84rem, .98vw, 1.18rem);
+    font-size: clamp(.96rem, 1.18vw, 1.42rem);
   }
 
   #followup .diagnosis-note {
-    font-size: clamp(.90rem, 1.05vw, 1.26rem);
+    font-size: clamp(1.04rem, 1.28vw, 1.54rem);
   }
 
   #followup .diagnosis-suite > div span {
-    font-size: clamp(.86rem, 1.02vw, 1.22rem);
+    font-size: clamp(1.0rem, 1.22vw, 1.48rem);
     line-height: 1.32;
   }
 
   #followup .diagnosis-suite > div b {
-    font-size: clamp(.96rem, 1.12vw, 1.34rem);
+    font-size: clamp(1.16rem, 1.42vw, 1.70rem);
+  }
+
+  #followup .followup-grid {
+    top: 48.5%;
+    bottom: 2%;
   }
 
   #followup .milestone-suite {
