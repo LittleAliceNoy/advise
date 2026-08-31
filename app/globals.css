@@ -14627,7 +14627,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* Slide 04 — Conventional Immunosuppression: Drug Classes Hero */
 .intro4-scene {
-  padding: 6.5vh clamp(2vw, 4.5vw, 4.5rem) 2vh;
+  padding: 5.5vh clamp(2vw, 4.0vw, 4.0rem) 1.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14647,7 +14647,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(1.2rem, 2.2vh, 2.2rem);
+  margin-bottom: clamp(1.0rem, 1.8vh, 1.8rem);
 }
 
 .intro4-header h2 {
@@ -14668,7 +14668,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro4-content-grid {
-  width: min(85rem, 91vw);
+  width: min(88rem, 94vw);
   flex: none;
   min-height: 0;
   display: flex;
@@ -14710,7 +14710,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: fit-content;
   max-width: 100%;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   margin-bottom: clamp(0.55rem, 0.9vh, 0.9rem);
   border-bottom: 1.5px solid rgba(192, 132, 252, 0.28);
   padding-bottom: clamp(0.25rem, 0.4vh, 0.45rem);
@@ -14718,8 +14718,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-badge {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.4));
 }
@@ -14735,7 +14735,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-class-name {
-  font: 600 clamp(1.18rem, 1.40vw, 1.68rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(1.28rem, 1.52vw, 1.82rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.03em;
   line-height: 1.12;
@@ -14743,7 +14743,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .territory-class-tag {
-  font: 600 clamp(0.68rem, 0.78vw, 0.94rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.74rem, 0.85vw, 1.02rem) var(--font-geist-sans), Arial, sans-serif;
   color: #c084fc;
   letter-spacing: 0.075em;
   text-transform: uppercase;
@@ -14765,24 +14765,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .drug-nodes-col {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.42rem, 0.72vh, 0.72rem);
+  gap: clamp(0.40rem, 0.70vh, 0.70rem);
 }
 
 .drug-node-card {
   display: flex;
   align-items: center;
-  gap: clamp(0.7rem, 1.0vw, 1.2rem);
+  gap: clamp(0.8rem, 1.1vw, 1.3rem);
   background: rgba(18, 12, 24, 0.65);
   border: 1px solid rgba(192, 132, 252, 0.20);
   border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.55rem, 0.90vh, 0.88rem) clamp(0.8rem, 1.15vw, 1.3rem);
+  padding: clamp(0.55rem, 0.90vh, 0.88rem) clamp(0.85rem, 1.2vw, 1.35rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .drug-icon-box {
-  width: clamp(42px, 3.5vw, 52px);
-  height: clamp(32px, 2.8vw, 42px);
+  width: clamp(48px, 4.0vw, 60px);
+  height: clamp(36px, 3.0vw, 46px);
   flex-shrink: 0;
   display: grid;
   place-items: center;
@@ -14799,17 +14799,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .drug-name {
-  font: 600 clamp(0.96rem, 1.12vw, 1.34rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(1.08rem, 1.26vw, 1.50rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .drug-moa {
-  font: 400 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.76rem, 0.86vw, 1.04rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.25;
-  margin-top: 0.12rem;
+  margin-top: 0.14rem;
 }
 
 .molecular-sphere-hero {
@@ -14838,18 +14838,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .calcineurin-drug-box {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 1.1vw, 1.3rem);
+  gap: clamp(0.85rem, 1.2vw, 1.4rem);
   background: rgba(18, 12, 24, 0.65);
   border: 1px solid rgba(192, 132, 252, 0.20);
   border-left: 2.5px solid rgba(192, 132, 252, 0.50);
   border-radius: 0px;
-  padding: clamp(0.78rem, 1.25vh, 1.25rem) clamp(0.9rem, 1.25vw, 1.45rem);
+  padding: clamp(0.80rem, 1.30vh, 1.30rem) clamp(0.95rem, 1.3vw, 1.5rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .calcineurin-cluster-icon {
-  width: clamp(40px, 3.4vw, 50px);
-  height: clamp(40px, 3.4vw, 50px);
+  width: clamp(46px, 3.8vw, 56px);
+  height: clamp(46px, 3.8vw, 56px);
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.35));
 }
@@ -14865,17 +14865,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .cni-drug-name {
-  font: 600 clamp(0.96rem, 1.12vw, 1.34rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(1.08rem, 1.26vw, 1.50rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
 .cni-drug-moa {
-  font: 400 clamp(0.68rem, 0.76vw, 0.92rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.76rem, 0.86vw, 1.04rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.25;
-  margin-top: 0.12rem;
+  margin-top: 0.14rem;
 }
 
 /* Subordinate Stepwise Approach Section */
@@ -14884,7 +14884,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   gap: clamp(0.35rem, 0.6vh, 0.65rem);
   width: 100%;
-  margin-top: clamp(1.4rem, 2.4vh, 2.6rem);
+  margin-top: clamp(1.3rem, 2.2vh, 2.4rem);
 }
 
 .intro4-section-rule {
@@ -14903,7 +14903,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .rule-label {
-  font: 600 clamp(0.64rem, 0.74vw, 0.90rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.72rem, 0.84vw, 1.02rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -14925,12 +14925,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .step-item {
   display: flex;
   align-items: center;
-  gap: clamp(0.65rem, 0.95vw, 1.15rem);
+  gap: clamp(0.70rem, 1.0vw, 1.25rem);
 }
 
 .step-icon-circle {
-  width: clamp(34px, 3.0vw, 44px);
-  height: clamp(34px, 3.0vw, 44px);
+  width: clamp(38px, 3.4vw, 48px);
+  height: clamp(38px, 3.4vw, 48px);
   border-radius: 50%;
   border: 1.5px solid rgba(255, 77, 82, 0.55);
   display: grid;
@@ -14951,7 +14951,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-num-tag {
-  font: 700 clamp(0.68rem, 0.80vw, 1.0rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 700 clamp(0.74rem, 0.86vw, 1.08rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ff4d52;
   letter-spacing: 0.06em;
   text-shadow: 0 0 8px rgba(255, 77, 82, 0.35);
@@ -14962,17 +14962,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .step-title {
-  font: 600 clamp(0.98rem, 1.15vw, 1.40rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(1.08rem, 1.26vw, 1.52rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.015em;
   line-height: 1.15;
 }
 
 .step-desc {
-  font: 400 clamp(0.68rem, 0.78vw, 0.94rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.76rem, 0.86vw, 1.04rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   line-height: 1.22;
-  margin-top: 0.1rem;
+  margin-top: 0.12rem;
 }
 
 .step-arrow-wrap {
@@ -15001,7 +15001,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   gap: clamp(0.35rem, 0.6vh, 0.65rem);
   width: 100%;
-  margin-top: clamp(1.8rem, 3.0vh, 3.4rem);
+  margin-top: clamp(1.6rem, 2.8vh, 3.2rem);
 }
 
 .evidence-boxes-row {
@@ -15032,8 +15032,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-cohort-icon {
-  width: clamp(44px, 3.6vw, 54px);
-  height: clamp(44px, 3.6vw, 54px);
+  width: clamp(48px, 3.8vw, 58px);
+  height: clamp(48px, 3.8vw, 58px);
   border-radius: 50%;
   flex-shrink: 0;
   display: grid;
@@ -15083,7 +15083,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-headline {
-  font: 600 clamp(0.72rem, 0.84vw, 1.05rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 600 clamp(0.80rem, 0.94vw, 1.18rem) var(--font-geist-sans), Arial, sans-serif;
   color: #ffffff;
   letter-spacing: 0.02em;
   display: block;
@@ -15092,10 +15092,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .evidence-subtext {
-  font: 400 clamp(0.60rem, 0.70vw, 0.86rem) var(--font-geist-sans), Arial, sans-serif;
+  font: 400 clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-sans), Arial, sans-serif;
   color: #d6d3d1;
   display: block;
-  margin-top: 0.12rem;
+  margin-top: 0.14rem;
   line-height: 1.25;
 }
 
@@ -15600,7 +15600,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 100svh;
   max-height: 100svh;
   overflow: hidden;
-  padding: 6.5vh clamp(1.2rem, 3.5vw, 4.0rem) 0;
+  padding: clamp(3.0rem, 6.0vh, 4.5rem) clamp(1.2rem, 3.5vw, 4.0rem) 0;
   box-sizing: border-box;
 }
 
@@ -15610,15 +15610,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(2.4rem, 4.6vh, 4.8rem);
+  margin-bottom: clamp(3.2rem, 6.8vh, 5.8rem);
 }
 
 .intro6-header h2 {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(2.1rem, 3.2vw, 3.9rem);
+  font-size: clamp(2.3rem, 3.4vw, 4.2rem);
   font-weight: 450;
   letter-spacing: -0.05em;
-  line-height: 0.98;
+  line-height: 1.0;
   color: var(--white);
   margin: 0;
   text-align: center;
@@ -15644,13 +15644,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
 .intro6-convergence-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.6fr 1.1fr;
+  grid-template-columns: 1.15fr 1.6fr 1.15fr;
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
   width: 100%;
   flex: 0 0 auto;
   padding: 0;
-  margin-bottom: clamp(2.2rem, 4.2vh, 4.4rem);
+  margin-bottom: clamp(3.0rem, 6.2vh, 5.2rem);
 }
 
 .convergence-wing {
@@ -15658,7 +15658,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.15rem, 0.3vh, 0.35rem);
+  gap: clamp(0.12rem, 0.25vh, 0.3rem);
   background: transparent;
   border: none;
   padding: 0;
@@ -15667,26 +15667,26 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .wing-huge-abbr {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(3.6rem, 5.8vw, 6.8rem);
+  font-size: clamp(2.6rem, 3.9vw, 4.8rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 0.90;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
 }
 
 .wing-huge-abbr.highlight-purple {
   color: #c084fc;
-  text-shadow: 0 0 32px rgba(192, 132, 252, 0.4);
+  text-shadow: 0 0 28px rgba(192, 132, 252, 0.45);
 }
 
 .wing-huge-abbr.highlight-red {
   color: var(--red);
-  text-shadow: 0 0 36px rgba(255, 45, 45, 0.55);
+  text-shadow: 0 0 32px rgba(255, 45, 45, 0.55);
 }
 
 .wing-full-name {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.72rem, 0.88vw, 1.12rem);
-  font-weight: 600;
+  font-size: clamp(0.60rem, 0.72vw, 0.92rem);
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
@@ -15703,10 +15703,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .wing-strategy-desc {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.50rem, 0.58vw, 0.74rem);
-  font-weight: 400;
-  color: #a8a29e;
-  letter-spacing: 0.03em;
+  font-size: clamp(0.44rem, 0.52vw, 0.66rem);
+  font-weight: 500;
+  color: #8e8a86;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -15716,7 +15716,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(0.4rem, 0.7vh, 0.85rem);
+  gap: clamp(0.45rem, 0.8vh, 0.9rem);
   width: 100%;
 }
 
@@ -15730,16 +15730,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .trajectory-line {
   flex: 1;
-  height: 1px;
-  opacity: 0.85;
+  height: 1.5px;
+  opacity: 0.9;
 }
 
 .trajectory-line.line-left {
-  background: linear-gradient(90deg, #c084fc 0%, rgba(175, 168, 164, 0.35) 100%);
+  background: linear-gradient(90deg, #c084fc 0%, rgba(200, 190, 185, 0.45) 100%);
 }
 
 .trajectory-line.line-right {
-  background: linear-gradient(90deg, rgba(175, 168, 164, 0.35) 0%, var(--red) 100%);
+  background: linear-gradient(90deg, rgba(200, 190, 185, 0.45) 0%, var(--red) 100%);
 }
 
 .trajectory-target-node {
@@ -15748,23 +15748,23 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin: 0 clamp(0.5rem, 1.0vw, 1.4rem);
+  margin: 0 clamp(0.6rem, 1.2vw, 1.6rem);
 }
 
 .trajectory-question-mark {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(1.0rem, 1.3vw, 1.6rem);
-  font-weight: 400;
+  font-size: clamp(1.0rem, 1.28vw, 1.6rem);
+  font-weight: 500;
   color: #ffffff;
   line-height: 1;
 }
 
 .no-comparison-text {
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.54rem, 0.62vw, 0.78rem);
-  font-weight: 500;
-  color: #d1c7c2;
-  letter-spacing: 0.14em;
+  font-size: clamp(0.50rem, 0.58vw, 0.74rem);
+  font-weight: 600;
+  color: #c4beb9;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   background: transparent;
   border: none;
@@ -15776,15 +15776,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .intro6-bottom-reveal {
   position: relative;
   width: 100%;
-  max-width: min(82rem, 92vw);
+  max-width: min(80rem, 90vw);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.1rem, 2.0vh, 2.0rem) clamp(1.5rem, 3.5vw, 4.0rem);
-  background: linear-gradient(180deg, rgba(255, 45, 45, 0.035) 0%, rgba(255, 45, 45, 0.008) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  padding: clamp(0.75rem, 1.4vh, 1.3rem) clamp(1.2rem, 3.0vw, 3.5rem);
+  background: linear-gradient(180deg, rgba(255, 45, 45, 0.03) 0%, rgba(255, 45, 45, 0.006) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   box-sizing: border-box;
 }
 
@@ -15794,34 +15794,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: clamp(0.2rem, 0.36vh, 0.45rem);
+  gap: clamp(0.14rem, 0.25vh, 0.32rem);
   width: 100%;
 }
 
 .reveal-eyebrow {
-  font: 600 clamp(0.54rem, 0.64vw, 0.80rem) var(--font-geist-sans), Arial, sans-serif;
-  color: #a89f9c;
-  letter-spacing: 0.16em;
+  font: 600 clamp(0.48rem, 0.56vw, 0.70rem) var(--font-geist-sans), Arial, sans-serif;
+  color: #9c9592;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .reveal-advise-wordmark {
-  margin: 0;
+  margin: 0.1rem 0;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(2.6rem, 4.2vw, 5.0rem);
+  font-size: clamp(1.9rem, 2.7vw, 3.5rem);
   font-weight: 800;
   letter-spacing: 0.18em;
-  line-height: 0.95;
+  line-height: 1.0;
   color: #ffffff;
-  text-shadow: 0 0 28px rgba(255, 45, 45, 0.45);
+  text-shadow: 0 0 24px rgba(255, 45, 45, 0.4);
 }
 
 .reveal-advise-title {
   margin: 0;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.85rem, 1.08vw, 1.35rem);
+  font-size: clamp(0.72rem, 0.88vw, 1.12rem);
   font-weight: 450;
-  color: #f0ece8;
+  color: #ece7e3;
   letter-spacing: -0.01em;
   line-height: 1.3;
   text-align: center;
@@ -15830,16 +15830,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .reveal-advise-tagline {
   margin: 0;
-  margin-top: clamp(0.3rem, 0.5vh, 0.6rem);
+  margin-top: clamp(0.2rem, 0.35vh, 0.45rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.1rem;
   font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: clamp(0.54rem, 0.64vw, 0.80rem);
-  font-weight: 600;
+  font-size: clamp(0.48rem, 0.56vw, 0.70rem);
+  font-weight: 700;
   color: var(--red);
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
