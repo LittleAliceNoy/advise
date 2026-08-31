@@ -449,7 +449,7 @@ export default function Home() {
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
   const [taperingStage, setTaperingStage] = useState(7);
-  const [followupStage, setFollowupStage] = useState<0 | 1 | 2>(2);
+  const [followupStage, setFollowupStage] = useState<0 | 1 | 2>(0);
   const [therapeuticGoalStage, setTherapeuticGoalStage] = useState(3);
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
@@ -2363,7 +2363,7 @@ export default function Home() {
             <div className="visit-rail">
               <i className="visit-signal" aria-hidden="true" />
               {[0, 1, 2, 3, 4, 5, 6, 8, 10, 12].map((month) => (
-                <div className={`visit-node ${[0, 3, 6, 12].includes(month) ? "milestone" : ""}`} key={month}>
+                <div className={`visit-node ${[0, 3, 6, 12].includes(month) ? "milestone" : ""} ${month > 6 ? "bi-monthly" : ""} ${month === 12 ? "final-visit" : ""}`} key={month}>
                   <b>M{month}</b>
                   {month === 6 && <span>SHIFT TO BI-MONTHLY</span>}
                 </div>

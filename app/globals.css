@@ -17420,6 +17420,99 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 }
 
+/* Page 12 — readable panel detail plus a deliberately staged visit timeline. */
+@media (min-width: 701px) {
+  #followup .followup-bands span:last-child {
+    font-weight: 500;
+  }
+
+  #followup .visit-node span {
+    color: #956fff;
+  }
+
+  #followup .followup-panel header {
+    font-size: clamp(.96rem, 1.12vw, 1.34rem);
+    letter-spacing: .07em;
+  }
+
+  #followup .visit-suite > div > b {
+    font-size: clamp(.92rem, 1.08vw, 1.30rem);
+  }
+
+  #followup .visit-suite > div > span {
+    font-size: clamp(.84rem, .98vw, 1.18rem);
+    line-height: 1.38;
+  }
+
+  #followup .milestone-dates {
+    font-size: clamp(.86rem, 1.02vw, 1.22rem);
+  }
+
+  #followup .milestone-suite .milestone-test b {
+    font-size: clamp(.88rem, 1.04vw, 1.24rem);
+  }
+
+  #followup .milestone-suite .milestone-test span {
+    font-size: clamp(.82rem, .96vw, 1.16rem);
+  }
+
+  #followup .milestone-suite .milestone-test i {
+    font-size: clamp(.78rem, .90vw, 1.08rem);
+  }
+
+  #followup .diagnosis-note {
+    font-size: clamp(.82rem, .96vw, 1.14rem);
+  }
+
+  #followup .diagnosis-suite > div span {
+    font-size: clamp(.80rem, .94vw, 1.12rem);
+    line-height: 1.32;
+  }
+
+  #followup .diagnosis-suite > div b {
+    font-size: clamp(.90rem, 1.04vw, 1.24rem);
+  }
+
+  /* Entry: an unaccented schedule with no active visit. */
+  #followup.followup-stage-0 .visit-node,
+  #followup.followup-stage-0 .visit-node.milestone {
+    background: #151217;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.24);
+  }
+
+  /* First reveal: every visit is visible; monthly and bi-monthly phases use their own colour. */
+  #followup.followup-stage-1 .visit-node {
+    background: #ffffff;
+    box-shadow: 0 0 0 2px var(--red), 0 0 12px rgba(255,45,45,.32);
+  }
+
+  #followup.followup-stage-1 .visit-node.bi-monthly {
+    box-shadow: 0 0 0 2px #956fff, 0 0 12px rgba(149,111,255,.34);
+  }
+
+  #followup.followup-stage-1 .visit-node.final-visit {
+    background: #956fff;
+    box-shadow: 0 0 9px rgba(149,111,255,.42);
+  }
+
+  /* Second reveal: retain only the milestone timepoints. */
+  #followup.followup-stage-2 .visit-node {
+    background: #151217;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.24);
+  }
+
+  #followup.followup-stage-2 .visit-node.milestone {
+    background: #ffffff;
+    box-shadow: 0 0 0 2px #956fff, 0 0 13px rgba(149,111,255,.38);
+  }
+
+  /* The 12-month close-out remains a clean endpoint rather than a ringed marker. */
+  #followup.followup-stage-2 .visit-node.final-visit {
+    background: #956fff;
+    box-shadow: 0 0 9px rgba(149,111,255,.46);
+  }
+}
+
 /* Page 03 — clarify the paired clinical constraints while keeping the taper restrained. */
 @media (min-width: 701px) {
   #therapeutic-goal .constraint-desc {
