@@ -17454,6 +17454,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     letter-spacing: .07em;
   }
 
+  #followup .followup-panel header::before {
+    margin-right: .48rem;
+    font-size: clamp(1.16rem, 1.38vw, 1.66rem);
+  }
+
+  #followup .visit-suite > div::before {
+    width: .50rem;
+    height: .22rem;
+  }
+
   #followup .visit-suite > div > b {
     font-size: clamp(1.03rem, 1.22vw, 1.46rem);
   }
@@ -17464,7 +17474,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #followup .milestone-dates {
-    font-size: clamp(1.0rem, 1.16vw, 1.40rem);
+    margin-left: clamp(1.45rem, 1.85vw, 2.20rem);
+    padding-left: 0;
+    border-left: 0;
+    font-size: clamp(.88rem, 1.04vw, 1.24rem);
+    font-weight: 450;
+  }
+
+  #followup .milestone-suite .milestone-test {
+    padding-inline: clamp(1.05rem, 1.25vw, 1.45rem);
+    padding-left: clamp(1.18rem, 1.50vw, 1.72rem);
   }
 
   #followup .milestone-suite .milestone-test b {
@@ -17480,11 +17499,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #followup .diagnosis-note {
-    font-size: clamp(.92rem, 1.08vw, 1.30rem);
+    margin-left: clamp(1.45rem, 1.85vw, 2.20rem);
+    font-size: clamp(.78rem, .92vw, 1.10rem);
+    font-weight: 450;
   }
 
   #followup .diagnosis-suite > div span {
-    font-size: clamp(.88rem, 1.04vw, 1.24rem);
+    font-size: clamp(1.03rem, 1.22vw, 1.46rem);
     line-height: 1.32;
   }
 
