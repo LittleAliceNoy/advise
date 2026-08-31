@@ -1224,8 +1224,7 @@ export default function Home() {
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc">
-                      Even low-level inflammation results in<br />
-                      <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES.</span>
+                      Even low-level inflammation results in <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES.</span>
                     </p>
                   </div>
                   <div className="constraint-icon icon-eye-target" aria-hidden="true">
