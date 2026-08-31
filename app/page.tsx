@@ -2235,8 +2235,6 @@ export default function Home() {
             <div className="strata-legend">
               <span><b>0 / 1</b> = DRUG COUNT</span>
               <span><b>L / H</b> = &lt;30 / ≥30 MG/DAY</span>
-              <span><b>A</b> = ADA</span>
-              <span className="legend-cid"><b>C</b> = CID</span>
             </div>
           </div>
         </section>
