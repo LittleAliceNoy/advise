@@ -16600,26 +16600,31 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: 100%;
   align-self: center;
   padding: clamp(.65rem, .88vw, .95rem) clamp(.85rem, 1.15vw, 1.15rem);
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
-  gap: clamp(.75rem, 1vw, 1rem);
+  justify-content: center;
+  gap: clamp(1.2rem, 1.8vw, 2.4rem);
   border: 1px solid rgba(255,55,61,.72);
-  background: radial-gradient(ellipse at 20% 50%, rgba(255,35,41,.11), transparent 55%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,35,41,.11), transparent 65%);
   box-shadow: 0 0 24px rgba(255,35,41,.055);
 }
 
 .landscape-therapy::before { display: none; }
+.landscape-therapy > div {
+  text-align: center;
+}
 .landscape-therapy > div strong {
+  display: block;
+  text-align: center;
   color: #f4f0ec;
   font-family: var(--font-geist-sans), Arial, sans-serif;
   font-size: clamp(1.24rem, 1.62vw, 1.94rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: .02em;
 }
 .landscape-therapy > div strong em { color: #ff3c42; font-style: normal; }
-.landscape-therapy > div small { display: block; margin-top: .55rem; color: #aaa29e; font-size: clamp(0.72rem, 0.84vw, 1.02rem); line-height: 1.35; }
+.landscape-therapy > div small { display: block; margin-top: .55rem; color: #aaa29e; font-size: clamp(0.72rem, 0.84vw, 1.02rem); line-height: 1.35; text-align: center; }
 
 .therapy-icon { position: relative; width: clamp(4.4rem, 5.4vw, 6.5rem); aspect-ratio: 1; display: block; border: 1px solid rgba(255,55,61,.42); border-radius: 50%; }
 .therapy-icon i { position: absolute; left: 25%; top: 24%; width: 23%; height: 54%; border: 1px solid #ff444a; border-radius: 999px; transform: rotate(42deg); }
