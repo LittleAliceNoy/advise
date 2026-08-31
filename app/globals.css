@@ -171,16 +171,16 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .eligibility-copy { width:39vw; }
 .eligibility-copy h2 { font-size:clamp(3.5rem,5.5vw,6.4rem); }
 .eligibility-copy .lede { max-width:34rem; margin-top:1.4rem; }
-.inclusion-metrics { display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:1.45rem;max-width:39rem; }
+.disease-window { margin-top:clamp(0.7rem, 1.2vh, 1.1rem);padding:0.85rem 1.15rem;border-left:2px solid var(--red);background:linear-gradient(90deg,rgba(110,5,10,.2),transparent);max-width:39rem; }
+.disease-window > span { color:#e5dfda;font: 600 clamp(0.80rem, 0.95vw, 1.18rem) var(--font-geist-mono),monospace;letter-spacing:.12em;display:block; }
+.disease-window > div { display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.55rem; }
+.disease-window small { padding:.32rem .65rem;border:1px solid rgba(255,255,255,.18);color:#ffffff;font: 600 clamp(0.76rem, 0.90vw, 1.12rem) var(--font-geist-mono),monospace;letter-spacing:.08em;background:rgba(255,255,255,0.04); }
+.inclusion-metrics { display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:clamp(0.75rem, 1.2vh, 1.1rem);max-width:39rem; }
 .inclusion-metrics article { position:relative;min-height:5.6rem;padding:.85rem 1.0rem;border:1px solid rgba(255,255,255,.16);background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));display:flex;flex-direction:column;justify-content:center;overflow:hidden; }
 .inclusion-metrics article::after { content:"";position:absolute;right:-1.4rem;top:-1.4rem;width:4rem;aspect-ratio:1;border:1px solid rgba(255,45,45,.28);border-radius:50%;box-shadow:0 0 22px rgba(255,45,45,.12); }
 .inclusion-metrics strong { color:var(--red);font: 650 clamp(1.8rem, 2.4vw, 3.2rem) var(--font-geist-mono),monospace;letter-spacing:-.04em;line-height: 1.0; }
 .inclusion-metrics span { margin-top:.35rem;color:#a8a29e;font: 450 clamp(0.74rem, 0.88vw, 1.10rem)/1.3 var(--font-geist-mono),monospace;letter-spacing:.08em;text-transform:uppercase; }
-.disease-window { margin-top:.9rem;padding:1.0rem 1.15rem;border-left:2px solid var(--red);background:linear-gradient(90deg,rgba(110,5,10,.2),transparent);max-width:39rem; }
-.disease-window > span { color:#e5dfda;font: 600 clamp(0.80rem, 0.95vw, 1.18rem) var(--font-geist-mono),monospace;letter-spacing:.12em;display:block; }
-.disease-window > div { display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem; }
-.disease-window small { padding:.32rem .6rem;border:1px solid rgba(255,255,255,.18);color:#d6d0cb;font: 500 clamp(0.74rem, 0.88vw, 1.08rem) var(--font-geist-mono),monospace;letter-spacing:.08em;background:rgba(255,255,255,0.03); }
-.disease-window p { margin:.75rem 0 0;color:#8c827e;font: 400 clamp(0.70rem, 0.82vw, 1.02rem)/1.4 var(--font-geist-mono),monospace;text-transform:uppercase;letter-spacing:.035em; }
+.prednisone-threshold-footnote { margin:.55rem 0 0;color:#a8a29e;font: 400 clamp(0.70rem, 0.82vw, 1.02rem)/1.4 var(--font-geist-mono),monospace;text-transform:uppercase;letter-spacing:.035em;max-width:39rem; }
 .screening-panel { position:absolute;left:49%;right:7vw;top:13%;bottom:8%;border:1px solid rgba(255,255,255,.16);background:linear-gradient(155deg,rgba(255,255,255,.045),rgba(255,255,255,.008));overflow:hidden; }
 .screening-panel::before { content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:2.6rem 2.6rem;mask-image:linear-gradient(to bottom,black,transparent 93%); }
 .screening-header { position:absolute;z-index:4;top:1rem;left:1.15rem;right:1.15rem;display:flex;justify-content:space-between;align-items:center;font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.13em;color:#8a8683; }

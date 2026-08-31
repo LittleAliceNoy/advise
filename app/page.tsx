@@ -2165,16 +2165,16 @@ export default function Home() {
             <p className="eyebrow"><span /> 08 — METHODOLOGY / SCREENING PATHWAY</p>
             <h2>The entry<br /><em>window.</em></h2>
             <p className="lede">Three inclusion thresholds defined who could proceed to the eight-part safety screen.</p>
+            <div className="disease-window">
+              <span>NON-INFECTIOUS UVEITIS</span>
+              <div><small>INTERMEDIATE</small><small>POSTERIOR</small><small>PANUVEITIS</small></div>
+            </div>
             <div className="inclusion-metrics" aria-label="Key inclusion criteria">
               <article><strong>≥13</strong><span>years of age</span></article>
               <article><strong>≤60</strong><span>days since activity</span></article>
               <article><strong>&gt;7.5</strong><span>mg/day prednisone*</span></article>
             </div>
-            <div className="disease-window">
-              <span>NON-INFECTIOUS UVEITIS</span>
-              <div><small>INTERMEDIATE</small><small>POSTERIOR</small><small>PANUVEITIS</small></div>
-              <p>*Current prednisone/prednisolone dose—or an anticipated increase above this threshold for recently active disease.</p>
-            </div>
+            <p className="prednisone-threshold-footnote">*Current prednisone/prednisolone dose—or an anticipated increase above this threshold for recently active disease.</p>
           </div>
 
           <div className="orbital-screen-panel" aria-label="Central orbital scanner showing eight exclusion gates">
