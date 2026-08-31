@@ -425,116 +425,58 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .tapering-scene { align-items:flex-start;padding-top:9.5vh; }
 .tapering-copy { width:42vw; }
 .tapering-copy h2 { font-size:clamp(2.8rem,3.4vw,3.8rem); }
-.tapering-copy .lede { max-width:40rem;margin-top:.55rem;font-size:clamp(0.82rem,0.96vw,1.15rem);line-height:1.4; }
+.tapering-copy .lede { max-width:40rem;margin-top:.55rem;font-size:clamp(0.92rem,1.15vw,1.40rem);line-height:1.48;color:#d6d0cb; }
 .tapering-control { position:absolute;z-index:4;inset:0;display:block;pointer-events:none; }
-.tapering-control>article { position:absolute;min-width:0;padding:1rem 1.1rem;background:linear-gradient(135deg,rgba(255,255,255,.032),rgba(255,255,255,.008) 58%,rgba(77,5,9,.1));overflow:hidden;pointer-events:auto; }
-.taper-protocol { left:8vw;width:39vw;top:42.5%;bottom:18.5%; }
-.reactivation-protocol { left:52vw;right:8vw;top:15%;bottom:18.5%; }
-.tapering-control article>header { display:flex;align-items:center;justify-content:space-between;padding-bottom:.65rem;border-bottom:1px solid rgba(255,255,255,.13);font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.1em; }
+.tapering-control>article { position:absolute;min-width:0;padding:1rem 1.15rem;background:linear-gradient(135deg,rgba(255,255,255,.032),rgba(255,255,255,.008) 58%,rgba(77,5,9,.1));overflow:hidden;pointer-events:auto; }
+.taper-protocol { left:8vw;width:39vw;top:38%;bottom:20%;display:flex;flex-direction:column;justify-content:space-between; }
+.reactivation-protocol { left:52vw;right:8vw;top:13.5%;bottom:20%;background:radial-gradient(circle at 70% 50%,rgba(91,6,10,.12),transparent 55%),rgba(4,4,5,.92)!important;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:.42rem; }
+.tapering-control article>header { display:flex;align-items:center;justify-content:space-between;padding-bottom:.65rem;border-bottom:1px solid rgba(255,255,255,.13);font: 700 clamp(0.80rem, 0.96vw, 1.20rem) var(--font-geist-mono),monospace;letter-spacing:.1em; }
 .tapering-control article>header span { color:var(--red); }
-.tapering-control article>header strong { color:#aaa7a3;font: inherit;font-weight:500; }
-.taper-trajectory { position:relative;height:24%;margin:.6rem .8rem .15rem; }
+.tapering-control article>header strong { color:#ffffff;font: inherit;font-weight:600; }
+.taper-trajectory { position:relative;height:22%;margin:.5rem .8rem .15rem; }
 .taper-trajectory i { position:absolute;width:19%;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,45,45,.4)); }
 .taper-trajectory i::after { content:"";position:absolute;right:0;top:0;width:1px;height:1.45rem;background:linear-gradient(rgba(255,45,45,.42),transparent); }
 .taper-trajectory i:nth-child(1){left:0;top:8%}.taper-trajectory i:nth-child(2){left:20%;top:34%}.taper-trajectory i:nth-child(3){left:40%;top:60%}.taper-trajectory i:nth-child(4){left:60%;top:60%}.taper-trajectory i:nth-child(5){left:80%;top:86%}.taper-trajectory i:nth-child(3)::after,.taper-trajectory i:nth-child(5)::after{display:none}
 .taper-trajectory b { position:absolute;z-index:2;width:.48rem;aspect-ratio:1;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red);animation:taperSignal 5.6s ease-in-out infinite; }
 
-/* Scoped Overrides for Redesign V2 */
-#tapering-cinematic .taper-trajectory i::after { height: 12vh; background: linear-gradient(rgba(255,45,45,.42),transparent 70%); }
-#tapering-cinematic .taper-trajectory i:nth-child(3),
-#tapering-cinematic .taper-trajectory i:nth-child(4) { background: linear-gradient(90deg, rgba(255,255,255,.55), rgba(168,85,247,.6)); }
-#tapering-cinematic .taper-trajectory i:nth-child(4)::after { background: linear-gradient(rgba(168,85,247,.5), transparent 70%); }
-#tapering-cinematic .taper-checkpoints small { font-size: clamp(0.68rem, 0.78vw, 0.96rem); }
-#tapering-cinematic .taper-checkpoints strong { font-size: clamp(.7rem, .9vw, 1rem); margin-top: .4rem; }
-#tapering-cinematic .taper-checkpoints span { font-size: clamp(0.68rem, 0.78vw, 0.96rem); margin-top: .4rem; letter-spacing: .02em; }
-.taper-checkpoints { display:grid;grid-template-columns:repeat(4,1fr);gap:.35rem; }
-.taper-checkpoints>div { min-width:0;padding:.4rem .32rem;background:rgba(255,255,255,.018);display:flex;flex-direction:column; }
-.taper-checkpoints small { color:var(--red);font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace; }
-.taper-checkpoints strong { margin-top:.3rem;color:#eee;font-size:clamp(.48rem,.58vw,.66rem);font-weight:500; }
-.taper-checkpoints span { margin-top:.2rem;color:#777;font: clamp(0.68rem, 0.78vw, 0.96rem)/1.35 var(--font-geist-mono),monospace;letter-spacing:.035em; }
-.reactivation-protocol { background:radial-gradient(circle at 70% 50%,rgba(91,6,10,.12),transparent 55%),rgba(4,4,5,.92)!important;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:.42rem; }
-.reactivation-protocol header span::before { content:"△";margin-right:.45rem;color:var(--red);font-size:.7rem; }
-.steroid-reset { position:relative;min-height:3.65rem;margin:0;display:grid;grid-template-columns:2.7rem 1fr auto 1.25fr;align-items:center;gap:.6rem;background:linear-gradient(90deg,rgba(117,7,13,.38),rgba(66,5,9,.12));padding:.5rem .9rem .5rem 1.15rem; }
+.taper-checkpoints { display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem; }
+.taper-checkpoints>div { min-width:0;padding:.45rem .4rem;background:rgba(255,255,255,.018);display:flex;flex-direction:column; }
+.taper-checkpoints small { color:var(--red);font: 700 clamp(0.80rem, 0.96vw, 1.20rem) var(--font-geist-mono),monospace; }
+.taper-checkpoints strong { margin-top:.35rem;color:#ffffff;font: 700 clamp(0.76rem, 0.90vw, 1.14rem) var(--font-geist-mono),monospace; }
+.taper-checkpoints span { margin-top:.25rem;color:#a8a29e;font: 450 clamp(0.72rem, 0.84vw, 1.05rem)/1.35 var(--font-geist-mono),monospace;letter-spacing:.025em; }
+.reactivation-protocol header span::before { content:"△";margin-right:.45rem;color:var(--red);font-size:.75rem; }
+.steroid-reset { position:relative;min-height:3.65rem;margin:0;display:grid;grid-template-columns:3.2rem 1fr auto 1.35fr;align-items:center;gap:.65rem;background:linear-gradient(90deg,rgba(117,7,13,.38),rgba(66,5,9,.12));padding:.55rem 1.0rem .55rem 1.25rem; }
 .steroid-reset::before { content:"";position:absolute;left:0;top:0;bottom:0;width:.22rem;background:var(--red);box-shadow:0 0 12px rgba(255,45,45,.3); }
-.steroid-reset b { color:#ff6363;font: 600 1.2rem var(--font-geist-mono),monospace; }
-.steroid-reset span { color:#e6e2de;font: 500 clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.055em; }
-.steroid-reset i { color:var(--red);font-style:normal; }
-.steroid-reset strong { color:#ffc2c2;font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;font-weight:500; }
-.reset-guidance { margin:.5rem 0 0;padding:.42rem .6rem;border-left:1px solid rgba(255,45,45,.42);background:linear-gradient(90deg,rgba(91,6,10,.13),transparent);color:#918d89;font: clamp(0.68rem, 0.78vw, 0.96rem)/1.4 var(--font-geist-mono),monospace;letter-spacing:.012em; }
-.reset-guidance b { color:#d9d5d1;font: 500 .92em var(--font-geist-mono),monospace;letter-spacing:.04em; }
-.advance-ladder { min-height:0;display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:.24rem;height:auto; }
-.advance-ladder>div { position:relative;min-height:0;padding:.32rem .75rem;background:rgba(10,10,12,.94);border:1px solid rgba(255,255,255,.09);border-radius:0;display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:.7rem; }
-.advance-ladder span { color:#f0ece8;font: 600 clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.025em; }
-.advance-ladder span b { display:inline-block;margin-left:.35rem;padding:.22rem .38rem;border-radius:0;background:rgba(255,255,255,.09);color:#888481;font: 500 clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.04em; }
-.advance-ladder span b.tag-at-max { background:rgba(255,45,45,.16);border:none;color:#ff9498; }
-.advance-ladder strong { color:#e9e5e1;text-align:right;font-family:var(--font-geist-sans),Arial,sans-serif;font-size:clamp(.58rem,.7vw,.84rem);font-weight:500;letter-spacing:.01em; }
-.advance-ladder strong.action-red { color:#ff3338;font-size:clamp(.76rem,.96vw,1.18rem);font-weight:700;letter-spacing:.03em;text-shadow:0 0 12px rgba(255,45,45,.35); }
-.advance-ladder strong small { display:block;margin-top:.14rem;color:#e9e5e1;font-family:var(--font-geist-sans),Arial,sans-serif;font-size:clamp(0.68rem, 0.78vw, 0.96rem);font-weight:500;font-style:normal;letter-spacing:.02em;text-transform:uppercase; }
-.injection-window { position:absolute;z-index:4;left:8vw;right:8vw;bottom:5.5%;height:12%;border-top:1px solid rgba(255,255,255,.14);padding-top:.65rem; }
-.injection-title { display:flex;align-items:center;gap:.7rem;color:var(--red);font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;letter-spacing:.1em; }
-.injection-title::before { content:"";width:.38rem;aspect-ratio:1;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red); }
-.injection-title small { color:#777;font: inherit;font-size:.8em; }
-.injection-title small strong { color:#fff;font-weight:800; }
-.injection-timeline { position:relative;height:calc(100% - 1rem);margin-top:.35rem;display:grid;grid-template-columns:1fr .92fr 1fr;gap:1.15rem;align-items:center; }
-.window { position:relative;z-index:2;justify-self:stretch;padding:.25rem .6rem;background:#070707;display:grid;grid-template-columns:auto;grid-template-rows:auto auto;align-items:center; }
-.window strong { justify-self:start;padding:.3rem .55rem;border-radius:0;background:rgba(108,8,14,.24);color:#ff6868;font: clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace;font-weight:500;letter-spacing:.065em; }
-.window span { margin-top:.25rem;color:#eee;font-size:clamp(0.68rem, 0.78vw, 0.96rem);font-weight:600; }
+.steroid-reset b { color:#ff6363;font: 700 clamp(1.4rem, 1.8vw, 2.4rem) var(--font-geist-mono),monospace; }
+.steroid-reset span { color:#e6e2de;font: 600 clamp(0.78rem, 0.92vw, 1.15rem) var(--font-geist-mono),monospace;letter-spacing:.055em; }
+.steroid-reset i { color:var(--red);font: 700 clamp(1.1rem, 1.4vw, 1.8rem) var(--font-geist-sans), Arial, sans-serif; font-style:normal; }
+.steroid-reset strong { color:#ffc2c2;font: 700 clamp(0.82rem, 0.98vw, 1.22rem) var(--font-geist-mono),monospace; }
+.reset-guidance { margin:.45rem 0 0;padding:.45rem .65rem;border-left:2px solid var(--red);background:linear-gradient(90deg,rgba(91,6,10,.18),transparent);color:#ffffff;font: 700 clamp(0.76rem, 0.88vw, 1.10rem)/1.4 var(--font-geist-mono),monospace;letter-spacing:.02em; }
+.reset-guidance b { color:#ffffff;font: inherit; }
+.advance-ladder { min-height:0;display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:.25rem;height:auto; }
+.advance-ladder>div { position:relative;min-height:0;padding:.35rem .85rem;background:rgba(10,10,12,.94);border:1px solid rgba(255,255,255,.09);border-radius:0;display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:.7rem; }
+.advance-ladder span { color:#ffffff;font: 600 clamp(0.78rem, 0.92vw, 1.15rem) var(--font-geist-mono),monospace;letter-spacing:.025em; }
+.advance-ladder span b { display:inline-block;margin-left:.35rem;padding:.22rem .42rem;border-radius:0;background:rgba(255,255,255,.09);color:#ded9d5;font: 600 clamp(0.70rem, 0.82vw, 1.02rem) var(--font-geist-mono),monospace;letter-spacing:.04em; }
+.advance-ladder span b.tag-at-max { background:rgba(255,45,45,.2);border:none;color:#ff9498; }
+.advance-ladder strong { color:#ffffff;text-align:right;font-family:var(--font-geist-sans),Arial,sans-serif;font-size:clamp(0.78rem, 0.92vw, 1.16rem);font-weight:600;letter-spacing:.01em; }
+.advance-ladder strong.action-red { color:#ff3338;font-size:clamp(0.82rem, 0.98vw, 1.22rem);font-weight:700;letter-spacing:.03em;text-shadow:0 0 12px rgba(255,45,45,.35); }
+.advance-ladder strong small { display:block;margin-top:.14rem;color:#ded9d5;font-family:var(--font-geist-sans),Arial,sans-serif;font-size:clamp(0.70rem, 0.82vw, 1.02rem);font-weight:500;font-style:normal;letter-spacing:.02em;text-transform:uppercase; }
+.injection-window { position:absolute;z-index:4;left:8vw;right:8vw;bottom:4.5%;height:13.5%;border-top:1px solid rgba(255,255,255,.14);padding-top:.65rem; }
+.injection-title { display:flex;align-items:center;gap:.7rem;color:var(--red);font: 700 clamp(0.80rem, 0.96vw, 1.20rem) var(--font-geist-mono),monospace;letter-spacing:.1em; }
+.injection-title::before { content:"";width:.42rem;aspect-ratio:1;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red); }
+.injection-title small { color:#ded9d5;font: 600 clamp(0.74rem, 0.86vw, 1.08rem) var(--font-geist-mono),monospace; }
+.injection-title small strong { color:#ffffff;font-weight:800; }
+.injection-timeline { position:relative;height:calc(100% - 1.2rem);margin-top:.35rem;display:grid;grid-template-columns:1fr .95fr 1fr;gap:1.2rem;align-items:center; }
+.window { position:relative;z-index:2;justify-self:stretch;padding:.3rem .65rem;background:#070707;display:grid;grid-template-columns:auto;grid-template-rows:auto auto;align-items:center; }
+.window strong { justify-self:start;padding:.35rem .65rem;border-radius:0;background:rgba(108,8,14,.28);color:#ff6868;font: 700 clamp(0.78rem, 0.92vw, 1.15rem) var(--font-geist-mono),monospace;letter-spacing:.065em; }
+.window span { margin-top:.25rem;color:#a8a29e;font: 450 clamp(0.72rem, 0.84vw, 1.05rem) var(--font-geist-sans), Arial, sans-serif; }
 .window-early::after,.window-late::before { content:"";position:absolute;top:.82rem;height:1px;background:linear-gradient(90deg,rgba(255,45,45,.72),rgba(255,255,255,.2)); }
 .window-early::after { left:10rem;right:-.82rem; }
 .window-late::before { left:-.82rem;right:10rem;background:linear-gradient(90deg,rgba(255,255,255,.2),rgba(255,45,45,.72)); }
 .window-late { text-align:right; }
 .window-late strong { grid-column:1;grid-row:1;justify-self:end; }
 .window-late span { grid-column:1;justify-self:end; }
-.injection-timeline p { position:relative;z-index:2;margin:0;padding:.6rem .7rem;border:1px solid rgba(255,255,255,.14);border-radius:0;background:rgba(11,11,13,.96);color:#9b9793;text-align:center;font: clamp(0.68rem, 0.78vw, 0.96rem)/1.45 var(--font-geist-mono),monospace;letter-spacing:.025em; }
-
-/* Slide 11 readability pass — preserve the layout while lifting microtype. */
-#tapering .tapering-control article > header {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .taper-checkpoints small {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .taper-checkpoints strong {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .taper-checkpoints span {
-  color: #d6d3d1;
-  font-size: clamp(0.68rem, 0.78vw, 0.96rem);
-  line-height: 1.35;
-}
-#tapering .steroid-reset span {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .steroid-reset strong {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .reset-guidance {
-  color: #d6d3d1;
-  font-size: clamp(0.72rem, 0.84vw, 1.02rem);
-}
-#tapering .advance-ladder span {
-  font-size: clamp(0.72rem, 0.84vw, 1.02rem);
-}
-#tapering .advance-ladder span b {
-  color: #d6d3d1;
-  font-size: clamp(0.68rem, 0.78vw, 0.96rem);
-}
-#tapering .advance-ladder strong {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .advance-ladder strong small {
-  font-size: clamp(0.68rem, 0.78vw, 0.96rem);
-}
-#tapering .injection-title {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
-#tapering .injection-title small {
-  color: #d6d3d1;
-  font-size: clamp(0.68rem, 0.78vw, 0.96rem);
-}
-#tapering .window strong {
-  font-size: clamp(0.74rem, 0.86vw, 1.08rem);
-}
+.injection-timeline p { position:relative;z-index:2;margin:0;padding:.65rem .85rem;border:1px solid rgba(255,255,255,.14);border-radius:0;background:rgba(11,11,13,.96);color:#ded9d5;text-align:center;font: 450 clamp(0.74rem, 0.86vw, 1.08rem)/1.45 var(--font-geist-mono),monospace;letter-spacing:.025em; }
 
 /* Slides 08–10 — presentation-distance typography */
 @media (min-width: 701px) {
@@ -742,13 +684,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     color: #ffffff;
   }
 }
-#tapering .window span {
-  font-size: clamp(0.72rem, 0.84vw, 1.02rem);
-}
-#tapering .injection-timeline p {
-  color: #d6d3d1;
-  font-size: clamp(0.70rem, 0.80vw, 1.0rem);
-}
+
 
 /* ============================================================
    PAGE 08 — EDITORIAL CINEMATIC REDESIGN V2
