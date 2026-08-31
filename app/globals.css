@@ -15597,7 +15597,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 100svh;
   max-height: 100svh;
   overflow: hidden;
-  padding: clamp(3.0rem, 6.0vh, 4.5rem) clamp(1.2rem, 3.5vw, 4.0rem) 0;
+  padding: clamp(3.2rem, 6.5vh, 4.8rem) clamp(1.2rem, 3.5vw, 4.0rem) 0;
   box-sizing: border-box;
 }
 
@@ -15607,7 +15607,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(3.2rem, 6.8vh, 5.8rem);
+  margin-bottom: clamp(4.5rem, 9.2vh, 7.5rem);
 }
 
 .intro6-header h2 {
@@ -15647,7 +15647,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   width: 100%;
   flex: 0 0 auto;
   padding: 0;
-  margin-bottom: clamp(3.0rem, 6.2vh, 5.2rem);
+  margin-bottom: clamp(3.6rem, 7.2vh, 6.0rem);
 }
 
 .convergence-wing {
