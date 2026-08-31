@@ -8,6 +8,25 @@
   font-display: swap;
 }
 
+/* Slides 06–07 — tighten the evidence-gap reveal and clarify the review note. */
+@media (min-width: 701px) {
+  #evidence-gap .trajectory-target-node {
+    margin-inline: clamp(.38rem, .72vw, .84rem);
+  }
+
+  #evidence-gap .intro6-bottom-reveal {
+    position: relative;
+    transform: translateY(clamp(-2.8rem, -4.5vh, -1.8rem));
+    border-top: 0;
+  }
+
+  #study-design .mtqac-duty-summary {
+    font-size: clamp(.92rem, 1.08vw, 1.30rem);
+    line-height: 1.42;
+    color: #d4ceca;
+  }
+}
+
 /* Page 12 — restore the quiet editorial density of the follow-up reference. */
 @media (min-width: 701px) {
   .followup-timeline {
