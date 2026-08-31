@@ -8,6 +8,96 @@
   font-display: swap;
 }
 
+/* Page 12 — restore the quiet editorial density of the follow-up reference. */
+@media (min-width: 701px) {
+  .followup-timeline {
+    top: 34%;
+    height: 13%;
+  }
+
+  .followup-bands {
+    font-size: clamp(0.72rem, 0.88vw, 1.08rem);
+    font-weight: 650;
+    letter-spacing: .085em;
+  }
+
+  .followup-bands span { padding-bottom: .30rem; }
+
+  .visit-rail {
+    height: calc(100% - 1.1rem);
+    padding: 0 1.25rem;
+    border-color: rgba(255,255,255,.09);
+    background: linear-gradient(110deg,rgba(255,255,255,.018),rgba(48,5,9,.075));
+  }
+
+  .visit-rail::before {
+    height: 1px;
+    box-shadow: 0 0 5px rgba(255,45,45,.16), 8rem 0 7px rgba(149,111,255,.12);
+  }
+
+  .visit-node {
+    width: .64rem;
+    border-width: 2px;
+    box-shadow: 0 0 0 1px var(--red), 0 0 8px rgba(255,45,45,.24);
+    font-size: clamp(.64rem, .72vw, .86rem);
+  }
+
+  .visit-node.milestone {
+    width: .78rem;
+    box-shadow: 0 0 0 1px #956fff, 0 0 9px rgba(149,111,255,.3);
+  }
+
+  .visit-node b { top: 1.02rem; font-size: clamp(.62rem, .70vw, .84rem); }
+  .visit-node span { top: -1.55rem; font-size: clamp(.60rem, .68vw, .82rem); }
+  .visit-signal { width: .34rem; top: calc(47% - .17rem); box-shadow: 0 0 4px #fff, 0 0 10px var(--red); }
+
+  .followup-grid {
+    top: 53.5%;
+    bottom: 6.5%;
+    gap: clamp(.55rem, .82vw, 1rem);
+  }
+
+  .followup-panel {
+    padding: clamp(.58rem, .78vh, .82rem) clamp(.64rem, .82vw, .94rem);
+    border-color: rgba(255,255,255,.08);
+    background: linear-gradient(135deg,rgba(255,255,255,.017),rgba(12,12,14,.94) 60%,rgba(69,5,9,.055));
+    box-shadow: inset 0 1px rgba(255,255,255,.018);
+  }
+
+  .followup-panel header {
+    min-height: 1.2rem;
+    font-size: clamp(.72rem, .84vw, 1.02rem);
+    font-weight: 650;
+    letter-spacing: .075em;
+  }
+
+  .followup-panel header::before { margin-right: .33rem; font-size: clamp(.70rem, .84vw, 1rem); }
+  .visit-suite { gap: .32rem; }
+  .visit-suite>div { padding-left: .92rem; }
+  .visit-suite>div::before { left: .05rem; width: .36rem; height: .16rem; }
+  .visit-suite>div>b { font-size: clamp(.70rem, .82vw, 1rem); font-weight: 650; }
+  .visit-suite>div>span { margin-top: .12rem; color: #aaa4a0; font-size: clamp(.64rem, .72vw, .86rem); line-height: 1.34; }
+
+  .milestone-suite {
+    gap: .32rem;
+    border-color: rgba(149,111,255,.24);
+    background: radial-gradient(circle at 78% 18%,rgba(106,66,197,.075),transparent 38%), linear-gradient(135deg,rgba(255,255,255,.016),rgba(12,12,15,.94));
+    box-shadow: inset 0 1px rgba(190,166,255,.05), 0 0 14px rgba(118,79,208,.03);
+  }
+
+  .milestone-dates { padding-left: .42rem; border-left-width: 1px; font-size: clamp(.66rem, .76vw, .92rem); font-weight: 650; }
+  .milestone-suite .milestone-test { padding: .38rem .5rem; border-left-width: 1px; background: linear-gradient(90deg,rgba(105,67,192,.08),rgba(255,255,255,.012)); }
+  .milestone-suite .milestone-test b { font-size: clamp(.68rem, .78vw, .95rem); font-weight: 650; }
+  .milestone-suite .milestone-test span { margin-top: .16rem; font-size: clamp(.64rem, .72vw, .86rem); }
+  .milestone-suite .milestone-test i { margin: .1rem .18rem 0 0; padding: .15rem .3rem; background: rgba(125,82,225,.16); font-size: clamp(.62rem, .70vw, .82rem); }
+
+  .diagnosis-suite { gap: .22rem; }
+  .diagnosis-note { font-size: clamp(.62rem, .70vw, .84rem); font-weight: 550; }
+  .diagnosis-suite>div { padding: .24rem .48rem; border-color: rgba(255,255,255,.065); background: rgba(255,255,255,.012); gap: .5rem; }
+  .diagnosis-suite>div span { font-size: clamp(.62rem, .70vw, .84rem); line-height: 1.26; }
+  .diagnosis-suite>div b { font-size: clamp(.66rem, .76vw, .92rem); font-weight: 700; text-shadow: 0 0 6px rgba(255,45,45,.2); }
+}
+
 @font-face {
   font-family: 'Geist Mono';
   src: url('/fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2') format('woff2');
@@ -17220,6 +17310,43 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     0%, 100% { transform: scale(.985); opacity: .86; }
     50% { transform: scale(1.015); opacity: 1; }
   }
+}
+
+/* Page 12 — final desktop override, placed after legacy slide rules. */
+@media (min-width: 701px) {
+  #followup .followup-timeline { top: 34%; height: 13%; }
+  #followup .followup-bands { font-size: clamp(.72rem, .88vw, 1.08rem); font-weight: 650; letter-spacing: .085em; }
+  #followup .followup-bands span { padding-bottom: .3rem; }
+  #followup .visit-rail { height: calc(100% - 1.1rem); padding: 0 1.25rem; border-color: rgba(255,255,255,.09); background: linear-gradient(110deg,rgba(255,255,255,.018),rgba(48,5,9,.075)); }
+  #followup .visit-rail::before { box-shadow: 0 0 5px rgba(255,45,45,.16), 8rem 0 7px rgba(149,111,255,.12); }
+  #followup .visit-node { width: .64rem; border-width: 2px; box-shadow: 0 0 0 1px var(--red),0 0 8px rgba(255,45,45,.24); font-size: clamp(.64rem,.72vw,.86rem); }
+  #followup .visit-node.milestone { width: .78rem; box-shadow: 0 0 0 1px #956fff,0 0 9px rgba(149,111,255,.3); }
+  #followup .visit-node b { top: 1.02rem; font-size: clamp(.62rem,.70vw,.84rem); }
+  #followup .visit-node span { top: -1.55rem; font-size: clamp(.60rem,.68vw,.82rem); }
+  #followup .visit-signal { width:.34rem; top:calc(47% - .17rem); box-shadow:0 0 4px #fff,0 0 10px var(--red); }
+
+  #followup .followup-grid { top: 53.5%; bottom: 6.5%; gap: clamp(.55rem,.82vw,1rem); }
+  #followup .followup-panel { padding: clamp(.58rem,.78vh,.82rem) clamp(.64rem,.82vw,.94rem); border-color: rgba(255,255,255,.08); background: linear-gradient(135deg,rgba(255,255,255,.017),rgba(12,12,14,.94) 60%,rgba(69,5,9,.055)); box-shadow: inset 0 1px rgba(255,255,255,.018); }
+  #followup .followup-panel header { min-height:1.2rem; font-size:clamp(.72rem,.84vw,1.02rem); font-weight:650; letter-spacing:.075em; }
+  #followup .followup-panel header::before { margin-right:.33rem; font-size:clamp(.70rem,.84vw,1rem); }
+  #followup .visit-suite { gap:.32rem; }
+  #followup .visit-suite>div { padding-left:.92rem; }
+  #followup .visit-suite>div::before { left:.05rem; width:.36rem; height:.16rem; }
+  #followup .visit-suite>div>b { font-size:clamp(.70rem,.82vw,1rem); font-weight:650; }
+  #followup .visit-suite>div>span { margin-top:.12rem; color:#aaa4a0; font-size:clamp(.64rem,.72vw,.86rem); line-height:1.34; }
+
+  #followup .milestone-suite { gap:.32rem; border-color:rgba(149,111,255,.24); background:radial-gradient(circle at 78% 18%,rgba(106,66,197,.075),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.016),rgba(12,12,15,.94)); box-shadow:inset 0 1px rgba(190,166,255,.05),0 0 14px rgba(118,79,208,.03); }
+  #followup .milestone-dates { padding-left:.42rem; border-left-width:1px; font-size:clamp(.66rem,.76vw,.92rem); font-weight:650; }
+  #followup .milestone-suite .milestone-test { padding:.38rem .5rem; border-left-width:1px; background:linear-gradient(90deg,rgba(105,67,192,.08),rgba(255,255,255,.012)); }
+  #followup .milestone-suite .milestone-test b { font-size:clamp(.68rem,.78vw,.95rem); font-weight:650; }
+  #followup .milestone-suite .milestone-test span { margin-top:.16rem; font-size:clamp(.64rem,.72vw,.86rem); }
+  #followup .milestone-suite .milestone-test i { margin:.1rem .18rem 0 0; padding:.15rem .3rem; background:rgba(125,82,225,.16); font-size:clamp(.62rem,.70vw,.82rem); }
+
+  #followup .diagnosis-suite { gap:.22rem; }
+  #followup .diagnosis-note { font-size:clamp(.62rem,.70vw,.84rem); font-weight:550; }
+  #followup .diagnosis-suite>div { padding:.24rem .48rem; border-color:rgba(255,255,255,.065); background:rgba(255,255,255,.012); gap:.5rem; }
+  #followup .diagnosis-suite>div span { font-size:clamp(.62rem,.70vw,.84rem); line-height:1.26; }
+  #followup .diagnosis-suite>div b { font-size:clamp(.66rem,.76vw,.92rem); font-weight:700; text-shadow:0 0 6px rgba(255,45,45,.2); }
 }
 
 /* Page 10 — let disease activity lead each prednisolone decision. */
