@@ -17471,3 +17471,63 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     box-shadow: 0 0 5px rgba(192, 132, 252, .20);
   }
 }
+
+/* Page 12 — restore presentation-distance legibility inside the quiet follow-up panels. */
+@media (min-width: 701px) {
+  #followup .followup-panel header {
+    min-height: 1.36rem;
+    font-size: clamp(.84rem, .98vw, 1.18rem);
+    font-weight: 680;
+  }
+
+  #followup .followup-panel header::before {
+    font-size: clamp(.82rem, .96vw, 1.14rem);
+  }
+
+  #followup .visit-suite { gap: .40rem; }
+  #followup .visit-suite > div { padding-left: 1.02rem; }
+  #followup .visit-suite > div > b {
+    font-size: clamp(.80rem, .94vw, 1.13rem);
+    font-weight: 700;
+  }
+  #followup .visit-suite > div > span {
+    margin-top: .16rem;
+    color: #c5bfbb;
+    font-size: clamp(.72rem, .84vw, 1.00rem);
+    line-height: 1.36;
+  }
+
+  #followup .milestone-suite { gap: .40rem; }
+  #followup .milestone-dates {
+    font-size: clamp(.76rem, .90vw, 1.08rem);
+    font-weight: 700;
+  }
+  #followup .milestone-suite .milestone-test { padding: .46rem .58rem; }
+  #followup .milestone-suite .milestone-test b {
+    font-size: clamp(.78rem, .92vw, 1.10rem);
+    font-weight: 700;
+  }
+  #followup .milestone-suite .milestone-test span {
+    font-size: clamp(.72rem, .84vw, 1.00rem);
+    line-height: 1.34;
+  }
+  #followup .milestone-suite .milestone-test i {
+    padding: .17rem .34rem;
+    font-size: clamp(.70rem, .80vw, .96rem);
+  }
+
+  #followup .diagnosis-suite { gap: .28rem; }
+  #followup .diagnosis-note {
+    font-size: clamp(.72rem, .84vw, 1.00rem);
+    font-weight: 600;
+  }
+  #followup .diagnosis-suite > div { padding: .32rem .56rem; }
+  #followup .diagnosis-suite > div span {
+    font-size: clamp(.70rem, .82vw, .98rem);
+    line-height: 1.30;
+  }
+  #followup .diagnosis-suite > div b {
+    font-size: clamp(.78rem, .92vw, 1.10rem);
+    font-weight: 750;
+  }
+}
