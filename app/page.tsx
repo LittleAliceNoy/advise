@@ -2236,7 +2236,7 @@ export default function Home() {
               <span><b>0 / 1</b> = DRUG COUNT</span>
               <span><b>L / H</b> = &lt;30 / ≥30 MG/DAY</span>
               <span><b>A</b> = ADA</span>
-              <span><b>C</b> = CID</span>
+              <span className="legend-cid"><b>C</b> = CID</span>
             </div>
           </div>
         </section>
