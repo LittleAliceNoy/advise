@@ -2182,7 +2182,6 @@ export default function Home() {
           <div className="orbital-screen-panel" aria-label="Central orbital scanner showing eight exclusion gates">
             <div className="orbital-panel-header"><span>EXCLUSION SCREEN</span><strong>8 SAFETY GATES</strong></div>
             <div className="clearance-orbit">
-              <span className="journey-label">ORBITAL SAFETY SCAN</span>
               <div className="orbit-sweep" aria-hidden="true" />
               <div className="clearance-eye" aria-hidden="true"><i /><span /></div>
               <small className="gate gate-1"><b>01</b> ACTIVE/LATENT TB</small>
