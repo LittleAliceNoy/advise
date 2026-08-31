@@ -17597,12 +17597,22 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical article + article {
-    margin-top: clamp(1.0rem, 2.35vh, 1.85rem);
+    margin-top: clamp(1.65rem, 3.15vh, 2.65rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-clinical article {
+    grid-template-columns: clamp(3.55rem, 4.55vw, 5.45rem) minmax(0, 1fr);
+    column-gap: clamp(.88rem, 1.15vw, 1.38rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-imaging > div {
     padding-top: clamp(.95rem, 1.95vh, 1.45rem);
-    gap: clamp(.95rem, 1.75vh, 1.45rem) clamp(1.2rem, 2.2vw, 2.5rem);
+    row-gap: clamp(1.65rem, 3.0vh, 2.65rem);
+    column-gap: clamp(1.2rem, 2.2vw, 2.5rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging article {
+    padding-left: clamp(3.35rem, 4.15vw, 4.95rem);
   }
 }
 
