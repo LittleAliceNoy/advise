@@ -17577,17 +17577,22 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
   #therapeutic-goal .ceiling-box,
   #therapeutic-goal .floor-box {
-    width: calc(100% - clamp(1rem, 1.8vw, 2.2rem));
+    width: calc(100% - clamp(2.1rem, 3.3vw, 4.0rem));
     align-self: center;
+    border-width: 1.5px;
+  }
+
+  #therapeutic-goal .must-main-title > span:last-child {
+    font-size: .78em;
   }
 
   #therapeutic-goal.stage-2 .dilemma-middle-row,
   #therapeutic-goal.stage-3 .dilemma-middle-row {
-    transform: translateY(clamp(-.34rem, -.50vh, -.54rem)) !important;
+    transform: translateY(clamp(-.56rem, -.80vh, -.88rem)) !important;
   }
 
   #therapeutic-goal.stage-3 .dilemma-bottom-row {
-    transform: translateY(clamp(-.46rem, -.66vh, -.72rem)) !important;
+    transform: translateY(clamp(-.72rem, -1.02vh, -1.12rem)) !important;
   }
 
   #therapeutic-goal .bar-axis-row {
