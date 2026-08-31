@@ -1124,8 +1124,8 @@ export default function Home() {
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
-                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.54rem, 0.62vw, 0.76rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
+                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
                 </div>
               </div>
 
@@ -1203,7 +1203,7 @@ export default function Home() {
                   <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.55rem, 0.65vw, 0.82rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                     NEEDED TO ACHIEVE BOTH GOALS
                   </span>
                 </div>
@@ -1241,7 +1241,7 @@ export default function Home() {
 
                 <div className="floor-box">
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.52rem, 0.60vw, 0.74rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 
@@ -1265,7 +1265,7 @@ export default function Home() {
 
                 <div className="resolution-item res-dose">
                   <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
-                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.56rem, 0.68vw, 0.84rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
+                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true">=</span>
@@ -1311,14 +1311,14 @@ export default function Home() {
                   <div className="must-findings-group" style={{ margin: "0.15rem 0", display: "flex", flexDirection: "column", gap: "0.22rem" }}>
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
                       <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
-                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.62rem, 0.78vw, 0.98rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         SUPERIOR LONG-TERM VISUAL ACUITY
                       </strong>
                     </div>
 
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
                       <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.82rem, 1.00vw, 1.25rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.60rem, 0.75vw, 0.94rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS
                       </span>
                     </div>
@@ -4044,11 +4044,11 @@ export default function Home() {
 
                         {/* 21% Calcineurin Inhibitors Label (Top-Right) */}
                         <text x="355" y="48" className="hero-arc-number num-violet" style={{ fontSize: '24px' }}>21%</text>
-                        <text x="355" y="63" className="hero-arc-sublabel sub-violet" style={{ fontSize: '8.5px' }}>CALCINEURIN INHIBITORS</text>
+                        <text x="355" y="63" className="hero-arc-sublabel sub-violet">CALCINEURIN INHIBITORS</text>
 
                         {/* 79% Antimetabolites Label (Left-Lower) */}
                         <text x="80" y="195" className="hero-arc-number num-red" style={{ fontSize: '24px' }}>79%</text>
-                        <text x="80" y="210" className="hero-arc-sublabel sub-red" style={{ fontSize: '8.5px' }}>ANTIMETABOLITES</text>
+                        <text x="80" y="210" className="hero-arc-sublabel sub-red">ANTIMETABOLITES</text>
                       </svg>
                     </div>
 
@@ -5234,13 +5234,13 @@ export default function Home() {
             {/* RESCUE STAGE — MOVED TO COPY AREA */}
             <div className={`taperx-rescue ${taperingStage === 8 ? "active" : ""}`}>
               <header className="tapering-control-header" style={{ marginBottom: "1.5rem" }}>
-                <span style={{ display: "block", color: "var(--red)", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.12em", marginBottom: "0.3rem" }}>RESCUE THERAPY</span>
+                <span style={{ display: "block", color: "var(--red)", fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 600, letterSpacing: "0.12em", marginBottom: "0.3rem" }}>RESCUE THERAPY</span>
                 <strong style={{ display: "block", color: "#eee", fontSize: "1.15rem", fontWeight: 500, letterSpacing: "-0.01em" }}>REGIONAL CORTICOSTEROID</strong>
               </header>
 
               <div className="taperx-rescue-indication" style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "2.5rem", padding: "1rem 1.2rem", background: "linear-gradient(90deg, rgba(255,45,45,0.1), transparent)", borderLeft: "2px solid var(--red)" }}>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: "0.42rem", color: "#ff8c8c", letterSpacing: "0.1em", marginBottom: "0.2rem", fontWeight: 600 }}>INDICATION</div>
+                  <div style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", color: "#ff8c8c", letterSpacing: "0.1em", marginBottom: "0.2rem", fontWeight: 600 }}>INDICATION</div>
                   <div style={{ fontSize: "1.1rem", color: "#fff", fontWeight: 500, letterSpacing: "-0.02em" }}>Macular Edema</div>
                 </div>
                 <div style={{ display: "flex", gap: "0.4rem" }}>
@@ -5253,7 +5253,7 @@ export default function Home() {
                 </div>
                 <div style={{ marginLeft: "0.5rem", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: "1rem" }}>
                   <strong style={{ display: "block", fontSize: "1.3rem", color: "#fff", lineHeight: 1 }}>MAX 2</strong>
-                  <span style={{ fontSize: "0.4rem", color: "#999", letterSpacing: "0.08em", marginTop: "0.2rem", display: "block" }}>INJECTIONS</span>
+                  <span style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", color: "#999", letterSpacing: "0.08em", marginTop: "0.2rem", display: "block" }}>INJECTIONS</span>
                 </div>
               </div>
 
