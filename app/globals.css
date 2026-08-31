@@ -362,7 +362,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .treatment-copy { width:58vw; }
 .treatment-copy h2 { font-size:clamp(3rem,4.25vw,5rem); }
-.treatment-copy .lede { max-width:46rem;margin-top:.7rem; }
+.treatment-copy .lede {
+  max-width: 40rem;
+  margin-top: .55rem;
+  color: #d6d0cb;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.92rem, 1.15vw, 1.40rem);
+  font-weight: 400;
+  line-height: 1.48;
+}
 .treatment-symbols { position:absolute;z-index:3;right:9vw;top:14.5%;display:grid;grid-template-columns:repeat(2,8rem);gap:2.4rem;align-items:flex-start; }
 .treatment-symbol { width:8rem;text-align:center;color:#777;font: clamp(0.68rem, 0.78vw, 0.96rem)/1.3 var(--font-geist-mono),monospace;letter-spacing:.085em;animation:treatmentObjectFloat 6s ease-in-out infinite; }
 .treatment-symbol-cid { animation-delay:-3s; }
