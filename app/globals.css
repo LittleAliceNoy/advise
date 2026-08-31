@@ -155,15 +155,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .ethics-copy span { color:var(--red); font: 700 clamp(0.82rem, 0.98vw, 1.20rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.08em; text-transform:uppercase; }
 .ethics-copy p { margin:.18rem 0 0; color:#ded9d5; font-size:clamp(0.78rem, 0.92vw, 1.14rem); line-height:1.42; max-width:44rem; }
 .ethics-mtqac-block { padding-top:.75rem; border-top:1px solid rgba(255,255,255,.12); display:flex; flex-direction:column; gap:.55rem; align-items:stretch; }
-.mtqac-workflow { display:flex; align-items:center; justify-content:center; gap:clamp(0.3rem, 0.5vw, 0.65rem); padding:clamp(0.35rem, 0.5vh, 0.65rem) 0; margin:clamp(0.2rem, 0.4vh, 0.5rem) auto; width:100%; box-sizing:border-box; background:none; border:none; border-radius:0; }
-.mtqac-wf-node { display:flex; align-items:center; gap:.35rem; flex-shrink:0; }
-.mtqac-wf-node svg { width:clamp(0.95rem, 1.1vw, 1.25rem); height:clamp(0.95rem, 1.1vw, 1.25rem); color:#d6d0cb; flex-shrink:0; }
-.mtqac-wf-node span { color:#ffffff; font: 600 clamp(0.68rem, 0.80vw, 0.96rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.025em; white-space:nowrap; }
-.mtqac-wf-hub { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:clamp(0.25rem, 0.4vh, 0.45rem) clamp(0.5rem, 0.75vw, 0.9rem); background:rgba(255,45,45,.09); border:1.2px solid rgba(255,45,45,.45); border-radius:0; text-align:center; flex-shrink:0; }
-.mtqac-wf-hub strong { color:#ff666b; font: 700 clamp(0.80rem, 0.96vw, 1.15rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.05em; line-height:1.15; }
-.mtqac-wf-hub small { color:#ded7d3; font: 450 clamp(0.66rem, 0.74vw, 0.88rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.015em; white-space:nowrap; line-height:1.15; margin-top:.1rem; }
-.mtqac-wf-arrow { color:var(--red); font: 700 clamp(0.85rem, 1.05vw, 1.35rem) var(--font-geist-sans), Arial, sans-serif; opacity:1; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin:0 .1rem; }
-.mtqac-duty-summary { margin:.1rem 0 0; color:#c4beba; font-size:clamp(0.74rem, 0.86vw, 1.08rem); line-height:1.42; text-align:center; }
+.mtqac-workflow { display:flex; align-items:center; justify-content:center; gap:clamp(0.25rem, 0.4vw, 0.6rem); padding:clamp(0.3rem, 0.45vh, 0.55rem) 0; margin:clamp(0.15rem, 0.3vh, 0.4rem) 0 clamp(0.15rem, 0.3vh, 0.4rem) clamp(0.8rem, 1.2vw, 1.6rem); width:calc(100% - clamp(0.8rem, 1.2vw, 1.6rem)); box-sizing:border-box; background:none; border:none; border-radius:0; }
+.mtqac-wf-node { display:flex; align-items:center; gap:.3rem; flex-shrink:0; }
+.mtqac-wf-node svg { width:clamp(0.85rem, 1.0vw, 1.15rem); height:clamp(0.85rem, 1.0vw, 1.15rem); color:#d6d0cb; flex-shrink:0; }
+.mtqac-wf-node span { color:#ffffff; font: 600 clamp(0.62rem, 0.72vw, 0.88rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.02em; white-space:nowrap; }
+.mtqac-wf-hub { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:clamp(0.2rem, 0.35vh, 0.38rem) clamp(0.45rem, 0.65vw, 0.85rem); background:rgba(255,45,45,.09); border:1.2px solid rgba(255,45,45,.45); border-radius:0; text-align:center; flex-shrink:0; }
+.mtqac-wf-hub strong { color:#ff666b; font: 700 clamp(0.74rem, 0.88vw, 1.06rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.05em; line-height:1.15; }
+.mtqac-wf-hub small { color:#ded7d3; font: 450 clamp(0.58rem, 0.68vw, 0.82rem) var(--font-geist-sans), Arial, sans-serif; letter-spacing:.015em; white-space:nowrap; line-height:1.15; margin-top:.08rem; }
+.mtqac-wf-arrow { color:var(--red); font: 700 clamp(0.80rem, 0.95vw, 1.20rem) var(--font-geist-sans), Arial, sans-serif; opacity:1; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin:0 .05rem; }
+.mtqac-duty-summary { margin:.1rem 0 0; padding-left:clamp(0.8rem, 1.2vw, 1.6rem); color:#c4beba; font-size:clamp(0.70rem, 0.82vw, 0.98rem); line-height:1.4; text-align:left; }
 .mtqac-duty-summary i { color:var(--red); font-style:normal; font-weight:700; margin:0 .25rem; }
 
 .eligibility-scene { align-items:flex-start; padding-top:14vh; }
