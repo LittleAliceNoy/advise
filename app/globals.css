@@ -15590,24 +15590,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* ========================================================================= */
 .intro6-scene {
   background: #050204;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  position: relative;
   min-height: 100svh;
   max-height: 100svh;
   overflow: hidden;
-  padding: clamp(3.2rem, 6.5vh, 4.8rem) clamp(1.2rem, 3.5vw, 4.0rem) 0;
   box-sizing: border-box;
 }
 
+.intro6-eyebrow {
+  position: absolute;
+  top: clamp(2.4rem, 5.0vh, 3.6rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+}
+
 .intro6-header {
+  position: absolute;
+  top: clamp(4.5rem, 8.8vh, 6.5rem);
+  left: 0;
+  right: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(4.5rem, 9.2vh, 7.5rem);
+  z-index: 2;
 }
 
 .intro6-header h2 {
@@ -15627,27 +15637,28 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro6-content-stage {
-  width: min(86rem, 92vw);
-  flex: none;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0;
-  margin-top: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
 .intro6-convergence-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(86rem, 92vw);
   display: grid;
   grid-template-columns: 1.15fr 1.6fr 1.15fr;
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
-  width: 100%;
-  flex: 0 0 auto;
   padding: 0;
-  margin-bottom: clamp(3.6rem, 7.2vh, 6.0rem);
+  margin: 0;
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .convergence-wing {
@@ -15771,9 +15782,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* BOTTOM REVEAL: TECHNICAL FIELD FORESHADOWING SLIDE 07 METHODS PANEL */
 .intro6-bottom-reveal {
-  position: relative;
-  width: 100%;
-  max-width: min(80rem, 90vw);
+  position: absolute;
+  bottom: clamp(1.6rem, 3.8vh, 3.2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80rem, 90vw);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15783,6 +15796,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   box-sizing: border-box;
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .reveal-content {
@@ -16029,8 +16044,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-stage {
   min-height: 0;
   display: grid;
-  grid-template-rows: minmax(9rem, .85fr) minmax(13.5rem, 1.4fr) minmax(8.1rem, .82fr) minmax(14rem, 1.35fr);
-  gap: clamp(0.68rem, 0.90vh, 0.96rem);
+  grid-template-rows: minmax(7.5rem, .75fr) minmax(13rem, 1.35fr) minmax(7.5rem, .8fr) minmax(12.5rem, 1.25fr);
+  gap: clamp(0.75rem, 1.0vh, 1.2rem);
+  width: 100%;
 }
 
 .landscape-hero {
@@ -16042,8 +16058,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-hero h2 {
   margin: 0;
   color: #f1efec;
-  font-family: var(--font-geist-sans, Arial), Arial, sans-serif;
-  font-size: clamp(3.7rem, 5.5vw, 6.5rem);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(3.2rem, 4.8vw, 5.8rem);
   font-weight: 650;
   line-height: .88;
   letter-spacing: -.035em;
@@ -16052,15 +16068,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .landscape-hero h2 span {
   color: #ff3036;
-  font-size: 1.55em;
+  font-size: 1.45em;
   font-weight: 570;
   text-shadow: 0 0 20px rgba(255,45,51,.2);
 }
 
 .landscape-hero p {
-  margin: .52rem 0 0;
+  margin: .45rem 0 0;
   color: #d1cbc7;
-  font-size: clamp(1.08rem, 1.3vw, 1.52rem);
+  font-size: clamp(1.02rem, 1.24vw, 1.45rem);
   line-height: 1.32;
   letter-spacing: .01em;
 }
@@ -16069,7 +16085,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   position: relative;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
   align-items: stretch;
   gap: clamp(1.5rem, 3vw, 3.5rem);
 }
@@ -16091,7 +16107,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-etiology {
   position: relative;
   min-width: 0;
-  padding: clamp(.8rem, 1.2vw, 1.2rem) clamp(.8rem, 1.2vw, 1.25rem);
+  padding: clamp(.75rem, 1.1vw, 1.15rem) clamp(.8rem, 1.2vw, 1.25rem);
   border-top: 1px solid rgba(255,67,72,.38);
   border-bottom: 1px solid rgba(255,255,255,.09);
   background: linear-gradient(180deg, rgba(255,255,255,.012), transparent 72%);
@@ -16108,20 +16124,21 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-etiology > header strong,
 .landscape-assessment > header strong {
   color: #f0ece8;
-  font: 620 clamp(.72rem, .84vw, 1rem)/1.1 var(--font-geist-mono), monospace;
-  letter-spacing: .035em;
+  font: 700 clamp(0.84rem, 0.98vw, 1.22rem)/1.1 var(--font-geist-sans), Arial, sans-serif;
+  letter-spacing: .045em;
+  text-transform: uppercase;
 }
 
 .landscape-anatomy > header small,
 .landscape-etiology > header small,
 .landscape-assessment > header small {
-  color: #a39b97;
-  font-size: clamp(0.68rem, 0.78vw, 0.96rem);
+  color: #c4beb9;
+  font-size: clamp(0.72rem, 0.84vw, 1.02rem);
   line-height: 1.25;
 }
 
 .landscape-anatomy-nodes {
-  height: calc(100% - 3rem);
+  height: calc(100% - 2.8rem);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
@@ -16147,13 +16164,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .landscape-anatomy-node > span {
-  color: #e8e4e0;
-  font: 600 clamp(0.68rem, 0.78vw, 0.96rem)/1 var(--font-geist-mono), monospace;
+  color: #ffffff;
+  font: 700 clamp(0.80rem, 0.94vw, 1.15rem)/1 var(--font-geist-sans), Arial, sans-serif;
+  letter-spacing: 0.05em;
 }
 
 .landscape-eye-section {
   position: relative;
-  width: clamp(4.35rem, 5.7vw, 6.8rem);
+  width: clamp(4.0rem, 5.2vw, 6.2rem);
   aspect-ratio: 1.43;
   display: block;
   border: 2px solid rgba(255,255,255,.68);
@@ -16287,15 +16305,15 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-central-eye > div span { position: absolute; right: 13%; top: 30%; width: 5px; height: 5px; border-radius: 50%; background: #ff444a; box-shadow: 0 0 9px #ff343a; }
 
 .landscape-etiology-axis {
-  height: calc(100% - 3rem);
+  height: calc(100% - 2.8rem);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: clamp(.8rem, 1.4vw, 1.5rem);
 }
 
-.landscape-etiology-axis > div { display: grid; justify-items: center; gap: .75rem; }
-.landscape-etiology-axis > div > span { color: #ebe6e2; font: 600 clamp(0.68rem, 0.78vw, 0.96rem)/1 var(--font-geist-mono), monospace; }
+.landscape-etiology-axis > div { display: grid; justify-items: center; gap: .6rem; }
+.landscape-etiology-axis > div > span { color: #ffffff; font: 700 clamp(0.80rem, 0.94vw, 1.15rem)/1 var(--font-geist-sans), Arial, sans-serif; letter-spacing: 0.05em; }
 .landscape-etiology-axis > em {
   width: 1px;
   height: 54%;
@@ -16307,7 +16325,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .etiology-germs,
 .etiology-inflammation {
   position: relative;
-  width: clamp(4.5rem, 5.6vw, 6.7rem);
+  width: clamp(4.0rem, 5.0vw, 6.0rem);
   aspect-ratio: 1;
   display: block;
   border: 1px solid rgba(255,51,57,.42);
@@ -16340,21 +16358,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   box-shadow: inset 0 0 14px rgba(255,45,51,.08), 0 0 12px rgba(255,45,51,.08);
 }
 
-.landscape-etiology-axis .etiology-noninfectious { gap: .48rem; }
+.landscape-etiology-axis .etiology-noninfectious { gap: .35rem; text-align: center; }
 .landscape-etiology-axis .etiology-noninfectious > small {
-  color: #c8bfbb;
-  font-family: var(--font-geist-mono, monospace), monospace;
-  font-size: clamp(.58rem, .64vw, .76rem);
-  font-weight: 550;
-  line-height: 1.15;
-  letter-spacing: .035em;
-  white-space: nowrap;
+  color: #e5dfda;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.70rem, 0.82vw, 0.98rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .03em;
+  text-align: center;
+  max-width: 13rem;
+  white-space: normal;
+  display: block;
 }
 
 .landscape-assessment {
   position: relative;
   min-height: 0;
-  padding: .55rem clamp(1rem, 2vw, 2rem) .7rem;
+  padding: .55rem clamp(1rem, 2vw, 2rem) .65rem;
   border-top: 1px solid rgba(255,67,72,.34);
   border-bottom: 1px solid rgba(255,255,255,.08);
   background: linear-gradient(180deg, rgba(255,255,255,.012), transparent);
@@ -16374,8 +16395,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .landscape-assessment > header strong {
-  font-size: clamp(.68rem, .77vw, .92rem);
-  color: #ddd8d4;
+  font-size: clamp(0.84rem, 0.98vw, 1.22rem);
+  color: #f0ece8;
 }
 
 .assessment-modalities {
@@ -16384,18 +16405,18 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   grid-template-columns: 1fr auto 1.35fr auto .85fr;
   align-items: center;
   gap: clamp(.8rem, 1.5vw, 1.6rem);
-  padding-top: .8rem;
+  padding-top: .6rem;
 }
 
 .assessment-modalities article { min-width: 0; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: clamp(.7rem, 1vw, 1.1rem); }
 .assessment-modalities article > div { min-width: 0; }
-.assessment-modalities article strong { display: block; color: #f0ece8; font: 600 clamp(.68rem, .8vw, .96rem)/1.1 var(--font-geist-mono), monospace; }
-.assessment-modalities article small { display: block; margin-top: .28rem; color: #c4bdb9; font-size: clamp(.68rem, .78vw, .93rem); line-height: 1.35; }
-.assessment-modalities > em { color: #ff3d43; font: 300 clamp(1.5rem, 2vw, 2.4rem)/1 var(--font-geist-sans), Arial, sans-serif; font-style: normal; }
+.assessment-modalities article strong { display: block; color: #ffffff; font: 700 clamp(0.80rem, 0.94vw, 1.16rem)/1.15 var(--font-geist-sans), Arial, sans-serif; letter-spacing: 0.03em; }
+.assessment-modalities article small { display: block; margin-top: .22rem; color: #d1cbc7; font-size: clamp(0.72rem, 0.84vw, 1.02rem); line-height: 1.35; }
+.assessment-modalities > em { color: #ff3d43; font: 300 clamp(1.6rem, 2.2vw, 2.6rem)/1 var(--font-geist-sans), Arial, sans-serif; font-style: normal; }
 
 .assessment-icon {
   position: relative;
-  width: clamp(3.8rem, 4.7vw, 5.6rem);
+  width: clamp(3.6rem, 4.4vw, 5.2rem);
   aspect-ratio: 1;
   display: block;
   border: 1px solid rgba(255,51,57,.22);
@@ -16423,7 +16444,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .assessment-icon.assessment-exam {
-  width: clamp(4.7rem, 5.7vw, 6.8rem);
+  width: clamp(4.4rem, 5.3vw, 6.2rem);
 }
 
 .assessment-icon svg .svg-accent {
@@ -16470,28 +16491,28 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-height: 0;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: .45rem;
+  gap: .35rem;
 }
 
 .landscape-convergence > header { display: grid; justify-items: center; gap: .18rem; text-align: center; }
-.landscape-convergence > header small { color: #c2bbb7; font-size: clamp(.68rem, .8vw, .96rem); }
+.landscape-convergence > header small { color: #d1cbc7; font-size: clamp(0.74rem, 0.86vw, 1.05rem); font-weight: 500; }
 .landscape-convergence > header strong {
   color: #f2eeea;
-  font-family: var(--font-geist-mono, monospace), monospace;
-  font-size: clamp(.94rem, 1.14vw, 1.36rem);
-  font-weight: 620;
-  line-height: 1.08;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(0.96rem, 1.18vw, 1.42rem);
+  font-weight: 700;
+  line-height: 1.15;
   letter-spacing: .04em;
 }
 .landscape-convergence > header span {
   color: #ff3c42;
-  font-family: var(--font-geist-mono, monospace), monospace;
-  font-size: clamp(1.14rem, 1.42vw, 1.7rem);
-  font-weight: 650;
-  line-height: 1.04;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: clamp(1.15rem, 1.45vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.08;
   letter-spacing: .035em;
 }
-.landscape-convergence > header p { margin: .08rem 0 0; color: #b5aeaa; font-size: clamp(0.68rem, 0.78vw, 0.96rem); line-height: 1.2; }
+.landscape-convergence > header p { margin: .08rem 0 0; color: #b5aeaa; font-size: clamp(0.72rem, 0.84vw, 1.02rem); line-height: 1.2; }
 
 .landscape-convergence-body {
   min-height: 0;
@@ -16503,7 +16524,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 .landscape-streams { min-width: 0; display: grid; grid-template-columns: minmax(12rem, .58fr) minmax(0, 1fr); align-items: stretch; }
 .stream-labels { display: grid; grid-template-rows: repeat(7, 1fr); align-items: center; }
-.stream-labels span { color: #9d9692; font: 500 clamp(.49rem, .59vw, .7rem)/1 var(--font-geist-mono), monospace; white-space: nowrap; }
+.stream-labels span { color: #9d9692; font: 500 clamp(0.68rem, 0.78vw, 0.96rem)/1 var(--font-geist-mono), monospace; white-space: nowrap; }
 .landscape-streams svg { width: 100%; height: 100%; overflow: visible; }
 .landscape-streams path { fill: none; stroke: rgba(255,55,61,.52); stroke-width: 1.15; vector-effect: non-scaling-stroke; }
 .landscape-streams circle { fill: #fff; stroke: #ff3d43; stroke-width: 1; filter: drop-shadow(0 0 5px #ff343a); }
@@ -16513,7 +16534,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   min-width: 0;
   width: 100%;
   align-self: center;
-  padding: clamp(.68rem, .92vw, .95rem) clamp(.85rem, 1.15vw, 1.15rem);
+  padding: clamp(.65rem, .88vw, .95rem) clamp(.85rem, 1.15vw, 1.15rem);
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -16526,40 +16547,35 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .landscape-therapy::before { display: none; }
 .landscape-therapy > div strong {
   color: #f4f0ec;
-  font-family: var(--font-geist-sans, Arial), Arial, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
   font-size: clamp(1.24rem, 1.62vw, 1.94rem);
-  font-weight: 620;
+  font-weight: 700;
   line-height: 1.12;
   letter-spacing: .02em;
 }
 .landscape-therapy > div strong em { color: #ff3c42; font-style: normal; }
-.landscape-therapy > div small { display: block; margin-top: .55rem; color: #aaa29e; font-size: clamp(0.68rem, 0.78vw, 0.96rem); line-height: 1.35; }
+.landscape-therapy > div small { display: block; margin-top: .55rem; color: #aaa29e; font-size: clamp(0.72rem, 0.84vw, 1.02rem); line-height: 1.35; }
 
-.therapy-icon { position: relative; width: clamp(4.7rem, 5.8vw, 6.95rem); aspect-ratio: 1; display: block; border: 1px solid rgba(255,55,61,.42); border-radius: 50%; }
+.therapy-icon { position: relative; width: clamp(4.4rem, 5.4vw, 6.5rem); aspect-ratio: 1; display: block; border: 1px solid rgba(255,55,61,.42); border-radius: 50%; }
 .therapy-icon i { position: absolute; left: 25%; top: 24%; width: 23%; height: 54%; border: 1px solid #ff444a; border-radius: 999px; transform: rotate(42deg); }
 .therapy-icon i::after { content: ""; position: absolute; left: 0; right: 0; top: 48%; height: 1px; background: #ff444a; }
 .therapy-icon b { position: absolute; right: 22%; bottom: 22%; width: 22%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(45deg, #fff 0 48%, #6e6a67 49% 52%, #fff 53%); }
 
-/* Short presentation windows need the landscape to behave as one canvas.
-   Enlarging its layout box before scaling prevents the grid's intrinsic row
-   heights from pushing the hero upward or the treatment destination below the
-   viewport. The eyebrow remains at the deck's native presentation scale. */
 @media (min-width: 701px) and (max-height: 900px) {
   .intro2-landscape-scene {
-    padding-top: 7.4vh;
-    padding-bottom: 2.1vh;
-    gap: .45rem;
+    padding-top: clamp(3.0rem, 6.5vh, 4.5rem);
+    padding-bottom: 2.0vh;
+    gap: .4rem;
   }
 
   .landscape-stage {
-    width: 121.96%;
-    height: 121.96%;
+    width: 100%;
+    height: 100%;
     align-self: start;
     justify-self: start;
-    grid-template-rows: 12rem 14.5rem 8.4rem 16.2rem;
+    grid-template-rows: minmax(6.5rem, auto) minmax(11.5rem, auto) minmax(7.2rem, auto) minmax(11.5rem, auto);
     gap: .42rem;
-    transform: scale(.82);
-    transform-origin: left top;
+    transform: none;
   }
 }
 
