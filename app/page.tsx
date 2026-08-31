@@ -2233,8 +2233,8 @@ export default function Home() {
               ))}
             </div>
             <div className="strata-legend">
-              <strong className="strata-balance-tag">1 : 1 WITHIN EACH STRATUM</strong>
               <span><b>0 / 1</b> = DRUG COUNT</span>
+              <strong className="strata-balance-tag">1 : 1 WITHIN EACH STRATUM</strong>
               <span><b>L / H</b> = &lt;30 / ≥30 MG/DAY</span>
             </div>
           </div>
