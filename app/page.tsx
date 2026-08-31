@@ -1206,17 +1206,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Systemic Immunosuppression Solution Text (Stage 1+) */}
-                <div className={`immunosuppression-text-wrap therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} style={{ marginTop: "clamp(0.75rem, 1.2vh, 1.4rem)" }}>
-                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.92rem, 1.18vw, 1.48rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
-                    SYSTEMIC IMMUNOSUPPRESSION
-                  </strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.76rem, 0.90vw, 1.12rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                    NEEDED TO ACHIEVE BOTH GOALS
-                  </span>
-                </div>
-
-                <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 2 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true" style={{ fontSize: "clamp(1.4rem, 1.7vw, 2.0rem)", fontWeight: 900, marginTop: "clamp(0.45rem, 0.7vh, 0.75rem)", height: 0, overflow: "visible", display: "block" }}>↓</span>
               </div>
 
               {/* RIGHT CONSTRAINT: INFLAMMATION FLOOR (Stage 1+) */}
@@ -1253,6 +1242,20 @@ export default function Home() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Shared therapeutic solution — deliberately below both competing goal panels. */}
+            <div className={`immunosuppression-center-block therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`}>
+              <div className="immunosuppression-text-wrap">
+                <strong className="immunosuppression-hero-title">
+                  SYSTEMIC IMMUNOSUPPRESSION
+                </strong>
+                <span className="immunosuppression-hero-sub">
+                  NEEDED TO ACHIEVE BOTH GOALS
+                </span>
+              </div>
+
+              <span className={`arrow-to-res therapeutic-stage-item ${therapeuticGoalStage >= 2 ? "stage-visible" : "stage-hidden"}`} aria-hidden="true">↓</span>
             </div>
 
             {/* MIDDLE ROW: RESOLUTION EQUATION + MUST TRIAL EVIDENCE ANCHOR (Stage 2+) */}

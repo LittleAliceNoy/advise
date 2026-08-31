@@ -14270,7 +14270,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin: 0.15rem auto 0;
+  margin: clamp(0.45rem, 0.9vh, 0.9rem) auto 0;
+  flex-shrink: 0;
 }
 
 .immunosuppression-text-wrap {
@@ -14278,7 +14279,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: clamp(0.75rem, 1.2vh, 1.4rem);
+  margin-top: 0;
 }
 
 .immunosuppression-hero-title {
@@ -14308,9 +14309,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   font-weight: 900;
   line-height: 1;
   display: block;
-  height: 0;
-  margin-top: clamp(0.68rem, 0.80vh, 0.98rem);
-  overflow: visible;
+  height: clamp(1.35rem, 1.8vh, 1.85rem);
+  margin-top: clamp(0.35rem, 0.55vh, 0.55rem);
+  overflow: hidden;
   text-shadow: 0 0 10px rgba(255, 77, 82, 0.5);
 }
 
@@ -14321,7 +14322,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   gap: clamp(0.8rem, 1.5vw, 1.8rem);
   align-items: center;
   width: 100%;
-  margin-top: -0.55rem;
+  margin-top: 0;
 }
 
 .resolution-equation-block {
