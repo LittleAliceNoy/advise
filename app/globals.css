@@ -1883,6 +1883,52 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .diagnosis-suite>div b { color:var(--red);font: 800 clamp(0.84rem, 1.0vw, 1.25rem) var(--font-geist-mono),monospace;letter-spacing:.05em;white-space:nowrap;background:transparent;padding:0;border:none;text-shadow:0 0 10px rgba(255,45,45,.35); }
 @keyframes followupSignal { 0%{left:2%;opacity:0} 4%{opacity:1} 96%{left:97%;opacity:1} 100%{left:97%;opacity:0} }
 
+/* Page 12 — staged follow-up reveal.
+   The static handout overrides had unintentionally made every panel visible on
+   entry. Restore the presenter sequence: timeline, every-visit/diagnosis,
+   then milestone evaluations. */
+.followup-panel {
+  transition: opacity .42s ease, transform .42s cubic-bezier(.16, 1, .3, 1), filter .42s ease;
+}
+.followup-stage-0 .followup-panel {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(.9rem) !important;
+  filter: blur(2px);
+}
+.followup-stage-0 .visit-node {
+  background: #121014;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.25);
+}
+.followup-stage-0 .visit-node.milestone {
+  box-shadow: 0 0 0 1px rgba(255,255,255,.3);
+}
+.followup-stage-1 .visit-suite,
+.followup-stage-1 .diagnosis-suite,
+.followup-stage-2 .visit-suite,
+.followup-stage-2 .diagnosis-suite,
+.followup-stage-2 .milestone-suite {
+  opacity: 1 !important;
+  pointer-events: auto;
+  transform: translateY(0) !important;
+  filter: none;
+}
+.followup-stage-1 .milestone-suite {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(.9rem) !important;
+  filter: blur(2px);
+}
+.followup-stage-1 .visit-node,
+.followup-stage-2 .visit-node {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px var(--red),0 0 14px rgba(255,45,45,.4);
+}
+.followup-stage-1 .visit-node.milestone,
+.followup-stage-2 .visit-node.milestone {
+  box-shadow: 0 0 0 2px #956fff,0 0 16px rgba(149,111,255,.5);
+}
+
 .outcomes-scene,
 .outcomes-original-scene { align-items:flex-start;padding-top:10.5vh; }
 .outcomes-copy { width:45vw; }
@@ -8502,6 +8548,44 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   opacity: .13;
   filter: saturate(.42);
   pointer-events: none;
+}
+
+/* Page 13 — restore the three-click methodology reveal.
+   Page entry is intentionally sparse; primary outcome, secondary outcomes,
+   and inactive-uveitis definition appear in that order. */
+.outcomes-scene.outcomes-story-0 .endpoint-stage,
+.outcomes-scene.outcomes-story-0 .outcomes-secondary-band,
+.outcomes-scene.outcomes-story-0 .outcomes-inactive-popup {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(.9rem) !important;
+}
+.outcomes-scene.outcomes-story-1 .endpoint-stage {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+.outcomes-scene.outcomes-story-1 .outcomes-secondary-band,
+.outcomes-scene.outcomes-story-1 .outcomes-inactive-popup {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(.9rem) !important;
+}
+.outcomes-scene.outcomes-story-2 .endpoint-stage,
+.outcomes-scene.outcomes-story-2 .outcomes-secondary-band {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+.outcomes-scene.outcomes-story-2 .outcomes-inactive-popup {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(.9rem) !important;
+}
+.outcomes-scene.outcomes-story-3 .outcomes-inactive-popup {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
 }
 .outcomes-inactive-popup {
   position: absolute;
