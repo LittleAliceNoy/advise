@@ -1131,8 +1131,8 @@ export default function Home() {
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
                   </div>
-                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
+                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.78rem, 0.92vw, 1.15rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
                 </div>
               </div>
 
@@ -1207,10 +1207,10 @@ export default function Home() {
 
                 {/* Systemic Immunosuppression Solution Text (Stage 1+) */}
                 <div className={`immunosuppression-text-wrap therapeutic-stage-item ${therapeuticGoalStage >= 1 ? "stage-visible" : "stage-hidden"}`} style={{ marginTop: "clamp(0.75rem, 1.2vh, 1.4rem)" }}>
-                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.85rem, 1.08vw, 1.38rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
+                  <strong className="immunosuppression-hero-title" style={{ fontSize: "clamp(0.92rem, 1.18vw, 1.48rem)", fontWeight: 900, letterSpacing: "0.06em", whiteSpace: "nowrap", color: "#ffffff" }}>
                     SYSTEMIC IMMUNOSUPPRESSION
                   </strong>
-                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                  <span className="immunosuppression-hero-sub" style={{ fontSize: "clamp(0.76rem, 0.90vw, 1.12rem)", fontWeight: 700, marginTop: "0.15rem", color: "#ffffff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                     NEEDED TO ACHIEVE BOTH GOALS
                   </span>
                 </div>
@@ -1248,7 +1248,7 @@ export default function Home() {
 
                 <div className="floor-box">
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
                 </div>
               </div>
 
@@ -1265,14 +1265,14 @@ export default function Home() {
                       <path d="m12.5 16 2.5 2.5 5-5" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="res-label" style={{ fontSize: "clamp(0.76rem, 0.92vw, 1.20rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
+                  <span className="res-label" style={{ fontSize: "clamp(0.80rem, 0.98vw, 1.25rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.12, textAlign: "center" }}>INACTIVE<br />UVEITIS</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
 
                 <div className="resolution-item res-dose">
                   <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
-                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
+                  <span className="res-dose-unit" style={{ fontSize: "clamp(0.78rem, 0.92vw, 1.15rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
                 </div>
 
                 <span className="res-operator" aria-hidden="true">=</span>
@@ -1296,42 +1296,42 @@ export default function Home() {
               {/* MUST TRIAL LANDMARK EVIDENCE STAMP */}
               <div className="must-landmark-panel">
                 <div className="must-panel-header">
-                  <div className="must-star-badge" aria-hidden="true">
+                  <div className="must-star-badge" aria-hidden="true" style={{ width: "26px", height: "26px" }}>
                     <svg viewBox="0 0 24 24" className="star-svg">
                       <circle cx="12" cy="12" r="10" fill="rgba(255, 45, 45, 0.15)" stroke="#ff4d52" strokeWidth="1.4" />
                       <path d="M12 5.5 L13.5 9.5 H17.5 L14.2 12 L15.5 16 L12 13.5 L8.5 16 L9.8 12 L6.5 9.5 H10.5 Z" fill="#ff4d52" />
                     </svg>
                   </div>
                   <div className="must-panel-titles">
-                    <span className="must-badge-tag">LANDMARK EVIDENCE</span>
-                    <div className="must-main-title">
+                    <span className="must-badge-tag" style={{ fontSize: "clamp(0.78rem, 0.94vw, 1.18rem)", fontWeight: 800, letterSpacing: "0.08em" }}>LANDMARK EVIDENCE</span>
+                    <div className="must-main-title" style={{ fontSize: "clamp(1.08rem, 1.38vw, 1.70rem)" }}>
                       <strong style={{ fontWeight: 900, color: "#ffffff" }}>MUST TRIAL</strong>
                       <span className="must-title-sep">·</span>
-                      <span style={{ fontWeight: 400, color: "#d6d3d1" }}>7-YEAR FOLLOW-UP</span>
+                      <span style={{ fontWeight: 500, color: "#e5e2e0" }}>7-YEAR FOLLOW-UP</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="must-panel-body">
-                  <p className="must-body-regimen">Systemic corticosteroids + immunosuppression</p>
+                  <p className="must-body-regimen" style={{ fontSize: "clamp(0.76rem, 0.90vw, 1.12rem)", fontWeight: 700 }}>Systemic corticosteroids + immunosuppression</p>
 
-                  <div className="must-findings-group" style={{ margin: "0.15rem 0", display: "flex", flexDirection: "column", gap: "0.22rem" }}>
-                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
-                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                  <div className="must-findings-group" style={{ margin: "0.2rem 0", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.92rem, 1.15vw, 1.45rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
+                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         SUPERIOR LONG-TERM VISUAL ACUITY
                       </strong>
                     </div>
 
-                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.82rem, 1.00vw, 1.25rem)", fontWeight: 300, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.68rem, 0.78vw, 0.96rem)", fontWeight: 800, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                    <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                      <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.95rem, 1.18vw, 1.48rem)", fontWeight: 400, lineHeight: 1, flexShrink: 0 }}>≈</span>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS
                       </span>
                     </div>
                   </div>
 
-                  <small className="must-body-comparator">vs long-acting intravitreal corticosteroid implant</small>
+                  <small className="must-body-comparator" style={{ fontSize: "clamp(0.72rem, 0.85vw, 1.05rem)", fontWeight: 600 }}>vs long-acting intravitreal corticosteroid implant</small>
                 </div>
               </div>
             </div>
