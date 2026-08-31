@@ -1314,25 +1314,25 @@ export default function Home() {
                 </div>
 
                 <div className="must-panel-body">
-                  <p className="must-body-regimen" style={{ fontSize: "clamp(0.76rem, 0.90vw, 1.12rem)", fontWeight: 700 }}>Systemic corticosteroids + immunosuppression</p>
+                  <p className="must-body-regimen" style={{ fontSize: "clamp(0.76rem, 0.90vw, 1.12rem)", fontWeight: 450 }}>Systemic corticosteroids + immunosuppression</p>
 
                   <div className="must-findings-group" style={{ margin: "0.2rem 0", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
-                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.92rem, 1.15vw, 1.45rem)", fontWeight: 900, lineHeight: 1, flexShrink: 0 }}>↑</span>
-                      <strong className="claim-highlight" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-arrow" style={{ color: "#ff4d52", fontSize: "clamp(0.92rem, 1.15vw, 1.45rem)", fontWeight: 500, lineHeight: 1, flexShrink: 0 }}>↑</span>
+                      <span className="claim-highlight" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 500, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.2, textShadow: "0 0 6px rgba(255, 77, 82, 0.3)" }}>
                         SUPERIOR LONG-TERM VISUAL ACUITY
-                      </strong>
+                      </span>
                     </div>
 
                     <div className="must-finding-line" style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
                       <span className="claim-approx" style={{ color: "#ff4d52", fontSize: "clamp(0.95rem, 1.18vw, 1.48rem)", fontWeight: 400, lineHeight: 1, flexShrink: 0 }}>≈</span>
-                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 900, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.45)" }}>
+                      <span className="claim-safety-text" style={{ fontSize: "clamp(0.78rem, 0.96vw, 1.20rem)", fontWeight: 500, color: "#ff4d52", letterSpacing: "0.02em", lineHeight: 1.25, textShadow: "0 0 6px rgba(255, 77, 82, 0.3)" }}>
                         NO INCREASE IN SYSTEMIC SIDE EFFECTS
                       </span>
                     </div>
                   </div>
 
-                  <small className="must-body-comparator" style={{ fontSize: "clamp(0.72rem, 0.85vw, 1.05rem)", fontWeight: 600 }}>vs long-acting intravitreal corticosteroid implant</small>
+                  <small className="must-body-comparator" style={{ fontSize: "clamp(0.72rem, 0.85vw, 1.05rem)", fontWeight: 500 }}>vs long-acting intravitreal corticosteroid implant</small>
                 </div>
               </div>
             </div>
