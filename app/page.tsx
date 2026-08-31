@@ -621,8 +621,15 @@ export default function Home() {
     return () => clearInspectTimers();
   }, []);
 
-  const goTo = (index: number) => {
-    document.getElementById(chapters[index]?.id)?.scrollIntoView({ behavior: "smooth" });
+  const goTo = (index: number, immediate: boolean = false) => {
+    const el = document.getElementById(chapters[index]?.id);
+    if (el) {
+      el.scrollIntoView({ behavior: immediate ? "auto" : "smooth" });
+      const deck = deckRef.current;
+      if (immediate && deck) {
+        deck.scrollTop = el.offsetTop;
+      }
+    }
   };
 
   useEffect(() => {
@@ -710,7 +717,7 @@ export default function Home() {
       if (slideParam) {
         const slideIndex = parseInt(slideParam, 10) - 1;
         if (!isNaN(slideIndex) && slideIndex >= 0 && slideIndex < chapters.length) {
-          goTo(slideIndex);
+          goTo(slideIndex, true);
         }
       }
     }
