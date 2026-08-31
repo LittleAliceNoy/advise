@@ -17419,3 +17419,55 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     color: #b9afc3;
   }
 }
+
+/* Page 03 — clarify the paired clinical constraints while keeping the taper restrained. */
+@media (min-width: 701px) {
+  #therapeutic-goal .constraint-desc {
+    font-size: clamp(.80rem, .96vw, 1.14rem);
+    font-weight: 500;
+    color: #ded8d4;
+  }
+
+  #therapeutic-goal .col-inflammation-floor .constraint-title {
+    color: #c39aff;
+    text-shadow: 0 0 11px rgba(192, 132, 252, .28);
+  }
+
+  #therapeutic-goal .col-inflammation-floor .constraint-desc {
+    color: #e2dce5;
+  }
+
+  #therapeutic-goal .col-inflammation-floor .icon-eye-target {
+    filter: drop-shadow(0 0 12px rgba(192, 132, 252, .62));
+  }
+
+  #therapeutic-goal .ceiling-box,
+  #therapeutic-goal .floor-box {
+    width: calc(100% - clamp(1rem, 1.8vw, 2.2rem));
+    align-self: center;
+  }
+
+  #therapeutic-goal.stage-2 .dilemma-middle-row,
+  #therapeutic-goal.stage-3 .dilemma-middle-row {
+    transform: translateY(clamp(-.34rem, -.50vh, -.54rem)) !important;
+  }
+
+  #therapeutic-goal.stage-3 .dilemma-bottom-row {
+    transform: translateY(clamp(-.46rem, -.66vh, -.72rem)) !important;
+  }
+
+  #therapeutic-goal .bar-axis-row {
+    height: 13px;
+  }
+
+  #therapeutic-goal .bar-tick {
+    width: 2px;
+    height: 13px;
+  }
+
+  #therapeutic-goal .bar-gradient-line {
+    height: 2px;
+    background: linear-gradient(90deg, #ff4d52 0%, rgba(255, 77, 82, .68) 35%, rgba(192, 132, 252, .66) 75%, #c084fc 100%);
+    box-shadow: 0 0 5px rgba(192, 132, 252, .20);
+  }
+}

@@ -1130,7 +1130,7 @@ export default function Home() {
 
                 <div className="ceiling-box">
                   <div className="ceiling-dose-wrap">
-                    <strong className="ceiling-dose" style={{ fontSize: "clamp(2.6rem, 3.6vw, 4.4rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 20px rgba(255, 77, 82, 0.55)" }}>≤7.5</strong>
+                    <strong className="ceiling-dose" style={{ fontSize: "clamp(2.3rem, 3.15vw, 3.8rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 16px rgba(255, 77, 82, 0.48)" }}>≤7.5</strong>
                   </div>
                   <span className="ceiling-unit" style={{ fontSize: "clamp(0.78rem, 0.92vw, 1.15rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
                   <small className="ceiling-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
@@ -1275,7 +1275,7 @@ export default function Home() {
                 <span className="res-operator" aria-hidden="true" style={{ fontSize: "clamp(1.8rem, 2.5vw, 3.2rem)", fontWeight: 300, color: "#ff4d52", lineHeight: 1 }}>+</span>
 
                 <div className="resolution-item res-dose">
-                  <strong className="res-dose-num" style={{ fontSize: "clamp(3.0rem, 4.2vw, 5.2rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
+                  <strong className="res-dose-num" style={{ fontSize: "clamp(2.75rem, 3.75vw, 4.65rem)", fontWeight: 900, color: "#ff4d52", lineHeight: 0.8, display: "block" }}>≤7.5</strong>
                   <span className="res-dose-unit" style={{ fontSize: "clamp(0.78rem, 0.92vw, 1.15rem)", fontWeight: 800, color: "#e7e5e4", display: "block", marginTop: "0.2rem", letterSpacing: "0.08em" }}>MG / DAY</span>
                 </div>
 
