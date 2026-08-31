@@ -17640,17 +17640,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     border-width: 1.5px;
   }
 
+  #therapeutic-goal .ceiling-dose-wrap .ceiling-unit {
+    display: inline;
+    margin: 0 0 .08em .48rem;
+    font-size: clamp(.72rem, .84vw, 1.02rem);
+    line-height: 1;
+  }
+
   #therapeutic-goal .must-main-title > span:last-child {
     font-size: .78em;
   }
 
   #therapeutic-goal.stage-2 .dilemma-middle-row,
   #therapeutic-goal.stage-3 .dilemma-middle-row {
-    transform: translateY(clamp(-.56rem, -.80vh, -.88rem)) !important;
+    transform: translateY(clamp(-1.8rem, -2.8vh, -2.6rem)) !important;
   }
 
   #therapeutic-goal.stage-3 .dilemma-bottom-row {
-    transform: translateY(clamp(-.72rem, -1.02vh, -1.12rem)) !important;
+    transform: translateY(clamp(-1.65rem, -2.4vh, -2.25rem)) !important;
   }
 
   #therapeutic-goal .bar-axis-row {

@@ -1131,8 +1131,8 @@ export default function Home() {
                 <div className="ceiling-box">
                   <div className="ceiling-dose-wrap">
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.3rem, 3.15vw, 3.8rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 16px rgba(255, 77, 82, 0.48)" }}>≤7.5</strong>
+                    <span className="ceiling-unit">MG / DAY</span>
                   </div>
-                  <span className="ceiling-unit" style={{ fontSize: "clamp(0.78rem, 0.92vw, 1.15rem)", fontWeight: 700, display: "block", marginTop: "0.25rem" }}>MG / DAY</span>
                   <small className="ceiling-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
                 </div>
               </div>
