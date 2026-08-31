@@ -2203,11 +2203,11 @@ export default function Home() {
             <h2>Four strata.<br /><em>One balanced split.</em></h2>
             <p className="lede">Participants were stratified by current immunosuppression and anticipated prednisone dose, then randomized within each stratum using varying-size permuted blocks to maintain the expected allocation ratio.</p>
             <div className="randomization-timeline" aria-label="Steps completed before randomization assignment was revealed">
-              <span><b>01</b><em>CONSENT</em></span>
-              <span><b>02</b><em>BASELINE CHECK</em></span>
-              <span><b>03</b><em>ELIGIBLE</em></span>
-              <span><b>04</b><em>RANDOMIZATION</em><small>BY COORDINATING CENTER</small></span>
-              <span className="timeline-reveal"><b>05</b><em>REVEAL</em><small>VIA WEB PORTAL</small></span>
+              <span><div className="timeline-step-head"><b>01</b><em>CONSENT</em></div></span>
+              <span><div className="timeline-step-head"><b>02</b><em>BASELINE CHECK</em></div></span>
+              <span><div className="timeline-step-head"><b>03</b><em>ELIGIBLE</em></div></span>
+              <span><div className="timeline-step-head"><b>04</b><em>RANDOMIZATION</em></div><small>BY COORDINATING CENTER</small></span>
+              <span className="timeline-reveal"><div className="timeline-step-head"><b>05</b><em>REVEAL</em></div><small>VIA WEB PORTAL</small></span>
             </div>
           </div>
 
