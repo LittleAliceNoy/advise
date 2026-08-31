@@ -17528,20 +17528,20 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 /* Page 13 — give the larger inactive-uveitis definition the air it needs. */
 @media (min-width: 701px) {
   #outcomes .outcomes-inactive-popup {
-    top: 22.7%;
+    top: 18%;
     left: 8vw;
     right: 8vw;
-    height: 54.6%;
+    height: 64%;
   }
 
   #outcomes .outcomes-inactive-popup > header {
-    min-height: 8.25rem;
+    min-height: 8.9rem;
     gap: .72rem;
   }
 
   #outcomes .outcomes-inactive-popup .inactive-definition-groups {
-    height: calc(100% - 8.25rem);
-    padding: clamp(1.35rem, 2.8vh, 2.3rem) clamp(1.55rem, 2.8vw, 3.1rem);
+    height: calc(100% - 8.9rem);
+    padding: clamp(1.55rem, 3.2vh, 2.65rem) clamp(1.75rem, 3.1vw, 3.45rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical {
@@ -17579,40 +17579,40 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical h3,
   #outcomes .outcomes-inactive-popup .inactive-imaging h3 {
-    font-size: clamp(1.68rem, 1.94vw, 2.28rem);
+    font-size: clamp(2.10rem, 2.50vw, 3.00rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical article > i {
-    width: clamp(4.2rem, 5.3vw, 6.25rem);
+    width: clamp(4.9rem, 6.1vw, 7.25rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical span {
-    font-size: clamp(1.60rem, 1.86vw, 2.18rem);
+    font-size: clamp(1.95rem, 2.25vw, 2.70rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical strong {
-    font-size: clamp(1.78rem, 2.06vw, 2.42rem);
+    font-size: clamp(2.15rem, 2.50vw, 3.00rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-clinical small {
-    font-size: clamp(1.32rem, 1.54vw, 1.80rem);
+    font-size: clamp(1.55rem, 1.85vw, 2.20rem);
     line-height: 1.34;
   }
 
   #outcomes .outcomes-inactive-popup .inactive-imaging article > i {
-    width: clamp(3.25rem, 4.15vw, 4.85rem);
+    width: clamp(3.75rem, 4.65vw, 5.55rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-imaging span {
-    font-size: clamp(1.36rem, 1.58vw, 1.86rem);
+    font-size: clamp(1.50rem, 1.75vw, 2.10rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-imaging strong {
-    font-size: clamp(1.54rem, 1.78vw, 2.08rem);
+    font-size: clamp(1.75rem, 2.05vw, 2.45rem);
   }
 
   #outcomes .outcomes-inactive-popup .inactive-imaging small {
-    font-size: clamp(1.28rem, 1.48vw, 1.74rem);
+    font-size: clamp(1.45rem, 1.70vw, 2.05rem);
     line-height: 1.30;
   }
 }
