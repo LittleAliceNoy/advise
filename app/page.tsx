@@ -2232,8 +2232,8 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <div className="strata-balance"><strong>1 : 1 WITHIN EACH STRATUM</strong></div>
             <div className="strata-legend">
+              <strong className="strata-balance-tag">1 : 1 WITHIN EACH STRATUM</strong>
               <span><b>0 / 1</b> = DRUG COUNT</span>
               <span><b>L / H</b> = &lt;30 / ≥30 MG/DAY</span>
             </div>
