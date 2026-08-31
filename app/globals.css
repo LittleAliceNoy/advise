@@ -15596,29 +15596,24 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   max-height: 100svh;
   overflow: hidden;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(2.0rem, 4.2vh, 3.4rem) clamp(2vw, 4.5vw, 4.5rem) clamp(1.2rem, 2.5vh, 2.2rem);
 }
 
 .intro6-eyebrow {
-  position: absolute;
-  top: clamp(2.4rem, 5.0vh, 3.6rem);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  margin: 0;
+  margin: 0 0 clamp(0.4rem, 0.7vh, 0.8rem);
   white-space: nowrap;
 }
 
 .intro6-header {
-  position: absolute;
-  top: clamp(4.5rem, 8.8vh, 6.5rem);
-  left: 0;
-  right: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  z-index: 2;
 }
 
 .intro6-header h2 {
@@ -15638,26 +15633,25 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 }
 
 .intro6-content-stage {
-  position: absolute;
-  inset: 0;
+  flex: 1;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 /* CONVERGENCE HERO GRID (CID vs ADA → ? → NO DIRECT COMPARISON) */
 .intro6-convergence-grid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: min(86rem, 92vw);
   display: grid;
   grid-template-columns: 1.15fr 1.6fr 1.15fr;
   align-items: center;
   gap: clamp(1.0rem, 2.0vw, 3.2rem);
   padding: 0;
-  margin: 0;
+  margin: auto 0;
   pointer-events: auto;
   z-index: 2;
 }
@@ -15783,20 +15777,17 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 
 /* BOTTOM REVEAL: TECHNICAL FIELD FORESHADOWING SLIDE 07 METHODS PANEL */
 .intro6-bottom-reveal {
-  position: absolute;
-  bottom: clamp(1.6rem, 3.8vh, 3.2rem);
-  left: 50%;
-  transform: translateX(-50%);
   width: min(80rem, 90vw);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.75rem, 1.4vh, 1.3rem) clamp(1.2rem, 3.0vw, 3.5rem);
+  padding: clamp(0.6rem, 1.1vh, 1.0rem) clamp(1.2rem, 3.0vw, 3.5rem);
   background: linear-gradient(180deg, rgba(255, 45, 45, 0.03) 0%, rgba(255, 45, 45, 0.006) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   box-sizing: border-box;
+  margin-top: 0;
   pointer-events: auto;
   z-index: 2;
 }
