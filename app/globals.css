@@ -18098,7 +18098,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   #statistics-redesign .analysis-framework-column {
     grid-template-rows: 5.5rem minmax(7.4rem, 1fr) minmax(4.1rem, .48fr) minmax(4.45rem, .5fr) minmax(9.5rem, 1.02fr);
     row-gap: clamp(.58rem, .74vh, .78rem);
-    padding: clamp(1rem, 1.7vh, 1.45rem) clamp(.9rem, 1.3vw, 1.45rem) clamp(.95rem, 1.4vh, 1.25rem);
+    padding: clamp(.62rem, .95vh, .82rem) clamp(.9rem, 1.3vw, 1.45rem) clamp(.95rem, 1.4vh, 1.25rem);
   }
 
   #statistics-redesign .analysis-framework-column header {
