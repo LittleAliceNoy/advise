@@ -18119,6 +18119,9 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     line-height: 1.32;
     letter-spacing: .06em;
   }
+  #statistics-redesign .analysis-framework-column header .analysis-heading-nowrap {
+    white-space: nowrap;
+  }
 
   #statistics-redesign .framework-question small,
   #statistics-redesign .framework-model small {

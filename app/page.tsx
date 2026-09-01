@@ -2526,7 +2526,7 @@ export default function Home() {
             </article>
 
             <article className="analysis-framework-column">
-              <header><b>04</b><span>CUMULATIVE / RECURRENT OUTCOMES</span></header>
+              <header><b>04</b><span>CUMULATIVE /<br /><span className="analysis-heading-nowrap">RECURRENT OUTCOMES</span></span></header>
               <section className="framework-question"><small>QUESTION</small><h3>How did accumulated prednisone exposure and recurrent systemic events differ?</h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-accumulation" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic accumulated exposure trajectories"><path d="M8 80 43 72 78 60 113 47 148 36 190 20 232 9V80Z" /><path d="M8 80 43 77 78 70 113 61 148 52 190 43 232 33V80Z" /></svg>
