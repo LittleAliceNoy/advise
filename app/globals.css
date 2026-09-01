@@ -18096,8 +18096,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #statistics-redesign .analysis-framework-column {
-    grid-template-rows: 3.35rem minmax(9.6rem, 1fr) minmax(5.2rem, .56fr) minmax(5.6rem, .62fr) minmax(11.5rem, 1.34fr);
-    row-gap: clamp(.85rem, 1.05vh, 1.1rem);
+    grid-template-rows: 5.5rem minmax(7.4rem, 1fr) minmax(4.1rem, .48fr) minmax(4.45rem, .5fr) minmax(9.5rem, 1.02fr);
+    row-gap: clamp(.58rem, .74vh, .78rem);
     padding: clamp(1rem, 1.7vh, 1.45rem) clamp(.9rem, 1.3vw, 1.45rem) clamp(.95rem, 1.4vh, 1.25rem);
   }
 
@@ -18132,8 +18132,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #statistics-redesign .framework-question h3 {
-    font-size: clamp(1.18rem, 1.48vw, 1.72rem);
-    line-height: 1.32;
+    font-size: clamp(1.08rem, 1.30vw, 1.5rem);
+    line-height: 1.28;
     letter-spacing: -.025em;
   }
 
@@ -18151,19 +18151,19 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #statistics-redesign .framework-model h4 {
-    margin-top: .6rem;
+    margin-top: .42rem;
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-    font-size: clamp(1.16rem, 1.38vw, 1.62rem);
+    font-size: clamp(1.04rem, 1.18vw, 1.38rem);
     font-weight: 500;
-    line-height: 1.34;
+    line-height: 1.27;
     letter-spacing: .01em;
   }
 
   #statistics-redesign .analysis-framework-column ul {
-    gap: clamp(.9rem, 1.25vh, 1.35rem);
+    gap: clamp(.55rem, .72vh, .76rem);
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-    font-size: clamp(.98rem, 1.14vw, 1.32rem);
-    line-height: 1.48;
+    font-size: clamp(.82rem, .92vw, 1.08rem);
+    line-height: 1.36;
   }
 
   #statistics-redesign .analysis-framework-column li {
