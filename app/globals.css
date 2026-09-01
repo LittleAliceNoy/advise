@@ -17730,3 +17730,11 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     box-shadow: 0 0 5px rgba(192, 132, 252, .20);
   }
 }
+
+/* Page 06 — bring the ADVISE reveal toward the unanswered comparison. */
+@media (min-width: 701px) {
+  #evidence-gap .intro6-bottom-reveal {
+    transform: translateY(-7vh) !important;
+    border-top: 0 !important;
+  }
+}
