@@ -18000,3 +18000,76 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     display: block;
   }
 }
+
+/* Page 16 — lift the CONSORT detail to presentation reading size. */
+@media (min-width: 701px) {
+  #participant-flow .flow-copy .lede {
+    font-size: clamp(1.06rem, 1.24vw, 1.48rem);
+    line-height: 1.48;
+  }
+
+  #participant-flow .assessed-node strong,
+  #participant-flow .excluded-node header strong,
+  #participant-flow .consort-randomized strong {
+    font-size: clamp(1.18rem, 1.38vw, 1.64rem);
+  }
+
+  #participant-flow .assessed-node span,
+  #participant-flow .consort-randomized span {
+    font-size: clamp(1.0rem, 1.16vw, 1.38rem);
+  }
+
+  #participant-flow .excluded-node {
+    height: 10.8rem;
+  }
+
+  #participant-flow .excluded-node dt,
+  #participant-flow .excluded-node dd {
+    font-size: clamp(.96rem, 1.10vw, 1.32rem);
+    line-height: 1.38;
+  }
+
+  #participant-flow .consort-randomized {
+    top: 8.55rem;
+    height: 4.95rem;
+  }
+
+  #participant-flow .consort-arms {
+    top: 15.95rem;
+    bottom: 1.7rem;
+  }
+
+  #participant-flow .assignment-box > strong {
+    font-size: clamp(1.10rem, 1.28vw, 1.52rem);
+  }
+
+  #participant-flow .assignment-box > span,
+  #participant-flow .visit-label span {
+    font-size: clamp(.96rem, 1.10vw, 1.30rem);
+  }
+
+  #participant-flow .visit-label strong {
+    font-size: clamp(1.08rem, 1.24vw, 1.48rem);
+  }
+
+  #participant-flow .consort-arm dt,
+  #participant-flow .consort-arm dd {
+    font-size: clamp(.94rem, 1.08vw, 1.28rem);
+    line-height: 1.42;
+  }
+
+  #participant-flow .consort-arm .outcome-box dl div:first-child dd,
+  #participant-flow .consort-arm .last-visit-box dl div:first-child dd {
+    font-size: clamp(1.10rem, 1.28vw, 1.52rem);
+  }
+
+  #participant-flow .flow-strata-categories span,
+  #participant-flow .flow-strata-categories b,
+  #participant-flow .flow-strata-summary footer {
+    font-size: clamp(.76rem, .90vw, 1.08rem);
+  }
+
+  #participant-flow .consort-notes {
+    font-size: clamp(.80rem, .94vw, 1.12rem);
+  }
+}
