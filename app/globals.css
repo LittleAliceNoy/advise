@@ -17854,3 +17854,127 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     font-size: clamp(.72rem, .84vw, 1.0rem);
   }
 }
+
+/* Page 18 — restore clearance between treatment phases and outcome readouts. */
+@media (min-width: 701px) {
+  #treatment-results-redesign.txr-dashboard-scene {
+    padding: 5.4vh 5vw 3vh;
+  }
+
+  #treatment-results-redesign .txrd-header {
+    flex: 0 0 20.5vh;
+    min-height: 0;
+    margin-bottom: 1.1vh;
+  }
+
+  #treatment-results-redesign .txrd-grid-main {
+    flex: 0 0 30.5vh;
+    height: 30.5vh;
+    min-height: 0;
+    margin-bottom: 1.1vh;
+  }
+
+  #treatment-results-redesign .txrd-grid-outcomes {
+    flex: 0 0 18.5vh;
+    height: 18.5vh;
+    min-height: 0;
+    margin-bottom: 1.1vh;
+  }
+
+  #treatment-results-redesign .txrd-footer {
+    flex: 0 0 11.5vh;
+    min-height: 11.5vh;
+    height: 11.5vh;
+    padding: .72rem .9rem;
+  }
+
+  #treatment-results-redesign .txrd-col > header {
+    padding: .72rem .9rem .62rem;
+  }
+
+  #treatment-results-redesign .txrd-arms {
+    padding: .76rem .88rem .68rem;
+    gap: .7rem;
+  }
+
+  #treatment-results-redesign .txrd-arm-row {
+    gap: .82rem;
+    padding: .22rem .45rem;
+  }
+
+  #treatment-results-redesign .txrd-high-dose-subgroup {
+    margin: .12rem .86rem .68rem;
+    line-height: 1.3;
+  }
+
+  #treatment-results-redesign .txrd-pathways .txrd-arms {
+    padding: .68rem .84rem;
+    gap: .68rem;
+  }
+
+  #treatment-results-redesign .txrd-pathway-card {
+    padding: .62rem .78rem;
+    gap: .42rem;
+  }
+
+  #treatment-results-redesign .txrd-pathway-hero {
+    min-height: 2.8rem;
+    gap: .56rem;
+  }
+
+  #treatment-results-redesign .txrd-pathway-secondary {
+    padding-top: .28rem;
+    line-height: 1.25;
+  }
+
+  #treatment-results-redesign .txrd-pathway-composition {
+    padding-top: .34rem;
+    gap: .82rem;
+    transform: none;
+  }
+
+  #treatment-results-redesign .txrd-pathway-ada > * {
+    transform: none;
+  }
+
+  #treatment-results-redesign .txrd-pathway-ada .txrd-ada-orbit {
+    transform: translateX(-.38rem);
+  }
+
+  #treatment-results-redesign .txrd-outcomes-title,
+  #treatment-results-redesign .txrd-outcome {
+    padding: .78rem .9rem;
+  }
+
+  #treatment-results-redesign .txrd-outcome-header {
+    gap: .5rem;
+    margin-bottom: .48rem;
+  }
+
+  #treatment-results-redesign .txrd-outcome-header strong {
+    font-size: clamp(.66rem, .73vw, .84rem);
+    line-height: 1.2;
+  }
+
+  #treatment-results-redesign .txrd-outcome-header span,
+  #treatment-results-redesign .txrd-vs small,
+  #treatment-results-redesign .txrd-vs span {
+    font-size: clamp(.56rem, .62vw, .72rem);
+  }
+
+  #treatment-results-redesign .txrd-outcome footer {
+    margin-top: .5rem;
+    padding-top: .48rem;
+    line-height: 1.3;
+  }
+
+  #treatment-results-redesign .txrd-escalation-details {
+    padding-top: .48rem;
+    gap: .5rem;
+  }
+
+  #treatment-results-redesign .txrd-footer-card {
+    gap: .72rem;
+    padding-right: 1rem;
+  }
+}
