@@ -17806,3 +17806,51 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     row-gap: clamp(2.35rem, 4.5vh, 3.8rem);
   }
 }
+
+/* Page 16 — participant accountability needs presentation-scale detail text. */
+@media (min-width: 701px) {
+  #participant-flow .flow-copy .lede {
+    font-size: clamp(.98rem, 1.16vw, 1.40rem);
+    line-height: 1.48;
+  }
+
+  #participant-flow .assessed-node strong,
+  #participant-flow .excluded-node header strong,
+  #participant-flow .consort-randomized strong {
+    font-size: clamp(1.02rem, 1.18vw, 1.42rem);
+  }
+
+  #participant-flow .assessed-node span,
+  #participant-flow .consort-randomized span {
+    font-size: clamp(.88rem, 1.02vw, 1.22rem);
+  }
+
+  #participant-flow .excluded-node dt,
+  #participant-flow .excluded-node dd {
+    font-size: clamp(.84rem, .98vw, 1.18rem);
+    line-height: 1.42;
+  }
+
+  #participant-flow .assignment-box > strong {
+    font-size: clamp(.98rem, 1.12vw, 1.34rem);
+  }
+
+  #participant-flow .assignment-box > span,
+  #participant-flow .visit-label span {
+    font-size: clamp(.84rem, .98vw, 1.18rem);
+  }
+
+  #participant-flow .visit-label strong {
+    font-size: clamp(.96rem, 1.10vw, 1.32rem);
+  }
+
+  #participant-flow .consort-arm dt,
+  #participant-flow .consort-arm dd {
+    font-size: clamp(.84rem, .98vw, 1.18rem);
+    line-height: 1.42;
+  }
+
+  #participant-flow .consort-notes {
+    font-size: clamp(.72rem, .84vw, 1.0rem);
+  }
+}
