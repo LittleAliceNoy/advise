@@ -6348,6 +6348,54 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   transform: translateY(.2rem);
 }
 
+/* Page 17 — keep the uveitis-location labels and duration readout within the column. */
+.baseline-portrait-scene .anatomical-eye {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .22rem .3rem;
+}
+
+.baseline-portrait-scene .anatomical-eye > span {
+  min-width: 0;
+  color: #b7b0ab;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(.50rem, .56vw, .66rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: .025em;
+  white-space: normal;
+}
+
+.baseline-portrait-scene .cohort-composition .uveitis-spectrum footer span {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(.52rem, .60vw, .70rem);
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: .025em;
+}
+
+.baseline-portrait-scene .uveitis-duration-signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: .35rem;
+}
+
+.baseline-portrait-scene .uveitis-duration-signal > span {
+  min-width: 0;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(.54rem, .61vw, .72rem);
+  letter-spacing: .035em;
+}
+
+.baseline-portrait-scene .uveitis-duration-signal > strong {
+  font-size: clamp(.94rem, 1.05vw, 1.2rem);
+}
+
+.baseline-portrait-scene .uveitis-duration-signal > strong small {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(.56rem, .64vw, .76rem);
+}
+
 .baseline-portrait-scene .ocular-signal {
   grid-template-rows: .85rem minmax(0, 1fr);
 }
