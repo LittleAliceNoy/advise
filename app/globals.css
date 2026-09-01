@@ -18092,7 +18092,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     top: 30.5%;
     left: 8vw;
     right: 8vw;
-    bottom: 7.7%;
+    bottom: 5.4%;
   }
 
   #statistics-redesign .analysis-framework-column {
@@ -18160,10 +18160,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #statistics-redesign .analysis-framework-column ul {
-    gap: clamp(.55rem, .72vh, .76rem);
+    gap: clamp(.42rem, .56vh, .62rem);
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-    font-size: clamp(.82rem, .92vw, 1.08rem);
-    line-height: 1.36;
+    font-size: clamp(.78rem, .84vw, 1rem);
+    line-height: 1.32;
   }
 
   #statistics-redesign .analysis-framework-column li {
@@ -18173,13 +18173,14 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   #statistics-redesign .analysis-framework-footer {
     left: 8vw;
     right: 8vw;
-    bottom: 1.75%;
+    bottom: .35%;
     display: grid;
     grid-template-columns: .68fr 1.85fr 1.25fr 1.15fr;
     gap: 1.35rem;
-    padding-top: .72rem;
+    padding: .55rem .2rem 0;
+    background: linear-gradient(180deg, rgba(5, 5, 5, .82), #050505 44%);
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-    font-size: clamp(.94rem, 1.08vw, 1.24rem);
+    font-size: clamp(.80rem, .90vw, 1.06rem);
     font-weight: 450;
     line-height: 1.28;
     letter-spacing: .015em;
