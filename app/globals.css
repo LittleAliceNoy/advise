@@ -18073,3 +18073,126 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     font-size: clamp(.80rem, .94vw, 1.12rem);
   }
 }
+
+/* Page 15 — restore the full-height editorial analysis composition. */
+@media (min-width: 701px) {
+  #statistics-redesign .statistics-framework-copy {
+    left: 8vw;
+    top: 9.2%;
+    width: 58vw;
+  }
+
+  #statistics-redesign .statistics-framework-copy h2 {
+    font-size: clamp(3.15rem, 4.15vw, 4.75rem);
+    line-height: .95;
+    letter-spacing: -.055em;
+  }
+
+  #statistics-redesign .analysis-framework {
+    top: 30.5%;
+    left: 8vw;
+    right: 8vw;
+    bottom: 7.7%;
+  }
+
+  #statistics-redesign .analysis-framework-column {
+    grid-template-rows: 3.35rem minmax(9.6rem, 1fr) minmax(5.2rem, .56fr) minmax(5.6rem, .62fr) minmax(11.5rem, 1.34fr);
+    row-gap: clamp(.85rem, 1.05vh, 1.1rem);
+    padding: clamp(1rem, 1.7vh, 1.45rem) clamp(.9rem, 1.3vw, 1.45rem) clamp(.95rem, 1.4vh, 1.25rem);
+  }
+
+  #statistics-redesign .analysis-framework-column header {
+    gap: .62rem;
+    padding-bottom: .25rem;
+  }
+
+  #statistics-redesign .analysis-framework-column header b {
+    font-size: clamp(.92rem, 1.05vw, 1.22rem);
+  }
+
+  #statistics-redesign .analysis-framework-column header span {
+    max-width: 15ch;
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.02rem, 1.18vw, 1.4rem);
+    font-weight: 500;
+    line-height: 1.32;
+    letter-spacing: .06em;
+  }
+
+  #statistics-redesign .framework-question small,
+  #statistics-redesign .framework-model small {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(.94rem, 1.08vw, 1.24rem);
+    font-weight: 500;
+    letter-spacing: .12em;
+  }
+
+  #statistics-redesign .framework-question small {
+    margin-bottom: .7rem;
+  }
+
+  #statistics-redesign .framework-question h3 {
+    font-size: clamp(1.18rem, 1.48vw, 1.72rem);
+    line-height: 1.32;
+    letter-spacing: -.025em;
+  }
+
+  #statistics-redesign .analysis-visual {
+    padding: .1rem .2rem .8rem;
+  }
+
+  #statistics-redesign .analysis-visual-binary {
+    gap: clamp(.24rem, .36vw, .45rem);
+  }
+
+  #statistics-redesign .analysis-visual-binary i {
+    width: clamp(.42rem, .58vw, .7rem);
+    height: clamp(1.85rem, 3.0vh, 2.55rem);
+  }
+
+  #statistics-redesign .framework-model h4 {
+    margin-top: .6rem;
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.16rem, 1.38vw, 1.62rem);
+    font-weight: 500;
+    line-height: 1.34;
+    letter-spacing: .01em;
+  }
+
+  #statistics-redesign .analysis-framework-column ul {
+    gap: clamp(.9rem, 1.25vh, 1.35rem);
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(.98rem, 1.14vw, 1.32rem);
+    line-height: 1.48;
+  }
+
+  #statistics-redesign .analysis-framework-column li {
+    padding-left: .9rem;
+  }
+
+  #statistics-redesign .analysis-framework-footer {
+    left: 8vw;
+    right: 8vw;
+    bottom: 1.75%;
+    display: grid;
+    grid-template-columns: .68fr 1.85fr 1.25fr 1.15fr;
+    gap: 1.35rem;
+    padding-top: .72rem;
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(.94rem, 1.08vw, 1.24rem);
+    font-weight: 450;
+    line-height: 1.28;
+    letter-spacing: .015em;
+    text-transform: none;
+  }
+
+  #statistics-redesign .analysis-framework-footer span {
+    text-align: center;
+  }
+
+  #statistics-redesign .analysis-framework-footer span:first-child {
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+}

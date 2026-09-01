@@ -2536,7 +2536,7 @@ export default function Home() {
             </article>
           </section>
 
-          <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span>Sensitivity analyses assessed missingness</span><span>Secondary-outcome P values nominal</span></footer>
+          <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span>Stratification variables: initial prednisone dosage + baseline immunosuppression use</span><span>Sensitivity analyses assessed missingness</span><span>Secondary-outcome P values nominal</span></footer>
         </section>
 
         <section id="participant-flow" className="scene participant-flow-scene">
