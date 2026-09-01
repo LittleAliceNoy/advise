@@ -17738,3 +17738,71 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     border-top: 0 !important;
   }
 }
+
+/* Page 13 — restore room-scale outcome typography after the compact legacy rules. */
+@media (min-width: 701px) {
+  #outcomes .endpoint-label {
+    font-size: clamp(1.02rem, 1.20vw, 1.46rem);
+  }
+
+  #outcomes .endpoint-message h3 {
+    font-size: clamp(2.05rem, 2.55vw, 3.05rem);
+    line-height: 1.04;
+  }
+
+  #outcomes .endpoint-message > p {
+    font-size: clamp(1.04rem, 1.22vw, 1.46rem);
+    line-height: 1.36;
+  }
+
+  #outcomes .endpoint-equation > div > b {
+    font-size: clamp(1.18rem, 1.40vw, 1.68rem);
+  }
+
+  #outcomes .endpoint-equation span {
+    font-size: clamp(1.04rem, 1.20vw, 1.44rem);
+    line-height: 1.28;
+  }
+
+  #outcomes .endpoint-equation > i {
+    font-size: clamp(1.42rem, 1.72vw, 2.06rem);
+  }
+
+  #outcomes .outcomes-secondary-band > header {
+    height: 2.5rem;
+    font-size: clamp(1.06rem, 1.24vw, 1.48rem);
+  }
+
+  #outcomes .outcomes-secondary-band > div {
+    height: calc(100% - 2.5rem);
+  }
+
+  #outcomes .outcomes-secondary-band article > i,
+  #outcomes .outcomes-secondary-band article > .secondary-icon-svg {
+    width: clamp(2.4rem, 3.0vw, 3.6rem);
+    height: clamp(2.4rem, 3.0vw, 3.6rem);
+  }
+
+  #outcomes .outcomes-secondary-band .secondary-icon-va {
+    width: clamp(1.9rem, 2.38vw, 2.86rem);
+  }
+
+  #outcomes .outcomes-secondary-band strong {
+    font-size: clamp(.94rem, 1.12vw, 1.34rem);
+    line-height: 1.22;
+  }
+
+  #outcomes .outcomes-secondary-band span {
+    font-size: clamp(.84rem, 1.0vw, 1.20rem);
+    line-height: 1.34;
+  }
+
+  /* Preserve the first row while giving the specified second-row criteria clear separation. */
+  #outcomes .outcomes-inactive-popup .inactive-clinical article + article {
+    margin-top: clamp(2.35rem, 4.5vh, 3.8rem);
+  }
+
+  #outcomes .outcomes-inactive-popup .inactive-imaging > div {
+    row-gap: clamp(2.35rem, 4.5vh, 3.8rem);
+  }
+}
