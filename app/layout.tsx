@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const metadataBase = new URL(`${protocol}://${host}`);
   const title = "ADVISE Trial — Beyond the Steroid Horizon";
-  const description = "An interactive visual story of the ADVISE Trial comparing adalimumab with conventional immunosuppression for non-infectious uveitis.";
+  const description = "An interactive visual story of the ADVISE Trial comparing adalimumab with conventional immunosuppression for non-infectious uveitis";
 
   return {
     metadataBase,

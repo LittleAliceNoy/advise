@@ -8,6 +8,325 @@
   font-display: swap;
 }
 
+/* Readability composition pass — requested 2026-09-02. Web presentation only. */
+@media (min-width: 701px) {
+  /* 07 — ethics and oversight copy must remain readable without breaking the approval sentence. */
+  #study-design .ethics-panel {
+    gap: .72rem;
+    padding: .9rem 1.05rem;
+  }
+  #study-design .ethics-top-block,
+  #study-design .mtqac-top-block {
+    grid-template-columns: 2.7rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+  #study-design .ethics-copy span {
+    font-size: clamp(.94rem, 1.02vw, 1.22rem);
+    line-height: 1.24;
+  }
+  #study-design .ethics-top-block .ethics-copy p {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(.92rem, 1.00vw, 1.20rem);
+    line-height: 1.36;
+  }
+  #study-design .ethics-mtqac-block .ethics-copy p,
+  #study-design .mtqac-duty-summary {
+    font-size: clamp(.88rem, .96vw, 1.14rem);
+    line-height: 1.38;
+  }
+  #study-design .mtqac-wf-node span,
+  #study-design .mtqac-wf-hub small {
+    font-size: clamp(.78rem, .88vw, 1.04rem);
+  }
+
+  /* 08 — enlarge the eight exclusion gates and their secondary labels. */
+  #screening .gate {
+    width: 44.5%;
+    min-height: 3rem;
+    padding: .62rem .78rem;
+    font-size: clamp(.88rem, 1.00vw, 1.18rem);
+    line-height: 1.22;
+  }
+  #screening .gate b {
+    font-size: clamp(.94rem, 1.06vw, 1.26rem);
+  }
+  #screening .gate span {
+    margin-left: 1.45rem;
+    font-size: clamp(.82rem, .92vw, 1.10rem);
+  }
+
+  /* 11 — give the reactivation multiplier and dose label a clear visual pause. */
+  #tapering .steroid-reset,
+  #tapering-cinematic .steroid-reset {
+    grid-template-columns: 4.35rem minmax(10rem, 1fr) auto 1.35fr;
+    column-gap: 1rem;
+  }
+  #tapering .steroid-reset b,
+  #tapering-cinematic .steroid-reset b {
+    white-space: nowrap;
+    padding-right: .25rem;
+  }
+
+  /* 16 — contain the exclusions and put each strata legend on its own line. */
+  #participant-flow .excluded-node {
+    height: 13rem;
+    padding: .75rem 1rem;
+    overflow: hidden;
+  }
+  #participant-flow .excluded-node header {
+    margin-bottom: .55rem;
+  }
+  #participant-flow .excluded-node dl {
+    gap: .16rem;
+  }
+  #participant-flow .excluded-node dt,
+  #participant-flow .excluded-node dd {
+    font-size: clamp(.90rem, 1.02vw, 1.20rem);
+    line-height: 1.32;
+  }
+  #participant-flow .flow-strata-summary {
+    width: min(36rem, 100%);
+  }
+  #participant-flow .flow-strata-summary footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .24rem;
+    font-size: clamp(.72rem, .84vw, 1rem);
+    line-height: 1.3;
+  }
+  #participant-flow .flow-strata-summary footer span {
+    white-space: nowrap;
+  }
+
+  /* 21 — reserve a footer row and strengthen both module headings. */
+  #ocular-results .published-bcva-panel > header span,
+  #ocular-results .edema-module > header span {
+    font-size: clamp(.90rem, 1.02vw, 1.20rem);
+    font-weight: 700;
+  }
+  #ocular-results .published-bcva-panel > header small,
+  #ocular-results .edema-module > header small {
+    font-size: clamp(.76rem, .86vw, 1.02rem);
+    font-weight: 650;
+  }
+  #ocular-results .edema-module {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: .55rem;
+  }
+  #ocular-results .edema-comparison {
+    height: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+  #ocular-results .edema-module-footer,
+  #ocular-results .published-ocular-stage .edema-module > footer.edema-module-footer {
+    position: static;
+    padding: .48rem .25rem .08rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-size: clamp(.78rem, .90vw, 1.06rem);
+    line-height: 1.3;
+  }
+
+  /* 22 — use the available 16:9 frame for larger safety and tolerability copy. */
+  #systemic-safety-tolerability .safety-qol-copy .lede {
+    max-width: 62rem;
+    font-size: clamp(.90rem, 1.02vw, 1.20rem);
+    line-height: 1.42;
+  }
+  #systemic-safety-tolerability .safety-qol-top {
+    top: 28%;
+    height: 47.5%;
+  }
+  #systemic-safety-tolerability .safety-difference-label b {
+    font-size: clamp(.80rem, .92vw, 1.08rem);
+  }
+  #systemic-safety-tolerability .safety-difference-label small {
+    font-size: clamp(.72rem, .82vw, .98rem);
+  }
+  #systemic-safety-tolerability .table-five-events > header span {
+    font-size: clamp(.84rem, .96vw, 1.14rem);
+  }
+  #systemic-safety-tolerability .table-five-events > header small {
+    font-size: clamp(.68rem, .78vw, .92rem);
+  }
+  #systemic-safety-tolerability .table-five-columns p span {
+    font-size: clamp(.74rem, .86vw, 1.02rem);
+  }
+  #systemic-safety-tolerability .table-five-columns p em {
+    font-size: clamp(.70rem, .80vw, .96rem);
+  }
+  #systemic-safety-tolerability .safety-bottom-band {
+    height: 21.5%;
+  }
+  #systemic-safety-tolerability .safety-bottom-band .safety-intolerance-panel p,
+  #systemic-safety-tolerability .safety-bottom-band .safety-intolerance-panel footer {
+    font-size: clamp(.70rem, .80vw, .96rem);
+  }
+  #systemic-safety-tolerability .safety-discontinuation-list span {
+    white-space: nowrap;
+  }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article b {
+    font-size: clamp(.68rem, .80vw, .96rem);
+  }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article span {
+    font-size: clamp(.74rem, .86vw, 1.02rem);
+  }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article small {
+    font-size: clamp(.66rem, .75vw, .90rem);
+  }
+
+  /* 24 — enlarge the argument and the protocol-divergence label. */
+  #limitations-4 .adv-left-col .lede {
+    font-size: clamp(.96rem, 1.08vw, 1.28rem);
+    line-height: 1.46;
+  }
+  #limitations-4 .adv-observations-block .observation-item h4 {
+    font-size: clamp(.84rem, .96vw, 1.12rem);
+  }
+  #limitations-4 .adv-observations-block .observation-item p {
+    font-size: clamp(.92rem, 1.04vw, 1.22rem);
+    line-height: 1.48;
+  }
+  #limitations-4 .adv-arch-header span {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+
+  /* 26 — increase both the editorial observations and analytical safeguards. */
+  #limitations-1 .adv-left-col .lede {
+    max-width: 100%;
+    font-size: clamp(.94rem, 1.06vw, 1.24rem);
+    line-height: 1.48;
+  }
+  #limitations-1 .editorial-rules .observation-item h4 {
+    font-size: clamp(.80rem, .92vw, 1.08rem);
+  }
+  #limitations-1 .editorial-rules .observation-item p {
+    font-size: clamp(.86rem, .98vw, 1.16rem);
+  }
+  #limitations-1 .lim-section-title,
+  #limitations-1 .lim-bias-card .card-top-title,
+  #limitations-1 .safeguard-text-col h4 {
+    font-size: clamp(.76rem, .88vw, 1.04rem);
+  }
+  #limitations-1 .lim-bias-card .card-details,
+  #limitations-1 .safeguard-text-col p {
+    font-size: clamp(.74rem, .84vw, 1rem);
+    line-height: 1.34;
+  }
+  #limitations-1 .lim-bias-card .card-corner-badge {
+    font-size: clamp(.68rem, .76vw, .90rem);
+  }
+  #limitations-1 .lim-conclusion-band strong {
+    font-size: clamp(1.02rem, 1.22vw, 1.46rem);
+    text-shadow: 0 0 16px rgba(255,77,82,.16);
+  }
+  #limitations-1 .lim-conclusion-band p {
+    font-size: clamp(.78rem, .90vw, 1.06rem);
+  }
+
+  /* 27 — make the revealed synthesis legible and let the conclusion lead. */
+  #limitations-2 .left-synthesis-points .observation-item h4 {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+  #limitations-2 .left-synthesis-points .observation-item p {
+    font-size: clamp(.90rem, 1.02vw, 1.20rem);
+    line-height: 1.46;
+  }
+  #limitations-2 .synthesis-conclusion-callout p {
+    font-size: clamp(1rem, 1.16vw, 1.38rem);
+    line-height: 1.38;
+    font-weight: 600;
+  }
+
+  /* 28 — enlarge the stepwise-escalation observation. */
+  #limitations-3 .adv-observations-block .observation-item h4 {
+    font-size: clamp(.84rem, .98vw, 1.14rem);
+  }
+  #limitations-3 .adv-observations-block .observation-item p {
+    font-size: clamp(.96rem, 1.10vw, 1.30rem);
+    line-height: 1.48;
+  }
+
+  /* 29 — increase the explanatory text and preserve visible timeline dots. */
+  #limitations-5 .canvas-caption-label {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+  #limitations-5 .adv-observations-block.side-by-side .observation-item h4 {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+  #limitations-5 .adv-observations-block.side-by-side .observation-item p {
+    font-size: clamp(.86rem, .98vw, 1.16rem);
+    line-height: 1.42;
+  }
+  #limitations-5 .dominant-attrition-wide-svg circle {
+    r: 5px;
+    stroke-width: 1.7px;
+    filter: drop-shadow(0 0 2.5px currentColor);
+  }
+
+  /* 30 — reduce the dominant antibody title and spend the recovered room on evidence. */
+  #limitations-6 .hero-dominant-title {
+    font-size: clamp(2rem, 2.75vw, 3.25rem);
+    line-height: 1;
+  }
+  #limitations-6 .panel-kicker {
+    font-size: clamp(.80rem, .92vw, 1.08rem);
+  }
+  #limitations-6 .purple-qualifier-top,
+  #limitations-6 .purple-statement {
+    font-size: clamp(.84rem, .96vw, 1.14rem);
+    line-height: 1.34;
+  }
+  #limitations-6 .lim-sub1-col-text,
+  #limitations-6 .lim-sub2-card-text {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+    line-height: 1.30;
+  }
+  #limitations-6 .lim-card-bottom-question {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+
+  /* Post-conclusion outcomes appendix — match the EXTRA numbering and restore readable detail. */
+  #outcomes-original .spectrum-label {
+    height: 1.8rem;
+    font-size: clamp(.88rem, 1.02vw, 1.20rem);
+  }
+  #outcomes-original .spectrum-track {
+    height: calc(100% - 1.8rem);
+  }
+  #outcomes-original .spectrum-track > div {
+    padding: .46rem .36rem .28rem .72rem;
+  }
+  #outcomes-original .spectrum-track b {
+    font-size: clamp(.80rem, .94vw, 1.10rem);
+    line-height: 1.15;
+  }
+  #outcomes-original .spectrum-track span {
+    margin-top: .22rem;
+    font-size: clamp(.74rem, .86vw, 1.02rem);
+    line-height: 1.22;
+  }
+  #outcomes-original .definition-heading {
+    font-size: clamp(.80rem, .92vw, 1.08rem);
+    font-weight: 700;
+  }
+  #outcomes-original .clinical-thresholds span,
+  #outcomes-original .imaging-thresholds span {
+    font-size: clamp(.72rem, .84vw, 1rem);
+  }
+  #outcomes-original .clinical-thresholds b,
+  #outcomes-original .imaging-thresholds b {
+    font-size: clamp(.82rem, .96vw, 1.12rem);
+  }
+  #outcomes-original .clinical-thresholds small,
+  #outcomes-original .imaging-thresholds small {
+    font-size: clamp(.68rem, .78vw, .94rem);
+    line-height: 1.18;
+  }
+}
+
 /* Slides 06–07 — tighten the evidence-gap reveal and clarify the review note. */
 @media (min-width: 701px) {
   #evidence-gap .trajectory-target-node {
@@ -17926,7 +18245,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     flex: 0 0 18.5vh;
     height: 18.5vh;
     min-height: 0;
-    margin-bottom: 1.1vh;
+    margin-bottom: 2.3vh;
   }
 
   #treatment-results-redesign .txrd-footer {
@@ -18247,5 +18566,476 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
+  }
+}
+
+/* Current presentation-distance refinements — scoped to the requested slides. */
+@media (min-width: 701px) {
+  /* 01 — keep the full trial title as one uninterrupted citation line. */
+  #signal .hero-paper {
+    width: max-content;
+    max-width: none;
+  }
+  #signal .hero-paper > span {
+    white-space: nowrap;
+  }
+
+  /* 02 — keep the clinical-landscape premise as one concise editorial line. */
+  #clinical-problem .landscape-hero p {
+    white-space: nowrap;
+    font-size: clamp(.96rem, 1.08vw, 1.28rem);
+  }
+  #clinical-problem .landscape-assessment > header {
+    top: -.28rem;
+  }
+  #clinical-problem .landscape-assessment > header strong {
+    font-size: clamp(1rem, 1.16vw, 1.42rem);
+  }
+
+  /* 03 — retain a light therapeutic trajectory while strengthening the two goal boxes. */
+  #therapeutic-goal .ceiling-box,
+  #therapeutic-goal .floor-box {
+    box-shadow: 0 0 18px rgba(255, 73, 78, .10), inset 0 0 20px rgba(255, 73, 78, .025);
+  }
+  #therapeutic-goal .ceiling-box {
+    background:
+      radial-gradient(circle at 50% 50%, rgba(255, 77, 82, .09), transparent 72%),
+      rgba(12, 12, 16, .74);
+    border-color: rgba(255, 77, 82, .72);
+    box-shadow:
+      0 0 10px rgba(255, 77, 82, .24),
+      0 0 30px rgba(255, 77, 82, .20),
+      0 0 58px rgba(151, 19, 28, .13),
+      inset 0 0 24px rgba(255, 77, 82, .08);
+  }
+  #therapeutic-goal .floor-box {
+    background:
+      radial-gradient(circle at 50% 50%, rgba(192, 132, 252, .09), transparent 72%),
+      rgba(12, 12, 16, .74);
+    border-color: rgba(195, 154, 255, .72);
+    box-shadow:
+      0 0 10px rgba(192, 132, 252, .24),
+      0 0 30px rgba(192, 132, 252, .20),
+      0 0 58px rgba(117, 73, 196, .13),
+      inset 0 0 24px rgba(192, 132, 252, .08);
+  }
+  #therapeutic-goal .floor-box .floor-title {
+    text-shadow: 0 0 14px rgba(220, 190, 255, .34);
+  }
+  #therapeutic-goal .bar-track-wrap {
+    transform: translateY(-.42rem);
+  }
+  #therapeutic-goal .goal-equation {
+    gap: clamp(.38rem, .52vw, .65rem);
+  }
+
+  /* 04/05 — long antibody mechanism caption remains a single controlled line. */
+  .intro5-scene .antibody-hero-desc {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(.88rem, 1.10vw, 1.22rem);
+  }
+
+  /* 07 — preserve the ethics approval sentence as a single read. */
+  #study-design .ethics-top-block .ethics-copy p {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(.64rem, .72vw, .90rem);
+  }
+
+  /* 08 — give the inclusion criteria room to breathe without changing the screen. */
+  #screening .disease-window {
+    margin-top: clamp(1rem, 1.6vh, 1.45rem);
+    padding-block: clamp(.95rem, 1.35vh, 1.2rem);
+  }
+  #screening .disease-window > div {
+    margin-top: clamp(.65rem, .85vh, .9rem);
+    gap: clamp(.55rem, .75vw, .85rem);
+  }
+  #screening .inclusion-metrics {
+    margin-top: clamp(1rem, 1.7vh, 1.55rem);
+    gap: clamp(.82rem, 1vw, 1.1rem);
+  }
+  #screening .inclusion-metrics article {
+    min-height: clamp(6rem, 8vh, 7rem);
+  }
+  #screening .prednisone-threshold-footnote {
+    margin-top: clamp(.9rem, 1.2vh, 1.15rem);
+    line-height: 1.5;
+  }
+
+  /* 09 — improve the explanatory lede and elevate the source participant. */
+  #randomization .randomization-copy .lede {
+    max-width: 66rem;
+    font-size: clamp(1rem, 1.18vw, 1.42rem);
+    line-height: 1.42;
+  }
+  #randomization .strata-source {
+    transform: translate(-50%, -.7rem);
+    border-color: rgba(255, 77, 82, .72);
+    background: linear-gradient(135deg, rgba(93, 5, 10, .30), rgba(5, 5, 5, .94));
+    box-shadow: 0 0 24px rgba(255, 77, 82, .14);
+  }
+  #randomization .strata-source span {
+    color: #ffffff;
+  }
+  #randomization .permuted-block > .token-c {
+    color: #c39aff;
+    border-color: rgba(195, 154, 255, .58);
+    background: rgba(195, 154, 255, .14);
+    box-shadow: 0 0 11px rgba(195, 154, 255, .20);
+  }
+
+  /* 11 — restore the tapering headline as the local hero. */
+  #tapering .tapering-copy h2 {
+    font-size: clamp(3.25rem, 4.05vw, 4.75rem);
+    line-height: .98;
+  }
+
+  /* 14 — make the sample-size logic readable at presentation distance. */
+  #statistics-sample-only .sample-size-story {
+    border-top: 0;
+  }
+  #statistics-sample-only .sample-size-story > header > span {
+    font-size: clamp(.94rem, 1.10vw, 1.35rem);
+    font-weight: 700;
+  }
+  #statistics-sample-only .sample-size-story > header small {
+    font-size: clamp(.78rem, .94vw, 1.14rem);
+  }
+  #statistics-sample-only .calc-parameter strong,
+  #statistics-sample-only .calc-note strong {
+    font-size: clamp(1rem, 1.25vw, 1.52rem);
+    font-weight: 700;
+  }
+  #statistics-sample-only .calc-parameter span,
+  #statistics-sample-only .calc-note span {
+    font-size: clamp(.72rem, .84vw, 1.02rem);
+  }
+  #statistics-sample-only .calc-split {
+    width: clamp(20rem, 23vw, 29rem);
+  }
+  #statistics-sample-only .calc-split b {
+    font-size: clamp(1.7rem, 2.15vw, 2.65rem);
+    font-weight: 800;
+  }
+
+  /* 15 — keep body content clear of the footer and let model names lead. */
+  #statistics-redesign .analysis-framework {
+    bottom: 9.2%;
+    grid-template-columns: minmax(0, 1.04fr) repeat(2, minmax(0, .98fr)) minmax(0, 1.14fr);
+  }
+  #statistics-redesign .analysis-framework-column {
+    grid-template-rows: 4.8rem minmax(7.1rem, 1fr) minmax(4.45rem, .46fr) minmax(3.55rem, .42fr) minmax(8.6rem, .94fr);
+  }
+  #statistics-redesign .framework-model h4 {
+    margin-top: 0;
+    font-weight: 750;
+  }
+  #statistics-redesign .analysis-framework-column ul {
+    font-size: clamp(.86rem, .96vw, 1.14rem);
+    line-height: 1.36;
+  }
+  #statistics-redesign .analysis-framework-footer {
+    bottom: 4.8%;
+  }
+
+  /* 16 — contain the exclusions and give the strata summary clearer separation. */
+  #participant-flow .excluded-node {
+    height: 11.6rem;
+  }
+  #participant-flow .flow-strata-summary {
+    margin-top: calc(clamp(1rem, 1.6vh, 1.8rem) + .5rem);
+  }
+  #participant-flow .flow-strata-summary footer {
+    display: grid;
+    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+    gap: .5rem;
+  }
+  #participant-flow .flow-strata-summary footer span:nth-child(2) {
+    white-space: nowrap;
+  }
+
+  /* 25 — lift the cataract interpretation detail to presentation reading size. */
+  #discussion-safety .editorial-rules .observation-item h4 {
+    font-size: clamp(.78rem, .90vw, 1.04rem);
+  }
+  #discussion-safety .editorial-rules .observation-item p {
+    font-size: clamp(.94rem, 1.03vw, 1.16rem);
+  }
+  #discussion-safety .inline-warning-badge-row .warning-badge-text {
+    font-size: clamp(.90rem, 1.04vw, 1.14rem);
+  }
+  #discussion-safety .inline-warning-p1 {
+    font-size: clamp(.88rem, .98vw, 1.10rem);
+  }
+  #discussion-safety .inline-warning-p2 {
+    font-size: clamp(.82rem, .90vw, 1.02rem);
+  }
+  #discussion-safety .causal-split .causal-side-note {
+    font-size: clamp(.90rem, 1vw, 1.14rem);
+  }
+  #discussion-safety .causal-split .note-eyebrow-heading {
+    font-size: clamp(.80rem, .90vw, 1.02rem);
+  }
+  #discussion-safety .causal-split .causal-side-note .note-title {
+    font-size: clamp(.82rem, .95vw, 1.06rem);
+  }
+  #discussion-safety .causal-node.node-conclusion strong {
+    font-size: clamp(.98rem, 1.08vw, 1.24rem);
+  }
+
+  /* 17 — separate the qualifying statement from the interpretation. */
+  #baseline .baseline-contrasts footer,
+  #baseline-cohort .baseline-contrasts footer {
+    line-height: 1.42;
+  }
+}
+
+/* Final-cascade readability composition pass — web presentation only. */
+@media (min-width: 701px) {
+  #study-design .ethics-panel { gap:.72rem; padding:.9rem 1.05rem; }
+  #study-design .ethics-top-block,
+  #study-design .mtqac-top-block { grid-template-columns:2.7rem minmax(0,1fr); gap:1rem; }
+  #study-design .ethics-copy span { font-size:clamp(.94rem,1.02vw,1.22rem); line-height:1.24; }
+  #study-design .ethics-top-block .ethics-copy p { max-width:none; white-space:nowrap; font-size:clamp(.92rem,1vw,1.2rem); line-height:1.36; }
+  #study-design .ethics-mtqac-block .ethics-copy p,
+  #study-design .mtqac-duty-summary { font-size:clamp(.88rem,.96vw,1.14rem); line-height:1.38; }
+  #study-design .mtqac-wf-node span,
+  #study-design .mtqac-wf-hub small { font-size:clamp(.78rem,.88vw,1.04rem); }
+
+  #screening .gate { width:44.5%; min-height:3rem; padding:.62rem .78rem; font-size:clamp(.88rem,1vw,1.18rem); line-height:1.22; }
+  #screening .gate b { font-size:clamp(.94rem,1.06vw,1.26rem); }
+  #screening .gate span { margin-left:1.45rem; font-size:clamp(.82rem,.92vw,1.1rem); }
+
+  #tapering .steroid-reset,
+  #tapering-cinematic .steroid-reset { grid-template-columns:4.35rem minmax(10rem,1fr) auto 1.35fr; column-gap:1rem; }
+  #tapering .steroid-reset b,
+  #tapering-cinematic .steroid-reset b { white-space:nowrap; padding-right:.25rem; }
+
+  #participant-flow .excluded-node { height:13rem; padding:.75rem 1rem; overflow:hidden; }
+  #participant-flow .excluded-node header { margin-bottom:.55rem; }
+  #participant-flow .excluded-node dl { gap:.16rem; }
+  #participant-flow .excluded-node dt,
+  #participant-flow .excluded-node dd { font-size:clamp(.9rem,1.02vw,1.2rem); line-height:1.32; }
+  #participant-flow .flow-strata-summary { width:min(36rem,100%); }
+  #participant-flow .flow-strata-summary footer { display:grid; grid-template-columns:1fr; gap:.24rem; font-size:clamp(.72rem,.84vw,1rem); line-height:1.3; }
+  #participant-flow .flow-strata-summary footer span { white-space:nowrap; }
+
+  #ocular-results .published-bcva-panel > header span,
+  #ocular-results .edema-module > header span { font-size:clamp(.9rem,1.02vw,1.2rem); font-weight:700; }
+  #ocular-results .published-bcva-panel > header small,
+  #ocular-results .edema-module > header small { font-size:clamp(.76rem,.86vw,1.02rem); font-weight:650; }
+  #ocular-results .edema-module { display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:.55rem; }
+  #ocular-results .edema-comparison { height:auto; min-height:0; margin-top:0; }
+  #ocular-results .edema-module-footer,
+  #ocular-results .published-ocular-stage .edema-module > footer.edema-module-footer { position:static; padding:.48rem .25rem .08rem; border-top:1px solid rgba(255,255,255,.1); font-size:clamp(.78rem,.9vw,1.06rem); line-height:1.3; }
+
+  #systemic-safety-tolerability .safety-qol-copy .lede { max-width:62rem; font-size:clamp(.9rem,1.02vw,1.2rem); line-height:1.42; }
+  #systemic-safety-tolerability .safety-qol-top { top:27.5%; height:43.5%; }
+  #systemic-safety-tolerability .safety-difference-label b { font-size:clamp(.8rem,.92vw,1.08rem); }
+  #systemic-safety-tolerability .safety-difference-label small { font-size:clamp(.72rem,.82vw,.98rem); }
+  #systemic-safety-tolerability .table-five-events > header span { font-size:clamp(.84rem,.96vw,1.14rem); }
+  #systemic-safety-tolerability .table-five-events > header small { font-size:clamp(.68rem,.78vw,.92rem); }
+  #systemic-safety-tolerability .table-five-columns p span { font-size:clamp(.74rem,.86vw,1.02rem); }
+  #systemic-safety-tolerability .table-five-columns p em { font-size:clamp(.7rem,.8vw,.96rem); }
+  #systemic-safety-tolerability .safety-bottom-band { height:21.5%; }
+  #systemic-safety-tolerability .safety-bottom-band .safety-intolerance-panel p,
+  #systemic-safety-tolerability .safety-bottom-band .safety-intolerance-panel footer { font-size:clamp(.7rem,.8vw,.96rem); }
+  #systemic-safety-tolerability .safety-discontinuation-list span { white-space:nowrap; }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article b { font-size:clamp(.68rem,.8vw,.96rem); }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article span { font-size:clamp(.74rem,.86vw,1.02rem); }
+  #systemic-safety-tolerability .safety-bottom-band .serious-events-panel article small { font-size:clamp(.66rem,.75vw,.9rem); }
+
+  #limitations-4 .adv-left-col .lede { font-size:clamp(.96rem,1.08vw,1.28rem); line-height:1.46; }
+  #limitations-4 .adv-observations-block .observation-item h4 { font-size:clamp(.84rem,.96vw,1.12rem); }
+  #limitations-4 .adv-observations-block .observation-item p { font-size:clamp(.92rem,1.04vw,1.22rem); line-height:1.48; }
+  #limitations-4 .adv-arch-header span { font-size:clamp(.82rem,.94vw,1.1rem); }
+
+  #limitations-1 .adv-left-col .lede { max-width:100%; font-size:clamp(.94rem,1.06vw,1.24rem); line-height:1.48; }
+  #limitations-1 .editorial-rules .observation-item h4 { font-size:clamp(.8rem,.92vw,1.08rem); }
+  #limitations-1 .editorial-rules .observation-item p { font-size:clamp(.86rem,.98vw,1.16rem); }
+  #limitations-1 .lim-section-title,
+  #limitations-1 .lim-bias-card .card-top-title,
+  #limitations-1 .safeguard-text-col h4 { font-size:clamp(.76rem,.88vw,1.04rem); }
+  #limitations-1 .lim-bias-card .card-details,
+  #limitations-1 .safeguard-text-col p { font-size:clamp(.74rem,.84vw,1rem); line-height:1.34; }
+  #limitations-1 .lim-bias-card .card-corner-badge { font-size:clamp(.68rem,.76vw,.9rem); }
+  #limitations-1 .lim-conclusion-band strong { font-size:clamp(1.02rem,1.22vw,1.46rem); text-shadow:0 0 16px rgba(255,77,82,.16); }
+  #limitations-1 .lim-conclusion-band p { font-size:clamp(.78rem,.9vw,1.06rem); }
+
+  #limitations-2 .left-synthesis-points .observation-item h4 { font-size:clamp(.82rem,.94vw,1.1rem); }
+  #limitations-2 .left-synthesis-points .observation-item p { font-size:clamp(.9rem,1.02vw,1.2rem); line-height:1.46; }
+  #limitations-2 .synthesis-conclusion-callout p { font-size:clamp(1rem,1.16vw,1.38rem); line-height:1.38; font-weight:600; }
+
+  #limitations-3 .adv-observations-block .observation-item h4 { font-size:clamp(.84rem,.98vw,1.14rem); }
+  #limitations-3 .adv-observations-block .observation-item p { font-size:clamp(.96rem,1.1vw,1.3rem); line-height:1.48; }
+
+  #limitations-5 .canvas-caption-label { font-size:clamp(.82rem,.94vw,1.1rem); }
+  #limitations-5 .adv-observations-block.side-by-side .observation-item h4 { font-size:clamp(.82rem,.94vw,1.1rem); }
+  #limitations-5 .adv-observations-block.side-by-side .observation-item p { font-size:clamp(.86rem,.98vw,1.16rem); line-height:1.42; }
+  #limitations-5 .dominant-attrition-wide-svg circle { r:5px; stroke-width:1.7px; filter:drop-shadow(0 0 2.5px currentColor); }
+
+  #limitations-6 .hero-dominant-title { font-size:clamp(2rem,2.75vw,3.25rem); line-height:1; }
+  #limitations-6 .panel-kicker { font-size:clamp(.8rem,.92vw,1.08rem); }
+  #limitations-6 .purple-qualifier-top,
+  #limitations-6 .purple-statement { font-size:clamp(.84rem,.96vw,1.14rem); line-height:1.34; }
+  #limitations-6 .lim-sub1-col-text,
+  #limitations-6 .lim-sub2-card-text { font-size:clamp(.82rem,.94vw,1.1rem); line-height:1.3; }
+  #limitations-6 .lim-card-bottom-question { font-size:clamp(.82rem,.94vw,1.1rem); }
+
+  #outcomes-original .spectrum-label { height:1.8rem; font-size:clamp(.88rem,1.02vw,1.2rem); }
+  #outcomes-original .spectrum-track { height:calc(100% - 1.8rem); }
+  #outcomes-original .spectrum-track > div { padding:.46rem .36rem .28rem .72rem; }
+  #outcomes-original .spectrum-track b { font-size:clamp(.8rem,.94vw,1.1rem); line-height:1.15; }
+  #outcomes-original .spectrum-track span { margin-top:.22rem; font-size:clamp(.74rem,.86vw,1.02rem); line-height:1.22; }
+  #outcomes-original .definition-heading { font-size:clamp(.8rem,.92vw,1.08rem); font-weight:700; }
+  #outcomes-original .clinical-thresholds span,
+  #outcomes-original .imaging-thresholds span { font-size:clamp(.72rem,.84vw,1rem); }
+  #outcomes-original .clinical-thresholds b,
+  #outcomes-original .imaging-thresholds b { font-size:clamp(.82rem,.96vw,1.12rem); }
+  #outcomes-original .clinical-thresholds small,
+  #outcomes-original .imaging-thresholds small { font-size:clamp(.68rem,.78vw,.94rem); line-height:1.18; }
+}
+
+/* Page 29 correction — keep the enlarged copy while returning the full canvas to frame. */
+@media (min-width: 701px) {
+  #limitations-5.discussion-attrition-scene {
+    padding-top: 8.5vh;
+    padding-bottom: 3vh;
+  }
+
+  #limitations-5 .attrition-wide-container {
+    min-height: 0;
+    height: 100%;
+    gap: clamp(.42rem, .72vh, .72rem);
+  }
+
+  #limitations-5 .attrition-wide-header {
+    padding-bottom: clamp(.34rem, .52vh, .55rem);
+  }
+
+  #limitations-5 .attrition-full-canvas {
+    min-height: 0;
+    padding: clamp(.58rem, .82vh, .82rem) clamp(.78rem, 1.12vw, 1.2rem);
+    gap: clamp(.32rem, .50vh, .52rem);
+  }
+
+  #limitations-5 .attrition-canvas-top-bar {
+    padding-bottom: clamp(.28rem, .42vh, .45rem);
+  }
+
+  #limitations-5 .adv-observations-block.side-by-side {
+    min-height: 0;
+    padding-top: .34rem;
+    padding-bottom: .48rem;
+    margin-top: 0;
+    margin-bottom: .35rem;
+  }
+
+  #limitations-5 .attrition-svg-wide-wrap {
+    min-height: 142px;
+    max-height: 188px;
+    padding-top: .22rem;
+    margin-top: clamp(.9rem, 1.8vh, 1.4rem);
+    margin-bottom: clamp(1.1rem, 2.2vh, 1.7rem);
+  }
+
+  #limitations-5 .attrition-sensitivity-resolution {
+    padding-top: .42rem;
+    gap: .38rem;
+  }
+
+  #limitations-5 .dominant-attrition-wide-svg circle {
+    r: 3.8px;
+    stroke-width: 1.25px;
+    filter: drop-shadow(0 0 1.2px currentColor);
+  }
+}
+
+/* Page 30 — rebalance headline dominance and evidence readability. */
+@media (min-width: 701px) {
+  #limitations-6 .hero-dominant-title {
+    font-size: clamp(1.85rem, 2.20vw, 2.65rem);
+    line-height: 1.02;
+  }
+
+  #limitations-6 .panel-kicker {
+    font-size: clamp(.88rem, 1.0vw, 1.18rem);
+  }
+
+  #limitations-6 .purple-qualifier-top,
+  #limitations-6 .purple-statement {
+    font-size: clamp(.92rem, 1.06vw, 1.24rem);
+    line-height: 1.34;
+  }
+
+  #limitations-6 .lim-sub1-col-text,
+  #limitations-6 .lim-sub2-card-text {
+    font-size: clamp(.92rem, 1.04vw, 1.22rem);
+    line-height: 1.30;
+  }
+
+  #limitations-6 .lim-card-bottom-question {
+    font-size: clamp(.88rem, 1.0vw, 1.18rem);
+  }
+
+  #limitations-6 .lim-sub1-card,
+  #limitations-6 .lim-sub2-card {
+    border-color: rgba(255, 77, 82, 0.36);
+    box-shadow: inset 0 0 0 1px rgba(255, 77, 82, 0.035);
+  }
+
+  #limitations-6 .finishing-body,
+  #limitations-6 .finishing-punchline {
+    display: inline;
+    font-size: clamp(.84rem, .96vw, 1.14rem);
+  }
+}
+
+/* Page 29 — attach the robustness analysis to the timeline and strengthen its lead-in. */
+@media (min-width: 701px) {
+  #limitations-5 .attrition-sensitivity-resolution {
+    margin-top: clamp(1.35rem, 2.4vh, 1.85rem);
+  }
+
+  #limitations-5 .robustness-kicker {
+    font-size: clamp(.82rem, .94vw, 1.10rem);
+  }
+
+  #limitations-5 .robustness-statement {
+    font-size: clamp(1.08rem, 1.28vw, 1.48rem);
+    line-height: 1.16;
+  }
+}
+
+/* Page 30 — lock the requested editorial line structure. */
+@media (min-width: 701px) {
+  #limitations-6 .purple-text-col {
+    gap: .04rem;
+  }
+
+  #limitations-6 .purple-qualifier-top {
+    margin-bottom: .08rem;
+  }
+
+  #limitations-6 .lim-sub1-col-text {
+    max-width: 15rem;
+  }
+
+  #limitations-6 .finishing-text {
+    line-height: 1.34;
+    white-space: nowrap;
+  }
+
+  #limitations-6 .finishing-lead {
+    display: block;
+    margin-bottom: .12rem;
+    font-size: clamp(.84rem, .96vw, 1.14rem);
+  }
+
+  #limitations-6 .finishing-body,
+  #limitations-6 .finishing-punchline {
+    font-size: clamp(.76rem, .86vw, 1rem);
   }
 }

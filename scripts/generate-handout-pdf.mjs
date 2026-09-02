@@ -3,179 +3,180 @@ import { PDFDocument } from "pdf-lib";
 import fs from "node:fs";
 import path from "node:path";
 
+// The browser render is the source of truth. PDFs are assembled only from
+// captured PNGs so print CSS can never reflow the presentation.
+const VIEWPORT = { width: 1920, height: 1080, deviceScaleFactor: 2 };
+const PDF_PAGE = { width: 960, height: 540 }; // points: 13.333 × 7.5 inches
+const APP_URL = "http://localhost:3000/";
+const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
 const SLIDES = [
-  { id: "signal", name: "01 - Signal" },
-  { id: "clinical-problem", name: "02 - Clinical Landscape" },
-  { id: "therapeutic-goal", name: "03 - Therapeutic Goal" },
-  { id: "systemic-strategies", name: "04 - Conventional Immunosuppression" },
-  { id: "question", name: "05 - Adalimumab" },
-  { id: "evidence-gap", name: "06 - Evidence Gap" },
-  { id: "study-design", name: "07 - Study Design" },
-  { id: "screening", name: "08 - Screening Pathway" },
-  { id: "randomization", name: "09 - Randomization" },
-  { id: "treatment", name: "10 - Treatment by Stratum" },
-  { id: "tapering", name: "11 - Tapering and Reactivation" },
-  { id: "followup", name: "12 - Follow-up" },
-  { id: "outcomes-original", name: "13 - Outcomes (Original Combined)" },
-  { id: "statistics-sample-only", name: "14 - Statistics Sample Size" },
-  { id: "statistics-redesign", name: "15 - Statistical Analysis Framework" },
-  { id: "participant-flow", name: "16 - Participant Flow" },
-  { id: "baseline-portrait", name: "17 - Baseline Cohort" },
-  { id: "treatment-results-redesign", name: "18 - Treatments Received" },
-  { id: "results", name: "19 - Corticosteroid Sparing Efficacy" },
-  { id: "discontinuation", name: "20 - Corticosteroid Discontinuation" },
-  { id: "ocular-results", name: "21 - Visual and Macular Outcomes" },
-  { id: "systemic-safety-tolerability", name: "22 - Safety and Tolerability" },
-  { id: "quality-of-life-results", name: "23 - Quality of Life" },
-  { id: "limitations-4", name: "24 - Treatment Advancement" },
-  { id: "discussion-safety", name: "25 - Cataract Signal" },
-  { id: "limitations-1", name: "26 - Masking Limitations" },
-  { id: "limitations-2", name: "27 - Comparator Heterogeneity" },
-  { id: "limitations-3", name: "28 - Temporal Trajectory" },
-  { id: "limitations-5", name: "29 - Missing Data and Attrition" },
-  { id: "limitations-6", name: "30 - Immunogenicity" },
-  { id: "conclusion", name: "31 - Conclusion" },
+  "signal", "clinical-problem", "therapeutic-goal", "systemic-strategies",
+  "question", "evidence-gap", "study-design", "screening", "randomization",
+  "treatment", "tapering", "followup", "outcomes", "statistics-sample-only",
+  "statistics-redesign", "participant-flow", "baseline-portrait",
+  "treatment-results-redesign", "results", "discontinuation", "ocular-results",
+  "systemic-safety-tolerability", "quality-of-life-results", "limitations-4",
+  "discussion-safety", "limitations-1", "limitations-2", "limitations-3",
+  "limitations-5", "limitations-6", "conclusion", "outcomes-original",
+  "secondary-outcomes-redesign", "tapering-cinematic",
 ];
 
-async function main() {
-  console.log("Launching headless Chrome at 1920x1080 (2x Retina)...");
-  const browser = await puppeteer.launch({
-    executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--window-size=1920,1080",
-      "--hide-scrollbars",
-      "--force-device-scale-factor=2",
-    ],
-  });
+const args = new Set(process.argv.slice(2));
+const fullExport = args.has("--full");
+const adjustedExport = args.has("--adjusted");
+const selectedSlides = fullExport ? SLIDES : ["statistics-redesign"];
+const outputRoot = path.join(process.cwd(), "output");
+const adjustedWorkRoot = path.join(process.cwd(), "tmp", "pdfs", "adjusted-2026-09-01");
+const pngDir = adjustedExport ? path.join(adjustedWorkRoot, "png") : path.join(outputRoot, "png");
+const pdfDir = path.join(outputRoot, "pdf");
+const proofPdfDir = adjustedExport ? adjustedWorkRoot : pdfDir;
 
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 2 });
+function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 
-  page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
-  page.on("pageerror", (err) => console.log("PAGE ERROR:", err.toString()));
-
-  console.log("Navigating to http://localhost:3000/?handout=true ...");
-  await page.goto("http://localhost:3000/?handout=true", { waitUntil: "domcontentloaded" });
-
-  // Wait for React hydration or presence of deck
-  await page.waitForSelector(".deck", { timeout: 15000 });
-  await page.waitForFunction(() => typeof window.__REVEAL_ALL_SLIDES__ === "function" || document.querySelectorAll(".scene").length > 20, { timeout: 15000 });
-
-  // Remove navigation UI and disable smooth snapping during capture
-  await page.addStyleTag({
-    content: `
-      .chapter-nav { display: none !important; }
-      .deck { scroll-behavior: auto !important; scroll-snap-type: none !important; }
-      * { transition: none !important; }
-      .statistics-sample-only-scene .calc-track,
-      .statistics-sample-only-scene .calc-parameter,
-      .statistics-sample-only-scene .calc-effect-size,
-      .statistics-sample-only-scene .calc-split,
-      .statistics-sample-only-scene .calc-note,
-      .statistics-sample-only-scene .calc-core,
-      .statistics-sample-only-scene .calc-core > small,
-      .statistics-sample-only-scene .calc-core > strong,
-      .statistics-sample-only-scene .calc-core > span,
-      .statistics-sample-only-scene .calc-input {
-        opacity: 1 !important;
-        animation: none !important;
-        transform: none !important;
-        visibility: visible !important;
-      }
-    `
-  });
-
-  // Call global reveal
-  await page.evaluate(() => {
-    if (typeof window.__REVEAL_ALL_SLIDES__ === "function") {
-      window.__REVEAL_ALL_SLIDES__();
-    }
-  });
-
-  await new Promise((r) => setTimeout(r, 800));
-
-  const tempDir = path.join(process.cwd(), "temp_inspect_frames");
-  if (!fs.existsSync(tempDir)) {
-    fs.mkdirSync(tempDir, { recursive: true });
-  }
-
-  const imagePaths = [];
-
-  for (let i = 0; i < SLIDES.length; i++) {
-    const slide = SLIDES[i];
-    console.log(`[${i + 1}/${SLIDES.length}] Preparing & capturing: ${slide.name} (#${slide.id})...`);
-
-    // Prepare slide state and scroll exactly into viewport
-    await page.evaluate((id) => {
-      if (typeof window.__PREPARE_SLIDE__ === "function") {
-        window.__PREPARE_SLIDE__(id);
-      }
-      const el = document.getElementById(id);
-      const deck = document.querySelector(".deck");
-      if (el && deck) {
-        deck.scrollTop = el.offsetTop;
-      }
-    }, slide.id);
-
-    // Wait for React re-render, canvas redraw and DOM paint to settle
-    await new Promise((r) => setTimeout(r, 600));
-
-    // Force canvas repaints if present
-    await page.evaluate((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.querySelectorAll("canvas").forEach((c) => {
-          if (typeof c.__DRAW_FULL__ === "function") {
-            c.__DRAW_FULL__();
-          }
-        });
-      }
-    }, slide.id);
-
-    await new Promise((r) => setTimeout(r, 200));
-
-    const imgPath = path.join(tempDir, `slide_${String(i + 1).padStart(2, "0")}_${slide.id}.png`);
-    
-    // Capture the full 1920x1080 viewport
-    await page.screenshot({ path: imgPath, type: "png" });
-    imagePaths.push(imgPath);
-  }
-
-  await browser.close();
-  console.log(`\nAll ${imagePaths.length} slides captured cleanly. Generating PDF document...`);
-
-  const pdfDoc = await PDFDocument.create();
-  const pageWidth = 1920;
-  const pageHeight = 1080;
-
-  for (let i = 0; i < imagePaths.length; i++) {
-    const imgFile = fs.readFileSync(imagePaths[i]);
-    const pngImage = await pdfDoc.embedPng(imgFile);
-    
-    const pdfPage = pdfDoc.addPage([pageWidth, pageHeight]);
-    pdfPage.drawImage(pngImage, {
-      x: 0,
-      y: 0,
-      width: pageWidth,
-      height: pageHeight,
-    });
-  }
-
-  const pdfBytes = await pdfDoc.save();
-  const rootPdfPath = path.join(process.cwd(), "..", "ADVISE_Trial_Presentation_Handout.pdf");
-  
-  fs.writeFileSync(rootPdfPath, pdfBytes);
-
-  console.log(`\n✅ PDF Handout created successfully:`);
-  console.log(`- ${rootPdfPath}`);
-  console.log(`Total Size: ${(pdfBytes.length / (1024 * 1024)).toFixed(2)} MB`);
+function pngSize(file) {
+  const png = fs.readFileSync(file);
+  if (png.toString("ascii", 1, 4) !== "PNG") throw new Error(`${file} is not a PNG.`);
+  return { width: png.readUInt32BE(16), height: png.readUInt32BE(20) };
 }
 
-main().catch((err) => {
-  console.error("Error generating PDF:", err);
-  process.exit(1);
-});
+async function waitForRenderedAssets(page) {
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    const images = Array.from(document.images);
+    await Promise.all(images.map((image) => image.complete
+      ? Promise.resolve()
+      : new Promise((resolve) => {
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", resolve, { once: true });
+      })));
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    // Export CSS reduces animations to a single frame; give that frame time to
+    // commit its `forwards` state before the slide is captured.
+    await new Promise((resolve) => setTimeout(resolve, 80));
+  });
+
+  const fontStatus = await page.evaluate(() => {
+    const loadedFaces = Array.from(document.fonts)
+      .filter((face) => face.status === "loaded")
+      .map((face) => face.family.replaceAll('"', ""));
+    return {
+      geistReady: document.fonts.check('16px "Geist"'),
+      loadedFaces,
+      rootFamily: getComputedStyle(document.documentElement).getPropertyValue("--font-geist-sans").trim(),
+      bodyFamily: getComputedStyle(document.body).fontFamily,
+    };
+  });
+  if (!fontStatus.geistReady || !fontStatus.loadedFaces.some((face) => face.includes("Geist"))) {
+    throw new Error(`Required Geist font did not load: ${JSON.stringify(fontStatus)}`);
+  }
+  return fontStatus;
+}
+
+async function prepareSlide(page, id) {
+  await page.evaluate((slideId) => {
+    window.__INSTANT_CHART__ = true;
+    window.__REVEAL_ALL_SLIDES__?.();
+    window.__PREPARE_SLIDE__?.(slideId);
+    const deck = document.querySelector(".deck");
+    const slide = document.getElementById(slideId);
+    if (deck && slide) {
+      deck.scrollTop = slide.offsetTop;
+      deck.dispatchEvent(new Event("scroll", { bubbles: true }));
+    }
+  }, id);
+  await page.waitForFunction((slideId) => {
+    const slide = document.getElementById(slideId);
+    return Boolean(slide && Math.abs(slide.getBoundingClientRect().top) < 1);
+  }, {}, id);
+  await waitForRenderedAssets(page);
+
+  // Page 13 intentionally reveals in three presentation clicks. Reproduce
+  // that final audience state only for capture; no slide markup or styling is
+  // changed by the exporter.
+  if (id === "outcomes") {
+    await page.evaluate(() => {
+      const slide = document.getElementById("outcomes");
+      slide?.click();
+      slide?.click();
+      slide?.click();
+    });
+    await waitForRenderedAssets(page);
+  }
+}
+
+async function createPdf(pngFiles, pdfFile) {
+  const pdf = await PDFDocument.create();
+  for (const pngFile of pngFiles) {
+    const pdfPage = pdf.addPage([PDF_PAGE.width, PDF_PAGE.height]);
+    const png = await pdf.embedPng(fs.readFileSync(pngFile));
+    pdfPage.drawImage(png, { x: 0, y: 0, width: PDF_PAGE.width, height: PDF_PAGE.height });
+  }
+  fs.writeFileSync(pdfFile, await pdf.save());
+}
+
+async function main() {
+  ensureDir(pngDir);
+  ensureDir(pdfDir);
+  ensureDir(proofPdfDir);
+  const browser = await puppeteer.launch({
+    executablePath: CHROME,
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--hide-scrollbars", "--window-size=1920,1080"],
+  });
+  try {
+    const page = await browser.newPage();
+    await page.setViewport(VIEWPORT);
+    await page.emulateMediaType("screen");
+    // The development server retains a live connection, so networkidle0 would
+    // never settle. Font and asset readiness are verified explicitly below.
+    await page.goto(APP_URL, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".deck", { timeout: 15000 });
+    await page.waitForFunction(() => window.__IS_HYDRATED__ === true && typeof window.__PREPARE_SLIDE__ === "function", { timeout: 15000 });
+    await page.addStyleTag({ content: `
+      html, body { width: 1920px !important; height: 1080px !important; overflow: hidden !important; }
+      .deck { width: 1920px !important; height: 1080px !important; overflow-y: auto !important; scroll-snap-type: none !important; scroll-behavior: auto !important; }
+      .scene { width: 1920px !important; min-height: 1080px !important; height: 1080px !important; }
+      *, *::before, *::after {
+        animation-duration: .001s !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+        caret-color: transparent !important;
+      }
+    ` });
+    const fonts = await waitForRenderedAssets(page);
+    console.log(`Verified font: Geist (${fonts.bodyFamily})`);
+    const pngFiles = [];
+    for (const id of selectedSlides) {
+      await prepareSlide(page, id);
+      const suffix = fullExport
+        ? `${String(pngFiles.length + 1).padStart(2, "0")}_${id}`
+        : adjustedExport
+          ? "Page_15_Export_Proof_Adjusted_2026-09-01_3840x2160"
+          : "Page_15_Export_Proof_3840x2160";
+      const pngFile = path.join(pngDir, `ADVISE_${suffix}.png`);
+      await page.screenshot({
+        path: pngFile,
+        type: "png",
+        clip: { x: 0, y: 0, width: VIEWPORT.width, height: VIEWPORT.height },
+        captureBeyondViewport: false,
+      });
+      const dimensions = pngSize(pngFile);
+      if (dimensions.width !== 3840 || dimensions.height !== 2160) throw new Error(`Expected 3840×2160 PNG; received ${dimensions.width}×${dimensions.height}.`);
+      pngFiles.push(pngFile);
+      console.log(`Captured ${id}: ${dimensions.width}×${dimensions.height}`);
+    }
+    const pdfFile = fullExport
+      ? path.join(pdfDir, adjustedExport ? "ADVISE_Trial_Presentation_Handout_Adjusted_2026-09-01.pdf" : "ADVISE_Trial_Presentation_Handout.pdf")
+      : path.join(proofPdfDir, adjustedExport ? "ADVISE_Page_15_Export_Proof_Adjusted_2026-09-01.pdf" : "ADVISE_Page_15_Export_Proof.pdf");
+    await createPdf(pngFiles, pdfFile);
+    console.log(`Created ${pdfFile} (${PDF_PAGE.width}×${PDF_PAGE.height} pt per page)`);
+  } finally {
+    await browser.close();
+  }
+}
+
+main().catch((error) => { console.error(error); process.exit(1); });
