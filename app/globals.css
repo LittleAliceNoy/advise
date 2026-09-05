@@ -18934,8 +18934,10 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #limitations-5 .attrition-svg-wide-wrap {
-    min-height: 142px;
-    max-height: 188px;
+    min-height: 205px;
+    height: clamp(205px, 22vh, 235px);
+    max-height: 235px;
+    flex: 0 0 auto;
     padding-top: .22rem;
     margin-top: clamp(.9rem, 1.8vh, 1.4rem);
     margin-bottom: clamp(1.1rem, 2.2vh, 1.7rem);

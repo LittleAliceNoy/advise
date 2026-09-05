@@ -1,5 +1,8 @@
 import puppeteer from "puppeteer-core";
-import { PDFDocument } from "pdf-lib";
+// Import the bundled ESM build directly. The installed package's legacy root
+// entry point is absent in this workspace, while the self-contained ESM build
+// remains complete and avoids changing the application's dependency set.
+import { PDFDocument } from "../node_modules/pdf-lib/dist/pdf-lib.esm.min.js";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -22,13 +25,32 @@ const SLIDES = [
   "secondary-outcomes-redesign", "tapering-cinematic",
 ];
 
-const args = new Set(process.argv.slice(2));
+const rawArgs = process.argv.slice(2);
+const args = new Set(rawArgs);
 const fullExport = args.has("--full");
 const adjustedExport = args.has("--adjusted");
-const selectedSlides = fullExport ? SLIDES : ["statistics-redesign"];
+const slidesArg = rawArgs.find((arg) => arg.startsWith("--slides="));
+const outputArg = rawArgs.find((arg) => arg.startsWith("--output="));
+const customSlides = slidesArg
+  ? slidesArg.slice("--slides=".length).split(",").map((id) => id.trim()).filter(Boolean)
+  : null;
+if (customSlides) {
+  const unknownSlides = customSlides.filter((id) => !SLIDES.includes(id));
+  if (unknownSlides.length) throw new Error(`Unknown slide ids: ${unknownSlides.join(", ")}`);
+}
+const selectedSlides = customSlides ?? (fullExport ? SLIDES : ["statistics-redesign"]);
+const customOutputName = outputArg ? outputArg.slice("--output=".length).trim() : null;
+if (customOutputName && (path.basename(customOutputName) !== customOutputName || !customOutputName.toLowerCase().endsWith(".pdf"))) {
+  throw new Error("--output must be a PDF filename without a directory path.");
+}
 const outputRoot = path.join(process.cwd(), "output");
 const adjustedWorkRoot = path.join(process.cwd(), "tmp", "pdfs", "adjusted-2026-09-01");
-const pngDir = adjustedExport ? path.join(adjustedWorkRoot, "png") : path.join(outputRoot, "png");
+const customWorkRoot = path.join(process.cwd(), "tmp", "pdfs", "custom-export");
+const pngDir = customSlides
+  ? path.join(customWorkRoot, "png")
+  : adjustedExport
+    ? path.join(adjustedWorkRoot, "png")
+    : path.join(outputRoot, "png");
 const pdfDir = path.join(outputRoot, "pdf");
 const proofPdfDir = adjustedExport ? adjustedWorkRoot : pdfDir;
 
@@ -82,13 +104,28 @@ async function prepareSlide(page, id) {
     const slide = document.getElementById(slideId);
     if (deck && slide) {
       deck.scrollTop = slide.offsetTop;
+      slide.scrollIntoView({ block: "start", inline: "nearest" });
       deck.dispatchEvent(new Event("scroll", { bubbles: true }));
     }
   }, id);
-  await page.waitForFunction((slideId) => {
-    const slide = document.getElementById(slideId);
-    return Boolean(slide && Math.abs(slide.getBoundingClientRect().top) < 1);
-  }, {}, id);
+  let aligned = false;
+  let finalTop = null;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    await new Promise((resolve) => setTimeout(resolve, 120));
+    finalTop = await page.evaluate((slideId) => {
+      const slide = document.getElementById(slideId);
+      const deck = document.querySelector(".deck");
+      if (!slide || !deck) return null;
+      deck.scrollTop = slide.offsetTop;
+      slide.scrollIntoView({ block: "start", inline: "nearest" });
+      return slide.getBoundingClientRect().top;
+    }, id);
+    if (finalTop !== null && Math.abs(finalTop) < 2) {
+      aligned = true;
+      break;
+    }
+  }
+  if (!aligned) throw new Error(`Could not align ${id} to the capture viewport (top=${finalTop}).`);
   await waitForRenderedAssets(page);
 
   // Page 13 intentionally reveals in three presentation clicks. Reproduce
@@ -146,13 +183,21 @@ async function main() {
         scroll-behavior: auto !important;
         caret-color: transparent !important;
       }
+      /* The handout cover must show the eye fully open, never mid-blink. */
+      #signal .cosmic-eye::after {
+        animation: none !important;
+        transform: translateY(-100%) !important;
+      }
     ` });
     const fonts = await waitForRenderedAssets(page);
     console.log(`Verified font: Geist (${fonts.bodyFamily})`);
     const pngFiles = [];
     for (const id of selectedSlides) {
       await prepareSlide(page, id);
-      const suffix = fullExport
+      const physicalIndex = SLIDES.indexOf(id) + 1;
+      const suffix = customSlides
+        ? `${String(pngFiles.length + 1).padStart(2, "0")}_Page_${String(physicalIndex).padStart(2, "0")}_${id}`
+        : fullExport
         ? `${String(pngFiles.length + 1).padStart(2, "0")}_${id}`
         : adjustedExport
           ? "Page_15_Export_Proof_Adjusted_2026-09-01_3840x2160"
@@ -169,7 +214,9 @@ async function main() {
       pngFiles.push(pngFile);
       console.log(`Captured ${id}: ${dimensions.width}×${dimensions.height}`);
     }
-    const pdfFile = fullExport
+    const pdfFile = customOutputName
+      ? path.join(pdfDir, customOutputName)
+      : fullExport
       ? path.join(pdfDir, adjustedExport ? "ADVISE_Trial_Presentation_Handout_Adjusted_2026-09-01.pdf" : "ADVISE_Trial_Presentation_Handout.pdf")
       : path.join(proofPdfDir, adjustedExport ? "ADVISE_Page_15_Export_Proof_Adjusted_2026-09-01.pdf" : "ADVISE_Page_15_Export_Proof.pdf");
     await createPdf(pngFiles, pdfFile);

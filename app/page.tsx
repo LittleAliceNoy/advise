@@ -903,7 +903,7 @@ export default function Home() {
         <div className="chapter-readout" aria-live="polite">
           {chapters[active]?.id === "outcomes-original" ? (
             <>
-              <span>11</span>
+              <span>13</span>
               <i />
               <span>31</span>
             </>
@@ -4645,7 +4645,7 @@ export default function Home() {
 
               {/* DOMINANT DIFFERENTIAL ATTRITION VISUALIZATION */}
               <div className="attrition-svg-wide-wrap">
-                <svg viewBox="0 0 960 250" className="dominant-attrition-wide-svg">
+                <svg viewBox="0 50 960 175" className="dominant-attrition-wide-svg">
                   <defs>
                     <linearGradient id="adaTrackGradClean" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#ff4d52" stopOpacity="0.75" />
@@ -5077,13 +5077,12 @@ export default function Home() {
               Whether that earlier advantage translates into greater long-term efficacy remains unresolved.
             </blockquote>
             <div className="citation">ADVISE Trial Research Group · Ophthalmology, Vol. 133, Issue 3 · NCT03828019</div>
-            <button className="restart" onClick={() => goTo(0)}>↻ Restart story</button>
           </div>
         </section>
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it</em></h2>
           </div>
 
