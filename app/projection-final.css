@@ -232,8 +232,8 @@
   }
   #treatment-results-redesign .txrd-footer-stats strong {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
-    font-size: clamp(1.35rem, 1.55vw, 1.85rem) !important;
-    font-weight: 800 !important;
+    font-size: clamp(1.7rem, 2vw, 2.25rem) !important;
+    font-weight: 700 !important;
     line-height: 1 !important;
     letter-spacing: -0.02em;
   }
