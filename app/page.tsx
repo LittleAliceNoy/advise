@@ -3436,7 +3436,7 @@ export default function Home() {
               </svg>
               <div>
                 <strong>SYSTEMIC STEROID BURDEN</strong>
-                <span>Mean daily prednisone dose over the entire trial</span>
+                <span>Mean daily prednisone dose<br />over the entire trial</span>
               </div>
               <div className="txrd-footer-stats">
                 <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
@@ -3456,8 +3456,8 @@ export default function Home() {
                 <span>During follow-up</span>
               </div>
               <div className="txrd-footer-stats">
-                <div className="txrd-ada-color"><strong>27</strong><span>Injections<br />(19 eyes · 13 participants)</span></div>
-                <div className="txrd-cid-color"><strong>25</strong><span>Injections<br />(20 eyes · 13 participants)</span></div>
+                <div className="txrd-ada-color"><strong>27</strong><span>injections<br />(19 eyes · 13 participants)</span></div>
+                <div className="txrd-cid-color"><strong>25</strong><span>injections<br />(20 eyes · 13 participants)</span></div>
               </div>
             </div>
           </footer>

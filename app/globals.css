@@ -18879,6 +18879,34 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     gap: .72rem;
     padding-right: 1rem;
   }
+
+  #treatment-results-redesign .txrd-footer-stats {
+    display: flex;
+    align-items: center;
+    gap: clamp(.65rem, .85vw, 1.15rem);
+    margin-left: auto;
+  }
+
+  #treatment-results-redesign .txrd-footer-stats > div {
+    display: flex;
+    align-items: baseline;
+    gap: .38rem;
+  }
+
+  #treatment-results-redesign .txrd-footer-stats strong {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: clamp(1.35rem, 1.55vw, 1.85rem) !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em;
+  }
+
+  #treatment-results-redesign .txrd-footer-stats span {
+    font-size: clamp(.66rem, .72vw, .84rem) !important;
+    line-height: 1.15 !important;
+    color: #928b86 !important;
+    font-weight: 500;
+  }
 }
 
 /* Page 13 — keep the criterion numbers visually separate from their labels. */
