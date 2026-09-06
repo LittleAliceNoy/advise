@@ -3244,7 +3244,7 @@ export default function Home() {
               </h1>
               <p>
                 Baseline treatment was similar between arms.<br />
-                After randomization, intensity increased through <span className="txrd-red">different pathways</span>
+                Randomization then sent treatment down <span className="txrd-red">different pathways</span>.
               </p>
             </div>
           </header>
@@ -3309,7 +3309,7 @@ export default function Home() {
 
             {/* COLUMN 2: AFTER RANDOMIZATION */}
             <section className="txrd-col txrd-after">
-              <header>AFTER RANDOMIZATION<br /><span>Treatment surge</span></header>
+              <header>INITIAL STEROID REGIMEN<br /><span>Protocol-directed treatment</span></header>
               <div className="txrd-arms">
                 <article className="txrd-arm-row no-label">
                   <div className="txrd-stat">
@@ -3349,14 +3349,13 @@ export default function Home() {
                     </div>
                     <b>100%</b>
                   </div>
-                  <div className="txrd-pathway-secondary">CONVENTIONAL IMT · 2 / 113 (2%)</div>
                 </article>
                 <article className="txrd-pathway-card txrd-cid-border txrd-pathway-cid">
                   <div className="txrd-pathway-hero">
                     <div className="txrd-donut txrd-cid-donut" aria-label="Among 108 initiated conventional IMT treatments: 85 antimetabolite, 23 CNI"></div>
                     <div className="txrd-pathway-hero-copy">
                       <strong>CONVENTIONAL IMT</strong>
-                      <span>108 / 110 initiated</span>
+                      <span>108 / 110 initiated · 2 refused</span>
                     </div>
                     <b>98%</b>
       </div>
