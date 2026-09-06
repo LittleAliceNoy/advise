@@ -342,10 +342,15 @@ function CumulativeChart({ focus, highlights, series, ariaLabel }: { focus: numb
     const onLeave = () => { hoveredMonth = null; draw(currentProgress); };
     canvas.addEventListener("mousemove", onMove);
     canvas.addEventListener("mouseleave", onLeave);
-    const resize = new ResizeObserver(() => draw(currentProgress));
-    resize.observe(canvas);
+    let resizeFrame = 0;
+    const resizeTarget = canvas.parentElement ?? canvas;
+    const resize = new ResizeObserver(() => {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => draw(currentProgress));
+    });
+    resize.observe(resizeTarget);
     redrawRef.current = () => draw(currentProgress);
-    return () => { redrawRef.current = () => undefined;observer.disconnect(); resize.disconnect(); canvas.removeEventListener("mousemove", onMove); canvas.removeEventListener("mouseleave", onLeave); cancelAnimationFrame(frame); };
+    return () => { redrawRef.current = () => undefined;observer.disconnect(); resize.disconnect(); canvas.removeEventListener("mousemove", onMove); canvas.removeEventListener("mouseleave", onLeave); cancelAnimationFrame(frame); cancelAnimationFrame(resizeFrame); };
   }, [highlights, series]);
 
   return <canvas ref={canvasRef} className="efficacy-canvas" aria-label={ariaLabel} />;
@@ -2938,8 +2943,8 @@ export default function Home() {
             <article className="baseline-contrasts">
               <header><span>NOTABLE NUMERICAL IMBALANCES</span><small>ADA <i /> CID</small></header>
               <div className="contrast-row"><span>BILATERAL ACTIVE UVEITIS</span><div><i style={{ width: "76%" }} /><b style={{ width: "90%" }} /><em style={{ left: "76%" }}>76%</em><strong style={{ left: "90%" }}>90%</strong></div></div>
-              <div className="contrast-row lens-contrast"><span>LENS OPACITY / CATARACT</span><div><i style={{ width: "36%" }} /><b style={{ width: "40%" }} /><em style={{ left: "36%" }}>36%</em><strong style={{ left: "40%" }}>40%</strong></div><small className="lens-status-note"><span>OVERALL · 82% PHAKIC</span><span>44% CLEAR LENS · 38% OPACITY/CATARACT</span></small></div>
               <div className="contrast-row"><span>MACULAR EDEMA</span><div><i style={{ width: "29%" }} /><b style={{ width: "20%" }} /><em style={{ left: "29%" }}>29%</em><strong style={{ left: "20%" }}>20%</strong></div></div>
+              <div className="contrast-row lens-contrast"><span>LENS OPACITY / CATARACT</span><div><i style={{ width: "36%" }} /><b style={{ width: "40%" }} /><em style={{ left: "36%" }}>36%</em><strong style={{ left: "40%" }}>40%</strong></div><small className="lens-status-note"><span>Overall · 82% phakic</span><span>44% clear lens · 38% opacity/cataract</span></small></div>
               <footer><span>Numerical differences only; groups</span><span>remained reasonably well balanced overall</span></footer>
             </article>
           </section>
@@ -3487,7 +3492,12 @@ export default function Home() {
           <section className="efficacy-stage efficacy-sequence-stage" aria-label="Successful corticosteroid sparing efficacy outcomes">
             <div className={`efficacy-chart-panel efficacy-story-${efficacyStoryStage}`}>
               <header><span>CUMULATIVE CORTICOSTEROID SPARING</span><div><b>ADA</b><i /><b>CID</b><button className="efficacy-story-replay" onClick={(event) => { event.stopPropagation(); resetEfficacyStory(); }} aria-label="Reset efficacy result sequence">↻</button></div></header>
-              {efficacyStoryStage > 0 && <CumulativeChart focus={efficacyStoryStage === 1 ? 2 : efficacyFocus} highlights={efficacyHighlights} series={efficacySeries} ariaLabel="Cumulative proportion achieving successful corticosteroid sparing from randomization through 12 months" />}
+              {efficacyStoryStage > 0 && (
+                <div className="efficacy-chart-stack">
+                  <CumulativeChart focus={efficacyStoryStage === 1 ? 2 : efficacyFocus} highlights={efficacyHighlights} series={efficacySeries} ariaLabel="Cumulative proportion achieving successful corticosteroid sparing from randomization through 12 months" />
+                  {efficacyStoryStage === 5 && <img className="published-graph-overlay" src="/Graph1.png" alt="Published corticosteroid-sparing graph" />}
+                </div>
+              )}
             </div>
             {efficacyStoryStage === 5 ? (
               <div className="efficacy-summary-cards">
@@ -3538,8 +3548,13 @@ export default function Home() {
 
           <section className="efficacy-stage efficacy-sequence-stage discontinuation-stage" aria-label="Successful corticosteroid discontinuation outcomes">
             <div className={`efficacy-chart-panel efficacy-story-${discontinuationStoryStage} discontinuation-story-${discontinuationStoryStage}`}>
-              <header><span>CUMULATIVE CORTICOSTEROID DISCONTINUATION</span><div><b>ADA</b><i /><b>CID</b><small className="efficacy-advance-hint">{discontinuationStoryStage < 5 ? "CLICK / SWIPE ↑" : "COMPLETE"}</small><button className="efficacy-story-replay" onClick={(event) => { event.stopPropagation(); resetDiscontinuationStory(); }} aria-label="Reset corticosteroid discontinuation result sequence">↻</button></div></header>
-              {discontinuationStoryStage > 0 && <CumulativeChart focus={discontinuationStoryStage === 1 ? 2 : discontinuationFocus} highlights={discontinuationHighlights} series={discontinuationSeries} ariaLabel="Cumulative proportion achieving successful corticosteroid discontinuation through 12 months" />}
+              <header><span>CUMULATIVE CORTICOSTEROID DISCONTINUATION</span><div><b>ADA</b><i /><b>CID</b>{discontinuationStoryStage === 5 && <small className="efficacy-advance-hint">COMPLETE</small>}<button className="efficacy-story-replay" onClick={(event) => { event.stopPropagation(); resetDiscontinuationStory(); }} aria-label="Reset corticosteroid discontinuation result sequence">↻</button></div></header>
+              {discontinuationStoryStage > 0 && (
+                <div className="efficacy-chart-stack">
+                  <CumulativeChart focus={discontinuationStoryStage === 1 ? 2 : discontinuationFocus} highlights={discontinuationHighlights} series={discontinuationSeries} ariaLabel="Cumulative proportion achieving successful corticosteroid discontinuation through 12 months" />
+                  {discontinuationStoryStage === 5 && <img className="published-graph-overlay" src="/Graph2.png" alt="Published corticosteroid-discontinuation graph" />}
+                </div>
+              )}
             </div>
             {discontinuationStoryStage === 5 ? (
               <div className="efficacy-summary-cards discontinuation-summary-cards">
@@ -4016,7 +4031,7 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <div className="causal-node node-surgery-evident discussion-stage-reveal reveal-stage-2">
+                    <div className="causal-node node-surgery-evident discussion-stage-reveal reveal-stage-1">
                       Higher cataract surgery with CID
                     </div>
                     

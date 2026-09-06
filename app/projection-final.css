@@ -198,7 +198,7 @@
 
   /* 18 — dense treatment results: information labels at 18–22px, statistics retained. */
   #treatment-results-redesign .txrd-title-area > p:not(.eyebrow) {
-    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    font-size: clamp(1.08rem, 1.15vw, 1.38rem) !important;
     line-height: 1.28 !important;
   }
   #treatment-results-redesign .txrd-col > header,
@@ -206,7 +206,7 @@
   #treatment-results-redesign .txrd-outcomes-title strong,
   #treatment-results-redesign .txrd-outcome-header strong,
   #treatment-results-redesign .txrd-footer-card > div > strong {
-    font-size: clamp(1.02rem, 1.08vw, 1.30rem) !important;
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
     line-height: 1.16 !important;
   }
   #treatment-results-redesign :is(.txrd-col > header span, .txrd-arm-label,
@@ -216,8 +216,8 @@
       .txrd-vs small, .txrd-vs span, .txrd-outcome footer,
       .txrd-escalation-details, .txrd-footer-card > div > span,
       .txrd-footer-subtext) {
-    font-size: clamp(.90rem, .98vw, 1.16rem) !important;
-    line-height: 1.2 !important;
+    font-size: clamp(.86rem, .92vw, 1.10rem) !important;
+    line-height: 1.24 !important;
   }
   #treatment-results-redesign .txrd-grid-main { top: 27.5%; height: 31%; }
   #treatment-results-redesign .txrd-grid-outcomes { top: 60%; height: 20.5%; }
@@ -440,6 +440,7 @@
 
   /* 16 — randomization strata reveal after the main CONSORT flow. */
   #participant-flow .flow-strata-summary {
+    margin-top: clamp(1.55rem, 2.35vh, 2.35rem) !important;
     transition: opacity .38s ease, transform .38s ease, visibility 0s linear .38s;
   }
   #participant-flow.participant-flow-stage-0 .flow-strata-summary {
@@ -526,9 +527,9 @@
   #baseline-portrait .lens-status-note {
     grid-column: 1;
     display: grid;
-    gap: .08rem;
+    gap: .06rem;
     color: #8f8984;
-    font: 500 clamp(.68rem, .70vw, .82rem)/1.28 var(--font-geist-sans), Arial, sans-serif !important;
+    font: 500 clamp(.54rem, .58vw, .70rem)/1.22 var(--font-geist-sans), Arial, sans-serif !important;
     letter-spacing: 0;
     white-space: normal;
   }
@@ -586,8 +587,8 @@
   #treatment-results-redesign :is(.txrd-before, .txrd-after) .txrd-arms {
     display: grid;
     grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: .26rem;
-    padding: .48rem .82rem .2rem;
+    gap: .34rem;
+    padding: .56rem .82rem .3rem;
     overflow: hidden;
   }
   #treatment-results-redesign .txrd-arm-row {
@@ -595,27 +596,27 @@
     align-items: center;
   }
   #treatment-results-redesign .txrd-pathways .txrd-arms {
-    padding: .45rem .72rem;
-    gap: .4rem;
+    padding: .52rem .72rem;
+    gap: .48rem;
   }
   #treatment-results-redesign .txrd-pathways .txrd-pathway-card {
-    padding: .35rem .7rem;
-    gap: .14rem;
+    padding: .42rem .7rem;
+    gap: .2rem;
   }
   #treatment-results-redesign .txrd-pathway-hero {
     min-height: 2.34rem;
   }
   #treatment-results-redesign .txrd-outcomes-title,
   #treatment-results-redesign .txrd-outcome {
-    padding: .48rem .72rem;
+    padding: .56rem .76rem;
   }
   #treatment-results-redesign .txrd-outcome-header {
     gap: .38rem;
-    margin-bottom: .25rem;
+    margin-bottom: .32rem;
   }
   #treatment-results-redesign .txrd-outcome footer {
-    margin-top: .25rem;
-    padding-top: .3rem;
+    margin-top: .32rem;
+    padding-top: .36rem;
   }
 
   /* 21/22 — preserve the overview first; Page 22 alone swaps the zoom order to 6M then 12M. */
