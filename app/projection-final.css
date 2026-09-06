@@ -1,16 +1,18 @@
 /* Final projection-readability calibration.
    Scope is intentionally limited to the priority slides and excludes 02/03/04/15. */
 @media (min-width: 701px) {
-  /* Shared audience-facing hierarchy: 26px body, 23px labels, 19–20px detail at 1920px. */
   :is(#study-design, #screening, #randomization, #treatment, #followup,
       #participant-flow, #baseline-portrait, #treatment-results-redesign,
-      #systemic-safety-tolerability, #quality-of-life-results, #limitations-4,
-      #discussion-safety, #limitations-1, #limitations-2, #limitations-3,
-      #limitations-5, #limitations-6) .scene-copy > .lede,
-  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
-      #limitations-3) .adv-left-col > .lede {
+      #systemic-safety-tolerability, #quality-of-life-results,
+      #limitations-5, #limitations-6) .scene-copy > .lede {
     font-size: clamp(1.34rem, 1.38vw, 1.68rem) !important;
     line-height: 1.34 !important;
+  }
+
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3) .lede {
+    font-size: clamp(1.08rem, 1.20vw, 1.42rem) !important;
+    line-height: 1.32 !important;
   }
 
   /* 07 — study design */
