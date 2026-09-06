@@ -66,7 +66,7 @@
   #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow), .txrd-col header,
     .txrd-arm-label, .txrd-stat small, .txrd-stat span, .txrd-pathway-info,
     .txrd-outcome-header, .txrd-vs, .txrd-outcome footer, .txrd-esc-stats,
-    .txrd-footer-card, .txrd-footer-subtext),
+    .txrd-footer-card-heading, .txrd-footer-subtext),
   #results :is(.results-copy .lede, .efficacy-readout > span, .efficacy-groups small,
     .efficacy-speed span, .efficacy-signal small, .efficacy-signal strong,
     .efficacy-signal p, .efficacy-summary-cards header, .efficacy-summary-cards footer,
@@ -241,7 +241,7 @@
   }
 
   #baseline-portrait :is(.baseline-portrait-copy .lede,.cohort-composition header,.demographic-signals span,.demographic-signals small,.race-visual li,.uveitis-spectrum footer,.uveitis-duration-signal,.snellen-bcva span,.snellen-bcva small,.vision-threshold span,.vision-threshold small,.baseline-contrasts header,.contrast-row>span,.baseline-contrasts footer),
-  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header span,.txrd-arm-label b,.txrd-arm-label span,.txrd-stat small,.txrd-stat span,.txrd-pathway-info small,.txrd-pathway-info strong,.txrd-outcome-header :is(b,span),.txrd-vs :is(small,span),.txrd-outcome footer,.txrd-esc-stats :is(span,small),.txrd-footer-card :is(strong,span),.txrd-footer-subtext),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header span,.txrd-arm-label b,.txrd-arm-label span,.txrd-stat small,.txrd-stat span,.txrd-pathway-info small,.txrd-pathway-info strong,.txrd-outcome-header :is(b,span),.txrd-vs :is(small,span),.txrd-outcome footer,.txrd-esc-stats :is(span,small),.txrd-footer-card-heading :is(strong,span),.txrd-footer-subtext),
   #results :is(.results-copy .lede,.efficacy-readout>span,.efficacy-groups small,.efficacy-speed span,.efficacy-signal small,.efficacy-signal p,.efficacy-summary-cards header span,.efficacy-summary-cards footer,.efficacy-reactivation :is(span,p)),
   #ocular-results :is(.ocular-results-copy .lede,.bcva-findings,.published-bcva-panel>header,.edema-module>header,.edema-time-title,.edema-bar-val,.edema-bar-arm,.edema-stats-badge :is(span,small),.edema-module-footer),
   #systemic-safety-tolerability :is(.safety-qol-copy .lede,.safety-difference-label :is(b,small),.safety-discontinuation-list :is(b,span,small),.safety-intolerance-panel :is(b,span,small),.serious-events-panel :is(b,span,small),.serious-other),
@@ -388,7 +388,7 @@
     .vision-threshold small, .baseline-contrasts header, .contrast-row > span, .baseline-contrasts footer),
   #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow), .txrd-col header, .txrd-arm-label,
     .txrd-stat small, .txrd-stat span, .txrd-pathway-info, .txrd-outcome-header, .txrd-vs,
-    .txrd-outcome footer, .txrd-esc-stats, .txrd-footer-card, .txrd-footer-subtext),
+    .txrd-outcome footer, .txrd-esc-stats, .txrd-footer-card-heading, .txrd-footer-subtext),
   #results :is(.results-copy .lede, .efficacy-readout > span, .efficacy-groups small,
     .efficacy-speed span, .efficacy-signal small, .efficacy-signal strong, .efficacy-signal p,
     .efficacy-summary-cards header, .efficacy-summary-cards footer, .efficacy-reactivation),
@@ -18893,12 +18893,13 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
     gap: .38rem;
   }
 
-  #treatment-results-redesign .txrd-footer-stats strong {
-    font-family: var(--font-geist-mono), ui-monospace, monospace;
+  #treatment-results-redesign .txrd-footer-stats strong,
+  #treatment-results-redesign .txrd-footer-num {
+    font-family: var(--font-geist-mono), ui-monospace, monospace !important;
     font-size: clamp(1.7rem, 2vw, 2.25rem) !important;
     font-weight: 700 !important;
     line-height: 1 !important;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02em !important;
   }
 
   #treatment-results-redesign .txrd-footer-stats span {
@@ -19917,7 +19918,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   }
 
   #baseline-portrait :is(.baseline-portrait-copy .lede,.cohort-composition header,.demographic-signals span,.demographic-signals small,.race-visual li,.uveitis-spectrum footer,.uveitis-duration-signal,.snellen-bcva span,.snellen-bcva small,.vision-threshold span,.vision-threshold small,.baseline-contrasts header,.contrast-row>span,.baseline-contrasts footer),
-  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header,.txrd-arm-label,.txrd-stat small,.txrd-stat span,.txrd-pathway-info,.txrd-outcome-header,.txrd-vs,.txrd-outcome footer,.txrd-esc-stats,.txrd-footer-card,.txrd-footer-subtext),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header,.txrd-arm-label,.txrd-stat small,.txrd-stat span,.txrd-pathway-info,.txrd-outcome-header,.txrd-vs,.txrd-outcome footer,.txrd-esc-stats,.txrd-footer-card-heading,.txrd-footer-subtext),
   #results :is(.results-copy .lede,.efficacy-readout>span,.efficacy-groups small,.efficacy-speed span,.efficacy-signal small,.efficacy-signal strong,.efficacy-signal p,.efficacy-summary-cards header,.efficacy-summary-cards footer,.efficacy-reactivation),
   #discontinuation :is(.discontinuation-stage text,.discontinuation-summary-cards,.discontinuation-foot),
   #ocular-results :is(.ocular-results-copy .lede,.bcva-findings,.published-bcva-panel>header,.edema-module>header,.edema-time-title,.edema-bar-val,.edema-bar-arm,.edema-stats-badge,.edema-module-footer),

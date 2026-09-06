@@ -3433,13 +3433,13 @@ export default function Home() {
                 <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
                 <path d="m8.5 8.5 7 7"/>
               </svg>
-              <div>
+              <div className="txrd-footer-card-heading">
                 <strong>SYSTEMIC STEROID BURDEN</strong>
                 <span>Mean daily prednisone dose<br />over the entire trial</span>
               </div>
               <div className="txrd-footer-stats">
-                <div className="txrd-ada-color"><strong>11.8</strong><span>mg/day<br />(ADA)</span></div>
-                <div className="txrd-cid-color"><strong>13.8</strong><span>mg/day<br />(CID)</span></div>
+                <div className="txrd-ada-color"><strong className="txrd-footer-num">11.8</strong><span>mg/day<br />(ADA)</span></div>
+                <div className="txrd-cid-color"><strong className="txrd-footer-num">13.8</strong><span>mg/day<br />(CID)</span></div>
               </div>
               <div className="txrd-footer-subtext">
                 IRR 0.86 &nbsp;|&nbsp; 95% CI 0.73–1.01 &nbsp;|&nbsp; P = 0.061
@@ -3450,13 +3450,13 @@ export default function Home() {
               <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>
               </svg>
-              <div>
+              <div className="txrd-footer-card-heading">
                 <strong>REGIONAL CORTICOSTEROID</strong>
                 <span>During follow-up</span>
               </div>
               <div className="txrd-footer-stats">
-                <div className="txrd-ada-color"><strong>27</strong><span>injections<br />(19 eyes · 13 participants)</span></div>
-                <div className="txrd-cid-color"><strong>25</strong><span>injections<br />(20 eyes · 13 participants)</span></div>
+                <div className="txrd-ada-color"><strong className="txrd-footer-num">27</strong><span>injections<br />(19 eyes · 13 participants)</span></div>
+                <div className="txrd-cid-color"><strong className="txrd-footer-num">25</strong><span>injections<br />(20 eyes · 13 participants)</span></div>
               </div>
             </div>
           </footer>
