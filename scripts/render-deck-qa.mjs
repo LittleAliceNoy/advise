@@ -7,11 +7,11 @@ const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const VIEWPORT = { width: 1920, height: 1080, deviceScaleFactor: 1 };
 const SLIDES = [
   "signal", "clinical-problem", "therapeutic-goal", "systemic-strategies",
-  "question", "evidence-gap", "study-design", "screening", "randomization",
+  "question", "evidence-gap", "chapter-methods", "study-design", "screening", "randomization",
   "treatment", "tapering", "followup", "outcomes", "statistics-sample-only",
-  "statistics-redesign", "participant-flow", "baseline-portrait",
+  "statistics-redesign", "chapter-results", "participant-flow", "baseline-portrait",
   "treatment-results-redesign", "results", "discontinuation", "ocular-results",
-  "systemic-safety-tolerability", "quality-of-life-results", "limitations-4",
+  "systemic-safety-tolerability", "quality-of-life-results", "chapter-discussion", "limitations-4",
   "discussion-safety", "limitations-1", "limitations-2", "limitations-3",
   "limitations-5", "limitations-6", "conclusion", "outcomes-original",
   "secondary-outcomes-redesign", "tapering-cinematic",

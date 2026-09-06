@@ -9,6 +9,7 @@ const chapters = [
   { id: "systemic-strategies", label: "Conventional immunosuppression" },
   { id: "question", label: "Adalimumab" },
   { id: "evidence-gap", label: "The evidence gap" },
+  { id: "chapter-methods", label: "Methods" },
   { id: "study-design", label: "Study design" },
   { id: "screening", label: "Screening pathway" },
   { id: "randomization", label: "Randomization" },
@@ -18,6 +19,7 @@ const chapters = [
   { id: "outcomes", label: "Outcomes overview" },
   { id: "statistics-sample-only", label: "Statistics — sample size only" },
   { id: "statistics-redesign", label: "Statistical analysis framework (Redesign)" },
+  { id: "chapter-results", label: "Results" },
   { id: "participant-flow", label: "Participant flow" },
   { id: "baseline-portrait", label: "Baseline cohort portrait" },
   { id: "treatment-results-redesign", label: "Treatments received (Redesign)" },
@@ -26,6 +28,7 @@ const chapters = [
   { id: "ocular-results", label: "Visual and macular outcomes" },
   { id: "systemic-safety-tolerability", label: "Safety and tolerability" },
   { id: "quality-of-life-results", label: "Quality of life" },
+  { id: "chapter-discussion", label: "Discussion" },
   { id: "limitations-4", label: "Treatment advancement" },
   { id: "discussion-safety", label: "Cataract signal" },
   { id: "limitations-1", label: "Masking limitations" },
@@ -360,6 +363,8 @@ export default function Home() {
   const taperTouchAdvancedAt = useRef(0);
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [randomizationStage, setRandomizationStage] = useState<0 | 1 | 2>(0);
+  const [advancementStage, setAdvancementStage] = useState<0 | 1 | 2>(0);
   const [selectedStratum, setSelectedStratum] = useState(0);
   const [calcCycle, setCalcCycle] = useState(0);
   const [selectedAnalysis, setSelectedAnalysis] = useState(0);
@@ -457,7 +462,8 @@ export default function Home() {
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
-  const [showCataractWarning, setShowCataractWarning] = useState(true);
+  const [cataractStage, setCataractStage] = useState<0 | 1 | 2 | 3>(0);
+  const [maskingStage, setMaskingStage] = useState<0 | 1>(0);
   const [safetyFocus, setSafetyFocus] = useState(false);
   const [isHandout, setIsHandout] = useState(false);
 
@@ -576,7 +582,8 @@ export default function Home() {
         setTreatmentPhase(1);
         setEfficacyStoryStage(5);
         setDiscontinuationStoryStage(5);
-        setShowCataractWarning(true);
+        setCataractStage(3);
+        setMaskingStage(1);
         setSafetyFocus(false);
         setActiveBranch('idle');
         setInspected79(true);
@@ -585,6 +592,8 @@ export default function Home() {
         setConcernRevealed(true);
         setTemporalStep(4);
         setAttritionStep(5);
+        setRandomizationStage(2);
+        setAdvancementStage(2);
       };
 
       (window as any).__REVEAL_ALL_SLIDES__ = revealAll;
@@ -598,6 +607,8 @@ export default function Home() {
       (window as any).__PREPARE_SLIDE__ = (slideId: string) => {
         (window as any).__INSTANT_CHART__ = true;
         setIsHandout(true);
+        if (slideId === "randomization") setRandomizationStage(2);
+        if (slideId === "limitations-4") setAdvancementStage(2);
         if (slideId === "therapeutic-goal") setTherapeuticGoalStage(3);
         if (slideId === "tapering") setTaperingMethodStage(2);
         if (slideId === "treatment") setTreatmentMethodStage(3);
@@ -611,7 +622,8 @@ export default function Home() {
         }
         if (slideId === "results") setEfficacyStoryStage(5);
         if (slideId === "discontinuation") setDiscontinuationStoryStage(5);
-        if (slideId === "discussion-safety") setShowCataractWarning(true);
+        if (slideId === "discussion-safety") setCataractStage(3);
+        if (slideId === "limitations-1") setMaskingStage(1);
         if (slideId === "limitations-2") {
           setActiveBranch('idle');
           setInspected79(true);
@@ -668,6 +680,14 @@ export default function Home() {
         event.preventDefault();
         if (chapters[active]?.id === "therapeutic-goal" && therapeuticGoalStage < 3) {
           setTherapeuticGoalStage((s) => s + 1);
+        } else if (chapters[active]?.id === "randomization" && randomizationStage < 2) {
+          setRandomizationStage((s) => (s < 2 ? ((s + 1) as 0 | 1 | 2) : s));
+        } else if (chapters[active]?.id === "limitations-4" && advancementStage < 2) {
+          setAdvancementStage((s) => (s < 2 ? ((s + 1) as 0 | 1 | 2) : s));
+        } else if (chapters[active]?.id === "discussion-safety" && cataractStage < 3) {
+          setCataractStage((s) => (s < 3 ? ((s + 1) as 0 | 1 | 2 | 3) : s));
+        } else if (chapters[active]?.id === "limitations-1" && maskingStage < 1) {
+          setMaskingStage(1);
         } else {
           goTo(Math.min(active + 1, chapters.length - 1));
         }
@@ -676,6 +696,14 @@ export default function Home() {
         event.preventDefault();
         if (chapters[active]?.id === "therapeutic-goal" && therapeuticGoalStage > 0) {
           setTherapeuticGoalStage((s) => s - 1);
+        } else if (chapters[active]?.id === "randomization" && randomizationStage > 0) {
+          setRandomizationStage((s) => (s > 0 ? ((s - 1) as 0 | 1 | 2) : s));
+        } else if (chapters[active]?.id === "limitations-4" && advancementStage > 0) {
+          setAdvancementStage((s) => (s > 0 ? ((s - 1) as 0 | 1 | 2) : s));
+        } else if (chapters[active]?.id === "discussion-safety" && cataractStage > 0) {
+          setCataractStage((s) => (s > 0 ? ((s - 1) as 0 | 1 | 2 | 3) : s));
+        } else if (chapters[active]?.id === "limitations-1" && maskingStage > 0) {
+          setMaskingStage(0);
         } else {
           goTo(Math.max(active - 1, 0));
         }
@@ -687,13 +715,41 @@ export default function Home() {
       deck.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", onKey);
     };
-  }, [active, therapeuticGoalStage]);
+  }, [active, therapeuticGoalStage, randomizationStage, advancementStage, cataractStage, maskingStage]);
 
   useEffect(() => {
     if (isHandout) return;
     if (chapters[active]?.id !== "therapeutic-goal") return;
     setTherapeuticGoalStage(0);
   }, [active, isHandout]);
+
+  const handleRandomizationClick = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (randomizationStage < 2) {
+      setRandomizationStage((s) => (s < 2 ? ((s + 1) as 0 | 1 | 2) : s));
+    }
+  };
+
+  const handleAdvancementClick = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (advancementStage < 2) {
+      setAdvancementStage((s) => (s < 2 ? ((s + 1) as 0 | 1 | 2) : s));
+    }
+  };
+
+  const handleCataractClick = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (cataractStage < 3) {
+      setCataractStage((s) => (s < 3 ? ((s + 1) as 0 | 1 | 2 | 3) : s));
+    }
+  };
+
+  const handleMaskingClick = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (maskingStage < 1) {
+      setMaskingStage(1);
+    }
+  };
 
   const advanceTherapeuticGoal = () => {
     setTherapeuticGoalStage((s) => (s < 3 ? s + 1 : s));
@@ -724,10 +780,13 @@ export default function Home() {
       if (params.get("handout") === "true" || (window as any).__HANDOUT_MODE__) {
         setIsHandout(true);
       }
-      const slideParam = params.get("slide");
+      const slideParam = params.get("slide") || window.location.hash.replace(/^#/, "");
       if (slideParam) {
-        const slideIndex = parseInt(slideParam, 10) - 1;
-        if (!isNaN(slideIndex) && slideIndex >= 0 && slideIndex < chapters.length) {
+        let slideIndex = parseInt(slideParam, 10) - 1;
+        if (isNaN(slideIndex)) {
+          slideIndex = chapters.findIndex((c) => c.id === slideParam);
+        }
+        if (slideIndex >= 0 && slideIndex < chapters.length) {
           goTo(slideIndex, true);
         }
       }
@@ -739,6 +798,10 @@ export default function Home() {
     if (chapters[active]?.id === "treatment") setTreatmentMethodStage(0);
     if (chapters[active]?.id === "participant-flow") setParticipantFlowStage(0);
     if (chapters[active]?.id === "systemic-safety-tolerability") setSafetyFocus(false);
+    if (chapters[active]?.id === "randomization") setRandomizationStage(0);
+    if (chapters[active]?.id === "limitations-4") setAdvancementStage(0);
+    if (chapters[active]?.id === "discussion-safety") setCataractStage(0);
+    if (chapters[active]?.id === "limitations-1") setMaskingStage(0);
   }, [active, isHandout]);
 
   useEffect(() => {
@@ -945,21 +1008,21 @@ export default function Home() {
         <div className="chapter-readout" aria-live="polite">
           {chapters[active]?.id === "outcomes-original" ? (
             <>
-              <span>13</span>
+              <span>14</span>
               <i />
-              <span>31</span>
+              <span>34</span>
             </>
-          ) : active < 31 ? (
+          ) : active < 34 ? (
             <>
               <span>{String(active + 1).padStart(2, "0")}</span>
               <i />
-              <span>31</span>
+              <span>34</span>
             </>
           ) : (
             <>
               <span>EXTRA</span>
               <i />
-              <span>{String(active - 30).padStart(2, "0")}</span>
+              <span>{String(active - 33).padStart(2, "0")}</span>
             </>
           )}
         </div>
@@ -2127,9 +2190,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="study-design" className="scene design-scene">
+                <section id="chapter-methods" className="scene chapter-scene" aria-label="Chapter transition: Methods">
+          <div className="chapter-orbit-stage" aria-hidden="true">
+            <div className="chapter-orbit-ring ring-outer" />
+            <div className="chapter-orbit-ring ring-mid"><i className="chapter-orbit-node" /></div>
+            <div className="chapter-orbit-ring ring-inner" />
+          </div>
+          <div className="scene-copy chapter-copy">
+            <p className="eyebrow"><span /> 07 — METHODS</p>
+            <h1>
+              How did they<br />
+              <em>answer it?</em>
+            </h1>
+            <p className="lede chapter-lede">
+              One trial. Two strategies. A controlled path to steroid sparing
+            </p>
+          </div>
+        </section>
+
+<section id="study-design" className="scene design-scene">
           <div className="scene-copy design-copy">
-            <p className="eyebrow"><span /> 07 — METHODOLOGY / STUDY DESIGN</p>
+            <p className="eyebrow"><span /> 08 — METHODOLOGY / STUDY DESIGN</p>
             <h2>Built across<br /><em>three continents</em></h2>
             <p className="lede">Multicenter, randomized, unmasked superiority trial comparing adalimumab with conventional immunosuppression</p>
             <div className="design-attributes" aria-label="Study design features">
@@ -2204,7 +2285,7 @@ export default function Home() {
 
         <section id="screening" className="scene journey-scene">
           <div className="scene-copy journey-copy screening-inclusion-copy">
-            <p className="eyebrow"><span /> 08 — METHODOLOGY / SCREENING PATHWAY</p>
+            <p className="eyebrow"><span /> 09 — METHODOLOGY / SCREENING PATHWAY</p>
             <h2>The entry<br /><em>window</em></h2>
             <p className="lede">Three entry thresholds preceded an eight-part safety screen</p>
             <div className="disease-window">
@@ -2237,9 +2318,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="randomization" className="scene randomization-scene">
+        <section
+          id="randomization"
+          className={`scene randomization-scene randomization-stage-${randomizationStage}`}
+          onClick={handleRandomizationClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              handleRandomizationClick();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Stratification and Randomization. Click to advance from dimensions to 4 strata, then 1:1 allocation"
+          style={{ cursor: randomizationStage < 2 ? "pointer" : "default" }}
+        >
           <div className="scene-copy randomization-copy">
-            <p className="eyebrow"><span /> 09 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
+            <p className="eyebrow"><span /> 10 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
             <h2>Four strata.<br /><em>One balanced split</em></h2>
             <p className="lede">Randomization was stratified by baseline immunosuppression and prednisone dose, using <strong>varying-size permuted blocks</strong> within each stratum</p>
             <div className="randomization-timeline" aria-label="Steps completed before randomization assignment was revealed">
@@ -2251,30 +2346,76 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="four-strata-flow" aria-label="Four parallel strata, each using independent permuted blocks with 1 to 1 allocation">
+          {/* STAGE 0: The Two Stratification Dimensions */}
+          <div className={`strata-dimensions-stage ${randomizationStage === 0 ? "active" : ""}`} aria-hidden={randomizationStage !== 0}>
+            <div className="strata-dim-card dim-card-a">
+              <div className="strata-dim-head">
+                <span className="strata-dim-kicker">DIMENSION A</span>
+                <h3>Baseline Immunosuppression</h3>
+              </div>
+              <div className="strata-dim-items">
+                <div className="strata-dim-pill">
+                  <strong>0 DRUGS</strong>
+                  <p>0 conventional immunosuppressive drugs</p>
+                </div>
+                <div className="strata-dim-pill">
+                  <strong>1 DRUG</strong>
+                  <p>1 conventional immunosuppressive drug</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="strata-dim-connector" aria-hidden="true">
+              <div className="strata-dim-cross">×</div>
+              <small>COMBINED INTO</small>
+              <b>4 STRATA</b>
+            </div>
+
+            <div className="strata-dim-card dim-card-b">
+              <div className="strata-dim-head">
+                <span className="strata-dim-kicker">DIMENSION B</span>
+                <h3>Prednisone Category</h3>
+              </div>
+              <div className="strata-dim-items">
+                <div className="strata-dim-pill">
+                  <strong>&lt;30 MG/DAY</strong>
+                  <p>Lower-dose category (L)</p>
+                </div>
+                <div className="strata-dim-pill">
+                  <strong>≥30 MG/DAY</strong>
+                  <p>Higher-dose category (H)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* STAGES 1 & 2: 4 Strata Columns + Randomization Allocation */}
+          <div className={`four-strata-flow ${randomizationStage > 0 ? "active" : ""}`} aria-label="Four parallel strata, each using independent permuted blocks with 1 to 1 allocation">
             <div className="strata-source"><span>ELIGIBLE PARTICIPANT</span></div>
-            {[1, 3, 0, 2].map((target, sequence) => (
+            {randomizationStage >= 2 && [1, 3, 0, 2].map((target, sequence) => (
               <i key={target} className={`participant-token target-${target} sequence-${sequence}`} aria-hidden="true" />
             ))}
             <div className="strata-branches" aria-hidden="true"><i /><i /><i /><i /></div>
             <div className="strata-columns">
-              {strata.map((stratum, index) => (
-                <button key={stratum.code} className={`stratum-column ${selectedStratum === index ? "active" : ""}`} onClick={() => setSelectedStratum(index)} aria-pressed={selectedStratum === index}>
+              {strata.map((stratum) => (
+                <div key={stratum.code} className="stratum-column active">
                   <span className="stratum-code">{stratum.code}</span>
                   <small>{stratum.drug} · {stratum.prednisone}</small>
-                  <div className="permuted-stack" key={`${stratum.code}-${selectedStratum === index}`}>
-                    {stratum.blocks.map((block, blockIndex) => (
-                      <span className="permuted-block" key={`${stratum.code}-${blockIndex}`}>
-                        {block.map((assignment, assignmentIndex) => <i key={`${assignment}-${assignmentIndex}`} className={assignment === "A" ? "token-a" : "token-c"}>{assignment}</i>)}
-                      </span>
-                    ))}
-                  </div>
-                </button>
+                  {randomizationStage >= 2 && (
+                    <div className="permuted-stack" key={`${stratum.code}-revealed`}>
+                      {stratum.blocks.map((block, blockIndex) => (
+                        <span className="permuted-block" key={`${stratum.code}-${blockIndex}`}>
+                          {block.map((assignment, assignmentIndex) => <i key={`${assignment}-${assignmentIndex}`} className={assignment === "A" ? "token-a" : "token-c"}>{assignment}</i>)}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
             <div className="strata-legend">
               <span><b>0 / 1</b> = DRUG COUNT</span>
-              <strong className="strata-balance-tag">1 : 1 WITHIN EACH STRATUM</strong>
+              <strong className={`strata-balance-tag ${randomizationStage >= 2 ? "revealed" : "pending"}`}>1 : 1 WITHIN EACH STRATUM</strong>
               <span><b>L / H</b> = &lt;30 / ≥30 MG/DAY</span>
             </div>
           </div>
@@ -2295,7 +2436,7 @@ export default function Home() {
           aria-label="Treatment by stratum. Click to reveal zero-drug treatments, one-drug additions, then prednisolone guidance"
         >
           <div className="scene-copy treatment-copy">
-            <p className="eyebrow"><span /> 10 — METHODOLOGY / TREATMENT BY STRATUM</p>
+            <p className="eyebrow"><span /> 11 — METHODOLOGY / TREATMENT BY STRATUM</p>
             <h2>Baseline therapy.<br /><em>Defines the next step</em></h2>
           <p className="lede">No drug at baseline? Start one. Already on one? Add another</p>
           </div>
@@ -2369,7 +2510,7 @@ export default function Home() {
           aria-label="Tapering protocol. Click to reveal reactivation guidance, then regional corticosteroid injection windows"
         >
           <div className="scene-copy tapering-copy">
-            <p className="eyebrow"><span /> 11 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
+            <p className="eyebrow"><span /> 12 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
             <h2>Taper the steroid.<br /><em>Escalate when needed</em></h2>
             <p className="lede">Taper after 2–4 weeks of disease control; reactivation resets steroids and advances immunosuppression</p>
           </div>
@@ -2416,7 +2557,7 @@ export default function Home() {
           aria-label="Follow-up schedule. Click to reveal every-visit protocols, then milestone evaluations"
         >
           <div className="scene-copy followup-copy">
-            <p className="eyebrow"><span /> 12 — METHODOLOGY / FOLLOW-UP</p>
+            <p className="eyebrow"><span /> 13 — METHODOLOGY / FOLLOW-UP</p>
             <h2>A year in focus.<br /><em>Every visit counts</em></h2>
             <p className="lede">Monthly through month 6, then every 2 months to the 1-year close-out</p>
           </div>
@@ -2467,7 +2608,7 @@ export default function Home() {
           aria-label="Outcomes overview. Click to reveal the primary outcome, secondary outcomes, then the definition of inactive uveitis"
         >
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> 14 — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it</em></h2>
           </div>
 
@@ -2520,7 +2661,7 @@ export default function Home() {
 
         <section id="statistics-sample-only" className="scene statistics-scene statistics-sample-only-scene">
           <div className="scene-copy statistics-copy">
-            <p className="eyebrow"><span /> 14 — METHODOLOGY / STATISTICS</p>
+            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICS</p>
             <h2>Power the comparison.<br /><em>Model the journey</em></h2>
           </div>
 
@@ -2555,14 +2696,14 @@ export default function Home() {
           aria-label="Statistical analysis framework. Click to focus each analysis family"
         >
           <div className="scene-copy statistics-framework-copy">
-            <p className="eyebrow"><span /> 15 — METHODOLOGY / STATISTICAL ANALYSIS</p>
+            <p className="eyebrow"><span /> 16 — METHODOLOGY / STATISTICAL ANALYSIS</p>
             <h2>Different questions.<br /><em>Different models</em></h2>
           </div>
 
           <section className="analysis-framework" aria-label="Four statistical analysis families">
             <article className="analysis-framework-column">
               <header><b>01</b><span>PRIMARY OUTCOME</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Did assigned treatment achieve corticosteroid sparing more often?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Did assigned treatment achieve corticosteroid sparing <em>more often?</em></h3></section>
               <div className="analysis-visual analysis-visual-binary" aria-label="Schematic repeated binary participant-state motif"><i /><i /><i /><i /><i /><i /><i /><i /></div>
               <section className="framework-model"><h4>GEE LOGISTIC<br />REGRESSION</h4></section>
               <ul><li>Repeated measures; unstructured covariance</li><li>Treatment, strata, visits 8/10/12, treatment × visit</li></ul>
@@ -2570,7 +2711,7 @@ export default function Home() {
 
             <article className="analysis-framework-column">
               <header><b>02</b><span>CONTINUOUS OUTCOMES</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Did visual acuity, quality of life, or retinal thickness change over time?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Did visual acuity, quality of life, or retinal thickness <em>change over time?</em></h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-lines" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic longitudinal trajectories"><path d="M8 72 43 48 76 57 112 34 148 42 189 19 232 27" /><path d="M8 76 43 62 76 69 112 54 148 59 189 45 232 47" /><g><circle cx="43" cy="48" r="3" /><circle cx="112" cy="34" r="3" /><circle cx="189" cy="19" r="3" /><circle cx="43" cy="62" r="3" /><circle cx="112" cy="54" r="3" /><circle cx="189" cy="45" r="3" /></g></svg>
               </div>
@@ -2580,7 +2721,7 @@ export default function Home() {
 
             <article className="analysis-framework-column">
               <header><b>03</b><span>TIME-TO-EVENT OUTCOMES</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Which strategy reached corticosteroid or adverse-event outcomes sooner?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Which strategy reached corticosteroid or adverse-event outcomes <em>sooner?</em></h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-km" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic Kaplan-Meier-style step curves"><path d="M8 12h24v10h27v11h29v14h33v11h38v10h68" /><path d="M8 12h22v17h25v14h28v18h31v12h39v7h79" /></svg>
               </div>
@@ -2590,7 +2731,7 @@ export default function Home() {
 
             <article className="analysis-framework-column">
               <header><b>04</b><span>CUMULATIVE /<br /><span className="analysis-heading-nowrap">RECURRENT OUTCOMES</span></span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>How did accumulated prednisone exposure and recurrent systemic events differ?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>How did <em>accumulated</em> prednisone exposure and <em>recurrent</em> systemic events differ?</h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-accumulation" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic accumulated exposure trajectories"><path d="M8 80 43 72 78 60 113 47 148 36 190 20 232 9V80Z" /><path d="M8 80 43 77 78 70 113 61 148 52 190 43 232 33V80Z" /></svg>
               </div>
@@ -2602,7 +2743,25 @@ export default function Home() {
           <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span><strong>Sensitivity analyses assessed missingness</strong></span><span><strong>Secondary-outcome P values nominal</strong></span></footer>
         </section>
 
-        <section
+                <section id="chapter-results" className="scene chapter-scene" aria-label="Chapter transition: Results">
+          <div className="chapter-orbit-stage" aria-hidden="true">
+            <div className="chapter-orbit-ring ring-outer" />
+            <div className="chapter-orbit-ring ring-mid"><i className="chapter-orbit-node" /></div>
+            <div className="chapter-orbit-ring ring-inner" />
+          </div>
+          <div className="scene-copy chapter-copy">
+            <p className="eyebrow"><span /> 17 — RESULTS</p>
+            <h1>
+              So—what<br />
+              <em>happened?</em>
+            </h1>
+            <p className="lede chapter-lede">
+              227 participants. Two strategies. One year
+            </p>
+          </div>
+        </section>
+
+<section
           id="participant-flow"
           className={`scene participant-flow-scene participant-flow-stage-${participantFlowStage}`}
           onClick={() => setParticipantFlowStage(1)}
@@ -2610,7 +2769,7 @@ export default function Home() {
         >
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
-              <p className="eyebrow flow-intro-eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
+              <p className="eyebrow flow-intro-eyebrow"><span /> 18 — RESULTS / PARTICIPANT FLOW</p>
               <div className="flow-intro-title flow-assessed-title"><span>ASSESSED FOR ELIGIBILITY</span><strong>338</strong></div>
               <div className="flow-intro-title flow-excluded-title"><span>EXCLUDED</span><strong>111</strong></div>
               <div className="flow-intro-title flow-randomized-title"><span>RANDOMIZED</span><strong>227</strong></div>
@@ -2640,7 +2799,7 @@ export default function Home() {
             </div>
           )}
           <div className="scene-copy flow-copy">
-            <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
+            <p className="eyebrow"><span /> 18 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized</em></h2>
             <p className="lede">Every participant is accounted for from screening through 12 months</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
@@ -2715,7 +2874,7 @@ export default function Home() {
 
         <section id="baseline-portrait" className="scene baseline-portrait-scene">
           <div className="scene-copy baseline-portrait-copy">
-            <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
+            <p className="eyebrow"><span /> 19 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts</em></h2>
             <p className="lede">Participant and eye characteristics were broadly similar. The clearest numerical imbalances are shown separately</p>
           </div>
@@ -2767,11 +2926,13 @@ export default function Home() {
 
             <article className="ocular-signal">
               <header>VISION AT BASELINE</header>
-              <div className="snellen-bcva">
-                <svg viewBox="0 0 76 104" aria-hidden="true"><rect x="3" y="3" width="70" height="98" rx="3" /><text x="38" y="30">E</text><text x="38" y="52">F P</text><text x="38" y="70">T O Z</text><text x="38" y="86">L P E D</text></svg>
+              <div className="snellen-bcva bcva-summary">
                 <div><strong>81</strong><span>BCVA LETTERS</span><small>median · Snellen 20/24</small></div>
               </div>
-              <div className="vision-threshold"><strong>79%</strong><span>OF EYES</span><small>20/40 or better</small></div>
+              <div className="vision-threshold">
+                <svg className="snellen-icon" viewBox="0 0 76 104" aria-hidden="true"><rect x="3" y="3" width="70" height="98" rx="3" /><text x="38" y="30">E</text><text x="38" y="52">F P</text><text x="38" y="70">T O Z</text><text x="38" y="86">L P E D</text></svg>
+                <strong>79%</strong><span>OF EYES</span><small>20/40 or better</small>
+              </div>
             </article>
 
             <article className="baseline-contrasts">
@@ -2787,7 +2948,7 @@ export default function Home() {
         {false && <section id="treatment-results" className="scene treatment-results-scene">
           <div className="scene-header-row">
             <div className="scene-copy treatment-results-copy">
-              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 20 — RESULTS / TREATMENTS</p>
               <h2>Therapy assigned. <em>Treatment evolved</em></h2>
             </div>
             
@@ -3071,7 +3232,7 @@ export default function Home() {
           {/* HEADER AREA */}
           <header className="txrd-header">
             <div className="txrd-title-area">
-              <p className="eyebrow"><span /> 18 — RESULTS / TREATMENTS</p>
+              <p className="eyebrow"><span /> 20 — RESULTS / TREATMENTS</p>
               <h1>
                 <span>Therapy assigned.</span><br />
                 <span className="txrd-red">Treatment evolved</span>
@@ -3318,7 +3479,7 @@ export default function Home() {
           aria-label="Efficacy results. Click or swipe up to advance the result sequence"
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 19 — RESULTS / EFFICACY</p>
+            <p className="eyebrow"><span /> 21 — RESULTS / EFFICACY</p>
             <h2>Steroid sparing.<br /><em>Sooner with ADA</em></h2>
             <p className="lede">Adalimumab produced more successful corticosteroid sparing by 6 months and reached the outcome faster</p>
           </div>
@@ -3370,7 +3531,7 @@ export default function Home() {
           aria-label="Corticosteroid discontinuation results. Click or swipe up to advance the result sequence"
         >
           <div className="scene-copy results-copy">
-            <p className="eyebrow"><span /> 20 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
+            <p className="eyebrow"><span /> 22 — RESULTS / CORTICOSTEROID DISCONTINUATION</p>
             <h2>Off steroids.<br /><em>The gap emerged later</em></h2>
             <p className="lede">Discontinuation was similar at 6 months. By 12 months, significantly more ADA participants had successfully stopped corticosteroids</p>
           </div>
@@ -3418,7 +3579,7 @@ export default function Home() {
 
         <section id="ocular-results" className="scene ocular-results-scene">
           <div className="scene-copy ocular-results-copy">
-            <p className="eyebrow"><span /> 21 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
+            <p className="eyebrow"><span /> 23 — RESULTS / VISUAL &amp; MACULAR OUTCOMES</p>
             <h2>Vision held.<br /><em>Edema receded</em></h2>
             <p className="lede">Both groups maintained good visual acuity. ADA showed an earlier advantage in visual gain and macular edema resolution</p>
           </div>
@@ -3508,7 +3669,7 @@ export default function Home() {
           aria-label="Safety and tolerability results. Click to emphasize the differing safety signals and serious systemic events"
         >
           <div className="scene-copy safety-qol-copy">
-            <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
+            <p className="eyebrow"><span /> 24 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar</em></h2>
             <p className="lede">ADA had fewer cataract surgeries, ≥15-letter vision losses, and liver enzyme elevations; serious systemic event rates were similar</p>
           </div>
@@ -3561,7 +3722,7 @@ export default function Home() {
 
         <section id="quality-of-life-results" className="scene qol-results-scene">
           <div className="scene-copy qol-results-copy">
-            <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
+            <p className="eyebrow"><span /> 25 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar</em></h2>
             <p className="lede">The trial found no sustained clinically meaningful difference in general health, vision-related function, or SF-36 domains</p>
           </div>
@@ -3571,25 +3732,80 @@ export default function Home() {
             <article className="qol-sf36"><span>03</span><b>SF-36</b><strong>Physical + mental health</strong><div><p><em>PHYSICAL</em> ADA was stable and CID declined slightly. The 6-month difference was not sustained at 12 months</p><p><em>MENTAL</em> No significant difference at 6 or 12 months</p></div><i /></article>
           </section>
         </section>
-        <section id="limitations-4" className="scene discussion-advancement-scene">
+                <section id="chapter-discussion" className="scene chapter-scene" aria-label="Chapter transition: Discussion">
+          <div className="chapter-orbit-stage" aria-hidden="true">
+            <div className="chapter-orbit-ring ring-outer" />
+            <div className="chapter-orbit-ring ring-mid"><i className="chapter-orbit-node" /></div>
+            <div className="chapter-orbit-ring ring-inner" />
+          </div>
+          <div className="chapter-floating-questions" aria-label="Core discussion questions">
+            <div className="floating-q-card fq-top-left">
+              <p className="fq-text">Could more second-agent use have favored ADA?</p>
+            </div>
+            <div className="floating-q-card fq-mid-left">
+              <p className="fq-text">Could knowing treatment assignment have biased results?</p>
+            </div>
+            <div className="floating-q-card fq-bottom-left">
+              <p className="fq-text">Could a weaker conventional agent have favored ADA?</p>
+            </div>
+
+            <div className="floating-q-card fq-top-right">
+              <p className="fq-text">Why did CID show more ≥3-line vision loss?</p>
+            </div>
+            <div className="floating-q-card fq-mid-right">
+              <p className="fq-text">Did ADA work better — or just get there faster?</p>
+            </div>
+            <div className="floating-q-card fq-bottom-right">
+              <p className="fq-text">Could differential dropout have biased the outcome?</p>
+            </div>
+          </div>
+          <div className="scene-copy chapter-copy">
+            <p className="eyebrow"><span /> 26 — DISCUSSION</p>
+            <h1>
+              The result looks simple<br />
+              <em>The interpretation isn&apos;t</em>
+            </h1>
+          </div>
+        </section>
+
+        <section
+          id="limitations-4"
+          className={`scene discussion-advancement-scene adv-stage-${advancementStage}`}
+          onClick={handleAdvancementClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              handleAdvancementClick();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Treatment advancement discussion. Click to reveal initial observations, then overall advancement and pathways"
+          style={{ cursor: advancementStage < 2 ? "pointer" : "default" }}
+        >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 24 — DISCUSSION / TREATMENT ADVANCEMENT</p>
-              <p className="red-hook">COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?</p>
-              <h2>More second agents</h2>
-              <h2 className="red-text">Unlikely influence its benefit</h2>
+              <p className="eyebrow">
+                <span /> 27 — DISCUSSION / TREATMENT ADVANCEMENT
+              </p>
+              <p className="red-hook">
+                COULD MORE SECOND-AGENT USE HAVE FAVORED ADA?
+              </p>
 
-              <p className="lede">Two observations argue against second-agent use explaining ADA’s benefit</p>
+              <div className="discussion-stage-reveal reveal-stage-1">
+                <h2>More second agents</h2>
+                <h2 className="red-text">Unlikely influence its benefit</h2>
+
+                <p className="lede">Two observations argue against second-agent use explaining ADA’s benefit</p>
+              </div>
               
               <div className="adv-observations-block">
-
-                
-                <div className="observation-item">
+                <div className="observation-item discussion-stage-reveal reveal-stage-1">
                   <h4><span>01</span> — CONSISTENCY ACROSS STRATA</h4>
                   <p>Steroid-sparing and discontinuation benefits were similar across baseline immunosuppression strata</p>
                 </div>
                 
-                <div className="observation-item">
+                <div className="observation-item discussion-stage-reveal reveal-stage-2">
                   <h4><span>02</span> — OVERALL TREATMENT ADVANCEMENT</h4>
                   <p>Despite more second-agent use with ADA in one stratum, overall treatment advancement was greater with CID</p>
                 </div>
@@ -3599,7 +3815,7 @@ export default function Home() {
             <div className="adv-right-col">
               <div className="adv-arch-evidence-strip">
                 <div className="adv-arch-evidence-recall">
-                  <strong>COUNTEREVIDENCE</strong>
+                  <strong>THE OBSERVATION</strong>
                   <span>Among participants <strong>NOT RECEIVING</strong> immunosuppression at baseline</span>
                 </div>
                 <div className="adv-arch-evidence-stat">
@@ -3607,14 +3823,14 @@ export default function Home() {
                   <span><em>41%</em> ADA vs <em>29%</em> CID</span>
                   <small>P = 0.060</small>
                 </div>
-                <div className="adv-arch-evidence-stat adv-arch-evidence-overall">
+                <div className="adv-arch-evidence-stat adv-arch-evidence-overall discussion-stage-reveal reveal-stage-2">
                   <b>IMMUNOSUPPRESSION ADVANCEMENT</b>
                   <span><em>37</em> ADA vs <em>60</em> CID</span>
                   <small style={{ color: '#ff666b', fontWeight: 600 }}>P &lt; 0.001</small>
                 </div>
               </div>
 
-              <div className="adv-arch-panel">
+              <div className="adv-arch-panel discussion-stage-reveal reveal-stage-2">
                 <header className="adv-arch-header">
                   <span>PROTOCOL DIVERGES AFTER FIRST RELAPSE</span>
                 </header>
@@ -3675,51 +3891,64 @@ export default function Home() {
 
         <section 
           id="discussion-safety" 
-          className="scene discussion-cataract-scene"
-          onClick={() => setShowCataractWarning(prev => !prev)}
-          style={{ cursor: 'pointer' }}
+          className={`scene discussion-cataract-scene cataract-stage-${cataractStage}`}
+          onClick={handleCataractClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              handleCataractClick();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Cataract signal discussion. Click to step through steroid exposure, baseline lens status, and critical interpretation caveat"
+          style={{ cursor: cataractStage < 3 ? 'pointer' : 'default' }}
         >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 25 — DISCUSSION / CATARACT SIGNAL</p>
-              <p className="red-hook">WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?</p>
-              <h2>More steroid exposure</h2>
-              <h2 className="red-text">Plausible. Not definitive</h2>
+              <p className="eyebrow">
+                <span /> 28 — DISCUSSION / CATARACT SIGNAL
+              </p>
+              <p className="red-hook">
+                WHY DID CID SHOW MORE ≥3-LINE VISION LOSS?
+              </p>
               
-              <p className="lede">Greater steroid exposure with CID is plausible, but two observations prevent causal attribution</p>
+              <div className="discussion-stage-reveal reveal-stage-1">
+                <h2>More steroid exposure</h2>
+                <h2 className="red-text">Plausible. Not definitive</h2>
+                
+                <p className="lede">Greater steroid exposure with CID is plausible, but two observations prevent causal attribution</p>
+              </div>
               
               <div className="adv-observations-block editorial-rules">
-                <div className="observation-item">
+                <div className="observation-item discussion-stage-reveal reveal-stage-2">
                   <h4><span>01</span> — EXPOSURE DIFFERENCE WAS MODEST</h4>
                   <p>ADA had slightly lower steroid use, but exposure separation was limited</p>
                 </div>
                 
-                <div className="observation-item">
+                <div className="observation-item discussion-stage-reveal reveal-stage-2">
                   <h4><span>02</span> — BASELINE LENS STATUS WAS IMBALANCED</h4>
                   <p>A numerically greater fraction of phakic CID eyes already had cataract at baseline</p>
                 </div>
 
-                {showCataractWarning && (
-                  <div className="cataract-inline-red-box">
-                    <div className="inline-warning-badge-row">
-                      <span className="warning-badge-icon-custom" aria-hidden="true">!</span>
-                      <span className="warning-badge-text">CRITICAL INTERPRETATION CAVEAT</span>
-                    </div>
-                    <p className="inline-warning-p1">
-                      How much cataract explains the ≥3-line BCVA difference was not reported
-                    </p>
-                    <div className="inline-warning-divider" />
-                    <p className="inline-warning-p2">
-                      Cataract explained 8/18 (44%) of ≥6-line declines. Other causes and postoperative recovery varied
-                    </p>
+                <div className="cataract-inline-red-box discussion-stage-reveal reveal-stage-3">
+                  <div className="inline-warning-badge-row">
+                    <span className="warning-badge-icon-custom" aria-hidden="true">!</span>
+                    <span className="warning-badge-text">CRITICAL INTERPRETATION CAVEAT</span>
                   </div>
-                )}
+                  <p className="inline-warning-p1">
+                    How much cataract explains the ≥3-line BCVA difference was not reported
+                  </p>
+                  <div className="inline-warning-divider" />
+                  <p className="inline-warning-p2">
+                    Cataract explained 8/18 (44%) of ≥6-line declines. Other causes and postoperative recovery varied
+                  </p>
+                </div>
               </div>
             </div>
 
             <div className="adv-right-col">
               <div className="adv-causal-panel">
-                
                 <div className="adv-arch-evidence-strip cataract-signal-strip">
                   <div className="adv-arch-evidence-recall">
                     <strong>THE SIGNAL</strong>
@@ -3740,7 +3969,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="causal-diagram-wrapper">
+                <div className="causal-diagram-wrapper discussion-stage-reveal reveal-stage-1">
                   <p className="causal-header">INTERPRETING THE CATARACT SIGNAL</p>
 
                   <div className="causal-diagram">
@@ -3769,7 +3998,7 @@ export default function Home() {
                       <div className="causal-main-path">
                          <div className="dashed-arrow-down"></div>
                       </div>
-                      <div className="causal-side-note note-right">
+                      <div className="causal-side-note note-right discussion-stage-reveal reveal-stage-2">
                         <span className="note-eyebrow-heading">PRE-EXISTING LENS STATUS</span>
                         <div className="side-note-icon-card" aria-hidden="true">
                           <svg viewBox="0 0 44 40" className="icon-svg-eye">
@@ -3787,29 +4016,49 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <div className="causal-node node-surgery-evident">
+                    <div className="causal-node node-surgery-evident discussion-stage-reveal reveal-stage-2">
                       Higher cataract surgery with CID
                     </div>
                     
                     <div className="causal-node node-conclusion">
-                      <strong>PLAUSIBLE CONTRIBUTOR <span className="red-highlight-text">≠ PROVEN CAUSE</span></strong>
+                      <strong className="discussion-stage-reveal reveal-stage-2">PLAUSIBLE CONTRIBUTOR <span className="red-highlight-text">≠ PROVEN CAUSE</span></strong>
                       <p>Greater steroid exposure may have contributed. GCA cohorts suggest ~3–4% higher risk per 1 g cumulative oral dose over one year</p>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </section>
 
-        <section id="limitations-1" className="scene discussion-limitations-scene">
+        <section 
+          id="limitations-1" 
+          className={`scene discussion-limitations-scene masking-stage-${maskingStage}`}
+          onClick={handleMaskingClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              handleMaskingClick();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Masking limitations discussion. Click to reveal uncontrolled design details, support claims, and safeguards"
+          style={{ cursor: maskingStage < 1 ? 'pointer' : 'default' }}
+        >
           <div className="adv-two-col">
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
-              <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
-              <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled</span></h2>
-              <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight constrained bias</p>
+              <p className="eyebrow">
+                <span /> 29 — DISCUSSION / MASKING LIMITATIONS
+              </p>
+              <p className="cataract-hook">
+                COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?
+              </p>
+              
+              <div className="discussion-stage-reveal reveal-stage-1">
+                <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled</span></h2>
+                <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight constrained bias</p>
+              </div>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
@@ -3825,7 +4074,7 @@ export default function Home() {
             </div>
 
             <div className="adv-right-col">
-              <div className="adv-arch-evidence-strip">
+              <div className="adv-arch-evidence-strip discussion-stage-reveal reveal-stage-1">
                 <div className="adv-arch-evidence-recall">
                   <strong>SUPPORT CLAIMS</strong>
                   <span>Participant-reported outcomes at 6 months</span>
@@ -3844,10 +4093,10 @@ export default function Home() {
 
               <div className="limitations-analytical-panel">
                 
-                {/* SECTION 1: POTENTIAL BIAS WAS NOT NECESSARILY UNIDIRECTIONAL */}
+                {/* SECTION 1: POTENTIAL BIAS */}
                 <div className="lim-bias-unidirectional-section">
                   <div className="lim-section-rule-header">
-                    <span className="lim-section-title">POTENTIAL BIAS WAS NOT NECESSARILY UNIDIRECTIONAL</span>
+                    <span className="lim-section-title">POTENTIAL BIAS</span>
                   </div>
 
                   <div className="lim-three-cards-row">
@@ -3920,7 +4169,7 @@ export default function Home() {
                 </div>
 
                 {/* SECTION 2: SAFEGUARDS (More vertical space, shield icons, thin lines) */}
-                <div className="lim-safeguards-section">
+                <div className="lim-safeguards-section discussion-stage-reveal reveal-stage-1">
                   <div className="lim-section-rule-header">
                     <span className="lim-section-title">SAFEGUARDS</span>
                   </div>
@@ -3971,7 +4220,7 @@ export default function Home() {
                 </div>
 
                 {/* BOTTOM CONCLUSION */}
-                <div className="lim-conclusion-band">
+                <div className="lim-conclusion-band discussion-stage-reveal reveal-stage-1">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
                   <p>These safeguards constrain bias but cannot eliminate an unmasked design</p>
                 </div>
@@ -3989,7 +4238,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN - Completely fixed editorial setup */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
+              <p className="eyebrow"><span /> 30 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways</span></h2>
               <p className="lede">CID was a treatment strategy, not one drug. The concern was whether calcineurin-inhibitor exposure weakened the comparator</p>
@@ -4484,7 +4733,7 @@ export default function Home() {
           <div className="adv-two-col">
             {/* LEFT COLUMN */}
             <div className="adv-left-col">
-              <p className="eyebrow"><span /> 28 — DISCUSSION / TEMPORAL TRAJECTORY</p>
+              <p className="eyebrow"><span /> 31 — DISCUSSION / TEMPORAL TRAJECTORY</p>
               <p className="cataract-hook">DID ADA WORK BETTER — OR JUST FASTER?</p>
               <h2>
                 ADA got there faster.<br />
@@ -4690,7 +4939,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="attrition-wide-header">
               <div className="attrition-header-left">
-                <p className="eyebrow"><span /> 29 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
+                <p className="eyebrow"><span /> 32 — DISCUSSION / MISSING DATA &amp; ATTRITION</p>
                 <p className="red-hook">COULD DIFFERENTIAL DROPOUT HAVE BIASED THE RESULT?</p>
                 <h2>
                   More patients left CID.{" "}
@@ -4955,7 +5204,7 @@ export default function Home() {
             {/* TOP EDITORIAL HEADER */}
             <div className="immuno-wide-header">
               <div className="immuno-header-left">
-                <p className="eyebrow"><span /> 30 — DISCUSSION / IMMUNOGENICITY</p>
+                <p className="eyebrow"><span /> 33 — DISCUSSION / IMMUNOGENICITY</p>
                 <h2>
                   Adalimumab worked alone.<br />
                   <span className="red-text" style={{ display: "inline" }}>
@@ -5146,7 +5395,7 @@ export default function Home() {
         <section id="conclusion" className="scene conclusion-scene">
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
-            <p className="eyebrow"><span /> 31 — CONCLUSION</p>
+            <p className="eyebrow"><span /> 34 — CONCLUSION</p>
             <h2>Control the inflammation.<br /><em>Get off steroids faster</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months</p>
             <blockquote className="conclusion-caveat">
@@ -5158,7 +5407,7 @@ export default function Home() {
 
         <section id="outcomes-original" className="scene outcomes-original-scene">
           <div className="scene-copy outcomes-copy">
-            <p className="eyebrow"><span /> 13 — METHODOLOGY / OUTCOMES</p>
+            <p className="eyebrow"><span /> EXTRA — METHODOLOGY / OUTCOMES</p>
             <h2>Define success.<br /><em>Then measure it</em></h2>
           </div>
 

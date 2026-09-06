@@ -470,7 +470,7 @@
     font-weight: 750;
   }
 
-  /* 17 — widen the clinical-view column and tighten the comparison sidebar. */
+  /* 19 — widen the clinical-view column and tighten the comparison sidebar. */
   #baseline-portrait .cohort-portrait {
     grid-template-columns: 1fr .82fr 1.28fr 1.22fr;
   }
@@ -528,10 +528,39 @@
     display: grid;
     gap: .08rem;
     color: #8f8984;
-    font: 650 clamp(.62rem, .68vw, .8rem)/1.2 var(--font-geist-mono), monospace !important;
-    letter-spacing: .01em;
+    font: 500 clamp(.68rem, .70vw, .82rem)/1.28 var(--font-geist-sans), Arial, sans-serif !important;
+    letter-spacing: 0;
     white-space: normal;
   }
+  #baseline-portrait .bcva-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #baseline-portrait .bcva-summary > div {
+    align-items: center;
+    text-align: center;
+  }
+  #baseline-portrait .vision-threshold .snellen-icon {
+    width: 2.8rem;
+    height: 3.8rem;
+    margin-bottom: .3rem;
+    fill: none;
+    stroke: rgba(235, 230, 226, .58);
+    stroke-width: 1.2;
+  }
+  #baseline-portrait .vision-threshold .snellen-icon text {
+    fill: #f1ede9;
+    stroke: none;
+    text-anchor: middle;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+  }
+  #baseline-portrait .vision-threshold .snellen-icon text:nth-of-type(1) { font-size: 25px; }
+  #baseline-portrait .vision-threshold .snellen-icon text:nth-of-type(2) { font-size: 15px; }
+  #baseline-portrait .vision-threshold .snellen-icon text:nth-of-type(3) { font-size: 11px; }
+  #baseline-portrait .vision-threshold .snellen-icon text:nth-of-type(4) { font-size: 8px; }
   #baseline-portrait .contrast-row,
   #baseline-portrait .contrast-row > div {
     min-width: 0;
@@ -549,7 +578,7 @@
     line-height: 1.28 !important;
   }
 
-  /* 18 — keep the three dashboard bands in normal flow. The outcomes band is
+  /* 20 — keep the three dashboard bands in normal flow. The outcomes band is
      relatively positioned, so a percentage top offset moved it below the slide. */
   #treatment-results-redesign .txrd-grid-outcomes {
     top: auto !important;
@@ -589,7 +618,7 @@
     padding-top: .3rem;
   }
 
-  /* 19/20 — preserve the overview first; Page 20 alone swaps the zoom order to 6M then 12M. */
+  /* 21/22 — preserve the overview first; Page 22 alone swaps the zoom order to 6M then 12M. */
   #discontinuation .discontinuation-story-2 .efficacy-canvas {
     transform: scale(1.43);
     transform-origin: 51% 55%;
