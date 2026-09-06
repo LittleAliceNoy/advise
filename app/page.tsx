@@ -3251,9 +3251,9 @@ export default function Home() {
 
           {/* MAIN GRID */}
           <div className="txrd-grid-main">
-            {/* COLUMN 1: BEFORE RANDOMIZATION */}
+            {/* COLUMN 1: AT RANDOMIZATION */}
             <section className="txrd-col txrd-before">
-              <header>BEFORE RANDOMIZATION<br /><span>Baseline enrollment status</span></header>
+              <header>AT RANDOMIZATION<br /><span>Baseline enrollment status</span></header>
               <div className="txrd-arms">
                 <article className="txrd-arm-row">
                   <div className="txrd-arm-label txrd-ada-color">
@@ -3349,6 +3349,7 @@ export default function Home() {
                     </div>
                     <b>100%</b>
                   </div>
+                  <div className="txrd-pathway-secondary">Baseline IMT continued when present</div>
                 </article>
                 <article className="txrd-pathway-card txrd-cid-border txrd-pathway-cid">
                   <div className="txrd-pathway-hero">
@@ -3358,11 +3359,10 @@ export default function Home() {
                       <span>108 / 110 initiated · 2 refused</span>
                     </div>
                     <b>98%</b>
-      </div>
-      <div className="txrd-pathway-composition">
-        <div className="txrd-pathway-composition-item"><i className="txrd-swatch txrd-swatch-purple" /><span>Antimetabolite:</span><b>85 (79%)</b></div>
-        <div className="txrd-pathway-composition-item"><i className="txrd-swatch txrd-swatch-darkpurple" /><span>CNI:</span><b>23 (21%)</b></div>
-      </div>
+                  </div>
+                  <div className="txrd-pathway-composition">
+                    <span><i className="txrd-swatch txrd-swatch-purple" />Antimetabolite <b>85 (77%)</b> &nbsp;·&nbsp; <i className="txrd-swatch txrd-swatch-darkpurple" />CNI <b>23 (21%)</b></span>
+                  </div>
                 </article>
               </div>
             </section>
