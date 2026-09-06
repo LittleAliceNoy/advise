@@ -4285,7 +4285,7 @@ export default function Home() {
                   <div className="pie-header-left">
                     <strong>CONVENTIONAL IMMUNOSUPPRESSION</strong>
                   </div>
-                  <span className="cid-total-n">N = 110</span>
+                  <span className="cid-total-n">N = 108</span>
                 </div>
 
                 {/* 2. REVEALED STATE: UPPER HALF DONUT + LOWER HALF DUAL DETAIL CARDS */}
@@ -4370,7 +4370,7 @@ export default function Home() {
                       <div className="split-detail-card card-antimetabolites">
                         <div className="split-card-header">
                           <span className="split-card-title title-red">
-                            ANTIMETABOLITES (87 PT)
+                            ANTIMETABOLITES (85 PT)
                           </span>
                         </div>
 
@@ -4385,7 +4385,7 @@ export default function Home() {
                               </svg>
                             </div>
                             <span className="split-pill-name">MTX</span>
-                            <span className="split-pill-count count-white">44 pt</span>
+                            <span className="split-pill-count count-white">43 pt</span>
                           </div>
 
                           <div className="split-pill-row-item">
@@ -4398,7 +4398,7 @@ export default function Home() {
                               </svg>
                             </div>
                             <span className="split-pill-name">MYCOPHENOLATE</span>
-                            <span className="split-pill-count count-white">42 pt</span>
+                            <span className="split-pill-count count-white">41 pt</span>
                           </div>
 
                           <div className="split-pill-row-item">
@@ -4601,12 +4601,12 @@ export default function Home() {
                         }}
                       >
                         <div className="focal-title-row">
-                          <span className="focal-badge-hero red-hero">ANTIMETABOLITES (87 pt)</span>
+                          <span className="focal-badge-hero red-hero">ANTIMETABOLITES (85 pt)</span>
                         </div>
 
                         {/* 3 Pills Row with Distinct Pill Icons */}
                         <div className="focal-pills-row">
-                          {/* Pill 1: MTX (Subtle Pastel Champagne/Yellow Round Scored Tablet) 44 pt */}
+                          {/* Pill 1: MTX (Subtle Pastel Champagne/Yellow Round Scored Tablet) 43 pt */}
                           <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-yellow">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
@@ -4616,10 +4616,10 @@ export default function Home() {
                               </svg>
                             </div>
                             <strong className="pill-drug-name">MTX</strong>
-                            <span className="pill-drug-count count-yellow">44 pt</span>
+                            <span className="pill-drug-count count-yellow">43 pt</span>
                           </div>
 
-                          {/* Pill 2: MYCOPHENOLATE (Red Lozenge Caplet) 42 pt */}
+                          {/* Pill 2: MYCOPHENOLATE (Red Lozenge Caplet) 41 pt */}
                           <div className="pill-drug-col pill-show">
                             <div className="pill-icon-wrap wrap-red">
                               <svg viewBox="0 0 40 40" className="pill-svg" width="34" height="34">
@@ -4630,7 +4630,7 @@ export default function Home() {
                               </svg>
                             </div>
                             <strong className="pill-drug-name">MYCOPHENOLATE</strong>
-                            <span className="pill-drug-count count-red">42 pt</span>
+                            <span className="pill-drug-count count-red">41 pt</span>
                           </div>
 
                           {/* Pill 3: AZATHIOPRINE (Clean White Round Tablet - No Center Line) 1 pt */}
