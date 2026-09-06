@@ -3318,22 +3318,10 @@ export default function Home() {
                     <span>113 / 113</span>
                     <div className="txrd-bar txrd-ada-color"><i style={{ width: "100%" }} /></div>
                   </div>
-                  <div className="txrd-stat">
-                    <small>CONVENTIONAL IMT</small>
-                    <strong>2%</strong>
-                    <span>2 / 113</span>
-                    <div className="txrd-bar txrd-ada-color"><i style={{ width: "2%" }} /></div>
-                  </div>
                 </article>
                 <article className="txrd-arm-row no-label">
                   <div className="txrd-stat">
                     <small>ORAL STEROIDS</small>
-                    <strong>98%</strong>
-                    <span>108 / 110</span>
-                    <div className="txrd-bar txrd-cid-color"><i style={{ width: "98%" }} /></div>
-                  </div>
-                  <div className="txrd-stat">
-                    <small>CONVENTIONAL IMT</small>
                     <strong>98%</strong>
                     <span>108 / 110</span>
                     <div className="txrd-bar txrd-cid-color"><i style={{ width: "98%" }} /></div>
@@ -3391,7 +3379,7 @@ export default function Home() {
             <section className="txrd-outcome txrd-outcome-second-agent">
               <div className="txrd-outcome-header">
                 <b>01</b>
-                <div><strong>SECOND-AGENT ADDITION</strong><span>During follow-up</span></div>
+                <div><strong>SECOND-AGENT ADDITION</strong><span>in monotherapy group</span></div>
               </div>
               <div className="txrd-vs">
                 <div className="txrd-ada-color"><small>ADA ARM</small><strong>41%</strong><span>N = 86</span></div>
