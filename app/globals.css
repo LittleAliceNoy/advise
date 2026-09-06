@@ -8,6 +8,509 @@
   font-display: swap;
 }
 
+/* --------------------------------------------------------------------------
+   DECK-WIDE PROJECTION TYPE SCALE
+   Pages 02, 03, 04 and 15 are intentionally absent: they are the approved
+   calibration pilots. The selectors below promote only audience-facing copy.
+   -------------------------------------------------------------------------- */
+@media (min-width: 701px) {
+  /* 01, 05–14 — narrative, methods, and outcome-definition copy */
+  #signal .hero-paper {
+    font-size: clamp(1.08rem, 1.18vw, 1.4rem);
+    line-height: 1.28;
+    white-space: nowrap;
+  }
+  #question :is(.antibody-hero-sub, .antibody-hero-desc, .milestone-indication-text,
+    .evidence-hero-statement, .evidence-body-desc, .cohort-headline,
+    .tension-lead, .tension-question),
+  #evidence-gap :is(.wing-full-name, .wing-strategy-desc, .no-comparison-text,
+    .reveal-eyebrow, .reveal-advise-title, .reveal-advise-tagline),
+  #study-design :is(.design-attributes span, .map-header, .site-marker small,
+    .ethics-copy span, .ethics-copy p, .mtqac-wf-node span, .mtqac-wf-hub small,
+    .mtqac-duty-summary),
+  #screening :is(.disease-window span, .disease-window small, .gate, .gate span,
+    .prednisone-threshold-footnote),
+  #randomization :is(.strata-source, .stratum-code, .stratum-card strong,
+    .stratum-card span, .allocation-branch, .permuted-block),
+  #treatment :is(.treatment-section-title, .treatment-row > div > strong,
+    .treatment-row > div > span),
+  #tapering :is(.tapering-control-header, .taper-checkpoints strong,
+    .taper-checkpoints span, .reactivation-protocol header, .reactivation-protocol li,
+    .reset-guidance, .injection-title, .injection-window),
+  #followup :is(.followup-panel header, .followup-panel strong, .followup-panel span,
+    .followup-panel small, .visit-label),
+  #outcomes :is(.primary-outcome-redesign-copy .lede, .outcome-name-col,
+    .endpoint-equation, .outcomes-secondary-band),
+  #statistics-sample-only :is(.calc-parameter, .calc-input span, .calc-input small,
+    .calc-core small, .calc-core span, .calc-split, .calc-note),
+  #participant-flow :is(.consort-node, .flow-strata-summary, .flow-strata-categories,
+    .consort-notes),
+  #outcomes-original :is(.endpoint-message > p, .endpoint-equation span,
+    .spectrum-label, .spectrum-track b, .spectrum-track span,
+    .imaging-thresholds small),
+  #secondary-outcomes-redesign :is(.secondary-outcomes-band span,
+    .secondary-outcomes-band strong, .definition-heading, .inactive-clinical,
+    .inactive-imaging),
+  #tapering-cinematic :is(.taperx-sequence-label, .taperx-rescue-rule,
+    .taperx-rescue-indication) {
+    font-size: clamp(1rem, 1.12vw, 1.34rem);
+    line-height: 1.28;
+  }
+
+  /* 17–23 — results, chart labels, table findings, and interpretation */
+  #baseline-portrait :is(.baseline-portrait-copy .lede, .cohort-composition header,
+    .demographic-signals span, .demographic-signals small, .race-visual li,
+    .uveitis-spectrum footer, .uveitis-duration-signal, .snellen-bcva span,
+    .snellen-bcva small, .vision-threshold span, .vision-threshold small,
+    .baseline-contrasts header, .contrast-row > span, .baseline-contrasts footer),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow), .txrd-col header,
+    .txrd-arm-label, .txrd-stat small, .txrd-stat span, .txrd-pathway-info,
+    .txrd-outcome-header, .txrd-vs, .txrd-outcome footer, .txrd-esc-stats,
+    .txrd-footer-card, .txrd-footer-subtext),
+  #results :is(.results-copy .lede, .efficacy-readout > span, .efficacy-groups small,
+    .efficacy-speed span, .efficacy-signal small, .efficacy-signal strong,
+    .efficacy-signal p, .efficacy-summary-cards header, .efficacy-summary-cards footer,
+    .efficacy-reactivation),
+  #discontinuation :is(.discontinuation-stage text, .discontinuation-summary-cards,
+    .discontinuation-foot),
+  #ocular-results :is(.ocular-results-copy .lede, .bcva-findings,
+    .published-bcva-panel > header, .edema-module > header, .edema-time-title,
+    .edema-bar-val, .edema-bar-arm, .edema-stats-badge, .edema-module-footer),
+  #systemic-safety-tolerability :is(.safety-qol-copy .lede, .safety-difference-label,
+    .safety-discontinuation-list, .safety-intolerance-panel,
+    .serious-events-panel, .serious-other),
+  #quality-of-life-results :is(.qol-results-copy .lede, .qol-sf36) {
+    font-size: clamp(.98rem, 1.08vw, 1.28rem);
+    line-height: 1.3;
+  }
+
+  /* 24–31 — reasoning, limitations, evidence annotations, and conclusion */
+  #limitations-4 :is(.adv-arch-header, .adv-arch-node, .adv-arch-evidence-strip,
+    .adv-arch-evidence-stat),
+  #discussion-safety :is(.adv-lede, .adv-context, .adv-bar-label-top,
+    .adv-bar-footer, .adv-bar-desc, .adv-hr-label, .adv-hr-ci,
+    .adv-hr-meaning, .adv-annotation-note),
+  #limitations-1 :is(.lim-section-title, .lim-sub1-col-text, .lim-sub1-step-col,
+    .lim-sub2-card-text, .lim-safeguard-line-item, .lim-conclusion-band),
+  #limitations-2 :is(.lim-section-title, .lim-sub-block, .lim-card-bottom-question,
+    .synthesis-conclusion-callout),
+  #limitations-3 :is(.lim-section-title, .lim-sub-block, .lim-card-bottom-question),
+  #limitations-5 :is(.attrition-wide-header, .dominant-attrition-wide-svg text,
+    .robustness-strip-top, .robustness-assumptions-heading,
+    .robustness-analysis-item, .robustness-conclusion-block,
+    .robustness-analysis-footnote),
+  #limitations-6 :is(.hero-support-text, .hero-thin-pathway, .immuno-row-tier,
+    .finishing-text),
+  #conclusion :is(.conclusion-kicker, .conclusion-copy blockquote, .citation) {
+    font-size: clamp(1rem, 1.12vw, 1.34rem);
+    line-height: 1.32;
+  }
+
+  /* Dense local exceptions: retain the larger projection tier while buying
+     room through spacing and geometry rather than shrinking text. */
+  #participant-flow .consort-flow {
+    row-gap: clamp(.5rem, .72vh, .75rem);
+  }
+  #participant-flow .excluded-node {
+    padding: .72rem 1rem;
+  }
+  #treatment-results-redesign :is(.txrd-grid-main, .txrd-grid-outcomes) {
+    column-gap: clamp(.55rem, .75vw, .9rem);
+  }
+  #systemic-safety-tolerability .safety-qol-top {
+    gap: clamp(.65rem, .9vw, 1rem);
+  }
+  #limitations-5 .attrition-svg-wide-wrap {
+    margin-block: clamp(1.35rem, 2.2vh, 2rem);
+  }
+  #limitations-5 .attrition-sensitivity-resolution {
+    margin-top: clamp(1.1rem, 1.8vh, 1.6rem);
+  }
+  #limitations-6 .immuno-row-tier {
+    padding-block: clamp(.72rem, 1.05vh, 1rem);
+  }
+}
+
+/* Final shared pass: elevate audience-facing supporting copy outside the four
+   approved calibration slides without changing their composition. */
+@media (min-width: 701px) {
+  /* Contact-sheet exception fixes: resolve the five visible collisions while
+     preserving a clear increase over each component's original type size. */
+  #participant-flow .consort-flow .consort-notes {
+    left: 27vw !important;
+    right: 8vw !important;
+    bottom: .35rem !important;
+    justify-content: flex-end !important;
+    gap: 1rem !important;
+    font-size: clamp(.76rem,.86vw,1.02rem) !important;
+  }
+
+  #treatment-results-redesign .txrd-header {
+    flex-basis: 22.5vh !important;
+  }
+  #treatment-results-redesign .txrd-grid-main {
+    flex-basis: 29vh !important;
+    height: 29vh !important;
+  }
+  #treatment-results-redesign .txrd-grid-outcomes {
+    flex-basis: 20.5vh !important;
+    height: 20.5vh !important;
+    margin-bottom: 1vh !important;
+  }
+  #treatment-results-redesign :is(.txrd-col header span,.txrd-arm-label b,.txrd-arm-label span,
+    .txrd-stat small,.txrd-stat span,.txrd-pathway-info small,.txrd-outcome-header :is(b,span),
+    .txrd-vs :is(small,span),.txrd-outcome footer,.txrd-esc-stats :is(span,small),
+    .txrd-footer-card span,.txrd-footer-subtext) {
+    font-size: clamp(.78rem,.9vw,1.08rem) !important;
+    line-height: 1.22 !important;
+  }
+  #treatment-results-redesign .txrd-high-dose-subgroup {
+    font-size: clamp(.76rem,.86vw,1.02rem) !important;
+    line-height: 1.18 !important;
+  }
+  #treatment-results-redesign .txrd-footer {
+    padding-block: .45rem !important;
+  }
+
+  #systemic-safety-tolerability .safety-bottom-band {
+    bottom: 3% !important;
+    height: 26.5% !important;
+  }
+  #systemic-safety-tolerability .safety-bottom-band :is(.safety-discontinuation-list b,
+    .safety-discontinuation-list span,.safety-discontinuation-list small,
+    .serious-events-panel b,.serious-events-panel span,.serious-events-panel small,
+    .serious-other) {
+    font-size: clamp(.78rem,.92vw,1.08rem) !important;
+    line-height: 1.22 !important;
+  }
+  #systemic-safety-tolerability .safety-bottom-band :is(.safety-intolerance-panel,.serious-events-panel) {
+    padding-block: .7rem !important;
+  }
+
+  #limitations-5 .dominant-attrition-wide-svg text {
+    font-size: 16px !important;
+  }
+  #limitations-5 .dominant-attrition-wide-svg .post-rand-header-group text {
+    font-size: 13px !important;
+    letter-spacing: .02em;
+  }
+  #limitations-5 .dominant-attrition-wide-svg .discontinuation-header-group text,
+  #limitations-5 .dominant-attrition-wide-svg :is(.ada-dropout-annotation,.cid-dropout-annotation,.cid-discontinued-annotation) text {
+    font-size: 13px !important;
+  }
+
+  #limitations-6 .immuno-finishing-statement {
+    width: calc(100% - 2vw) !important;
+    max-width: none !important;
+  }
+  #limitations-6 .immuno-finishing-statement .finishing-text {
+    width: 100% !important;
+    margin-inline: auto !important;
+    font-size: clamp(.82rem,.96vw,1.12rem) !important;
+    letter-spacing: -.012em;
+    white-space: nowrap !important;
+  }
+
+  /* Exception repair after the all-slide QA: explicit child rules prevent the
+     legacy compact component declarations from defeating the shared scale. */
+  #question .antibody-hero-caption-block :is(h4,p),
+  #question .approval-milestone-panel p,
+  #question .evidence-panel :is(.evidence-sig-tag,.evidence-hero-statement,.evidence-body-desc,.cohort-headline),
+  #question .intro5-tension-bridge :is(.tension-lead,.tension-question),
+  #evidence-gap :is(.wing-full-name,.wing-strategy-desc,.no-comparison-text,.reveal-eyebrow,.reveal-advise-title,.reveal-advise-tagline span),
+  #study-design .design-attributes span,
+  #study-design .ethics-panel :is(p,span,small),
+  #screening .gate :is(b,span),
+  #screening .prednisone-threshold-footnote,
+  #randomization :is(.strata-source,.stratum-code,.stratum-card strong,.stratum-card span,.allocation-branch,.permuted-block),
+  #treatment .treatment-row > div :is(strong,span),
+  #tapering .taper-checkpoints :is(strong,span),
+  #tapering .reactivation-protocol :is(header,li),
+  #tapering :is(.reset-guidance,.injection-title,.injection-window),
+  #followup .followup-panel :is(header,span,small),
+  #outcomes :is(.outcome-name-col,.endpoint-equation,.outcomes-secondary-band),
+  #statistics-sample-only :is(.calc-parameter strong,.calc-parameter span,.calc-input span,.calc-input small,.calc-core small,.calc-core span,.calc-split b,.calc-note strong,.calc-note span),
+  #participant-flow .consort-node :is(h3,p,span,small,li),
+  #participant-flow .flow-strata-summary :is(header,span,strong,footer),
+  #participant-flow .consort-notes,
+  #outcomes-original :is(.endpoint-message>p,.endpoint-equation span,.spectrum-label,.spectrum-track b,.spectrum-track span,.imaging-thresholds small),
+  #secondary-outcomes-redesign :is(.secondary-outcomes-band span,.secondary-outcomes-band strong,.definition-heading,.inactive-clinical b,.inactive-clinical strong,.inactive-clinical span,.inactive-imaging span,.inactive-imaging b,.inactive-imaging p),
+  #tapering-cinematic :is(.taperx-sequence-label,.taperx-rescue-rule,.taperx-rescue-indication) {
+    font-size: clamp(1.02rem,1.18vw,1.42rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  #baseline-portrait :is(.baseline-portrait-copy .lede,.cohort-composition header,.demographic-signals span,.demographic-signals small,.race-visual li,.uveitis-spectrum footer,.uveitis-duration-signal,.snellen-bcva span,.snellen-bcva small,.vision-threshold span,.vision-threshold small,.baseline-contrasts header,.contrast-row>span,.baseline-contrasts footer),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header span,.txrd-arm-label b,.txrd-arm-label span,.txrd-stat small,.txrd-stat span,.txrd-pathway-info small,.txrd-pathway-info strong,.txrd-outcome-header :is(b,span),.txrd-vs :is(small,span),.txrd-outcome footer,.txrd-esc-stats :is(span,small),.txrd-footer-card :is(strong,span),.txrd-footer-subtext),
+  #results :is(.results-copy .lede,.efficacy-readout>span,.efficacy-groups small,.efficacy-speed span,.efficacy-signal small,.efficacy-signal p,.efficacy-summary-cards header span,.efficacy-summary-cards footer,.efficacy-reactivation :is(span,p)),
+  #ocular-results :is(.ocular-results-copy .lede,.bcva-findings,.published-bcva-panel>header,.edema-module>header,.edema-time-title,.edema-bar-val,.edema-bar-arm,.edema-stats-badge :is(span,small),.edema-module-footer),
+  #systemic-safety-tolerability :is(.safety-qol-copy .lede,.safety-difference-label :is(b,small),.safety-discontinuation-list :is(b,span,small),.safety-intolerance-panel :is(b,span,small),.serious-events-panel :is(b,span,small),.serious-other),
+  #quality-of-life-results :is(.qol-results-copy .lede,.qol-sf36 :is(strong,p,span,small)) {
+    font-size: clamp(.96rem,1.08vw,1.3rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  #limitations-4 :is(.adv-arch-header,.adv-arch-node :is(strong,span,p),.adv-arch-evidence-strip,.adv-arch-evidence-stat),
+  #discussion-safety :is(.adv-lede,.adv-context,.adv-bar-label-top,.adv-bar-footer,.adv-bar-desc,.adv-hr-label,.adv-hr-ci,.adv-hr-meaning,.adv-annotation-note),
+  #limitations-1 :is(.lim-section-title,.lim-sub1-col-text :is(h3,p),.lim-sub1-step-col :is(strong,p),.lim-sub2-card-text :is(h3,p),.lim-safeguard-line-item :is(strong,p),.lim-conclusion-band),
+  #limitations-2 :is(.lim-section-title,.lim-sub-block :is(h3,p),.lim-card-bottom-question,.synthesis-conclusion-callout),
+  #limitations-3 :is(.lim-section-title,.lim-sub-block :is(h3,p),.lim-card-bottom-question),
+  #limitations-5 :is(.attrition-wide-header :is(h3,p),.dominant-attrition-wide-svg text,.robustness-strip-top :is(strong,p),.robustness-assumptions-heading,.robustness-analysis-item,.robustness-conclusion-block,.robustness-analysis-footnote),
+  #limitations-6 :is(.hero-support-text,.hero-thin-pathway :is(span,strong),.immuno-row-tier :is(h3,p,span,strong),.finishing-text),
+  #conclusion :is(.conclusion-kicker,.conclusion-copy blockquote,.citation) {
+    font-size: clamp(1.02rem,1.16vw,1.4rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(#signal, #question, #evidence-gap, #study-design, #screening, #randomization,
+      #treatment, #tapering, #followup, #outcomes, #statistics-sample-only,
+      #participant-flow, #baseline-portrait, #treatment-results-redesign,
+      #results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #limitations-4, #discussion-safety, #limitations-1,
+      #limitations-2, #limitations-3, #limitations-5, #limitations-6, #conclusion,
+      #outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    .scene-copy > .lede {
+    color: #ddd8d5;
+    font-size: clamp(1.18rem, 1.34vw, 1.58rem);
+    line-height: 1.42;
+  }
+
+  #question :is(.antibody-hero-desc, .evidence-body-desc),
+  #study-design :is(.ethics-copy p, .mtqac-duty-summary),
+  #screening .prednisone-threshold-footnote,
+  #randomization .lede,
+  #treatment .lede,
+  #tapering .lede {
+    font-size: clamp(1.04rem, 1.18vw, 1.40rem);
+    line-height: 1.36;
+  }
+
+  #question :is(.evidence-content-body h4, .approval-strip strong),
+  #study-design .ethics-copy span,
+  #screening .gate,
+  #randomization .stratum-card > strong,
+  #treatment .treatment-row,
+  #tapering :is(.taper-protocol, .reactivation-protocol) {
+    font-size: clamp(1.02rem, 1.15vw, 1.36rem);
+    line-height: 1.28;
+  }
+
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.result-caption, .result-detail, .metric-detail, .chart-note, .table-note,
+        .baseline-note, .txrd-high-dose-subgroup, .txrd-footer,
+        .safety-difference-label small, .qol-sf36 p) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.34;
+  }
+
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.result-label, .metric-label, .chart-label, .table-label, .txrd-col > header,
+        .safety-difference-label b, .qol-sf36 strong) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.lede, .observation-item p, .card-details, .note-body, .conclusion-copy,
+        .finishing-body, .robustness-analysis-footnote) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.38;
+  }
+
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.observation-item h4, .note-title, .panel-kicker, .outcome-label,
+        .timeline-time-label) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-message > p, .endpoint-equation span, .spectrum-track span,
+        .imaging-thresholds small, .taperx-escalation-caption, .taperx-sequence-label) {
+    font-size: clamp(1rem, 1.14vw, 1.36rem);
+    line-height: 1.34;
+  }
+
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-label, .definition-heading, .spectrum-label, .spectrum-track b) {
+    font-size: clamp(1.12rem, 1.26vw, 1.50rem);
+    line-height: 1.22;
+  }
+}
+
+/* Effective final calibration layer.  Keep this after all legacy slide rules. */
+@media (min-width: 701px) {
+  #signal .hero-paper,
+  #question :is(.antibody-hero-sub, .antibody-hero-desc, .milestone-indication-text,
+    .evidence-hero-statement, .evidence-body-desc, .cohort-headline, .tension-lead, .tension-question),
+  #evidence-gap :is(.wing-full-name, .wing-strategy-desc, .no-comparison-text,
+    .reveal-eyebrow, .reveal-advise-title, .reveal-advise-tagline),
+  #study-design :is(.design-attributes span, .map-header, .site-marker small, .ethics-copy span,
+    .ethics-copy p, .mtqac-wf-node span, .mtqac-wf-hub small, .mtqac-duty-summary),
+  #screening :is(.disease-window span, .disease-window small, .gate, .gate span, .prednisone-threshold-footnote),
+  #randomization :is(.strata-source, .stratum-code, .stratum-card strong, .stratum-card span, .allocation-branch, .permuted-block),
+  #treatment :is(.treatment-section-title, .treatment-row > div > strong, .treatment-row > div > span),
+  #tapering :is(.tapering-control-header, .taper-checkpoints strong, .taper-checkpoints span,
+    .reactivation-protocol header, .reactivation-protocol li, .reset-guidance, .injection-title, .injection-window),
+  #followup :is(.followup-panel header, .followup-panel strong, .followup-panel span, .followup-panel small, .visit-label),
+  #outcomes :is(.primary-outcome-redesign-copy .lede, .outcome-name-col, .endpoint-equation, .outcomes-secondary-band),
+  #statistics-sample-only :is(.calc-parameter, .calc-input span, .calc-input small,
+    .calc-core small, .calc-core span, .calc-split, .calc-note),
+  #participant-flow :is(.consort-node, .flow-strata-summary, .flow-strata-categories, .consort-notes),
+  #outcomes-original :is(.endpoint-message > p, .endpoint-equation span, .spectrum-label,
+    .spectrum-track b, .spectrum-track span, .imaging-thresholds small),
+  #secondary-outcomes-redesign :is(.secondary-outcomes-band span, .secondary-outcomes-band strong,
+    .definition-heading, .inactive-clinical, .inactive-imaging),
+  #tapering-cinematic :is(.taperx-sequence-label, .taperx-rescue-rule, .taperx-rescue-indication),
+  #limitations-4 :is(.adv-arch-header, .adv-arch-node, .adv-arch-evidence-strip, .adv-arch-evidence-stat),
+  #discussion-safety :is(.adv-lede, .adv-context, .adv-bar-label-top, .adv-bar-footer,
+    .adv-bar-desc, .adv-hr-label, .adv-hr-ci, .adv-hr-meaning, .adv-annotation-note),
+  #limitations-1 :is(.lim-section-title, .lim-sub1-col-text, .lim-sub1-step-col,
+    .lim-sub2-card-text, .lim-safeguard-line-item, .lim-conclusion-band),
+  #limitations-2 :is(.lim-section-title, .lim-sub-block, .lim-card-bottom-question, .synthesis-conclusion-callout),
+  #limitations-3 :is(.lim-section-title, .lim-sub-block, .lim-card-bottom-question),
+  #limitations-5 :is(.attrition-wide-header, .dominant-attrition-wide-svg text, .robustness-strip-top,
+    .robustness-assumptions-heading, .robustness-analysis-item, .robustness-conclusion-block,
+    .robustness-analysis-footnote),
+  #limitations-6 :is(.hero-support-text, .hero-thin-pathway, .immuno-row-tier, .finishing-text),
+  #conclusion :is(.conclusion-kicker, .conclusion-copy blockquote, .citation) {
+    font-size: clamp(1rem, 1.12vw, 1.34rem);
+    line-height: 1.3;
+  }
+
+  #baseline-portrait :is(.baseline-portrait-copy .lede, .cohort-composition header,
+    .demographic-signals span, .demographic-signals small, .race-visual li, .uveitis-spectrum footer,
+    .uveitis-duration-signal, .snellen-bcva span, .snellen-bcva small, .vision-threshold span,
+    .vision-threshold small, .baseline-contrasts header, .contrast-row > span, .baseline-contrasts footer),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow), .txrd-col header, .txrd-arm-label,
+    .txrd-stat small, .txrd-stat span, .txrd-pathway-info, .txrd-outcome-header, .txrd-vs,
+    .txrd-outcome footer, .txrd-esc-stats, .txrd-footer-card, .txrd-footer-subtext),
+  #results :is(.results-copy .lede, .efficacy-readout > span, .efficacy-groups small,
+    .efficacy-speed span, .efficacy-signal small, .efficacy-signal strong, .efficacy-signal p,
+    .efficacy-summary-cards header, .efficacy-summary-cards footer, .efficacy-reactivation),
+  #discontinuation :is(.discontinuation-stage text, .discontinuation-summary-cards, .discontinuation-foot),
+  #ocular-results :is(.ocular-results-copy .lede, .bcva-findings, .published-bcva-panel > header,
+    .edema-module > header, .edema-time-title, .edema-bar-val, .edema-bar-arm,
+    .edema-stats-badge, .edema-module-footer),
+  #systemic-safety-tolerability :is(.safety-qol-copy .lede, .safety-difference-label,
+    .safety-discontinuation-list, .safety-intolerance-panel, .serious-events-panel, .serious-other),
+  #quality-of-life-results :is(.qol-results-copy .lede, .qol-sf36) {
+    font-size: clamp(.98rem, 1.08vw, 1.28rem);
+    line-height: 1.3;
+  }
+
+  #participant-flow .consort-flow { row-gap: clamp(.5rem, .72vh, .75rem); }
+  #participant-flow .excluded-node { padding: .72rem 1rem; }
+  #treatment-results-redesign :is(.txrd-grid-main, .txrd-grid-outcomes) { column-gap: clamp(.55rem, .75vw, .9rem); }
+  #systemic-safety-tolerability .safety-qol-top { gap: clamp(.65rem, .9vw, 1rem); }
+  #limitations-5 .attrition-svg-wide-wrap { margin-block: clamp(1.35rem, 2.2vh, 2rem); }
+  #limitations-5 .attrition-sensitivity-resolution { margin-top: clamp(1.1rem, 1.8vh, 1.6rem); }
+  #limitations-6 .immuno-row-tier { padding-block: clamp(.72rem, 1.05vh, 1rem); }
+}
+
+/*
+   PROJECTION-READABILITY PROPAGATION
+   Shared auditorium-scale copy treatment for the remaining deck.  The four
+   approved calibration slides (02, 03, 04, 15) retain their local rules.
+   This deliberately targets information the audience is meant to read rather
+   than globally scaling every decorative label or layout primitive.
+*/
+@media (min-width: 701px) {
+  :is(#signal, #question, #evidence-gap, #study-design, #screening, #randomization,
+      #treatment, #tapering, #followup, #outcomes, #statistics-sample-only,
+      #participant-flow, #baseline-portrait, #treatment-results-redesign,
+      #results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #limitations-4, #discussion-safety, #limitations-1,
+      #limitations-2, #limitations-3, #limitations-5, #limitations-6, #conclusion,
+      #outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    .scene-copy > .lede {
+    color: #ddd8d5;
+    font-size: clamp(1.18rem, 1.34vw, 1.58rem);
+    line-height: 1.42;
+  }
+
+  /* Introductory evidence and study-design explanatory copy. */
+  #question .antibody-hero-desc,
+  #question .evidence-body-desc,
+  #question .cohort-text-details p,
+  #study-design .ethics-copy p,
+  #study-design .mtqac-duty-summary,
+  #screening .prednisone-threshold-footnote,
+  #randomization .lede,
+  #treatment .lede,
+  #tapering .lede {
+    font-size: clamp(1.04rem, 1.18vw, 1.40rem);
+    line-height: 1.36;
+  }
+
+  #question .evidence-content-body h4,
+  #question .approval-strip strong,
+  #study-design .ethics-copy span,
+  #screening .gate,
+  #randomization .stratum-card > strong,
+  #treatment .treatment-row,
+  #tapering .taper-protocol,
+  #tapering .reactivation-protocol {
+    font-size: clamp(1.02rem, 1.15vw, 1.36rem);
+    line-height: 1.28;
+  }
+
+  /* Results: values and findings need to read as editorial evidence, not UI chrome. */
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.lede, .result-caption, .result-detail, .metric-detail, .chart-note,
+        .table-note, .baseline-note, .txrd-high-dose-subgroup, .txrd-footer,
+        .safety-difference-label small, .qol-sf36 p) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.34;
+  }
+
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.result-label, .metric-label, .chart-label, .table-label, .txrd-col > header,
+        .safety-difference-label b, .qol-sf36 strong) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+
+  /* Discussion and conclusion supporting arguments remain readable without
+     competing with their established headline system. */
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.lede, .observation-item p, .card-details, .note-body, .conclusion-copy,
+        .finishing-body, .robustness-analysis-footnote) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.38;
+  }
+
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.observation-item h4, .note-title, .panel-kicker, .outcome-label,
+        .timeline-time-label) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+
+  /* Compact legacy outcome-definition and taper language: elevate only the
+     content labels and explanatory criteria. */
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-message > p, .endpoint-equation span, .spectrum-track span,
+        .imaging-thresholds small, .taperx-escalation-caption, .taperx-sequence-label) {
+    font-size: clamp(1rem, 1.14vw, 1.36rem);
+    line-height: 1.34;
+  }
+
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-label, .definition-heading, .spectrum-label, .spectrum-track b) {
+    font-size: clamp(1.12rem, 1.26vw, 1.50rem);
+    line-height: 1.22;
+  }
+}
+
 /* Readability composition pass — requested 2026-09-02. Web presentation only. */
 @media (min-width: 701px) {
   /* 07 — ethics and oversight copy must remain readable without breaking the approval sentence. */
@@ -19039,5 +19542,411 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   #limitations-6 .finishing-body,
   #limitations-6 .finishing-punchline {
     font-size: clamp(.76rem, .86vw, 1rem);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PROJECTION-READABILITY PILOT
+   Pages 02, 03, 04 and 15 only.  These rules deliberately enlarge the
+   information the audience must read while retaining the approved cinematic
+   compositions.  Secondary copy is shortened in JSX rather than compressed.
+   -------------------------------------------------------------------------- */
+@media (min-width: 701px) {
+  /* 02 — clinical landscape */
+  #clinical-problem .landscape-stage {
+    grid-template-rows: minmax(8.4rem, .86fr) minmax(14.4rem, 1.44fr) minmax(8.75rem, .9fr) minmax(12rem, 1.18fr);
+    gap: clamp(.72rem, .9vh, 1.05rem);
+  }
+  #clinical-problem .landscape-hero p {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.28rem, 1.34vw, 1.60rem);
+    font-weight: 450;
+    line-height: 1.26;
+  }
+  #clinical-problem .landscape-anatomy > header strong,
+  #clinical-problem .landscape-etiology > header strong {
+    font-size: clamp(1.18rem, 1.28vw, 1.52rem);
+    letter-spacing: .035em;
+  }
+  #clinical-problem .landscape-anatomy > header small,
+  #clinical-problem .landscape-etiology > header small {
+    font-size: clamp(1rem, 1.06vw, 1.25rem);
+    line-height: 1.25;
+  }
+  #clinical-problem .landscape-anatomy-node > span,
+  #clinical-problem .landscape-etiology-axis > div > span {
+    font-size: clamp(1.10rem, 1.18vw, 1.40rem);
+    letter-spacing: .035em;
+  }
+  #clinical-problem .landscape-etiology-axis .etiology-noninfectious > small {
+    font-size: clamp(.96rem, 1.0vw, 1.18rem);
+    line-height: 1.23;
+  }
+  #clinical-problem .landscape-assessment {
+    padding-block: .7rem .75rem;
+  }
+  #clinical-problem .landscape-assessment > header strong {
+    font-size: clamp(1.32rem, 1.42vw, 1.68rem);
+    letter-spacing: .055em;
+  }
+  #clinical-problem .landscape-assessment > header small {
+    font-size: clamp(1rem, 1.06vw, 1.24rem);
+  }
+  #clinical-problem .assessment-modalities article strong {
+    font-size: clamp(1.16rem, 1.24vw, 1.46rem);
+  }
+  #clinical-problem .assessment-modalities article small {
+    margin-top: .3rem;
+    color: #ddd7d3;
+    font-size: clamp(1.18rem, 1.25vw, 1.48rem);
+    line-height: 1.27;
+  }
+  #clinical-problem .assessment-icon {
+    width: clamp(4.0rem, 4.8vw, 5.6rem);
+  }
+  #clinical-problem .assessment-icon.assessment-exam {
+    width: clamp(4.85rem, 5.9vw, 6.9rem);
+  }
+  #clinical-problem .landscape-convergence > header strong {
+    font-size: clamp(1.12rem, 1.20vw, 1.42rem);
+  }
+  #clinical-problem .landscape-convergence > header span {
+    font-size: clamp(1.45rem, 1.62vw, 1.92rem);
+  }
+  #clinical-problem .landscape-therapy {
+    padding: clamp(.82rem, 1.0vw, 1.12rem) clamp(1.05rem, 1.45vw, 1.5rem);
+  }
+  #clinical-problem .landscape-therapy > div strong {
+    font-size: clamp(1.48rem, 1.72vw, 2.05rem);
+    line-height: 1.1;
+  }
+
+  /* 03 — therapeutic goal */
+  #therapeutic-goal .constraint-title {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.36rem, 1.46vw, 1.75rem);
+    letter-spacing: .025em;
+  }
+  #therapeutic-goal .constraint-desc {
+    color: #e0dad6;
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.26rem, 1.34vw, 1.58rem);
+    line-height: 1.28;
+  }
+  #therapeutic-goal .red-bold-word { font-weight: 800; }
+  #therapeutic-goal .ceiling-label,
+  #therapeutic-goal .floor-label {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif !important;
+    font-size: clamp(1.06rem, 1.14vw, 1.34rem) !important;
+    line-height: 1.18;
+  }
+  #therapeutic-goal .ceiling-unit {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.26rem, 1.34vw, 1.58rem);
+    font-weight: 700;
+  }
+  #therapeutic-goal .floor-title {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif !important;
+    font-size: clamp(1.56rem, 1.72vw, 2.05rem) !important;
+  }
+  #therapeutic-goal .immunosuppression-hero-title {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.46rem, 1.60vw, 1.90rem);
+  }
+  #therapeutic-goal .immunosuppression-hero-sub {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.04rem, 1.12vw, 1.32rem);
+    color: #e0dad6;
+  }
+  #therapeutic-goal .resolution-item strong,
+  #therapeutic-goal .resolution-item .resolution-label {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.12rem, 1.20vw, 1.42rem);
+    line-height: 1.12;
+  }
+  #therapeutic-goal .must-trial-title,
+  #therapeutic-goal .must-trial-header {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  }
+  #therapeutic-goal .must-trial-body,
+  #therapeutic-goal .must-trial-detail {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 1.06vw, 1.25rem);
+    line-height: 1.32;
+  }
+  #therapeutic-goal .must-body-regimen {
+    font-size: clamp(1.12rem, 1.18vw, 1.40rem) !important;
+    line-height: 1.25 !important;
+  }
+  #therapeutic-goal .claim-highlight,
+  #therapeutic-goal .claim-safety-text {
+    font-size: clamp(1.08rem, 1.14vw, 1.36rem) !important;
+    line-height: 1.22 !important;
+  }
+  #therapeutic-goal .must-body-comparator {
+    font-size: clamp(1rem, 1.04vw, 1.22rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  /* 04 — conventional immunosuppression */
+  #systemic-strategies .territory-class-name {
+    font-size: clamp(1.46rem, 1.60vw, 1.92rem);
+  }
+  #systemic-strategies .territory-class-tag {
+    font-size: clamp(1.10rem, 1.16vw, 1.38rem);
+    line-height: 1.18;
+  }
+  #systemic-strategies .drug-node-card,
+  #systemic-strategies .calcineurin-drug-box {
+    padding-block: clamp(.78rem, 1.16vh, 1.14rem);
+  }
+  #systemic-strategies .drug-name,
+  #systemic-strategies .cni-drug-name {
+    font-size: clamp(1.38rem, 1.46vw, 1.74rem);
+  }
+  #systemic-strategies .drug-moa,
+  #systemic-strategies .cni-drug-moa {
+    margin-top: .22rem;
+    color: #e1dbd6;
+    font-size: clamp(1.16rem, 1.22vw, 1.44rem);
+    line-height: 1.22;
+  }
+  #systemic-strategies .molecular-sphere-hero {
+    width: clamp(155px, 15.2vw, 195px);
+    height: clamp(155px, 15.2vw, 195px);
+  }
+  #systemic-strategies .rule-label {
+    font-size: clamp(1.08rem, 1.16vw, 1.38rem);
+  }
+  #systemic-strategies .stepwise-steps-flow {
+    padding-block: clamp(.88rem, 1.32vh, 1.28rem);
+  }
+  #systemic-strategies .step-icon-circle {
+    width: clamp(45px, 3.8vw, 56px);
+    height: clamp(45px, 3.8vw, 56px);
+  }
+  #systemic-strategies .step-num-tag {
+    font-size: clamp(1.04rem, 1.10vw, 1.30rem);
+  }
+  #systemic-strategies .step-title {
+    font-size: clamp(1.36rem, 1.44vw, 1.70rem);
+  }
+  #systemic-strategies .step-desc {
+    margin-top: .18rem;
+    color: #e0dad6;
+    font-size: clamp(1.14rem, 1.20vw, 1.42rem);
+  }
+  #systemic-strategies .evidence-pct-stat {
+    font-size: clamp(2.55rem, 3.0vw, 3.55rem) !important;
+  }
+  #systemic-strategies .evidence-headline {
+    font-size: clamp(1.22rem, 1.30vw, 1.54rem);
+  }
+  #systemic-strategies .evidence-subtext {
+    margin-top: .22rem;
+    color: #e0dad6;
+    font-size: clamp(1.04rem, 1.10vw, 1.30rem);
+    line-height: 1.26;
+  }
+  #systemic-strategies.intro4-scene {
+    padding-top: 4.15vh;
+  }
+  #systemic-strategies .intro4-header {
+    margin-bottom: clamp(.7rem, 1.2vh, 1.15rem);
+  }
+  #systemic-strategies .stepwise-pathway-section {
+    margin-top: clamp(.82rem, 1.3vh, 1.28rem);
+  }
+  #systemic-strategies .observational-evidence-section {
+    margin-top: clamp(.95rem, 1.45vh, 1.38rem);
+  }
+  #systemic-strategies .evidence-boxes-row {
+    margin-top: clamp(.28rem, .42vh, .5rem);
+  }
+
+  /* 15 — statistical analysis: preserve full-height panels, enlarge only text
+     that is intended to be read in the room. */
+  #statistics-redesign .analysis-framework {
+    top: 29.3%;
+    bottom: 9.5%;
+  }
+  #statistics-redesign .analysis-framework-column {
+    grid-template-rows: 4.65rem minmax(8.2rem, 1fr) minmax(4.35rem, .42fr) minmax(4.15rem, .42fr) minmax(8.85rem, .9fr);
+    row-gap: clamp(.55rem, .68vh, .74rem);
+    padding: clamp(.68rem, 1.0vh, .9rem) clamp(.88rem, 1.24vw, 1.38rem) clamp(.82rem, 1.15vh, 1.02rem);
+  }
+  #statistics-redesign .analysis-framework-column header {
+    gap: .58rem;
+    align-items: flex-start;
+  }
+  #statistics-redesign .analysis-framework-column header b {
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-size: clamp(1.18rem, 1.24vw, 1.46rem);
+    line-height: 1.2;
+  }
+  #statistics-redesign .analysis-framework-column header span {
+    max-width: none;
+    font-size: clamp(1.20rem, 1.26vw, 1.50rem);
+    line-height: 1.2;
+    letter-spacing: .035em;
+  }
+  #statistics-redesign .framework-question small {
+    margin-bottom: .62rem;
+    font-size: clamp(1.04rem, 1.10vw, 1.30rem);
+    letter-spacing: .10em;
+  }
+  #statistics-redesign .framework-question h3 {
+    font-size: clamp(1.32rem, 1.40vw, 1.66rem);
+    line-height: 1.25;
+  }
+  #statistics-redesign .analysis-visual {
+    padding-bottom: .64rem;
+  }
+  #statistics-redesign .analysis-visual-binary i {
+    width: clamp(.5rem, .68vw, .82rem);
+    height: clamp(2.1rem, 3.25vh, 2.85rem);
+  }
+  #statistics-redesign .framework-model h4 {
+    font-size: clamp(1.28rem, 1.34vw, 1.60rem);
+    font-weight: 750;
+    line-height: 1.22;
+  }
+  #statistics-redesign .analysis-framework-column ul {
+    gap: clamp(.48rem, .6vh, .68rem);
+    font-size: clamp(1.20rem, 1.25vw, 1.48rem);
+    line-height: 1.26;
+  }
+  #statistics-redesign .analysis-framework-column li {
+    padding-left: .78rem;
+  }
+  #statistics-redesign .analysis-framework-footer {
+    bottom: 3.2%;
+    grid-template-columns: .84fr 1.1fr 1.08fr;
+    font-size: clamp(1rem, 1.04vw, 1.24rem);
+    line-height: 1.22;
+  }
+}
+
+/* Final effective auditorium scale — deliberately excludes pages 02/03/04/15. */
+@media (min-width: 701px) {
+  #signal .hero-paper,
+  #question :is(.antibody-hero-sub,.antibody-hero-desc,.milestone-indication-text,.evidence-hero-statement,.evidence-body-desc,.cohort-headline,.tension-lead,.tension-question),
+  #evidence-gap :is(.wing-full-name,.wing-strategy-desc,.no-comparison-text,.reveal-eyebrow,.reveal-advise-title,.reveal-advise-tagline),
+  #study-design :is(.design-attributes span,.map-header,.site-marker small,.ethics-copy span,.ethics-copy p,.mtqac-wf-node span,.mtqac-wf-hub small,.mtqac-duty-summary),
+  #screening :is(.disease-window span,.disease-window small,.gate,.gate span,.prednisone-threshold-footnote),
+  #randomization :is(.strata-source,.stratum-code,.stratum-card strong,.stratum-card span,.allocation-branch,.permuted-block),
+  #treatment :is(.treatment-section-title,.treatment-row>div>strong,.treatment-row>div>span),
+  #tapering :is(.tapering-control-header,.taper-checkpoints strong,.taper-checkpoints span,.reactivation-protocol header,.reactivation-protocol li,.reset-guidance,.injection-title,.injection-window),
+  #followup :is(.followup-panel header,.followup-panel strong,.followup-panel span,.followup-panel small,.visit-label),
+  #outcomes :is(.primary-outcome-redesign-copy .lede,.outcome-name-col,.endpoint-equation,.outcomes-secondary-band),
+  #statistics-sample-only :is(.calc-parameter,.calc-input span,.calc-input small,.calc-core small,.calc-core span,.calc-split,.calc-note),
+  #participant-flow :is(.consort-node,.flow-strata-summary,.flow-strata-categories,.consort-notes),
+  #outcomes-original :is(.endpoint-message>p,.endpoint-equation span,.spectrum-label,.spectrum-track b,.spectrum-track span,.imaging-thresholds small),
+  #secondary-outcomes-redesign :is(.secondary-outcomes-band span,.secondary-outcomes-band strong,.definition-heading,.inactive-clinical,.inactive-imaging),
+  #tapering-cinematic :is(.taperx-sequence-label,.taperx-rescue-rule,.taperx-rescue-indication),
+  #limitations-4 :is(.adv-arch-header,.adv-arch-node,.adv-arch-evidence-strip,.adv-arch-evidence-stat),
+  #discussion-safety :is(.adv-lede,.adv-context,.adv-bar-label-top,.adv-bar-footer,.adv-bar-desc,.adv-hr-label,.adv-hr-ci,.adv-hr-meaning,.adv-annotation-note),
+  #limitations-1 :is(.lim-section-title,.lim-sub1-col-text,.lim-sub1-step-col,.lim-sub2-card-text,.lim-safeguard-line-item,.lim-conclusion-band),
+  #limitations-2 :is(.lim-section-title,.lim-sub-block,.lim-card-bottom-question,.synthesis-conclusion-callout),
+  #limitations-3 :is(.lim-section-title,.lim-sub-block,.lim-card-bottom-question),
+  #limitations-5 :is(.attrition-wide-header,.dominant-attrition-wide-svg text,.robustness-strip-top,.robustness-assumptions-heading,.robustness-analysis-item,.robustness-conclusion-block,.robustness-analysis-footnote),
+  #limitations-6 :is(.hero-support-text,.hero-thin-pathway,.immuno-row-tier,.finishing-text),
+  #conclusion :is(.conclusion-kicker,.conclusion-copy blockquote,.citation) {
+    font-size: clamp(1rem,1.12vw,1.34rem);
+    line-height: 1.3;
+  }
+
+  #baseline-portrait :is(.baseline-portrait-copy .lede,.cohort-composition header,.demographic-signals span,.demographic-signals small,.race-visual li,.uveitis-spectrum footer,.uveitis-duration-signal,.snellen-bcva span,.snellen-bcva small,.vision-threshold span,.vision-threshold small,.baseline-contrasts header,.contrast-row>span,.baseline-contrasts footer),
+  #treatment-results-redesign :is(.txrd-title-area p:not(.eyebrow),.txrd-col header,.txrd-arm-label,.txrd-stat small,.txrd-stat span,.txrd-pathway-info,.txrd-outcome-header,.txrd-vs,.txrd-outcome footer,.txrd-esc-stats,.txrd-footer-card,.txrd-footer-subtext),
+  #results :is(.results-copy .lede,.efficacy-readout>span,.efficacy-groups small,.efficacy-speed span,.efficacy-signal small,.efficacy-signal strong,.efficacy-signal p,.efficacy-summary-cards header,.efficacy-summary-cards footer,.efficacy-reactivation),
+  #discontinuation :is(.discontinuation-stage text,.discontinuation-summary-cards,.discontinuation-foot),
+  #ocular-results :is(.ocular-results-copy .lede,.bcva-findings,.published-bcva-panel>header,.edema-module>header,.edema-time-title,.edema-bar-val,.edema-bar-arm,.edema-stats-badge,.edema-module-footer),
+  #systemic-safety-tolerability :is(.safety-qol-copy .lede,.safety-difference-label,.safety-discontinuation-list,.safety-intolerance-panel,.serious-events-panel,.serious-other),
+  #quality-of-life-results :is(.qol-results-copy .lede,.qol-sf36) {
+    font-size: clamp(.98rem,1.08vw,1.28rem);
+    line-height: 1.3;
+  }
+
+  #participant-flow .consort-flow { row-gap: clamp(.5rem,.72vh,.75rem); }
+  #participant-flow .excluded-node { padding: .72rem 1rem; }
+  #treatment-results-redesign :is(.txrd-grid-main,.txrd-grid-outcomes) { column-gap: clamp(.55rem,.75vw,.9rem); }
+  #systemic-safety-tolerability .safety-qol-top { gap: clamp(.65rem,.9vw,1rem); }
+  #limitations-5 .attrition-svg-wide-wrap { margin-block: clamp(1.35rem,2.2vh,2rem); }
+  #limitations-5 .attrition-sensitivity-resolution { margin-top: clamp(1.1rem,1.8vh,1.6rem); }
+  #limitations-6 .immuno-row-tier { padding-block: clamp(.72rem,1.05vh,1rem); }
+}
+
+/* Final shared pass: elevate audience-facing supporting copy outside the four
+   approved calibration slides without changing their composition. */
+@media (min-width: 701px) {
+  :is(#signal, #question, #evidence-gap, #study-design, #screening, #randomization,
+      #treatment, #tapering, #followup, #outcomes, #statistics-sample-only,
+      #participant-flow, #baseline-portrait, #treatment-results-redesign,
+      #results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #limitations-4, #discussion-safety, #limitations-1,
+      #limitations-2, #limitations-3, #limitations-5, #limitations-6, #conclusion,
+      #outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    .scene-copy > .lede {
+    color: #ddd8d5;
+    font-size: clamp(1.18rem, 1.34vw, 1.58rem);
+    line-height: 1.42;
+  }
+  #question :is(.antibody-hero-desc, .evidence-body-desc),
+  #study-design :is(.ethics-copy p, .mtqac-duty-summary),
+  #screening .prednisone-threshold-footnote,
+  #randomization .lede,
+  #treatment .lede,
+  #tapering .lede {
+    font-size: clamp(1.04rem, 1.18vw, 1.40rem);
+    line-height: 1.36;
+  }
+  #question :is(.evidence-content-body h4, .approval-strip strong),
+  #study-design .ethics-copy span,
+  #screening .gate,
+  #randomization .stratum-card > strong,
+  #treatment .treatment-row,
+  #tapering :is(.taper-protocol, .reactivation-protocol) {
+    font-size: clamp(1.02rem, 1.15vw, 1.36rem);
+    line-height: 1.28;
+  }
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.result-caption, .result-detail, .metric-detail, .chart-note, .table-note,
+        .baseline-note, .txrd-high-dose-subgroup, .txrd-footer,
+        .safety-difference-label small, .qol-sf36 p) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.34;
+  }
+  :is(#results, #discontinuation, #ocular-results, #systemic-safety-tolerability,
+      #quality-of-life-results, #treatment-results-redesign, #baseline-portrait)
+    :is(.result-label, .metric-label, .chart-label, .table-label, .txrd-col > header,
+        .safety-difference-label b, .qol-sf36 strong) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.lede, .observation-item p, .card-details, .note-body, .conclusion-copy,
+        .finishing-body, .robustness-analysis-footnote) {
+    font-size: clamp(1.02rem, 1.16vw, 1.38rem);
+    line-height: 1.38;
+  }
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3, #limitations-5, #limitations-6, #conclusion)
+    :is(.observation-item h4, .note-title, .panel-kicker, .outcome-label,
+        .timeline-time-label) {
+    font-size: clamp(1.10rem, 1.24vw, 1.48rem);
+    line-height: 1.22;
+  }
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-message > p, .endpoint-equation span, .spectrum-track span,
+        .imaging-thresholds small, .taperx-escalation-caption, .taperx-sequence-label) {
+    font-size: clamp(1rem, 1.14vw, 1.36rem);
+    line-height: 1.34;
+  }
+  :is(#outcomes-original, #secondary-outcomes-redesign, #tapering-cinematic)
+    :is(.endpoint-label, .definition-heading, .spectrum-label, .spectrum-track b) {
+    font-size: clamp(1.12rem, 1.26vw, 1.50rem);
+    line-height: 1.22;
   }
 }

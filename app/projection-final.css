@@ -1,0 +1,725 @@
+/* Final projection-readability calibration.
+   Scope is intentionally limited to the priority slides and excludes 02/03/04/15. */
+@media (min-width: 701px) {
+  /* Shared audience-facing hierarchy: 26px body, 23px labels, 19–20px detail at 1920px. */
+  :is(#study-design, #screening, #randomization, #treatment, #followup,
+      #participant-flow, #baseline-portrait, #treatment-results-redesign,
+      #systemic-safety-tolerability, #quality-of-life-results, #limitations-4,
+      #discussion-safety, #limitations-1, #limitations-2, #limitations-3,
+      #limitations-5, #limitations-6) .scene-copy > .lede,
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3) .adv-left-col > .lede {
+    font-size: clamp(1.34rem, 1.38vw, 1.68rem) !important;
+    line-height: 1.34 !important;
+  }
+
+  /* 07 — study design */
+  #study-design .design-copy .lede { max-width: 37rem; }
+  #study-design .design-attributes span {
+    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    line-height: 1.18 !important;
+  }
+  #study-design .map-header,
+  #study-design .ethics-copy span {
+    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    line-height: 1.2 !important;
+  }
+  #study-design .site-marker small,
+  #study-design .mtqac-wf-node span,
+  #study-design .mtqac-wf-hub small {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+  }
+  #study-design .ethics-copy p,
+  #study-design .mtqac-duty-summary {
+    color: #e2ddda;
+    font-size: clamp(1.08rem, 1.15vw, 1.38rem) !important;
+    line-height: 1.28 !important;
+  }
+  #study-design .ethics-top-block .ethics-copy p { white-space: nowrap; }
+  #study-design .ethics-panel { gap: .62rem; padding: .78rem 1rem; }
+
+  /* 08 — screening */
+  #screening .disease-window > span,
+  #screening .orbital-panel-header {
+    font-size: clamp(1.14rem, 1.24vw, 1.48rem) !important;
+  }
+  #screening .disease-window small,
+  #screening .inclusion-metrics span,
+  #screening .prednisone-threshold-footnote {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+    line-height: 1.28 !important;
+  }
+  #screening .gate {
+    min-height: 3.3rem;
+    font-size: clamp(1.08rem, 1.15vw, 1.38rem) !important;
+    line-height: 1.15 !important;
+  }
+  #screening .gate b { font-size: 1.05em !important; }
+  #screening .gate span {
+    font-size: clamp(.94rem, 1vw, 1.18rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* 09 — randomization */
+  #randomization .randomization-copy .lede { max-width: 54rem; }
+  #randomization .timeline-step-head em,
+  #randomization .randomization-timeline small,
+  #randomization .strata-source span,
+  #randomization .stratum-column > small,
+  #randomization .strata-legend {
+    font-size: clamp(1.02rem, 1.10vw, 1.30rem) !important;
+    line-height: 1.2 !important;
+  }
+  #randomization .timeline-step-head b,
+  #randomization .stratum-code,
+  #randomization .strata-balance-tag {
+    font-size: clamp(1.14rem, 1.22vw, 1.46rem) !important;
+  }
+  #randomization .permuted-block > i {
+    font-size: clamp(.96rem, 1.02vw, 1.22rem) !important;
+  }
+
+  /* 10 — treatment */
+  #treatment .treatment-section-title,
+  #treatment .treatment-table-head,
+  #treatment .treatment-symbols span {
+    font-size: clamp(1.08rem, 1.16vw, 1.40rem) !important;
+  }
+  #treatment .treatment-stratum strong,
+  #treatment .treatment-stratum span,
+  #treatment .drug-chip,
+  #treatment .treatment-plan small,
+  #treatment .treatment-plan em {
+    font-size: clamp(1rem, 1.08vw, 1.28rem) !important;
+  }
+  #treatment .prednisolone-cards article span,
+  #treatment .prednisolone-cards article strong {
+    font-size: clamp(1.06rem, 1.14vw, 1.36rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  /* 11 — staged methodology reveal: taper, then reactivation, then injections. */
+  #tapering .reactivation-protocol,
+  #tapering .injection-window {
+    transition: opacity .38s ease, transform .38s ease, visibility 0s linear .38s;
+  }
+  #tapering.tapering-method-stage-0 .reactivation-protocol,
+  #tapering:not(.tapering-method-stage-1):not(.tapering-method-stage-2) .reactivation-protocol {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(1rem);
+  }
+  #tapering.tapering-method-stage-0 .injection-window,
+  #tapering.tapering-method-stage-1 .injection-window,
+  #tapering:not(.tapering-method-stage-2) .injection-window {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(1rem);
+  }
+  #tapering.tapering-method-stage-1 .reactivation-protocol,
+  #tapering.tapering-method-stage-2 .reactivation-protocol,
+  #tapering.tapering-method-stage-2 .injection-window {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  #tapering .reactivation-protocol > header strong {
+    white-space: nowrap;
+  }
+
+  /* 12 — follow-up */
+  #followup .followup-bands,
+  #followup .followup-panel header,
+  #followup .followup-panel b,
+  #followup .milestone-dates,
+  #followup .diagnosis-note {
+    font-size: clamp(1.08rem, 1.16vw, 1.40rem) !important;
+    line-height: 1.2 !important;
+  }
+  #followup .followup-panel span,
+  #followup .followup-panel small,
+  #followup .visit-node b {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+    line-height: 1.25 !important;
+  }
+  #followup .diagnosis-suite > div { gap: .75rem; }
+
+  /* 16 — participant flow */
+  #participant-flow .flow-copy .lede { max-width: 35rem; }
+  #participant-flow .assessed-node strong,
+  #participant-flow .excluded-node header strong,
+  #participant-flow .consort-randomized strong,
+  #participant-flow .assignment-box > strong,
+  #participant-flow .visit-label strong {
+    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    line-height: 1.16 !important;
+  }
+  #participant-flow .assessed-node span,
+  #participant-flow .consort-randomized span,
+  #participant-flow .assignment-box > span,
+  #participant-flow .visit-label span,
+  #participant-flow .excluded-node dt,
+  #participant-flow .excluded-node dd,
+  #participant-flow .consort-arm dt,
+  #participant-flow .consort-arm dd {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+    line-height: 1.22 !important;
+  }
+  #participant-flow .flow-strata-summary :is(header, .flow-strata-categories span, footer) {
+    font-size: clamp(.92rem, .98vw, 1.16rem) !important;
+    line-height: 1.22 !important;
+  }
+  #participant-flow .excluded-node { height: 13.25rem; padding: .65rem .9rem; }
+  #participant-flow .excluded-node dl { gap: .08rem; }
+  #participant-flow .consort-notes { font-size: clamp(.86rem, .92vw, 1.08rem) !important; }
+
+  /* 17 — baseline portrait */
+  #baseline-portrait .cohort-portrait article > header,
+  #baseline-portrait .cohort-icon-counts span,
+  #baseline-portrait .demographic-signals span,
+  #baseline-portrait .race-visual li,
+  #baseline-portrait .uveitis-duration-signal > span,
+  #baseline-portrait .snellen-bcva span,
+  #baseline-portrait .vision-threshold span,
+  #baseline-portrait .baseline-contrasts header,
+  #baseline-portrait .contrast-row > span {
+    font-size: clamp(1.04rem, 1.12vw, 1.34rem) !important;
+    line-height: 1.2 !important;
+  }
+  #baseline-portrait :is(.demographic-signals small, .snellen-bcva small,
+      .vision-threshold small, .contrast-row small, .uveitis-spectrum footer,
+      .baseline-contrasts footer) {
+    font-size: clamp(.92rem, .98vw, 1.16rem) !important;
+    line-height: 1.24 !important;
+  }
+
+  /* 18 — dense treatment results: information labels at 18–22px, statistics retained. */
+  #treatment-results-redesign .txrd-title-area > p:not(.eyebrow) {
+    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    line-height: 1.28 !important;
+  }
+  #treatment-results-redesign .txrd-col > header,
+  #treatment-results-redesign .txrd-pathway-hero-copy strong,
+  #treatment-results-redesign .txrd-outcomes-title strong,
+  #treatment-results-redesign .txrd-outcome-header strong,
+  #treatment-results-redesign .txrd-footer-card > div > strong {
+    font-size: clamp(1.02rem, 1.08vw, 1.30rem) !important;
+    line-height: 1.16 !important;
+  }
+  #treatment-results-redesign :is(.txrd-col > header span, .txrd-arm-label,
+      .txrd-stat small, .txrd-stat span, .txrd-high-dose-subgroup,
+      .txrd-pathway-hero-copy span, .txrd-pathway-secondary,
+      .txrd-pathway-composition-item, .txrd-outcome-header span,
+      .txrd-vs small, .txrd-vs span, .txrd-outcome footer,
+      .txrd-escalation-details, .txrd-footer-card > div > span,
+      .txrd-footer-subtext) {
+    font-size: clamp(.90rem, .98vw, 1.16rem) !important;
+    line-height: 1.2 !important;
+  }
+  #treatment-results-redesign .txrd-grid-main { top: 27.5%; height: 31%; }
+  #treatment-results-redesign .txrd-grid-outcomes { top: 60%; height: 20.5%; }
+  #treatment-results-redesign .txrd-footer { top: 82%; height: 12.5%; }
+
+  /* 22 — safety and tolerability */
+  #systemic-safety-tolerability .safety-qol-copy .lede { max-width: 70rem; }
+  #systemic-safety-tolerability .safety-difference-panel > header,
+  #systemic-safety-tolerability .table-five-events > header,
+  #systemic-safety-tolerability .safety-bottom-band header {
+    font-size: clamp(1.04rem, 1.12vw, 1.34rem) !important;
+  }
+  #systemic-safety-tolerability .safety-difference-label b,
+  #systemic-safety-tolerability .table-five-columns p span,
+  #systemic-safety-tolerability .safety-intolerance-panel p,
+  #systemic-safety-tolerability .safety-intolerance-panel footer,
+  #systemic-safety-tolerability .serious-events-panel article b {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+    line-height: 1.2 !important;
+  }
+  #systemic-safety-tolerability .safety-difference-label small,
+  #systemic-safety-tolerability .table-five-columns p em,
+  #systemic-safety-tolerability .serious-events-panel article span,
+  #systemic-safety-tolerability .serious-events-panel article small {
+    font-size: clamp(.90rem, .96vw, 1.14rem) !important;
+    line-height: 1.2 !important;
+  }
+  #systemic-safety-tolerability .safety-qol-top { top: 28%; height: 42%; }
+  #systemic-safety-tolerability .safety-bottom-band { top: 72%; height: 23%; }
+
+  /* 23 — quality of life */
+  #quality-of-life-results .qol-results-system article > b,
+  #quality-of-life-results .qol-results-system article > strong {
+    font-size: clamp(1.18rem, 1.28vw, 1.52rem) !important;
+    line-height: 1.2 !important;
+  }
+  #quality-of-life-results .qol-results-system article > p,
+  #quality-of-life-results .qol-sf36 p {
+    font-size: clamp(1.18rem, 1.28vw, 1.52rem) !important;
+    line-height: 1.34 !important;
+  }
+  #quality-of-life-results .qol-results-system article > span,
+  #quality-of-life-results .qol-sf36 em {
+    font-size: clamp(1.02rem, 1.10vw, 1.30rem) !important;
+  }
+
+  /* 24–28 — discussion arguments are presentation content. */
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3) .observation-item h4 {
+    font-size: clamp(1.10rem, 1.18vw, 1.42rem) !important;
+    line-height: 1.2 !important;
+  }
+  :is(#limitations-4, #discussion-safety, #limitations-1, #limitations-2,
+      #limitations-3) .observation-item p,
+  #discussion-safety :is(.inline-warning-p1, .inline-warning-p2),
+  #limitations-2 .synthesis-conclusion-callout p {
+    font-size: clamp(1.20rem, 1.30vw, 1.56rem) !important;
+    line-height: 1.32 !important;
+  }
+  :is(#limitations-4, #discussion-safety, #limitations-1) .adv-arch-evidence-strip,
+  :is(#limitations-4, #discussion-safety) .adv-arch-node,
+  #discussion-safety :is(.causal-header, .note-eyebrow-heading, .note-title,
+      .note-body, .node-surgery-evident, .node-conclusion strong,
+      .node-conclusion p),
+  #limitations-3 :is(.outcome-label, .tp-line-arms, .tp-line-delta,
+      .tp-line-stats, .tp-line-claim, .timeline-time-label,
+      .unobserved-main-label, .unobserved-not-obs) {
+    font-size: clamp(.98rem, 1.04vw, 1.24rem) !important;
+    line-height: 1.2 !important;
+  }
+  #limitations-1 :is(.lim-section-title, .card-top-title,
+      .safeguard-text-col h4, .lim-conclusion-band strong) {
+    font-size: clamp(1.08rem, 1.16vw, 1.40rem) !important;
+    line-height: 1.18 !important;
+  }
+  #limitations-1 :is(.card-details, .safeguard-text-col p,
+      .lim-conclusion-band p) {
+    font-size: clamp(1rem, 1.08vw, 1.28rem) !important;
+    line-height: 1.26 !important;
+  }
+
+  /* 29 — attrition: readable arguments, 18–20px diagram annotations, breathing room. */
+  #limitations-5 .adv-observations-block.side-by-side .observation-item h4 {
+    font-size: clamp(1.08rem, 1.16vw, 1.40rem) !important;
+  }
+  #limitations-5 .adv-observations-block.side-by-side .observation-item p {
+    font-size: clamp(1.16rem, 1.24vw, 1.48rem) !important;
+    line-height: 1.3 !important;
+  }
+  #limitations-5 .attrition-svg-wide-wrap {
+    height: 28vh !important;
+    margin: clamp(1.8rem, 3vh, 2.8rem) 0 clamp(1.9rem, 3.2vh, 3rem) !important;
+  }
+  #limitations-5 .dominant-attrition-wide-svg :is(.post-rand-header-group,
+      .discontinuation-header-group) text { font-size: 12.5px !important; }
+  #limitations-5 .dominant-attrition-wide-svg :is(.ada-track-clean,
+      .cid-track-clean) > text { font-size: 14px !important; }
+  #limitations-5 .dominant-attrition-wide-svg :is(.ada-dropout-callout,
+      .cid-dropout-callout, .cid-discontinuation-callout) text {
+    font-size: 11.5px !important;
+  }
+  #limitations-5 .robustness-kicker,
+  #limitations-5 .robustness-assumptions-heading,
+  #limitations-5 .robustness-conclusion-block .conclusion-kicker {
+    font-size: clamp(1rem, 1.08vw, 1.28rem) !important;
+  }
+  #limitations-5 .robustness-statement,
+  #limitations-5 .robustness-analysis-item,
+  #limitations-5 .robustness-conclusion-block .conclusion-copy,
+  #limitations-5 .trial-data-text {
+    font-size: clamp(.96rem, 1.02vw, 1.22rem) !important;
+    line-height: 1.22 !important;
+  }
+  #limitations-5 .attrition-sensitivity-resolution {
+    margin-top: clamp(1.2rem, 2vh, 1.9rem) !important;
+  }
+
+  /* 30 — immunogenicity */
+  #limitations-6 .hero-support-text,
+  #limitations-6 .purple-qualifier-top,
+  #limitations-6 .purple-statement,
+  #limitations-6 .lim-sub1-col-text,
+  #limitations-6 .lim-sub2-card-text,
+  #limitations-6 .lim-card-bottom-question {
+    font-size: clamp(1.12rem, 1.20vw, 1.44rem) !important;
+    line-height: 1.25 !important;
+  }
+  #limitations-6 .panel-kicker,
+  #limitations-6 .hero-thin-pathway {
+    font-size: clamp(1.02rem, 1.10vw, 1.30rem) !important;
+    line-height: 1.18 !important;
+  }
+  #limitations-6 .lim-sub1-card,
+  #limitations-6 .lim-sub2-card { border-color: rgba(255, 77, 82, .32); }
+  #limitations-6 .finishing-lead {
+    font-size: clamp(1.08rem, 1.16vw, 1.40rem) !important;
+  }
+  #limitations-6 .finishing-body,
+  #limitations-6 .finishing-punchline {
+    font-size: clamp(.94rem, 1vw, 1.18rem) !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Presentation interaction and composition refinements — Pages 09–21. */
+@media (min-width: 701px) {
+  /* 09 — foreground the randomization method. */
+  #randomization .randomization-copy .lede strong {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  /* 10 — current therapy first, then staged treatment additions and prednisone. */
+  #treatment .treatment-zero-row .treatment-plan > *,
+  #treatment .treatment-one-row .treatment-plan > i,
+  #treatment .treatment-one-row .treatment-plan > .drug-chip-new,
+  #treatment .prednisolone-strip {
+    transition: opacity .34s ease, transform .34s ease, visibility 0s linear .34s;
+  }
+  #treatment.treatment-method-stage-0 .treatment-zero-row .treatment-plan > *,
+  #treatment.treatment-method-stage-0 .treatment-one-row .treatment-plan > i,
+  #treatment.treatment-method-stage-0 .treatment-one-row .treatment-plan > .drug-chip-new,
+  #treatment.treatment-method-stage-1 .treatment-one-row .treatment-plan > i,
+  #treatment.treatment-method-stage-1 .treatment-one-row .treatment-plan > .drug-chip-new {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(.45rem);
+  }
+  #treatment.treatment-method-stage-0 .prednisolone-strip,
+  #treatment.treatment-method-stage-1 .prednisolone-strip,
+  #treatment.treatment-method-stage-2 .prednisolone-strip {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(.65rem);
+  }
+  #treatment.treatment-method-stage-1 .treatment-zero-row .treatment-plan > *,
+  #treatment.treatment-method-stage-2 .treatment-zero-row .treatment-plan > *,
+  #treatment.treatment-method-stage-3 .treatment-zero-row .treatment-plan > *,
+  #treatment.treatment-method-stage-2 .treatment-one-row .treatment-plan > i,
+  #treatment.treatment-method-stage-2 .treatment-one-row .treatment-plan > .drug-chip-new,
+  #treatment.treatment-method-stage-3 .treatment-one-row .treatment-plan > i,
+  #treatment.treatment-method-stage-3 .treatment-one-row .treatment-plan > .drug-chip-new,
+  #treatment.treatment-method-stage-3 .prednisolone-strip {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  #treatment .no-steroid-emphasis {
+    color: var(--red);
+    font-style: normal;
+    font-weight: 800;
+  }
+  #treatment .inactive-uveitis-emphasis {
+    color: #b99cff;
+  }
+
+  /* 13 — fourth click dismisses the definition panel and restores the overview. */
+  #outcomes.outcomes-story-4 .endpoint-stage,
+  #outcomes.outcomes-story-4 .outcomes-secondary-band {
+    opacity: 1 !important;
+    filter: none !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+  #outcomes.outcomes-story-4 .outcomes-inactive-popup {
+    opacity: 0 !important;
+    visibility: hidden;
+    pointer-events: none !important;
+    transform: translateY(.9rem) !important;
+  }
+
+  /* 15 — analysis assumptions are assertions, not footnotes. */
+  #statistics-redesign .analysis-framework-footer strong {
+    color: #fff;
+    font: inherit;
+    font-weight: 800;
+  }
+
+  /* 16 — randomization strata reveal after the main CONSORT flow. */
+  #participant-flow .flow-strata-summary {
+    transition: opacity .38s ease, transform .38s ease, visibility 0s linear .38s;
+  }
+  #participant-flow.participant-flow-stage-0 .flow-strata-summary {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(.8rem);
+  }
+  #participant-flow.participant-flow-stage-1 .flow-strata-summary {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  #participant-flow .flow-strata-summary header {
+    display: block;
+  }
+  #participant-flow .flow-strata-summary header span {
+    display: block;
+    white-space: nowrap;
+  }
+  #participant-flow .ada-flow-arm .completed-row :is(dt, dd) {
+    color: #ff6266 !important;
+    font-weight: 750;
+  }
+  #participant-flow .cid-flow-arm .completed-row :is(dt, dd) {
+    color: #b99cff !important;
+    font-weight: 750;
+  }
+
+  /* 17 — widen the clinical-view column and tighten the comparison sidebar. */
+  #baseline-portrait .cohort-portrait {
+    grid-template-columns: 1fr .82fr 1.28fr 1.22fr;
+  }
+  #baseline-portrait .ethnicity-signal span {
+    white-space: nowrap;
+    font-size: clamp(.88rem, .94vw, 1.08rem) !important;
+    letter-spacing: .035em;
+  }
+  #baseline-portrait .uveitis-duration-signal {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .8rem;
+  }
+  #baseline-portrait .uveitis-duration-signal > span {
+    white-space: nowrap;
+    font-size: clamp(.78rem, .84vw, .98rem) !important;
+    letter-spacing: .01em;
+  }
+  #baseline-portrait .uveitis-duration-signal > strong {
+    font-size: clamp(1rem, 1.08vw, 1.24rem) !important;
+  }
+  #baseline-portrait .uveitis-duration-signal > strong small {
+    font-size: clamp(.72rem, .78vw, .92rem) !important;
+  }
+  #baseline-portrait .baseline-contrasts {
+    border: 1px solid rgba(255, 76, 81, .48);
+    border-top-color: rgba(255, 76, 81, .8) !important;
+    grid-template-rows: 2.35rem repeat(3, minmax(0, 1fr)) auto;
+    padding-left: .72rem;
+    padding-right: .72rem;
+  }
+  #baseline-portrait .baseline-contrasts > * {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  #baseline-portrait .baseline-contrasts > header {
+    gap: .35rem;
+  }
+  #baseline-portrait .baseline-contrasts > header span {
+    min-width: 0;
+  }
+  #baseline-portrait .baseline-contrasts > header small {
+    flex: 0 0 auto;
+  }
+  #baseline-portrait .baseline-contrasts > header span {
+    font-size: clamp(.92rem, 1vw, 1.16rem) !important;
+    font-weight: 800;
+    line-height: 1.05 !important;
+  }
+  #baseline-portrait .lens-contrast {
+    grid-template-rows: auto 1fr auto;
+  }
+  #baseline-portrait .lens-status-note {
+    grid-column: 1;
+    display: grid;
+    gap: .08rem;
+    color: #8f8984;
+    font: 650 clamp(.62rem, .68vw, .8rem)/1.2 var(--font-geist-mono), monospace !important;
+    letter-spacing: .01em;
+    white-space: normal;
+  }
+  #baseline-portrait .contrast-row,
+  #baseline-portrait .contrast-row > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #baseline-portrait .contrast-row > div {
+    width: calc(100% - 2.7rem);
+  }
+  #baseline-portrait .baseline-contrasts > footer span {
+    display: block;
+    white-space: nowrap;
+  }
+  #baseline-portrait .baseline-contrasts > footer {
+    font-size: clamp(.68rem, .70vw, .82rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  /* 18 — keep the three dashboard bands in normal flow. The outcomes band is
+     relatively positioned, so a percentage top offset moved it below the slide. */
+  #treatment-results-redesign .txrd-grid-outcomes {
+    top: auto !important;
+  }
+  #treatment-results-redesign :is(.txrd-before, .txrd-after) .txrd-arms {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: .26rem;
+    padding: .48rem .82rem .2rem;
+    overflow: hidden;
+  }
+  #treatment-results-redesign .txrd-arm-row {
+    min-height: 0;
+    align-items: center;
+  }
+  #treatment-results-redesign .txrd-pathways .txrd-arms {
+    padding: .45rem .72rem;
+    gap: .4rem;
+  }
+  #treatment-results-redesign .txrd-pathways .txrd-pathway-card {
+    padding: .35rem .7rem;
+    gap: .14rem;
+  }
+  #treatment-results-redesign .txrd-pathway-hero {
+    min-height: 2.34rem;
+  }
+  #treatment-results-redesign .txrd-outcomes-title,
+  #treatment-results-redesign .txrd-outcome {
+    padding: .48rem .72rem;
+  }
+  #treatment-results-redesign .txrd-outcome-header {
+    gap: .38rem;
+    margin-bottom: .25rem;
+  }
+  #treatment-results-redesign .txrd-outcome footer {
+    margin-top: .25rem;
+    padding-top: .3rem;
+  }
+
+  /* 19/20 — preserve the overview first; Page 20 alone swaps the zoom order to 6M then 12M. */
+  #discontinuation .discontinuation-story-2 .efficacy-canvas {
+    transform: scale(1.43);
+    transform-origin: 51% 55%;
+  }
+  #discontinuation .discontinuation-story-3 .efficacy-canvas {
+    transform: scale(1.43);
+    transform-origin: 96% 55%;
+  }
+  #discontinuation.efficacy-sequence-2 .efficacy-story-readout {
+    left: auto;
+    right: 1.1rem;
+  }
+  #discontinuation.efficacy-sequence-3 .efficacy-story-readout {
+    left: 1.1rem;
+    right: auto;
+  }
+  :is(#results, #discontinuation) .efficacy-signal p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .18rem;
+  }
+  :is(#results, #discontinuation) .efficacy-signal p > span {
+    color: inherit;
+  }
+  :is(#results, #discontinuation) .efficacy-signal p > b {
+    display: block;
+    font-weight: 800;
+  }
+  :is(#results, #discontinuation) .efficacy-signal p > .significant-p {
+    color: #ff686c;
+  }
+  :is(#results, #discontinuation) .efficacy-signal p > .nonsignificant-p {
+    color: #aaa39e;
+  }
+  :is(#results, #discontinuation) .efficacy-summary-cards header {
+    align-items: flex-start;
+  }
+  :is(#results, #discontinuation) .efficacy-summary-cards header > b {
+    color: #b7b0ab;
+    white-space: nowrap;
+  }
+  :is(#results, #discontinuation) .efficacy-summary-cards :is(.primary-summary, .time-summary) header > b {
+    color: #ff686c;
+  }
+
+  /* 21 — keep both edema comparisons inside the right panel and surface the key result. */
+  #ocular-results .published-ocular-stage {
+    grid-template-columns: minmax(0, 1.42fr) minmax(31rem, .78fr);
+    gap: .85rem;
+  }
+  #ocular-results .significant-bcva :is(strong, small) {
+    color: #ff686c !important;
+    font-weight: 800;
+  }
+  #ocular-results .significant-bcva strong i {
+    color: #a49d98 !important;
+    font-weight: 400;
+  }
+  #ocular-results .bcva-findings span {
+    color: #fff;
+    font-size: clamp(.9rem, .98vw, 1.14rem) !important;
+    font-weight: 800;
+  }
+  #ocular-results .edema-module {
+    overflow: visible;
+    padding-left: .72rem;
+    padding-right: .72rem;
+  }
+  #ocular-results .edema-module > header small {
+    white-space: nowrap;
+  }
+  #ocular-results .edema-comparison {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .55rem;
+  }
+  #ocular-results .edema-time-col {
+    min-width: 0;
+    padding: .65rem .55rem;
+    gap: .45rem;
+  }
+  #ocular-results .edema-time-title {
+    color: #fff !important;
+    font-size: clamp(.9rem, .98vw, 1.14rem) !important;
+    white-space: nowrap;
+  }
+  #ocular-results .edema-visual-group {
+    gap: .65rem;
+    padding: 1.35rem .2rem .35rem;
+    overflow: visible;
+  }
+  #ocular-results .edema-bar-track,
+  #ocular-results .edema-bar-fill {
+    overflow: visible;
+  }
+  #ocular-results .edema-bar-val {
+    top: -1.35rem;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  #ocular-results .edema-stats-badge {
+    gap: .28rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+  }
+  #ocular-results .edema-stats-badge small {
+    margin-left: .55rem;
+  }
+
+  /* 22 — click focus keeps the two argument-bearing safety panels prominent. */
+  #systemic-safety-tolerability :is(.safety-difference-panel, .table-five-events,
+      .safety-intolerance-panel, .serious-events-panel) {
+    transition: opacity .34s ease, filter .34s ease, border-color .34s ease,
+      box-shadow .34s ease, transform .34s ease;
+  }
+  #systemic-safety-tolerability.safety-focus-active :is(.table-five-events, .safety-intolerance-panel) {
+    opacity: .16;
+    filter: saturate(.35);
+  }
+  #systemic-safety-tolerability.safety-focus-active :is(.safety-difference-panel, .serious-events-panel) {
+    opacity: 1;
+    filter: none;
+    transform: translateY(-.12rem);
+    border-color: rgba(255, 104, 108, .54);
+    box-shadow: 0 0 1.6rem rgba(255, 104, 108, .09);
+  }
+
+  /* 31 — keep the publication reference subordinate to the conclusion. */
+  #conclusion .citation {
+    font-size: clamp(.72rem, .78vw, .9rem) !important;
+    line-height: 1.25 !important;
+  }
+}

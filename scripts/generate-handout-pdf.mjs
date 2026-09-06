@@ -10,7 +10,7 @@ import path from "node:path";
 // captured PNGs so print CSS can never reflow the presentation.
 const VIEWPORT = { width: 1920, height: 1080, deviceScaleFactor: 2 };
 const PDF_PAGE = { width: 960, height: 540 }; // points: 13.333 × 7.5 inches
-const APP_URL = "http://localhost:3000/";
+const APP_URL = process.env.ADVISE_APP_URL || "http://localhost:3000/";
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const SLIDES = [

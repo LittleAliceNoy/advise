@@ -121,9 +121,9 @@ const treatmentTables = [
 ];
 
 const efficacyHighlights = [
-  { label: "6 MONTHS", ada: "69%", cid: "54%", signal: "+15 points", effect: "aOR 1.86", detail: "95% CI 1.06–3.25 · P = 0.029", status: "SIGNIFICANT", month: 6 },
-  { label: "12 MONTHS", ada: "86%", cid: "77%", signal: "+9 points", effect: "aOR 1.89", detail: "95% CI 0.93–3.83 · P = 0.077", status: "NOT SIGNIFICANT", month: 12 },
-  { label: "TIME-TO-EVENT", ada: "FASTER", cid: "REFERENCE", signal: "Earlier sparing", effect: "HR 1.39", detail: "95% CI 1.02–1.87 · P = 0.032", status: "SIGNIFICANT", month: 0 },
+  { label: "6 MONTHS", ada: "69%", cid: "54%", signal: "+15 points", effect: "aOR 1.86", detail: "95% CI 1.06–3.25", pValue: "P = 0.029", status: "SIGNIFICANT", month: 6 },
+  { label: "12 MONTHS", ada: "86%", cid: "77%", signal: "+9 points", effect: "aOR 1.89", detail: "95% CI 0.93–3.83", pValue: "P = 0.077", status: "NOT SIGNIFICANT", month: 12 },
+  { label: "TIME-TO-EVENT", ada: "FASTER", cid: "REFERENCE", signal: "Earlier sparing", effect: "HR 1.39", detail: "95% CI 1.02–1.87", pValue: "P = 0.032", status: "SIGNIFICANT", month: 0 },
 ];
 
 const efficacySeries = {
@@ -132,9 +132,9 @@ const efficacySeries = {
 };
 
 const discontinuationHighlights = [
-  { label: "6 MONTHS", ada: "15%", cid: "11%", signal: "+4 points", effect: "Similar", detail: "P = 0.30", status: "NOT SIGNIFICANT", month: 6 },
-  { label: "12 MONTHS", ada: "55%", cid: "40%", signal: "+15 points", effect: "OR 1.85", detail: "95% CI 1.06–3.19 · P = 0.028", status: "SIGNIFICANT", month: 12 },
-  { label: "TIME-TO-EVENT", ada: "NUMERICALLY FASTER", cid: "REFERENCE", signal: "Earlier discontinuation", effect: "HR 1.48", detail: "95% CI 0.99–2.22 · P = 0.053", status: "NOT SIGNIFICANT", month: 0 },
+  { label: "6 MONTHS", ada: "15%", cid: "11%", signal: "+4 points", effect: "Similar", detail: "", pValue: "P = 0.30", status: "NOT SIGNIFICANT", month: 6 },
+  { label: "12 MONTHS", ada: "55%", cid: "40%", signal: "+15 points", effect: "OR 1.85", detail: "95% CI 1.06–3.19", pValue: "P = 0.028", status: "SIGNIFICANT", month: 12 },
+  { label: "TIME-TO-EVENT", ada: "NUMERICALLY FASTER", cid: "REFERENCE", signal: "Earlier discontinuation", effect: "HR 1.48", detail: "95% CI 0.99–2.22", pValue: "P = 0.053", status: "NOT SIGNIFICANT", month: 0 },
 ];
 
 const discontinuationSeries = {
@@ -449,12 +449,16 @@ export default function Home() {
   const [discontinuationFocus, setDiscontinuationFocus] = useState(1);
   const [discontinuationStoryStage, setDiscontinuationStoryStage] = useState(5);
   const [taperingStage, setTaperingStage] = useState(7);
+  const [taperingMethodStage, setTaperingMethodStage] = useState<0 | 1 | 2>(0);
+  const [treatmentMethodStage, setTreatmentMethodStage] = useState<0 | 1 | 2 | 3>(0);
+  const [participantFlowStage, setParticipantFlowStage] = useState<0 | 1>(0);
   const [followupStage, setFollowupStage] = useState<0 | 1 | 2>(0);
   const [therapeuticGoalStage, setTherapeuticGoalStage] = useState(3);
   const [outcomesStoryStage, setOutcomesStoryStage] = useState(0);
   const [sampleSizeCycle, setSampleSizeCycle] = useState(0);
   const [statisticsFrameworkStage, setStatisticsFrameworkStage] = useState(-1);
   const [showCataractWarning, setShowCataractWarning] = useState(true);
+  const [safetyFocus, setSafetyFocus] = useState(false);
   const [isHandout, setIsHandout] = useState(false);
 
   // Slide 29 Interactive CID Donut & Inspection States
@@ -563,6 +567,9 @@ export default function Home() {
         setIsHandout(true);
         setTherapeuticGoalStage(3);
         setTaperingStage(7);
+        setTaperingMethodStage(2);
+        setTreatmentMethodStage(3);
+        setParticipantFlowStage(1);
         setFollowupStage(2);
         setStatisticsFrameworkStage(-1);
         setTreatmentStoryStage(-1);
@@ -570,6 +577,7 @@ export default function Home() {
         setEfficacyStoryStage(5);
         setDiscontinuationStoryStage(5);
         setShowCataractWarning(true);
+        setSafetyFocus(false);
         setActiveBranch('idle');
         setInspected79(true);
         setInspected21(true);
@@ -591,6 +599,9 @@ export default function Home() {
         (window as any).__INSTANT_CHART__ = true;
         setIsHandout(true);
         if (slideId === "therapeutic-goal") setTherapeuticGoalStage(3);
+        if (slideId === "tapering") setTaperingMethodStage(2);
+        if (slideId === "treatment") setTreatmentMethodStage(3);
+        if (slideId === "participant-flow") setParticipantFlowStage(1);
         if (slideId === "tapering-cinematic") setTaperingStage(7);
         if (slideId === "followup") setFollowupStage(2);
         if (slideId === "statistics-redesign") setStatisticsFrameworkStage(-1);
@@ -725,10 +736,29 @@ export default function Home() {
 
   useEffect(() => {
     if (isHandout) return;
+    if (chapters[active]?.id === "treatment") setTreatmentMethodStage(0);
+    if (chapters[active]?.id === "participant-flow") setParticipantFlowStage(0);
+    if (chapters[active]?.id === "systemic-safety-tolerability") setSafetyFocus(false);
+  }, [active, isHandout]);
+
+  useEffect(() => {
+    if (isHandout) return;
     if (chapters[active]?.id !== "results") return;
     setEfficacyStoryStage(0);
     setEfficacyFocus(2);
   }, [active, isHandout]);
+
+  useEffect(() => {
+    if (isHandout || chapters[active]?.id !== "results") return;
+    if (efficacyStoryStage === 0) {
+      const timer = window.setTimeout(() => setEfficacyStoryStage(1), 1000);
+      return () => window.clearTimeout(timer);
+    }
+    if (efficacyStoryStage === 4) {
+      const timer = window.setTimeout(() => setEfficacyStoryStage(5), 2000);
+      return () => window.clearTimeout(timer);
+    }
+  }, [active, efficacyStoryStage, isHandout]);
 
   useEffect(() => {
     if (isHandout) return;
@@ -810,14 +840,14 @@ export default function Home() {
     const startY = efficacyTouchStartY.current;
     const endY = event.changedTouches[0]?.clientY;
     efficacyTouchStartY.current = null;
-    if (startY === null || endY === undefined || startY - endY < 42 || efficacyStoryStage >= 5) return;
+    if (startY === null || endY === undefined || startY - endY < 42 || efficacyStoryStage === 0 || efficacyStoryStage === 4 || efficacyStoryStage >= 5) return;
     event.preventDefault();
     efficacyTouchAdvancedAt.current = Date.now();
     advanceEfficacyStory();
   };
 
   const onEfficacyClick = () => {
-    if (Date.now() - efficacyTouchAdvancedAt.current < 500 || efficacyStoryStage >= 5) return;
+    if (Date.now() - efficacyTouchAdvancedAt.current < 500 || efficacyStoryStage === 0 || efficacyStoryStage === 4 || efficacyStoryStage >= 5) return;
     advanceEfficacyStory();
   };
 
@@ -826,7 +856,7 @@ export default function Home() {
   };
 
   const advanceOutcomesStory = () => {
-    setOutcomesStoryStage((current) => Math.min(current + 1, 3));
+    setOutcomesStoryStage((current) => Math.min(current + 1, 4));
   };
 
   const onTaperTouchStart = (event: TouchEvent<HTMLElement>) => {
@@ -855,11 +885,23 @@ export default function Home() {
     setDiscontinuationFocus(2);
   }, [active, isHandout]);
 
+  useEffect(() => {
+    if (isHandout || chapters[active]?.id !== "discontinuation") return;
+    if (discontinuationStoryStage === 0) {
+      const timer = window.setTimeout(() => setDiscontinuationStoryStage(1), 1000);
+      return () => window.clearTimeout(timer);
+    }
+    if (discontinuationStoryStage === 4) {
+      const timer = window.setTimeout(() => setDiscontinuationStoryStage(5), 2000);
+      return () => window.clearTimeout(timer);
+    }
+  }, [active, discontinuationStoryStage, isHandout]);
+
   const advanceDiscontinuationStory = () => {
     setDiscontinuationStoryStage((current) => {
       const next = Math.min(current + 1, 5);
-      if (next === 2) setDiscontinuationFocus(1);
-      if (next === 3) setDiscontinuationFocus(0);
+      if (next === 2) setDiscontinuationFocus(0);
+      if (next === 3) setDiscontinuationFocus(1);
       if (next === 4) setDiscontinuationFocus(2);
       return next;
     });
@@ -878,14 +920,14 @@ export default function Home() {
     const startY = discontinuationTouchStartY.current;
     const endY = event.changedTouches[0]?.clientY;
     discontinuationTouchStartY.current = null;
-    if (startY === null || endY === undefined || startY - endY < 42 || discontinuationStoryStage >= 5) return;
+    if (startY === null || endY === undefined || startY - endY < 42 || discontinuationStoryStage === 0 || discontinuationStoryStage === 4 || discontinuationStoryStage >= 5) return;
     event.preventDefault();
     discontinuationTouchAdvancedAt.current = Date.now();
     advanceDiscontinuationStory();
   };
 
   const onDiscontinuationClick = () => {
-    if (Date.now() - discontinuationTouchAdvancedAt.current < 500 || discontinuationStoryStage >= 5) return;
+    if (Date.now() - discontinuationTouchAdvancedAt.current < 500 || discontinuationStoryStage === 0 || discontinuationStoryStage === 4 || discontinuationStoryStage >= 5) return;
     advanceDiscontinuationStory();
   };
 
@@ -973,7 +1015,7 @@ export default function Home() {
 
             <div className="landscape-taxonomy">
               <section className="landscape-anatomy" aria-label="Anatomic classification of uveitis">
-                <header><strong>ANATOMIC CLASSIFICATION</strong><small>Based on the primary site of inflammation</small></header>
+                <header><strong>ANATOMIC CLASSIFICATION</strong><small>Primary site of inflammation</small></header>
                 <div className="landscape-anatomy-nodes">
                   {[
                     ["ANTERIOR", "anterior"],
@@ -990,7 +1032,7 @@ export default function Home() {
               </section>
 
               <section className="landscape-etiology" aria-label="Etiologic classification of uveitis">
-                <header><strong>ETIOLOGY</strong><small>By nature of the disease</small></header>
+                <header><strong>ETIOLOGY</strong><small>By cause</small></header>
                 <div className="landscape-etiology-axis">
                   <div><span>INFECTIOUS</span><i className="etiology-germs" aria-hidden="true"><i /></i></div>
                   <em className="etiology-divider" aria-hidden="true"><i /></em>
@@ -1013,7 +1055,7 @@ export default function Home() {
                       <path className="svg-accent" d="M46 43v4l3 2" />
                     </svg>
                   </span>
-                  <div><strong>HISTORY</strong><small>Symptoms · disease course · prior treatment</small></div>
+                  <div><strong>HISTORY</strong><small>Symptoms · course · treatment</small></div>
                 </article>
                 <em aria-hidden="true">+</em>
                 <article>
@@ -1036,7 +1078,7 @@ export default function Home() {
                       <circle cx="72" cy="52" r="2" />
                     </svg>
                   </span>
-                  <div><strong>OPHTHALMIC EXAMINATION</strong><small>Anterior chamber and vitreous inflammation grading</small></div>
+                  <div><strong>OPHTHALMIC EXAMINATION</strong><small>AC cells + vitreous haze grading</small></div>
                 </article>
                 <em aria-hidden="true">+</em>
                 <article>
@@ -1050,16 +1092,15 @@ export default function Home() {
                       <path className="svg-accent svg-scan" d="M20 39c7-5 17-7 25-5" />
                     </svg>
                   </span>
-                  <div><strong>IMAGING</strong><small>Often disease-specific</small></div>
+                  <div><strong>IMAGING</strong><small>Disease-specific when needed</small></div>
                 </article>
               </div>
             </section>
 
             <section className="landscape-convergence" aria-label="Many noninfectious uveitides converge on oral corticosteroids and immunosuppression">
               <header>
-                <small>Despite their clinical and presumed immunologic differences,</small>
                 <strong>MANY NON-INFECTIOUS INTERMEDIATE, POSTERIOR AND PANUVEITIDES</strong>
-                <span>CONVERGE ON A COMMON SYSTEMIC APPROACH</span>
+                <span>CONVERGE ON ONE SYSTEMIC APPROACH</span>
               </header>
 
               <div className="landscape-convergence-body">
@@ -1125,7 +1166,7 @@ export default function Home() {
                     <strong className="constraint-title">STEROID CEILING</strong>
                     <p className="constraint-desc">
                       Oral corticosteroids alone do <span className="red-bold-word">NOT</span> control inflammation<br />
-                      at doses sufficiently low for long-term use.
+                      at a dose low enough for long-term use.
                     </p>
                   </div>
                 </div>
@@ -1135,7 +1176,7 @@ export default function Home() {
                     <strong className="ceiling-dose" style={{ fontSize: "clamp(2.3rem, 3.15vw, 3.8rem)", fontWeight: 900, lineHeight: 0.85, color: "#ff4d52", display: "block", textShadow: "0 0 16px rgba(255, 77, 82, 0.48)" }}>≤7.5</strong>
                     <span className="ceiling-unit">MG / DAY</span>
                   </div>
-                  <small className="ceiling-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING DOSE THRESHOLD</small>
+                  <small className="ceiling-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>CORTICOSTEROID-SPARING THRESHOLD</small>
                 </div>
               </div>
 
@@ -1216,7 +1257,7 @@ export default function Home() {
                   <div className="constraint-title-block title-block-right">
                     <strong className="constraint-title constraint-title-right">INFLAMMATION FLOOR</strong>
                     <p className="constraint-desc">
-                      Even low-level inflammation results in<br />
+                      Even low-level inflammation is associated with<br />
                       <span className="red-bold-word">WORSE VISUAL ACUITY OUTCOMES</span>
                     </p>
                   </div>
@@ -1240,7 +1281,7 @@ export default function Home() {
 
                 <div className="floor-box">
                   <strong className="floor-title" style={{ fontSize: "clamp(1.15rem, 1.55vw, 1.9rem)", fontWeight: 900, lineHeight: 1.15, color: "#ffffff", display: "block", whiteSpace: "nowrap" }}>INACTIVE UVEITIS</strong>
-                  <small className="floor-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE INFLAMMATION CONTROL REQUIRED</small>
+                  <small className="floor-label" style={{ fontSize: "clamp(0.74rem, 0.86vw, 1.08rem)", fontWeight: 800, color: "#d6d3d1", display: "block", marginTop: "0.25rem" }}>COMPLETE CONTROL REQUIRED</small>
                 </div>
               </div>
 
@@ -1534,7 +1575,7 @@ export default function Home() {
                       </div>
                       <div className="drug-meta">
                         <strong className="drug-name">MYCOPHENOLATE MOFETIL</strong>
-                        <span className="drug-moa">Inosine monophosphate dehydrogenase inhibitor</span>
+                        <span className="drug-moa">IMPDH inhibitor</span>
                       </div>
                     </div>
 
@@ -1667,7 +1708,7 @@ export default function Home() {
                     </div>
                     <div className="calcineurin-drug-info">
                       <strong className="cni-drug-name">CYCLOSPORINE</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibition via cyclophilin binding</span>
+                      <span className="cni-drug-moa">Cyclophilin binding</span>
                     </div>
                   </div>
 
@@ -1686,7 +1727,7 @@ export default function Home() {
                     </div>
                     <div className="calcineurin-drug-info">
                       <strong className="cni-drug-name">TACROLIMUS</strong>
-                      <span className="cni-drug-moa">Calcineurin inhibition via FKBP binding</span>
+                      <span className="cni-drug-moa">FKBP binding</span>
                     </div>
                   </div>
                 </div>
@@ -1798,7 +1839,7 @@ export default function Home() {
                   </strong>
                   <div className="evidence-text-block">
                     <strong className="evidence-headline">SUCCESSFUL CORTICOSTEROID SPARING</strong>
-                    <span className="evidence-subtext">with a single immunosuppressive agent</span>
+                    <span className="evidence-subtext">with one agent</span>
                   </div>
                 </div>
 
@@ -1830,8 +1871,8 @@ export default function Home() {
                     ~20–25%
                   </strong>
                   <div className="evidence-text-block">
-                    <strong className="evidence-headline">NEED TWO IMMUNOSUPPRESSIVE DRUGS</strong>
-                    <span className="evidence-subtext">to achieve successful corticosteroid sparing</span>
+                    <strong className="evidence-headline">REQUIRE TWO DRUGS</strong>
+                    <span className="evidence-subtext">for corticosteroid sparing</span>
                   </div>
                 </div>
               </div>
@@ -2090,7 +2131,7 @@ export default function Home() {
           <div className="scene-copy design-copy">
             <p className="eyebrow"><span /> 07 — METHODOLOGY / STUDY DESIGN</p>
             <h2>Built across<br /><em>three continents</em></h2>
-            <p className="lede">The ADVISE Trial was a multicenter, randomized, unmasked, parallel-treatment comparative-effectiveness superiority trial comparing adalimumab with conventional immunosuppressive drugs for uveitis</p>
+            <p className="lede">Multicenter, randomized, unmasked superiority trial comparing adalimumab with conventional immunosuppression</p>
             <div className="design-attributes" aria-label="Study design features">
               <div><strong>1:1</strong><span>randomized allocation</span></div>
               <div><strong>OPEN</strong><span>unmasked treatment</span></div>
@@ -2155,7 +2196,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <p className="mtqac-duty-summary">Reviewed early cases, protocol discrepancies, and center–reading discrepancies <i>→</i> corrective feedback as needed</p>
+                <p className="mtqac-duty-summary">Reviewed early cases and protocol or reading-center discrepancies <i>→</i> corrective feedback</p>
               </div>
             </div>
           </div>
@@ -2165,7 +2206,7 @@ export default function Home() {
           <div className="scene-copy journey-copy screening-inclusion-copy">
             <p className="eyebrow"><span /> 08 — METHODOLOGY / SCREENING PATHWAY</p>
             <h2>The entry<br /><em>window</em></h2>
-            <p className="lede">Three inclusion thresholds defined who could proceed to the eight-part safety screen</p>
+            <p className="lede">Three entry thresholds preceded an eight-part safety screen</p>
             <div className="disease-window">
               <span>NON-INFECTIOUS UVEITIS</span>
               <div><small>INTERMEDIATE</small><small>POSTERIOR</small><small>PANUVEITIS</small></div>
@@ -2200,7 +2241,7 @@ export default function Home() {
           <div className="scene-copy randomization-copy">
             <p className="eyebrow"><span /> 09 — METHODOLOGY / STRATIFICATION &amp; RANDOMIZATION</p>
             <h2>Four strata.<br /><em>One balanced split</em></h2>
-            <p className="lede">Participants were stratified by current immunosuppression and anticipated prednisone dose, then randomized within each stratum using varying-size permuted blocks to maintain the expected allocation ratio</p>
+            <p className="lede">Randomization was stratified by baseline immunosuppression and prednisone dose, using <strong>varying-size permuted blocks</strong> within each stratum</p>
             <div className="randomization-timeline" aria-label="Steps completed before randomization assignment was revealed">
               <span><div className="timeline-step-head"><b>01</b><em>CONSENT</em></div></span>
               <span><div className="timeline-step-head"><b>02</b><em>BASELINE CHECK</em></div></span>
@@ -2239,7 +2280,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="treatment" className="scene treatment-scene">
+        <section
+          id="treatment"
+          className={`scene treatment-scene treatment-method-stage-${treatmentMethodStage}`}
+          onClick={() => setTreatmentMethodStage((stage) => (stage < 3 ? ((stage + 1) as 0 | 1 | 2 | 3) : stage))}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              setTreatmentMethodStage((stage) => (stage < 3 ? ((stage + 1) as 0 | 1 | 2 | 3) : stage));
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Treatment by stratum. Click to reveal zero-drug treatments, one-drug additions, then prednisolone guidance"
+        >
           <div className="scene-copy treatment-copy">
             <p className="eyebrow"><span /> 10 — METHODOLOGY / TREATMENT BY STRATUM</p>
             <h2>Baseline therapy.<br /><em>Defines the next step</em></h2>
@@ -2267,22 +2321,22 @@ export default function Home() {
               <strong><b>CID</b></strong>
             </div>
             <div className="treatment-table-body">
-              <article className="treatment-row">
+              <article className="treatment-row treatment-zero-row">
                 <div className="treatment-stratum"><strong>0 DRUGS</strong><span>&lt;30 MG/DAY</span></div>
                 <div className="treatment-ada treatment-plan"><span className="drug-chip drug-chip-new">ADA</span><small>MONOTHERAPY</small></div>
                 <div className="treatment-cid treatment-plan"><span className="drug-chip drug-chip-new">MTX</span><em>OR</em><span className="drug-chip drug-chip-new">MMF</span></div>
               </article>
-              <article className="treatment-row">
+              <article className="treatment-row treatment-zero-row">
                 <div className="treatment-stratum"><strong>0 DRUGS</strong><span>≥30 MG/DAY</span></div>
                 <div className="treatment-ada treatment-plan"><span className="drug-chip drug-chip-new">ADA</span><small>MONOTHERAPY</small></div>
                 <div className="treatment-cid treatment-plan"><span className="drug-chip drug-chip-new">MTX</span><em>OR</em><span className="drug-chip drug-chip-new">MMF</span></div>
               </article>
-              <article className="treatment-row">
+              <article className="treatment-row treatment-one-row">
                 <div className="treatment-stratum"><strong>1 DRUG</strong><span>&lt;30 MG/DAY</span></div>
                 <div className="treatment-ada treatment-plan"><span className="drug-chip drug-chip-current">CURRENT DRUG</span><i>+</i><span className="drug-chip drug-chip-new">ADA</span></div>
                 <div className="treatment-cid treatment-plan"><span className="drug-chip drug-chip-current">CURRENT DRUG</span><i>+</i><span className="drug-chip drug-chip-new">DIFFERENT-CLASS DRUG</span></div>
               </article>
-              <article className="treatment-row">
+              <article className="treatment-row treatment-one-row">
                 <div className="treatment-stratum"><strong>1 DRUG</strong><span>≥30 MG/DAY</span></div>
                 <div className="treatment-ada treatment-plan"><span className="drug-chip drug-chip-current">CURRENT DRUG</span><i>+</i><span className="drug-chip drug-chip-new">ADA</span></div>
                 <div className="treatment-cid treatment-plan"><span className="drug-chip drug-chip-current">CURRENT DRUG</span><i>+</i><span className="drug-chip drug-chip-new">DIFFERENT-CLASS DRUG</span></div>
@@ -2293,14 +2347,27 @@ export default function Home() {
           <div className="prednisolone-strip" aria-label="Initial prednisolone dosing by uveitis activity">
             <div className="prednisolone-title treatment-section-title"><span>PREDNISOLONE</span></div>
             <div className="prednisolone-cards">
-              <article><i>01</i><span><b>ACTIVE</b> · NO ORAL STEROID</span><strong>START 1 MG/KG/DAY</strong></article>
+              <article><i>01</i><span><b>ACTIVE</b> · <em className="no-steroid-emphasis">NO</em> ORAL STEROID</span><strong>START 1 MG/KG/DAY</strong></article>
               <article><i>02</i><span><b>ACTIVE</b> · ON ORAL STEROID</span><strong>DOUBLE CURRENT DOSE</strong></article>
-              <article><i>03</i><span><b>INACTIVE UVEITIS</b></span><strong>HOLD 1 MONTH · THEN TAPER</strong></article>
+              <article><i>03</i><span><b className="inactive-uveitis-emphasis">INACTIVE UVEITIS</b></span><strong>HOLD 1 MONTH · THEN TAPER</strong></article>
             </div>
           </div>
         </section>
 
-        <section id="tapering" className="scene tapering-scene">
+        <section
+          id="tapering"
+          className={`scene tapering-scene tapering-method-stage-${taperingMethodStage}`}
+          onClick={() => setTaperingMethodStage((stage) => (stage < 2 ? ((stage + 1) as 0 | 1 | 2) : 0))}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              setTaperingMethodStage((stage) => (stage < 2 ? ((stage + 1) as 0 | 1 | 2) : 0));
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Tapering protocol. Click to reveal reactivation guidance, then regional corticosteroid injection windows"
+        >
           <div className="scene-copy tapering-copy">
             <p className="eyebrow"><span /> 11 — METHODOLOGY / TAPERING &amp; REACTIVATION</p>
             <h2>Taper the steroid.<br /><em>Escalate when needed</em></h2>
@@ -2321,7 +2388,7 @@ export default function Home() {
             </article>
 
             <article className="reactivation-protocol">
-              <header><span>REACTIVATION / ESCALATION MATRIX</span><strong>RESET + ADVANCE</strong></header>
+              <header><span>REACTIVATION / ESCALATION</span><strong>RESET + ADVANCE</strong></header>
               <div className="steroid-reset"><b>≥2×</b><span>PREDNISONE DOSE</span><i>→</i><strong>HOLD 2–4 WEEKS</strong></div>
               <div className="advance-ladder">
                 <div><span>ADA ONLY</span><strong className="action-red">ADD CID <small>(TYPICALLY ANTIMETABOLITE)</small></strong></div>
@@ -2371,7 +2438,7 @@ export default function Home() {
             <article className="followup-panel visit-suite">
               <header><span>EVERY VISIT PROTOCOL</span></header>
               <div><b>CLINICAL HISTORY</b><span>Medical, ophthalmic, and treatment history</span></div>
-              <div><b>OPHTHALMIC EXAM</b><span>Complete eye exam and BCVA using logarithmic charts</span></div>
+              <div><b>OPHTHALMIC EXAM</b><span>Complete eye exam and logarithmic-chart BCVA</span></div>
               <div><b>VITALS &amp; PHLEBOTOMY</b><span>Weight, blood pressure, CBC, and CMP</span></div>
             </article>
 
@@ -2386,7 +2453,7 @@ export default function Home() {
               <header><span>DIAGNOSIS-SPECIFIC TARGETING</span></header>
               <p className="diagnosis-note">ASSESSED AT EVERY VISIT · BASED ON DIAGNOSIS</p>
               <div><span>Birdshot chorioretinitis</span><b>VISUAL FIELDS</b></div>
-              <div><span>Multifocal · PIC · serpiginous · placoid · secondary/undifferentiated choroiditis</span><b>FAF</b></div>
+              <div><span>Multifocal, PIC, serpiginous, placoid, or<br />undifferentiated choroiditis</span><b>FAF</b></div>
               <div><span>Early-stage VKH ·<br />Exudative retinal detachment</span><b>OCT</b></div>
               <div><span>Secondary/undifferentiated retinal<br />vasculitis or panuveitis</span><b>FFA</b></div>
             </article>
@@ -2495,30 +2562,30 @@ export default function Home() {
           <section className="analysis-framework" aria-label="Four statistical analysis families">
             <article className="analysis-framework-column">
               <header><b>01</b><span>PRIMARY OUTCOME</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Did assigned treatment achieve successful corticosteroid sparing more often?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Did assigned treatment achieve corticosteroid sparing more often?</h3></section>
               <div className="analysis-visual analysis-visual-binary" aria-label="Schematic repeated binary participant-state motif"><i /><i /><i /><i /><i /><i /><i /><i /></div>
               <section className="framework-model"><h4>GEE LOGISTIC<br />REGRESSION</h4></section>
-              <ul><li>Repeated measurements; unstructured covariance</li><li>Treatment + strata + visits 8/10/12; treatment × visit</li></ul>
+              <ul><li>Repeated measures; unstructured covariance</li><li>Treatment, strata, visits 8/10/12, treatment × visit</li></ul>
             </article>
 
             <article className="analysis-framework-column">
               <header><b>02</b><span>CONTINUOUS OUTCOMES</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Did visual acuity, quality of life, or retinal thickness change differently over time?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Did visual acuity, quality of life, or retinal thickness change over time?</h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-lines" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic longitudinal trajectories"><path d="M8 72 43 48 76 57 112 34 148 42 189 19 232 27" /><path d="M8 76 43 62 76 69 112 54 148 59 189 45 232 47" /><g><circle cx="43" cy="48" r="3" /><circle cx="112" cy="34" r="3" /><circle cx="189" cy="19" r="3" /><circle cx="43" cy="62" r="3" /><circle cx="112" cy="54" r="3" /><circle cx="189" cy="45" r="3" /></g></svg>
               </div>
               <section className="framework-model"><h4>MIXED-EFFECTS<br />MODEL</h4></section>
-              <ul><li>Linear: visual acuity / quality of life; log: retinal thickness</li><li>Unstructured correlation; person-level random intercept for eye outcomes</li></ul>
+              <ul><li>Linear: acuity / quality of life; log: retinal thickness</li><li>Unstructured correlation; eye-level random intercept</li></ul>
             </article>
 
             <article className="analysis-framework-column">
               <header><b>03</b><span>TIME-TO-EVENT OUTCOMES</span></header>
-              <section className="framework-question"><small>QUESTION</small><h3>Which assigned strategy reached steroid outcomes or adverse events sooner?</h3></section>
+              <section className="framework-question"><small>QUESTION</small><h3>Which strategy reached corticosteroid or adverse-event outcomes sooner?</h3></section>
               <div className="analysis-visual analysis-visual-chart">
                 <svg className="analysis-visual-km" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic Kaplan-Meier-style step curves"><path d="M8 12h24v10h27v11h29v14h33v11h38v10h68" /><path d="M8 12h22v17h25v14h28v18h31v12h39v7h79" /></svg>
               </div>
               <section className="framework-model"><h4>KAPLAN-MEIER + COX<br />PROPORTIONAL HAZARDS</h4></section>
-              <ul><li>Corticosteroid events (secondary analysis); adverse events (primary analysis)</li><li>Stratification interaction tests; frailty model for ocular adverse events</li></ul>
+              <ul><li>Corticosteroid events (secondary); adverse events (primary)</li><li>Stratification interactions; frailty model for ocular events</li></ul>
             </article>
 
             <article className="analysis-framework-column">
@@ -2532,10 +2599,15 @@ export default function Home() {
             </article>
           </section>
 
-          <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span>Sensitivity analyses assessed missingness</span><span>Secondary-outcome P values nominal</span></footer>
+          <footer className="analysis-framework-footer"><span>AS RANDOMIZED</span><span><strong>Sensitivity analyses assessed missingness</strong></span><span><strong>Secondary-outcome P values nominal</strong></span></footer>
         </section>
 
-        <section id="participant-flow" className="scene participant-flow-scene">
+        <section
+          id="participant-flow"
+          className={`scene participant-flow-scene participant-flow-stage-${participantFlowStage}`}
+          onClick={() => setParticipantFlowStage(1)}
+          aria-label="Participant flow. Click to reveal randomization strata"
+        >
           {chapters[active]?.id === "participant-flow" && (
             <div key={cohortCycle} className="flow-intro" aria-hidden="true">
               <p className="eyebrow flow-intro-eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
@@ -2570,21 +2642,20 @@ export default function Home() {
           <div className="scene-copy flow-copy">
             <p className="eyebrow"><span /> 16 — RESULTS / PARTICIPANT FLOW</p>
             <h2>338 screened.<br /><em>227 randomized</em></h2>
-            <p className="lede">From eligibility assessment to the 12-month close-out, every participant is accounted for</p>
+            <p className="lede">Every participant is accounted for from screening through 12 months</p>
             <div className="flow-duration"><span>STUDY ENROLLMENT</span><strong>SEPTEMBER 2019</strong><i /><strong>SEPTEMBER 2023</strong></div>
             <section className="flow-strata-summary" aria-label="Four randomization strata with treatment allocation">
-              <header><span>STRATA AT RANDOMIZATION</span><small>1 : 1 WITHIN EACH STRATUM</small></header>
+              <header><span>STRATA AT RANDOMIZATION</span></header>
               <div className="flow-strata-columns">
                 <div className="flow-strata-arm ada-arm"><strong>ADA</strong><div className="flow-strata-stack" aria-label="ADA strata allocation"><i className="s-0l" style={{ height: "15.8%" }}><b>18</b></i><i className="s-0h" style={{ height: "63.2%" }}><b>72</b></i><i className="s-1l" style={{ height: "9.6%" }}><b>11</b></i><i className="s-1h" style={{ height: "11.4%" }}><b>13</b></i></div></div>
                 <div className="flow-strata-arm cid-arm"><strong>CID</strong><div className="flow-strata-stack" aria-label="CID strata allocation"><i className="s-0l" style={{ height: "15%" }}><b>17</b></i><i className="s-0h" style={{ height: "62.8%" }}><b>71</b></i><i className="s-1l" style={{ height: "9.7%" }}><b>11</b></i><i className="s-1h" style={{ height: "12.5%" }}><b>14</b></i></div></div>
                 <div className="flow-strata-categories"><span><b>0L</b> No IMT · &lt;30 <em>35 total</em></span><span><b>0H</b> No IMT · ≥30 <em>143 total</em></span><span><b>1L</b> 1 IMT · &lt;30 <em>22 total</em></span><span><b>1H</b> 1 IMT · ≥30 <em>27 total</em></span></div>
               </div>
-              <footer><span>0 / 1 = immunosuppressive drugs</span><span>L / H = prednisone &lt;30 / ≥30 mg/day</span></footer>
             </section>
           </div>
 
           <section className="consort-flow" aria-label="Participant screening, allocation, and follow-up flow diagram">
-            <button className="flow-replay" onClick={() => setCohortCycle((cycle) => cycle + 1)} aria-label="Replay eligibility and randomization animation">↻</button>
+            <button className="flow-replay" onClick={(event) => { event.stopPropagation(); setCohortCycle((cycle) => cycle + 1); }} aria-label="Replay eligibility and randomization animation">↻</button>
             <div className="consort-screening">
               <article className="consort-node assessed-node">
                 <strong>Assessed for Eligibility</strong><span>N = 338</span>
@@ -2615,11 +2686,11 @@ export default function Home() {
                 </section>
                 <section className="outcome-box">
                   <div className="visit-label"><strong>Primary Outcome:</strong><span>6 Months</span></div>
-                  <dl><div><dt>Completed:</dt><dd>N = 107</dd></div><div><dt>Missed visit:</dt><dd>N = 5</dd></div><div><dt>Lost to FU:</dt><dd>N = 2*</dd></div></dl>
+                  <dl><div className="completed-row"><dt>Completed:</dt><dd>N = 107</dd></div><div><dt>Missed visit:</dt><dd>N = 5</dd></div><div><dt>Lost to FU:</dt><dd>N = 2*</dd></div></dl>
                 </section>
                 <section className="last-visit-box">
                   <div className="visit-label"><strong>Last Visit:</strong><span>12 Months</span></div>
-                  <dl><div><dt>Completed:</dt><dd>N = 109</dd></div><div><dt>Lost to FU:</dt><dd>N = 5*</dd></div></dl>
+                  <dl><div className="completed-row"><dt>Completed:</dt><dd>N = 109</dd></div><div><dt>Lost to FU:</dt><dd>N = 5*</dd></div></dl>
                 </section>
               </article>
 
@@ -2629,11 +2700,11 @@ export default function Home() {
                 </section>
                 <section className="outcome-box">
                   <div className="visit-label"><strong>Primary Outcome:</strong><span>6 Months</span></div>
-                  <dl><div><dt>Completed:</dt><dd>N = 100</dd></div><div><dt>Missed visit:</dt><dd>N = 5</dd></div><div><dt>Lost to FU:</dt><dd>N = 8†</dd></div></dl>
+                  <dl><div className="completed-row"><dt>Completed:</dt><dd>N = 100</dd></div><div><dt>Missed visit:</dt><dd>N = 5</dd></div><div><dt>Lost to FU:</dt><dd>N = 8†</dd></div></dl>
                 </section>
                 <section className="last-visit-box">
                   <div className="visit-label"><strong>Last Visit:</strong><span>12 Months</span></div>
-                  <dl><div><dt>Completed:</dt><dd>N = 98</dd></div><div><dt>Lost to FU:</dt><dd>N = 15†</dd></div></dl>
+                  <dl><div className="completed-row"><dt>Completed:</dt><dd>N = 98</dd></div><div><dt>Lost to FU:</dt><dd>N = 15†</dd></div></dl>
                 </section>
               </article>
             </div>
@@ -2646,7 +2717,7 @@ export default function Home() {
           <div className="scene-copy baseline-portrait-copy">
             <p className="eyebrow"><span /> 17 — RESULTS / BASELINE COHORT</p>
             <h2>A cohort in view.<br /><em>Balanced—with a few contrasts</em></h2>
-            <p className="lede">Participant and eye-level characteristics were broadly similar between groups. The clearest numerical imbalances are shown separately</p>
+            <p className="lede">Participant and eye characteristics were broadly similar. The clearest numerical imbalances are shown separately</p>
           </div>
 
           <section className="cohort-portrait" aria-label="Visual summary of baseline participant and ocular characteristics">
@@ -2706,9 +2777,9 @@ export default function Home() {
             <article className="baseline-contrasts">
               <header><span>NOTABLE NUMERICAL IMBALANCES</span><small>ADA <i /> CID</small></header>
               <div className="contrast-row"><span>BILATERAL ACTIVE UVEITIS</span><div><i style={{ width: "76%" }} /><b style={{ width: "90%" }} /><em style={{ left: "76%" }}>76%</em><strong style={{ left: "90%" }}>90%</strong></div></div>
-              <div className="contrast-row lens-contrast"><span>LENS OPACITY / CATARACT<small>OVERALL · 82% PHAKIC · 44% CLEAR LENS · 38% OPACITY/CATARACT</small></span><div><i style={{ width: "36%" }} /><b style={{ width: "40%" }} /><em style={{ left: "36%" }}>36%</em><strong style={{ left: "40%" }}>40%</strong></div></div>
+              <div className="contrast-row lens-contrast"><span>LENS OPACITY / CATARACT</span><div><i style={{ width: "36%" }} /><b style={{ width: "40%" }} /><em style={{ left: "36%" }}>36%</em><strong style={{ left: "40%" }}>40%</strong></div><small className="lens-status-note"><span>OVERALL · 82% PHAKIC</span><span>44% CLEAR LENS · 38% OPACITY/CATARACT</span></small></div>
               <div className="contrast-row"><span>MACULAR EDEMA</span><div><i style={{ width: "29%" }} /><b style={{ width: "20%" }} /><em style={{ left: "29%" }}>29%</em><strong style={{ left: "20%" }}>20%</strong></div></div>
-              <footer>Numerical differences only;<br />the groups remained reasonably well balanced overall</footer>
+              <footer><span>Numerical differences only; groups</span><span>remained reasonably well balanced overall</span></footer>
             </article>
           </section>
         </section>
@@ -3006,8 +3077,8 @@ export default function Home() {
                 <span className="txrd-red">Treatment evolved</span>
               </h1>
               <p>
-                Baseline treatment looked similar between arms.<br />
-                After randomization, treatment intensity surged in both arms—<span className="txrd-red">by different pathways</span>
+                Baseline treatment was similar between arms.<br />
+                After randomization, intensity increased through <span className="txrd-red">different pathways</span>
               </p>
             </div>
           </header>
@@ -3191,7 +3262,7 @@ export default function Home() {
             <section className="txrd-outcome txrd-outcome-advancement">
               <div className="txrd-outcome-header">
                 <b>03</b>
-                <div><strong>IMMUNOSUPPRESSION ADVANCEMENT</strong><span>In the no immunosuppression strata</span></div>
+                <div><strong>IMMUNOSUPPRESSION ADVANCE</strong><span>In the no immunosuppression strata</span></div>
               </div>
               <div className="txrd-vs">
                 <div className="txrd-ada-color"><small>ADA ARM</small><strong>37</strong><span>events</span></div>
@@ -3254,7 +3325,7 @@ export default function Home() {
 
           <section className="efficacy-stage efficacy-sequence-stage" aria-label="Successful corticosteroid sparing efficacy outcomes">
             <div className={`efficacy-chart-panel efficacy-story-${efficacyStoryStage}`}>
-              <header><span>CUMULATIVE CORTICOSTEROID SPARING</span><div><b>ADA</b><i /><b>CID</b><small className="efficacy-advance-hint">{efficacyStoryStage < 5 ? "CLICK / SWIPE ↑" : "COMPLETE"}</small><button className="efficacy-story-replay" onClick={(event) => { event.stopPropagation(); resetEfficacyStory(); }} aria-label="Reset efficacy result sequence">↻</button></div></header>
+              <header><span>CUMULATIVE CORTICOSTEROID SPARING</span><div><b>ADA</b><i /><b>CID</b><button className="efficacy-story-replay" onClick={(event) => { event.stopPropagation(); resetEfficacyStory(); }} aria-label="Reset efficacy result sequence">↻</button></div></header>
               {efficacyStoryStage > 0 && <CumulativeChart focus={efficacyStoryStage === 1 ? 2 : efficacyFocus} highlights={efficacyHighlights} series={efficacySeries} ariaLabel="Cumulative proportion achieving successful corticosteroid sparing from randomization through 12 months" />}
             </div>
             {efficacyStoryStage === 5 ? (
@@ -3282,7 +3353,7 @@ export default function Home() {
               <aside key={`${efficacyFocus}-${efficacyStoryStage}`} className={`efficacy-readout efficacy-story-readout efficacy-focus-${efficacyFocus}`}>
                 <span>{efficacyHighlights[efficacyFocus].label}</span>
                 {efficacyFocus < 2 ? <div className="efficacy-groups"><article><small>ADA</small><strong>{efficacyHighlights[efficacyFocus].ada}</strong></article><i>VS</i><article><small>CID</small><strong>{efficacyHighlights[efficacyFocus].cid}</strong></article></div> : <div className="efficacy-speed"><strong>1.39×</strong><span>faster time to successful sparing</span></div>}
-                <div className="efficacy-signal"><small>{efficacyHighlights[efficacyFocus].signal}</small><strong>{efficacyHighlights[efficacyFocus].effect}</strong><p>{efficacyHighlights[efficacyFocus].detail}</p></div>
+                <div className="efficacy-signal"><small>{efficacyHighlights[efficacyFocus].signal}</small><strong>{efficacyHighlights[efficacyFocus].effect}</strong><p>{efficacyHighlights[efficacyFocus].detail && <span>{efficacyHighlights[efficacyFocus].detail}</span>}<b className={efficacyHighlights[efficacyFocus].status === "SIGNIFICANT" ? "significant-p" : "nonsignificant-p"}>{efficacyHighlights[efficacyFocus].pValue}</b></p></div>
                 <b className={efficacyHighlights[efficacyFocus].status === "SIGNIFICANT" ? "significant" : "not-significant"}>{efficacyHighlights[efficacyFocus].status}</b>
               </aside>
             ) : <aside className="efficacy-readout efficacy-empty-readout" aria-hidden="true" />}
@@ -3334,7 +3405,7 @@ export default function Home() {
               <aside key={`${discontinuationFocus}-${discontinuationStoryStage}`} className={`efficacy-readout efficacy-story-readout efficacy-focus-${discontinuationFocus}`}>
                 <span>{discontinuationHighlights[discontinuationFocus].label}</span>
                 {discontinuationFocus < 2 ? <div className="efficacy-groups"><article><small>ADA</small><strong>{discontinuationHighlights[discontinuationFocus].ada}</strong></article><i>VS</i><article><small>CID</small><strong>{discontinuationHighlights[discontinuationFocus].cid}</strong></article></div> : <div className="efficacy-speed"><strong>1.48×</strong><span>numerically faster time to discontinuation</span></div>}
-                <div className="efficacy-signal"><small>{discontinuationHighlights[discontinuationFocus].signal}</small><strong>{discontinuationHighlights[discontinuationFocus].effect}</strong><p>{discontinuationHighlights[discontinuationFocus].detail}</p></div>
+                <div className="efficacy-signal"><small>{discontinuationHighlights[discontinuationFocus].signal}</small><strong>{discontinuationHighlights[discontinuationFocus].effect}</strong><p>{discontinuationHighlights[discontinuationFocus].detail && <span>{discontinuationHighlights[discontinuationFocus].detail}</span>}<b className={discontinuationHighlights[discontinuationFocus].status === "SIGNIFICANT" ? "significant-p" : "nonsignificant-p"}>{discontinuationHighlights[discontinuationFocus].pValue}</b></p></div>
                 <b className={discontinuationHighlights[discontinuationFocus].status === "SIGNIFICANT" ? "significant" : "not-significant"}>{discontinuationHighlights[discontinuationFocus].status}</b>
               </aside>
             ) : <aside className="efficacy-readout efficacy-empty-readout" aria-hidden="true" />}
@@ -3354,12 +3425,12 @@ export default function Home() {
 
           <section className="ocular-stage published-ocular-stage" aria-label="Visual acuity and macular edema outcomes at 6 and 12 months">
             <article className="vision-module published-bcva-panel">
-              <header><span>PUBLISHED BCVA DISTRIBUTION</span><small>FIGURE 3 · STANDARD LETTERS · ADA VS CID</small></header>
+              <header><span>PUBLISHED BCVA DISTRIBUTION</span><small>FIGURE 3</small></header>
               <figure className="bcva-source-figure">
-                <img src="/nihms-2128218-f0004.jpg" alt="Published box plots of visual acuity in the ADA and CID groups from baseline through month 12" />
+                <img src="nihms-2128218-f0004.jpg" alt="Published box plots of visual acuity in the ADA and CID groups from baseline through month 12" />
               </figure>
               <div className="bcva-findings">
-                <section><span>6 MONTHS</span><strong>+3.0 <i>letters</i></strong><small>ΔADA − ΔCID · P = 0.01</small></section>
+                <section className="significant-bcva"><span>6 MONTHS</span><strong>+3.0 <i>letters</i></strong><small>ΔADA − ΔCID · P = 0.01</small></section>
                 <section><span>12 MONTHS</span><strong>+0.4 <i>letters</i></strong><small>ΔADA − ΔCID · P = 0.77</small></section>
               </div>
             </article>
@@ -3390,8 +3461,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="edema-stats-badge">
-                    <span>RATIO OF ORs</span>
-                    <strong>0.60</strong>
+                    <span>OR</span>
+                    <strong>0.6</strong>
                     <small>P = 0.027</small>
                   </div>
                 </div>
@@ -3419,7 +3490,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="edema-stats-badge">
-                    <span>RATIO OF ORs</span>
+                    <span>OR</span>
                     <strong>0.55</strong>
                     <small>P = 0.028</small>
                   </div>
@@ -3430,7 +3501,12 @@ export default function Home() {
           </section>
         </section>
 
-        <section id="systemic-safety-tolerability" className="scene safety-qol-results-scene">
+        <section
+          id="systemic-safety-tolerability"
+          className={`scene safety-qol-results-scene ${safetyFocus ? "safety-focus-active" : ""}`}
+          onClick={() => setSafetyFocus((focused) => !focused)}
+          aria-label="Safety and tolerability results. Click to emphasize the differing safety signals and serious systemic events"
+        >
           <div className="scene-copy safety-qol-copy">
             <p className="eyebrow"><span /> 22 — RESULTS / SAFETY &amp; TOLERABILITY</p>
             <h2>Fewer safety signals with ADA.<br /><em>Serious events remained similar</em></h2>
@@ -3478,7 +3554,7 @@ export default function Home() {
               <header><span>SERIOUS SYSTEMIC EVENTS — NO SIGNIFICANT DIFFERENCE</span><small>Rates per person-year</small></header>
               <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 26 7v8c0 7-4 11-10 14C10 26 6 22 6 15V7Z" /><path d="M16 10v10m-5-5h10" /></svg></span><div><b>INFECTIONS REQUIRING ANTIBIOTICS</b><span><em>ADA</em> 0.40/PY <em className="cid">CID</em> 0.37/PY</span><small>IRR 1.10 · 95% CI 0.61–2.00 · P=0.760</small></div></article>
               <article><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 28V7h18v21M12 7V3h8v4M4 28h24" /><path d="M13 12h6m-3-3v6M11 19h3m4 0h3m-10 4h3m4 0h3" /></svg></span><div><b>HOSPITALIZATIONS</b><span><em>ADA</em> 0.045/PY <em className="cid">CID</em> 0.115/PY</span><small>IRR 0.39 · 95% CI 0.12–1.26 · P=0.120</small></div></article>
-              <article className="serious-other"><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4" /><circle cx="22" cy="12" r="3.5" /><path d="M4 27c0-6 2.5-9 7-9s7 3 7 9M17 20c1.2-1.8 2.9-2.7 5-2.7 4 0 6 3 6 8" /></svg></span><div><b>OTHER SERIOUS SYSTEMIC AEs</b><span>Rare and similar between groups</span><small>No new demyelination events in either treatment group</small></div></article>
+              <article className="serious-other"><span className="serious-row-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4" /><circle cx="22" cy="12" r="3.5" /><path d="M4 27c0-6 2.5-9 7-9s7 3 7 9M17 20c1.2-1.8 2.9-2.7 5-2.7 4 0 6 3 6 8" /></svg></span><div><b>OTHER SERIOUS SYSTEMIC AEs</b><span>Rare and similar</span><small>No new demyelination events in either treatment group</small></div></article>
             </section>
           </section>
         </section>
@@ -3487,12 +3563,12 @@ export default function Home() {
           <div className="scene-copy qol-results-copy">
             <p className="eyebrow"><span /> 23 — RESULTS / QUALITY OF LIFE</p>
             <h2>Quality of life<br /><em>remained broadly similar</em></h2>
-            <p className="lede">Across general health, vision-related function, and SF-36 domains, the trial did not show a sustained clinically meaningful between-group difference</p>
+            <p className="lede">The trial found no sustained clinically meaningful difference in general health, vision-related function, or SF-36 domains</p>
           </div>
           <section className="qol-results-system" aria-label="Quality of life results">
-            <article><span>01</span><b>EQ-5D</b><strong>Perfect index scores</strong><p>No significant change in the proportion of participants with a perfect score</p><i /></article>
-            <article><span>02</span><b>NEI-VFQ-25</b><strong>Vision-related quality of life</strong><p>Both groups improved similarly, near the 4–6-point minimally clinically meaningful difference</p><i /></article>
-            <article className="qol-sf36"><span>03</span><b>SF-36</b><strong>Physical + mental health</strong><div><p><em>PHYSICAL</em> ADA was essentially unchanged; CID declined slightly. The 6-month difference was not sustained at 12 months, and neither group had a clinically meaningful change</p><p><em>MENTAL</em> No significant between-group difference at 6 or 12 months</p></div><i /></article>
+            <article><span>01</span><b>EQ-5D</b><strong>Perfect index scores</strong><p>No significant change in perfect scores</p><i /></article>
+            <article><span>02</span><b>NEI-VFQ-25</b><strong>Vision-related quality of life</strong><p>Both groups improved similarly, near the 4–6-point clinical threshold</p><i /></article>
+            <article className="qol-sf36"><span>03</span><b>SF-36</b><strong>Physical + mental health</strong><div><p><em>PHYSICAL</em> ADA was stable and CID declined slightly. The 6-month difference was not sustained at 12 months</p><p><em>MENTAL</em> No significant difference at 6 or 12 months</p></div><i /></article>
           </section>
         </section>
         <section id="limitations-4" className="scene discussion-advancement-scene">
@@ -3503,19 +3579,19 @@ export default function Home() {
               <h2>More second agents</h2>
               <h2 className="red-text">Unlikely influence its benefit</h2>
 
-              <p className="lede">Two observations argue against greater second-agent use explaining ADA’s benefit</p>
+              <p className="lede">Two observations argue against second-agent use explaining ADA’s benefit</p>
               
               <div className="adv-observations-block">
 
                 
                 <div className="observation-item">
                   <h4><span>01</span> — CONSISTENCY ACROSS STRATA</h4>
-                  <p>Corticosteroid-sparing and discontinuation benefits were qualitatively similar regardless of baseline immunosuppression</p>
+                  <p>Steroid-sparing and discontinuation benefits were similar across baseline immunosuppression strata</p>
                 </div>
                 
                 <div className="observation-item">
                   <h4><span>02</span> — OVERALL TREATMENT ADVANCEMENT</h4>
-                  <p>Despite more second-agent use with ADA in one stratum, overall immunosuppression advancement was greater with CID</p>
+                  <p>Despite more second-agent use with ADA in one stratum, overall treatment advancement was greater with CID</p>
                 </div>
               </div>
             </div>
@@ -3610,12 +3686,12 @@ export default function Home() {
               <h2>More steroid exposure</h2>
               <h2 className="red-text">Plausible. Not definitive</h2>
               
-              <p className="lede">Greater corticosteroid exposure with CID offers a biologically plausible explanation. Two observations, however, prevent simple causal attribution</p>
+              <p className="lede">Greater steroid exposure with CID is plausible, but two observations prevent causal attribution</p>
               
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
                   <h4><span>01</span> — EXPOSURE DIFFERENCE WAS MODEST</h4>
-                  <p>ADA had slightly lower corticosteroid use, but the magnitude of exposure separation between groups was limited</p>
+                  <p>ADA had slightly lower steroid use, but exposure separation was limited</p>
                 </div>
                 
                 <div className="observation-item">
@@ -3634,7 +3710,7 @@ export default function Home() {
                     </p>
                     <div className="inline-warning-divider" />
                     <p className="inline-warning-p2">
-                      Cataract accounted for 8/18 (44%) of ≥6-line declines; other causes included uveitis activity and vitreous hemorrhage, and visual recovery after cataract surgery was variable
+                      Cataract explained 8/18 (44%) of ≥6-line declines. Other causes and postoperative recovery varied
                     </p>
                   </div>
                 )}
@@ -3717,7 +3793,7 @@ export default function Home() {
                     
                     <div className="causal-node node-conclusion">
                       <strong>PLAUSIBLE CONTRIBUTOR <span className="red-highlight-text">≠ PROVEN CAUSE</span></strong>
-                      <p>Greater steroid exposure may have contributed to the cataract. Cohort studies in GCA suggest ~3-4% increase risk per 1 gm increase in cumulative oral dose over one year</p>
+                      <p>Greater steroid exposure may have contributed. GCA cohorts suggest ~3–4% higher risk per 1 g cumulative oral dose over one year</p>
                     </div>
                   </div>
                 </div>
@@ -3733,17 +3809,17 @@ export default function Home() {
               <p className="eyebrow"><span /> 26 — DISCUSSION / MASKING LIMITATIONS</p>
               <p className="cataract-hook">COULD KNOWING TREATMENT ASSIGNMENT HAVE BIASED THE RESULTS?</p>
               <h2>Unmasked.<br /><span className="red-text" style={{display: 'inline'}}>But not uncontrolled</span></h2>
-              <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight helped constrain bias</p>
+              <p className="lede">Masking was impractical. Prespecified criteria, protocolized decisions, and quality oversight constrained bias</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
                   <h4><span>01</span> — DISEASE-ACTIVITY ASSESSMENT</h4>
-                  <p>Complex disease-specific assessment creates room for inter-observer variability in clinical signs and imaging interpretation</p>
+                  <p>Disease-specific clinical and imaging assessments allow inter-observer variability</p>
                 </div>
                 
                 <div className="observation-item">
                   <h4><span>02</span> — KNOWLEDGE OF TREATMENT</h4>
-                  <p>Knowing assignment could shape participant expectations and symptom reporting, while physician expectations could influence treatment decisions</p>
+                  <p>Knowing assignment could influence symptom reporting and treatment decisions</p>
                 </div>
               </div>
             </div>
@@ -3818,7 +3894,7 @@ export default function Home() {
                           <path d="M16 12a4 4 0 0 1-8 0"/>
                         </svg>
                       </div>
-                      <p className="card-details">22% had not achieved steroid sparing—potentially perceived as conventional treatment “failure”</p>
+                      <p className="card-details">22% had not achieved steroid sparing and may have viewed conventional therapy as a failure</p>
                     </div>
 
                     {/* Card 3: Route preference */}
@@ -3888,7 +3964,7 @@ export default function Home() {
                       </div>
                       <div className="safeguard-text-col">
                         <h4><span>03</span> — MTQAC OVERSIGHT</h4>
-                        <p>Central monitoring of imaging interpretation, activity determination, and protocol adherence</p>
+                        <p>Central review of imaging, disease activity, and protocol adherence</p>
                       </div>
                     </div>
                   </div>
@@ -3897,7 +3973,7 @@ export default function Home() {
                 {/* BOTTOM CONCLUSION */}
                 <div className="lim-conclusion-band">
                   <strong>MITIGATION <span className="red-highlight-text">≠ ELIMINATION</span></strong>
-                  <p>These safeguards constrain bias—but cannot eliminate the limitation of an unmasked design</p>
+                  <p>These safeguards constrain bias but cannot eliminate an unmasked design</p>
                 </div>
 
               </div>
@@ -3916,7 +3992,7 @@ export default function Home() {
               <p className="eyebrow"><span /> 27 — DISCUSSION / COMPARATOR HETEROGENEITY</p>
               <p className="red-hook">COULD A WEAKER CONVENTIONAL AGENT HAVE FAVORED ADA?</p>
               <h2>One comparator.<br /><span className="red-text" style={{display: 'inline'}}>Several treatment pathways</span></h2>
-              <p className="lede">CID was a treatment strategy—not a single drug. The key concern is whether potentially lower-efficacy calcineurin-inhibitor exposure could have weakened the comparator</p>
+              <p className="lede">CID was a treatment strategy, not one drug. The concern was whether calcineurin-inhibitor exposure weakened the comparator</p>
 
               {/* Left Synthesis Block (Revealed after right panel revealed: concernRevealed === true) */}
               <div className={`left-synthesis-block ${concernRevealed ? 'synthesis-revealed' : 'synthesis-hidden'}`}>
@@ -3939,7 +4015,7 @@ export default function Home() {
                   
                   <div className="observation-item">
                     <h4><span>02</span> — CONSISTENT ACROSS STRATA</h4>
-                    <p>Results were qualitatively similar in the single- and two-immunosuppressive-drug strata</p>
+                    <p>Results were similar in the one- and two-immunosuppressive-drug strata</p>
                   </div>
 
                   <div className="synthesis-conclusion-callout">
@@ -4416,12 +4492,12 @@ export default function Home() {
                   Whether CID catches up is unknown
                 </span>
               </h2>
-              <p className="lede">ADA showed an earlier corticosteroid-sparing advantage. By 12 months, a discontinuation advantage had emerged. What happened next is unknown</p>
+              <p className="lede">ADA achieved steroid sparing earlier and more discontinuation by 12 months. What happened later is unknown</p>
 
               <div className="adv-observations-block editorial-rules">
                 <div className="observation-item">
                   <h4><span>01</span> — STEPWISE DOSE ESCALATION</h4>
-                  <p>CID followed a stepwise titration protocol; similar to what is often used in clinical practice. This may have slightly delayed successful corticosteroid sparing in the CID group</p>
+                  <p>CID used stepwise titration, as in clinical practice. This may have delayed successful steroid sparing</p>
                 </div>
               </div>
             </div>
@@ -4632,13 +4708,13 @@ export default function Home() {
                 <div className="observation-item">
                   <h4><span>01</span> — POSSIBLE TREATMENT PREFERENCE</h4>
                   <p>
-                    Participants may have preferred the novel biologic, potentially contributing to the early imbalance in dropout (3 CID vs 1 ADA)
+                    Preference for the novel biologic may have contributed to early dropout imbalance (3 CID vs 1 ADA)
                   </p>
                 </div>
                 <div className="observation-item">
                   <h4><span>02</span> — POSSIBLE DRUG TOXICITY</h4>
                   <p>
-                    Toxicity may also have contributed; all 8 participants who discontinued assigned treatment were in the CID arm
+                    Toxicity may have contributed. All 8 assigned-treatment discontinuations occurred in the CID arm
                   </p>
                 </div>
               </div>
@@ -4671,10 +4747,10 @@ export default function Home() {
                   {/* Right Header: TREATMENT DISCONTINUATION (Left-aligned with line) */}
                   {attritionStep >= 3 && (
                     <g className="discontinuation-header-group">
-                      <text x="420" y="68" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
+                      <text x="465" y="68" textAnchor="start" fill="#d0c7c3" fontSize="8.2" fontFamily="var(--font-geist-mono)" fontWeight="700" letterSpacing="0.06em">
                         TREATMENT DISCONTINUATION
                       </text>
-                      <line x1="420" y1="75" x2="915" y2="75" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+                      <line x1="465" y1="75" x2="915" y2="75" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
                     </g>
                   )}
 
@@ -4926,7 +5002,7 @@ export default function Home() {
                     <div className="hero-headline-col">
                       <h3 className="hero-dominant-title">ANTI-ADALIMUMAB ANTIBODIES</h3>
                       <p className="hero-support-text">
-                        Reported in patients with uveitis treated with adalimumab
+                      Reported in adalimumab-treated uveitis
                       </p>
                     </div>
                   </div>
@@ -4957,10 +5033,10 @@ export default function Home() {
                   </div>
                   <div className="purple-text-col">
                     <p className="purple-qualifier-top">
-                      Frequency in uveitis remains uncertain
+                      Frequency in uveitis is uncertain
                     </p>
                     <p className="purple-statement">
-                      <strong>BUT concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation</strong>
+                      <strong>Concomitant immunosuppression</strong> <span className="purple-highlight">MAY REDUCE</span> <strong>anti-adalimumab antibody formation</strong>
                     </p>
                   </div>
                 </div>
@@ -5057,7 +5133,7 @@ export default function Home() {
                       ADVISE SHOWED THAT MONOTHERAPY CAN BE EFFECTIVE
                     </span>
                     <span className="finishing-body">
-                      — Whether adding a second immunosuppressive agent reduces immunogenicity— and could translates into better sustained clinical efficacy—
+                      Whether a second immunosuppressive agent reduces immunogenicity and improves sustained efficacy
                     </span>{" "}
                     <span className="finishing-punchline">remains unknown</span>
                   </p>
