@@ -2310,7 +2310,7 @@ export default function Home() {
             <div className="clearance-orbit">
               <div className="orbit-sweep" aria-hidden="true" />
               <div className="clearance-eye" aria-hidden="true"><i /><span /></div>
-              <small className="gate gate-1"><b>01</b> ACTIVE/LATENT TB</small>
+              <small className="gate gate-1"><b>01</b> ACTIVE OR UNTREATED LATENT TB</small>
               <small className="gate gate-2"><b>02</b> MS/DEMYELINATION (MRI)</small>
               <small className="gate gate-3"><b>03</b> BEHÇET</small>
               <small className="gate gate-4"><b>04</b> 2 IMMUNOSUPPRESSIVE</small>
@@ -2493,8 +2493,8 @@ export default function Home() {
           <div className="prednisolone-strip" aria-label="Initial prednisolone dosing by uveitis activity">
             <div className="prednisolone-title treatment-section-title"><span>PREDNISOLONE</span></div>
             <div className="prednisolone-cards">
-              <article><i>01</i><span><b>ACTIVE</b> · <em className="no-steroid-emphasis">NO</em> ORAL STEROID</span><strong>START 1 MG/KG/DAY</strong></article>
-              <article><i>02</i><span><b>ACTIVE</b> · ON ORAL STEROID</span><strong>DOUBLE CURRENT DOSE</strong></article>
+              <article><i>01</i><span><b>ACTIVE</b> · <em className="no-steroid-emphasis">NO</em> ORAL STEROID</span><strong>START 1 MG/KG/DAY <small>· MAXIMUM 60 MG/DAY</small></strong></article>
+              <article><i>02</i><span><b>ACTIVE</b> · ON ORAL STEROID</span><strong>DOUBLE CURRENT DOSE <small>· MAXIMUM 60 MG/DAY</small></strong></article>
               <article><i>03</i><span><b className="inactive-uveitis-emphasis">INACTIVE UVEITIS</b></span><strong>HOLD 1 MONTH · THEN TAPER</strong></article>
             </div>
           </div>
@@ -2546,7 +2546,7 @@ export default function Home() {
             </article>
           </div>
           <div className="injection-window" aria-label="Permitted timing for regional corticosteroid injections for macular edema">
-            <div className="injection-title"><span>REGIONAL CORTICOSTEROID</span><small>MACULAR EDEMA · <strong>MAXIMUM 2 INJECTIONS</strong></small></div>
+            <div className="injection-title"><span>REGIONAL CORTICOSTEROID</span><small>MACULAR EDEMA · <strong>MAXIMUM 2 INJECTIONS PER EYE</strong></small></div>
             <div className="injection-timeline">
               <div className="window window-early"><strong>MONTHS 0–2</strong><span>one injection permitted</span></div>
               <p>Restricted windows protected<br />primary and secondary outcome assessment</p>
@@ -2721,7 +2721,7 @@ export default function Home() {
                 <svg className="analysis-visual-lines" viewBox="0 0 240 90" preserveAspectRatio="xMidYMid meet" aria-label="Schematic longitudinal trajectories"><path d="M8 72 43 48 76 57 112 34 148 42 189 19 232 27" /><path d="M8 76 43 62 76 69 112 54 148 59 189 45 232 47" /><g><circle cx="43" cy="48" r="3" /><circle cx="112" cy="34" r="3" /><circle cx="189" cy="19" r="3" /><circle cx="43" cy="62" r="3" /><circle cx="112" cy="54" r="3" /><circle cx="189" cy="45" r="3" /></g></svg>
               </div>
               <section className="framework-model"><h4>MIXED-EFFECTS<br />MODEL</h4></section>
-              <ul><li>Linear: acuity / quality of life; log: retinal thickness</li><li>Unstructured correlation; eye-level random intercept</li></ul>
+              <ul><li>Linear: acuity / quality of life; log: retinal thickness</li><li>Unstructured correlation; person-level random intercept</li></ul>
             </article>
 
             <article className="analysis-framework-column">
@@ -5398,7 +5398,7 @@ export default function Home() {
           <div className="final-eye" aria-hidden="true"><div className="final-horizon" /><div className="final-pupil"><i /></div><span /><span /></div>
           <div className="scene-copy conclusion-copy">
             <p className="eyebrow"><span /> 34 — CONCLUSION</p>
-            <h2>Control the inflammation.<br /><em>Get off steroids faster</em></h2>
+            <h2>Control the inflammation.<br /><em>Spare steroids faster</em></h2>
             <p className="lede">Within the ADVISE Trial, both strategies achieved corticosteroid-sparing control. <strong className="conclusion-ada-highlight">Adalimumab got there faster</strong>—with greater corticosteroid-sparing success at 6 months and more corticosteroid discontinuation by 12 months</p>
             <blockquote className="conclusion-caveat">
               Whether that earlier advantage translates into greater long-term efficacy remains unresolved.

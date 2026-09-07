@@ -18293,6 +18293,12 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
   letter-spacing: 0.015em;
 }
 
+#treatment .prednisolone-cards strong > small {
+  font-size: 0.72em;
+  font-weight: 560;
+  color: #9f9995;
+}
+
 /* Page 13 — outcomes retain violet secondary emphasis; the definition remains elegant but legible. */
 @media (min-width: 701px) {
   #outcomes .outcomes-secondary-band > header {
