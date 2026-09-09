@@ -21,7 +21,7 @@ const SLIDES = [
   "treatment-results-redesign", "results", "discontinuation", "ocular-results",
   "systemic-safety-tolerability", "quality-of-life-results", "chapter-discussion", "limitations-4",
   "discussion-safety", "limitations-1", "limitations-2", "limitations-3",
-  "limitations-5", "limitations-6", "conclusion", "outcomes-original",
+  "limitations-5", "limitations-6", "conclusion", "drug-dosing", "outcomes-original",
   "secondary-outcomes-redesign", "tapering-cinematic",
 ];
 
@@ -31,6 +31,13 @@ const fullExport = args.has("--full");
 const adjustedExport = args.has("--adjusted");
 const slidesArg = rawArgs.find((arg) => arg.startsWith("--slides="));
 const outputArg = rawArgs.find((arg) => arg.startsWith("--output="));
+const outcomesClicksArg = rawArgs.find((arg) => arg.startsWith("--outcomes-clicks="));
+const outcomesClicks = outcomesClicksArg
+  ? Number.parseInt(outcomesClicksArg.slice("--outcomes-clicks=".length), 10)
+  : 3;
+if (!Number.isInteger(outcomesClicks) || outcomesClicks < 0 || outcomesClicks > 4) {
+  throw new Error("--outcomes-clicks must be an integer from 0 through 4.");
+}
 const customSlides = slidesArg
   ? slidesArg.slice("--slides=".length).split(",").map((id) => id.trim()).filter(Boolean)
   : null;
@@ -128,16 +135,14 @@ async function prepareSlide(page, id) {
   if (!aligned) throw new Error(`Could not align ${id} to the capture viewport (top=${finalTop}).`);
   await waitForRenderedAssets(page);
 
-  // Page 13 intentionally reveals in three presentation clicks. Reproduce
-  // that final audience state only for capture; no slide markup or styling is
-  // changed by the exporter.
+  // The outcomes slide reveals in presentation clicks. Default to its final
+  // audience state, while allowing a requested intermediate state to be
+  // captured without changing the live slide implementation.
   if (id === "outcomes") {
-    await page.evaluate(() => {
+    await page.evaluate((clickCount) => {
       const slide = document.getElementById("outcomes");
-      slide?.click();
-      slide?.click();
-      slide?.click();
-    });
+      for (let click = 0; click < clickCount; click += 1) slide?.click();
+    }, outcomesClicks);
     await waitForRenderedAssets(page);
   }
 }

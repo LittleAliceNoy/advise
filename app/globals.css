@@ -8,6 +8,227 @@
   font-display: swap;
 }
 
+/* ==========================================================================
+   PAGE 35 — APPENDIX / DRUG DOSING
+   ========================================================================== */
+
+.drug-dosing-scene {
+  align-items: flex-start;
+  padding-top: 9.5vh;
+  background:
+    radial-gradient(circle at 22% 42%, rgba(126, 17, 23, .16), transparent 35%),
+    radial-gradient(circle at 78% 58%, rgba(111, 77, 180, .12), transparent 38%),
+    #050505;
+}
+
+.drug-dosing-copy {
+  width: 84vw;
+}
+
+.drug-dosing-copy h2 {
+  margin-top: .5rem;
+  font-size: clamp(3.4rem, 5.35vw, 6.4rem);
+  line-height: .92;
+}
+
+.drug-dosing-copy .lede {
+  margin-top: .85rem;
+  font-size: clamp(1.15rem, 1.38vw, 1.65rem);
+}
+
+.dosing-stage {
+  position: absolute;
+  left: 8vw;
+  right: 8vw;
+  top: 34.5%;
+  bottom: 7.5%;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 1.25rem;
+}
+
+.dosing-primary,
+.dosing-conventional {
+  min-width: 0;
+  border-top: 1px solid rgba(255, 77, 82, .55);
+  background: linear-gradient(145deg, rgba(255, 77, 82, .075), rgba(255, 255, 255, .012) 54%, transparent);
+  padding: 1.2rem 1.35rem;
+}
+
+.dosing-conventional {
+  border-top-color: rgba(165, 128, 255, .62);
+  background: linear-gradient(145deg, rgba(151, 113, 255, .075), rgba(255, 255, 255, .012) 54%, transparent);
+}
+
+.dosing-section-heading {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .95rem;
+}
+
+.dosing-section-heading > span {
+  color: #ff5c60;
+  font: 700 clamp(1rem, 1.15vw, 1.35rem) var(--font-geist-mono), monospace;
+}
+
+.dosing-section-heading > div {
+  display: flex;
+  align-items: baseline;
+  gap: .7rem;
+  min-width: 0;
+}
+
+.dosing-section-heading b {
+  color: #f5f1ee;
+  font-size: clamp(1.25rem, 1.45vw, 1.72rem);
+  letter-spacing: .035em;
+}
+
+.dosing-section-heading small {
+  color: #b6aeaa;
+  font: 700 clamp(.82rem, .9vw, 1.05rem) var(--font-geist-mono), monospace;
+  letter-spacing: .12em;
+}
+
+.dosing-section-heading.violet > span { color: #ad8cff; }
+.dosing-section-heading.compact { margin-top: 1.45rem; margin-bottom: .75rem; }
+
+.ada-dose-sequence {
+  display: grid;
+  grid-template-columns: 1fr 2.4rem 1fr 2.4rem 1.12fr;
+  align-items: center;
+  gap: .25rem;
+}
+
+.ada-dose-sequence > div {
+  min-height: 7.2rem;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, .22);
+}
+
+.ada-dose-sequence > i {
+  position: relative;
+  height: 1px;
+  background: rgba(255, 77, 82, .75);
+}
+
+.ada-dose-sequence > i::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: .45rem;
+  height: .45rem;
+  border-top: 1px solid #ff5c60;
+  border-right: 1px solid #ff5c60;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ada-dose-sequence small,
+.prednisone-rules small,
+.regional-dose-note small {
+  color: #ff7175;
+  font: 700 clamp(.76rem, .86vw, 1rem) var(--font-geist-mono), monospace;
+  letter-spacing: .08em;
+}
+
+.ada-dose-sequence strong {
+  margin-top: .22rem;
+  color: #fff;
+  font-size: clamp(1.72rem, 2.12vw, 2.55rem);
+  line-height: 1;
+}
+
+.ada-dose-sequence span {
+  margin-top: .38rem;
+  color: #c9c2be;
+  font-size: clamp(1rem, 1.08vw, 1.25rem);
+}
+
+.ada-dose-sequence .maintenance {
+  border-color: rgba(255, 77, 82, .5);
+  box-shadow: inset 0 0 32px rgba(255, 77, 82, .08);
+}
+
+.prednisone-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(255, 255, 255, .11);
+}
+
+.prednisone-rules > div {
+  min-width: 0;
+  padding: .75rem .9rem .72rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .2rem .75rem;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.prednisone-rules > div:nth-child(odd) { border-right: 1px solid rgba(255, 255, 255, .08); }
+.prednisone-rules > div:nth-last-child(-n+2) { border-bottom: 0; }
+.prednisone-rules small { grid-column: 1 / -1; }
+.prednisone-rules strong { color: #f6f2ef; font-size: clamp(1.02rem, 1.18vw, 1.4rem); }
+.prednisone-rules span { color: #aaa29e; font-size: clamp(.88rem, .98vw, 1.15rem); text-align: right; }
+
+.conventional-dose-list {
+  border: 1px solid rgba(255, 255, 255, .11);
+}
+
+.conventional-dose-list > div {
+  display: grid;
+  grid-template-columns: minmax(9.5rem, .9fr) minmax(9rem, .85fr) 1.2fr;
+  align-items: center;
+  gap: .7rem;
+  min-height: 4.55rem;
+  padding: .58rem .8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .09);
+}
+
+.conventional-dose-list > div:last-child { border-bottom: 0; }
+.conventional-dose-list b { color: #bda8ff; font-size: clamp(.96rem, 1.06vw, 1.25rem); }
+.conventional-dose-list strong { color: #f5f1ee; font-size: clamp(1.05rem, 1.2vw, 1.42rem); }
+.conventional-dose-list span { color: #aaa29e; font-size: clamp(.82rem, .92vw, 1.08rem); line-height: 1.25; }
+
+.azathioprine-note {
+  margin: .72rem 0 0;
+  color: #9f9793;
+  font-size: clamp(.78rem, .88vw, 1.02rem);
+  line-height: 1.3;
+}
+
+.azathioprine-note b { color: #bda8ff; }
+
+.regional-dose-note {
+  margin-top: 1rem;
+  padding: .8rem .9rem;
+  border-left: 2px solid #ff4d52;
+  background: rgba(255, 77, 82, .065);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: .2rem 1rem;
+}
+
+.regional-dose-note small { grid-column: 1 / -1; }
+.regional-dose-note strong { color: #fff; font-size: clamp(1rem, 1.12vw, 1.32rem); }
+.regional-dose-note span { color: #b8b0ac; font-size: clamp(.86rem, .96vw, 1.12rem); text-align: right; }
+
+.dosing-source {
+  position: absolute;
+  left: 8vw;
+  bottom: 3.7vh;
+  margin: 0;
+  color: #77706d;
+  font: 600 clamp(.68rem, .76vw, .9rem) var(--font-geist-mono), monospace;
+  letter-spacing: .08em;
+}
+
 /* --------------------------------------------------------------------------
    DECK-WIDE PROJECTION TYPE SCALE
    Pages 02, 03, 04 and 15 are intentionally absent: they are the approved
@@ -4440,7 +4661,7 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .efficacy-chart-panel>header { position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;color:#a7a29e;background:#080708;font: 500 clamp(0.68rem, 0.78vw, 0.96rem) ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.075em; }.efficacy-chart-panel>header div{display:flex;align-items:center;gap:.45rem}.efficacy-chart-panel>header b{font-size: clamp(0.68rem, 0.78vw, 0.96rem);font-weight:500;color:#ff6666}.efficacy-chart-panel>header b:last-child{color:#bda8ff}.efficacy-chart-panel>header i{width:1.5rem;height:1px;background:linear-gradient(90deg,#ff3d42,#aa8cff)}
 .efficacy-chart-stack { position:relative;z-index:1;grid-row:2;min-width:0;min-height:0;overflow:hidden;clip-path:inset(0);contain:layout paint size; }
 .efficacy-chart-stack>.efficacy-canvas,.published-graph-overlay { position:absolute;inset:0;width:100%;height:100%; }
-.published-graph-overlay { z-index:2;display:block;object-fit:fill;opacity:1;pointer-events:none;animation:publishedGraphReveal .25s ease-out both; }
+.published-graph-overlay { z-index:2;display:block;object-fit:contain;object-position:center center;background:#fff;opacity:1;pointer-events:none;animation:publishedGraphReveal .25s ease-out both; }
 .efficacy-canvas { display:block;width:100%;height:100%;min-height:0;transform:scale(1);transition:transform 1.05s cubic-bezier(.2,.78,.2,1),transform-origin 1.05s cubic-bezier(.2,.78,.2,1); }
 .efficacy-story-1 .efficacy-canvas { transform:scale(1);transform-origin:50% 50%; }
 .efficacy-story-2 .efficacy-canvas { transform:scale(1.43);transform-origin:51% 55%; }
@@ -9984,6 +10205,180 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 .qol-results-system em { display:block; margin-bottom:.45rem; color:#ff7479; font: 650 clamp(0.68rem, 0.78vw, 0.96rem) var(--font-geist-mono),monospace; font-style:normal; letter-spacing:.08em; }
 .qol-results-system article > i { position:absolute; left:clamp(1.4rem,2vw,2.25rem); bottom:clamp(1.1rem,1.8vh,1.5rem); width:3.2rem; height:1px; background:linear-gradient(90deg,#ff3d43,transparent); }
 .qol-results-system article:nth-child(2) > i,.qol-results-system article:nth-child(3) > i { background:linear-gradient(90deg,#9d70ff,transparent); }
+
+.qol-forest-system {
+  position: absolute;
+  z-index: 3;
+  left: 8vw;
+  right: 8vw;
+  top: 38.5%;
+  bottom: 7.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+  column-gap: clamp(1.6rem, 2.2vw, 2.8rem);
+  row-gap: clamp(.9rem, 1.25vh, 1.2rem);
+}
+
+.qol-forest-plot {
+  min-width: 0;
+  padding: clamp(.8rem, 1.05vw, 1.2rem) clamp(1rem, 1.35vw, 1.5rem) clamp(.55rem, .8vw, .9rem);
+  border-top: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(112deg, rgba(255,45,45,.045), rgba(132,94,255,.04) 70%, transparent);
+}
+
+.qol-forest-plot:nth-child(2),
+.qol-forest-plot:nth-child(4) { border-top-color: rgba(183,145,255,.42); }
+
+.qol-forest-plot > header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(.45rem, .65vh, .65rem);
+}
+
+.qol-forest-plot > header b {
+  color: #f2eeeb;
+  font: 680 clamp(.82rem, 1vw, 1.18rem)/1.1 var(--font-geist-mono), monospace;
+  letter-spacing: .045em;
+}
+
+.qol-forest-plot > header span {
+  color: #a899a2;
+  font: 600 clamp(.62rem, .72vw, .84rem)/1.1 var(--font-geist-mono), monospace;
+  letter-spacing: .045em;
+  white-space: nowrap;
+}
+
+.qol-forest-rows { display: grid; gap: clamp(.34rem, .48vh, .48rem); }
+
+.qol-forest-row {
+  display: grid;
+  grid-template-columns: 3.55rem minmax(0, 1fr) 5.4rem;
+  align-items: center;
+  gap: clamp(.55rem, .72vw, .8rem);
+  min-height: clamp(2.05rem, 3.25vh, 2.5rem);
+}
+
+.qol-forest-month {
+  color: #c7bfbb;
+  font: 650 clamp(.68rem, .8vw, .94rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .035em;
+}
+
+.qol-forest-track {
+  position: relative;
+  height: 1.7rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.qol-forest-null {
+  position: absolute;
+  top: -.2rem;
+  bottom: -.25rem;
+  width: 1px;
+  background: rgba(255,255,255,.35);
+}
+
+.qol-forest-ci {
+  position: absolute;
+  top: 31%;
+  height: 2px;
+  transform: translateY(-50%);
+  color: #ff656a;
+  background: currentColor;
+  box-shadow: 0 0 8px rgba(255,77,82,.24);
+}
+
+.qol-forest-ci.cid {
+  top: 70%;
+  color: #aa82f2;
+  box-shadow: 0 0 8px rgba(154,111,241,.28);
+}
+
+.qol-forest-ci::before,
+.qol-forest-ci::after {
+  content: "";
+  position: absolute;
+  top: -.23rem;
+  width: 1px;
+  height: .52rem;
+  background: currentColor;
+}
+
+.qol-forest-ci::before { left: 0; }
+.qol-forest-ci::after { right: 0; }
+
+.qol-forest-point {
+  position: absolute;
+  top: 31%;
+  width: .62rem;
+  height: .62rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff656a;
+  border: 2px solid #09080b;
+  box-shadow: 0 0 10px rgba(255,77,82,.48);
+}
+
+.qol-forest-point.cid {
+  top: 70%;
+  background: #b58eff;
+  box-shadow: 0 0 10px rgba(181,142,255,.58);
+}
+
+.qol-forest-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.05;
+}
+
+.qol-forest-value strong {
+  font: 620 clamp(.74rem, .9vw, 1.05rem)/1 var(--font-geist-mono), monospace;
+}
+
+.qol-forest-value strong.ada { color: #ff7479; }
+.qol-forest-value strong.cid { margin-top: .24rem; color: #b58eff; }
+
+.qol-forest-value small {
+  margin-top: .22rem;
+  color: #8f8783;
+  font: 560 clamp(.6rem, .69vw, .8rem)/1 var(--font-geist-mono), monospace;
+}
+
+.qol-forest-plot > footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: .5rem;
+  margin: .3rem 5.4rem 0 calc(3.55rem + .7rem);
+  color: #756e6b;
+  font: 550 clamp(.5rem, .58vw, .68rem)/1 var(--font-geist-mono), monospace;
+  letter-spacing: .035em;
+}
+
+.qol-forest-plot > footer span:last-child { text-align: right; }
+.qol-forest-plot > footer b { color: #948c88; font-weight: 600; }
+
+.qol-forest-interpretation {
+  margin: clamp(.48rem, .68vh, .68rem) 0 0;
+  padding-top: clamp(.42rem, .58vh, .58rem);
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: #c7bfbb;
+  font: 520 clamp(.7rem, .8vw, .94rem)/1.28 var(--font-geist-sans), Arial, sans-serif;
+}
+
+.qol-forest-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #8f8783;
+  text-align: center;
+  font: 520 clamp(.62rem, .72vw, .84rem)/1.2 var(--font-geist-sans), Arial, sans-serif;
+}
+
+.qol-forest-note b { color: #ff7479; }
+.qol-forest-note strong { color: #b58eff; }
 
 /* Systemic safety — distinguish treatment tolerability from serious systemic-event rates. */
 .systemic-safety-scene {
@@ -20295,4 +20690,518 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 @media (prefers-reduced-motion: reduce) {
   #chapter-discussion .floating-q-card { animation: none; }
   .discussion-stage-reveal { transition-duration: .01ms; }
+}
+
+/* Conclusion source line is supporting metadata, not audience-facing content. */
+#conclusion .citation {
+  font-size: clamp(.42rem, .48vw, .58rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: .055em !important;
+  white-space: nowrap;
+}
+
+/* Page 06: lower the opening label and headline away from the top edge. */
+#evidence-gap.intro6-scene {
+  padding-top: clamp(4.5rem, 7.2vh, 5.5rem);
+}
+
+/* Page 12: isolate the taper target and distinguish it from the instruction. */
+#tapering .reset-guidance b > span {
+  display: block;
+  color: #b58eff;
+}
+
+/* Page 19: keep the ethnicity line fully inside its column. */
+#baseline-portrait .demographic-signals .ethnicity-signal {
+  gap: .35rem;
+  padding-inline: .2rem;
+}
+
+#baseline-portrait .demographic-signals .ethnicity-signal strong {
+  flex: 0 0 auto;
+  font-size: clamp(1rem, 1.12vw, 1.28rem) !important;
+}
+
+#baseline-portrait .demographic-signals .ethnicity-signal span {
+  min-width: 0;
+  font-size: clamp(.56rem, .64vw, .76rem) !important;
+  letter-spacing: .042em;
+  white-space: nowrap;
+}
+
+/* Page 20: give immunosuppression advancement its own story beat. */
+.txr-dashboard-scene .txrd-outcome,
+.txr-dashboard-scene .txrd-outcomes-title {
+  transition: opacity .24s ease, filter .24s ease;
+}
+
+.txr-stage-2 .txrd-grid-outcomes,
+.txr-stage-3 .txrd-grid-outcomes {
+  opacity: 1;
+  filter: none;
+}
+
+.txr-stage-2 .txrd-outcome-advancement,
+.txr-stage-3 :is(.txrd-outcomes-title, .txrd-outcome-second-agent, .txrd-outcome-escalation) {
+  opacity: .14;
+  filter: saturate(.45);
+}
+
+.txr-stage-2 :is(.txrd-outcome-second-agent, .txrd-outcome-escalation),
+.txr-stage-3 .txrd-outcome-advancement {
+  opacity: 1;
+  filter: none;
+}
+
+.txr-stage-3 .txrd-footer,
+.txr-stage-4 :is(.txrd-header, .txrd-grid-main, .txrd-grid-outcomes) {
+  opacity: .14;
+  filter: saturate(.45);
+}
+
+.txr-stage-4 .txrd-footer {
+  opacity: 1;
+  filter: none;
+}
+
+/* Page 23: keep the visual-outcomes summary on one line. */
+#ocular-results .ocular-results-copy {
+  width: 84vw;
+}
+
+#ocular-results .ocular-results-copy .lede {
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.18rem, 1.34vw, 1.58rem) !important;
+  line-height: 1.42 !important;
+}
+
+/* Pages 24–25: restore the same title-to-subheadline hierarchy used on Page 22. */
+#systemic-safety-tolerability .safety-qol-copy {
+  width: 84vw;
+}
+
+#systemic-safety-tolerability .safety-qol-copy h2 {
+  font-size: clamp(3.8rem, 4.2vw, 5.2rem);
+  line-height: .94;
+}
+
+#quality-of-life-results .qol-results-copy .lede {
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(.9rem, 1.02vw, 1.2rem);
+  line-height: 1.42;
+}
+
+#quality-of-life-results .qol-forest-interpretation {
+  font-size: clamp(1rem, 1.12vw, 1.35rem);
+  line-height: 1.25;
+  color: #e1dbd7;
+}
+
+#quality-of-life-results .qol-forest-hook {
+  align-self: end;
+  justify-self: center;
+  padding: clamp(.48rem, .65vh, .66rem) clamp(1.2rem, 1.8vw, 2rem);
+  border: 1px solid rgba(255, 65, 70, .58);
+  background: linear-gradient(90deg, rgba(255, 49, 55, .08), rgba(132, 94, 255, .055));
+  color: #f2eeeb;
+  font: 700 clamp(.88rem, 1vw, 1.16rem)/1.15 var(--font-geist-mono), monospace;
+  letter-spacing: .045em;
+  white-space: nowrap;
+}
+
+#systemic-safety-tolerability .scene-copy.safety-qol-copy > p.lede {
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.18rem, 1.34vw, 1.58rem) !important;
+  line-height: 1.42 !important;
+}
+
+/* Page 20: emphasize the statistically significant advancement result. */
+#treatment-results-redesign .txrd-advancement-pvalue {
+  color: #ff666b;
+  font-weight: 700;
+}
+
+/* Export-safe headline support: preserve the intended line counts in Chromium captures. */
+@media (min-width: 701px) {
+  #screening .screening-inclusion-copy {
+    width: 44vw;
+  }
+
+  #screening .screening-inclusion-copy .lede,
+  #treatment .treatment-copy .lede,
+  #followup .followup-copy .lede,
+  #baseline-portrait .baseline-portrait-copy .lede,
+  #results .results-copy .lede,
+  #discontinuation .results-copy .lede {
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  #randomization .randomization-copy .lede {
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  #treatment .treatment-copy {
+    width: 68vw;
+  }
+
+  #followup .followup-copy,
+  #baseline-portrait .baseline-portrait-copy,
+  #results .results-copy,
+  #discontinuation .results-copy {
+    width: 84vw;
+  }
+
+  #treatment-results-redesign .txrd-median-dose {
+    color: #d9d3ce;
+    font-weight: 650;
+    letter-spacing: .035em;
+  }
+
+  #treatment-results-redesign .txrd-high-dose-subgroup {
+    color: #aaa4a0;
+  }
+
+  #treatment-results-redesign .txrd-high-dose-subgroup > b {
+    color: #fff;
+    font-weight: 700;
+    margin-right: .2em;
+  }
+
+  #systemic-safety-tolerability .safety-qol-top {
+    top: 35% !important;
+    height: 36% !important;
+  }
+}
+
+/* Page 35 placement overrides sit after the shared projection rules. */
+#drug-dosing.scene {
+  align-items: flex-start;
+  padding-top: 9.5vh;
+}
+
+#drug-dosing .drug-dosing-copy {
+  width: 84vw;
+}
+
+#drug-dosing .drug-dosing-copy h2 {
+  margin-top: .5rem;
+  font-size: clamp(3.4rem, 5.35vw, 6.4rem);
+  line-height: .92;
+}
+
+#drug-dosing .drug-dosing-copy .lede {
+  margin-top: .85rem;
+  font-size: clamp(1.15rem, 1.38vw, 1.65rem);
+  max-width: none;
+  white-space: nowrap;
+}
+
+#drug-dosing .dosing-stage {
+  top: 42%;
+  bottom: 11%;
+  grid-template-columns: .96fr 1.04fr;
+}
+
+#drug-dosing .dosing-primary,
+#drug-dosing .dosing-conventional {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Page 35 protocol-detail layout. */
+#drug-dosing .drug-dosing-copy h2 {
+  margin-top: .5rem;
+  font-size: clamp(3.35rem, 4.55vw, 5.45rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+#drug-dosing .dosing-protocol-stage {
+  top: 30.5%;
+  bottom: 7.5%;
+  grid-template-columns: .88fr .92fr 1.38fr;
+  gap: .9rem;
+}
+
+#drug-dosing .dosing-protocol-column {
+  min-width: 0;
+  padding: 1rem 1.05rem .9rem;
+  border-top: 1px solid rgba(255, 77, 82, .55);
+  background: linear-gradient(150deg, rgba(255, 77, 82, .065), rgba(255, 255, 255, .012) 52%, transparent);
+}
+
+#drug-dosing .dosing-protocol-column:nth-child(2) {
+  border-top-color: rgba(255, 255, 255, .34);
+  background: linear-gradient(150deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01) 52%, transparent);
+}
+
+#drug-dosing .dosing-protocol-column:nth-child(3) {
+  border-top-color: rgba(165, 128, 255, .62);
+  background: linear-gradient(150deg, rgba(151, 113, 255, .07), rgba(255, 255, 255, .012) 52%, transparent);
+}
+
+#drug-dosing .dosing-protocol-column > header {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding-bottom: .65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+#drug-dosing .dosing-protocol-column > header > span {
+  color: #ff6468;
+  font: 700 clamp(.96rem, 1.02vw, 1.2rem) var(--font-geist-mono), monospace;
+}
+
+#drug-dosing .dosing-protocol-column:nth-child(3) > header > span { color: #ad8cff; }
+
+#drug-dosing .dosing-protocol-column > header > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .14rem;
+}
+
+#drug-dosing .dosing-protocol-column > header b {
+  color: #f5f1ee;
+  font-size: clamp(1rem, 1.18vw, 1.4rem);
+  line-height: 1.08;
+  letter-spacing: .025em;
+}
+
+#drug-dosing .dosing-protocol-column > header small {
+  color: #aaa29e;
+  font: 700 clamp(.68rem, .72vw, .86rem) var(--font-geist-mono), monospace;
+  letter-spacing: .1em;
+}
+
+#drug-dosing .ada-age-group {
+  padding: .85rem .78rem .72rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+#drug-dosing .ada-age-group.pediatric {
+  border-left: 2px solid rgba(255, 77, 82, .62);
+  background: rgba(255, 77, 82, .045);
+}
+
+#drug-dosing .ada-age-group h3 {
+  margin: 0 0 .55rem;
+  color: #ff7175;
+  font-size: clamp(1rem, 1.12vw, 1.32rem);
+  line-height: 1.1;
+}
+
+#drug-dosing .ada-age-group h3 small {
+  display: block;
+  margin-top: .16rem;
+  color: #aaa29e;
+  font: 650 clamp(.68rem, .72vw, .86rem) var(--font-geist-mono), monospace;
+  letter-spacing: .06em;
+}
+
+#drug-dosing .ada-regimen-line {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: .55rem;
+  padding: .25rem 0;
+}
+
+#drug-dosing .ada-regimen-line b {
+  color: #a59d99;
+  font: 700 clamp(.7rem, .75vw, .9rem) var(--font-geist-mono), monospace;
+  letter-spacing: .08em;
+}
+
+#drug-dosing .ada-regimen-line strong {
+  color: #f5f1ee;
+  font-size: clamp(.98rem, 1.08vw, 1.28rem);
+  line-height: 1.15;
+}
+
+#drug-dosing .ada-regulatory-note {
+  margin: .75rem .1rem 0;
+  color: #aaa29e;
+  font-size: clamp(.74rem, .81vw, .96rem);
+  line-height: 1.38;
+}
+
+#drug-dosing .ada-regulatory-note b { color: #ff7175; }
+
+#drug-dosing .ada-administration-note {
+  margin: .7rem .1rem 0;
+  color: #d0c8c4;
+  font-size: clamp(.75rem, .83vw, .98rem);
+  line-height: 1.34;
+}
+
+#drug-dosing .protocol-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: .7rem;
+}
+
+#drug-dosing .protocol-table th {
+  padding: .5rem .35rem;
+  color: #c7bfbb;
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
+  font: 700 clamp(.7rem, .76vw, .9rem) var(--font-geist-mono), monospace;
+  letter-spacing: .055em;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+#drug-dosing .protocol-table th small {
+  color: #847d79;
+  font-size: .88em;
+  letter-spacing: .02em;
+}
+
+#drug-dosing .protocol-table td {
+  padding: .58rem .35rem;
+  color: #eee9e6;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  font-size: clamp(.82rem, .9vw, 1.06rem);
+  line-height: 1.16;
+  vertical-align: middle;
+}
+
+#drug-dosing .taper-protocol-table th,
+#drug-dosing .taper-protocol-table td { text-align: center; }
+
+#drug-dosing .taper-protocol-table th:nth-child(1) { width: 29%; }
+#drug-dosing .taper-protocol-table th:nth-child(2) { width: 34%; }
+#drug-dosing .taper-protocol-table th:nth-child(3) { width: 37%; }
+
+#drug-dosing .taper-protocol-table .taper-hold-row td {
+  color: #fff;
+  background: rgba(255, 77, 82, .055);
+  font-weight: 650;
+}
+
+#drug-dosing .taper-protocol-table sup,
+#drug-dosing .conventional-protocol-table sup {
+  color: #ff7175;
+  font-size: .65em;
+}
+
+#drug-dosing .taper-protocol-notes,
+#drug-dosing .conventional-protocol-notes {
+  margin-top: .72rem;
+  color: #918a86;
+  font-size: clamp(.7rem, .77vw, .92rem);
+  line-height: 1.34;
+}
+
+#drug-dosing .taper-protocol-notes p,
+#drug-dosing .conventional-protocol-notes p { margin: .28rem 0; }
+#drug-dosing .taper-protocol-notes b,
+#drug-dosing .conventional-protocol-notes b { color: #ff7175; }
+
+#drug-dosing .conventional-protocol-table th:nth-child(1) { width: 20%; }
+#drug-dosing .conventional-protocol-table th:nth-child(2) { width: 29%; }
+#drug-dosing .conventional-protocol-table th:nth-child(3) { width: 25%; }
+#drug-dosing .conventional-protocol-table th:nth-child(4) { width: 26%; }
+
+#drug-dosing .conventional-protocol-table td {
+  padding: .45rem .3rem;
+  font-size: clamp(.7rem, .8vw, .95rem);
+}
+
+#drug-dosing .conventional-protocol-table td:first-child {
+  color: #a99f9b;
+  font: 700 clamp(.62rem, .67vw, .8rem) var(--font-geist-mono), monospace;
+  letter-spacing: .04em;
+}
+
+#drug-dosing .conventional-protocol-table td b {
+  color: #c4afff;
+  display: block;
+  font-size: 1.02em;
+}
+
+#drug-dosing .conventional-protocol-table td small {
+  display: block;
+  margin-top: .12rem;
+  color: #918985;
+  font-size: .82em;
+}
+
+#drug-dosing .dosing-source {
+  bottom: 3.2vh;
+}
+
+/* Page 35 readability pass after simplifying the tables. */
+#drug-dosing .dosing-protocol-stage {
+  grid-template-columns: .92fr .98fr 1.25fr;
+}
+
+#drug-dosing .dosing-protocol-column > header b {
+  font-size: clamp(1.12rem, 1.3vw, 1.55rem);
+}
+
+#drug-dosing .dosing-protocol-column > header small {
+  font-size: clamp(.76rem, .82vw, .98rem);
+}
+
+#drug-dosing .ada-age-group h3 {
+  font-size: clamp(1.12rem, 1.25vw, 1.48rem);
+}
+
+#drug-dosing .ada-age-group h3 small,
+#drug-dosing .ada-regimen-line b {
+  font-size: clamp(.76rem, .82vw, .98rem);
+}
+
+#drug-dosing .ada-regimen-line strong {
+  font-size: clamp(1.08rem, 1.22vw, 1.44rem);
+}
+
+#drug-dosing .protocol-table th {
+  font-size: clamp(.78rem, .86vw, 1.02rem);
+}
+
+#drug-dosing .protocol-table td {
+  padding-top: .68rem;
+  padding-bottom: .68rem;
+  font-size: clamp(.92rem, 1.02vw, 1.2rem);
+}
+
+#drug-dosing .conventional-protocol-table th:nth-child(1) { width: 40%; }
+#drug-dosing .conventional-protocol-table th:nth-child(2) { width: 30%; }
+#drug-dosing .conventional-protocol-table th:nth-child(3) { width: 30%; }
+
+#drug-dosing .conventional-protocol-table td {
+  padding: .58rem .38rem;
+  font-size: clamp(.82rem, .92vw, 1.08rem);
+}
+
+#drug-dosing .conventional-protocol-table td:first-child {
+  color: #eee9e6;
+  font-family: inherit;
+  font-size: clamp(.82rem, .92vw, 1.08rem);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+#drug-dosing .conventional-protocol-table td b {
+  font-size: 1.08em;
+}
+
+#drug-dosing .conventional-protocol-table td small {
+  font-size: .88em;
 }

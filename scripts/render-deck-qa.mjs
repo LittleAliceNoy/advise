@@ -13,7 +13,7 @@ const SLIDES = [
   "treatment-results-redesign", "results", "discontinuation", "ocular-results",
   "systemic-safety-tolerability", "quality-of-life-results", "chapter-discussion", "limitations-4",
   "discussion-safety", "limitations-1", "limitations-2", "limitations-3",
-  "limitations-5", "limitations-6", "conclusion", "outcomes-original",
+  "limitations-5", "limitations-6", "conclusion", "drug-dosing", "outcomes-original",
   "secondary-outcomes-redesign", "tapering-cinematic",
 ];
 const slidesArg = process.argv.find((arg) => arg.startsWith("--slides="));
